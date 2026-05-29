@@ -1,0 +1,540 @@
+{
+  "schemaVersion": "1.2",
+  "description": "Special rules defined in the Alternate 40k Core Rule Book. These are referenced by id in faction files. Faction-specific rules are defined in their own faction file. Unit-unique rules are defined in unit.inlineRules.",
+  "rules": [
+    {
+      "id": "aa",
+      "name": "AA",
+      "shortDesc": "Ignores –1 To Hit vs High Altitude; +1 To Hit vs Flyers. Ignores Deepstrike cover.",
+      "fullDesc": "Weapons with AA ignore the –1 To Hit against High Altitude models and gain +1 To Hit against Flyers and High Altitude models. They also ignore the Cover Save models receive from Deepstriking."
+    },
+    {
+      "id": "accurate",
+      "name": "Accurate",
+      "shortDesc": "+1 To Hit.",
+      "fullDesc": "This weapon has +1 To Hit."
+    },
+    {
+      "id": "aquatic",
+      "name": "Aquatic",
+      "shortDesc": "Ignores Difficult Terrain penalty and getting-stuck risk in Water Terrain.",
+      "fullDesc": "This model ignores the Difficult Terrain penalty for moving through Water Terrain as well as the risk of getting stuck."
+    },
+    {
+      "id": "armourbane",
+      "name": "Armourbane",
+      "shortDesc": "Roll 2d6 to penetrate Vehicles instead of 1d6.",
+      "fullDesc": "Roll 2d6 to penetrate Vehicles and Titanic Vehicles instead of 1d6."
+    },
+    {
+      "id": "assault-ramp",
+      "name": "Assault Ramp",
+      "shortDesc": "Models disembarking may Declare Charges the same turn.",
+      "fullDesc": "Models Disembarking from a Transport with Assault Ramps may Declare Charges on the same turn they Disembark."
+    },
+    {
+      "id": "aura",
+      "name": "Aura",
+      "shortDesc": "Affects this model and a target unit. Ends and refreshes each Command Phase.",
+      "fullDesc": "Auras usually affect the user model and a target unit, but will specify in the description. One unit cannot benefit from Auras of the same name at the same time, but may still benefit from Auras of different names with the same effect. Your Auras end and may be cast again in your Command Phase."
+    },
+    {
+      "id": "auto-hit",
+      "name": "Auto Hit",
+      "shortDesc": "Always succeeds in hitting the target.",
+      "fullDesc": "An Auto Hit always succeeds in hitting the target."
+    },
+    {
+      "id": "auto-wound",
+      "name": "Auto Wound",
+      "shortDesc": "Automatic wound with AP–. Armour and Invuln Saves still apply; no Cover Save.",
+      "fullDesc": "An Auto Wound is an automatic successful Wound that has AP–. Units still get their full Armour and Invulnerability Saves as well as Feel No Pain, but do not get Cover Saves from Auto Wounds."
+    },
+    {
+      "id": "assault",
+      "name": "Assault #",
+      "shortDesc": "Can charge the same turn it shoots.",
+      "fullDesc": "Assault weapons can charge in the same turn they shoot. They no longer get to fire after advancing."
+    },
+    {
+      "id": "auxiliary",
+      "name": "Auxiliary",
+      "shortDesc": "No Base Attacks assigned to it. One additional attack; can gain more from Extra Attack only.",
+      "fullDesc": "Auxiliary weapons can never have any Base Attacks assigned to them. They operate like an additional Melee Weapon with one Attack that may receive more from the Extra Attack rule only."
+    },
+    {
+      "id": "beam",
+      "name": "Beam",
+      "shortDesc": "Hits target and rolls 5+ for each model in a 1\" path between shooter and target.",
+      "fullDesc": "Select a target model (owning player still determines which models are hit) and roll To Hit as normal. For each model in between the Beam weapon and the target in a 1\" wide path, roll a d6. On each 5+, that model is Hit just like with a template."
+    },
+    {
+      "id": "bodyguard",
+      "name": "Bodyguard",
+      "shortDesc": "On a 2+, intercepts Wounds destined for a nearby Character or Independent Character.",
+      "fullDesc": "A model with Bodyguard may attempt to stop a Wound, Glance, or Penetration that gets through a Character or Independent Character's Saves and Feel No Pains. For each Wound the Character or Independent Character would have suffered, the Bodyguard suffers that many Mortal Wounds on a roll of a 2+. On a 1, the Character or Independent Character suffers the Wounds like normal."
+    },
+    {
+      "id": "bomb",
+      "name": "Bomb",
+      "shortDesc": "Dropped on a model moved over in the Movement Phase; scatters like a Blast.",
+      "fullDesc": "To use a Bomb, select a target model you moved over in the Movement Phase. Apply the Blast or Flame Thrower Template and roll the scatter dice. Bomb Scattering works just like Blast weapons, where your BS score reduces the amount of inches it moves on the 2d6. A Direct Hit never scatters."
+    },
+    {
+      "id": "bulky",
+      "name": "Bulky",
+      "shortDesc": "Takes 2 Transport spaces, including Fire Ports.",
+      "fullDesc": "This model takes two Transport spaces. This includes Firing Ports when manning them."
+    },
+    {
+      "id": "character",
+      "name": "Character",
+      "shortDesc": "May issue/accept Challenges. On a natural 6 To Hit, may choose the target model.",
+      "fullDesc": "Characters may issue and accept Challenges. Characters also may choose which model is hit when they roll a natural 6 To Hit for both Ranged and Melee attacks."
+    },
+    {
+      "id": "co-axial",
+      "name": "Co-Axial",
+      "shortDesc": "Paired weapon. If first scores a hit, second may reroll misses or scatter dice.",
+      "fullDesc": "Co-Axial weapons must be fired at the same target. Select one weapon to shoot. If it scores at least 1 hit against the target, the second weapon may reroll misses or scatter dice."
+    },
+    {
+      "id": "combat-walker",
+      "name": "Combat Walker",
+      "shortDesc": "Always uses FA in Melee unless M reduced to 0, in which case all attacks strike RA.",
+      "fullDesc": "Combat Walkers always use their FA for defence when in Melee unless their M value has been reduced to 0. When at M0, all Melee attacks are considered to strike its RA regardless of facing."
+    },
+    {
+      "id": "concussion",
+      "name": "Concussion",
+      "shortDesc": "Wounded target suffers A–1 until next Melee Phase. Cannot reduce below A1.",
+      "fullDesc": "If a Concussive weapon wounds the target, it suffers A–1 for each one until the next Melee Phase of the Player's Turn who inflicted the Concussion. A model may never be reduced to less than A1."
+    },
+    {
+      "id": "counterattack",
+      "name": "Counterattack",
+      "shortDesc": "Counts as Charging when Charged. Triggers Shock Assault, Furious Charge etc.",
+      "fullDesc": "This model is considered Charging when it is Charged. This can trigger other rules like Shock Assault and Furious Charge even though it did not Declare a Charge."
+    },
+    {
+      "id": "dangerous-terrain-test",
+      "name": "Dangerous Terrain Test",
+      "shortDesc": "Roll d6 per model; on a 1 suffer a Mortal Wound.",
+      "fullDesc": "For each model in the unit roll a d6. On a 1, the model suffers a Mortal Wound, consolidating Wounds if necessary for multi-Wound models."
+    },
+    {
+      "id": "deepstrike",
+      "name": "Deepstrike",
+      "shortDesc": "May be held in Reserve and placed via scatter. Gains 4+ Cover Save on arrival. Cannot Charge on arrival turn.",
+      "fullDesc": "Place the model with the highest leadership on the table and roll the scatter dice. Place all additional models in the unit around in base contact forming rings. If any model overlaps impassable terrain or another model, move the unit the minimum distance necessary; the entire unit is forced to Go to Ground and become Pinned. Models cannot Charge on a Turn when they arrived by Deepstrike. Models that Deepstrike gain a 4+ Cover Save until their next Movement Phase."
+    },
+    {
+      "id": "destroyer",
+      "name": "Destroyer",
+      "shortDesc": "Always wounds/penetrates on 2+. Ignores all Saves and FNP. +2 Damage vs Titanic.",
+      "fullDesc": "A Destroyer weapon always Wounds and Penetrates on a 2+. It will never Glance. Wounds and Penetrations from a Destroyer weapon ignore Armour Saves, Cover Saves, Invulnerability Saves, and Feel No Pain. Titanic targets suffer +2 Damage for each Destroyer Wound inflicted."
+    },
+    {
+      "id": "extra-attack",
+      "name": "Extra Attack #",
+      "shortDesc": "Grants # additional Attacks.",
+      "fullDesc": "This weapon or ability grants # additional Attacks in Melee."
+    },
+    {
+      "id": "fearless",
+      "name": "Fearless",
+      "shortDesc": "Auto-passes Fear, Pinning, and Rally tests. Suffers Auto Wounds instead of fleeing from lost Combat Resolution.",
+      "fullDesc": "Fearless units automatically pass Fear tests, Pinning Tests, and do not fall back when losing the combat round. If they fail Combat Resolution, for each point they fail the Ld test they suffer one Auto Wound."
+    },
+    {
+      "id": "feel-no-pain",
+      "name": "Feel No Pain",
+      "shortDesc": "After a failed Save, roll at the printed value or higher to negate the wound.",
+      "fullDesc": "This test is taken after Saves are taken on a unit. Like a Save, it succeeds on the number printed or higher. Feel No Pain does not apply vs Destroyer weapons, and cannot be granted to a Vehicle unit from an Aura source unless specified."
+    },
+    {
+      "id": "fleet",
+      "name": "Fleet",
+      "shortDesc": "Rolls 3d6, picks highest, when Advancing.",
+      "fullDesc": "This model rolls 3d6 choosing the highest d6 when Advancing."
+    },
+    {
+      "id": "flyer",
+      "name": "Flying",
+      "shortDesc": "Ignores Terrain, vertical distance, and models when moving. Must end in a legal position.",
+      "fullDesc": "This model may ignore Terrain, vertical distance, and models when Moving, Advancing, Charging, and Falling Back, but must end its movement in a space it can legally occupy."
+    },
+    {
+      "id": "furious-charge",
+      "name": "Furious Charge",
+      "shortDesc": "S+1 on a phase this model is considered to have Charged.",
+      "fullDesc": "This model gains S+1 on a phase it is considered to have Charged."
+    },
+    {
+      "id": "gauss",
+      "name": "Gauss",
+      "shortDesc": "Natural 6 To Hit inflicts an Auto Wound. Continue rolling To Wound/Penetrate normally.",
+      "fullDesc": "A Gauss weapon inflicts an Auto Wound on a natural 6 To Hit. Continue rolling to Wound or Penetrate as normal with the remaining dice in the pool."
+    },
+    {
+      "id": "gets-hot",
+      "name": "Gets Hot!",
+      "shortDesc": "Natural 1s To Hit cause 1 Mortal Wound on the bearer.",
+      "fullDesc": "When rolling To Hit, all natural 1s cause 1 Mortal Wound to the bearer of the weapon. If using templates, roll a d6 for each template placed and suffer a Mortal Wound for each 1 rolled. Continue rolling To Wound or Penetrate like normal."
+    },
+    {
+      "id": "grav",
+      "name": "Grav",
+      "shortDesc": "Wounds infantry/monsters on 4+. Glances vehicles on 6+. Each hit reduces Movement by 1\" until next turn.",
+      "fullDesc": "Grav weapons always wound Infantry, Monstrous Infantry, Monsters, Swarms, and Titanic Monsters on a 4+. Buildings, Vehicles and Titanic Vehicles are Glanced on a 6+. Every Hit from a Grav weapon causes all Movement, Advances, Charges, and Fleeing to be reduced by 1\" for each Hit until the same Player's Phase next Turn."
+    },
+    {
+      "id": "grenade",
+      "name": "Grenade #",
+      "shortDesc": "One model may throw per phase instead of shooting. Ignores cover penalty when charging. Non-Blast grenades usable in Melee.",
+      "fullDesc": "One grenade of each weapon equipped may be thrown by a unit during the shooting phase by a model instead of that model using its weapons. Allows the unit to ignore the penalty for charging a unit in cover if at least one model in the unit is equipped with Grenades. Non-Blast Grenades can be used in place of all melee weapons by trading all attacks for a single attack; multiple models can use the same grenade in Melee. Auxiliary Weapons cannot be used with Grenades by the same model in Melee."
+    },
+    {
+      "id": "haywire",
+      "name": "Haywire (#+)",
+      "shortDesc": "Always Glances a Vehicle on #+. Natural 6 to Penetrate always counts as Penetration.",
+      "fullDesc": "Haywire will always Glance a Vehicle or Titanic Vehicle on a #+. A natural roll of a 6 to Penetrate, regardless of the Armour Value, is always considered a Penetration."
+    },
+    {
+      "id": "heal",
+      "name": "Heal",
+      "shortDesc": "Restores 1 Wound each Command Phase, up to starting Wound count. Once per turn.",
+      "fullDesc": "A model or unit with the Heal ability restores 1 Wound during their Command Phase, up to their starting Wound count. A model cannot benefit from Healing more than once per turn."
+    },
+    {
+      "id": "heavy",
+      "name": "Heavy #",
+      "shortDesc": "Infantry firing after moving may only Snap Shot. Vehicles, Monsters, Monstrous Infantry unaffected.",
+      "fullDesc": "Heavy weapons can only fire Snap Shots if they move on the turn they fire unless they are mounted to Vehicles, Monsters, Monstrous Infantry, or Titanic variants."
+    },
+    {
+      "id": "high-altitude",
+      "name": "High Altitude",
+      "shortDesc": "–1 To Hit from non-AA attacks. Must move 20\" minimum. May pivot 90° only. Can fly off table into Reserves.",
+      "fullDesc": "This model inflicts a –1 penalty To Hit from attacks that are not AA or from an Interceptor model. This model must move a minimum of 20\" in each of its Movement Phases, and pivots up to 90 degrees at the end of each Movement. It is allowed to fly off the table and re-enter from Reserves."
+    },
+    {
+      "id": "hit-and-run",
+      "name": "Hit and Run",
+      "shortDesc": "May attempt to leave Melee in Movement Phase. Opposed Initiative + d6 roll-off.",
+      "fullDesc": "A model or unit with this ability may attempt to Hit and Run in their Movement Phase. Roll 1d6 and add the highest Initiative value of models with Hit and Run, and compare it to a roll of the highest enemy Initiative + d6. If equal or higher, the Hit and Run models may leave Melee and Move like normal."
+    },
+    {
+      "id": "hover",
+      "name": "Hover",
+      "shortDesc": "May ignore High Altitude rule, reducing max Movement to 20\". Cannot revert until next Movement Phase.",
+      "fullDesc": "This model may ignore its High Altitude Rule and reduce its maximum Movement Value to 20. It may not select to go back into High Altitude mode until its next Movement Phase."
+    },
+    {
+      "id": "hull",
+      "name": "Hull",
+      "shortDesc": "90° firing arc.",
+      "fullDesc": "This weapon is considered to have a 90 degree firing arc."
+    },
+    {
+      "id": "ignores-cover",
+      "name": "Ignores Cover",
+      "shortDesc": "Attacks ignore Cover Saves.",
+      "fullDesc": "The attacks made by this weapon ignore any Cover Saves for any unit this weapon hits."
+    },
+    {
+      "id": "independent-character",
+      "name": "Independent Character",
+      "shortDesc": "May join same-type units. Intercepts Wounds for joined unit. Requires 2+ base models to join.",
+      "fullDesc": "Characters may issue and accept Challenges. Independent Characters may join units of the same model type. Hits against the joined unit are resolved at the unit's Toughness or Armour value. Independent Characters may attempt to save against a number of Wounds equal to their current Wound value per Phase. There must be at least 2 models in the base unit per Independent Character joined."
+    },
+    {
+      "id": "indirect",
+      "name": "Indirect",
+      "shortDesc": "May fire at units without Line of Sight. Adds BS to scatter instead of subtracting.",
+      "fullDesc": "An Indirect Fire weapon may fire at units it does not have line of sight to. An indirect fire weapon adds its BS to the amount scattered on the 2d6 for Blast weapons if the model does not have Line of Sight to the target. If the model can draw Line of Sight, the Indirect penalties do not apply."
+    },
+    {
+      "id": "infiltrate",
+      "name": "Infiltrate",
+      "shortDesc": "Placed after deployment, alternating. Must be 12\" from enemy models.",
+      "fullDesc": "After deployment, you may place Infiltrators. Starting with the Player who is going first, place one Infiltrator unit, then the second Player may do likewise. Continue alternating until all Infiltrators are placed. They must be placed at least 12\" from enemy models."
+    },
+    {
+      "id": "interceptor",
+      "name": "Interceptor",
+      "shortDesc": "Ignores High Altitude –1 To Hit. +1 To Hit vs Flyers. Ignores Deepstrike cover. Advances at full M.",
+      "fullDesc": "All weapons on this model ignore the –1 To Hit against High Altitude models, gain +1 To Hit against Flyers and High Altitude, and ignore the Cover Save units gain from Deepstriking. When an Interceptor Advances it may move up to its full M value instead of 1d6\"."
+    },
+    {
+      "id": "jump",
+      "name": "Jump",
+      "shortDesc": "May Jump during any movement; counts as Flying until next Movement Phase.",
+      "fullDesc": "A model with Jump may choose to Jump during any form of movement, including Advancing, Charging, and Falling Back. If they do so, they count as Flying until their next Movement Phase."
+    },
+    {
+      "id": "lance",
+      "name": "Lance",
+      "shortDesc": "Treats opposing Armour Values as no higher than 12 when Penetrating.",
+      "fullDesc": "This weapon treats opposing Armour Values as being no higher than 12 when rolling To Penetrate. Armour Values less than 12 remain at their Value."
+    },
+    {
+      "id": "linked",
+      "name": "Linked",
+      "shortDesc": "All Linked weapons must target the same unit.",
+      "fullDesc": "Linked weapons must all target the same unit when firing."
+    },
+    {
+      "id": "melta",
+      "name": "Melta",
+      "shortDesc": "At half range, roll 2d6 to Penetrate Vehicles. At half range, gains Monsterbane.",
+      "fullDesc": "When in half range, roll 2d6 for penetrating a Vehicle or Titanic Vehicle instead of 1d6. When in half range, Melta weapons have Monsterbane."
+    },
+    {
+      "id": "monsterbane",
+      "name": "Monsterbane",
+      "shortDesc": "+1 Wound vs Monsters/Buildings after Saves. Reroll failed To Wound vs Monstrous Infantry.",
+      "fullDesc": "A Monsterbane weapon inflicts +1 wound when successfully wounding a Monster or Building after saves and Feel No Pains (or Titanic Monsters). Against Monstrous Infantry, the user must reroll failed To Wound rolls instead."
+    },
+    {
+      "id": "nonblast",
+      "name": "Nonblast",
+      "shortDesc": "Grenade that does not use a Blast template.",
+      "fullDesc": "This Grenade does not use a Blast template. It may be used in Melee in place of all Melee attacks, making a single attack instead."
+    },
+    {
+      "id": "objective-secured",
+      "name": "Objective Secured",
+      "shortDesc": "Always claims Objectives even if outnumbered, unless opponent also has Objective Secured.",
+      "fullDesc": "A model always claims an Objective Marker if it has this rule, even if it normally cannot claim Objectives or is outnumbered. If opposing units have Objective Secured, the side with the most models within range and with Objective Secured controls it."
+    },
+    {
+      "id": "one-use-only",
+      "name": "One Use Only",
+      "shortDesc": "Once used, expended for the rest of the game.",
+      "fullDesc": "Once used, the weapon or ability is expended and cannot be used again this game."
+    },
+    {
+      "id": "ordnance",
+      "name": "Ordnance",
+      "shortDesc": "Has Pinning. Roll 2d6 pick highest to Penetrate Vehicles. Cannot move and fire unless Titanic.",
+      "fullDesc": "In addition to having the Pinning rule, when rolling to Penetrate Vehicles or Titanic Vehicles you roll 2d6 and pick the highest d6 result. The model cannot move and fire with Ordnance weapons unless it is Titanic."
+    },
+    {
+      "id": "outflank",
+      "name": "Outflank",
+      "shortDesc": "May be held in Reserve. After Turn 1, deploys from a table edge. Cannot Charge on arrival turn.",
+      "fullDesc": "Models with Outflank may be held in Reserve. After turn one, at the end of any of your Movement Phases, you may deploy them. Roll a d6: 1–2 left table edge, 3–4 middle enemy deployment edge, 5–6 right table edge. Models arriving by Outflank may not Declare Charges the turn they arrive."
+    },
+    {
+      "id": "pinning",
+      "name": "Pinning",
+      "shortDesc": "On failed Ld test, unit is Pinned: +1 Cover Save, Snap Shots only, no Charges or Spells.",
+      "fullDesc": "Perform a Leadership test by rolling 2d6 minus the number of Wounds suffered by a Pinning weapon. If the test fails, the entire unit is Pinned. Pinned units gain +1 Cover Save or 6+ in the open, cannot move, may only fire Snap Shots, and cannot declare Charges or Cast spells. At the end of your next Movement Phase, roll a Ld test to rally; if passed they are no longer Pinned."
+    },
+    {
+      "id": "pistol",
+      "name": "Pistol #",
+      "shortDesc": "Can fire in Melee targeting engaged unit. Counts as Assault. Overwatches on 5+.",
+      "fullDesc": "Pistols can be fired in close combat in your Shooting Phase and count as Assault weapons. These shots must target the unit they are engaged with. Pistols do not suffer the –1 To Hit when fired in Melee. Pistols Overwatch on a 5+ instead of the usual 6+."
+    },
+    {
+      "id": "poisoned",
+      "name": "Poisoned (#+)",
+      "shortDesc": "Always wounds Infantry/Monsters on #+. Only wounds/Glances Vehicles on 6+.",
+      "fullDesc": "Poisoned weapons always wound Infantry, Monstrous Infantry, Monsters, and Titanic Monsters on a #+. They only ever wound or Glance a Building or Vehicle and Titanic Vehicle on a 6+."
+    },
+    {
+      "id": "primary",
+      "name": "Primary",
+      "shortDesc": "Weapon Destroyed result treated as Weapon Disabled instead. Still suffers +2 Wounds.",
+      "fullDesc": "This weapon treats the secondary effects of Weapon Destroyed as Weapon Disabled. It still suffers the +2 Wounds from the Penetration Chart instead of +1."
+    },
+    {
+      "id": "psychic-bane",
+      "name": "Psychic Bane",
+      "shortDesc": "Wounds caused by this weapon count double for Combat Resolution.",
+      "fullDesc": "Wounds caused by this weapon count double for the purposes of Combat Resolution."
+    },
+    {
+      "id": "psychic-disruption",
+      "name": "Psychic Disruption",
+      "shortDesc": "Units hit lose one ongoing Spell effect of the defender's choice.",
+      "fullDesc": "Units Hit by a Psychic Disruption weapon lose one ongoing Spell effect of the Defender's choosing."
+    },
+    {
+      "id": "rapid-fire",
+      "name": "Rapid Fire #",
+      "shortDesc": "Doubles number of shots when within half range.",
+      "fullDesc": "Rapid Fire weapons double the number of attacks they get when they are within half their range."
+    },
+    {
+      "id": "rending",
+      "name": "Rending",
+      "shortDesc": "Natural 5+ To Wound or Glance ignores Armour Save. No effect if 5 wouldn't normally wound.",
+      "fullDesc": "On a natural 5+ To Wound or Glance, this attack ignores the Armour Save of the target. If a 5 would not Wound or Glance the target normally, it does nothing."
+    },
+    {
+      "id": "repair",
+      "name": "Repair",
+      "shortDesc": "Restores Wounds or removes Vehicle secondary damage effects.",
+      "fullDesc": "There are two generic repair abilities. One restores 1d3 Wounds to a target Vehicle. The other restores 1 Wound and on a 5+ may restore a destroyed weapon, remove a weapon disable, step mobility back up, or remove a Weapon Disabled result. A target may only receive one Wound-restoring Repair per turn."
+    },
+    {
+      "id": "scatter",
+      "name": "Scatter",
+      "shortDesc": "S+1 when hitting a target within half maximum range (shotgun-type weapons).",
+      "fullDesc": "If a Scatter weapon hits a target within half of its maximum range, add S+1 to the weapon profile for resolving the To Wound roll. Not to be confused with Blast Weapon scatter."
+    },
+    {
+      "id": "scout",
+      "name": "Scout",
+      "shortDesc": "May move up to 12\" after Infiltrators are placed, before Turn 1.",
+      "fullDesc": "Units with Scout may move up to 12\" after units and Infiltrators are deployed, but before the first turn. The Player winning Initiative moves all of their Scouts, followed by the second Player's Scouts."
+    },
+    {
+      "id": "shock-assault",
+      "name": "Shock Assault",
+      "shortDesc": "A+1 on a phase this model is considered Charging.",
+      "fullDesc": "This model gains A+1 on the phase it is considered Charging."
+    },
+    {
+      "id": "shroud",
+      "name": "Shroud",
+      "shortDesc": "+1 to Cover Saves (max 3+). Always has 6+ Cover in the open.",
+      "fullDesc": "This model gains +1 to Cover Saves. If the model is in the open, it is always considered to have a 6+ Cover Save. If a unit Goes to Ground or is Pinned, they gain an additional +1 to a maximum of a 3+ Cover Save."
+    },
+    {
+      "id": "slow",
+      "name": "Slow",
+      "shortDesc": "Fights at Initiative 0 regardless of bearer's Initiative, even if Charging.",
+      "fullDesc": "This weapon is considered to be Initiative 0 regardless of the bearer's Initiative value, even if it is considered to have Charged this phase. Other weapons used by this model fight at their normal Initiative speed."
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper (#+)",
+      "shortDesc": "Choose target model. Auto-wounds on #+. Rending. Causes Pinning.",
+      "fullDesc": "Sniper weapons may select the model targeted by the attacks. Snipers automatically wound Infantry, Monstrous Infantry, Monsters, Titanic Monsters, and Swarms on a #+, and are considered Rending weapons. Wounds caused by Snipers also cause Pinning Tests."
+    },
+    {
+      "id": "sponson",
+      "name": "Sponson",
+      "shortDesc": "90–180° firing arc depending on model.",
+      "fullDesc": "This weapon is considered to have a 90 to 180 degree firing arc depending on the model."
+    },
+    {
+      "id": "steady",
+      "name": "Steady",
+      "shortDesc": "Does not count as having fired for Charge purposes, but Charge distance capped at 8\".",
+      "fullDesc": "This model does not count as having fired for the purposes of Declaring Charges but cannot exceed 8\" in the distance Charged regardless of modifiers."
+    },
+    {
+      "id": "stealth",
+      "name": "Stealth",
+      "shortDesc": "+1 to Cover Save, max 3+.",
+      "fullDesc": "This model gains +1 to its Cover Save to a maximum of 3+."
+    },
+    {
+      "id": "steed",
+      "name": "Steed",
+      "shortDesc": "Cannot Embark on Transports. Must roll Dangerous Terrain Test when moving through non-open terrain.",
+      "fullDesc": "This model may not Embark on Transports and must roll a Dangerous Terrain Test when moving through a Terrain Feature that is not open like a Hill or Road."
+    },
+    {
+      "id": "stubborn",
+      "name": "Stubborn",
+      "shortDesc": "Ignores Combat Resolution Ld penalty when taking Morale tests.",
+      "fullDesc": "This model ignores any Ld penalties from Combat Resolution when taking Morale tests."
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "shortDesc": "Natural 6 To Hit generates 2 additional hits.",
+      "fullDesc": "When rolling To Hit, a natural 6 generates 2 additional hits that are added to the dice pool to wound the target."
+    },
+    {
+      "id": "titanic",
+      "name": "Titanic",
+      "shortDesc": "Destroys non-Titanic Terrain it moves into. May leave Melee. Always counts as stationary for firing. Immune to template –1 To Hit in Melee.",
+      "fullDesc": "Titanic units destroy all non-Titanic Terrain or non-Titanic Vehicle Wrecks they move into. They may leave combat if they can legally move. They always are considered sitting still for the purposes of firing weapons, and do not suffer the –1 To Hit or +1 To Scatter for template weapons when firing while engaged in Melee."
+    },
+    {
+      "id": "transport",
+      "name": "Transport #",
+      "shortDesc": "May carry up to # Infantry models. Bulky = 2 spaces, Very Bulky = 3.",
+      "fullDesc": "Models may Embark or Disembark in the Movement Phase by moving into base contact or from designated exit points. Infantry take up one space, Bulky models take two, Very Bulky take three. If destroyed, all Embarked models Force Disembark and are Pinned."
+    },
+    {
+      "id": "turret",
+      "name": "Turret",
+      "shortDesc": "270–360° firing arc depending on model.",
+      "fullDesc": "This weapon is considered to have a 270 to 360 degree arc of fire depending on the model."
+    },
+    {
+      "id": "very-bulky",
+      "name": "Very Bulky",
+      "shortDesc": "Takes 3 Transport spaces, including Fire Ports.",
+      "fullDesc": "This model takes up 3 Transport spaces. This includes Firing Ports when manning them."
+    },
+    {
+      "id": "void-shields",
+      "name": "Void Shields #",
+      "shortDesc": "Treats all Armour Facings as 12 vs ranged. Each Penetration removes a shield. 5+ Invuln once shields fall.",
+      "fullDesc": "Models with this rule treat all Armour Facings as 12 against ranged attacks. Each time a ranged attack Penetrates this Armour Facing, ignore the result and remove one Shield. Once all Shields have fallen, use normal Armour Facings. Against ranged attacks that Penetrate once Void Shields have fallen, this model has a 5+ Invulnerability Save. Against all ranged attacks that Glance, even if Shields have fallen, this model has a 5+ Invulnerability Save."
+    },
+    {
+      "id": "wreckage",
+      "name": "Wreckage",
+      "shortDesc": "Destroyed Vehicle becomes T7 terrain with Wounds equal to its starting Wound count.",
+      "fullDesc": "A Vehicle or Titanic Vehicle that becomes Wrecked remains as a new piece of terrain. It becomes T7 terrain with a Wound count equal to its original Wound count. Excess Wounds that caused its destruction are lost. Wreckage of unspecified origins has W10 for normal Vehicles and W20 for Titanic."
+    },
+    {
+      "id": "bolter",
+      "name": "Bolter",
+      "shortDesc": "Bolter-type weapon. Interacts with Bolter Discipline and similar faction rules.",
+      "fullDesc": "This weapon is a Bolter-type weapon and interacts with faction rules that reference the Bolter keyword, such as Bolter Discipline and Malicious Volleys."
+    },
+    {
+      "id": "swarm",
+      "name": "Swarm",
+      "shortDesc": "Can Clog the Barrels of Monsters and Vehicles in Melee. Takes +1 Wound from Blast/Flame weapons.",
+      "fullDesc": "When a Monstrous Infantry, Monster, or Vehicle model is in base contact with a Swarm in Close Combat, it may not fire any weapons to targets outside of its melee except Flame Throwers. Swarms cannot Clog the Barrels of Titanic models. Swarms take 1 extra wound when wounded by Blast or Flame weapons."
+    },
+    {
+      "id": "infantry",
+      "name": "Infantry",
+      "shortDesc": "Standard foot soldier. Can claim Objectives. 2\" coherency.",
+      "fullDesc": "Infantry models are the only type that can claim or Contest Objective Markers. Infantry maintain 2\" coherency between models."
+    },
+    {
+      "id": "monstrous-infantry",
+      "name": "Monstrous Infantry",
+      "shortDesc": "Bridges Infantry and Monsters. Can fire in Melee at –1 To Hit. Monsterbane must reroll failed To Wound against them.",
+      "fullDesc": "Monstrous Infantry can fire any weapon while in Melee with a –1 To Hit and +1 To Scatter distances. They may even fire out of Melee. Monsterbane weapons must reroll failed To Wound rolls against Monstrous Infantry."
+    },
+    {
+      "id": "monster",
+      "name": "Monster",
+      "shortDesc": "Organic tank equivalent. High T, good melee. Vulnerable to Monsterbane. Can fire in Melee at –1 To Hit.",
+      "fullDesc": "Monsters boast high Toughness and good melee. Monsterbane inflicts +1 extra wound when they fail saves. Monsters can fire any weapon in Melee with –1 To Hit and +1 To Scatter. Monsters may move through Occupiable Terrain, trading Auto Hits with it."
+    },
+    {
+      "id": "vehicle",
+      "name": "Vehicle",
+      "shortDesc": "Uses Armour Facings instead of Toughness. Subject to Vehicle Damage Chart on Penetrating hits.",
+      "fullDesc": "Vehicles use Front, Side, and Rear Armour Facings instead of Toughness. To Penetrate, roll d6 + weapon Strength against the relevant Armour Facing. A tie or a natural 6 causes a Glancing Hit; exceeding the value causes a Penetrating Hit with a Vehicle Damage Chart result."
+    },
+    {
+      "id": "fear",
+      "name": "Fear",
+      "shortDesc": "Enemy units must pass a Ld test or suffer penalties in Melee.",
+      "fullDesc": "Units in Melee with a model that has Fear must pass a Leadership test at the start of the Melee phase or suffer penalties as defined by the Fear-causing model's rules."
+    },
+    {
+      "id": "we-shall-know-no-fear",
+      "name": "We Shall Know No Fear",
+      "shortDesc": "Auto-passes Rally tests for fleeing allies. Functions like Fearless for rallying purposes.",
+      "fullDesc": "Models with We Shall Know No Fear automatically pass Ld tests for Rallying and do not test for fleeing allies."
+    }
+  ]
+}
