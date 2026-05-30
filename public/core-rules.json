@@ -196,7 +196,7 @@
     },
     {
       "id": "haywire",
-      "name": "Haywire (#+)",
+      "name": "Haywire",
       "shortDesc": "Always Glances a Vehicle on #+. Natural 6 to Penetrate always counts as Penetration.",
       "fullDesc": "Haywire will always Glance a Vehicle or Titanic Vehicle on a #+. A natural roll of a 6 to Penetrate, regardless of the Armour Value, is always considered a Penetration."
     },
@@ -340,7 +340,7 @@
     },
     {
       "id": "poisoned",
-      "name": "Poisoned (#+)",
+      "name": "Poisoned",
       "shortDesc": "Always wounds Infantry/Monsters on #+. Only wounds/Glances Vehicles on 6+.",
       "fullDesc": "Poisoned weapons always wound Infantry, Monstrous Infantry, Monsters, and Titanic Monsters on a #+. They only ever wound or Glance a Building or Vehicle and Titanic Vehicle on a 6+."
     },
@@ -412,7 +412,7 @@
     },
     {
       "id": "sniper",
-      "name": "Sniper (#+)",
+      "name": "Sniper",
       "shortDesc": "Choose target model. Auto-wounds on #+. Rending. Causes Pinning.",
       "fullDesc": "Sniper weapons may select the model targeted by the attacks. Snipers automatically wound Infantry, Monstrous Infantry, Monsters, Titanic Monsters, and Swarms on a #+, and are considered Rending weapons. Wounds caused by Snipers also cause Pinning Tests."
     },
@@ -460,7 +460,7 @@
     },
     {
       "id": "transport",
-      "name": "Transport #",
+      "name": "Transport",
       "shortDesc": "May carry up to # Infantry models. Bulky = 2 spaces, Very Bulky = 3.",
       "fullDesc": "Models may Embark or Disembark in the Movement Phase by moving into base contact or from designated exit points. Infantry take up one space, Bulky models take two, Very Bulky take three. If destroyed, all Embarked models Force Disembark and are Pinned."
     },
@@ -478,7 +478,7 @@
     },
     {
       "id": "void-shields",
-      "name": "Void Shields #",
+      "name": "Void Shields",
       "shortDesc": "Treats all Armour Facings as 12 vs ranged. Each Penetration removes a shield. 5+ Invuln once shields fall.",
       "fullDesc": "Models with this rule treat all Armour Facings as 12 against ranged attacks. Each time a ranged attack Penetrates this Armour Facing, ignore the result and remove one Shield. Once all Shields have fallen, use normal Armour Facings. Against ranged attacks that Penetrate once Void Shields have fallen, this model has a 5+ Invulnerability Save. Against all ranged attacks that Glance, even if Shields have fallen, this model has a 5+ Invulnerability Save."
     },
@@ -535,6 +535,30 @@
       "name": "We Shall Know No Fear",
       "shortDesc": "Auto-passes Rally tests for fleeing allies. Functions like Fearless for rallying purposes.",
       "fullDesc": "Models with We Shall Know No Fear automatically pass Ld tests for Rallying and do not test for fleeing allies."
+    },
+    {
+      "id": "tank",
+      "name": "Tank",
+      "shortDesc": "Vehicle type: can Tank Shock.",
+      "fullDesc": "This model is a Tank. It may perform Tank Shocks and Ram attacks."
+    },
+    {
+      "id": "open-topped",
+      "name": "Open Topped",
+      "shortDesc": "Passengers may shoot but are vulnerable to Blasts.",
+      "fullDesc": "Models embarked on this vehicle may fire their weapons. However, Blast and Template weapons that hit the vehicle also roll to wound/penetrate against each embarked model."
+    },
+    {
+      "id": "rampage",
+      "name": "Rampage",
+      "shortDesc": "Gains A+d3 if outnumbered in Melee.",
+      "fullDesc": "This model gains A+d3 if outnumbered in Melee."
+    },
+    {
+      "id": "two-handed",
+      "name": "Two-Handed",
+      "shortDesc": "Cannot be used alongside another weapon.",
+      "fullDesc": "A model armed with this weapon cannot use any other melee weapon in the same Fight phase."
     }
   ]
 }

@@ -35,16 +35,14 @@
         2
       ],
       "Ded. Transport": [
-        0,
-        null
+        0
       ],
       "Lord of War": [
         0,
         1
       ],
       "Fortification": [
-        0,
-        null
+        0
       ]
     },
     "subfactions": [
@@ -65,10 +63,14 @@
         "name": "Maynarkh Dynasty",
         "rules": [
           {
-            "id": "wrath-form"
+            "id": "wrath-form",
+            "name": "Conquerors",
+            "fullDesc": "All Infantry models in this army gain Objective Secured."
           },
           {
-            "id": "vanquish-the-living"
+            "id": "vanquish-the-living",
+            "name": "Flayer Virus",
+            "fullDesc": "All models in this army suffer Ld-2."
           }
         ]
       },
@@ -77,10 +79,19 @@
         "name": "Mephrit Dynasty",
         "rules": [
           {
-            "id": "particle-focus"
+            "id": "particle-focus",
+            "name": "Leaderless",
+            "fullDesc": "Each model only counts as half a model for the purposes of Contesting and Claiming Objective Markers."
           },
           {
-            "id": "united-in-destruction"
+            "id": "united-in-destruction",
+            "name": "Infighting",
+            "fullDesc": "No unit can ever have more than one Character or Independent Character joined at any given time, or any Aura from more than one Necron Character or Independent Character affecting them at any given time."
+          },
+          {
+            "id": "the-power-of-the-stars",
+            "name": "The Power of the Stars",
+            "fullDesc": "All weapons that are not Tesla have the Rending special rule. If a model already had Rending, it may trigger on a 4+ instead of a 5+. This does not affect Auto Wounds or any other Wound that does not have a Roll To Wound. Necron Vehicles explode on a 4+ from this Dynasty."
           }
         ]
       },
@@ -89,10 +100,14 @@
         "name": "Nephrekh Dynasty",
         "rules": [
           {
-            "id": "translocation-protocols"
+            "id": "translocation-protocols",
+            "name": "Abundant Precious Metals",
+            "fullDesc": "Models in this army may reroll 1s on Armour Saves."
           },
           {
-            "id": "relentless-march"
+            "id": "relentless-march",
+            "name": "Yearn for Pure Light Forms",
+            "fullDesc": "All models gain Fleet but cannot Claim or Contest Objective Markers."
           }
         ]
       },
@@ -101,10 +116,14 @@
         "name": "Nihilakh Dynasty",
         "rules": [
           {
-            "id": "quantum-shielding"
+            "id": "quantum-shielding",
+            "name": "Treasure Horde",
+            "fullDesc": "All models in your army have Objective Secured for Objective Markers within your Deployment Zone."
           },
           {
-            "id": "the-stars-are-right"
+            "id": "the-stars-are-right",
+            "name": "Isolationists",
+            "fullDesc": "Your models cannot Claim or Contest Objective Markers inside the Enemy Deployment Zone."
           }
         ]
       },
@@ -113,10 +132,14 @@
         "name": "Novokh Dynasty",
         "rules": [
           {
-            "id": "wrath-form"
+            "id": "wrath-form",
+            "name": "Ferric's Blight",
+            "fullDesc": "All models from this Dynasty suffer Sv+1, resulting in 1 worse Armour Save. This does not affect Unique Characters."
           },
           {
-            "id": "hardwired-for-destruction"
+            "id": "hardwired-for-destruction",
+            "name": "Blood Crazed",
+            "fullDesc": "All models in your army gain Shock Assault and Furious Charge. This does not affect Unique Characters."
           }
         ]
       },
@@ -125,13 +148,19 @@
         "name": "Szarekhan Dynasty",
         "rules": [
           {
-            "id": "agents-of-the-silent-king"
+            "id": "agents-of-the-silent-king",
+            "name": "Dark Origins",
+            "fullDesc": "All models have I1, regardless of their Datasheet. Unique Characters are not affected by this."
           },
           {
-            "id": "surrogate-hosts"
+            "id": "surrogate-hosts",
+            "name": "Blackstone Experts",
+            "fullDesc": "Each unit of Infantry may attempt to Deny the Witch once per Round."
           },
           {
-            "id": "mechanical-augmentation"
+            "id": "mechanical-augmentation",
+            "name": "King's Chosen",
+            "fullDesc": "Every Infantry and Monstrous Infantry model has Bodyguard."
           }
         ]
       },
@@ -140,13 +169,14 @@
         "name": "Sautekh Dynasty",
         "rules": [
           {
-            "id": "my-will-be-done"
+            "id": "my-will-be-done",
+            "name": "Aggressive Territory Grab",
+            "fullDesc": "Models count as 2 models for the purposes of Contesting and Claiming Objective Markers that are not in an enemy Deployment Zone. Units eligible to declare charges must do so. They may still nominate to fire their weapons or advance, even if this invalidates the chance to Declare a Charge."
           },
           {
-            "id": "relentless-march"
-          },
-          {
-            "id": "counter-tactics"
+            "id": "relentless-march",
+            "name": "Slavers",
+            "fullDesc": "Characters and Independent Characters must accept all Challenges issued. If more than one eligible model is available, you may nominate which one accepts the Challenge."
           }
         ]
       }
@@ -502,13 +532,11 @@
       "name": "Void Blade",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "4+",
           "rules": [
-            "rending"
+            "Rending",
+            "Extra Attack 1"
           ]
         }
       ]
@@ -518,9 +546,6 @@
       "name": "Hyperphase Sword",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "3+"
         }
@@ -531,14 +556,19 @@
       "name": "Staff of Light",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "User",
-          "ap": "4+",
+          "label": "Ranged",
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "3+",
           "rules": [
-            "assault"
+            "Assault 3",
+            "Gauss"
           ]
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "3+"
         }
       ]
     },
@@ -547,13 +577,10 @@
       "name": "War Glaive",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
-          "ap": "3+",
+          "ap": "2+",
           "rules": [
-            "two-handed"
+            "Counterattack"
           ]
         }
       ]
@@ -563,14 +590,11 @@
       "name": "Warscythe",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "armourbane",
-            "two-handed"
+            "Slow",
+            "Monsterbane"
           ]
         }
       ]
@@ -580,14 +604,10 @@
       "name": "Flensing Claw",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+",
+          "ap": "5+",
           "rules": [
-            "rending",
-            "extra-attack"
+            "Extra Attack 2"
           ]
         }
       ]
@@ -597,14 +617,8 @@
       "name": "Hyperphase Harvester",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "User",
-          "ap": "3+",
-          "rules": [
-            "extra-attack"
-          ]
+          "strength": "+2",
+          "ap": "1+"
         }
       ]
     },
@@ -613,13 +627,10 @@
       "name": "Emphatic Obliterator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
-          "ap": "2+",
+          "ap": "3+",
           "rules": [
-            "monsterbane"
+            "Psionic Shockwave — All Characters and Independent Characters slain by this model explode in a S4 AP- in a 6\" Radius. This does not affect friendly models."
           ]
         }
       ]
@@ -630,20 +641,22 @@
       "profiles": [
         {
           "label": "Ranged",
-          "minRange": null,
           "maxRange": 18,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1",
+            "3\" Blast",
+            "No Invulnerability Saves"
           ]
         },
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+"
+          "ap": "3+",
+          "rules": [
+            "No Invulnerability Saves"
+          ]
         }
       ]
     },
@@ -653,20 +666,17 @@
       "profiles": [
         {
           "label": "Ranged",
-          "minRange": null,
           "maxRange": 18,
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "lance"
+            "Assault 1"
           ]
         },
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
-          "strength": "+1",
-          "ap": "3+"
+          "strength": "User",
+          "ap": "2+"
         }
       ]
     },
@@ -675,13 +685,10 @@
       "name": "Chronotendrils",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+",
+          "ap": "-",
           "rules": [
-            "extra-attack"
+            "Extra Attack 2"
           ]
         }
       ]
@@ -691,14 +698,8 @@
       "name": "Scything Limbs",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+",
-          "rules": [
-            "extra-attack"
-          ]
+          "ap": "5+"
         }
       ]
     },
@@ -708,20 +709,18 @@
       "profiles": [
         {
           "label": "Ranged",
-          "minRange": null,
-          "maxRange": 12,
+          "maxRange": 18,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "assault"
+            "Assault 3",
+            "Lance"
           ]
         },
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "3+"
+          "ap": "2+"
         }
       ]
     },
@@ -730,14 +729,11 @@
       "name": "Flayer Claw",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+",
+          "ap": "5+",
           "rules": [
-            "rending",
-            "extra-attack"
+            "Rending",
+            "Extra Attack 1"
           ]
         }
       ]
@@ -747,13 +743,10 @@
       "name": "Hyperphase Sword and Dispersion Shield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "User",
+          "strength": "+1",
           "ap": "3+",
           "rules": [
-            "feel-no-pain"
+            "Dispersion Shield — Sv-1, 4+ Invulnerability Save"
           ]
         }
       ]
@@ -763,15 +756,8 @@
       "name": "Automation Claws",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "User",
-          "ap": "3+",
-          "rules": [
-            "extra-attack",
-            "rending"
-          ]
+          "strength": "+2",
+          "ap": "3+"
         }
       ]
     },
@@ -780,15 +766,8 @@
       "name": "Tomb Sentinel Claws",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "2+",
-          "rules": [
-            "armourbane",
-            "extra-attack"
-          ]
+          "ap": "3+"
         }
       ]
     },
@@ -797,14 +776,8 @@
       "name": "Reanimator Claws",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "+1",
-          "ap": "4+",
-          "rules": [
-            "extra-attack"
-          ]
+          "strength": "User",
+          "ap": "4+"
         }
       ]
     },
@@ -813,9 +786,6 @@
       "name": "Enmitic Disintegrator (Melee)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "4+"
         }
@@ -826,13 +796,10 @@
       "name": "Hyperphase Threshers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "3+",
           "rules": [
-            "extra-attack"
+            "Extra Attack 1"
           ]
         }
       ]
@@ -842,14 +809,8 @@
       "name": "Hyperphase Reap-Blade",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
-          "ap": "2+",
-          "rules": [
-            "armourbane"
-          ]
+          "ap": "1+"
         }
       ]
     },
@@ -858,14 +819,8 @@
       "name": "Stalker Forelimbs",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "User",
-          "ap": "3+",
-          "rules": [
-            "extra-attack"
-          ]
+          "strength": "+2",
+          "ap": "3+"
         }
       ]
     },
@@ -874,15 +829,8 @@
       "name": "Vicious Blades",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+",
-          "rules": [
-            "rending",
-            "extra-attack"
-          ]
+          "ap": "4+"
         }
       ]
     },
@@ -891,14 +839,10 @@
       "name": "Feeder Mandibles",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "6+",
+          "ap": "-",
           "rules": [
-            "haywire",
-            "extra-attack"
+            "Gauss"
           ]
         }
       ]
@@ -908,14 +852,10 @@
       "name": "Golden Fists",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "+2",
-          "ap": "2+",
+          "strength": "+3",
+          "ap": "3+",
           "rules": [
-            "armourbane",
-            "extra-attack"
+            "Sniper (2+)"
           ]
         }
       ]
@@ -925,14 +865,12 @@
       "name": "Scythe of the Nightbringer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "X2",
+          "strength": "User",
           "ap": "2+",
           "rules": [
-            "armourbane",
-            "monsterbane"
+            "Poisoned (2+)",
+            "Monsterbane",
+            "No Invulnerability Save"
           ]
         }
       ]
@@ -943,22 +881,21 @@
       "profiles": [
         {
           "label": "Ranged",
-          "minRange": null,
           "maxRange": 24,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "lance"
+            "Assault 2",
+            "Lance",
+            "Monsterbane"
           ]
         },
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
-          "strength": "X2",
+          "strength": "3+",
           "ap": "1+",
           "rules": [
-            "armourbane"
+            "Armourbane"
           ]
         }
       ]
@@ -968,13 +905,11 @@
       "name": "Canoptek Tail Blades",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "3+",
+          "ap": "4+",
           "rules": [
-            "extra-attack"
+            "Extra Attack 1",
+            "Auxiliary"
           ]
         }
       ]
@@ -984,19 +919,9 @@
       "name": "Crackling Tendrils",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "3+",
-          "rules": [
-            "extra-attack",
-            "tesla"
-          ]
+          "ap": "1+"
         }
-      ],
-      "keywords": [
-        "Tesla"
       ]
     },
     {
@@ -1004,15 +929,11 @@
       "name": "Titanic Forelimbs",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "X2",
-          "ap": "2+",
+          "strength": "D",
+          "ap": "1+",
           "rules": [
-            "armourbane",
-            "extra-attack",
-            "destroyer"
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -1023,20 +944,18 @@
       "profiles": [
         {
           "label": "Ranged",
-          "minRange": null,
           "maxRange": 36,
           "strength": "9",
           "ap": "1+",
           "rules": [
-            "lance"
+            "Assault 1",
+            "Lance"
           ]
         },
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
-          "strength": "+2",
-          "ap": "2+"
+          "strength": "User",
+          "ap": "1+"
         }
       ]
     },
@@ -1045,21 +964,11 @@
       "name": "Staff of Tomorrow",
       "profiles": [
         {
-          "label": "Ranged",
-          "minRange": null,
-          "maxRange": 24,
-          "strength": "7",
-          "ap": "3+",
-          "rules": [
-            "rapid-fire"
-          ]
-        },
-        {
-          "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+"
+          "ap": "2+",
+          "rules": [
+            "No Invulnerability Saves"
+          ]
         }
       ]
     },
@@ -1068,14 +977,12 @@
       "name": "Enmitic Annihilator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "User",
-          "ap": "3+",
+          "maxRange": 18,
+          "strength": "6",
+          "ap": "4+",
           "rules": [
-            "rending",
-            "destroyer"
+            "Assault 1",
+            "3\" Blast"
           ]
         }
       ]
@@ -1085,13 +992,11 @@
       "name": "Scouring Eye",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 18,
+          "maxRange": 12,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Pistol 2"
           ]
         }
       ]
@@ -1101,13 +1006,11 @@
       "name": "Particle Caster",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
-          "strength": "6",
-          "ap": "4+",
+          "strength": "5",
+          "ap": "3+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ]
@@ -1117,14 +1020,11 @@
       "name": "6 Linked Enmitic Disintegrators",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 24,
+          "maxRange": 18,
           "strength": "5",
-          "ap": "4+",
+          "ap": "5+",
           "rules": [
-            "assault",
-            "auto-hit"
+            "Pistol 1 x6"
           ]
         }
       ]
@@ -1134,13 +1034,12 @@
       "name": "Tesla Carbine",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
-          "ap": "5+",
+          "ap": "-",
           "rules": [
-            "tesla"
+            "Assault 2",
+            "Tesla"
           ]
         }
       ],
@@ -1153,14 +1052,12 @@
       "name": "Gauss Blaster",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 24,
+          "maxRange": 30,
           "strength": "5",
-          "ap": "3+",
+          "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "gauss"
+            "Rapid Fire 1",
+            "Gauss"
           ]
         }
       ],
@@ -1173,14 +1070,12 @@
       "name": "Gauss Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "rapid-fire",
-            "gauss"
+            "Rapid Fire 2",
+            "Gauss"
           ]
         }
       ],
@@ -1193,14 +1088,12 @@
       "name": "Gauss Flayer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "gauss"
+            "Rapid Fire 1",
+            "Gauss"
           ]
         }
       ],
@@ -1213,14 +1106,12 @@
       "name": "Gauss Reaper",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 18,
+          "maxRange": 12,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault",
-            "gauss"
+            "Assault 2",
+            "Gauss"
           ]
         }
       ],
@@ -1233,14 +1124,12 @@
       "name": "Synaptic Disintegrator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
-          "strength": "4",
-          "ap": "5+",
+          "strength": "5",
+          "ap": "4+",
           "rules": [
-            "sniper",
-            "pinning"
+            "Heavy 2",
+            "Sniper"
           ]
         }
       ]
@@ -1250,14 +1139,12 @@
       "name": "Relic Gauss Blaster",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
-          "strength": "6",
-          "ap": "2+",
+          "strength": "5",
+          "ap": "3+",
           "rules": [
-            "rapid-fire",
-            "gauss"
+            "Rapid Fire 2",
+            "Gauss"
           ]
         }
       ],
@@ -1270,14 +1157,11 @@
       "name": "Gauntlet of Fire",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "assault",
-            "auto-hit"
+            "Assault 1",
+            "Auto Hit"
           ]
         }
       ],
@@ -1288,14 +1172,14 @@
       "name": "Tachyon Arrow",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 120,
-          "strength": "10",
+          "maxRange": 24,
+          "strength": "D",
           "ap": "1+",
           "rules": [
-            "one-use-only",
-            "lance"
+            "Assault 1",
+            "Destroyer",
+            "Monsterbane",
+            "One Use Only"
           ]
         }
       ]
@@ -1305,14 +1189,12 @@
       "name": "2 Linked Tesla Destructors",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
-          "strength": "7",
-          "ap": "3+",
+          "strength": "6",
+          "ap": "-",
           "rules": [
-            "tesla",
-            "linked"
+            "Assault 3 x2",
+            "Tesla"
           ]
         }
       ],
@@ -1325,14 +1207,12 @@
       "name": "2 Linked Tesla Carbines",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
-          "ap": "5+",
+          "ap": "-",
           "rules": [
-            "tesla",
-            "linked"
+            "Assault 2 x2",
+            "Tesla"
           ]
         }
       ],
@@ -1345,15 +1225,12 @@
       "name": "5 Linked Gauss Flayers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "gauss",
-            "linked"
+            "Rapid Fire 1 x5",
+            "Gauss"
           ]
         }
       ],
@@ -1366,15 +1243,12 @@
       "name": "4 Gauss Arc Fluxes",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
-          "ap": "3+",
+          "ap": "4+",
           "rules": [
-            "gauss",
-            "linked",
-            "ordnance"
+            "Rapid Fire 5 x4",
+            "Gauss"
           ]
         }
       ],
@@ -1387,14 +1261,12 @@
       "name": "4 Tesla Spheres",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
-          "strength": "7",
-          "ap": "3+",
+          "strength": "6",
+          "ap": "-",
           "rules": [
-            "tesla",
-            "linked"
+            "Assault 5",
+            "Tesla"
           ]
         }
       ],
@@ -1407,25 +1279,14 @@
       "name": "Doomsday Blaster (Ark)",
       "profiles": [
         {
-          "label": "Low Power",
-          "minRange": null,
-          "maxRange": 24,
-          "strength": "9",
-          "ap": "2+",
-          "rules": [
-            "ordnance",
-            "blast"
-          ]
-        },
-        {
-          "label": "High Power",
-          "minRange": null,
           "maxRange": 72,
-          "strength": "10",
+          "strength": "D",
           "ap": "1+",
           "rules": [
-            "ordnance",
-            "blast"
+            "Heavy 1",
+            "3\" Blast",
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -1435,15 +1296,14 @@
       "name": "Doomsday Blaster (Stalker)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 72,
-          "strength": "9",
+          "maxRange": 36,
+          "strength": "8",
           "ap": "2+",
           "rules": [
-            "ordnance",
-            "blast",
-            "steady"
+            "Heavy 1",
+            "5\" Blast",
+            "Lance",
+            "Monsterbane"
           ]
         }
       ]
@@ -1453,14 +1313,11 @@
       "name": "2 Linked Atomizer Beams",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 18,
-          "strength": "8",
-          "ap": "2+",
+          "maxRange": 12,
+          "strength": "6",
+          "ap": "4+",
           "rules": [
-            "assault",
-            "linked"
+            "Assault 3 x2"
           ]
         }
       ]
@@ -1470,13 +1327,12 @@
       "name": "2 Linked Particle Beamers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "6",
-          "ap": "4+",
+          "ap": "5+",
           "rules": [
-            "linked"
+            "Heavy 1 x2",
+            "3\" Blast"
           ]
         }
       ]
@@ -1486,8 +1342,6 @@
       "name": "Particle Beamer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "6",
           "ap": "4+"
@@ -1499,15 +1353,12 @@
       "name": "2 Linked Gauss Blasters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 24,
+          "maxRange": 30,
           "strength": "5",
-          "ap": "3+",
+          "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "gauss",
-            "linked"
+            "Rapid Fire 1 x2",
+            "Gauss"
           ]
         }
       ],
@@ -1520,15 +1371,12 @@
       "name": "2 Linked Gauss Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "rapid-fire",
-            "gauss",
-            "linked"
+            "Rapid Fire 2 x2",
+            "Gauss"
           ]
         }
       ],
@@ -1541,15 +1389,12 @@
       "name": "2 Linked Gauss Flayers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "gauss",
-            "linked"
+            "Rapid Fire 1 x2",
+            "Gauss"
           ]
         }
       ],
@@ -1562,15 +1407,13 @@
       "name": "2 Sets of 5 Linked Gauss Flayers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "gauss",
-            "linked"
+            "Rapid Fire 1 x5 (x2)",
+            "Gauss",
+            "Broadside — Each set may only fire out one side as if Hull Mounted"
           ]
         }
       ],
@@ -1583,14 +1426,12 @@
       "name": "Particle Shredder",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
-          "strength": "6",
+          "strength": "7",
           "ap": "4+",
           "rules": [
-            "ordnance",
-            "blast"
+            "Heavy 1",
+            "5\" Blast"
           ]
         }
       ]
@@ -1601,23 +1442,22 @@
       "profiles": [
         {
           "label": "Focused",
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
-          "ap": "2+",
+          "ap": "1+",
           "rules": [
-            "melta"
+            "Heavy 2",
+            "Melta",
+            "(Monsterbane)"
           ]
         },
         {
           "label": "Dispersed",
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault",
-            "auto-hit"
+            "Assault 1",
+            "Auto Hit"
           ]
         }
       ],
@@ -1628,15 +1468,12 @@
       "name": "2 Linked Heavy Gauss Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "gauss",
-            "linked",
-            "ordnance"
+            "Heavy 1 x2",
+            "Gauss"
           ]
         }
       ],
@@ -1650,22 +1487,20 @@
       "profiles": [
         {
           "label": "Particle Caster",
-          "minRange": null,
           "maxRange": 12,
-          "strength": "6",
-          "ap": "4+",
+          "strength": "5",
+          "ap": "3+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         },
         {
           "label": "Void Blade",
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "4+",
           "rules": [
-            "rending"
+            "Rending",
+            "Extra Attack 1"
           ]
         }
       ]
@@ -1676,27 +1511,18 @@
       "profiles": [
         {
           "label": "Ranged",
-          "minRange": null,
           "maxRange": 12,
           "strength": "5",
-          "ap": "4+",
+          "ap": "2+",
           "rules": [
-            "assault"
+            "Assault 2"
           ]
         },
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+",
-          "rules": [
-            "gauss"
-          ]
+          "ap": "2+"
         }
-      ],
-      "keywords": [
-        "Gauss"
       ]
     },
     {
@@ -1704,14 +1530,12 @@
       "name": "Gauss Destructor",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
-          "strength": "8",
-          "ap": "2+",
+          "strength": "10",
+          "ap": "1+",
           "rules": [
-            "gauss",
-            "ordnance"
+            "Heavy 1",
+            "Gauss"
           ]
         }
       ],
@@ -1724,14 +1548,12 @@
       "name": "Enmitic Exterminator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 24,
+          "maxRange": 36,
           "strength": "7",
-          "ap": "3+",
+          "ap": "4+",
           "rules": [
-            "assault",
-            "blast"
+            "Heavy 1",
+            "5\" Blast"
           ]
         }
       ]
@@ -1741,15 +1563,13 @@
       "name": "Exile Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 18,
-          "strength": "8",
-          "ap": "2+",
+          "maxRange": 12,
+          "strength": "10",
+          "ap": "1+",
           "rules": [
-            "assault",
-            "one-use-only",
-            "blast"
+            "Heavy 1",
+            "3\" Blast",
+            "Monsterbane"
           ]
         }
       ]
@@ -1759,13 +1579,13 @@
       "name": "Cutting Beam",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "8",
+          "maxRange": 12,
+          "strength": "6",
           "ap": "2+",
           "rules": [
-            "melta"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -1775,19 +1595,14 @@
       "name": "Focused Death Ray",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
+          "maxRange": 48,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "beam",
-            "gauss"
+            "Heavy 1",
+            "Monsterbane"
           ]
         }
-      ],
-      "keywords": [
-        "Gauss"
       ]
     },
     {
@@ -1795,15 +1610,14 @@
       "name": "Gauss Exterminator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 60,
+          "maxRange": 120,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "gauss",
-            "ordnance",
-            "blast"
+            "Heavy 2",
+            "Gauss",
+            "Monsterbane",
+            "AA"
           ]
         }
       ],
@@ -1816,14 +1630,14 @@
       "name": "Heat Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
-          "strength": "9",
+          "strength": "10",
           "ap": "1+",
           "rules": [
-            "melta",
-            "blast"
+            "Heavy 2",
+            "3\" Blast",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -1833,13 +1647,14 @@
       "name": "Death Ray",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
+          "maxRange": 24,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "beam"
+            "Heavy 1",
+            "3\" Blast",
+            "Lance",
+            "Monsterbane"
           ]
         }
       ]
@@ -1849,60 +1664,71 @@
       "name": "Death Sphere",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "6",
-          "ap": "4+",
+          "strength": "10",
+          "ap": "1+",
           "rules": [
-            "bomb",
-            "blast"
+            "Heavy 1",
+            "5\" Blast",
+            "Pinning",
+            "Monsterbane"
           ]
         }
-      ]
+      ],
+      "templateType": "Bomb"
     },
     {
       "id": "tesseract-singularity-chamber",
       "name": "Tesseract Singularity Chamber",
       "profiles": [
         {
-          "label": "Singularity Bolt",
-          "minRange": null,
-          "maxRange": 24,
-          "strength": "8",
-          "ap": "2+",
+          "label": "Dispersed",
+          "strength": "6",
+          "ap": "3+",
           "rules": [
-            "assault"
+            "Assault 1",
+            "Auto Hit"
           ]
         },
         {
-          "label": "Vortex Collapse",
-          "minRange": null,
-          "maxRange": null,
-          "strength": "7",
-          "ap": "3+",
+          "label": "Focused",
+          "maxRange": 24,
+          "strength": "8",
+          "ap": "1+",
           "rules": [
-            "blast",
-            "one-use-only"
+            "Heavy 2",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
-      ]
+      ],
+      "templateType": "Flame"
     },
     {
       "id": "gauss-annihilator",
       "name": "Gauss Annihilator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 72,
-          "strength": "10",
+          "label": "Direct",
+          "maxRange": 120,
+          "strength": "D",
           "ap": "1+",
           "rules": [
-            "gauss",
-            "ordnance",
-            "blast",
-            "destroyer"
+            "Heavy 2",
+            "Destroyer",
+            "Monsterbane",
+            "AA"
+          ]
+        },
+        {
+          "label": "Blast",
+          "maxRange": 120,
+          "strength": "D",
+          "ap": "1+",
+          "rules": [
+            "Heavy 1",
+            "5\" Blast",
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ],
@@ -1915,14 +1741,13 @@
       "name": "2 Linked Singularity Generators",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 48,
-          "strength": "9",
-          "ap": "1+",
+          "maxRange": 36,
+          "strength": "8",
+          "ap": "2+",
           "rules": [
-            "linked",
-            "ordnance"
+            "Heavy 1",
+            "5\" Blast",
+            "Monsterbane"
           ]
         }
       ]
@@ -1932,14 +1757,23 @@
       "name": "2 Linked Synaptic Obliterators and Transdimensional Projectors",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 48,
-          "strength": "9",
-          "ap": "2+",
+          "label": "Obliterators",
+          "maxRange": 72,
+          "strength": "D",
+          "ap": "1+",
           "rules": [
-            "linked",
-            "pinning"
+            "Heavy 1 x2",
+            "Monsterbane"
+          ]
+        },
+        {
+          "label": "Projectors",
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "3+",
+          "rules": [
+            "Heavy 1 x2",
+            "3\" Blast"
           ]
         }
       ]
@@ -1949,14 +1783,14 @@
       "name": "Particle Whip",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
-          "strength": "7",
+          "strength": "8",
           "ap": "3+",
           "rules": [
-            "ordnance",
-            "blast"
+            "Heavy 1",
+            "5\" Blast",
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -1966,16 +1800,14 @@
       "name": "Gauss Obliterator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 60,
-          "strength": "10",
+          "maxRange": 24,
+          "strength": "D",
           "ap": "1+",
           "rules": [
-            "gauss",
-            "ordnance",
-            "blast",
-            "destroyer"
+            "Heavy 1",
+            "5\" Blast",
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ],
@@ -1988,16 +1820,14 @@
       "name": "Gauss Eradicator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 60,
-          "strength": "12",
+          "maxRange": 72,
+          "strength": "D",
           "ap": "1+",
           "rules": [
-            "gauss",
-            "ordnance",
-            "blast",
-            "destroyer"
+            "Heavy 1",
+            "10\" Blast",
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ],
@@ -2010,14 +1840,14 @@
       "name": "4 Death Rays",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
+          "maxRange": 24,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "beam",
-            "linked"
+            "Heavy 1 x4",
+            "3\" Blast",
+            "Lance",
+            "Monsterbane"
           ]
         }
       ]
@@ -2027,14 +1857,13 @@
       "name": "C'Tan Power: Cosmic Fire",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "5",
+          "maxRange": 24,
+          "strength": "6",
           "ap": "4+",
           "rules": [
-            "auto-hit",
-            "blast"
+            "Assault 1",
+            "5\" Blast",
+            "Ignores Cover"
           ]
         }
       ]
@@ -2044,13 +1873,12 @@
       "name": "C'Tan Power: Time's Arrow",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 18,
-          "strength": "4",
-          "ap": "5+",
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "2+",
           "rules": [
-            "sniper"
+            "Assault 2",
+            "Sniper (3+)"
           ]
         }
       ]
@@ -2060,13 +1888,13 @@
       "name": "C'Tan Power: Transdimensional Thunderbolt",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
-          "strength": "8",
-          "ap": "2+",
+          "strength": "9",
+          "ap": "1+",
           "rules": [
-            "assault"
+            "Assault 1",
+            "Tesla",
+            "Monsterbane"
           ]
         }
       ]
@@ -2076,15 +1904,11 @@
       "name": "C'Tan Power: Seismic Assault",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "5",
+          "maxRange": 24,
+          "strength": "6",
           "ap": "4+",
           "rules": [
-            "auto-hit",
-            "blast",
-            "pinning"
+            "Assault 10"
           ]
         }
       ]
@@ -2094,13 +1918,13 @@
       "name": "C'Tan Power: Antimatter Meteor",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
-          "strength": "9",
-          "ap": "2+",
+          "strength": "8",
+          "ap": "3+",
           "rules": [
-            "blast"
+            "Assault 1",
+            "5\" Blast",
+            "Monsterbane"
           ]
         }
       ]
@@ -2110,15 +1934,13 @@
       "name": "C'Tan Power: Sky of Falling Stars",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "5",
+          "maxRange": 24,
+          "strength": "7",
           "ap": "4+",
           "rules": [
-            "auto-hit",
-            "indirect",
-            "blast"
+            "Assault 3",
+            "3\" Blast",
+            "Monsterbane"
           ]
         }
       ]
@@ -2128,14 +1950,13 @@
       "name": "Charged C'Tan Power: Time's Arrow",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": 18,
-          "strength": "9",
-          "ap": "1+",
+          "maxRange": 36,
+          "strength": "5",
+          "ap": "2+",
           "rules": [
-            "sniper",
-            "armourbane"
+            "Assault 2",
+            "Sniper (2+)",
+            "Ignore Invulnerability Saves"
           ]
         }
       ]
@@ -2145,15 +1966,14 @@
       "name": "Charged C'Tan Power: Cosmic Fire",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
+          "maxRange": 36,
           "strength": "8",
-          "ap": "2+",
+          "ap": "3+",
           "rules": [
-            "auto-hit",
-            "blast",
-            "melta"
+            "Assault 1",
+            "5\" Blast",
+            "Monsterbane",
+            "Ignores Cover"
           ]
         }
       ]
@@ -2163,14 +1983,14 @@
       "name": "Charged C'Tan Power: Transdimensional Thunderbolt",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "assault",
-            "destroyer"
+            "Assault 2",
+            "Armourbane",
+            "Tesla",
+            "Monsterbane"
           ]
         }
       ]
@@ -2180,15 +2000,11 @@
       "name": "Charged C'Tan Power: Seismic Assault",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "8",
-          "ap": "2+",
+          "maxRange": 36,
+          "strength": "6",
+          "ap": "4+",
           "rules": [
-            "auto-hit",
-            "blast",
-            "ordnance"
+            "Assault 20"
           ]
         }
       ]
@@ -2198,16 +2014,12 @@
       "name": "Charged C'Tan Power: Sky of Falling Stars",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
+          "maxRange": 36,
           "strength": "7",
-          "ap": "2+",
+          "ap": "4+",
           "rules": [
-            "auto-hit",
-            "indirect",
-            "blast",
-            "ordnance"
+            "Assault 3",
+            "5\" Blast"
           ]
         }
       ]
@@ -2217,14 +2029,14 @@
       "name": "Charged C'Tan Power: Antimatter Meteor",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
-          "strength": "10",
-          "ap": "1+",
+          "strength": "8",
+          "ap": "3+",
           "rules": [
-            "blast",
-            "destroyer"
+            "Assault 1",
+            "10\" Blast",
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -2234,13 +2046,10 @@
       "name": "Necrodermis",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "feel-no-pain"
+            "4+ Invulnerability Save. Explodes on a 4+ S6 AP1+ d6\" Radius when destroyed."
           ]
         }
       ]
@@ -2250,13 +2059,10 @@
       "name": "Containment Field",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "shroud"
+            "5+ Invulnerability Save"
           ]
         }
       ]
@@ -2266,13 +2072,11 @@
       "name": "Dispersion Shield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "feel-no-pain"
+            "Sv-1",
+            "4+ Invulnerability Save"
           ]
         }
       ]
@@ -2282,14 +2086,10 @@
       "name": "Star God Forcefield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "feel-no-pain",
-            "shroud"
+            "5+ Invulnerability Save. This model explodes on a 4+ when destroyed."
           ]
         }
       ]
@@ -2299,15 +2099,12 @@
       "name": "Grav-Pulse",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
-          "strength": "-",
-          "ap": "-",
+          "strength": "10",
+          "ap": "2+",
           "rules": [
-            "auto-hit",
-            "haywire",
-            "assault"
+            "Auto Hit",
+            "Monsterbane"
           ]
         }
       ]
@@ -2317,13 +2114,10 @@
       "name": "Defense Field",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "feel-no-pain"
+            "6\" Aura: this model and target unit gain a 5+ Invulnerability Save"
           ]
         }
       ]
@@ -2333,14 +2127,10 @@
       "name": "Timesplinter Mantle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "feel-no-pain",
-            "prescient-strike"
+            "4+ Invulnerability Save"
           ]
         }
       ]
@@ -2350,13 +2140,10 @@
       "name": "Chronometron",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "prescient-strike"
+            "6\" Aura: this model and target unit gain a 5+ Invulnerability Save"
           ]
         }
       ]
@@ -2366,14 +2153,11 @@
       "name": "Whip Coils",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
-          "ap": "4+",
+          "ap": "-",
           "rules": [
-            "extra-attack",
-            "concussion"
+            "Extra Attack 1",
+            "+3 Initiative"
           ]
         }
       ]
@@ -2383,13 +2167,10 @@
       "name": "Sepulchral Scarabs",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "heal"
+            "Each Command Phase roll d6. On a 5+, Heal one additional Wound (ignores normal Heal rules)."
           ]
         }
       ]
@@ -2542,13 +2323,11 @@
           "baseWargear": [
             {
               "weaponId": "tesla-carbine",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             },
             {
               "weaponId": "warscythe",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             }
           ],
           "specialRules": [
@@ -2742,7 +2521,6 @@
           "applies": [
             "lord"
           ],
-          "replaces": null,
           "label": "Take secondary weapon",
           "weaponListId": "hq-secondary"
         },
@@ -3094,7 +2872,6 @@
           "applies": [
             "overlord"
           ],
-          "replaces": null,
           "label": "Take secondary weapon",
           "weaponListId": "hq-secondary"
         },
@@ -3238,7 +3015,6 @@
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Countertemporal Nanomines",
               "pts": 10,
               "grantsRules": [
@@ -3246,7 +3022,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Cryptogeometric Adjuster",
               "pts": 30,
               "grantsRules": [
@@ -3254,7 +3029,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Dimensional Sanctum",
               "pts": 40,
               "grantsRules": [
@@ -3262,7 +3036,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Hyper Material Ablator",
               "pts": 60,
               "grantsRules": [
@@ -3270,7 +3043,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Photonic Transubjector",
               "pts": 5,
               "grantsRules": [
@@ -3278,7 +3050,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Prismatic Obfuscatron",
               "pts": 10,
               "grantsRules": [
@@ -3377,7 +3148,6 @@
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Countertemporal Nanomines",
               "pts": 10,
               "grantsRules": [
@@ -3385,7 +3155,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Cryptogeometric Adjuster",
               "pts": 30,
               "grantsRules": [
@@ -3393,7 +3162,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Dimensional Sanctum",
               "pts": 40,
               "grantsRules": [
@@ -3401,7 +3169,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Hyper Material Ablator",
               "pts": 60,
               "grantsRules": [
@@ -3409,7 +3176,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Photonic Transubjector",
               "pts": 5,
               "grantsRules": [
@@ -3417,7 +3183,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Prismatic Obfuscatron",
               "pts": 10,
               "grantsRules": [
@@ -3476,7 +3241,6 @@
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Countertemporal Nanomines",
               "pts": 10,
               "grantsRules": [
@@ -3484,7 +3248,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Cryptogeometric Adjuster",
               "pts": 30,
               "grantsRules": [
@@ -3492,7 +3255,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Dimensional Sanctum",
               "pts": 40,
               "grantsRules": [
@@ -3500,7 +3262,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Hyper Material Ablator",
               "pts": 60,
               "grantsRules": [
@@ -3508,7 +3269,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Photonic Transubjector",
               "pts": 5,
               "grantsRules": [
@@ -3516,7 +3276,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Prismatic Obfuscatron",
               "pts": 10,
               "grantsRules": [
@@ -3574,7 +3333,6 @@
           "label": "Technomancer tools (one of each)",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Canoptek Cloak",
               "pts": 18,
               "grantsRules": [
@@ -3582,7 +3340,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Canoptek Control Node",
               "pts": 20,
               "grantsRules": [
@@ -3598,7 +3355,6 @@
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Countertemporal Nanomines",
               "pts": 10,
               "grantsRules": [
@@ -3606,7 +3362,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Cryptogeometric Adjuster",
               "pts": 30,
               "grantsRules": [
@@ -3614,7 +3369,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Dimensional Sanctum",
               "pts": 40,
               "grantsRules": [
@@ -3622,7 +3376,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Hyper Material Ablator",
               "pts": 60,
               "grantsRules": [
@@ -3630,7 +3383,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Photonic Transubjector",
               "pts": 5,
               "grantsRules": [
@@ -3638,7 +3390,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Prismatic Obfuscatron",
               "pts": 10,
               "grantsRules": [
@@ -4196,7 +3947,6 @@
           "label": "Each Spyder may take",
           "choices": [
             {
-              "upgradeId": null,
               "label": "2 Linked Particle Beamers",
               "pts": 20,
               "grantsWeapons": [
@@ -4212,7 +3962,6 @@
           "label": "Each Spyder may take (one of each)",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Repair Drones",
               "pts": 6,
               "grantsRules": [
@@ -4220,7 +3969,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Fabricator Array",
               "pts": 6,
               "grantsRules": [
@@ -4228,7 +3976,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Repair Barge",
               "pts": 30,
               "grantsRules": [
@@ -4236,7 +3983,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Scarab Hive",
               "pts": 99,
               "grantsRules": [
@@ -4244,7 +3990,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Gloom Prison",
               "pts": 2,
               "grantsRules": [
@@ -4307,7 +4052,6 @@
           "label": "Take one Heavy weapon",
           "choices": [
             {
-              "upgradeId": null,
               "label": "2 Sets of 5 Linked Gauss Flayers",
               "pts": 25,
               "grantsWeapons": [
@@ -4323,7 +4067,6 @@
           "label": "Optional upgrades",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Gloom Prison",
               "pts": 2,
               "grantsRules": [
@@ -4331,7 +4074,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Sepulchral Scarabs",
               "pts": 2,
               "grantsRules": [
@@ -4529,11 +4271,7 @@
                 "Primary"
               ]
             },
-            {
-              "weaponId": "stalker-forelimbs",
-              "arcType": null,
-              "mountingTags": []
-            }
+            "stalker-forelimbs"
           ],
           "specialRules": [
             "vehicle",
@@ -4671,7 +4409,6 @@
           "label": "Entire unit upgrades (one of each)",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Nebuloscope",
               "pts": 2,
               "grantsRules": [
@@ -4679,7 +4416,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Shadowloom",
               "pts": 3,
               "grantsRules": [
@@ -4687,7 +4423,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Shield Vanes",
               "pts": 2,
               "grantsRules": [
@@ -4877,7 +4612,6 @@
           "label": "Optional upgrades",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Gloom Prison",
               "pts": 2,
               "grantsRules": [
@@ -4885,7 +4619,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Sepulchral Scarabs",
               "pts": 2,
               "grantsRules": [
@@ -5009,7 +4742,6 @@
           "label": "Each Wraith may take one upgrade",
           "choices": [
             {
-              "upgradeId": null,
               "label": "Particle Caster",
               "pts": 7,
               "grantsWeapons": [
@@ -5017,7 +4749,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Whip Coils",
               "pts": 12,
               "grantsWeapons": [
@@ -5025,7 +4756,6 @@
               ]
             },
             {
-              "upgradeId": null,
               "label": "Cutting Beam",
               "pts": 16,
               "grantsWeapons": [
@@ -5365,8 +5095,7 @@
             },
             {
               "weaponId": "tesla-carbine",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             }
           ],
           "specialRules": [
@@ -5449,13 +5178,11 @@
             },
             {
               "weaponId": "5-linked-gauss-flayers",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             },
             {
               "weaponId": "5-linked-gauss-flayers",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             }
           ],
           "specialRules": [
@@ -5505,8 +5232,7 @@
             },
             {
               "weaponId": "2-linked-tesla-carbines",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             }
           ],
           "specialRules": [
@@ -5564,15 +5290,9 @@
           "isImmobile": true,
           "statline": {
             "type": "fortification",
-            "M": null,
-            "WS": null,
             "BS": 3,
-            "S": null,
             "T": 7,
             "W": 6,
-            "I": null,
-            "A": null,
-            "Ld": null,
             "Sv": 3
           },
           "baseWargear": [
@@ -5723,9 +5443,7 @@
         }
       ],
       "transport": {
-        "capacity": 20,
-        "accessPoints": [],
-        "firePorts": []
+        "capacity": 20
       }
     },
     {
@@ -5808,13 +5526,11 @@
           "baseWargear": [
             {
               "weaponId": "5-linked-gauss-flayers",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             },
             {
               "weaponId": "5-linked-gauss-flayers",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             }
           ],
           "specialRules": [
@@ -5833,8 +5549,7 @@
         "accessPoints": [
           "Front",
           "Sides"
-        ],
-        "firePorts": []
+        ]
       }
     },
     {
@@ -6173,16 +5888,11 @@
           "isImmobile": true,
           "statline": {
             "type": "vehicle",
-            "M": null,
-            "WS": null,
             "BS": 3,
-            "S": null,
             "FA": 13,
             "SA": 13,
             "RA": 13,
             "W": 18,
-            "I": null,
-            "A": null,
             "Ld": 10,
             "Sv": 3
           },
@@ -6235,21 +5945,12 @@
             "Sv": 3
           },
           "baseWargear": [
-            {
-              "weaponId": "titanic-forelimbs",
-              "arcType": null,
-              "mountingTags": []
-            },
+            "titanic-forelimbs",
             {
               "weaponId": "2-linked-singularity-generators",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             },
-            {
-              "weaponId": "containment-field",
-              "arcType": null,
-              "mountingTags": []
-            }
+            "containment-field"
           ],
           "specialRules": [
             "titanic",
@@ -6317,14 +6018,9 @@
           "baseWargear": [
             {
               "weaponId": "4-tesla-spheres",
-              "arcType": "Sponson",
-              "mountingTags": []
+              "arcType": "Sponson"
             },
-            {
-              "weaponId": "grav-pulse",
-              "arcType": null,
-              "mountingTags": []
-            }
+            "grav-pulse"
           ],
           "specialRules": [
             "titanic",
@@ -6369,14 +6065,9 @@
           "baseWargear": [
             {
               "weaponId": "4-tesla-spheres",
-              "arcType": "Sponson",
-              "mountingTags": []
+              "arcType": "Sponson"
             },
-            {
-              "weaponId": "star-god-forcefield",
-              "arcType": null,
-              "mountingTags": []
-            }
+            "star-god-forcefield"
           ],
           "specialRules": [
             "titanic",
@@ -6467,8 +6158,7 @@
             },
             {
               "weaponId": "4-gauss-arc-fluxes",
-              "arcType": "Sponson",
-              "mountingTags": []
+              "arcType": "Sponson"
             }
           ],
           "specialRules": [
@@ -6486,8 +6176,7 @@
         "capacity": 20,
         "accessPoints": [
           "Front"
-        ],
-        "firePorts": []
+        ]
       },
       "options": [
         {
@@ -6550,8 +6239,7 @@
             },
             {
               "weaponId": "4-gauss-arc-fluxes",
-              "arcType": "Sponson",
-              "mountingTags": []
+              "arcType": "Sponson"
             }
           ],
           "specialRules": [
@@ -6570,8 +6258,7 @@
         "capacity": 20,
         "accessPoints": [
           "Front"
-        ],
-        "firePorts": []
+        ]
       },
       "options": [
         {
@@ -6634,18 +6321,15 @@
             },
             {
               "weaponId": "4-gauss-arc-fluxes",
-              "arcType": "Sponson",
-              "mountingTags": []
+              "arcType": "Sponson"
             },
             {
               "weaponId": "4-gauss-arc-fluxes",
-              "arcType": "Sponson",
-              "mountingTags": []
+              "arcType": "Sponson"
             },
             {
               "weaponId": "4-gauss-arc-fluxes",
-              "arcType": "Sponson",
-              "mountingTags": []
+              "arcType": "Sponson"
             }
           ],
           "specialRules": [
@@ -6666,8 +6350,7 @@
         "capacity": 20,
         "accessPoints": [
           "Front"
-        ],
-        "firePorts": []
+        ]
       },
       "options": [
         {
@@ -6708,27 +6391,19 @@
           "isImmobile": true,
           "statline": {
             "type": "fortification",
-            "M": null,
-            "WS": null,
             "BS": 4,
-            "S": null,
             "T": 7,
             "W": 15,
-            "I": null,
-            "A": null,
-            "Ld": null,
             "Sv": 3
           },
           "baseWargear": [
             {
               "weaponId": "2-linked-tesla-destructors",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             },
             {
               "weaponId": "2-linked-tesla-destructors",
-              "arcType": "Hull",
-              "mountingTags": []
+              "arcType": "Hull"
             }
           ],
           "specialRules": [
@@ -6754,15 +6429,8 @@
           "isImmobile": true,
           "statline": {
             "type": "fortification",
-            "M": null,
-            "WS": null,
-            "BS": null,
-            "S": null,
             "T": 8,
             "W": 20,
-            "I": null,
-            "A": null,
-            "Ld": null,
             "Sv": 3
           },
           "baseWargear": [
@@ -6788,15 +6456,8 @@
           "isImmobile": true,
           "statline": {
             "type": "fortification",
-            "M": null,
-            "WS": null,
-            "BS": null,
-            "S": null,
             "T": 8,
             "W": 30,
-            "I": null,
-            "A": null,
-            "Ld": null,
             "Sv": 3
           },
           "baseWargear": [
@@ -6816,8 +6477,7 @@
         "capacity": 20,
         "accessPoints": [
           "Front"
-        ],
-        "firePorts": []
+        ]
       }
     }
   ]

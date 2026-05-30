@@ -182,6 +182,36 @@ function fmtRange(p) {
   const min = p.minRange ? `${p.minRange}"–` : "";
   return `${min}${p.maxRange}"`;
 }
+// ── Persistence ──────────────────────────────────────────────────────────────
+const LAST_KEY = 'alt40k-last';
+const stateKey = (file) => `alt40k-${file}`;
+
+function saveState(file, hiddenUnits, selectedSubfaction, activePage, detailMode) {
+  try {
+    localStorage.setItem(stateKey(file), JSON.stringify({
+      hidden: [...hiddenUnits],
+      subfaction: selectedSubfaction,
+      page: activePage,
+      detail: detailMode,
+    }));
+    localStorage.setItem(LAST_KEY, file);
+  } catch(_) {}
+}
+
+function readState(file) {
+  try {
+    const raw = localStorage.getItem(stateKey(file));
+    if (!raw) return null;
+    const s = JSON.parse(raw);
+    return {
+      hiddenUnits:       new Set(Array.isArray(s.hidden) ? s.hidden : []),
+      selectedSubfaction: s.subfaction ?? '',
+      activePage:         s.page      ?? 'army-rules',
+      detailMode:         !!s.detail,
+    };
+  } catch(_) { return null; }
+}
+
 function resolveRef(ref) {
   if (typeof ref === "string") return { weaponId: ref, arcType: null };
   return { arcType: null, ...ref };
@@ -190,6 +220,14 @@ function wepById(id, weapons) { return weapons.find(w => w.id === id); }
 function ruleById(id, armyRules, coreRules, inlineRules) {
   return (inlineRules||[]).find(r=>r.id===id) || (armyRules||[]).find(r=>r.id===id) || (coreRules||[]).find(r=>r.id===id);
 }
+function resolveRuleNames(ids, coreRules, armyRules) {
+  if (!ids || !ids.length) return "—";
+  return ids.map(id => {
+    const r = (coreRules||[]).find(r => r.id === id) || (armyRules||[]).find(r => r.id === id);
+    return r ? r.name : id;
+  }).join(", ");
+}
+
 function slotLimitStr(limits) {
   if (!limits) return null;
   const [min, max] = limits;
@@ -253,7 +291,7 @@ function Popover({ trigger, content }) {
   );
 }
 
-function WeaponPopoverContent({ weapon }) {
+function WeaponPopoverContent({ weapon, coreRules, armyRules }) {
   if (!weapon) return null;
   return (
     <>
@@ -268,7 +306,7 @@ function WeaponPopoverContent({ weapon }) {
             <tr key={i}>
               {weapon.profiles.length>1 && <td>{p.label||`Mode ${i+1}`}</td>}
               <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-              <td style={{textAlign:"left",fontSize:"7.5pt"}}>{(p.rules||[]).join(", ")||"—"}</td>
+              <td style={{textAlign:"left",fontSize:"7.5pt"}}>{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
             </tr>
           ))}
         </tbody>
@@ -293,7 +331,7 @@ function SpellPopoverContent({ spell }) {
   );
 }
 
-function WargearPill({ weaponId, label, cost, weapons }) {
+function WargearPill({ weaponId, label, cost, weapons, coreRules, armyRules }) {
   const w = wepById(weaponId, weapons);
   const trigger = (
     <span className={`pill${w?" clickable":""}`}>
@@ -302,7 +340,7 @@ function WargearPill({ weaponId, label, cost, weapons }) {
     </span>
   );
   if (!w) return trigger;
-  return <Popover trigger={trigger} content={<WeaponPopoverContent weapon={w}/>}/>;
+  return <Popover trigger={trigger} content={<WeaponPopoverContent weapon={w} coreRules={coreRules} armyRules={armyRules}/>}/>;
 }
 
 function RulePill({ ruleId, label, armyRules, coreRules, inlineRules }) {
@@ -455,9 +493,10 @@ function SpecialRulesSection({ unit, models, armyRules, coreRules, inlineRules }
   );
 }
 
-function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools }) {
+function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, coreRules, armyRules }) {
   const opts = unit.options || [];
-  if (!opts.length) return null;
+  const hasBaseWargear = unit.models.some(m => (m.baseWargear||[]).length > 0);
+  if (!opts.length && !hasBaseWargear) return null;
 
   function resolveChoices(opt) {
     if (opt.weaponListId && weaponLists[opt.weaponListId]) {
@@ -506,7 +545,7 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools 
             <div className="pills">
               {g.refs.map((ref,j) => {
                 const r = resolveRef(ref);
-                return <WargearPill key={j} weaponId={r.weaponId} weapons={weapons}/>;
+                return <WargearPill key={j} weaponId={r.weaponId} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
               })}
             </div>
           </div>
@@ -532,7 +571,7 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools 
               <div className="group-head">{o.label}</div>
               <div className="pills">
                 {choices.map(c => (
-                  <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons}/>
+                  <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
                 ))}
               </div>
             </div>
@@ -547,7 +586,7 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools 
               <div className="group-head">{o.label} <span style={{fontWeight:400,fontSize:"8.5pt",color:"#888"}}>(per model)</span></div>
               <div className="pills">
                 {choices.map(c => (
-                  <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons}/>
+                  <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
                 ))}
               </div>
             </div>
@@ -657,7 +696,8 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules })
 // ── Print mode: options with full weapon profiles ─────────────────────────────
 function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules }) {
   const opts = unit.options || [];
-  if (!opts.length) return null;
+  const hasBaseWargear = unit.models.some(m => (m.baseWargear||[]).length > 0);
+  if (!opts.length && !hasBaseWargear) return null;
 
   function resolveChoices(opt) {
     if (opt.weaponListId && weaponLists[opt.weaponListId]) {
@@ -692,7 +732,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                   <td>{w.name}</td>
                   {showArc && <td className="arc-col">{r.arcType||""}</td>}
                   <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                  <td className="rules-col">{(p.rules||[]).join(", ")||"—"}</td>
+                  <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
                 </tr>
               );
             }
@@ -701,7 +741,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                 <td>{pi===0?w.name:""}</td>
                 {showArc && <td className="arc-col">{pi===0?(r.arcType||""):""}</td>}
                 <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                <td className="rules-col">{(p.rules||[]).join(", ")||"—"}</td>
+                <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
               </tr>
             ));
           })}
@@ -787,7 +827,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                         <tr key={ci} className={sc}>
                           <td>{c.label||w.name}</td>
                           <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                          <td className="rules-col">{(p.rules||[]).join(", ")||"—"}</td>
+                          <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
                           <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>+{c.pts} pts</td>
                         </tr>
                       );
@@ -796,7 +836,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                       <tr key={`${ci}-${pi}`} className={`${pi===0?"mp-first":"mp-cont"} ${sc}`}>
                         <td>{pi===0?(c.label||w.name):""}</td>
                         <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                        <td className="rules-col">{(p.rules||[]).join(", ")||"—"}</td>
+                        <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
                         <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>{pi===0?`+${c.pts} pts`:""}</td>
                       </tr>
                     ));
@@ -825,7 +865,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                       <tr key={ci} className={sc}>
                         <td>{c.label||w.name}</td>
                         <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                        <td className="rules-col">{(p.rules||[]).join(", ")||"—"}</td>
+                        <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
                         <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>+{c.pts} pts</td>
                       </tr>
                     );
@@ -898,7 +938,7 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
       }
       {detailMode
         ? <DetailOptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}/>
-        : <OptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools}/>
+        : <OptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}/>
       }
     </div>
   );
@@ -1001,9 +1041,12 @@ function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, select
 }
 
 export default function App() {
+  const [factionList, setFactionList] = useState(null);
   const [factionData, setFactionData] = useState(null);
   const [coreRulesData, setCoreRulesData] = useState(null);
+  const [currentFile, setCurrentFile] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [activePage, setActivePage] = useState("army-rules");
   const [navHeight, setNavHeight] = useState(44);
   const [hiddenUnits, setHiddenUnits] = useState(new Set());
@@ -1012,14 +1055,40 @@ export default function App() {
   const navWrapRef = useRef(null);
 
   useEffect(() => {
-    Promise.all([
-      fetch(`${import.meta.env.BASE_URL}necrons_faction.json`).then(r => r.json()),
-      fetch(`${import.meta.env.BASE_URL}core-rules.json`).then(r => r.json()),
-    ]).then(([faction, core]) => {
-      setFactionData(faction);
-      setCoreRulesData(core.rules || core);
-    }).catch(e => setError("Failed to load data files: " + e.message));
+    fetch(`${import.meta.env.BASE_URL}factions.json`)
+      .then(r => r.json())
+      .then(list => {
+        setFactionList(list);
+        try {
+          const last = localStorage.getItem(LAST_KEY);
+          if (last && list.some(f => f.file === last)) loadFaction(last);
+        } catch(_) {}
+      })
+      .catch(e => setError("Failed to load faction list: " + e.message));
   }, []);
+
+  function loadFaction(file) {
+    setLoading(true);
+    setError(null);
+    const fetches = [fetch(`${import.meta.env.BASE_URL}${file}`).then(r => r.json())];
+    if (!coreRulesData) {
+      fetches.push(fetch(`${import.meta.env.BASE_URL}core-rules.json`).then(r => r.json()));
+    }
+    Promise.all(fetches)
+      .then(([faction, core]) => {
+        const saved = readState(file);
+        setFactionData(faction);
+        if (core) setCoreRulesData(core.rules || core);
+        setCurrentFile(file);
+        setHiddenUnits(saved?.hiddenUnits       ?? new Set());
+        setSelectedSubfaction(saved?.selectedSubfaction ?? "");
+        setActivePage(saved?.activePage         ?? "army-rules");
+        setDetailMode(saved?.detailMode         ?? false);
+        try { localStorage.setItem(LAST_KEY, file); } catch(_) {}
+      })
+      .catch(e => setError("Failed to load faction: " + e.message))
+      .finally(() => setLoading(false));
+  }
 
   useEffect(() => {
     if (!navWrapRef.current) return;
@@ -1035,11 +1104,17 @@ export default function App() {
     return g;
   }, [factionData]);
 
-  // If the current slot page becomes fully hidden, redirect to army-rules
+  // Save state whenever anything on the Options page changes
+  useEffect(() => {
+    if (!currentFile) return;
+    saveState(currentFile, hiddenUnits, selectedSubfaction, activePage, detailMode);
+  }, [currentFile, hiddenUnits, selectedSubfaction, activePage, detailMode]);
+
+  // If the current slot page becomes fully hidden or doesn't exist, redirect to army-rules
   useEffect(() => {
     if (!activePage.startsWith("slot-")) return;
     const slot = activePage.replace("slot-", "");
-    if (unitsBySlot[slot] && unitsBySlot[slot].every(u => hiddenUnits.has(u.id))) {
+    if (!unitsBySlot[slot] || unitsBySlot[slot].every(u => hiddenUnits.has(u.id))) {
       setActivePage("army-rules");
     }
   }, [hiddenUnits, activePage, unitsBySlot]);
@@ -1047,11 +1122,29 @@ export default function App() {
 
   if (!factionData) {
     return (
-      <div style={{fontFamily:"'Rajdhani',sans-serif",background:"#1a1a1a",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",padding:20}}>
+      <div style={{fontFamily:"'Rajdhani',sans-serif",background:"#1a1a1a",minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:20}}>
         <style>{CSS}</style>
-        {error
-          ? <div style={{color:"#c0392b",fontSize:13,maxWidth:400,textAlign:"center"}}>{error}</div>
-          : <div style={{color:"#c9a84c",fontSize:16,letterSpacing:"0.1em"}}>LOADING CODEX...</div>
+        <div style={{marginBottom:32,textAlign:"center"}}>
+          <div style={{fontSize:"28pt",fontWeight:700,color:"#e8e0d0",letterSpacing:"0.04em",lineHeight:1}}>ALTERNATE 40K</div>
+          <div style={{fontSize:"10pt",color:"#888",letterSpacing:"0.2em",textTransform:"uppercase",marginTop:6}}>Unofficial Codex</div>
+        </div>
+        {error && <div style={{color:"#c0392b",fontSize:"11pt",marginBottom:20,maxWidth:400,textAlign:"center"}}>{error}</div>}
+        {loading || !factionList
+          ? <div style={{color:"#c9a84c",fontSize:"13pt",letterSpacing:"0.1em"}}>{loading ? "LOADING CODEX..." : "LOADING..."}</div>
+          : (
+            <div style={{display:"flex",flexWrap:"wrap",gap:14,justifyContent:"center",maxWidth:640}}>
+              {factionList.map((f, i) => (
+                <button key={i} onClick={() => loadFaction(f.file)}
+                  style={{fontFamily:"'Rajdhani',sans-serif",fontSize:"14pt",fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",
+                    background:"#111",color:"#c9a84c",border:"1px solid #444",borderRadius:4,padding:"14px 28px",
+                    cursor:"pointer",transition:"background 0.15s, border-color 0.15s",minWidth:180}}
+                  onMouseEnter={e=>{e.currentTarget.style.background="#2a2008";e.currentTarget.style.borderColor="#c9a84c";}}
+                  onMouseLeave={e=>{e.currentTarget.style.background="#111";e.currentTarget.style.borderColor="#444";}}>
+                  {f.name}
+                </button>
+              ))}
+            </div>
+          )
         }
       </div>
     );
@@ -1123,6 +1216,7 @@ function fS(v,k){if(v==null)return"—";if(k==="M")return v+'"';if(["WS","BS","S
 function fR(p){if(p.templateType==="Flame")return"Flame";if(p.templateType==="Hellstorm")return"Hellstorm";if(!p.maxRange&&!p.templateType)return"Melee";return(p.minRange?p.minRange+'"–':"")+p.maxRange+'"';}
 function wB(id){return d.weapons.find(w=>w.id===id);}
 function rB(id,inl){return(inl||[]).find(r=>r.id===id)||d.armyRules.find(r=>r.id===id)||d.coreRules.find(r=>r.id===id);}
+function rN(ids){return(ids&&ids.length)?ids.map(id=>{const r=rB(id,[]);return r?r.name:id;}).join(", "):"—";}
 function slStr(lim){if(!lim)return"";const[mn,mx]=lim;if(mn===mx)return mn+" slot"+(mn!==1?"s":"");if(mx===null)return mn+"+ slots";return mn+"–"+mx+" slots";}
 function synth(u){const o=[];if(u.transport){const t=u.transport;o.push({id:"__transport__",name:"Transport "+t.capacity,shortDesc:["Capacity "+t.capacity,t.firePorts?.length?"Fire Ports: "+t.firePorts.join(", "):"",t.accessPoints?.length?"Access: "+t.accessPoints.join(", "):""].filter(Boolean).join(" · ")});}if(u.psychic){const p=u.psychic;o.push({id:"__psychic__",name:"Psychic Mastery "+p.masteryLevel,shortDesc:"Mastery Level "+p.masteryLevel+(p.denyBonusPerPhase?" · +"+p.denyBonusPerPhase+" Deny per phase":"")});}return o;}
 function wepTbl(refs,showArc,choices){
@@ -1132,8 +1226,8 @@ function wepTbl(refs,showArc,choices){
   let t='<table><thead><tr><th>Weapon</th>'+(showArc?'<th>Arc</th>':'')+'<th>Range</th><th>S</th><th>AP</th><th class="rules-col">Rules</th>'+(hC?'<th>Cost</th>':'')+'</tr></thead><tbody>';
   rows.forEach(({w,pts,label,arc,i})=>{
     const sc=i%2===0?"stripe-a":"stripe-b";
-    if(w.profiles.length===1){const p=w.profiles[0];t+='<tr class="'+sc+'"><td>'+(label||w.name)+'</td>'+(showArc?'<td class="arc-col">'+(arc||"")+'</td>':'')+'<td>'+fR(p)+'</td><td>'+p.strength+'</td><td>'+p.ap+'</td><td class="rules-col">'+((p.rules||[]).join(", ")||"—")+'</td>'+(hC?'<td style="text-align:right;color:#7a5800;font-weight:700;white-space:nowrap">+'+pts+' pts</td>':'')+'</tr>';}
-    else{w.profiles.forEach((p,pi)=>{t+='<tr class="'+(pi===0?"mp-first":"mp-cont")+' '+sc+'"><td>'+(pi===0?(label||w.name):"")+'</td>'+(showArc?'<td class="arc-col">'+(pi===0?(arc||""):"")+'</td>':'')+'<td>'+fR(p)+'</td><td>'+p.strength+'</td><td>'+p.ap+'</td><td class="rules-col">'+((p.rules||[]).join(", ")||"—")+'</td>'+(hC?'<td style="text-align:right;color:#7a5800;font-weight:700;white-space:nowrap">'+(pi===0?"+"+pts+" pts":"")+'</td>':'')+'</tr>';});}
+    if(w.profiles.length===1){const p=w.profiles[0];t+='<tr class="'+sc+'"><td>'+(label||w.name)+'</td>'+(showArc?'<td class="arc-col">'+(arc||"")+'</td>':'')+'<td>'+fR(p)+'</td><td>'+p.strength+'</td><td>'+p.ap+'</td><td class="rules-col">'+rN(p.rules)+'</td>'+(hC?'<td style="text-align:right;color:#7a5800;font-weight:700;white-space:nowrap">+'+pts+' pts</td>':'')+'</tr>';}
+    else{w.profiles.forEach((p,pi)=>{t+='<tr class="'+(pi===0?"mp-first":"mp-cont")+' '+sc+'"><td>'+(pi===0?(label||w.name):"")+'</td>'+(showArc?'<td class="arc-col">'+(pi===0?(arc||""):"")+'</td>':'')+'<td>'+fR(p)+'</td><td>'+p.strength+'</td><td>'+p.ap+'</td><td class="rules-col">'+rN(p.rules)+'</td>'+(hC?'<td style="text-align:right;color:#7a5800;font-weight:700;white-space:nowrap">'+(pi===0?"+"+pts+" pts":"")+'</td>':'')+'</tr>';});}
   });
   return t+'</tbody></table>';}
 function renderUnit(unit){
@@ -1201,7 +1295,7 @@ document.body.innerHTML+=body;`;
           {navPages.map(p=>(
             <button key={p.id} className={`nav-btn${activePage===p.id?" active":""}`} onClick={()=>setActivePage(p.id)}>{p.label}</button>
           ))}
-          <button className="nav-btn" onClick={()=>{setFactionData(null);setCoreRulesData(null);setHiddenUnits(new Set());}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
+          <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
           <span className="nav-print-toggle">
             <Popover
               trigger={

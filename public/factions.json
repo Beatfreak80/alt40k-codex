@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Necrons",
+    "file": "necrons_faction.json"
+  },
+  {
+    "name": "Space Marines",
+    "file": "space-marines_faction.json"
+  },
+  {
+    "name": "Eldar",
+    "file": "eldar_faction.json"
+  }
+]
