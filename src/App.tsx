@@ -21,6 +21,17 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .nav-print-toggle { display: flex; align-items: center; gap: 8px; padding-left: 4px; }
 .nav-print-label { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #888; cursor: pointer; white-space: nowrap; }
 .nav-print-label:hover { color: #c9a84c; }
+.nav-search-wrap { position: relative; }
+.nav-search-input { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 500; padding: 4px 10px; border-radius: 3px; border: 1px solid #555; background: #111; color: #e8e0d0; outline: none; width: 150px; transition: border-color 0.15s; }
+.nav-search-input::placeholder { color: #666; }
+.nav-search-input:focus { border-color: #c9a84c; background: #141414; }
+.nav-search-dropdown { position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: #1a1a1a; border: 1px solid #555; border-radius: 4px; z-index: 200; box-shadow: 0 6px 20px rgba(0,0,0,0.6); overflow-y: auto; max-height: 300px; }
+.nav-search-item { padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #2a2a2a; }
+.nav-search-item:last-child { border-bottom: none; }
+.nav-search-item:hover { background: #2a2008; }
+.nav-search-name { font-size: 10pt; font-weight: 600; color: #e8e0d0; }
+.nav-search-slot { font-size: 8pt; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1px; }
+.nav-search-none { padding: 10px 12px; color: #666; font-size: 9.5pt; font-style: italic; }
 
 .section-head { font-weight: 700; font-size: 11pt; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5800; margin: 16px 0 8px; border-bottom: 2px solid #e8d48a; padding-bottom: 2px; }
 .group-head { font-weight: 700; font-size: 9.5pt; letter-spacing: 0.10em; text-transform: uppercase; color: #333; margin: 0 0 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
@@ -910,6 +921,67 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
   );
 }
 
+function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
+  const [query, setQuery] = useState("");
+  const wrapRef = useRef(null);
+
+  const results = useMemo(() => {
+    if (!query.trim()) return [];
+    const q = query.toLowerCase();
+    return allUnits
+      .filter(u => u.name.toLowerCase().includes(q))
+      .slice(0, 12);
+  }, [query, allUnits]);
+
+  const open = query.trim().length > 0;
+
+  useEffect(() => {
+    if (!open) return;
+    function handler(e) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setQuery("");
+    }
+    document.addEventListener("pointerdown", handler);
+    return () => document.removeEventListener("pointerdown", handler);
+  }, [open]);
+
+  return (
+    <div ref={wrapRef} className="nav-search-wrap">
+      <input
+        className="nav-search-input"
+        type="text"
+        placeholder="Find unit…"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+        onKeyDown={e => e.key === "Escape" && setQuery("")}
+      />
+      {open && (
+        <div className="nav-search-dropdown">
+          {results.length === 0
+            ? <div className="nav-search-none">No units found</div>
+            : results.map(u => {
+                const isHidden = hiddenUnits.has(u.id);
+                return (
+                  <div
+                    key={u.id}
+                    className="nav-search-item"
+                    style={isHidden ? {opacity:0.45} : undefined}
+                    onPointerDown={e => { e.preventDefault(); onSelect(u); setQuery(""); }}
+                  >
+                    <div className="nav-search-name">
+                      {u.name}
+                      {isHidden && <span style={{fontSize:"8pt",color:"#888",fontWeight:400,marginLeft:6}}>Hidden</span>}
+                    </div>
+                    <div className="nav-search-slot">{u.slot}</div>
+                  </div>
+                );
+              })
+          }
+        </div>
+      )}
+    </div>
+  );
+}
+
 function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, detailMode }) {
   if (hidden) return null;
   return (
@@ -1052,6 +1124,7 @@ export default function App() {
   const [hiddenUnits, setHiddenUnits] = useState(new Set());
   const [selectedSubfaction, setSelectedSubfaction] = useState("");
   const [detailMode, setDetailMode] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState<string|null>(null);
   const navWrapRef = useRef(null);
 
   useEffect(() => {
@@ -1119,6 +1192,24 @@ export default function App() {
     }
   }, [hiddenUnits, activePage, unitsBySlot]);
 
+  // Scroll to a unit after navigating to its slot page
+  useEffect(() => {
+    if (!pendingScroll) return;
+    const id = pendingScroll;
+    setPendingScroll(null);
+    requestAnimationFrame(() => {
+      const el = document.getElementById(`unit-${id}`);
+      if (!el) return;
+      const navH = navWrapRef.current ? (navWrapRef.current as HTMLElement).offsetHeight : 56;
+      const y = el.getBoundingClientRect().top + window.scrollY - navH - 12;
+      window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+    });
+  }, [pendingScroll]);
+
+  function handleUnitSelect(unit) {
+    setActivePage(`slot-${unit.slot}`);
+    setPendingScroll(unit.id);
+  }
 
   if (!factionData) {
     return (
@@ -1295,6 +1386,7 @@ document.body.innerHTML+=body;`;
           {navPages.map(p=>(
             <button key={p.id} className={`nav-btn${activePage===p.id?" active":""}`} onClick={()=>setActivePage(p.id)}>{p.label}</button>
           ))}
+          <UnitSearch allUnits={factionData.units||[]} hiddenUnits={hiddenUnits} onSelect={handleUnitSelect}/>
           <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
           <span className="nav-print-toggle">
             <Popover
@@ -1340,7 +1432,7 @@ document.body.innerHTML+=body;`;
                 )}
               </div>
               {unitsBySlot[slot].map((unit,i)=>(
-                <div key={unit.id}>
+                <div key={unit.id} id={`unit-${unit.id}`}>
                   {i>0 && !hiddenUnits.has(unit.id) && !hiddenUnits.has(unitsBySlot[slot][i-1]?.id) && <hr className="unit-divider"/>}
                   <UnitBlock
                     unit={unit} weapons={weapons} weaponLists={weaponLists}
