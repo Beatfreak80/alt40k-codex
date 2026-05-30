@@ -384,8 +384,8 @@
     {
       "id": "matter-absorption",
       "name": "Matter Absorption",
-      "shortDesc": "When this model destroys a model in melee, regain d3 Wounds.",
-      "fullDesc": "Each time this model destroys an enemy model in close combat, it regains d3 lost Wounds, up to its starting total."
+      "shortDesc": "When a Vehicle or Titanic Vehicle is destroyed within 18\", roll d6. On a 2+, Heal 1 Wound.",
+      "fullDesc": "Each time a Vehicle or Titanic Vehicle is destroyed within 18\" of this model, roll a d6. On a 2+, this model Heals 1 Wound. This is an exception to the normal Heal rules."
     },
     {
       "id": "translocation-protocols",
