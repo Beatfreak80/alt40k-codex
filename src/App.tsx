@@ -1013,7 +1013,7 @@ export default function App() {
 
   useEffect(() => {
     Promise.all([
-      fetch(`${import.meta.env.BASE_URL}space-marines_faction.json`).then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}necrons_faction.json`).then(r => r.json()),
       fetch(`${import.meta.env.BASE_URL}core-rules.json`).then(r => r.json()),
     ]).then(([faction, core]) => {
       setFactionData(faction);
