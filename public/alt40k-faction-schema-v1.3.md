@@ -70,7 +70,7 @@ It lives on the weapon reference at the unit level (see §6b).
       "maxRange": 36,
       "strength": "6",
       "ap":       "4+",
-      "rules":    ["assault", "rending"]
+      "rules":    ["Assault 4", "rending"]
     }
   ]
 }
@@ -81,11 +81,20 @@ and one on a Turret, they reference the **same weapon id** with different
 `arcType` values on their unit entries. Do not create `assault-cannon-hull`
 and `assault-cannon-turret` as separate weapons.
 
-**Rule ids in `rules[]`:** Use kebab-case ids from `core-rules.json` wherever
-the rule exists there (e.g. `"rending"`, `"heavy"`, `"melta"`, `"gets-hot"`).
-For weapon-unique effects with no core rule entry, use a human-readable
-description string (e.g. `"5+ Invulnerability Save against Ranged Attacks"`).
-This ensures a single edit to core-rules.json propagates everywhere.
+**Rules in `rules[]`:** All rules are **human-readable display strings** taken directly
+from the codex. No kebab-case IDs are used in weapon profile `rules[]`.
+
+| Rule type | Format | Examples |
+|---|---|---|
+| Shot-type rules | `"Type N"` — number from codex | `"Assault 2"`, `"Heavy 1"`, `"Pistol 1"`, `"Rapid Fire 1"`, `"Grenade 1"` |
+| Linked weapons | append multiplier | `"Assault 3 x2"`, `"Heavy 1 x4"` |
+| Target-number rules | include `(N+)` | `"Poisoned (3+)"`, `"Sniper (3+)"`, `"Haywire (3+)"` |
+| Extra attacks | `"Extra Attack N"` | `"Extra Attack 1"`, `"Extra Attack 2"` |
+| Other named rules | Title Case | `"Rending"`, `"Monsterbane"`, `"Melta"`, `"Lance"`, `"Armourbane"`, `"Slow"`, `"Gets Hot!"`, `"Tesla"`, `"Gauss"`, `"Destroyer"`, `"Ordnance"`, `"AA"`, `"Pinning"`, `"Accurate"`, `"Nonblast"`, `"Auxiliary"`, `"Counterattack"` etc. |
+| Blast sizes, unique effects | as written | `"3\" Blast"`, `"5\" Blast"`, `"(Monsterbane)"`, `"5+ Invulnerability Save against Ranged Attacks"` |
+
+The shot count and target number **must** come from the codex — they differ per weapon.
+Never write bare `"assault"`, `"heavy"`, `"pistol"`, `"poisoned"` etc.
 
 **Multi-profile example (Missile Launcher):**
 ```jsonc
@@ -93,8 +102,8 @@ This ensures a single edit to core-rules.json propagates everywhere.
   "id":   "missile-launcher",
   "name": "Missile Launcher",
   "profiles": [
-    {"label": "Krak", "maxRange": 48, "strength": "8", "ap": "3+", "rules": ["heavy", "monsterbane"]},
-    {"label": "Frag", "maxRange": 48, "strength": "4", "ap": "6+", "rules": ["heavy", "3\" Blast"]}
+    {"label": "Krak", "maxRange": 48, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "Monsterbane"]},
+    {"label": "Frag", "maxRange": 48, "strength": "4", "ap": "6+", "rules": ["Heavy 1", "3\" Blast"]}
   ]
 }
 ```
@@ -106,7 +115,7 @@ This ensures a single edit to core-rules.json propagates everywhere.
   "name": "Warp Blast",
   "profiles": [
     {"maxRange": 18, "strength": "5", "ap": "3+",
-     "rules": ["assault", "3\" Blast"], "castValue": 6}
+     "rules": ["Assault 1", "3\" Blast"], "castValue": 6}
   ]
 }
 ```

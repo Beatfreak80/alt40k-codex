@@ -15,10 +15,7 @@
             "shortDesc": "Models may reroll 1s To Hit; auras extend to 1s and 2s.",
             "fullDesc": "Models may reroll 1s To Hit. Auras that allow reroll 1s To Hit allow all failed To Hit rolls of 1 or 2 to be rerolled instead."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "black_templar",
@@ -36,10 +33,7 @@
             "shortDesc": "Reroll 1s To Wound in melee on the turn you Charged.",
             "fullDesc": "All models in your army may reroll 1s To Wound in Melee on the phase they successfully Charged."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "blood_angels",
@@ -63,10 +57,7 @@
             "shortDesc": "All models gain Counterattack.",
             "fullDesc": "All models in your army gain Counterattack."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "blood_ravens",
@@ -84,10 +75,7 @@
             "shortDesc": "All models suffer Ld-1.",
             "fullDesc": "All models in your army suffer Ld-1."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "crimson_fists",
@@ -105,10 +93,7 @@
             "shortDesc": "Reroll failed Ld Tests.",
             "fullDesc": "All models in your army may reroll failed Ld Tests."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "dark_angels",
@@ -126,10 +111,7 @@
             "shortDesc": "Characters may take a Watcher Token to reroll one die per Phase.",
             "fullDesc": "Any Character or Independent Character may take a Watcher Token. Any unit the Independent Character is in (or themselves) may reroll any one die per Phase."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "death_watch",
@@ -148,7 +130,6 @@
             "fullDesc": "All models in your army gain Ld+1."
           }
         ],
-        "slotOverrides": [],
         "slotReclassifications": [
           {
             "unitId": "scout-squad",
@@ -178,8 +159,7 @@
             "unitId": "primaris-vanguard-veterans",
             "toSlot": "Troop"
           }
-        ],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "drake_slayers",
@@ -197,10 +177,7 @@
             "shortDesc": "No models may claim Objective Markers.",
             "fullDesc": "No models in your army may claim Objective Markers."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "emperors_spears",
@@ -218,10 +195,7 @@
             "shortDesc": "All models add +2\" to Charges.",
             "fullDesc": "All models in this army add +2\" to Charges."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "exorcists",
@@ -239,10 +213,7 @@
             "shortDesc": "All units Deny the Witch at Mastery 1 or +1 if already a psyker.",
             "fullDesc": "All units in this army may Deny the Witch at Psychic Master Level 1, or +1 If they already have Psychic Mastery."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "flesh_tearers",
@@ -260,10 +231,7 @@
             "shortDesc": "Reroll failed Charges.",
             "fullDesc": "All units in your army may reroll failed Charges."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "imperial_fists",
@@ -281,10 +249,7 @@
             "shortDesc": "Buildings Embarked by Imperial Fists gain T+1.",
             "fullDesc": "Buildings Embarked by Imperial Fist units gain T+1 while they are inside."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "iron_hands",
@@ -303,7 +268,6 @@
             "fullDesc": "All models Snapshot on a 5+ with Heavy weapons, including Overwatch, instead of the usual 6+."
           }
         ],
-        "slotOverrides": [],
         "slotReclassifications": [
           {
             "unitId": "devastator-squad",
@@ -313,8 +277,7 @@
             "unitId": "dreadnoughts",
             "toSlot": "Troop"
           }
-        ],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "salamanders",
@@ -332,10 +295,7 @@
             "shortDesc": "+1 VP per completed Objective for Objectives 11-36, once per Turn.",
             "fullDesc": "Gain +1 VP per completed Objective for Objectives 11-36 once per Turn."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "silver_templars",
@@ -353,10 +313,7 @@
             "shortDesc": "May only include models with the Stubborn rule.",
             "fullDesc": "This army may only include models with the Stubborn rule."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "raven_guard",
@@ -368,10 +325,7 @@
             "shortDesc": "All models gain Stealth; if already Stealth, swap for Shroud.",
             "fullDesc": "All models in your army gain Stealth. If they already had Stealth, they swap Stealth for Shroud instead."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "space_wolves",
@@ -389,10 +343,7 @@
             "shortDesc": "All models gain A+1 on the turn they Charge.",
             "fullDesc": "All models in your army gain A+1 on the turn they Charge."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "tome_keepers",
@@ -410,10 +361,7 @@
             "shortDesc": "Gain 2 VP for Kingslayer instead of D3.",
             "fullDesc": "Gain 2 VP for Kingslayer instead of D3."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "ultramarines",
@@ -425,10 +373,7 @@
             "shortDesc": "Reroll one Objective during your Command Phase, even if already rerolled.",
             "fullDesc": "You may reroll one Objective during your Command Phase, even if it has already been rerolled."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "white_consuls",
@@ -440,10 +385,7 @@
             "shortDesc": "Infantry within 3\" of an Objective gain Objective Secured and Stubborn.",
             "fullDesc": "All infantry models in your army gain Objective Secured and Stubborn when within 3\" of an Objective Marker."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "white_scars",
@@ -461,10 +403,7 @@
             "shortDesc": "All models gain Scout.",
             "fullDesc": "All models in your army gain Scout."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       },
       {
         "id": "wolfspears",
@@ -482,21 +421,16 @@
             "shortDesc": "May only include models with the Stubborn rule.",
             "fullDesc": "This army may only include models with the Stubborn rule."
           }
-        ],
-        "slotOverrides": [],
-        "slotReclassifications": [],
-        "weaponOverrides": []
+        ]
       }
     ],
-    "markSystem": null,
     "slotLimits": {
       "HQ": [
         1,
         2
       ],
       "Advisor": [
-        0,
-        null
+        0
       ],
       "Troop": [
         2,
@@ -519,16 +453,14 @@
         2
       ],
       "Ded. Transport": [
-        0,
-        null
+        0
       ],
       "Lord of War": [
         0,
         1
       ],
       "Fortification": [
-        0,
-        null
+        0
       ]
     }
   },
@@ -738,81 +670,63 @@
       "name": "Boltgun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "bolt-pistol",
       "name": "Bolt Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Pistol 1"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "stormbolter",
       "name": "Stormbolter",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "hand-flamer",
       "name": "Hand Flamer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "3",
           "ap": "6+",
           "rules": [
-            "Pistol 1"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Flame"
     },
     {
@@ -820,137 +734,102 @@
       "name": "Plasma Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Pistol 1",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "pistol",
+            "gets-hot"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "grav-pistol",
       "name": "Grav Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Pistol 1",
-            "Grav"
-          ],
-          "castValue": null
+            "pistol",
+            "grav"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "inferno-pistol",
       "name": "Inferno Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 6,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Pistol 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "pistol",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "neo-volkite-pistol",
       "name": "Neo-Volkite Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Pistol 1",
-            "Beam"
-          ],
-          "castValue": null
+            "pistol",
+            "beam"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "absolver-bolt-pistol",
       "name": "Absolver Bolt Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "Pistol 1"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "heavy-bolt-pistol",
       "name": "Heavy Bolt Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Pistol 1"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "pyre-pistol",
       "name": "Pyre Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "3",
           "ap": "4+",
           "rules": [
-            "Pistol 1"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Flame"
     },
     {
@@ -958,403 +837,273 @@
       "name": "Reductor",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 6,
           "strength": "4",
           "ap": "2+",
           "rules": [
-            "Pistol 1"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "combat-knife",
       "name": "Combat Knife",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "-",
           "rules": [
-            "Extra Attack 1"
-          ],
-          "castValue": null
+            "extra-attack"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "chainsword",
       "name": "Chainsword",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "6+",
           "rules": [
-            "Rending"
-          ],
-          "castValue": null
+            "rending"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "power-sword",
       "name": "Power Sword",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+1",
-          "ap": "3+",
-          "rules": [],
-          "castValue": null
+          "ap": "3+"
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "power-axe",
       "name": "Power Axe",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
-          "ap": "4+",
-          "rules": [],
-          "castValue": null
+          "ap": "4+"
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "power-maul",
       "name": "Power Maul",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "Concussion"
-          ],
-          "castValue": null
+            "concussion"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "power-fist",
       "name": "Power Fist",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "thunderhammer",
       "name": "Thunderhammer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "lightning-claw",
       "name": "Lightning Claw",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "3+",
           "rules": [
             "Reroll failed To Wound rolls"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "relic-blade",
       "name": "Relic Blade",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
-          "ap": "2+",
-          "rules": [],
-          "castValue": null
+          "ap": "2+"
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "relic-blade-hq",
       "name": "Relic Blade",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+3",
-          "ap": "2+",
-          "rules": [],
-          "castValue": null
+          "ap": "2+"
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "nemesis-thunderhammer",
       "name": "Nemesis Thunderhammer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Armourbane",
-            "Monsterbane",
-            "Psychic Bane"
-          ],
-          "castValue": null
+            "slow",
+            "armourbane",
+            "monsterbane",
+            "psychic-bane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "chain-fist",
       "name": "Chain Fist",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Monsterbane",
+            "slow",
+            "monsterbane",
             "+1 on To Penetrate Rolls (not Vehicle Damage Chart)"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-lightning-claws",
       "name": "Dual Lightning Claws",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "3+",
           "rules": [
-            "Extra Attack 1",
+            "extra-attack",
             "Reroll all failed To Hit and To Wound rolls"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-powerfists",
       "name": "Dual Powerfists",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Extra Attack 1",
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "extra-attack",
+            "slow",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "siege-drills",
       "name": "Siege Drills",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Armourbane",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "armourbane",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "eviscerator",
       "name": "Eviscerator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+3",
-          "ap": "2+",
-          "rules": [],
-          "castValue": null
+          "ap": "2+"
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "frost-axe",
       "name": "Frost Axe",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "force-sword",
       "name": "Force Sword",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "3+",
           "rules": [
-            "Psychic Bane"
-          ],
-          "castValue": null
+            "psychic-bane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "force-axe",
       "name": "Force Axe",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "Psychic Bane"
-          ],
-          "castValue": null
+            "psychic-bane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "force-stave",
       "name": "Force Stave",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "Psychic Bane",
-            "Counterattack"
-          ],
-          "castValue": null
+            "psychic-bane",
+            "counterattack"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "crozium-arcanum",
@@ -1362,208 +1111,132 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "Concussion"
-          ],
-          "castValue": null
+            "concussion"
+          ]
         },
         {
           "label": "Flame",
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1",
-            "One Use Only"
-          ],
-          "castValue": null
+            "assault",
+            "one-use-only"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "omnissian-axe",
       "name": "Omnissian Axe",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+3",
-          "ap": "5+",
-          "rules": [],
-          "castValue": null
+          "ap": "5+"
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "servo-arm",
       "name": "Servo Arm",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane",
-            "Auxiliary",
+            "slow",
+            "monsterbane",
+            "auxiliary",
             "Servo Arm"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-combat-blades",
       "name": "Dual Combat Blades",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "5+",
           "rules": [
-            "Extra Attack 1"
-          ],
-          "castValue": null
+            "extra-attack"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "furioso-force-halberd",
       "name": "Furioso Force Halberd",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+3",
           "ap": "2+",
           "rules": [
-            "Psychic Bane"
-          ],
-          "castValue": null
+            "psychic-bane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "lightning-claw-and-storm-shield",
       "name": "Lightning Claw and Storm Shield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "3+",
           "rules": [
             "Reroll failed To Wound rolls",
             "Storm Shield"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "thunderhammer-and-storm-shield",
       "name": "Thunderhammer and Storm Shield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "19",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Monsterbane",
+            "slow",
+            "monsterbane",
             "Storm Shield"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
-    },
-    {
-      "id": "dual-lightning-claws-terminator",
-      "name": "Dual Lightning Claws",
-      "profiles": [
-        {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
-          "strength": "User",
-          "ap": "3+",
-          "rules": [
-            "Extra Attack 1",
-            "Reroll all failed To Hit and To Wound rolls"
-          ],
-          "castValue": null
-        }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "disintegration-pistol",
       "name": "Disintegration Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 6,
           "strength": "5",
           "ap": "1+",
           "rules": [
-            "Pistol 1",
-            "Armourbane",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "pistol",
+            "armourbane",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "xenophase-blade",
       "name": "Xenophase Blade",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+1",
           "ap": "3+",
           "rules": [
             "Ignore Invulnerability Saves"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "guardian-spear",
@@ -1571,52 +1244,40 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "+1",
           "ap": "2+",
           "rules": [
-            "Counterattack"
-          ],
-          "castValue": null
+            "counterattack"
+          ]
         },
         {
           "label": "Ranged",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw",
       "name": "Dreadnought Combat Weapon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw-stormbolter",
@@ -1624,33 +1285,27 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Stormbolter",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw-heavy-flamer",
@@ -1658,30 +1313,22 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Heavy Flamer",
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw-meltagun",
@@ -1689,32 +1336,25 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Meltagun",
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw-graviton-blaster",
@@ -1722,31 +1362,24 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Graviton Blaster",
-          "minRange": null,
           "maxRange": 18,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Assault 2",
-            "Grav"
-          ],
-          "castValue": null
+            "assault",
+            "grav"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-chain-fist-stormbolter",
@@ -1754,34 +1387,28 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Armourbane",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "armourbane",
+            "monsterbane"
+          ]
         },
         {
           "label": "Stormbolter",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-chain-fist-heavy-flamer",
@@ -1789,31 +1416,23 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Armourbane",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "armourbane",
+            "monsterbane"
+          ]
         },
         {
           "label": "Heavy Flamer",
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-chain-fist-graviton-blaster",
@@ -1821,32 +1440,25 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Armourbane",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "armourbane",
+            "monsterbane"
+          ]
         },
         {
           "label": "Graviton Blaster",
-          "minRange": null,
           "maxRange": 18,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Assault 2",
-            "Grav"
-          ],
-          "castValue": null
+            "assault",
+            "grav"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-chain-fist-meltagun",
@@ -1854,33 +1466,26 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Armourbane",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "armourbane",
+            "monsterbane"
+          ]
         },
         {
           "label": "Meltagun",
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "seismic-hammer-stormbolter",
@@ -1888,34 +1493,28 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Monsterbane",
+            "slow",
+            "monsterbane",
             "Reroll 1s To Hit"
-          ],
-          "castValue": null
+          ]
         },
         {
           "label": "Stormbolter",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "seismic-hammer-heavy-flamer",
@@ -1923,31 +1522,23 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Monsterbane",
+            "slow",
+            "monsterbane",
             "Reroll 1s To Hit"
-          ],
-          "castValue": null
+          ]
         },
         {
           "label": "Heavy Flamer",
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "seismic-hammer-meltagun",
@@ -1955,154 +1546,117 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Slow",
-            "Monsterbane",
+            "slow",
+            "monsterbane",
             "Reroll 1s To Hit"
-          ],
-          "castValue": null
+          ]
         },
         {
           "label": "Meltagun",
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "frag-cannon",
       "name": "Frag Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "6",
           "ap": "-",
           "rules": [
-            "Pistol 6",
-            "Rending"
-          ],
-          "castValue": null
+            "pistol",
+            "rending"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "frag-grenades",
       "name": "Frag Grenades",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 8,
           "strength": "3",
           "ap": "-",
           "rules": [
-            "Grenade 1",
+            "grenade",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "krak-grenades",
       "name": "Krak Grenades",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 8,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Grenade 1",
-            "Nonblast"
-          ],
-          "castValue": null
+            "grenade",
+            "nonblast"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "meltabombs",
       "name": "Meltabombs",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 6,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Grenade 1",
-            "Armourbane",
-            "Monsterbane",
-            "Nonblast"
-          ],
-          "castValue": null
+            "grenade",
+            "armourbane",
+            "monsterbane",
+            "nonblast"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "haywire-mines",
       "name": "Haywire Mines",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 6,
           "strength": "3",
           "ap": "3+",
           "rules": [
-            "Grenade 1",
-            "Haywire (2+)",
-            "Nonblast"
-          ],
-          "castValue": null
+            "grenade",
+            "haywire",
+            "nonblast"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "flamer",
       "name": "Flamer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Flame"
     },
     {
@@ -2110,444 +1664,340 @@
       "name": "Meltagun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "plasma-gun",
       "name": "Plasma Gun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Rapid Fire 1",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "gets-hot"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "grav-gun",
       "name": "Grav Gun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Rapid Fire 1",
-            "Grav"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "grav"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "sniper-rifle",
       "name": "Sniper Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 1",
-            "Sniper (3+)"
-          ],
-          "castValue": null
+            "heavy",
+            "sniper"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "shotgun",
       "name": "Shotgun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "4",
           "ap": "-",
           "rules": [
-            "Assault 2",
-            "Scatter"
-          ],
-          "castValue": null
+            "assault",
+            "scatter"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "auto-bolt-rifle",
       "name": "Auto Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Assault 3"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "bolt-rifle",
       "name": "Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "stalker-bolt-rifle",
       "name": "Stalker Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Heavy 2",
-            "Sniper (3+)"
-          ],
-          "castValue": null
+            "heavy",
+            "sniper"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "heavy-bolt-rifle",
       "name": "Heavy Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "executor-bolt-rifle",
       "name": "Executor Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "Heavy 1"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "hellstorm-bolt-rifle",
       "name": "Hellstorm Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "Assault 3"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "mastercrafted-boltgun",
       "name": "Mastercrafted Boltgun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "mastercrafted-auto-bolt-rifle",
       "name": "Mastercrafted Auto Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "Assault 3"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "mastercrafted-bolt-rifle",
       "name": "Mastercrafted Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "mastercrafted-bolt-carbine",
       "name": "Mastercrafted Bolt Carbine",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Sniper (3+)"
-          ],
-          "castValue": null
+            "heavy",
+            "sniper"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "mastercrafted-stalker-bolt-rifle",
       "name": "Mastercrafted Stalker Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Sniper (3+)"
-          ],
-          "castValue": null
+            "heavy",
+            "sniper"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "boltstorm-gauntlet",
       "name": "Boltstorm Gauntlet",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Assault 3"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "special-issue-boltgun",
       "name": "Special Issue Boltgun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "special-issue-stormbolter",
       "name": "Special Issue Stormbolter",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "Rapid Fire 2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "special-issue-bolt-pistol",
       "name": "Special Issue Bolt Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "Pistol 1"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "heavy-bolter",
       "name": "Heavy Bolter",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Heavy 3"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "heavy-flamer",
       "name": "Heavy Flamer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Flame"
     },
     {
@@ -2555,20 +2005,15 @@
       "name": "Lascannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "missile-launcher",
@@ -2576,191 +2021,145 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 48,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "plasma-cannon",
       "name": "Plasma Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "gets-hot"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "grav-cannon",
       "name": "Grav Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast",
-            "Grav"
-          ],
-          "castValue": null
+            "grav"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "multimelta",
       "name": "Multimelta",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 2",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "assault-cannon",
       "name": "Assault Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Assault 6",
-            "Rending"
-          ],
-          "castValue": null
+            "assault",
+            "rending"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-lascannons",
       "name": "2 Linked Lascannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-heavy-bolters",
       "name": "2 Linked Heavy Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Heavy 3 x2"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-autocannons",
       "name": "2 Linked Autocannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-heavy-flamers",
       "name": "2 Linked Heavy Flamers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Flame"
     },
     {
@@ -2769,235 +2168,179 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 48,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 2",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "heavy-plasma-cannon",
       "name": "Heavy Plasma Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "volkite-culverin",
       "name": "Volkite Culverin",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
-            "Beam"
-          ],
-          "castValue": null
+            "heavy",
+            "beam"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "kheres-assault-cannon",
       "name": "Kheres Assault Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 6",
-            "Monsterbane",
-            "Rending"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "rending"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "conversion-beam-cannon",
       "name": "Conversion Beam Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
-            "Monsterbane",
-            "Beam"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "beam"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "hellfire-plasma-carronade",
       "name": "Hellfire Plasma Carronade",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Heavy 3",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "heavy",
+            "gets-hot"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "anvillus-autocannon",
       "name": "Anvillus Auto Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 4",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "volkite-falconet",
       "name": "Volkite Falconet",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
-            "Beam",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "beam",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "arachnus-heavy-lascannon",
       "name": "Arachnus Heavy Lascannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "bores-air-defense-missiles",
       "name": "Bores Air Defense Missiles",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "aa"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "aiolos-missile-launcher",
       "name": "Aiolos Missile Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "6",
           "ap": "5+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "7\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "cyclone-missile-launcher",
@@ -3005,31 +2348,25 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 36,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 2",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "cyclone-missile-launcher-and-stormbolter",
@@ -3037,66 +2374,54 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 36,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 2",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         },
         {
           "label": "Stormbolter",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "hunter-killer-missile",
       "name": "Hunter Killer Missile",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 120,
           "strength": "10",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
-            "Monsterbane",
-            "One Use Only"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "one-use-only"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "orbital-strike",
@@ -3109,18 +2434,17 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "15\" Blast",
-            "Destroyer",
-            "Ordnance",
-            "Monsterbane",
-            "Indirect Fire",
-            "Ignores Cover",
+            "destroyer",
+            "ordnance",
+            "monsterbane",
+            "indirect",
+            "ignores-cover",
             "The Hour is Nigh",
             "T Minus 5",
-            "One Use Only"
-          ],
-          "castValue": null
+            "one-use-only"
+          ]
         },
         {
           "label": "10",
@@ -3129,18 +2453,17 @@
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "15\" Blast",
-            "Destroyer",
-            "Ordnance",
-            "Monsterbane",
-            "Indirect Fire",
-            "Ignores Cover",
+            "destroyer",
+            "ordnance",
+            "monsterbane",
+            "indirect",
+            "ignores-cover",
             "The Hour is Nigh",
             "T Minus 5",
-            "One Use Only"
-          ],
-          "castValue": null
+            "one-use-only"
+          ]
         },
         {
           "label": "8",
@@ -3149,22 +2472,19 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "15\" Blast",
-            "Destroyer",
-            "Ordnance",
-            "Monsterbane",
-            "Indirect Fire",
-            "Ignores Cover",
+            "destroyer",
+            "ordnance",
+            "monsterbane",
+            "indirect",
+            "ignores-cover",
             "The Hour is Nigh",
             "T Minus 5",
-            "One Use Only"
-          ],
-          "castValue": null
+            "one-use-only"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "combi-flamer",
@@ -3172,32 +2492,26 @@
       "profiles": [
         {
           "label": "Flamer",
-          "minRange": null,
-          "maxRange": null,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         },
         {
           "label": "Boltgun",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "combi-grav",
@@ -3205,33 +2519,28 @@
       "profiles": [
         {
           "label": "Grav",
-          "minRange": null,
           "maxRange": 18,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Rapid Fire 1",
-            "Grav"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "grav"
+          ]
         },
         {
           "label": "Boltgun",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "combi-plasma",
@@ -3239,33 +2548,28 @@
       "profiles": [
         {
           "label": "Plasma",
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Rapid Fire 1",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "gets-hot"
+          ]
         },
         {
           "label": "Boltgun",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "combi-melta",
@@ -3273,34 +2577,29 @@
       "profiles": [
         {
           "label": "Melta",
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         },
         {
           "label": "Boltgun",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "bolt-rifle-combi-flamer",
@@ -3308,32 +2607,26 @@
       "profiles": [
         {
           "label": "Flamer",
-          "minRange": null,
-          "maxRange": null,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         },
         {
           "label": "Bolt Rifle",
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "bolt-rifle-combi-grav",
@@ -3341,33 +2634,28 @@
       "profiles": [
         {
           "label": "Grav",
-          "minRange": null,
           "maxRange": 18,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Rapid Fire 1",
-            "Grav"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "grav"
+          ]
         },
         {
           "label": "Bolt Rifle",
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "bolt-rifle-combi-plasma",
@@ -3375,33 +2663,28 @@
       "profiles": [
         {
           "label": "Plasma",
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Rapid Fire 1",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "gets-hot"
+          ]
         },
         {
           "label": "Bolt Rifle",
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "bolt-rifle-combi-melta",
@@ -3409,34 +2692,29 @@
       "profiles": [
         {
           "label": "Melta",
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         },
         {
           "label": "Bolt Rifle",
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "combi-disintegrator",
@@ -3444,71 +2722,56 @@
       "profiles": [
         {
           "label": "Disintegrator",
-          "minRange": null,
           "maxRange": 18,
           "strength": "5",
           "ap": "1+",
           "rules": [
-            "Rapid Fire 1",
-            "Armourbane",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "armourbane",
+            "monsterbane"
+          ]
         },
         {
           "label": "Boltgun",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-auto-boltstorms",
       "name": "Dual Auto Boltstorms",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Assault 3 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-flamers",
       "name": "Dual Flamers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Flame"
     },
     {
@@ -3516,305 +2779,233 @@
       "name": "Dual Melta Guns",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1 x2",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-assault-bolters",
       "name": "Dual Assault Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 3 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-assault-plasma-incinerators",
       "name": "Dual Assault Plasma Incinerators",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Assault 3 x2",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "assault",
+            "gets-hot"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "fragstorm-grenade-launcher",
       "name": "Fragstorm Grenade Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
           "rules": [
-            "Assault 1",
+            "assault",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-fragstorm-grenade-launchers",
       "name": "2 Linked Fragstorm Grenade Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
           "rules": [
-            "Assault 1 x2",
+            "assault",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "hurricane-bolter",
       "name": "Hurricane Bolter",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 6",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "centurion-assault-launcher",
       "name": "Centurion Assault Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Assault 2",
+            "assault",
             "Counts as being armed with Grenades"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "mobile-accelerator-autocannon",
       "name": "Mobile Accelerator Autocannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 3",
-            "Pinning",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "pinning",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-bolt-rifles",
       "name": "2 Linked Bolt Rifles",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1 x2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-auto-bolt-rifles",
       "name": "2 Linked Auto Bolt Rifles",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Assault 3 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-stormbolters",
       "name": "2 Linked Stormbolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 2 x2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-multimeltas",
       "name": "2 Linked Multimeltas",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 2 x2",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-volkite-calivers",
       "name": "2 Linked Volkite Calivers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "Heavy 2 x2",
-            "Beam"
-          ],
-          "castValue": null
+            "heavy",
+            "beam"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "onslaught-gatling-cannon",
       "name": "Onslaught Gatling Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "-",
           "rules": [
-            "Heavy 10"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "heavy-onslaught-gatling-cannon",
       "name": "Heavy Onslaught Gatling Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Heavy 12"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "ballistus-missile-launcher",
@@ -3822,93 +3013,71 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 48,
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "Heavy 2",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-ballistus-lascannons",
       "name": "2 Linked Ballistus Lascannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "10",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "macro-plasma-incinerator",
       "name": "Macro Plasma Incinerator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "brutalis-talon",
       "name": "Brutalis Talon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Extra Attack 1",
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "extra-attack",
+            "slow",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw-and-onslaught-gatling-cannon",
@@ -3916,30 +3085,23 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Gatling",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "-",
           "rules": [
-            "Heavy 10"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw-and-2-linked-bolt-rifles",
@@ -3947,33 +3109,27 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Bolt Rifles",
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 1 x2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "dreadnought-ccw-and-fragstorm",
@@ -3981,31 +3137,24 @@
       "profiles": [
         {
           "label": "Melee",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Fragstorm",
-          "minRange": null,
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
           "rules": [
-            "Assault 1",
+            "assault",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "scout-grenade-launcher",
@@ -4013,31 +3162,25 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 30,
           "strength": "8",
           "ap": "4+",
           "rules": [
-            "Assault 1",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 30,
           "strength": "3",
           "ap": "-",
           "rules": [
-            "Assault 1",
+            "assault",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "auxiliary-grenade-launcher",
@@ -4045,88 +3188,67 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 24,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 24,
           "strength": "3",
           "ap": "-",
           "rules": [
-            "Assault 1",
+            "assault",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "5-deathstorm-missile-pods",
       "name": "5 Deathstorm Missile Pods",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 2 x5",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "5-assault-cannons",
       "name": "5 Assault Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Assault 6 x5",
-            "Rending"
-          ],
-          "castValue": null
+            "assault",
+            "rending"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "incendium-cannon",
       "name": "Incendium Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Hellstorm"
     },
     {
@@ -4134,38 +3256,28 @@
       "name": "2 Linked Heavy Stubbers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "Heavy 3 x2"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "invictor-pistol",
       "name": "Invictor Pistol",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Pistol 3"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-javelin-missile-launchers",
@@ -4173,51 +3285,40 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 3 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 36,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 3 x2",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "icarus-rocket-pod",
       "name": "Icarus Rocket Pod",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "aa"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "helfrost-cannon",
@@ -4225,95 +3326,74 @@
       "profiles": [
         {
           "label": "Focused",
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
-            "Lance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "lance",
+            "monsterbane"
+          ]
         },
         {
           "label": "Dispersed",
-          "minRange": null,
           "maxRange": 36,
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "grav-flux-bombard",
       "name": "Grav Flux Bombard",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Grav"
-          ],
-          "castValue": null
+            "grav"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "storm-cannon-array",
       "name": "Storm Cannon Array",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 12",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "cyclonic-melta-lance",
       "name": "Cyclonic Melta Lance",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "9",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "leviathan-siege-drill-meltagun",
@@ -4321,33 +3401,26 @@
       "profiles": [
         {
           "label": "Siege Drill",
-          "minRange": null,
-          "maxRange": null,
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Destroyer",
-            "Monsterbane",
-            "Auxiliary"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane",
+            "auxiliary"
+          ]
         },
         {
           "label": "Meltagun",
-          "minRange": null,
           "maxRange": 12,
           "strength": "1+",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "leviathan-siege-claw-meltagun",
@@ -4355,32 +3428,25 @@
       "profiles": [
         {
           "label": "Siege Claw",
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "Slow",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "slow",
+            "monsterbane"
+          ]
         },
         {
           "label": "Meltagun",
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "cypher-pistols",
@@ -4388,703 +3454,484 @@
       "profiles": [
         {
           "label": "Plasma",
-          "minRange": null,
           "maxRange": 12,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Pistol 2"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         },
         {
           "label": "Bolt",
-          "minRange": null,
           "maxRange": 12,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Pistol 2"
-          ],
-          "castValue": null
+            "pistol"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dozerblade",
       "name": "Dozerblade",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+1",
           "ap": "6+",
           "rules": [
-            "Accurate",
+            "accurate",
             "Dozerblade"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dual-lightning-claws-hq",
       "name": "Dual Lightning Claws",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "User",
           "ap": "3+",
           "rules": [
-            "Extra Attack 1",
-            "Reroll failed To Hit and To Wound rolls"
-          ],
-          "castValue": null
+            "extra-attack",
+            "Reroll all failed To Hit and To Wound rolls"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "mastercraft-bolt-rifle",
       "name": "Mastercraft Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
         "Bolter"
-      ],
-      "templateType": null
+      ]
     },
     {
       "id": "mastercraft-heavy-bolter",
       "name": "Mastercraft Heavy Bolter",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "Heavy 3"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-plasma-guns",
       "name": "2 Linked Plasma Guns",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Rapid Fire 1 x2",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "gets-hot"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "flamer-sternguard",
       "name": "Flamer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "Assault 1"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
-      "keywords": [],
       "templateType": "Flame"
-    },
-    {
-      "id": "storm-cannon-array-vi",
-      "name": "Storm Cannon Array",
-      "profiles": [
-        {
-          "label": null,
-          "minRange": null,
-          "maxRange": 48,
-          "strength": "7",
-          "ap": "4+",
-          "rules": [
-            "Heavy 12",
-            "Monsterbane"
-          ],
-          "castValue": null
-        }
-      ],
-      "keywords": [],
-      "templateType": null
     },
     {
       "id": "iron-halo",
       "name": "Iron Halo",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "4+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "rosarius",
       "name": "Rosarius",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "4+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "stormshield",
       "name": "Stormshield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Sv-1 (Improves by 1)",
             "4+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "refractor-field",
       "name": "Refractor Field",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "5+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "terminator-honours",
       "name": "Terminator Honours",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "5+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "atomantic-shielding",
       "name": "Atomantic Shielding",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "5+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "psychic-hood",
       "name": "Psychic Hood",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Gain +1 to Deny the Witch"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "company-standard",
       "name": "Company Standard",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "6\" Aura: reroll failed Ld Tests",
             "6\" Aura: A+1"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "augar-array",
       "name": "Augar Array",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "6\" Aura: target unit does not scatter when Deepstriking"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "chaff-launchers",
       "name": "Chaff Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "5+ Invulnerability Save against Ranged Attacks"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "dozerblade-equipment",
-      "name": "Dozerblade",
+      "name": "Dozerblade Plough",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Reroll Dangerous Terrain Tests and failed Moved through Cover"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "extra-armour",
       "name": "Extra Armour",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Treat all Crew Stun Results as Weapon Disabled"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "recovery-gear",
       "name": "Recovery Gear",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Roll a d6, on 5+ repair Immobilized or Crew Stun result"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "smoke-launchers",
       "name": "Smoke Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "6\" range, 5\" Smoke Cloud -1 To Hit, scatters +1\" until Command Phase. One Use Only. Shooting Phase only."
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "frag-launchers",
       "name": "Frag Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "6\" Aura: this model and target unit count as being armed with Grenades for purposes of Charging"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "omni-scramblers",
       "name": "Omni Scramblers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "12\" Aura: may force a target unit arriving from Deepstrike within 12\" to reroll their Scatter Dice"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "infiltrator-comms-array",
       "name": "Infiltrator Comms Array",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "This unit is considered to always be in range of Auras that allow the reroll of 1s To Hit"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "helix-gauntlet",
       "name": "Helix Gauntlet",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "This unit ignores the first Wound suffered in each phase"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "reiver-armour",
       "name": "Reiver Armour",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "Deepstrike"
-          ],
-          "castValue": null
+            "deepstrike"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "camo-cloaks",
       "name": "Camo Cloaks",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
-            "Stealth"
-          ],
-          "castValue": null
+            "stealth"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "grapnel-launcher",
       "name": "Grapnel Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Ignores Models and Terrain when Moving, Advancing, Charging, and Falling Back"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "magna-grapple",
       "name": "Magna Grapple",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "This model ignores Models and Terrain when Moving, Advancing, Charging, or Falling Back"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "blizzard-shield",
       "name": "Blizzard Shield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "4+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "data-link",
       "name": "Data Link",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Target Whirlwind unit may reroll the Scatter Dice for templates"
-          ],
-          "castValue": null
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "las-talon",
       "name": "Las Talon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-hammerstrike-missile-launchers",
       "name": "2 Linked Hammerstrike Missile Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "Heavy 2 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-stormfury-missiles",
       "name": "2 Linked Stormfury Missiles",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "10",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
-      ],
-      "keywords": [],
-      "templateType": null
+      ]
     },
     {
       "id": "2-linked-accelerator-autocannons",
       "name": "2 Linked Accelerator Autocannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 3 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5093,16 +3940,13 @@
       "name": "2 Linked Las Talons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 2 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5111,17 +3955,14 @@
       "name": "Graviton Cannon (Rapier)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Grav"
-          ],
-          "castValue": null
+            "grav"
+          ]
         }
       ]
     },
@@ -5130,15 +3971,12 @@
       "name": "4 Linked Heavy Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Heavy 3 x4"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -5147,17 +3985,14 @@
       "name": "4 Linked Laser Destroyers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 60,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x4",
-            "Monsterbane",
-            "Ordnance"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "ordnance"
+          ]
         }
       ]
     },
@@ -5167,28 +4002,24 @@
       "profiles": [
         {
           "label": "Anti-armour",
-          "minRange": null,
           "maxRange": 60,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 4",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Anti-infantry",
-          "minRange": null,
           "maxRange": 60,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Heavy 4",
+            "heavy",
             "3\" Blast",
-            "Indirect"
-          ],
-          "castValue": null
+            "indirect"
+          ]
         }
       ]
     },
@@ -5197,15 +4028,12 @@
       "name": "Castellan Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "Heavy 3"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -5214,16 +4042,13 @@
       "name": "Superfrag Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -5232,17 +4057,14 @@
       "name": "Superkrak Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane",
-            "One Use Only"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "one-use-only"
+          ]
         }
       ]
     },
@@ -5251,18 +4073,15 @@
       "name": "Vengor Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
-            "Destroyer",
-            "Monsterbane",
-            "One Use Only"
-          ],
-          "castValue": null
+            "heavy",
+            "destroyer",
+            "monsterbane",
+            "one-use-only"
+          ]
         }
       ]
     },
@@ -5271,16 +4090,13 @@
       "name": "Assault Plasma Incinerator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
           "ap": "2+",
           "rules": [
-            "Assault 3",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "assault",
+            "gets-hot"
+          ]
         }
       ]
     },
@@ -5289,16 +4105,13 @@
       "name": "Plasma Incinerator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Rapid Fire 1",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "gets-hot"
+          ]
         }
       ]
     },
@@ -5307,17 +4120,14 @@
       "name": "Heavy Plasma Incinerator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
-            "Monsterbane",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "gets-hot"
+          ]
         }
       ]
     },
@@ -5326,17 +4136,14 @@
       "name": "Melta Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "assault",
+            "melta",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5345,17 +4152,14 @@
       "name": "Heavy Melta Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "melta",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5364,16 +4168,13 @@
       "name": "Special Issue Stalker Bolt Rifle",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Sniper (3+)"
-          ],
-          "castValue": null
+            "heavy",
+            "sniper"
+          ]
         }
       ],
       "keywords": [
@@ -5385,16 +4186,13 @@
       "name": "Las Fusil",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5403,17 +4201,14 @@
       "name": "Centurion Missile Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5422,16 +4217,13 @@
       "name": "Predator Autocannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 6",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5440,17 +4232,14 @@
       "name": "Volkite Macrosaker",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Beam",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "beam",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5459,17 +4248,14 @@
       "name": "2 Linked Plasma Destroyers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "3\" Blast",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "gets-hot"
+          ]
         }
       ]
     },
@@ -5478,17 +4264,14 @@
       "name": "Graviton Cannon (Predator)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "*",
           "ap": "-",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Grav"
-          ],
-          "castValue": null
+            "grav"
+          ]
         }
       ]
     },
@@ -5497,18 +4280,15 @@
       "name": "Conversion Beam Cannon (Predator)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
-            "Destroyer",
-            "Beam",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "destroyer",
+            "beam",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5517,18 +4297,15 @@
       "name": "2 Linked Magna Melta Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "3\" Blast",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "melta",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5537,15 +4314,11 @@
       "name": "2 Linked Infernus Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
       "templateType": "Hellstorm"
@@ -5555,15 +4328,11 @@
       "name": "2 Linked Inferno Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
       "templateType": "Flame"
@@ -5573,16 +4342,13 @@
       "name": "2 Linked Assault Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Assault 6 x2",
-            "Rending"
-          ],
-          "castValue": null
+            "assault",
+            "rending"
+          ]
         }
       ]
     },
@@ -5592,27 +4358,23 @@
       "profiles": [
         {
           "label": "Volkite",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Heavy 1",
-            "Beam"
-          ],
-          "castValue": null
+            "heavy",
+            "beam"
+          ]
         },
         {
           "label": "Boltgun",
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 1",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
@@ -5624,16 +4386,13 @@
       "name": "Havoc Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -5642,16 +4401,13 @@
       "name": "2 Volkite Calivers (Sponson)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "Heavy 1 x2",
-            "Beam"
-          ],
-          "castValue": null
+            "heavy",
+            "beam"
+          ]
         }
       ]
     },
@@ -5660,15 +4416,11 @@
       "name": "2 Heavy Flamers (Sponson)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
       "templateType": "Flame"
@@ -5678,15 +4430,12 @@
       "name": "2 Heavy Bolters (Sponson)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Heavy 3 x2"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -5695,16 +4444,13 @@
       "name": "2 Lascannons (Sponson)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5713,16 +4459,13 @@
       "name": "2 Linked Las Talons (Sponson)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 2 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5731,17 +4474,14 @@
       "name": "Lancer Laser Destroyer",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "Heavy 2",
-            "Ordnance",
+            "heavy",
+            "ordnance",
             "Grinding Advance"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -5750,15 +4490,12 @@
       "name": "2 Linked Heavy Onslaught Gatling Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Heavy 12 x2"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -5767,16 +4504,13 @@
       "name": "2 Tempest Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "Rapid Fire 4 x2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
@@ -5788,17 +4522,14 @@
       "name": "2 Multimeltas (Sponson)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 2",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "melta",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5807,16 +4538,13 @@
       "name": "2 Linked Smart Rocket Pods",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Heavy 2 x2",
-            "Ignores Cover"
-          ],
-          "castValue": null
+            "heavy",
+            "ignores-cover"
+          ]
         }
       ]
     },
@@ -5825,15 +4553,12 @@
       "name": "Heavy Stubber",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "Heavy 3"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -5842,15 +4567,12 @@
       "name": "2 Krakstorm Grenade Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ]
     },
@@ -5859,16 +4581,13 @@
       "name": "2 Stormbolters (Hull)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 2 x2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
@@ -5880,15 +4599,12 @@
       "name": "Onslaught Gatling Cannon (Pintle)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "-",
           "rules": [
-            "Heavy 10"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -5897,16 +4613,13 @@
       "name": "2 Hurricane Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "Rapid Fire 6 x2",
-            "Bolter"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "bolter"
+          ]
         }
       ],
       "keywords": [
@@ -5918,15 +4631,11 @@
       "name": "2 Flamestorm Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
       "templateType": "Flame"
@@ -5936,16 +4645,13 @@
       "name": "2 Sets of 2 Linked Lascannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
             "Heavy 1 x2 (x2)",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -5954,15 +4660,12 @@
       "name": "2 Linked Heavy Bolters (Turret)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Heavy 3 x2"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -5971,16 +4674,13 @@
       "name": "2 Sets of 2 Linked Volkite Culverins",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "6",
           "ap": "3+",
           "rules": [
             "Heavy 1 x2 (x2)",
-            "Beam"
-          ],
-          "castValue": null
+            "beam"
+          ]
         }
       ]
     },
@@ -5989,17 +4689,14 @@
       "name": "2 Sets of 2 Linked Multimeltas",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
             "Heavy 2 x2 (x2)",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "melta",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6008,17 +4705,14 @@
       "name": "2 Linked Icarus Rocket Pods",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2 x2",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -6027,17 +4721,14 @@
       "name": "2 Storm Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 6 x2",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -6046,19 +4737,17 @@
       "name": "Skyspear Missile",
       "profiles": [
         {
-          "label": null,
           "minRange": 12,
           "maxRange": 60,
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast",
-            "Destroyer",
-            "Monsterbane",
-            "Indirect"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane",
+            "indirect"
+          ]
         }
       ]
     },
@@ -6068,30 +4757,26 @@
       "profiles": [
         {
           "label": "Volkite Cardanelle",
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
-            "Beam",
-            "Monsterbane",
-            "Coaxial"
-          ],
-          "castValue": null
+            "heavy",
+            "beam",
+            "monsterbane",
+            "co-axial"
+          ]
         },
         {
           "label": "Autocannon",
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane",
-            "Coaxial"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "co-axial"
+          ]
         }
       ]
     },
@@ -6101,31 +4786,27 @@
       "profiles": [
         {
           "label": "Melta Blast Gun",
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Melta",
-            "Monsterbane",
-            "Coaxial"
-          ],
-          "castValue": null
+            "melta",
+            "monsterbane",
+            "co-axial"
+          ]
         },
         {
           "label": "Autocannon",
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane",
-            "Coaxial"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "co-axial"
+          ]
         }
       ]
     },
@@ -6135,31 +4816,27 @@
       "profiles": [
         {
           "label": "Kratos Battle Cannon",
-          "minRange": null,
           "maxRange": 72,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Ordnance",
-            "Monsterbane",
-            "Coaxial"
-          ],
-          "castValue": null
+            "ordnance",
+            "monsterbane",
+            "co-axial"
+          ]
         },
         {
           "label": "Autocannon",
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane",
-            "Coaxial"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "co-axial"
+          ]
         }
       ]
     },
@@ -6168,16 +4845,13 @@
       "name": "2 Autocannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6186,18 +4860,15 @@
       "name": "Sicaran Laser Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "3\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6206,16 +4877,13 @@
       "name": "2 Linked Herakles Autocannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "4+",
           "rules": [
-            "Heavy 3 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6224,16 +4892,13 @@
       "name": "2 Linked Arcus Multilaunchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "7\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6242,15 +4907,12 @@
       "name": "Punisher Rotary Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Heavy 18"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -6259,16 +4921,13 @@
       "name": "2 Linked Omega Plasma Arrays",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Heavy 2 x2",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6277,16 +4936,13 @@
       "name": "2 Linked Heavy Stubbers (AA)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "Heavy 3 x2",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "aa"
+          ]
         }
       ]
     },
@@ -6295,18 +4951,15 @@
       "name": "Demolisher Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "10",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6315,17 +4968,14 @@
       "name": "4 Linked Laser Destroyers (Hull)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 60,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x4",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6334,16 +4984,12 @@
       "name": "Siege Shield",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "+3",
           "ap": "4+",
           "rules": [
-            "Accurate",
+            "accurate",
             "Siege Shield"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6352,17 +4998,14 @@
       "name": "Whirlwind Hyperios Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 2",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -6371,17 +5014,14 @@
       "name": "Scorpius Multilauncher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "7\" Blast",
-            "Indirect"
-          ],
-          "castValue": null
+            "indirect"
+          ]
         }
       ]
     },
@@ -6390,18 +5030,16 @@
       "name": "Whirlwind Launcher",
       "profiles": [
         {
-          "label": null,
           "minRange": 12,
           "maxRange": 72,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Indirect",
-            "Pinning"
-          ],
-          "castValue": null
+            "indirect",
+            "pinning"
+          ]
         }
       ]
     },
@@ -6410,15 +5048,11 @@
       "name": "Siege Shield (Equipment)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "FA+1, Reroll Dangerous Terrain Tests and failed Move through Cover"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6427,15 +5061,12 @@
       "name": "Skyhammer Missile Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 60,
           "strength": "7",
           "ap": "3+",
           "rules": [
-            "Heavy 2"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -6444,16 +5075,13 @@
       "name": "Storm Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 6",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6462,36 +5090,14 @@
       "name": "2 Linked Plasma Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "3\" Blast",
-            "Gets Hot!"
-          ],
-          "castValue": null
-        }
-      ]
-    },
-    {
-      "id": "2-linked-multimeltas-hull",
-      "name": "2 Linked Multimeltas",
-      "profiles": [
-        {
-          "label": null,
-          "minRange": null,
-          "maxRange": 24,
-          "strength": "8",
-          "ap": "1+",
-          "rules": [
-            "Heavy 2 x2",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "gets-hot"
+          ]
         }
       ]
     },
@@ -6500,16 +5106,13 @@
       "name": "2 Linked Vengeance Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "5\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6518,16 +5121,13 @@
       "name": "2 Stormstrike Missile Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6536,16 +5136,13 @@
       "name": "4 Linked Lascannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x4",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6554,15 +5151,12 @@
       "name": "Xiphon Missile Battery",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 60,
           "strength": "7",
           "ap": "3+",
           "rules": [
-            "Heavy 3"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -6571,16 +5165,13 @@
       "name": "Deathwind Launcher",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "5",
           "ap": "-",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6589,15 +5180,11 @@
       "name": "Shield Dome",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "6\" Aura: this model and target unit gain 5+ Invulnerability Save"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6606,16 +5193,13 @@
       "name": "2 Linked Heavy Stubbers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "Heavy 3 x2",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "aa"
+          ]
         }
       ]
     },
@@ -6625,28 +5209,24 @@
       "profiles": [
         {
           "label": "Multimelta",
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 2",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "melta",
+            "monsterbane"
+          ]
         },
         {
           "label": "Plasma Gun",
-          "minRange": null,
           "maxRange": 24,
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "Rapid Fire 1",
-            "Gets Hot!"
-          ],
-          "castValue": null
+            "rapid-fire",
+            "gets-hot"
+          ]
         }
       ]
     },
@@ -6655,17 +5235,14 @@
       "name": "Terrax Melta Cutter",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 5",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "melta",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6674,16 +5251,12 @@
       "name": "Termite Drill",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "Accurate",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "accurate",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6692,16 +5265,13 @@
       "name": "2 Linked Terrax Volkite Chargers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 18,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Heavy 1 x2",
-            "Beam"
-          ],
-          "castValue": null
+            "heavy",
+            "beam"
+          ]
         }
       ]
     },
@@ -6711,27 +5281,23 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 48,
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "3\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6740,15 +5306,12 @@
       "name": "2 Linked Avenger Bolt Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "Heavy 12 x2"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -6757,16 +5320,13 @@
       "name": "2 Sets of 2 Linked Autocannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
             "Heavy 2 x2 (x2)",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6775,18 +5335,15 @@
       "name": "4 Linked Hellstrike Missiles",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1 x4",
-            "Ordnance",
-            "Monsterbane",
-            "One Use Only"
-          ],
-          "castValue": null
+            "heavy",
+            "ordnance",
+            "monsterbane",
+            "one-use-only"
+          ]
         }
       ]
     },
@@ -6795,15 +5352,12 @@
       "name": "2 Sets of 4 Linked Heavy Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
             "Heavy 3 x4 (x2)"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6812,17 +5366,14 @@
       "name": "2 Linked Hellstrike Missile Racks",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1 x2",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6831,18 +5382,15 @@
       "name": "Thunderhawk Heavy Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "7\" Blast",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6851,18 +5399,15 @@
       "name": "Turbo Laser Destructor",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 96,
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6871,15 +5416,12 @@
       "name": "4 Sets of 2 Linked Heavy Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
             "Heavy 3 x2 (x4)"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6888,16 +5430,12 @@
       "name": "2 Linked Cluster Bomb Racks",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "Apocalypse Barrage"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -6906,18 +5444,15 @@
       "name": "2 Linked Volcano Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 120,
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "5\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6926,16 +5461,13 @@
       "name": "2 Sets of 4 Linked Lascannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
           "rules": [
             "Heavy 1 x4 (x2)",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6944,17 +5476,14 @@
       "name": "2 Sets of 3 Linked Laser Destroyers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 60,
           "strength": "9",
           "ap": "2+",
           "rules": [
             "Heavy 1 x3 (x2)",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6964,30 +5493,26 @@
       "profiles": [
         {
           "label": "Destroyer",
-          "minRange": null,
           "maxRange": 72,
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
-            "Destroyer",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "destroyer",
+            "monsterbane"
+          ]
         },
         {
           "label": "Blast",
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "5\" Blast",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -6996,18 +5521,15 @@
       "name": "3 Linked Neutron Pulses",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x3",
+            "heavy",
             "3\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7016,33 +5538,12 @@
       "name": "2 Sets of 2 Linked Heavy Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
             "Heavy 3 x2 (x2)"
-          ],
-          "castValue": null
-        }
-      ]
-    },
-    {
-      "id": "2-sets-2-linked-lascannons-sponson",
-      "name": "2 Sets of 2 Linked Lascannons",
-      "profiles": [
-        {
-          "label": null,
-          "minRange": null,
-          "maxRange": 48,
-          "strength": "9",
-          "ap": "2+",
-          "rules": [
-            "Heavy 1 x2 (x2)",
-            "Monsterbane"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -7051,18 +5552,15 @@
       "name": "Dreadhammer Siege Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "10\" Blast",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7071,16 +5569,13 @@
       "name": "2 Linked Macro Accelerator Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 6 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7089,16 +5584,13 @@
       "name": "2 Astraeus Las Rippers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 2 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7107,17 +5599,14 @@
       "name": "2 Heavy Plasma Cannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "5\" Blast",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7126,17 +5615,14 @@
       "name": "2 Linked Sky Reaper Batteries",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 4 x2",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -7146,31 +5632,27 @@
       "profiles": [
         {
           "label": "Main",
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "melta",
+            "monsterbane"
+          ]
         },
         {
           "label": "Secondary",
-          "minRange": null,
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "3\" Blast",
-            "Melta",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "melta",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7179,18 +5661,15 @@
       "name": "2 Linked Turbolaser Destructors",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 96,
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "5\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7199,17 +5678,14 @@
       "name": "Long Lascannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -7218,17 +5694,14 @@
       "name": "2 Linked Long Lascannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -7237,17 +5710,14 @@
       "name": "2 Linked Autocannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2 x2",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -7256,17 +5726,14 @@
       "name": "4 Linked Autocannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "Heavy 2 x4",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -7275,17 +5742,14 @@
       "name": "Plasma Obliterator",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "7\" Blast",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7294,18 +5758,15 @@
       "name": "Macro Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "destroyer",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7314,23 +5775,21 @@
       "name": "Deathstrike Missile Silo",
       "profiles": [
         {
-          "label": null,
           "minRange": 12,
           "maxRange": 240,
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "15\" Blast",
-            "Destroyer",
-            "Ordnance",
-            "Monsterbane",
-            "Indirect",
-            "Ignores Cover",
+            "destroyer",
+            "ordnance",
+            "monsterbane",
+            "indirect",
+            "ignores-cover",
             "The Hour is Nigh",
             "T Minus 5"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -7339,15 +5798,12 @@
       "name": "Punisher Gatling Gun",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 24,
           "strength": "5",
           "ap": "-",
           "rules": [
-            "Heavy 20"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -7356,18 +5812,15 @@
       "name": "Battle Cannon",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "Heavy 1",
+            "heavy",
             "5\" Blast",
-            "Ordnance",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "ordnance",
+            "monsterbane"
+          ]
         }
       ]
     },
@@ -7376,17 +5829,14 @@
       "name": "4 Linked Long Lascannons",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 72,
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "Heavy 1 x4",
-            "Monsterbane",
-            "AA"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane",
+            "aa"
+          ]
         }
       ]
     },
@@ -7395,15 +5845,11 @@
       "name": "4 Sets of 2 Linked Heavy Flamers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1 x2 (x4"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
       "templateType": "Flame"
@@ -7414,27 +5860,23 @@
       "profiles": [
         {
           "label": "Krak",
-          "minRange": null,
           "maxRange": 72,
           "strength": "10",
           "ap": "3+",
           "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ],
-          "castValue": null
+            "heavy",
+            "monsterbane"
+          ]
         },
         {
           "label": "Frag",
-          "minRange": null,
           "maxRange": 72,
           "strength": "6",
           "ap": "5+",
           "rules": [
-            "Heavy 1 x2",
+            "heavy",
             "5\" Blast"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -7443,15 +5885,12 @@
       "name": "4 Heavy Bolters",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Heavy 3 x4"
-          ],
-          "castValue": null
+            "heavy"
+          ]
         }
       ]
     },
@@ -7460,15 +5899,11 @@
       "name": "Heavy Gate",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "Open or Closed as declared in Command Phase"
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -7477,15 +5912,11 @@
       "name": "Flare Launchers",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "-",
           "ap": "-",
           "rules": [
             "One Use Only. Negate the first hit from a Bomb or weapon with Apocalypse Barrage this turn."
-          ],
-          "castValue": null
+          ]
         }
       ]
     },
@@ -7494,15 +5925,11 @@
       "name": "2 Linked Heavy Flamers (Turret)",
       "profiles": [
         {
-          "label": null,
-          "minRange": null,
-          "maxRange": null,
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "Assault 1 x2"
-          ],
-          "castValue": null
+            "assault"
+          ]
         }
       ],
       "templateType": "Flame"
@@ -7603,9 +6030,6 @@
         "deepstrike",
         "flyer"
       ],
-      "removesRules": [],
-      "grantsWargear": [],
-      "removesWargear": [],
       "mutuallyExcludes": [
         "terminator-armour",
         "bike",
@@ -7640,11 +6064,9 @@
       "grantsRules": [
         "steed"
       ],
-      "removesRules": [],
       "grantsWargear": [
         "stormbolter"
       ],
-      "removesWargear": [],
       "mutuallyExcludes": [
         "terminator-armour",
         "jump-pack",
@@ -7677,9 +6099,6 @@
       "grantsWargear": [
         "orbital-strike"
       ],
-      "removesRules": [],
-      "removesWargear": [],
-      "mutuallyExcludes": [],
       "note": "W+1, A+1. Gain Orbital Strike. Gain Unique."
     },
     "chief-librarian": {
@@ -7700,11 +6119,6 @@
           "value": 1
         }
       ],
-      "grantsRules": [],
-      "removesRules": [],
-      "grantsWargear": [],
-      "removesWargear": [],
-      "mutuallyExcludes": [],
       "note": "W+1, A+1. Gain Psychic Mastery +1. May Deny the Witch twice per Psychic Phase. Gain Unique."
     },
     "chief-chaplain": {
@@ -7725,11 +6139,6 @@
           "value": 1
         }
       ],
-      "grantsRules": [],
-      "removesRules": [],
-      "grantsWargear": [],
-      "removesWargear": [],
-      "mutuallyExcludes": [],
       "note": "W+1, A+1. May take one additional H option. Gain Unique."
     },
     "chief-apothecary": {
@@ -7750,11 +6159,6 @@
           "value": 1
         }
       ],
-      "grantsRules": [],
-      "removesRules": [],
-      "grantsWargear": [],
-      "removesWargear": [],
-      "mutuallyExcludes": [],
       "note": "W+1, A+1. 6\" Aura – This model and target unit may reroll 1s for Feel No Pain. Gain Unique."
     },
     "master-of-the-forge": {
@@ -7778,10 +6182,6 @@
       "grantsRules": [
         "sm-repair"
       ],
-      "removesRules": [],
-      "grantsWargear": [],
-      "removesWargear": [],
-      "mutuallyExcludes": [],
       "note": "W+1, A+1. Gain Repair D3 Wounds. May use both versions of Repair on the same target. Gain Unique."
     },
     "chapter-ancient": {
@@ -7802,11 +6202,6 @@
           "value": 1
         }
       ],
-      "grantsRules": [],
-      "removesRules": [],
-      "grantsWargear": [],
-      "removesWargear": [],
-      "mutuallyExcludes": [],
       "note": "W+1, A+1. 6\" Aura – this model and target unit may make an Immediate Free Shooting Phase against any unit that just arrived from Reserves that is in range. Gain Unique."
     },
     "chapter-champion": {
@@ -7833,11 +6228,6 @@
           "value": 1
         }
       ],
-      "grantsRules": [],
-      "removesRules": [],
-      "grantsWargear": [],
-      "removesWargear": [],
-      "mutuallyExcludes": [],
       "note": "W+1, I+1, A+1. Reroll all failed To Hit and To Wound rolls. Gain Unique."
     },
     "primaris-terminator-armour": {
@@ -7863,8 +6253,6 @@
         "steady",
         "very-bulky"
       ],
-      "removesRules": [],
-      "grantsWargear": [],
       "removesWargear": [
         "frag-grenades",
         "krak-grenades"
@@ -8031,7 +6419,6 @@
     ],
     "special-weapon-slot": [
       {
-        "weaponId": null,
         "label": "None",
         "pts": 0
       },
@@ -8058,7 +6445,6 @@
     ],
     "heavy-weapon-slot": [
       {
-        "weaponId": null,
         "label": "None",
         "pts": 0
       },
@@ -8250,8 +6636,7 @@
         "castValue": 7,
         "pts": 10,
         "range": 18,
-        "description": "Target unit gains Rending on all Ranged and Melee Attacks until your next Psychic Phase.",
-        "isAttack": false
+        "description": "Target unit gains Rending on all Ranged and Melee Attacks until your next Psychic Phase."
       },
       {
         "id": "forewarning",
@@ -8260,8 +6645,7 @@
         "castValue": 6,
         "pts": 10,
         "range": 18,
-        "description": "Target unit gains 4+ Cover Save until your next Psychic Phase.",
-        "isAttack": false
+        "description": "Target unit gains 4+ Cover Save until your next Psychic Phase."
       },
       {
         "id": "bolster",
@@ -8270,8 +6654,7 @@
         "castValue": 6,
         "pts": 15,
         "range": 18,
-        "description": "Target unit counts as having not Moved for the purposes of Shooting until your next Psychic Phase.",
-        "isAttack": false
+        "description": "Target unit counts as having not Moved for the purposes of Shooting until your next Psychic Phase."
       },
       {
         "id": "enfeeble",
@@ -8280,8 +6663,7 @@
         "castValue": 8,
         "pts": 20,
         "range": 18,
-        "description": "Target unit suffers T-1 until your next Psychic Phase.",
-        "isAttack": false
+        "description": "Target unit suffers T-1 until your next Psychic Phase."
       },
       {
         "id": "endurance",
@@ -8290,8 +6672,7 @@
         "castValue": 7,
         "pts": 20,
         "range": 18,
-        "description": "Target unit gains T+1 until your next Psychic Phase.",
-        "isAttack": false
+        "description": "Target unit gains T+1 until your next Psychic Phase."
       },
       {
         "id": "melting-beam",
@@ -23204,7 +21585,7 @@
               ]
             },
             {
-              "weaponId": "2-linked-multimeltas-hull",
+              "weaponId": "2-linked-multimeltas",
               "label": "2 Linked Multimeltas",
               "pts": 20,
               "arcType": "Hull",
@@ -24424,7 +22805,7 @@
               "arcType": "Hull"
             },
             {
-              "weaponId": "2-linked-multimeltas-hull",
+              "weaponId": "2-linked-multimeltas",
               "label": "2 Linked Multimeltas",
               "pts": 20,
               "arcType": "Hull"
@@ -25070,7 +23451,7 @@
           "label": "Add 2 Sets of 2 Linked Lascannons (Sponson)",
           "pts": 72,
           "grantsWargear": [
-            "2-sets-2-linked-lascannons-sponson"
+            "2-sets-2-linked-lascannons"
           ]
         },
         {
@@ -25375,7 +23756,7 @@
           "label": "Add 2 Sets of 2 Linked Lascannons (Sponson)",
           "pts": 72,
           "grantsWargear": [
-            "2-sets-2-linked-lascannons-sponson"
+            "2-sets-2-linked-lascannons"
           ]
         },
         {

@@ -152,7 +152,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .toggle-switch input { opacity: 0; width: 0; height: 0; }
 .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #ccc; border-radius: 20px; transition: 0.2s; }
 .toggle-slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.2s; }
-input:checked + .toggle-slider { background: #7a5800; }
+input:checked + .toggle-slider { background: #555; }
 input:checked + .toggle-slider:before { transform: translateX(16px); }
 
 @media print {
@@ -1383,9 +1383,17 @@ document.body.innerHTML+=body;`;
       <div className="codex-nav-wrap" ref={navWrapRef}>
         <nav className="codex-nav">
           <span className="nav-label">{faction.name||"Codex"}</span>
-          {navPages.map(p=>(
-            <button key={p.id} className={`nav-btn${activePage===p.id?" active":""}`} onClick={()=>setActivePage(p.id)}>{p.label}</button>
-          ))}
+          {navPages.map(p=>{
+            const isFn = p.id === "options";
+            return (
+              <button key={p.id}
+                className={`nav-btn${activePage===p.id?" active":""}`}
+                style={isFn ? {color:"#888",borderColor:"#333"} : undefined}
+                onClick={()=>setActivePage(p.id)}>
+                {p.label}
+              </button>
+            );
+          })}
           <UnitSearch allUnits={factionData.units||[]} hiddenUnits={hiddenUnits} onSelect={handleUnitSelect}/>
           <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
           <span className="nav-print-toggle">
@@ -1405,7 +1413,7 @@ document.body.innerHTML+=body;`;
               <span className="toggle-slider"/>
             </label>
           </span>
-          <button className="nav-btn" onClick={openPrintTab} style={{color:"#c9a84c",borderColor:"#7a6130",background:"#1a1508"}}>
+          <button className="nav-btn" onClick={openPrintTab} style={{color:"#888",borderColor:"#333"}}>
             ⎙ Print
           </button>
         </nav>

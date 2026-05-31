@@ -102,13 +102,21 @@ Each weapon has:
   - `maxRange` — number or `null` (null = Melee or template)
   - `strength` — string: `"4"`, `"X2"`, `"User"`, `"*"`, `"+1"`, `"D"`
   - `ap` — string: `"5+"`, `"2+"`, `"-"`, `"1+"`
-  - `rules` — array of rule ids from `core-rules.json` (kebab-case, e.g.
-    `"rending"`, `"heavy"`, `"melta"`). Use a human-readable description
-    string only for weapon-unique effects that have no core rule entry
-    (e.g. `"5+ Invulnerability Save against Ranged Attacks"`). Never use
-    human-readable strings for rules that exist in `core-rules.json` —
-    keeping them as ids means a single edit to `core-rules.json` propagates
-    everywhere automatically.
+  - `rules` — array of **human-readable display strings** taken directly from the codex.
+    All rules use Title Case display strings — no kebab-case IDs in weapon profiles.
+    - **Shot/count rules** embed the number from the codex: `"Assault 2"`, `"Heavy 1"`,
+      `"Pistol 1"`, `"Rapid Fire 1"`, `"Grenade 1"`, `"Extra Attack 1"`.
+      Linked variants add a multiplier: `"Assault 3 x2"`, `"Heavy 1 x4"`.
+    - **Target-number rules** embed the value: `"Poisoned (3+)"`, `"Sniper (3+)"`,
+      `"Haywire (3+)"`.
+    - **Other rules** use their display name: `"Rending"`, `"Monsterbane"`, `"Melta"`,
+      `"Lance"`, `"Armourbane"`, `"Slow"`, `"Gets Hot!"`, `"One Use Only"`,
+      `"Indirect"`, `"Pinning"`, `"Accurate"`, `"Scatter"`, `"Tesla"`, `"Gauss"`,
+      `"Destroyer"`, `"Ordnance"`, `"AA"`, `"Ignores Cover"`, `"Nonblast"`,
+      `"Auxiliary"`, `"Counterattack"`, `"Dakka"` etc.
+    - **Blast sizes and unique effects** are written as-is: `"3\" Blast"`, `"5\" Blast"`,
+      `"(Monsterbane)"` (conditional), `"5+ Invulnerability Save against Ranged Attacks"`.
+    - The shot count and target numbers **must** come from the codex — they differ per weapon.
   - `castValue` — include only for psychic attack weapons (non-null integer).
     Omit entirely for normal weapons.
 - `keywords[]` — include only when non-empty (e.g. `["Bolter"]`). Omit otherwise.
@@ -392,6 +400,8 @@ file opened in an older app won't lose data.
 | Writing the same `choices[]` array on ten different units | Extract to `weaponLists` and reference with `weaponListId` |
 | Using `"3+"` strings for WS/BS/Sv values | Store as number `3`; renderer adds `+` |
 | Using `"6\""` strings for M values | Store as number `6`; renderer adds `"` |
-| Using human-readable strings in `rules[]` for known rules (`"Rending"`, `"Heavy 2"`) | Use core rule id: `"rending"`, `"heavy"` |
+| Using `"assault"`, `"heavy"`, `"pistol"` etc. without a shot count | All weapon rules are display strings with numbers: `"Assault 2"`, `"Heavy 1"`, `"Pistol 1"` |
+| Using `"poisoned"`, `"sniper"`, `"haywire"` without a target number | Always embed the target from the codex: `"Poisoned (3+)"`, `"Sniper (3+)"`, `"Haywire (3+)"` |
+| Using kebab-case ids like `"rending"`, `"monsterbane"` in weapon profile rules | Weapon profile `rules[]` use display strings only: `"Rending"`, `"Monsterbane"` |
 | Writing `null`, `[]`, or `false` fields on weapons or units | Omit them entirely; the app treats missing fields as their default |
 | Omitting `schemaVersion` | Always include `"schemaVersion": "1.3"` |
