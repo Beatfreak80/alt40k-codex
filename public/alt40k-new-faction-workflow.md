@@ -134,6 +134,70 @@ Shot counts and target numbers **must** come from the codex — they differ per 
 
 The `rule-map.json` and postprocessor normalise display strings in **unit** `specialRules[]` (e.g. `"Rending"` → `"rending"` for tooltip lookups) but weapon profile rules are intentionally kept as display strings.
 
+### Unit option types — use these exact strings
+
+The app only recognises these `type` values. **Do not invent your own.**  Verify against an existing faction JSON before writing — the Necron codex is the reference.
+
+| `type` | Purpose | Required fields |
+|---|---|---|
+| `"weaponSwap"` | Swap a weapon for one or more alternatives | `id`, `label`, `replaces` (if replacing existing), `choices[]` or `weaponListId` |
+| `"toggle"` | Equipment/upgrade that can be switched on | `id`, `label`, `pts`; optionally `grantsWargear[]`, `grantsRules[]`, `note` |
+| `"namedUpgrade"` | Reference a shared upgrade from `namedUpgrades` | `id`, `upgradeId`, `pts` |
+| `"squadSize"` | Add more models to a unit | `id`, `label`, `targetModelId`, `ptsEach`, `max` |
+| `"spellPick"` | Let the unit pick from a spell pool | `id`, `spellPoolId` |
+
+**Every option must have a unique `id` field** — the app uses it to track state.
+
+`weaponSwap` examples:
+
+```json
+// Choices inline — one option, many alternatives
+{ "id": "wb-ranged", "type": "weaponSwap", "applies": ["model-id"],
+  "label": "Swap Slugga for", "replaces": "slugga",
+  "choices": [
+    { "weaponId": "shoota", "label": "Shoota", "pts": 2 },
+    { "weaponId": "meltagun", "label": "Meltagun", "pts": 24 }
+  ]
+}
+
+// Using a weapon list (costs come from the list definition)
+{ "id": "wb-melee", "type": "weaponSwap", "applies": ["model-id"],
+  "label": "Swap Choppa for", "replaces": "choppa",
+  "weaponListId": "boyz-melee"
+}
+
+// Vehicle weapon with arc — arc goes on the choice, not the weapon definition
+{ "weaponId": "big-shoota", "label": "Big Shoota", "pts": 1,
+  "arcType": "Hull", "mountingTags": ["Primary"] }
+```
+
+`toggle` example:
+
+```json
+{ "id": "jk-deff-rolla", "type": "toggle", "label": "Deff Rolla (+28 pts)",
+  "pts": 28, "grantsWargear": ["deff-rolla"] }
+```
+
+`namedUpgrade` definitions in the `namedUpgrades` map must use:
+- `"type": "toggle"` (not `"statChange"` or anything else)
+- `"label"` for the display name (not `"name"` or `"description"`)
+- `"statModifiers"` array (not `"statChanges"`)
+- `"grantsRules"` (not `"gainRules"`)
+
+```json
+"boss-nob": {
+  "type": "toggle",
+  "label": "Boss Nob",
+  "statModifiers": [
+    { "modelId": "__sergeant__", "stat": "S", "op": "add", "value": 1 }
+  ],
+  "grantsRules": ["bulky", "character"],
+  "note": "S+1, W+1, A+1, gains Bulky."
+}
+```
+
+**What went wrong with the Ork codex first pass:** custom types (`"weapon"`, `"equipment"`, `"addModel"`) were invented without reading an existing faction JSON. This made all weapon options invisible in the app. Always open `space-marines_faction.json` or `necrons_faction.json` and read a unit's `options` block before writing any options.
+
 ### baseWargear format
 - Infantry/cavalry: plain strings `"bolt-pistol"`
 - Vehicle weapons that have a firing arc: full object `{ "weaponId": "...", "arcType": "Hull", "mountingTags": ["Primary"] }`

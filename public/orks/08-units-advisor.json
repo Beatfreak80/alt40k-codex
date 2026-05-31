@@ -1,0 +1,254 @@
+{
+  "units": [
+    {
+      "id": "grot-herder",
+      "name": "Grot Herder",
+      "slot": "Advisor",
+      "basePts": 35,
+      "models": [
+        {
+          "id": "grot-herder-model",
+          "name": "Grot Herder",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 4, "I": 2, "A": 3, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["slugga", "grabba"],
+          "specialRules": ["independent-character", "infantry", "ork", "ere-we-go"],
+          "inlineRules": [
+            { "id": "breakin-ittle-eads", "name": "Breakin' 'Ittle 'Eads!", "shortDesc": "6\" Aura: first time each round a friendly Grot unit fails a Ld test, inflict d3 Mortal Wounds and it passes this and all other Ld tests for the Turn.", "fullDesc": "6\" Aura, the first time each round a friendly Grot unit fails a Ld Test, inflict d3 Mortal Wounds and it automatically passes this Ld test and all other Ld tests for the rest of the Turn." }
+          ]
+        }
+      ],
+      "options": [
+        { "id": "gh-melee", "type": "weaponSwap", "applies": ["grot-herder-model"], "label": "Swap Grabba for", "replaces": "grabba", "choices": [{ "weaponId": "goader", "label": "Goader", "pts": 4 }] }
+      ]
+    },
+    {
+      "id": "mek-boy",
+      "name": "Mek Boy",
+      "slot": "Advisor",
+      "basePts": 36,
+      "models": [
+        {
+          "id": "mek-boy-model",
+          "name": "Mek Boy",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 4, "I": 2, "A": 3, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["slugga", "choppa", "stikkbombz"],
+          "specialRules": ["independent-character", "infantry", "ork", "ere-we-go", "ork-repair"]
+        }
+      ],
+      "options": [
+        {
+          "id": "mb-ranged",
+          "type": "weaponSwap",
+          "applies": ["mek-boy-model"],
+          "label": "Swap Slugga for",
+          "replaces": "slugga",
+          "choices": [
+            { "weaponId": "kombi-burna", "label": "Kombi Burna", "pts": 8 },
+            { "weaponId": "kustom-mega-blasta", "label": "Kustom Mega Blasta", "pts": 11 },
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 13 },
+            { "weaponId": "kombi-rokkit", "label": "Kombi Rokkit", "pts": 15 },
+            { "weaponId": "big-zzappa", "label": "Big Zzappa", "pts": 18 },
+            { "weaponId": "meltagun", "label": "Meltagun", "pts": 24 },
+            { "weaponId": "shokk-attack-gun", "label": "Shokk Attack Gun", "pts": 24 },
+            { "weaponId": "kustom-mega-slugga", "label": "Kustom Mega Slugga", "pts": 11 }
+          ]
+        },
+        { "id": "mb-melee", "type": "weaponSwap", "applies": ["mek-boy-model"], "label": "Swap Choppa for", "replaces": "choppa", "weaponListId": "hq-melee-b" },
+        { "id": "mb-grot-oiler", "type": "toggle", "label": "Grot Oiler", "pts": 2, "note": "One Use Only. This model may reroll the Repair Die." },
+        { "id": "mb-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 14 },
+        { "id": "mb-kustom-forcefield", "type": "toggle", "label": "Kustom Forcefield", "pts": 120, "note": "6\" Aura, this model and target unit gain a 5+ Invulnerability Save." },
+        { "id": "mb-warbike", "type": "namedUpgrade", "upgradeId": "warbike", "pts": 19 }
+      ]
+    },
+    {
+      "id": "pain-boy",
+      "name": "Pain Boy",
+      "slot": "Advisor",
+      "basePts": 197,
+      "models": [
+        {
+          "id": "pain-boy-model",
+          "name": "Pain Boy",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 4, "I": 2, "A": 3, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["power-klaw", "urty-syringe"],
+          "specialRules": ["infantry", "ere-we-go", "ork", "doks-toolz", "saw-bones"]
+        }
+      ],
+      "options": [
+        { "id": "pb-grot-orderly", "type": "toggle", "label": "Grot Orderly", "pts": 5, "note": "This model may reroll the Saw Bones die. One Use Only." },
+        { "id": "pb-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 14 }
+      ]
+    },
+    {
+      "id": "weird-boy",
+      "name": "Weird Boy",
+      "slot": "Advisor",
+      "basePts": 47,
+      "models": [
+        {
+          "id": "weird-boy-model",
+          "name": "Weird Boy",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 4, "I": 2, "A": 3, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["weird-boy-staff"],
+          "specialRules": ["infantry", "ere-we-go", "ork", "psychic-mastery"]
+        }
+      ],
+      "psychic": { "spellPoolId": "waaagh-power", "masteryLevel": 1, "masteryUpgrade": { "pts": 15, "maxLevel": 2 } },
+      "options": [
+        { "id": "wb2-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 14 }
+      ]
+    },
+    {
+      "id": "waaagh-banner",
+      "name": "Waaagh! Banner",
+      "slot": "Advisor",
+      "basePts": 120,
+      "models": [
+        {
+          "id": "banner-boy",
+          "name": "Banner Boy",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 4, "I": 2, "A": 3, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["slugga", "choppa", "stikkbombz"],
+          "specialRules": ["infantry", "ere-we-go", "ork"],
+          "inlineRules": [
+            { "id": "waaagh-banner-aura", "name": "Waaagh! Banner", "shortDesc": "6\" Aura: this model and target unit gain A+1.", "fullDesc": "6\" Aura, this model and target unit gain A+1." }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "bb-ranged",
+          "type": "weaponSwap",
+          "applies": ["banner-boy"],
+          "label": "Swap Slugga for",
+          "replaces": "slugga",
+          "choices": [
+            { "weaponId": "shoota", "label": "Shoota", "pts": 2 },
+            { "weaponId": "kombi-burna", "label": "Kombi Burna", "pts": 8 },
+            { "weaponId": "kustom-mega-blasta", "label": "Kustom Mega Blasta", "pts": 11 },
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 13 },
+            { "weaponId": "kombi-rokkit", "label": "Kombi Rokkit", "pts": 15 },
+            { "weaponId": "big-zzappa", "label": "Big Zzappa", "pts": 18 },
+            { "weaponId": "meltagun", "label": "Meltagun", "pts": 24 },
+            { "weaponId": "kustom-mega-slugga", "label": "Kustom Mega Slugga", "pts": 11 }
+          ]
+        },
+        { "id": "bb-melee", "type": "weaponSwap", "applies": ["banner-boy"], "label": "Swap Choppa for", "replaces": "choppa", "weaponListId": "hq-melee-b" },
+        { "id": "bb-boom-box", "type": "toggle", "label": "Boom Box", "pts": 30, "note": "Replaces Waaagh! Banner. 6\" Aura, this model and target unit gain a 5+ Invulnerability Save." },
+        { "id": "bb-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 14 }
+      ]
+    },
+    {
+      "id": "boss-snikrot",
+      "name": "Boss Snikrot",
+      "slot": "Advisor",
+      "basePts": 204,
+      "isUnique": true,
+      "models": [
+        {
+          "id": "snikrot",
+          "name": "Snikrot",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 2, "BS": 5, "S": 5, "T": 5, "W": 5, "I": 2, "A": 4, "Ld": 9, "Sv": "6+" },
+          "baseWargear": ["morks-teef", "stikkbombz"],
+          "specialRules": ["independent-character", "monstrous-infantry", "ere-we-go", "ork", "infiltrate", "stealth", "very-bulky", "waaagh-aura"],
+          "inlineRules": [
+            { "id": "kunin-infiltrator", "name": "Kunin' Infiltrator", "shortDesc": "This model and its unit gain Infiltrate. If the unit has Infiltrator they also gain Scout.", "fullDesc": "This model and its unit gains Infiltrate. If the unit this model is deployed with has Infiltrator, they also gain Scout." },
+            { "id": "red-skull-kommandoz", "name": "Red Skull Kommandoz", "shortDesc": "6\" Aura: this model and target unit may reroll 1s To Hit.", "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Hit." },
+            { "id": "terrifyin-killa", "name": "Terrifyin' Killa", "shortDesc": "6\" Aura: target unit suffers Ld-1.", "fullDesc": "6\" Aura, target unit suffers Ld-1." },
+            { "id": "snikrot-forcefield", "name": "Forcefield", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boss-zagstruk",
+      "name": "Boss Zagstruk",
+      "slot": "Advisor",
+      "basePts": 235,
+      "isUnique": true,
+      "models": [
+        {
+          "id": "zagstruk",
+          "name": "Zagstruk",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 12, "WS": 2, "BS": 5, "S": 6, "T": 5, "W": 5, "I": 2, "A": 4, "Ld": 9, "Sv": "6+" },
+          "baseWargear": ["blitz-missilez", "slugga", "choppa", "da-vulchas-klawz"],
+          "specialRules": ["independent-character", "monstrous-infantry", "ere-we-go", "ork", "deepstrike", "flyer", "very-bulky", "waaagh-aura"],
+          "inlineRules": [
+            { "id": "cybork-body", "name": "Cybork Body", "shortDesc": "This model has a 5+ Feel No Pain.", "fullDesc": "This model has a 5+ Feel No Pain." },
+            { "id": "full-throttle", "name": "Full Throttle", "shortDesc": "6\" Aura: this model and target unit with Flying may charge the same turn they Advance.", "fullDesc": "6\" Aura, this model and target unit with Flying may charge the same turn they Advance." },
+            { "id": "goff-drill-boss", "name": "Goff Drill Boss", "shortDesc": "6\" Aura: this model and target unit automatically pass Ld tests.", "fullDesc": "6\" Aura, this model and target unit automatically pass Ld tests." },
+            { "id": "zagstruk-forcefield", "name": "Forcefield", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mad-dok-grotsnik",
+      "name": "Mad Dok Grotsnik",
+      "slot": "Advisor",
+      "basePts": 226,
+      "isUnique": true,
+      "models": [
+        {
+          "id": "grotsnik",
+          "name": "Grotsnik",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 2, "BS": 5, "S": 6, "T": 5, "W": 5, "I": 2, "A": 4, "Ld": 9, "Sv": "6+" },
+          "baseWargear": ["slugga", "power-klaw", "urty-syringe"],
+          "specialRules": ["independent-character", "monstrous-infantry", "ere-we-go", "very-bulky", "saw-bones"],
+          "inlineRules": [
+            { "id": "one-scalpel-short", "name": "One Scalpel Short of a Med Pack", "shortDesc": "6\" Aura: this model and target unit gain 4+ Feel No Pain. Each roll of 1 on a FNP causes 1 Mortal Wound to that unit.", "fullDesc": "6\" Aura, this model and target unit gains a 4+ Feel No Pain. For each roll of a 1 on a Feel No Pain, the target unit or model suffers 1 Mortal Wound." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mazrog-skragbad",
+      "name": "Mazrog Skragbad",
+      "slot": "Advisor",
+      "basePts": 195,
+      "isUnique": true,
+      "models": [
+        {
+          "id": "gutrippa-mount",
+          "name": "Gutrippa",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "monster", "M": 12, "WS": 2, "BS": 5, "S": 6, "T": 7, "W": 9, "I": 2, "A": 4, "Ld": 6, "Sv": "-" },
+          "baseWargear": ["thump-gun", "gorin-horns", "gutrippa"],
+          "specialRules": ["independent-character", "monster", "ork", "ere-we-go", "shock-assault"],
+          "inlineRules": [
+            { "id": "tougher-than-rok-squig", "name": "Tougher Than a Rok Squig", "shortDesc": "This model has a 4+ Feel No Pain.", "fullDesc": "This model has a 4+ Feel No Pain." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zodgrod-wortsnagga",
+      "name": "Zodgrod Wortsnagga",
+      "slot": "Advisor",
+      "basePts": 149,
+      "isUnique": true,
+      "models": [
+        {
+          "id": "zodgrod",
+          "name": "Zodgrod",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 2, "BS": 5, "S": 5, "T": 5, "W": 4, "I": 2, "A": 3, "Ld": 9, "Sv": "6+" },
+          "baseWargear": ["slugga", "da-grabzzappa"],
+          "specialRules": ["independent-character", "monstrous-infantry", "ere-we-go", "very-bulky", "waaagh-aura"],
+          "inlineRules": [
+            { "id": "grot-kommandoz", "name": "Grot Kommandoz", "shortDesc": "6\" Aura: this model and target Grot Infantry unit gain T+1 and Mob Rule.", "fullDesc": "6\" Aura, this model and target Grot Infantry unit gain T+1 and Mob Rule." },
+            { "id": "zodgrod-forcefield", "name": "Forcefield", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+          ]
+        }
+      ]
+    }
+  ]
+}

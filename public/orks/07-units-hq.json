@@ -1,0 +1,124 @@
+{
+  "units": [
+    {
+      "id": "deffkilla-wartrike",
+      "name": "Deffkilla Wartrike",
+      "slot": "HQ",
+      "basePts": 212,
+      "models": [
+        {
+          "id": "wartrike",
+          "name": "Wartrike",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 12, "WS": 2, "BS": 5, "S": 6, "T": 6, "W": 7, "I": 2, "A": 4, "Ld": 9, "Sv": "-" },
+          "baseWargear": ["3-linked-boomstikkz", "killa-jet", "choppa", "stikkbombz"],
+          "specialRules": ["independent-character", "monstrous-infantry", "steed", "ork", "ere-we-go", "breakin-eads", "waaagh-aura"],
+          "inlineRules": [
+            { "id": "dw-forcefield", "name": "Forcefield", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "dw-melee",
+          "type": "weaponSwap",
+          "applies": ["wartrike"],
+          "label": "Swap Choppa for",
+          "replaces": "choppa",
+          "weaponListId": "hq-melee-a"
+        },
+        { "id": "dw-da-big-boss", "type": "namedUpgrade", "upgradeId": "da-big-boss", "pts": 29 }
+      ]
+    },
+    {
+      "id": "warboss",
+      "name": "Warboss",
+      "slot": "HQ",
+      "basePts": 144,
+      "models": [
+        {
+          "id": "warboss-model",
+          "name": "Warboss",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 2, "BS": 5, "S": 6, "T": 5, "W": 5, "I": 2, "A": 4, "Ld": 9, "Sv": "4+" },
+          "baseWargear": ["slugga", "choppa", "stikkbombz"],
+          "specialRules": ["independent-character", "monstrous-infantry", "ork", "ere-we-go", "very-bulky", "breakin-eads", "waaagh-aura"],
+          "inlineRules": [
+            { "id": "wb-forcefield", "name": "Forcefield", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "wb-ranged",
+          "type": "weaponSwap",
+          "applies": ["warboss-model"],
+          "label": "Swap Slugga for",
+          "replaces": "slugga",
+          "choices": [
+            { "weaponId": "shoota", "label": "Shoota", "pts": 2 },
+            { "weaponId": "kustom-shoota", "label": "Kustom Shoota", "pts": 8 },
+            { "weaponId": "kombi-burna", "label": "Kombi Burna", "pts": 8 },
+            { "weaponId": "kombi-rokkit", "label": "Kombi Rokkit", "pts": 15 },
+            { "weaponId": "meltagun", "label": "Meltagun", "pts": 24 }
+          ]
+        },
+        {
+          "id": "wb-melee",
+          "type": "weaponSwap",
+          "applies": ["warboss-model"],
+          "label": "Swap Choppa for",
+          "replaces": "choppa",
+          "weaponListId": "hq-melee-b"
+        },
+        { "id": "wb-mega-armour", "type": "namedUpgrade", "upgradeId": "mega-armour", "pts": 18 },
+        { "id": "wb-drill-boss", "type": "namedUpgrade", "upgradeId": "drill-boss", "pts": 20 },
+        { "id": "wb-warbike", "type": "namedUpgrade", "upgradeId": "warbike", "pts": 29 },
+        { "id": "wb-da-big-boss", "type": "namedUpgrade", "upgradeId": "da-big-boss", "pts": 30 },
+        { "id": "wb-targeting-squig", "type": "toggle", "label": "Targeting Squig", "pts": 5, "note": "This model may reroll To Hit with ranged weapons." }
+      ]
+    },
+    {
+      "id": "warboss-on-squigosaur",
+      "name": "Warboss on Squigosaur",
+      "slot": "HQ",
+      "basePts": 220,
+      "models": [
+        {
+          "id": "squigosaur",
+          "name": "Squigosaur",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monster", "M": 12, "WS": 2, "BS": 5, "S": 6, "T": 7, "W": 9, "I": 2, "A": 4, "Ld": 9, "Sv": "-" },
+          "baseWargear": ["slugga", "choppa", "gorin-horns", "stikkbombz"],
+          "specialRules": ["independent-character", "monster", "ork", "ere-we-go", "shock-assault", "breakin-eads", "waaagh-aura"],
+          "inlineRules": [
+            { "id": "sq-forcefield", "name": "Forcefield", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sq-ranged",
+          "type": "weaponSwap",
+          "applies": ["squigosaur"],
+          "label": "May take",
+          "choices": [
+            { "weaponId": "thump-gun", "label": "Thump Gun", "pts": 10 }
+          ]
+        },
+        {
+          "id": "sq-melee",
+          "type": "weaponSwap",
+          "applies": ["squigosaur"],
+          "label": "Swap Choppa for",
+          "replaces": "choppa",
+          "weaponListId": "hq-melee-a"
+        },
+        { "id": "sq-da-big-boss", "type": "namedUpgrade", "upgradeId": "da-big-boss", "pts": 29 }
+      ]
+    }
+  ]
+}

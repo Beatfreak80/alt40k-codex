@@ -1,0 +1,132 @@
+{
+  "units": [
+    {
+      "id": "attack-fightaz",
+      "name": "Attack Fightaz",
+      "slot": "Flyer",
+      "basePts": 149,
+      "models": [
+        {
+          "id": "attack-fighta",
+          "name": "Attack Fighta",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 60, "WS": 5, "BS": 5, "S": 6, "FA": 10, "SA": 10, "RA": 10, "W": 12, "I": 1, "A": 3, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [{ "weaponId": "4-linked-big-shootaz", "arcType": "Hull", "mountingTags": ["Primary"] }],
+          "specialRules": ["vehicle", "ere-we-go", "ork", "poor-maintenance", "deepstrike", "high-altitude", "interceptor"]
+        }
+      ],
+      "options": [
+        { "id": "af-extra", "type": "squadSize", "label": "Additional Attack Fightaz", "targetModelId": "attack-fighta", "ptsEach": 149, "max": 2 },
+        { "id": "af-wing", "type": "weaponSwap", "label": "Take Wing weapons", "choices": [
+            { "weaponId": "2-linked-bommz", "label": "2 Linked Bommz", "pts": 14, "arcType": "Hull" },
+            { "weaponId": "2-linked-rokkitz", "label": "2 Linked Rokkitz", "pts": 20, "arcType": "Hull" }
+          ]
+        },
+        { "id": "af-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "af-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "af-aerial-paint", "type": "toggle", "label": "Aerial Red Paint (+6 pts/model)", "pts": 6, "note": "M+10." },
+        { "id": "af-stikkbomb-flinga", "type": "toggle", "label": "Stikkbomb Flinga (+9 pts/model)", "pts": 9, "note": "5+ Invulnerability Save vs Ranged Attacks." }
+      ]
+    },
+    {
+      "id": "bommerz",
+      "name": "Bommerz",
+      "slot": "Flyer",
+      "basePts": 143,
+      "models": [
+        {
+          "id": "bommer",
+          "name": "Bommer",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 5, "S": 6, "FA": 10, "SA": 10, "RA": 10, "W": 12, "I": 1, "A": 3, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "2-linked-supa-shootaz", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "big-shoota", "arcType": "Hull" },
+            { "weaponId": "2-linked-burna-bommz", "arcType": "Hull" }
+          ],
+          "specialRules": ["vehicle", "ere-we-go", "ork", "poor-maintenance", "deepstrike", "high-altitude"]
+        }
+      ],
+      "options": [
+        { "id": "bm-extra", "type": "squadSize", "label": "Additional Bommerz", "targetModelId": "bommer", "ptsEach": 143, "max": 2 },
+        { "id": "bm-bombs", "type": "weaponSwap", "label": "Swap 2 Linked Burna Bommz for", "replaces": "2-linked-burna-bommz", "choices": [
+            { "weaponId": "2-linked-boom-bommz", "label": "2 Linked Boom Bommz", "pts": 16, "arcType": "Hull" }
+          ]
+        },
+        { "id": "bm-wing", "type": "weaponSwap", "label": "Take Wing weapons", "choices": [
+            { "weaponId": "2-linked-skorcha-missilez", "label": "2 Linked Skorcha Missilez", "pts": 10, "arcType": "Hull" },
+            { "weaponId": "2-linked-bommz", "label": "2 Linked Bommz", "pts": 14, "arcType": "Hull" },
+            { "weaponId": "2-linked-rokkitz", "label": "2 Linked Rokkitz", "pts": 20, "arcType": "Hull" }
+          ]
+        },
+        { "id": "bm-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "bm-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "bm-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "bm-stikkbomb-flinga", "type": "toggle", "label": "Stikkbomb Flinga (+9 pts/model)", "pts": 9 }
+      ]
+    },
+    {
+      "id": "dakkajetz",
+      "name": "Dakkajetz",
+      "slot": "Flyer",
+      "basePts": 144,
+      "models": [
+        {
+          "id": "dakkajet",
+          "name": "Dakkajet",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 5, "S": 6, "FA": 11, "SA": 10, "RA": 10, "W": 14, "I": 1, "A": 3, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "2-linked-big-shootaz", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-big-shootaz", "arcType": "Turret" }
+          ],
+          "specialRules": ["vehicle", "ere-we-go", "ork", "poor-maintenance", "deepstrike", "high-altitude"]
+        }
+      ],
+      "options": [
+        { "id": "dj-extra", "type": "squadSize", "label": "Additional Dakkajetz", "targetModelId": "dakkajet", "ptsEach": 144, "max": 2 },
+        { "id": "dj-wing", "type": "weaponSwap", "label": "Take Wing weapons", "choices": [
+            { "weaponId": "2-linked-skorcha-missilez", "label": "2 Linked Skorcha Missile Rackz", "pts": 20, "arcType": "Hull" },
+            { "weaponId": "2-linked-bomm-rackz", "label": "2 Linked Bomm Rackz", "pts": 28, "arcType": "Hull" },
+            { "weaponId": "2-linked-rokkit-rackz", "label": "2 Linked Rokkit Rackz", "pts": 40, "arcType": "Hull" }
+          ]
+        },
+        { "id": "dj-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "dj-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "dj-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "dj-stikkbomb-flinga", "type": "toggle", "label": "Stikkbomb Flinga (+9 pts/model)", "pts": 9 }
+      ]
+    },
+    {
+      "id": "wazbom-blastjetz",
+      "name": "Wazbom Blastjetz",
+      "slot": "Flyer",
+      "basePts": 156,
+      "models": [
+        {
+          "id": "blastjet",
+          "name": "Blastjet",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 5, "S": 6, "FA": 10, "SA": 10, "RA": 10, "W": 12, "I": 1, "A": 3, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "smasha-gun", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-kustom-mega-kannonz", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "ere-we-go", "ork", "poor-maintenance", "deepstrike", "high-altitude"]
+        }
+      ],
+      "options": [
+        { "id": "wbj-extra", "type": "squadSize", "label": "Additional Blastjetz", "targetModelId": "blastjet", "ptsEach": 156, "max": 2 },
+        { "id": "wbj-hull", "type": "weaponSwap", "label": "Swap 2 Linked Kustom Mega Kannonz for", "replaces": "2-linked-kustom-mega-kannonz", "choices": [
+            { "weaponId": "2-linked-tellyporty-mega-blastaz", "label": "2 Linked Tellyporty Mega Blastaz", "pts": 18, "arcType": "Hull", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "wbj-turret", "type": "toggle", "label": "2 Linked Supa Shootaz Turret (+26 pts)", "pts": 26, "grantsWargear": [{ "weaponId": "2-linked-supa-shootaz", "arcType": "Turret" }] },
+        { "id": "wbj-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "wbj-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "wbj-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "wbj-stikkbomb-flinga", "type": "toggle", "label": "Stikkbomb Flinga (+9 pts/model)", "pts": 9 }
+      ]
+    }
+  ]
+}

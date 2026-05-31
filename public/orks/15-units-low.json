@@ -1,0 +1,148 @@
+{
+  "units": [
+    {
+      "id": "big-mek-stompa",
+      "name": "Big Mek Stompa",
+      "slot": "Lord of War",
+      "basePts": 1648,
+      "models": [
+        {
+          "id": "big-mek-stompa-model",
+          "name": "Big Mek Stompa",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 12, "WS": 3, "BS": 5, "S": 10, "FA": 14, "SA": 14, "RA": 13, "W": 100, "I": 2, "A": 9, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "deff-kannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "deff-kannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "lifta-droppa", "arcType": "Hull" },
+            { "weaponId": "gaze-of-mork", "arcType": "Hull" },
+            { "weaponId": "3-linked-big-shootaz", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "crushing-feet", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["titanic", "vehicle", "ork", "ere-we-go", "poor-maintenance", "steady", "void-shields-2", "create-panic", "reactor-meltdown", "towering-god-engine"],
+          "transport": { "capacity": 20, "access": ["Rear"], "firePorts": { "Front": 10 } }
+        }
+      ],
+      "options": [
+        { "id": "bms-main", "type": "weaponSwap", "label": "Swap one Deff Kannon for", "replaces": "deff-kannon", "choices": [
+            { "weaponId": "mega-klaw", "label": "Mega Klaw (+66 pts)", "pts": 66, "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "bms-supa-rokkit", "type": "toggle", "label": "Supa Rokkit (+25 pts each, up to 2)", "pts": 25, "grantsWargear": [{ "weaponId": "supa-rokkit", "arcType": "Hull", "mountingTags": ["Primary"] }] },
+        { "id": "bms-extra-kannon", "type": "toggle", "label": "Extra Deff Kannon (+96 pts each, up to 2)", "pts": 96, "grantsWargear": [{ "weaponId": "deff-kannon", "arcType": "Hull", "mountingTags": ["Primary"] }] },
+        { "id": "bms-grot-riggas", "type": "toggle", "label": "Grot Riggas (+5 pts)", "pts": 5 },
+        { "id": "bms-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+5 pts)", "pts": 5 },
+        { "id": "bms-red-paint", "type": "toggle", "label": "Red Paint (+12 pts)", "pts": 12 }
+      ]
+    },
+    {
+      "id": "deffrolla-battle-fortress",
+      "name": "Deffrolla Battle Fortress",
+      "slot": "Lord of War",
+      "basePts": 727,
+      "models": [
+        {
+          "id": "deffrolla-fortress",
+          "name": "Deffrolla Battle Fortress",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 5, "S": 8, "FA": 14, "SA": 12, "RA": 10, "W": 24, "I": 1, "A": 9, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "titanic-deff-rolla", "mountingTags": ["Primary"] },
+            { "weaponId": "lobba", "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "lobba", "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "lobba", "arcType": "Sponson", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["titanic", "vehicle", "tank", "ere-we-go", "ork", "poor-maintenance", "open-topped"],
+          "transport": { "capacity": 20, "access": ["Rear"], "firePorts": { "Side": 10 } }
+        }
+      ],
+      "options": [
+        { "id": "dbf-sponson", "type": "weaponSwap", "label": "Swap any Lobba (Sponson) for", "replaces": "lobba", "choices": [
+            { "weaponId": "big-zzappa", "label": "2 Linked Big Zzappaz", "pts": 13, "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "boom-gun", "label": "Boom Gun", "pts": 21, "arcType": "Sponson", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "dbf-turret", "type": "weaponSwap", "label": "Take Turret weapon", "choices": [
+            { "weaponId": "killkannon", "label": "Killkannon", "pts": 18, "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "big-zzappa", "label": "Big Zzappa", "pts": 20, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "lobba", "label": "Lobba", "pts": 22, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "boom-gun", "label": "Boom Gun", "pts": 51, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "super-kannon", "label": "Super Kannon", "pts": 78, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "4-linked-flakka-gunz", "label": "4 Linked Flakka Gunz", "pts": 80, "arcType": "Turret", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "dbf-extra-sponson", "type": "toggle", "label": "2 Big Shootaz Sponson (+20 pts)", "pts": 20, "grantsWargear": [{ "weaponId": "2-big-shootaz", "arcType": "Sponson", "mountingTags": ["Primary"] }] },
+        { "id": "dbf-hull", "type": "weaponSwap", "label": "Take Hull weapon (up to 5)", "choices": [
+            { "weaponId": "skorcha", "label": "Skorcha", "pts": 5, "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "big-shoota", "label": "Big Shoota", "pts": 6, "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-big-shootaz", "label": "2 Linked Big Shootaz", "pts": 12, "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-rokkit-launchas", "label": "2 Linked Rokkit Launchaz", "pts": 14, "arcType": "Hull", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "dbf-grabbin-klaw", "type": "toggle", "label": "Grabbin Klaw (+7 pts)", "pts": 7, "grantsWargear": ["grabbin-klaw"] },
+        { "id": "dbf-wrecking-ball", "type": "toggle", "label": "Wrecking Ball (+7 pts)", "pts": 7, "grantsWargear": ["wrecking-ball"] },
+        { "id": "dbf-grot-riggas", "type": "toggle", "label": "Grot Riggas (+5 pts)", "pts": 5 },
+        { "id": "dbf-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+5 pts)", "pts": 5 },
+        { "id": "dbf-red-paint", "type": "toggle", "label": "Red Paint (+6 pts)", "pts": 6 },
+        { "id": "dbf-turbo-charga", "type": "toggle", "label": "Turbo Charga (+7 pts)", "pts": 7 },
+        { "id": "dbf-assault-ramps", "type": "toggle", "label": "Assault Ramps (+10 pts)", "pts": 10 },
+        { "id": "dbf-ard-case", "type": "toggle", "label": "'Ard Case (+97 pts)", "pts": 97, "note": "Loses Open Topped and Firing Ports." }
+      ]
+    },
+    {
+      "id": "gargantuan-squiggoth",
+      "name": "Gargantuan Squiggoth",
+      "slot": "Lord of War",
+      "basePts": 1020,
+      "models": [
+        {
+          "id": "gargantuan-squiggoth-model",
+          "name": "Gargantuan Squiggoth",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "monster", "M": 10, "WS": 3, "BS": 5, "S": 10, "T": 8, "W": 36, "I": 2, "A": 6, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "big-lobba", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-big-shootaz", "arcType": "Sponson" },
+            { "weaponId": "gargantuan-horns" }
+          ],
+          "specialRules": ["titanic", "monster", "ere-we-go", "shock-assault", "steady", "enraged-demise"],
+          "transport": { "capacity": 20, "access": ["Side", "Rear"], "firePorts": { "360": 10 } }
+        }
+      ],
+      "options": [
+        { "id": "gsq-pintle", "type": "toggle", "label": "Big Shoota Pintle (+13 pts each, up to 2)", "pts": 13, "grantsWargear": ["big-shoota"] }
+      ]
+    },
+    {
+      "id": "stompa",
+      "name": "Stompa",
+      "slot": "Lord of War",
+      "basePts": 949,
+      "models": [
+        {
+          "id": "stompa-model",
+          "name": "Stompa",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 3, "BS": 5, "S": 10, "FA": 13, "SA": 13, "RA": 12, "W": 40, "I": 2, "A": 6, "Ld": 9, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "deff-kannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "supa-gatler", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "supa-rokkit-rack", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "4-linked-big-shootaz", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "big-shoota", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "skorcha", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "mega-klaw", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["titanic", "vehicle", "ork", "ere-we-go", "poor-maintenance", "fearless", "steady"],
+          "transport": { "capacity": 20, "access": ["Rear"], "firePorts": { "Front": 3, "Rear": 1 } }
+        }
+      ],
+      "options": [
+        { "id": "st-grot-riggas", "type": "toggle", "label": "Grot Riggas (+5 pts)", "pts": 5 },
+        { "id": "st-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+5 pts)", "pts": 5 },
+        { "id": "st-red-paint", "type": "toggle", "label": "Red Paint (+6 pts)", "pts": 6 }
+      ]
+    }
+  ]
+}

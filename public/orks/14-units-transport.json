@@ -1,0 +1,41 @@
+{
+  "units": [
+    {
+      "id": "warkopta",
+      "name": "Warkopta",
+      "slot": "Ded. Transport",
+      "basePts": 116,
+      "models": [
+        {
+          "id": "warkopta-model",
+          "name": "Warkopta",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 5, "S": 6, "FA": 10, "SA": 10, "RA": 10, "W": 10, "I": 1, "A": 3, "Ld": 6, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "2-linked-rattler-kannonz", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "skorcha", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "ere-we-go", "ork", "poor-maintenance", "deepstrike", "flyer", "open-topped", "jam"],
+          "transport": { "capacity": 10, "access": ["Side"], "firePorts": { "Side": 5 } }
+        }
+      ],
+      "options": [
+        { "id": "wk-main", "type": "weaponSwap", "label": "Swap 2 Linked Rattler Kannonz for", "replaces": "2-linked-rattler-kannonz", "choices": [
+            { "weaponId": "2-linked-deffgunz", "label": "2 Linked Deffgunz", "pts": 10, "arcType": "Hull", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "wk-secondary", "type": "weaponSwap", "label": "Swap Skorcha for", "replaces": "skorcha", "choices": [
+            { "weaponId": "kustom-mega-blasta", "label": "Kustom Mega Blasta", "pts": 0, "arcType": "Hull" },
+            { "weaponId": "big-shoota", "label": "Big Shoota", "pts": 1, "arcType": "Hull" },
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 2, "arcType": "Hull" }
+          ]
+        },
+        { "id": "wk-bomm", "type": "toggle", "label": "Bigg Bomm (+6 pts)", "pts": 6, "grantsWargear": [{ "weaponId": "bigg-bomm", "arcType": "Hull" }] },
+        { "id": "wk-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts)", "pts": 2 },
+        { "id": "wk-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts)", "pts": 2 },
+        { "id": "wk-red-paint", "type": "toggle", "label": "Red Paint (+6 pts)", "pts": 6 },
+        { "id": "wk-stikkbomb-flinga", "type": "toggle", "label": "Stikkbomb Flinga (+9 pts)", "pts": 9 }
+      ]
+    }
+  ]
+}

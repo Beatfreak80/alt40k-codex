@@ -10,5 +10,9 @@
   {
     "name": "Eldar",
     "file": "eldar_faction.json"
+  },
+  {
+    "name": "Orks",
+    "file": "orks_faction.json"
   }
 ]

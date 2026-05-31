@@ -126,7 +126,8 @@ function validate(d, coreIds) {
     unitIds.add(u.id);
 
     const inlineIds = new Set((u.inlineRules || []).map(r => r.id));
-    const allRuleIds = new Set([...coreIds, ...armyIds, ...inlineIds]);
+    const keywordIds = new Set((d.factionKeywords || []).map(k => k.id));
+    const allRuleIds = new Set([...coreIds, ...armyIds, ...inlineIds, ...keywordIds]);
 
     for (const m of (u.models || [])) {
       // Base wargear weapon refs

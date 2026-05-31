@@ -81,6 +81,12 @@
       "fullDesc": "To use a Bomb, select a target model you moved over in the Movement Phase. Apply the Blast or Flame Thrower Template and roll the scatter dice. Bomb Scattering works just like Blast weapons, where your BS score reduces the amount of inches it moves on the 2d6. A Direct Hit never scatters."
     },
     {
+      "id": "building",
+      "name": "Building",
+      "shortDesc": "Fortification structure. Cannot move. Units may embark and fire from Fire Ports.",
+      "fullDesc": "This model is a fortification Building. It cannot move. Units may embark inside it and fire from its Fire Ports as normal."
+    },
+    {
       "id": "bulky",
       "name": "Bulky",
       "shortDesc": "Takes 2 Transport spaces, including Fire Ports.",
@@ -243,6 +249,12 @@
       "fullDesc": "The attacks made by this weapon ignore any Cover Saves for any unit this weapon hits."
     },
     {
+      "id": "immobile",
+      "name": "Immobile",
+      "shortDesc": "Cannot move, advance, charge, or fall back.",
+      "fullDesc": "This model cannot Move, Advance, Charge, or Fall Back under any circumstances."
+    },
+    {
       "id": "independent-character",
       "name": "Independent Character",
       "shortDesc": "May join same-type units. Intercepts Wounds for joined unit. Requires 2+ base models to join.",
@@ -361,6 +373,12 @@
       "name": "Psychic Disruption",
       "shortDesc": "Units hit lose one ongoing Spell effect of the defender's choice.",
       "fullDesc": "Units Hit by a Psychic Disruption weapon lose one ongoing Spell effect of the Defender's choosing."
+    },
+    {
+      "id": "psychic-mastery",
+      "name": "Psychic Mastery",
+      "shortDesc": "This model may cast psychic powers at its Mastery Level.",
+      "fullDesc": "This model may cast a number of psychic powers per Phase equal to its Psychic Mastery Level. Higher levels allow access to more powerful powers."
     },
     {
       "id": "rapid-fire",

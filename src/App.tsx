@@ -231,6 +231,9 @@ function wepById(id, weapons) { return weapons.find(w => w.id === id); }
 function ruleById(id, armyRules, coreRules, inlineRules) {
   return (inlineRules||[]).find(r=>r.id===id) || (armyRules||[]).find(r=>r.id===id) || (coreRules||[]).find(r=>r.id===id);
 }
+function idToLabel(id) {
+  return id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
 function resolveRuleNames(ids, coreRules, armyRules) {
   if (!ids || !ids.length) return "—";
   return ids.map(id => {
@@ -356,12 +359,11 @@ function WargearPill({ weaponId, label, cost, weapons, coreRules, armyRules }) {
 
 function RulePill({ ruleId, label, armyRules, coreRules, inlineRules }) {
   const rule = ruleById(ruleId, armyRules, coreRules, inlineRules);
-  const displayName = label || rule?.name || ruleId;
+  const displayName = label || rule?.name || idToLabel(ruleId);
   const trigger = <span className="rule-pill">{displayName}</span>;
-  if (!rule && !label) return trigger;
   const content = rule
     ? <RulePopoverContent rule={rule}/>
-    : <><strong>{displayName}</strong></>;
+    : <><strong>{displayName}</strong><span style={{color:"#888",fontStyle:"italic",fontWeight:400}}> — Keyword only</span></>;
   return <Popover trigger={trigger} content={content}/>;
 }
 
@@ -690,11 +692,12 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules })
           return (
             <div key={id} className="col-block-tight">
               <li style={{listStyle:"none", padding:"3px 0", fontSize:"9pt", lineHeight:1.4}}>
-                <span className="rule-name">{rule?.name || id}</span>
+                <span className="rule-name">{rule?.name || idToLabel(id)}</span>
                 {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
-                {(rule?.shortDesc || rule?.fullDesc) && (
-                  <span> — {rule.shortDesc || rule.fullDesc}</span>
-                )}
+                {rule
+                  ? (rule.shortDesc || rule.fullDesc) && <span> — {rule.shortDesc || rule.fullDesc}</span>
+                  : <span style={{color:"#888",fontStyle:"italic"}}> — Keyword only</span>
+                }
               </li>
             </div>
           );

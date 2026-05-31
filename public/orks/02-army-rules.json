@@ -1,0 +1,154 @@
+{
+  "armyRules": [
+    {
+      "id": "dakka",
+      "name": "Dakka",
+      "shortDesc": "Each unmodified roll of a 6 To Hit causes one additional Auto Hit.",
+      "fullDesc": "Each unmodified roll of a 6 To Hit causes one additional Auto Hit."
+    },
+    {
+      "id": "ere-we-go",
+      "name": "'Ere We Go!",
+      "shortDesc": "This model may reroll failed Charge rolls.",
+      "fullDesc": "This model may reroll failed Charge rolls."
+    },
+    {
+      "id": "mob-rule",
+      "name": "Mob Rule",
+      "shortDesc": "12\" True Aura: friendly units may treat their Ld equal to the number of models in this unit.",
+      "fullDesc": "12\" True Aura, friendly units may treat their Ld equal to the number of models in this unit."
+    },
+    {
+      "id": "poor-maintenance",
+      "name": "Poor Maintenance",
+      "shortDesc": "Each Command Phase, roll d6. On a 1, choose to Move or Shoot this turn — doing one prevents the other.",
+      "fullDesc": "In each of your Command Phases, roll a d6 for each unit with this rule in your army. On a 1, the unit must decide if it will Move or Shoot this turn. If elected to Move, it may Advance and Fall Back this turn but cannot Shoot or Charge. If elected to Shoot, it may Shoot in the Shooting Phase, but cannot Move, Advance, Charge, or Fall Back. High Altitude models MUST always move, and can never opt to Shoot instead of Move because of Poor Maintenance."
+    },
+    {
+      "id": "breakin-eads",
+      "name": "Breakin' 'Eads!",
+      "shortDesc": "6\" Aura: the first time each phase a friendly Ork unit fails a Ld test, inflict d3 Mortal Wounds and it automatically passes.",
+      "fullDesc": "6\" Aura, the first time each phase a friendly Ork unit fails a Ld test, this model inflicts d3 Mortal Wounds to that unit and it automatically passes that test."
+    },
+    {
+      "id": "waaagh-aura",
+      "name": "Waaagh!",
+      "shortDesc": "6\" Aura: this model and target unit score one Auto Hit on an unmodified roll of a 6 To Hit in Melee.",
+      "fullDesc": "6\" Aura, this model and target unit score one Auto Hit on a unmodified roll of a 6 To Hit in Melee."
+    },
+    {
+      "id": "ork-repair",
+      "name": "Repair",
+      "shortDesc": "Target model in base contact Repairs 1 Wound; on a d6 roll of 5+ restore service for one Disabled result.",
+      "fullDesc": "Target model in base contact Repairs 1 Wound. Roll a d6, on a 5+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed."
+    },
+    {
+      "id": "saw-bones",
+      "name": "Saw Bones",
+      "shortDesc": "6\" Aura: target a non-Vehicle model, roll d6. On a 2+ it Heals 1 Wound.",
+      "fullDesc": "6\" Aura, target a non-Vehicle model and roll d6. On a 2+, it Heals 1 Wound."
+    },
+    {
+      "id": "doks-toolz",
+      "name": "Dok's Toolz",
+      "shortDesc": "6\" Aura: this model and target unit gain 5+ Feel No Pain.",
+      "fullDesc": "6\" Aura, this model and target unit gain 5+ Feel No Pain."
+    },
+    {
+      "id": "jam",
+      "name": "Jam!",
+      "shortDesc": "Any double for the number of shots made by the Rattler Kannon causes the weapon to be removed from the game.",
+      "fullDesc": "Any double for the number of shots made by the Rattler Kannon causes the weapon to be removed from the game. The shots rolled are made before the weapon is removed."
+    },
+    {
+      "id": "junka-forcefield",
+      "name": "Junka Forcefield",
+      "shortDesc": "6\" Aura: this model and target unit gain a 5+ Invulnerability Save against Ranged Attacks.",
+      "fullDesc": "6\" Aura, This model and target unit gain a 5+ Invulnerability Save against Ranged Attacks."
+    },
+    {
+      "id": "meal-wagon",
+      "name": "Meal Wagon",
+      "shortDesc": "6\" Aura: this model and target unit may reroll failed Ld tests.",
+      "fullDesc": "6\" Aura, this model and target unit may reroll failed Ld tests."
+    },
+    {
+      "id": "chained-rokkitz",
+      "name": "Chained Rokkitz",
+      "shortDesc": "After determining Hits, roll Scatter Dice again from the strike point (no BS reduction). On Direct Hit, cancelled. Up to 3 times total.",
+      "fullDesc": "Once the number of Hits this weapon caused has been determined, roll the Scatter Dice again, using the weapon's strike point as the point of origin. Do not reduce the Scatter Distance with the user's BS value. If you roll a Direct Hit the effect is cancelled. This effect can happen up to a total of 3 times maximum."
+    },
+    {
+      "id": "pulsa",
+      "name": "Pulsa",
+      "shortDesc": "After resolving the final strike, roll 1d6: on 5+ double the Hits; on 6+ triple instead. Then roll again for each step.",
+      "fullDesc": "After resolving the final striking place of this weapon, roll a 1d6. On a 5+, double the Hits inflicted and roll another 1d6. On a 6+ triple the Hits instead!"
+    },
+    {
+      "id": "the-hour-is-nigh",
+      "name": "The Hour is Nigh",
+      "shortDesc": "When fired, place a marker at a valid target. In your next Command Phase, the missile strikes.",
+      "fullDesc": "When the weapon is fired, place a marker on field at a valid target. In your next Command Phase, the missile strikes! Scatter like normal, following the 15\" Blast radius rules."
+    },
+    {
+      "id": "t-minus-5",
+      "name": "T Minus 5",
+      "shortDesc": "Cannot fire Turn 1. Cannot be destroyed or Disabled. If the carrier dies the missile still fires.",
+      "fullDesc": "The weapon may not be fired Turn 1. The weapon cannot be destroyed or Disabled. If the weapon is marked on the field and the carrier is destroyed, the Deathstrike Missile still hits in your Command Phase."
+    },
+    {
+      "id": "enraged-demise",
+      "name": "Enraged Demise",
+      "shortDesc": "If this model is destroyed, each model onboard suffers a hit equal to this model's S#.",
+      "fullDesc": "If this model is destroyed, each model onboard suffers a hit equal to this models S#."
+    },
+    {
+      "id": "packed-like-squigs",
+      "name": "Packed Like Squigs",
+      "shortDesc": "This model counts as half a model for Transport Capacity.",
+      "fullDesc": "This model counts as half a model for Transport Capacity."
+    },
+    {
+      "id": "unruly-mob",
+      "name": "Unruly Mob",
+      "shortDesc": "This unit may only have 1 Independent Character per 5 models instead of 1 per 2.",
+      "fullDesc": "This unit may only have Independent Characters at one for every five models instead of one for every two."
+    },
+    {
+      "id": "void-shields-2",
+      "name": "Void Shields 2",
+      "shortDesc": "This model has 2 Void Shields.",
+      "fullDesc": "This model has 2 Void Shields."
+    },
+    {
+      "id": "create-panic",
+      "name": "Create Panic",
+      "shortDesc": "Displaces non-Titanic models 1\" away from underneath it when it finishes moving.",
+      "fullDesc": "This model displaces non-Titanic models 1\" away from underneath it when it finishes moving. If the models cannot be displaced, this model cannot be placed there."
+    },
+    {
+      "id": "reactor-meltdown",
+      "name": "Reactor Meltdown",
+      "shortDesc": "Explodes on a 4+ in a 4d6\" Radius with S Destroyer and AP 1+ when destroyed.",
+      "fullDesc": "This model Explodes on a 4+ in a 4d6\" Radius with S Destroyer and AP 1+ when it is destroyed."
+    },
+    {
+      "id": "towering-god-engine",
+      "name": "Towering God Engine",
+      "shortDesc": "This model may only be Hit in Melee on a natural 5+ or worse, regardless of modifiers.",
+      "fullDesc": "This model may only be Hit in Melee on a natural 5+ or worse, regardless of modifiers or abilities."
+    },
+    {
+      "id": "shoutin-pole",
+      "name": "Shoutin' Pole",
+      "shortDesc": "Embarked models with the Waaagh! Aura may cast their Aura up to 24\" away.",
+      "fullDesc": "Embarked models with the Waaagh! Aura may cast their Aura up to 24\" away."
+    },
+    {
+      "id": "fortification-rule",
+      "name": "Fortification",
+      "shortDesc": "This model may never be moved once placed on the Table, except when destroyed.",
+      "fullDesc": "This model may never be moved once placed on the Table, except when it is destroyed."
+    }
+  ]
+}

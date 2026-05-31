@@ -1,0 +1,46 @@
+{
+  "units": [
+    {
+      "id": "biged-bossbunka",
+      "name": "Big'ed Bossbunka",
+      "slot": "Fortification",
+      "basePts": 166,
+      "models": [
+        {
+          "id": "bossbunka",
+          "name": "Bossbunka",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "fortification", "BS": 5, "T": 8, "W": 12, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "gaze-of-gork", "arcType": "Hull" },
+            { "weaponId": "big-shoota", "arcType": "Hull" }
+          ],
+          "specialRules": ["building", "fortification-rule", "shoutin-pole"],
+          "transport": { "capacity": 10, "access": ["Rear"], "firePorts": { "Front": 2, "Side": 2, "Rear": 2 } }
+        }
+      ],
+      "options": [
+        { "id": "bbb-extra-shootaz", "type": "toggle", "label": "Big Shoota (+6 pts each, up to 3)", "pts": 6, "grantsWargear": [{ "weaponId": "big-shoota", "arcType": "Hull" }] }
+      ]
+    },
+    {
+      "id": "mek-boy-workshop",
+      "name": "Mek Boy Workshop",
+      "slot": "Fortification",
+      "basePts": 100,
+      "models": [
+        {
+          "id": "workshop",
+          "name": "Workshop",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "fortification", "WS": 3, "BS": 5, "T": 7, "W": 10, "Sv": "3+" },
+          "baseWargear": [{ "weaponId": "grabbin-klaw" }],
+          "specialRules": ["building", "fortification-rule"],
+          "inlineRules": [
+            { "id": "workshop-repair", "name": "Repair", "shortDesc": "Target model in base contact Repairs d3 Wounds; on a d6 roll of 3+ restore service for one Disabled result.", "fullDesc": "Target model in base contact Repairs d3 Wounds. Roll a d6, on a 3+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed." }
+          ]
+        }
+      ]
+    }
+  ]
+}

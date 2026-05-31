@@ -1,0 +1,467 @@
+{
+  "units": [
+    {
+      "id": "deffkoptas",
+      "name": "Deffkoptas",
+      "slot": "Fast Attack",
+      "basePts": 0,
+      "models": [
+        {
+          "id": "deffkopta-boss",
+          "name": "Boss Boy",
+          "minCount": 0, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 5, "W": 3, "I": 2, "A": 2, "Ld": 6, "Sv": "4+" },
+          "baseWargear": ["kustom-mega-blasta"],
+          "specialRules": ["character", "infantry", "steed", "ork", "ere-we-go", "deepstrike", "flyer"]
+        },
+        {
+          "id": "deffkopta",
+          "name": "Deffkopta",
+          "minCount": 3, "maxCount": 5,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 5, "W": 3, "I": 2, "A": 1, "Ld": 5, "Sv": "4+" },
+          "baseWargear": ["kustom-mega-blasta"],
+          "specialRules": ["infantry", "ork", "ere-we-go", "deepstrike", "flyer"]
+        }
+      ],
+      "options": [
+        { "id": "dk-add-boss", "type": "squadSize", "label": "Add Boss Boy", "targetModelId": "deffkopta-boss", "ptsEach": 45, "max": 1 },
+        { "id": "dk-extra", "type": "squadSize", "label": "Additional Deffkoptas", "targetModelId": "deffkopta", "ptsEach": 41, "max": 2 },
+        { "id": "dk-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 8, "note": "Applies to Boss Boy." },
+        { "id": "dk-weapon", "type": "weaponSwap", "label": "Swap any Kustom Mega Blasta for", "replaces": "kustom-mega-blasta", "choices": [
+            { "weaponId": "2-linked-big-shootaz", "label": "2 Linked Big Shootaz", "pts": 13 },
+            { "weaponId": "2-linked-rokkit-launchas", "label": "2 Linked Rokkit Launchaz", "pts": 17 }
+          ]
+        },
+        { "id": "dk-boss-melee", "type": "weaponSwap", "applies": ["deffkopta-boss"], "label": "Boss: take melee weapon", "choices": [
+            { "weaponId": "choppa", "label": "Choppa", "pts": 1 },
+            { "weaponId": "power-stabba", "label": "Power Stabba", "pts": 3 },
+            { "weaponId": "big-choppa", "label": "Big Choppa", "pts": 4 },
+            { "weaponId": "killsaw", "label": "Killsaw", "pts": 8 },
+            { "weaponId": "power-klaw", "label": "Power Klaw", "pts": 11 }
+          ]
+        },
+        { "id": "dk-bigbomm", "type": "toggle", "label": "Bigbomm (+2 pts each)", "pts": 2, "grantsWargear": ["bigbomm"] }
+      ]
+    },
+    {
+      "id": "grot-bomm-launchaz",
+      "name": "Grot Bomm Launchaz",
+      "slot": "Fast Attack",
+      "basePts": 21,
+      "models": [
+        {
+          "id": "launcha",
+          "name": "Launcha",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "infantry", "M": 0, "WS": 5, "BS": 4, "S": 4, "T": 3, "W": 3, "I": 4, "A": 1, "Ld": 5, "Sv": "5+" },
+          "baseWargear": [{ "weaponId": "grot-bomm", "arcType": "Hull" }],
+          "specialRules": ["infantry", "ere-we-go", "grot", "immobile"]
+        }
+      ],
+      "options": [
+        { "id": "gbl-extra", "type": "squadSize", "label": "Additional Launchaz", "targetModelId": "launcha", "ptsEach": 21, "max": 2 },
+        { "id": "gbl-trike", "type": "toggle", "label": "Trike (+17 pts/model)", "pts": 17, "note": "M+12, gains Steed, loses Immobile." }
+      ]
+    },
+    {
+      "id": "nob-warbikerz",
+      "name": "Nob Warbikerz",
+      "slot": "Fast Attack",
+      "basePts": 168,
+      "models": [
+        {
+          "id": "nob-warbiker-boss",
+          "name": "Boss Nob",
+          "minCount": 0, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 5, "T": 5, "W": 3, "I": 2, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": ["2-linked-dakka-gunz", "choppa", "stikkbombz"],
+          "specialRules": ["character", "infantry", "steed", "ork", "ere-we-go", "mob-rule", "very-bulky"]
+        },
+        {
+          "id": "nob-warbiker",
+          "name": "Nob",
+          "minCount": 4, "maxCount": 9,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 5, "T": 5, "W": 3, "I": 2, "A": 2, "Ld": 5, "Sv": "4+" },
+          "baseWargear": ["2-linked-dakka-gunz", "choppa", "stikkbombz"],
+          "specialRules": ["infantry", "steed", "ork", "ere-we-go", "mob-rule", "very-bulky"]
+        }
+      ],
+      "options": [
+        { "id": "nwb-add-boss", "type": "squadSize", "label": "Add Boss Nob", "targetModelId": "nob-warbiker-boss", "ptsEach": 46, "max": 1 },
+        { "id": "nwb-extra", "type": "squadSize", "label": "Additional Nobz", "targetModelId": "nob-warbiker", "ptsEach": 42, "max": 5 },
+        { "id": "nwb-tandem", "type": "toggle", "label": "Tandem Rider (+13 pts)", "pts": 13, "applies": ["nob-warbiker-boss"], "note": "W+2, gains Slugga." },
+        {
+          "id": "nwb-boss-ranged",
+          "type": "weaponSwap",
+          "applies": ["nob-warbiker-boss"],
+          "label": "Boss: swap 2 Linked Dakka Gunz for",
+          "replaces": "2-linked-dakka-gunz",
+          "choices": [
+            { "weaponId": "shoota", "label": "Shoota", "pts": 2 },
+            { "weaponId": "kustom-shoota", "label": "Kustom Shoota", "pts": 8 },
+            { "weaponId": "kombi-burna", "label": "Kombi Burna", "pts": 8 },
+            { "weaponId": "kombi-rokkit", "label": "Kombi Rokkit", "pts": 15 }
+          ]
+        },
+        { "id": "nwb-pistol", "type": "toggle", "label": "Slugga (+2 pts each)", "pts": 2, "grantsWargear": ["slugga"] },
+        { "id": "nwb-melee", "type": "weaponSwap", "label": "Swap any Choppa for", "replaces": "choppa", "weaponListId": "boyz-melee" }
+      ]
+    },
+    {
+      "id": "squighog-boyz",
+      "name": "Squighog Boyz",
+      "slot": "Fast Attack",
+      "basePts": 0,
+      "models": [
+        {
+          "id": "squighog-boss",
+          "name": "Boss Boy",
+          "minCount": 0, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 5, "W": 2, "I": 2, "A": 2, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["slugga", "killsaw", "grot-saw", "squig-horns"],
+          "specialRules": ["character", "infantry", "steed", "ork", "ere-we-go"]
+        },
+        {
+          "id": "squighog-boy",
+          "name": "Squighog Boy",
+          "minCount": 3, "maxCount": 9,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 5, "W": 2, "I": 2, "A": 1, "Ld": 5, "Sv": "6+" },
+          "baseWargear": ["stikka", "grot-saw", "squig-horns"],
+          "specialRules": ["infantry", "ork", "ere-we-go"]
+        }
+      ],
+      "options": [
+        { "id": "shb-add-boss", "type": "squadSize", "label": "Add Boss Boy", "targetModelId": "squighog-boss", "ptsEach": 36, "max": 1 },
+        { "id": "shb-extra", "type": "squadSize", "label": "Additional Squighog Boyz", "targetModelId": "squighog-boy", "ptsEach": 23, "max": 2 },
+        { "id": "shb-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 8 }
+      ]
+    },
+    {
+      "id": "storm-boyz",
+      "name": "Storm Boyz",
+      "slot": "Fast Attack",
+      "basePts": 80,
+      "models": [
+        {
+          "id": "storm-boss",
+          "name": "Boss Boy",
+          "minCount": 0, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 1, "I": 2, "A": 2, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["slugga", "choppa", "stikkbombz"],
+          "specialRules": ["character", "infantry", "ork", "ere-we-go", "mob-rule", "deepstrike", "flyer"]
+        },
+        {
+          "id": "storm-boy",
+          "name": "Storm Boy",
+          "minCount": 4, "maxCount": 14,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 5, "Sv": "6+" },
+          "baseWargear": ["slugga", "choppa", "stikkbombz"],
+          "specialRules": ["infantry", "ork", "ere-we-go", "mob-rule", "deepstrike", "flyer"]
+        }
+      ],
+      "options": [
+        { "id": "sb-add-boss", "type": "squadSize", "label": "Add Boss Boy", "targetModelId": "storm-boss", "ptsEach": 24, "max": 1 },
+        { "id": "sb-extra", "type": "squadSize", "label": "Additional Storm Boyz", "targetModelId": "storm-boy", "ptsEach": 20, "max": 10 },
+        { "id": "sb-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 8 },
+        { "id": "sb-ard-boyz", "type": "namedUpgrade", "upgradeId": "ard-boyz", "pts": 2 },
+        { "id": "sb-boss-ranged", "type": "weaponSwap", "applies": ["storm-boss"], "label": "Swap Boss Slugga for", "replaces": "slugga", "choices": [
+            { "weaponId": "shoota", "label": "Shoota", "pts": 2 },
+            { "weaponId": "kombi-burna", "label": "Kombi Burna", "pts": 8 },
+            { "weaponId": "kombi-rokkit", "label": "Kombi Rokkit", "pts": 15 }
+          ]
+        },
+        { "id": "sb-boss-melee", "type": "weaponSwap", "applies": ["storm-boss"], "label": "Swap Boss Choppa for", "replaces": "choppa", "weaponListId": "boyz-melee" },
+        { "id": "sb-special", "type": "weaponSwap", "applies": ["storm-boy"], "label": "Up to 3: swap Slugga & Choppa for", "choices": [
+            { "weaponId": "burna", "label": "Burna", "pts": 5 },
+            { "weaponId": "big-shoota", "label": "Big Shoota", "pts": 10 },
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 12 },
+            { "weaponId": "tankbusta-bombz", "label": "Tankbusta Bombz", "pts": 7 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "warbikerz",
+      "name": "Warbikerz",
+      "slot": "Fast Attack",
+      "basePts": 144,
+      "models": [
+        {
+          "id": "warbiker-boss",
+          "name": "Boss Boy",
+          "minCount": 0, "maxCount": 1,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 5, "W": 2, "I": 2, "A": 2, "Ld": 6, "Sv": "6+" },
+          "baseWargear": ["2-linked-dakka-gunz", "choppa", "stikkbombz"],
+          "specialRules": ["character", "infantry", "steed", "ork", "ere-we-go", "mob-rule", "outflank", "very-bulky"]
+        },
+        {
+          "id": "warbiker",
+          "name": "Warbiker",
+          "minCount": 4, "maxCount": 9,
+          "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 5, "S": 4, "T": 5, "W": 2, "I": 2, "A": 1, "Ld": 5, "Sv": "6+" },
+          "baseWargear": ["2-linked-dakka-gunz", "choppa", "stikkbombz"],
+          "specialRules": ["infantry", "steed", "ork", "ere-we-go", "mob-rule", "outflank", "very-bulky"]
+        }
+      ],
+      "options": [
+        { "id": "wb3-add-boss", "type": "squadSize", "label": "Add Boss Boy", "targetModelId": "warbiker-boss", "ptsEach": 40, "max": 1 },
+        { "id": "wb3-extra", "type": "squadSize", "label": "Additional Warbikerz", "targetModelId": "warbiker", "ptsEach": 36, "max": 5 },
+        { "id": "wb3-boss-nob", "type": "namedUpgrade", "upgradeId": "boss-nob", "pts": 8 },
+        { "id": "wb3-ard-boyz", "type": "namedUpgrade", "upgradeId": "ard-boyz", "pts": 2 },
+        { "id": "wb3-slugga", "type": "toggle", "label": "Slugga (+2 pts each)", "pts": 2, "grantsWargear": ["slugga"] },
+        { "id": "wb3-melee", "type": "weaponSwap", "label": "Swap any Choppa for", "replaces": "choppa", "weaponListId": "boyz-melee" }
+      ]
+    },
+    {
+      "id": "warbuggiez",
+      "name": "Warbuggiez",
+      "slot": "Fast Attack",
+      "basePts": 72,
+      "models": [
+        {
+          "id": "warbuggy",
+          "name": "Warbuggy",
+          "minCount": 3, "maxCount": 6,
+          "statline": { "type": "infantry", "M": 12, "WS": 5, "BS": 4, "S": 2, "T": 3, "W": 3, "I": 4, "A": 2, "Ld": 5, "Sv": "4+" },
+          "baseWargear": ["big-shoota"],
+          "specialRules": ["infantry", "steed", "ere-we-go", "very-bulky"]
+        }
+      ],
+      "options": [
+        { "id": "wbg-extra", "type": "squadSize", "label": "Additional Warbuggiez", "targetModelId": "warbuggy", "ptsEach": 24, "max": 3 },
+        { "id": "wbg-weapon", "type": "weaponSwap", "label": "Swap any Big Shoota for", "replaces": "big-shoota", "choices": [
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 7 }
+          ]
+        },
+        { "id": "wbg-ork-crew", "type": "toggle", "label": "Ork Crew (+5 pts/model)", "pts": 5, "note": "WS-2 (Improves), BS+1 (Worsens), S+2, T+1, gains Ork keyword." }
+      ]
+    },
+    {
+      "id": "wartrakkz",
+      "name": "Wartrakkz",
+      "slot": "Fast Attack",
+      "basePts": 69,
+      "models": [
+        {
+          "id": "wartrakk",
+          "name": "Wartrakk",
+          "minCount": 3, "maxCount": 6,
+          "statline": { "type": "infantry", "M": 12, "WS": 5, "BS": 4, "S": 2, "T": 3, "W": 3, "I": 4, "A": 2, "Ld": 5, "Sv": "4+" },
+          "baseWargear": ["big-shoota"],
+          "specialRules": ["infantry", "steed", "ere-we-go", "very-bulky"],
+          "inlineRules": [
+            { "id": "flame-kart", "name": "Flame Kart", "shortDesc": "This model may reroll 1s To Wound with Flame weapons.", "fullDesc": "This model may reroll 1s To Wound with Flame weapons." }
+          ]
+        }
+      ],
+      "options": [
+        { "id": "wt-extra", "type": "squadSize", "label": "Additional Wartrakkz", "targetModelId": "wartrakk", "ptsEach": 23, "max": 3 },
+        { "id": "wt-weapon", "type": "weaponSwap", "label": "Swap any Big Shoota for", "replaces": "big-shoota", "choices": [
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 2 },
+            { "weaponId": "skorcha-kart", "label": "Skorcha Kart", "pts": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boomdakka-snazzwagonz",
+      "name": "Boomdakka Snazzwagonz",
+      "slot": "Fast Attack",
+      "basePts": 38,
+      "models": [
+        {
+          "id": "boomdakka",
+          "name": "Boomdakka",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 5, "S": 5, "FA": 9, "SA": 9, "RA": 9, "W": 8, "I": 1, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": [
+            { "weaponId": "big-shoota", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "grot-blaster", "arcType": "Sponson" },
+            { "weaponId": "burna-bottles", "arcType": "Turret" }
+          ],
+          "specialRules": ["vehicle", "tank", "ere-we-go", "ork", "poor-maintenance", "open-topped"]
+        }
+      ],
+      "options": [
+        { "id": "bds-extra", "type": "squadSize", "label": "Additional Boomdakkaz", "targetModelId": "boomdakka", "ptsEach": 38, "max": 2 },
+        { "id": "bds-upgrade", "type": "weaponSwap", "label": "Swap Big Shoota for", "replaces": "big-shoota", "choices": [
+            { "weaponId": "big-zzappa", "label": "Big Zzappa", "pts": 20, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "super-skorcha", "label": "Super Skorcha", "pts": 28, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-grot-bomms", "label": "2 Linked Grot Bomms", "pts": 46, "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "boom-gun", "label": "Boom Gun", "pts": 51, "arcType": "Turret", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "bds-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "bds-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "bds-extra-armour", "type": "toggle", "label": "Extra Armour (+2 pts/model)", "pts": 2 },
+        { "id": "bds-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "bds-turbo-charga", "type": "toggle", "label": "Turbo Charga (+7 pts/model)", "pts": 7 }
+      ]
+    },
+    {
+      "id": "kustom-boosta-blastaz",
+      "name": "Kustom Boosta Blastaz",
+      "slot": "Fast Attack",
+      "basePts": 67,
+      "models": [
+        {
+          "id": "boosta-blasta",
+          "name": "Boosta Blasta",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 5, "S": 5, "FA": 9, "SA": 9, "RA": 9, "W": 8, "I": 1, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": [
+            { "weaponId": "rivet-cannon", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "burna", "arcType": "Hull" },
+            { "weaponId": "grot-blaster", "arcType": "Sponson" },
+            { "weaponId": "stikkbombz", "arcType": "Turret" },
+            { "weaponId": "tusks" }
+          ],
+          "specialRules": ["vehicle", "tank", "ere-we-go", "ork", "poor-maintenance", "open-topped"]
+        }
+      ],
+      "options": [
+        { "id": "kbb-extra", "type": "squadSize", "label": "Additional Boosta Blastaz", "targetModelId": "boosta-blasta", "ptsEach": 67, "max": 2 },
+        { "id": "kbb-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "kbb-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "kbb-extra-armour", "type": "toggle", "label": "Extra Armour (+2 pts/model)", "pts": 2 },
+        { "id": "kbb-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "kbb-turbo-charga", "type": "toggle", "label": "Turbo Charga (+7 pts/model)", "pts": 7 }
+      ]
+    },
+    {
+      "id": "megatrakk-scrapjet",
+      "name": "Megatrakk Scrapjet",
+      "slot": "Fast Attack",
+      "basePts": 199,
+      "models": [
+        {
+          "id": "scrapjet",
+          "name": "Scrapjet",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 5, "S": 5, "FA": 9, "SA": 9, "RA": 9, "W": 8, "I": 1, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": [
+            { "weaponId": "rokkit-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-big-shootaz", "arcType": "Hull" },
+            { "weaponId": "2-linked-wing-missile-rackz", "arcType": "Hull" },
+            { "weaponId": "nose-drill" }
+          ],
+          "specialRules": ["vehicle", "tank", "ere-we-go", "ork", "poor-maintenance", "open-topped"]
+        }
+      ],
+      "options": [
+        { "id": "mts-extra", "type": "squadSize", "label": "Additional Scrapjetz", "targetModelId": "scrapjet", "ptsEach": 119, "max": 2 },
+        { "id": "mts-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "mts-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "mts-extra-armour", "type": "toggle", "label": "Extra Armour (+2 pts/model)", "pts": 2 },
+        { "id": "mts-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "mts-turbo-charga", "type": "toggle", "label": "Turbo Charga (+7 pts/model)", "pts": 7 }
+      ]
+    },
+    {
+      "id": "rukkatrukk-squigbuggiez",
+      "name": "Rukkatrukk Squigbuggiez",
+      "slot": "Fast Attack",
+      "basePts": 82,
+      "models": [
+        {
+          "id": "squigbuggy",
+          "name": "Squigbuggy",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 5, "S": 5, "FA": 9, "SA": 9, "RA": 9, "W": 8, "I": 1, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": [
+            { "weaponId": "heavy-squig-launcha", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-squig-launchaz", "arcType": "Hull" },
+            { "weaponId": "shotgun", "arcType": "Sponson" },
+            { "weaponId": "saw-bladez" },
+            { "weaponId": "stikkbombz", "arcType": "Turret" }
+          ],
+          "specialRules": ["vehicle", "tank", "ere-we-go", "ork", "poor-maintenance", "open-topped", "meal-wagon"]
+        }
+      ],
+      "options": [
+        { "id": "rsb-extra", "type": "squadSize", "label": "Additional Squigbuggiez", "targetModelId": "squigbuggy", "ptsEach": 82, "max": 2 },
+        { "id": "rsb-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "rsb-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "rsb-extra-armour", "type": "toggle", "label": "Extra Armour (+2 pts/model)", "pts": 2 },
+        { "id": "rsb-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "rsb-turbo-charga", "type": "toggle", "label": "Turbo Charga (+7 pts/model)", "pts": 7 }
+      ]
+    },
+    {
+      "id": "shokjump-dragstaz",
+      "name": "Shokjump Dragstaz",
+      "slot": "Fast Attack",
+      "basePts": 36,
+      "models": [
+        {
+          "id": "shokjump",
+          "name": "Shokjump",
+          "minCount": 1, "maxCount": 3,
+          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 5, "S": 5, "FA": 9, "SA": 9, "RA": 9, "W": 8, "I": 1, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": [
+            { "weaponId": "kustom-shokk-rifle", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "rokkit-launcha", "arcType": "Hull" },
+            { "weaponId": "saw-bladez" }
+          ],
+          "specialRules": ["vehicle", "tank", "ere-we-go", "ork", "poor-maintenance", "open-topped"]
+        }
+      ],
+      "options": [
+        { "id": "sjd-extra", "type": "squadSize", "label": "Additional Shokjumpz", "targetModelId": "shokjump", "ptsEach": 36, "max": 2 },
+        { "id": "sjd-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "sjd-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "sjd-extra-armour", "type": "toggle", "label": "Extra Armour (+2 pts/model)", "pts": 2 },
+        { "id": "sjd-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "sjd-turbo-charga", "type": "toggle", "label": "Turbo Charga (+7 pts/model)", "pts": 7 }
+      ]
+    },
+    {
+      "id": "grot-tankz",
+      "name": "Grot Tankz",
+      "slot": "Fast Attack",
+      "basePts": 93,
+      "models": [
+        {
+          "id": "grot-kommanda",
+          "name": "Grot Kommanda",
+          "minCount": 1, "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 10, "WS": 5, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 4, "I": 1, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": [
+            { "weaponId": "skorcha", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "skorcha", "arcType": "Hull" }
+          ],
+          "specialRules": ["character", "vehicle", "tank", "ere-we-go", "grot", "poor-maintenance"]
+        },
+        {
+          "id": "grot-tank",
+          "name": "Grot Tank",
+          "minCount": 2, "maxCount": 9,
+          "statline": { "type": "vehicle", "M": 10, "WS": 5, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 4, "I": 1, "A": 2, "Ld": 5, "Sv": "4+" },
+          "baseWargear": [
+            { "weaponId": "skorcha", "arcType": "Turret", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "tank", "ere-we-go", "grot", "poor-maintenance"]
+        }
+      ],
+      "options": [
+        { "id": "gt-extra", "type": "squadSize", "label": "Additional Grot Tankz", "targetModelId": "grot-tank", "ptsEach": 28, "max": 7 },
+        { "id": "gt-kommanda-hull", "type": "weaponSwap", "applies": ["grot-kommanda"], "label": "Kommanda: swap Hull Skorcha for", "replaces": "skorcha", "choices": [
+            { "weaponId": "big-shoota", "label": "Big Shoota", "pts": 1, "arcType": "Hull" }
+          ]
+        },
+        { "id": "gt-turret", "type": "weaponSwap", "label": "Swap any Turret Skorcha for", "replaces": "skorcha", "choices": [
+            { "weaponId": "kustom-mega-blasta", "label": "Kustom Mega Blasta", "pts": 2, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "big-shoota", "label": "Big Shoota", "pts": 2, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "rokkit-launcha", "label": "Rokkit Launcha", "pts": 4, "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "grotzooka", "label": "Grotzooka", "pts": 7, "arcType": "Turret", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "gt-grot-riggas", "type": "toggle", "label": "Grot Riggas (+2 pts/model)", "pts": 2 },
+        { "id": "gt-fuel-mixa", "type": "toggle", "label": "Fuel Mixa Grot (+2 pts/model)", "pts": 2 },
+        { "id": "gt-extra-armour", "type": "toggle", "label": "Extra Armour (+1 pt/model)", "pts": 1 },
+        { "id": "gt-red-paint", "type": "toggle", "label": "Red Paint (+6 pts/model)", "pts": 6 },
+        { "id": "gt-turbo-charga", "type": "toggle", "label": "Turbo Charga (+7 pts/model)", "pts": 7 }
+      ]
+    }
+  ]
+}
