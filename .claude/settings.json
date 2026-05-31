@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const fs = require\\('fs'\\); const d = JSON.parse\\(fs.readFileSync\\('public/imperial-guard_faction.json', 'utf8'\\)\\); const eng = d.units.find\\(function\\(u\\) { return u.name && u.name.toLowerCase\\(\\).includes\\('engineer'\\); }\\); const rat = d.units.find\\(function\\(u\\) { return u.name && u.name.toLowerCase\\(\\).includes\\('ratling'\\); }\\); console.log\\('Engineering:', JSON.stringify\\(eng, null, 2\\).slice\\(0, 400\\)\\); console.log\\('Ratling:', JSON.stringify\\(rat, null, 2\\).slice\\(0, 400\\)\\);\")",
+      "Bash(node -e \"const fs = require\\('fs'\\); const d = JSON.parse\\(fs.readFileSync\\('public/imperial-guard_faction.json', 'utf8'\\)\\); const eng = d.units.find\\(function\\(u\\) { return u.id === 'engineer-platoon'; }\\); const rat = d.units.find\\(function\\(u\\) { return u.id === 'ratling-platoon'; }\\); console.log\\('ENGINEER PLATOON:'\\); console.log\\(JSON.stringify\\(eng, null, 2\\)\\); console.log\\('RATLING PLATOON:'\\); console.log\\(JSON.stringify\\(rat, null, 2\\)\\);\")",
+      "Bash(node -e \"const fs = require\\('fs'\\); const raw = fs.readFileSync\\('public/imperial-guard/10-units-elite.json', 'utf8'\\); const d = JSON.parse\\(raw\\); const ids = d.units.map\\(function\\(u\\){return u.id;}\\); console.log\\('Elite units:', ids\\);\")",
+      "Bash(node -e \"const fs = require\\('fs'\\); const raw = fs.readFileSync\\('public/imperial-guard/10-units-elite.json', 'utf8'\\); const lines = raw.split\\('\\\\n'\\); lines.forEach\\(function\\(l,i\\){if\\(l.includes\\('engineer-platoon'\\)||l.includes\\('ratling-platoon'\\)\\){console.log\\(i+1, l\\);}}\\);\")",
+      "Bash(node -e \"const fs = require\\('fs'\\); const d = JSON.parse\\(fs.readFileSync\\('public/imperial-guard_faction.json', 'utf8'\\)\\); const platoons = d.units.filter\\(function\\(u\\){return u.platoon;}\\); console.log\\('Platoon units:', platoons.map\\(function\\(u\\){return u.id + ' \\(' + \\(u.platoonUnits||[]\\).length + ' sub-units\\)';}\\)\\);\")"
+    ]
+  }
+}
