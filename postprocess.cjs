@@ -14,11 +14,13 @@
 
 const fs   = require('fs');
 const path = require('path');
+const Ajv  = require('ajv');
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const ROOT        = __dirname;
 const CORE_PATH   = path.join(ROOT, 'public/core-rules.json');
 const MAP_PATH    = path.join(ROOT, 'rule-map.json');
+const SCHEMA_PATH = path.join(ROOT, 'public/alt40k-faction-schema-v1.3.json');
 
 // Weapon rule patterns handled procedurally (any numeric suffix)
 const RULE_PATTERNS = [
@@ -36,6 +38,23 @@ function load(p) {
 }
 function die(msg) { console.error('ERROR:', msg); process.exit(1); }
 function fmt(n) { return String(n).padStart(4); }
+
+// ── 0. SCHEMA — validate structure with AJV ──────────────────────────────────
+function validateSchema(data) {
+  let schema;
+  try { schema = JSON.parse(fs.readFileSync(SCHEMA_PATH, 'utf8')); }
+  catch (e) { return { ok: false, errors: [`Cannot load schema file: ${e.message}`] }; }
+
+  const ajv = new Ajv({ allErrors: true, jsonPointers: true });
+  const validate = ajv.compile(schema);
+  if (validate(data)) return { ok: true, errors: [] };
+
+  const errors = (validate.errors || []).map(err => {
+    const loc = err.dataPath || '(root)';
+    return `${loc}: ${err.message}`;
+  });
+  return { ok: false, errors };
+}
 
 // ── 1. CLEAN — strip null/empty fields ───────────────────────────────────────
 function stripNulls(obj) {
@@ -225,6 +244,16 @@ console.log(`\n${'═'.repeat(60)}`);
 console.log(` POSTPROCESSOR — ${label}`);
 console.log(`${'═'.repeat(60)}\n`);
 
+// ── Phase 0: Schema ────────────────────────────────────────────────────────
+const { ok: schemaOk, errors: schemaErrors } = validateSchema(faction);
+if (schemaOk) {
+  console.log('[SCHEMA] Structure valid ✓');
+} else {
+  console.log(`[SCHEMA] ${schemaErrors.length} STRUCTURAL ERROR(S):`);
+  schemaErrors.forEach(e => console.log(`          ✗ ${e}`));
+}
+console.log('');
+
 // ── Phase 1: Clean ─────────────────────────────────────────────────────────
 const nullsBefore = countNulls(faction);
 const cleaned     = stripNulls(faction);
@@ -274,13 +303,15 @@ console.log(`  Weapons:  ${fmt((cleaned.commonWargear||[]).length)}`);
 console.log(`  ArmyRules:${fmt((cleaned.armyRules||[]).length)}`);
 console.log('');
 
+const hasErrors = !schemaOk || errors.length > 0;
+
 if (dryRun) {
   console.log('[DRY-RUN] No file written.\n');
-} else if (errors.length === 0) {
+} else if (!hasErrors) {
   fs.writeFileSync(filePath, JSON.stringify(cleaned, null, 2));
   console.log(`[WRITE] ${filePath} updated.\n`);
 } else {
   console.log(`[WRITE] Skipped — fix errors above first.\n`);
 }
 
-process.exit(errors.length > 0 ? 1 : 0);
+process.exit(hasErrors ? 1 : 0);

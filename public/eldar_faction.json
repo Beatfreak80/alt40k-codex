@@ -157,7 +157,8 @@
         2
       ],
       "Ded. Transport": [
-        0
+        0,
+        null
       ],
       "Lord of War": [
         0,
@@ -3172,7 +3173,8 @@
         },
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         },
         {
           "id": "jetbike",
@@ -3247,7 +3249,8 @@
         },
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "masque-spells"
         }
       ]
     },
@@ -3304,7 +3307,8 @@
       "options": [
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         }
       ]
     },
@@ -3472,7 +3476,8 @@
       "options": [
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         }
       ]
     },
@@ -3523,7 +3528,8 @@
       "options": [
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         }
       ]
     },
@@ -3701,7 +3707,8 @@
       "options": [
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         }
       ]
     },
@@ -3759,7 +3766,8 @@
       "options": [
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         },
         {
           "id": "ghosthelm",
@@ -3940,7 +3948,8 @@
         },
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         },
         {
           "id": "jetbike",
@@ -6638,7 +6647,8 @@
         },
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         }
       ]
     },
@@ -8210,7 +8220,8 @@
       "options": [
         {
           "id": "spells",
-          "type": "spellPick"
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
         }
       ]
     },

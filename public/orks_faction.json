@@ -187,7 +187,8 @@
         2
       ],
       "Advisor": [
-        0
+        0,
+        null
       ],
       "Troop": [
         2,
@@ -210,14 +211,16 @@
         2
       ],
       "Ded. Transport": [
-        0
+        0,
+        null
       ],
       "Lord of War": [
         0,
         1
       ],
       "Fortification": [
-        0
+        0,
+        null
       ]
     }
   },
@@ -2566,122 +2569,122 @@
   "weaponLists": {
     "boyz-melee": [
       {
-        "type": "weapon",
         "weaponId": "choppa",
-        "pts": 0
+        "pts": 0,
+        "label": "Choppa"
       },
       {
-        "type": "weapon",
         "weaponId": "power-stabba",
-        "pts": 2
+        "pts": 2,
+        "label": "Power Stabba"
       },
       {
-        "type": "weapon",
         "weaponId": "big-choppa",
-        "pts": 3
+        "pts": 3,
+        "label": "Big Choppa"
       },
       {
-        "type": "weapon",
         "weaponId": "killsaw",
-        "pts": 7
+        "pts": 7,
+        "label": "Killsaw"
       },
       {
-        "type": "weapon",
         "weaponId": "power-klaw",
-        "pts": 10
+        "pts": 10,
+        "label": "Power Klaw"
       }
     ],
     "hq-melee-a": [
       {
-        "type": "weapon",
         "weaponId": "choppa",
-        "pts": 0
+        "pts": 0,
+        "label": "Choppa"
       },
       {
-        "type": "weapon",
         "weaponId": "power-stabba",
-        "pts": 4
+        "pts": 4,
+        "label": "Power Stabba"
       },
       {
-        "type": "weapon",
         "weaponId": "big-choppa",
-        "pts": 6
+        "pts": 6,
+        "label": "Big Choppa"
       },
       {
-        "type": "weapon",
         "weaponId": "killsaw",
-        "pts": 14
+        "pts": 14,
+        "label": "Killsaw"
       },
       {
-        "type": "weapon",
         "weaponId": "power-klaw",
-        "pts": 20
+        "pts": 20,
+        "label": "Power Klaw"
       }
     ],
     "hq-melee-b": [
       {
-        "type": "weapon",
         "weaponId": "choppa",
-        "pts": 0
+        "pts": 0,
+        "label": "Choppa"
       },
       {
-        "type": "weapon",
         "weaponId": "power-stabba",
-        "pts": 3
+        "pts": 3,
+        "label": "Power Stabba"
       },
       {
-        "type": "weapon",
         "weaponId": "big-choppa",
-        "pts": 5
+        "pts": 5,
+        "label": "Big Choppa"
       },
       {
-        "type": "weapon",
         "weaponId": "killsaw",
-        "pts": 11
+        "pts": 11,
+        "label": "Killsaw"
       },
       {
-        "type": "weapon",
         "weaponId": "power-klaw",
-        "pts": 16
+        "pts": 16,
+        "label": "Power Klaw"
       }
     ],
     "boyz-special": [
       {
-        "type": "weapon",
         "weaponId": "burna",
-        "pts": 5
+        "pts": 5,
+        "label": "Burna"
       },
       {
-        "type": "weapon",
         "weaponId": "big-shoota",
-        "pts": 10
+        "pts": 10,
+        "label": "Big Shoota"
       },
       {
-        "type": "weapon",
         "weaponId": "rokkit-launcha",
-        "pts": 12
+        "pts": 12,
+        "label": "Rokkit Launcha"
       }
     ],
     "boss-ranged": [
       {
-        "type": "weapon",
         "weaponId": "shoota",
-        "pts": 2
+        "pts": 2,
+        "label": "Shoota"
       },
       {
-        "type": "weapon",
         "weaponId": "kombi-burna",
-        "pts": 8
+        "pts": 8,
+        "label": "Kombi Burna"
       },
       {
-        "type": "weapon",
         "weaponId": "kombi-rokkit",
-        "pts": 15
+        "pts": 15,
+        "label": "Kombi Rokkit"
       },
       {
-        "type": "weapon",
         "weaponId": "meltagun",
-        "pts": 24
+        "pts": 24,
+        "label": "Meltagun"
       }
     ]
   },
@@ -2804,7 +2807,8 @@
           ],
           "label": "Swap Choppa for",
           "replaces": "choppa",
-          "weaponListId": "hq-melee-a"
+          "weaponListId": "hq-melee-a",
+          "scope": "perModelType"
         },
         {
           "id": "dw-da-big-boss",
@@ -2836,7 +2840,7 @@
             "I": 2,
             "A": 4,
             "Ld": 9,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "slugga",
@@ -2897,7 +2901,8 @@
               "label": "Meltagun",
               "pts": 24
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "wb-melee",
@@ -2907,7 +2912,8 @@
           ],
           "label": "Swap Choppa for",
           "replaces": "choppa",
-          "weaponListId": "hq-melee-b"
+          "weaponListId": "hq-melee-b",
+          "scope": "perModelType"
         },
         {
           "id": "wb-mega-armour",
@@ -3005,7 +3011,8 @@
               "label": "Thump Gun",
               "pts": 10
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "sq-melee",
@@ -3015,7 +3022,8 @@
           ],
           "label": "Swap Choppa for",
           "replaces": "choppa",
-          "weaponListId": "hq-melee-a"
+          "weaponListId": "hq-melee-a",
+          "scope": "perModelType"
         },
         {
           "id": "sq-da-big-boss",
@@ -3047,7 +3055,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -3084,7 +3092,8 @@
               "label": "Goader",
               "pts": 4
             }
-          ]
+          ],
+          "scope": "perModelType"
         }
       ]
     },
@@ -3110,7 +3119,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -3176,7 +3185,8 @@
               "label": "Kustom Mega Slugga",
               "pts": 11
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "mb-melee",
@@ -3186,7 +3196,8 @@
           ],
           "label": "Swap Choppa for",
           "replaces": "choppa",
-          "weaponListId": "hq-melee-b"
+          "weaponListId": "hq-melee-b",
+          "scope": "perModelType"
         },
         {
           "id": "mb-grot-oiler",
@@ -3238,7 +3249,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "power-klaw",
@@ -3291,7 +3302,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "weird-boy-staff"
@@ -3309,7 +3320,7 @@
         "masteryLevel": 1,
         "masteryUpgrade": {
           "pts": 15,
-          "maxLevel": 2
+          "toLevel": 2
         }
       },
       "options": [
@@ -3343,7 +3354,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -3415,7 +3426,8 @@
               "label": "Kustom Mega Slugga",
               "pts": 11
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "bb-melee",
@@ -3425,7 +3437,8 @@
           ],
           "label": "Swap Choppa for",
           "replaces": "choppa",
-          "weaponListId": "hq-melee-b"
+          "weaponListId": "hq-melee-b",
+          "scope": "perModelType"
         },
         {
           "id": "bb-boom-box",
@@ -3465,7 +3478,7 @@
             "I": 2,
             "A": 4,
             "Ld": 9,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "morks-teef",
@@ -3533,7 +3546,7 @@
             "I": 2,
             "A": 4,
             "Ld": 9,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "blitz-missilez",
@@ -3603,7 +3616,7 @@
             "I": 2,
             "A": 4,
             "Ld": 9,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -3699,7 +3712,7 @@
             "I": 2,
             "A": 3,
             "Ld": 9,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -3751,7 +3764,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -3782,7 +3795,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -3856,7 +3869,8 @@
               "label": "Meltagun",
               "pts": 24
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "ob-boss-melee",
@@ -3866,7 +3880,8 @@
           ],
           "label": "Swap Boss Boy Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "perModelType"
         },
         {
           "id": "ob-boy-melee",
@@ -3881,7 +3896,8 @@
               "label": "Shoota",
               "pts": 1
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "ob-special",
@@ -3911,7 +3927,8 @@
               "label": "Tankbusta Bombz",
               "pts": 7
             }
-          ]
+          ],
+          "scope": "perModelType"
         }
       ]
     },
@@ -3984,7 +4001,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -4016,7 +4033,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -4097,7 +4114,8 @@
               "label": "Meltagun",
               "pts": 24
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "bb-spanner-melee",
@@ -4107,7 +4125,8 @@
           ],
           "label": "Swap Spanner Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "perModelType"
         },
         {
           "id": "bb-boy-burna",
@@ -4122,7 +4141,8 @@
               "label": "Burna",
               "pts": 0
             }
-          ]
+          ],
+          "scope": "perModelType"
         }
       ]
     },
@@ -4148,7 +4168,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -4181,7 +4201,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -4256,7 +4276,8 @@
               "label": "Meltagun",
               "pts": 24
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "ko-boss-melee",
@@ -4266,7 +4287,8 @@
           ],
           "label": "Swap Boss Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "perModelType"
         },
         {
           "id": "ko-special",
@@ -4296,7 +4318,8 @@
               "label": "Tankbusta Bombz",
               "pts": 7
             }
-          ]
+          ],
+          "scope": "perModelType"
         }
       ]
     },
@@ -4322,7 +4345,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -4354,7 +4377,7 @@
             "I": 2,
             "A": 2,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -4424,14 +4447,16 @@
               "label": "Meltagun",
               "pts": 24
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "nz-melee",
           "type": "weaponSwap",
           "label": "Swap any Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "unit"
         }
       ]
     },
@@ -4506,7 +4531,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "rokkit-launcha",
@@ -4537,7 +4562,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "rokkit-launcha",
@@ -4588,7 +4613,8 @@
           ],
           "label": "Swap Boss Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "perModelType"
         },
         {
           "id": "tb-special",
@@ -4614,7 +4640,8 @@
               "label": "Tankbusta Bombz (grenade)",
               "pts": 7
             }
-          ]
+          ],
+          "scope": "perModelType"
         }
       ]
     },
@@ -4640,7 +4667,7 @@
             "I": 2,
             "A": 4,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             "kustom-shoota",
@@ -4674,7 +4701,7 @@
             "I": 2,
             "A": 3,
             "Ld": 5,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             "kustom-shoota",
@@ -4725,7 +4752,8 @@
               "label": "Kombi Rokkit",
               "pts": 5
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "mn-melee",
@@ -4738,7 +4766,8 @@
               "label": "Power Klaw",
               "pts": 5
             }
-          ]
+          ],
+          "scope": "unit"
         }
       ]
     },
@@ -4766,7 +4795,7 @@
             "I": 4,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -4812,7 +4841,7 @@
             "I": 4,
             "A": 2,
             "Ld": 5,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -4891,7 +4920,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "kk-kan-klaw",
@@ -4957,7 +4987,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -4980,14 +5010,7 @@
             "poor-maintenance",
             "open-topped",
             "junka-forcefield"
-          ],
-          "transport": {
-            "capacity": 10,
-            "access": [
-              "Side",
-              "Rear"
-            ]
-          }
+          ]
         }
       ],
       "options": [
@@ -5042,7 +5065,8 @@
               "pts": 22,
               "arcType": "Turret"
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "jk-big-zzappa",
@@ -5183,7 +5207,14 @@
           "pts": 20,
           "note": "Loses Open Topped and Firing Ports."
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 10,
+        "accessPoints": [
+          "Side",
+          "Rear"
+        ]
+      }
     },
     {
       "id": "deffkoptas",
@@ -5207,7 +5238,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "kustom-mega-blasta"
@@ -5238,7 +5269,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "kustom-mega-blasta"
@@ -5292,7 +5323,8 @@
               "label": "2 Linked Rokkit Launchaz",
               "pts": 17
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "dk-boss-melee",
@@ -5327,7 +5359,8 @@
               "label": "Power Klaw",
               "pts": 11
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "dk-bigbomm",
@@ -5362,7 +5395,7 @@
             "I": 4,
             "A": 1,
             "Ld": 5,
-            "Sv": "5+"
+            "Sv": 5
           },
           "baseWargear": [
             {
@@ -5418,7 +5451,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "2-linked-dakka-gunz",
@@ -5451,7 +5484,7 @@
             "I": 2,
             "A": 2,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "2-linked-dakka-gunz",
@@ -5524,7 +5557,8 @@
               "label": "Kombi Rokkit",
               "pts": 15
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "nwb-pistol",
@@ -5540,7 +5574,8 @@
           "type": "weaponSwap",
           "label": "Swap any Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "unit"
         }
       ]
     },
@@ -5566,7 +5601,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -5598,7 +5633,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "stikka",
@@ -5659,7 +5694,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -5692,7 +5727,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "slugga",
@@ -5762,7 +5797,8 @@
               "label": "Kombi Rokkit",
               "pts": 15
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "sb-boss-melee",
@@ -5772,7 +5808,8 @@
           ],
           "label": "Swap Boss Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "perModelType"
         },
         {
           "id": "sb-special",
@@ -5802,7 +5839,8 @@
               "label": "Tankbusta Bombz",
               "pts": 7
             }
-          ]
+          ],
+          "scope": "perModelType"
         }
       ]
     },
@@ -5828,7 +5866,7 @@
             "I": 2,
             "A": 2,
             "Ld": 6,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "2-linked-dakka-gunz",
@@ -5862,7 +5900,7 @@
             "I": 2,
             "A": 1,
             "Ld": 5,
-            "Sv": "6+"
+            "Sv": 6
           },
           "baseWargear": [
             "2-linked-dakka-gunz",
@@ -5923,7 +5961,8 @@
           "type": "weaponSwap",
           "label": "Swap any Choppa for",
           "replaces": "choppa",
-          "weaponListId": "boyz-melee"
+          "weaponListId": "boyz-melee",
+          "scope": "unit"
         }
       ]
     },
@@ -5949,7 +5988,7 @@
             "I": 4,
             "A": 2,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "big-shoota"
@@ -5982,7 +6021,8 @@
               "label": "Rokkit Launcha",
               "pts": 7
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "wbg-ork-crew",
@@ -6015,7 +6055,7 @@
             "I": 4,
             "A": 2,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "big-shoota"
@@ -6061,7 +6101,8 @@
               "label": "Skorcha Kart",
               "pts": 3
             }
-          ]
+          ],
+          "scope": "unit"
         }
       ]
     },
@@ -6089,7 +6130,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -6169,7 +6210,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bds-grot-riggas",
@@ -6227,7 +6269,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -6328,7 +6370,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -6425,7 +6467,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -6527,7 +6569,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -6620,7 +6662,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -6662,7 +6704,7 @@
             "I": 1,
             "A": 2,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -6706,7 +6748,8 @@
               "pts": 1,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "gt-turret",
@@ -6750,7 +6793,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "gt-grot-riggas",
@@ -6806,7 +6850,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "snazzgun",
@@ -6836,7 +6880,7 @@
             "I": 2,
             "A": 2,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "snazzgun",
@@ -6883,7 +6927,7 @@
             "I": 2,
             "A": 3,
             "Ld": 6,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "big-shoota",
@@ -6914,7 +6958,7 @@
             "I": 2,
             "A": 2,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             "deffgun",
@@ -6961,7 +7005,8 @@
               "label": "Deffgun",
               "pts": 11
             }
-          ]
+          ],
+          "scope": "perModelType"
         },
         {
           "id": "lo-grot-oiler",
@@ -6994,7 +7039,7 @@
             "I": 2,
             "A": 6,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             "gorin-horns"
@@ -7004,17 +7049,7 @@
             "ere-we-go",
             "shock-assault",
             "enraged-demise"
-          ],
-          "transport": {
-            "capacity": 6,
-            "access": [
-              "Side",
-              "Rear"
-            ],
-            "firePorts": {
-              "Side": 2
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -7038,9 +7073,23 @@
               "label": "Boom Gun",
               "pts": 51
             }
-          ]
+          ],
+          "scope": "unit"
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 6,
+        "accessPoints": [
+          "Side",
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 2,
+            "facing": "Side"
+          }
+        ]
+      }
     },
     {
       "id": "mek-gunz",
@@ -7064,7 +7113,7 @@
             "I": 4,
             "A": 3,
             "Ld": 5,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -7117,7 +7166,8 @@
               "pts": 72,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         }
       ]
     },
@@ -7143,7 +7193,7 @@
             "I": 4,
             "A": 3,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -7193,7 +7243,7 @@
             "I": 4,
             "A": 2,
             "Ld": 5,
-            "Sv": "4+"
+            "Sv": 4
           },
           "baseWargear": [
             {
@@ -7240,7 +7290,7 @@
             "I": 2,
             "A": 6,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             "lobba",
@@ -7253,16 +7303,7 @@
             "ere-we-go",
             "shock-assault",
             "psychic-mastery"
-          ],
-          "transport": {
-            "capacity": 1,
-            "access": [
-              "Side"
-            ],
-            "firePorts": {
-              "360": 10
-            }
-          }
+          ]
         }
       ],
       "psychic": {
@@ -7270,7 +7311,7 @@
         "masteryLevel": 1,
         "masteryUpgrade": {
           "pts": 15,
-          "maxLevel": 2
+          "toLevel": 2
         }
       },
       "options": [
@@ -7281,7 +7322,19 @@
           "pts": 15,
           "note": "Swap Psychic Mastery 1 for Transport +5 capacity and +5 additional 360° Fire Ports."
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 1,
+        "accessPoints": [
+          "Side"
+        ],
+        "firePorts": [
+          {
+            "count": 10,
+            "facing": "360"
+          }
+        ]
+      }
     },
     {
       "id": "deff-dread-mob",
@@ -7307,7 +7360,7 @@
             "I": 2,
             "A": 4,
             "Ld": 5,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -7427,7 +7480,7 @@
             "I": 2,
             "A": 6,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -7474,13 +7527,7 @@
               "shortDesc": "5+ Invulnerability Save.",
               "fullDesc": "This model has a 5+ Invulnerability Save."
             }
-          ],
-          "transport": {
-            "capacity": 6,
-            "access": [
-              "Front"
-            ]
-          }
+          ]
         }
       ],
       "options": [
@@ -7508,7 +7555,13 @@
           "label": "Red Paint (+5 pts)",
           "pts": 5
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 6,
+        "accessPoints": [
+          "Front"
+        ]
+      }
     },
     {
       "id": "mega-dread",
@@ -7534,7 +7587,7 @@
             "I": 2,
             "A": 5,
             "Ld": 5,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -7592,7 +7645,8 @@
               "pts": 3,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "mdr-melee",
@@ -7626,7 +7680,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "mdr-grot-riggas",
@@ -7678,7 +7733,7 @@
             "I": 2,
             "A": 5,
             "Ld": 5,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -7732,7 +7787,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "mkd-melee",
@@ -7819,7 +7875,7 @@
             "I": 2,
             "A": 6,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -7858,13 +7914,7 @@
               "shortDesc": "5+ Invulnerability Save.",
               "fullDesc": "This model has a 5+ Invulnerability Save."
             }
-          ],
-          "transport": {
-            "capacity": 6,
-            "access": [
-              "Front"
-            ]
-          }
+          ]
         }
       ],
       "options": [
@@ -7892,7 +7942,13 @@
           "label": "Red Paint (+5 pts)",
           "pts": 5
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 6,
+        "accessPoints": [
+          "Front"
+        ]
+      }
     },
     {
       "id": "battlewagon",
@@ -7918,7 +7974,7 @@
             "I": 1,
             "A": 6,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "specialRules": [
             "vehicle",
@@ -7927,19 +7983,7 @@
             "ork",
             "poor-maintenance",
             "open-topped"
-          ],
-          "transport": {
-            "capacity": 20,
-            "access": [
-              "Side",
-              "Rear"
-            ],
-            "firePorts": {
-              "Front": 5,
-              "Side": 5,
-              "Rear": 5
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -7993,7 +8037,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bw-hull",
@@ -8033,7 +8078,8 @@
               "pts": 15,
               "arcType": "Turret"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bw-sponson",
@@ -8058,7 +8104,8 @@
               "pts": 10,
               "arcType": "Sponson"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bw-ram",
@@ -8151,7 +8198,28 @@
           "pts": -16,
           "note": "Loses Open Topped and Firing Ports."
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 20,
+        "accessPoints": [
+          "Side",
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 5,
+            "facing": "Front"
+          },
+          {
+            "count": 5,
+            "facing": "Side"
+          },
+          {
+            "count": 5,
+            "facing": "Rear"
+          }
+        ]
+      }
     },
     {
       "id": "big-trakkz",
@@ -8177,7 +8245,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "specialRules": [
             "vehicle",
@@ -8186,19 +8254,7 @@
             "ork",
             "poor-maintenance",
             "open-topped"
-          ],
-          "transport": {
-            "capacity": 12,
-            "access": [
-              "Side",
-              "Rear"
-            ],
-            "firePorts": {
-              "Front": 3,
-              "Side": 3,
-              "Rear": 3
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -8269,7 +8325,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bt-sponson",
@@ -8294,7 +8351,8 @@
               "pts": 10,
               "arcType": "Sponson"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bt-ram",
@@ -8387,7 +8445,28 @@
           "pts": -6,
           "note": "Loses Open Topped and Firing Ports."
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 12,
+        "accessPoints": [
+          "Side",
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 3,
+            "facing": "Front"
+          },
+          {
+            "count": 3,
+            "facing": "Side"
+          },
+          {
+            "count": 3,
+            "facing": "Rear"
+          }
+        ]
+      }
     },
     {
       "id": "grot-megatankz",
@@ -8413,7 +8492,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -8502,7 +8581,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "gmt-sponson",
@@ -8534,7 +8614,8 @@
               "pts": 10,
               "arcType": "Sponson"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "gmt-pintle",
@@ -8566,7 +8647,8 @@
               "pts": 7,
               "arcType": "Turret"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "gmt-hull-shoota",
@@ -8645,7 +8727,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -8660,18 +8742,7 @@
             "ork",
             "poor-maintenance",
             "open-topped"
-          ],
-          "transport": {
-            "capacity": 12,
-            "access": [
-              "Rear"
-            ],
-            "firePorts": {
-              "Front": 3,
-              "Side": 3,
-              "Rear": 3
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -8707,7 +8778,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "gtr-heavy",
@@ -8750,7 +8822,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "gtr-ram",
@@ -8830,7 +8903,27 @@
           "label": "Turbo Charga (+7 pts/model)",
           "pts": 7
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 12,
+        "accessPoints": [
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 3,
+            "facing": "Front"
+          },
+          {
+            "count": 3,
+            "facing": "Side"
+          },
+          {
+            "count": 3,
+            "facing": "Rear"
+          }
+        ]
+      }
     },
     {
       "id": "kill-tank",
@@ -8856,7 +8949,7 @@
             "I": 1,
             "A": 6,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -8873,13 +8966,7 @@
             "ere-we-go",
             "ork",
             "poor-maintenance"
-          ],
-          "transport": {
-            "capacity": 12,
-            "access": [
-              "Rear"
-            ]
-          }
+          ]
         }
       ],
       "options": [
@@ -8907,7 +8994,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "kt-sponson",
@@ -8956,7 +9044,8 @@
               "pts": 14,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "kt-grot-bomm",
@@ -9000,7 +9089,13 @@
           "label": "Turbo Charga (+7 pts)",
           "pts": 7
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 12,
+        "accessPoints": [
+          "Rear"
+        ]
+      }
     },
     {
       "id": "attack-fightaz",
@@ -9026,7 +9121,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -9074,7 +9169,8 @@
               "pts": 20,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "af-grot-riggas",
@@ -9128,7 +9224,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -9178,7 +9274,8 @@
               "pts": 16,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bm-wing",
@@ -9203,7 +9300,8 @@
               "pts": 20,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bm-grot-riggas",
@@ -9255,7 +9353,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -9312,7 +9410,8 @@
               "pts": 40,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "dj-grot-riggas",
@@ -9364,7 +9463,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -9416,7 +9515,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "wbj-turret",
@@ -9480,7 +9580,7 @@
             "I": 1,
             "A": 3,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -9507,16 +9607,7 @@
             "flyer",
             "open-topped",
             "jam"
-          ],
-          "transport": {
-            "capacity": 10,
-            "access": [
-              "Side"
-            ],
-            "firePorts": {
-              "Side": 5
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -9535,7 +9626,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "wk-secondary",
@@ -9561,7 +9653,8 @@
               "pts": 2,
               "arcType": "Hull"
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "wk-bomm",
@@ -9599,7 +9692,19 @@
           "label": "Stikkbomb Flinga (+9 pts)",
           "pts": 9
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 10,
+        "accessPoints": [
+          "Side"
+        ],
+        "firePorts": [
+          {
+            "count": 5,
+            "facing": "Side"
+          }
+        ]
+      }
     },
     {
       "id": "big-mek-stompa",
@@ -9625,7 +9730,7 @@
             "I": 2,
             "A": 9,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -9676,16 +9781,7 @@
             "create-panic",
             "reactor-meltdown",
             "towering-god-engine"
-          ],
-          "transport": {
-            "capacity": 20,
-            "access": [
-              "Rear"
-            ],
-            "firePorts": {
-              "Front": 10
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -9703,7 +9799,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "bms-supa-rokkit",
@@ -9753,7 +9850,19 @@
           "label": "Red Paint (+12 pts)",
           "pts": 12
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 20,
+        "accessPoints": [
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 10,
+            "facing": "Front"
+          }
+        ]
+      }
     },
     {
       "id": "deffrolla-battle-fortress",
@@ -9779,7 +9888,7 @@
             "I": 1,
             "A": 9,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -9818,16 +9927,7 @@
             "ork",
             "poor-maintenance",
             "open-topped"
-          ],
-          "transport": {
-            "capacity": 20,
-            "access": [
-              "Rear"
-            ],
-            "firePorts": {
-              "Side": 10
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -9855,7 +9955,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "dbf-turret",
@@ -9916,7 +10017,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "dbf-extra-sponson",
@@ -9983,7 +10085,8 @@
                 "Primary"
               ]
             }
-          ]
+          ],
+          "scope": "unit"
         },
         {
           "id": "dbf-grabbin-klaw",
@@ -10040,7 +10143,19 @@
           "pts": 97,
           "note": "Loses Open Topped and Firing Ports."
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 20,
+        "accessPoints": [
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 10,
+            "facing": "Side"
+          }
+        ]
+      }
     },
     {
       "id": "gargantuan-squiggoth",
@@ -10064,7 +10179,7 @@
             "I": 2,
             "A": 6,
             "Ld": 6,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -10089,17 +10204,7 @@
             "shock-assault",
             "steady",
             "enraged-demise"
-          ],
-          "transport": {
-            "capacity": 20,
-            "access": [
-              "Side",
-              "Rear"
-            ],
-            "firePorts": {
-              "360": 10
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -10112,7 +10217,20 @@
             "big-shoota"
           ]
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 20,
+        "accessPoints": [
+          "Side",
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 10,
+            "facing": "360"
+          }
+        ]
+      }
     },
     {
       "id": "stompa",
@@ -10138,7 +10256,7 @@
             "I": 2,
             "A": 6,
             "Ld": 9,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -10198,17 +10316,7 @@
             "poor-maintenance",
             "fearless",
             "steady"
-          ],
-          "transport": {
-            "capacity": 20,
-            "access": [
-              "Rear"
-            ],
-            "firePorts": {
-              "Front": 3,
-              "Rear": 1
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -10230,7 +10338,23 @@
           "label": "Red Paint (+6 pts)",
           "pts": 6
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 20,
+        "accessPoints": [
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 3,
+            "facing": "Front"
+          },
+          {
+            "count": 1,
+            "facing": "Rear"
+          }
+        ]
+      }
     },
     {
       "id": "biged-bossbunka",
@@ -10248,7 +10372,7 @@
             "BS": 5,
             "T": 8,
             "W": 12,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {
@@ -10264,18 +10388,7 @@
             "building",
             "fortification-rule",
             "shoutin-pole"
-          ],
-          "transport": {
-            "capacity": 10,
-            "access": [
-              "Rear"
-            ],
-            "firePorts": {
-              "Front": 2,
-              "Side": 2,
-              "Rear": 2
-            }
-          }
+          ]
         }
       ],
       "options": [
@@ -10291,7 +10404,27 @@
             }
           ]
         }
-      ]
+      ],
+      "transport": {
+        "capacity": 10,
+        "accessPoints": [
+          "Rear"
+        ],
+        "firePorts": [
+          {
+            "count": 2,
+            "facing": "Front"
+          },
+          {
+            "count": 2,
+            "facing": "Side"
+          },
+          {
+            "count": 2,
+            "facing": "Rear"
+          }
+        ]
+      }
     },
     {
       "id": "mek-boy-workshop",
@@ -10310,7 +10443,7 @@
             "BS": 5,
             "T": 7,
             "W": 10,
-            "Sv": "3+"
+            "Sv": 3
           },
           "baseWargear": [
             {

@@ -1,0 +1,435 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "alt40k-faction-schema-v1.3.json",
+  "title": "Alt40k Faction v1.3",
+  "type": "object",
+  "required": ["schemaVersion", "faction", "commonWargear", "units"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "1.3" },
+    "faction":        { "$ref": "#/definitions/FactionMeta" },
+    "armyRules":      { "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } },
+    "factionKeywords":{ "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } },
+    "commonWargear":  { "type": "array", "items": { "$ref": "#/definitions/Weapon" }, "minItems": 1 },
+    "namedUpgrades":  { "type": "object", "additionalProperties": { "$ref": "#/definitions/NamedUpgrade" } },
+    "weaponLists":    { "type": "object", "additionalProperties": { "type": "array", "items": { "$ref": "#/definitions/WeaponListEntry" } } },
+    "spellPools":     { "type": "object", "additionalProperties": { "type": "array", "items": { "$ref": "#/definitions/Spell" } } },
+    "units":          { "type": "array", "items": { "$ref": "#/definitions/Unit" }, "minItems": 1 }
+  },
+
+  "definitions": {
+
+    "FactionMeta": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id":              { "type": "string" },
+        "name":            { "type": "string" },
+        "version":         { "type": "string" },
+        "subfactionLabel": { "type": "string" },
+        "subfactions":     { "type": "array", "items": { "$ref": "#/definitions/Subfaction" } },
+        "markSystem":      { "$ref": "#/definitions/MarkSystem" },
+        "slotLimits":      { "$ref": "#/definitions/SlotLimits" }
+      }
+    },
+
+    "Subfaction": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id":                   { "type": "string" },
+        "name":                 { "type": "string" },
+        "rules": { "type": "array", "items": { "$ref": "#/definitions/SubfactionRule" } },
+        "slotReclassifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["unitId", "toSlot"],
+            "additionalProperties": false,
+            "properties": {
+              "unitId": { "type": "string" },
+              "toSlot": { "type": "string", "enum": ["HQ","Advisor","Troop","Elite","Fast Attack","Heavy Support","Flyer","Ded. Transport","Lord of War","Fortification"] }
+            }
+          }
+        }
+      }
+    },
+
+    "SubfactionRule": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id":        { "type": "string" },
+        "name":      { "type": "string" },
+        "shortDesc": { "type": "string" },
+        "fullDesc":  { "type": "string" },
+        "text":      { "type": "string" },
+        "summary":   { "type": "string" }
+      }
+    },
+
+    "SlotLimits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "HQ":            { "$ref": "#/definitions/SlotLimit" },
+        "Advisor":       { "$ref": "#/definitions/SlotLimit" },
+        "Troop":         { "$ref": "#/definitions/SlotLimit" },
+        "Elite":         { "$ref": "#/definitions/SlotLimit" },
+        "Fast Attack":   { "$ref": "#/definitions/SlotLimit" },
+        "Heavy Support": { "$ref": "#/definitions/SlotLimit" },
+        "Flyer":         { "$ref": "#/definitions/SlotLimit" },
+        "Ded. Transport":{ "$ref": "#/definitions/SlotLimit" },
+        "Lord of War":   { "$ref": "#/definitions/SlotLimit" },
+        "Fortification": { "$ref": "#/definitions/SlotLimit" }
+      }
+    },
+
+    "SlotLimit": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": [
+        { "type": "integer", "minimum": 0 },
+        { "oneOf": [{ "type": "integer", "minimum": 0 }, { "type": "null" }] }
+      ]
+    },
+
+    "MarkSystem": {
+      "type": "object",
+      "properties": {
+        "marks": { "type": "array" }
+      }
+    },
+
+    "SpecialRule": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id":      { "type": "string" },
+        "name":    { "type": "string" },
+        "text":    { "type": "string" },
+        "summary": { "type": "string" },
+        "group":   { "type": "string" }
+      }
+    },
+
+    "Weapon": {
+      "type": "object",
+      "required": ["id", "name", "profiles"],
+      "additionalProperties": false,
+      "properties": {
+        "id":           { "type": "string" },
+        "name":         { "type": "string" },
+        "profiles":     { "type": "array", "items": { "$ref": "#/definitions/WeaponProfile" }, "minItems": 1 },
+        "keywords":     { "type": "array", "items": { "type": "string" } },
+        "templateType": { "type": "string", "enum": ["Flame", "Hellstorm", "Bomb"] }
+      }
+    },
+
+    "WeaponProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label":        { "type": "string" },
+        "maxRange":     { "type": "number" },
+        "minRange":     { "type": "number" },
+        "strength":     { "type": "string" },
+        "ap":           { "type": "string" },
+        "rules":        { "type": "array", "items": { "type": "string" } },
+        "castValue":    { "type": "number" },
+        "templateType": { "type": "string", "enum": ["Flame", "Hellstorm", "Bomb"] },
+        "keywords":     { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "WeaponReference": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "required": ["weaponId"],
+          "additionalProperties": false,
+          "properties": {
+            "weaponId":    { "type": ["string", "null"] },
+            "arcType":     { "type": "string", "enum": ["Hull", "Turret", "Sponson", "Pintle"] },
+            "mountingTags":{ "type": "array", "items": { "type": "string" } }
+          }
+        }
+      ]
+    },
+
+    "WeaponListEntry": {
+      "type": "object",
+      "required": ["label", "pts"],
+      "additionalProperties": false,
+      "properties": {
+        "weaponId":    { "type": ["string", "null"] },
+        "label":       { "type": "string" },
+        "pts":         { "type": "number" },
+        "arcType":     { "type": "string", "enum": ["Hull", "Turret", "Sponson", "Pintle"] },
+        "mountingTags":{ "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "Spell": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id":        { "type": "string" },
+        "name":      { "type": "string" },
+        "castValue": { "type": "number" },
+        "pts":       { "type": "number" },
+        "text":      { "type": "string" },
+        "type":      { "type": "string" }
+      }
+    },
+
+    "NamedUpgrade": {
+      "type": "object",
+      "required": ["type", "label"],
+      "additionalProperties": false,
+      "properties": {
+        "type":            { "type": "string", "const": "toggle" },
+        "label":           { "type": "string" },
+        "isUniqueMaker":   { "type": "boolean" },
+        "statModifiers":   { "type": "array", "items": { "$ref": "#/definitions/StatModifier" } },
+        "grantsRules":     { "type": "array", "items": { "type": "string" } },
+        "removesRules":    { "type": "array", "items": { "type": "string" } },
+        "grantsWargear":   { "type": "array", "items": { "$ref": "#/definitions/WeaponReference" } },
+        "removesWargear":  { "type": "array", "items": { "$ref": "#/definitions/WeaponReference" } },
+        "mutuallyExcludes":{ "type": "array", "items": { "type": "string" } },
+        "note":            { "type": "string" }
+      }
+    },
+
+    "StatModifier": {
+      "type": "object",
+      "required": ["modelId", "stat", "op", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "modelId": { "type": "string" },
+        "stat":    { "type": "string" },
+        "op":      { "type": "string", "enum": ["add", "set", "multiply"] },
+        "value":   { "type": "number" }
+      }
+    },
+
+    "StatInt": {
+      "description": "A stat stored as an integer. Renderer adds suffix (e.g. M→'6\"', WS/BS→'3+').",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "StatSpecial": {
+      "description": "Special non-numeric stat value, e.g. 'User', 'D3', '*'. Must NOT end in '+' — those belong as plain integers.",
+      "type": "string",
+      "not": { "pattern": "^[0-9]+\\+$" }
+    },
+
+    "SvValue": {
+      "description": "Save stat: store as integer (renderer adds +) or the literal string '-' for no save. Never store as '3+' etc.",
+      "oneOf": [
+        { "type": "integer", "minimum": 1, "maximum": 7 },
+        { "type": "string", "const": "-" }
+      ]
+    },
+
+    "Statline": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["infantry", "vehicle", "monstrous-creature", "monstrous-infantry", "monster", "swarm", "artillery", "fortification"]
+        },
+        "M":  { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "WS": { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "BS": { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "S":  { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "T":  { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "FA": { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "SA": { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "RA": { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "W":  { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "I":  { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "A":  { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "Ld": { "oneOf": [{ "$ref": "#/definitions/StatInt" }, { "$ref": "#/definitions/StatSpecial" }] },
+        "Sv": { "$ref": "#/definitions/SvValue" }
+      }
+    },
+
+    "Model": {
+      "type": "object",
+      "required": ["id", "name", "maxCount", "statline"],
+      "additionalProperties": false,
+      "properties": {
+        "id":          { "type": "string" },
+        "name":        { "type": "string" },
+        "minCount":    { "type": "integer", "minimum": 0 },
+        "maxCount":    { "type": "integer", "minimum": 0 },
+        "ptsEach":     { "type": "number" },
+        "isImmobile":  { "type": "boolean" },
+        "statline":    { "$ref": "#/definitions/Statline" },
+        "baseWargear": { "type": "array", "items": { "$ref": "#/definitions/WeaponReference" } },
+        "specialRules":{ "type": "array", "items": { "type": "string" } },
+        "inlineRules": { "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } }
+      }
+    },
+
+    "Transport": {
+      "type": "object",
+      "required": ["capacity"],
+      "additionalProperties": false,
+      "properties": {
+        "capacity":     { "type": "integer", "minimum": 0 },
+        "firePorts": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              {
+                "type": "object",
+                "required": ["count"],
+                "additionalProperties": false,
+                "properties": {
+                  "count":  { "type": "integer", "minimum": 0 },
+                  "facing": { "type": "string" },
+                  "arc":    { "type": "number" }
+                }
+              }
+            ]
+          }
+        },
+        "accessPoints": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "Psychic": {
+      "type": "object",
+      "required": ["masteryLevel", "spellPoolId"],
+      "additionalProperties": false,
+      "properties": {
+        "masteryLevel":       { "type": "integer", "minimum": 1 },
+        "spellPoolId":        { "type": "string" },
+        "denyBonusPerPhase":  { "type": "number" },
+        "masteryUpgrade": {
+          "type": "object",
+          "required": ["toLevel", "pts"],
+          "additionalProperties": false,
+          "properties": {
+            "toLevel": { "type": "integer", "minimum": 1 },
+            "pts":     { "type": "number" }
+          }
+        }
+      }
+    },
+
+    "Option": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id":    { "type": "string" },
+        "type":  { "type": "string", "enum": ["squadSize", "weaponSwap", "perModelWeapon", "toggle", "namedUpgrade", "spellPick", "markPick", "pureBlessingPick"] },
+        "label": { "type": "string" },
+        "pts":                  { "type": "number" },
+        "ptsEach":              { "type": "number" },
+        "ptsPerModel":          { "type": "number" },
+        "ptsPerModelAppliesTo": { "type": "string" },
+        "targetModelId":        { "type": "string" },
+        "min":                  { "type": "integer", "minimum": 0 },
+        "max":                  { "type": "integer", "minimum": 0 },
+        "scope":                { "type": "string", "enum": ["perModelType", "limitedSlot", "unit"] },
+        "slots":                { "type": "integer", "minimum": 1 },
+        "applies":              { "type": "array", "items": { "type": "string" } },
+        "replaces":             { "type": "string" },
+        "choices":              { "type": "array" },
+        "weaponListId":         { "type": "string" },
+        "ptsOverrides":         { "type": "object", "additionalProperties": { "type": "number" } },
+        "modelCountSource":     { "type": ["string", "null"] },
+        "mutuallyExcludes":     { "type": "array", "items": { "type": "string" } },
+        "statModifiers":        { "type": "array", "items": { "$ref": "#/definitions/StatModifier" } },
+        "grantsRules":          { "type": "array", "items": { "type": "string" } },
+        "removesRules":         { "type": "array", "items": { "type": "string" } },
+        "grantsWargear":        { "type": "array", "items": { "$ref": "#/definitions/WeaponReference" } },
+        "removesWargear":       { "type": "array", "items": { "$ref": "#/definitions/WeaponReference" } },
+        "isUniqueMaker":        { "type": "boolean" },
+        "psychicModifiers":     {},
+        "doctrineGroup":        { "type": "string" },
+        "note":                 { "type": "string" },
+        "upgradeId":            { "type": "string" },
+        "spellPoolId":          { "type": "string" },
+        "requiresOptionId":     { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "squadSize" } }, "required": ["type"] },
+          "then": { "required": ["targetModelId", "ptsEach", "max"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "weaponSwap" } }, "required": ["type"] },
+          "then": { "required": ["scope"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "perModelWeapon" } }, "required": ["type"] },
+          "then": { "required": ["applies", "choices"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "namedUpgrade" } }, "required": ["type"] },
+          "then": { "required": ["upgradeId", "pts"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "spellPick" } }, "required": ["type"] },
+          "then": { "required": ["spellPoolId"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "pureBlessingPick" } }, "required": ["type"] },
+          "then": { "required": ["requiresOptionId", "choices"] }
+        }
+      ]
+    },
+
+    "Unit": {
+      "type": "object",
+      "required": ["id", "name", "slot"],
+      "additionalProperties": false,
+      "properties": {
+        "id":                 { "type": "string" },
+        "name":               { "type": "string" },
+        "slot": {
+          "type": "string",
+          "enum": ["HQ", "Advisor", "Troop", "Elite", "Fast Attack", "Heavy Support", "Flyer", "Ded. Transport", "Lord of War", "Fortification"]
+        },
+        "isUnique":           { "type": "boolean" },
+        "isCompound":         { "type": "boolean" },
+        "chapterRestriction": { "type": "string" },
+        "fluff":              { "type": "string" },
+        "basePts":            { "type": "number" },
+        "inlineRules":        { "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } },
+        "models":             { "type": "array", "items": { "$ref": "#/definitions/Model" } },
+        "options":            { "type": "array", "items": { "$ref": "#/definitions/Option" } },
+        "transport":          { "$ref": "#/definitions/Transport" },
+        "psychic":            { "$ref": "#/definitions/Psychic" },
+        "platoonUnits":       { "type": "array", "items": { "$ref": "#/definitions/PlatoonUnit" } }
+      }
+    },
+
+    "PlatoonUnit": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id":          { "type": "string" },
+        "name":        { "type": "string" },
+        "basePts":     { "type": "number" },
+        "inlineRules": { "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } },
+        "models":      { "type": "array", "items": { "$ref": "#/definitions/Model" } },
+        "options":     { "type": "array", "items": { "$ref": "#/definitions/Option" } }
+      }
+    }
+
+  }
+}

@@ -35,14 +35,16 @@
         2
       ],
       "Ded. Transport": [
-        0
+        0,
+        null
       ],
       "Lord of War": [
         0,
         1
       ],
       "Fortification": [
-        0
+        0,
+        null
       ]
     },
     "subfactions": [
@@ -51,10 +53,12 @@
         "name": "Average Dynasty",
         "rules": [
           {
-            "id": "improved-living-metal"
+            "id": "improved-living-metal",
+            "name": "Improved Living Metal"
           },
           {
-            "id": "united-in-destruction"
+            "id": "united-in-destruction",
+            "name": "United in Destruction"
           }
         ]
       },
@@ -2203,12 +2207,16 @@
       "label": "Sempiternal Weave",
       "statModifiers": [
         {
+          "modelId": "__sergeant__",
           "stat": "T",
-          "modifier": "+1"
+          "op": "add",
+          "value": 1
         },
         {
+          "modelId": "__sergeant__",
           "stat": "W",
-          "modifier": "+1"
+          "op": "add",
+          "value": 1
         }
       ]
     },
@@ -2345,7 +2353,7 @@
         {
           "id": "primary-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "command-barge"
           ],
@@ -2410,7 +2418,7 @@
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "lokhust-lord"
           ],
@@ -2437,7 +2445,7 @@
         {
           "id": "upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Character upgrades (one of each)",
           "choices": [
             {
@@ -2506,7 +2514,7 @@
         {
           "id": "melee-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "lord"
           ],
@@ -2517,7 +2525,7 @@
         {
           "id": "secondary-weapon",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "lord"
           ],
@@ -2527,7 +2535,7 @@
         {
           "id": "upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Character upgrades (one of each)",
           "choices": [
             {
@@ -2598,7 +2606,7 @@
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "skorpekh-lord"
           ],
@@ -2620,7 +2628,7 @@
         {
           "id": "upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Character upgrades (one of each)",
           "choices": [
             {
@@ -2857,7 +2865,7 @@
         {
           "id": "melee-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "overlord"
           ],
@@ -2868,7 +2876,7 @@
         {
           "id": "secondary-weapon",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "overlord"
           ],
@@ -2878,7 +2886,7 @@
         {
           "id": "upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Character upgrades (one of each)",
           "choices": [
             {
@@ -2989,7 +2997,7 @@
         {
           "id": "melee-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "chronomancer"
           ],
@@ -3011,7 +3019,7 @@
         {
           "id": "equip-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
@@ -3144,7 +3152,7 @@
         {
           "id": "equip-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
@@ -3237,7 +3245,7 @@
         {
           "id": "equip-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
@@ -3329,7 +3337,7 @@
         {
           "id": "tech-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Technomancer tools (one of each)",
           "choices": [
             {
@@ -3351,7 +3359,7 @@
         {
           "id": "equip-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Equipment upgrades (one of each)",
           "choices": [
             {
@@ -3521,16 +3529,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "immortal",
           "label": "Add Immortals",
           "ptsEach": 30,
           "min": 0,
-          "max": 5
+          "max": 5,
+          "targetModelId": "immortal"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "immortal"
           ],
@@ -3592,16 +3600,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "warrior",
           "label": "Add Warriors",
           "ptsEach": 20,
           "min": 0,
-          "max": 10
+          "max": 10,
+          "targetModelId": "warrior"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "warrior"
           ],
@@ -3663,11 +3671,11 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "deathmark",
           "label": "Add Deathmarks",
           "ptsEach": 39,
           "min": 0,
-          "max": 5
+          "max": 5,
+          "targetModelId": "deathmark"
         }
       ]
     },
@@ -3722,11 +3730,11 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "flayed-one",
           "label": "Add Flayed Ones",
           "ptsEach": 15,
           "min": 0,
-          "max": 15
+          "max": 15,
+          "targetModelId": "flayed-one"
         }
       ]
     },
@@ -3772,16 +3780,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "lychguard",
           "label": "Add Lychguard",
           "ptsEach": 49,
           "min": 0,
-          "max": 5
+          "max": 5,
+          "targetModelId": "lychguard"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "lychguard"
           ],
@@ -3844,11 +3852,11 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "pariah",
           "label": "Add Pariahs",
           "ptsEach": 53,
           "min": 0,
-          "max": 5
+          "max": 5,
+          "targetModelId": "pariah"
         }
       ]
     },
@@ -3934,16 +3942,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "canoptek-spyder",
           "label": "Add Canoptek Spyders",
           "ptsEach": 105,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "targetModelId": "canoptek-spyder"
         },
         {
           "id": "heavy-upgrade",
           "type": "toggle",
-          "scope": "perModel",
+          "scope": "perModelType",
           "label": "Each Spyder may take",
           "choices": [
             {
@@ -3958,7 +3966,7 @@
         {
           "id": "equipment-upgrades",
           "type": "toggle",
-          "scope": "perModel",
+          "scope": "perModelType",
           "label": "Each Spyder may take (one of each)",
           "choices": [
             {
@@ -4048,7 +4056,7 @@
         {
           "id": "heavy-upgrade",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Take one Heavy weapon",
           "choices": [
             {
@@ -4063,7 +4071,7 @@
         {
           "id": "misc-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Optional upgrades",
           "choices": [
             {
@@ -4129,16 +4137,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "hexmark-destroyer",
           "label": "Add Hexmark Destroyers",
           "ptsEach": 95,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "targetModelId": "hexmark-destroyer"
         },
         {
           "id": "plasmacyte",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Unit upgrade",
           "choices": [
             {
@@ -4193,16 +4201,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "skorpekh-destroyer",
           "label": "Add Skorpekh Destroyers",
           "ptsEach": 55,
           "min": 0,
-          "max": 6
+          "max": 6,
+          "targetModelId": "skorpekh-destroyer"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perModel",
+          "scope": "perModelType",
           "applies": [
             "skorpekh-destroyer"
           ],
@@ -4224,7 +4232,7 @@
         {
           "id": "plasmacyte",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Unit upgrade",
           "choices": [
             {
@@ -4289,16 +4297,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "triarch-stalker",
           "label": "Add Triarch Stalkers",
           "ptsEach": 157,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "targetModelId": "triarch-stalker"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perModel",
+          "scope": "perModelType",
           "applies": [
             "triarch-stalker"
           ],
@@ -4369,16 +4377,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "tomb-blade",
           "label": "Add Tomb Blades",
           "ptsEach": 42,
           "min": 0,
-          "max": 6
+          "max": 6,
+          "targetModelId": "tomb-blade"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "tomb-blade"
           ],
@@ -4405,7 +4413,7 @@
         {
           "id": "unit-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Entire unit upgrades (one of each)",
           "choices": [
             {
@@ -4477,16 +4485,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "triarch-praetorian",
           "label": "Add Triarch Praetorians",
           "ptsEach": 59,
           "min": 0,
-          "max": 5
+          "max": 5,
+          "targetModelId": "triarch-praetorian"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "triarch-praetorian"
           ],
@@ -4552,11 +4560,11 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "scarab-swarm",
           "label": "Add Scarab Swarms",
           "ptsEach": 40,
           "min": 0,
-          "max": 7
+          "max": 7,
+          "targetModelId": "scarab-swarm"
         }
       ]
     },
@@ -4608,7 +4616,7 @@
         {
           "id": "misc-upgrades",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Optional upgrades",
           "choices": [
             {
@@ -4676,11 +4684,11 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "canoptek-acanthrite",
           "label": "Add Canoptek Acanthrites",
           "ptsEach": 91,
           "min": 0,
-          "max": 6
+          "max": 6,
+          "targetModelId": "canoptek-acanthrite"
         }
       ]
     },
@@ -4729,16 +4737,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "canoptek-wraith",
           "label": "Add Canoptek Wraiths",
           "ptsEach": 100,
           "min": 0,
-          "max": 6
+          "max": 6,
+          "targetModelId": "canoptek-wraith"
         },
         {
           "id": "per-model-upgrade",
           "type": "toggle",
-          "scope": "perModel",
+          "scope": "perModelType",
           "label": "Each Wraith may take one upgrade",
           "choices": [
             {
@@ -4812,16 +4820,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "ophydian-destroyer",
           "label": "Add Ophydian Destroyers",
           "ptsEach": 56,
           "min": 0,
-          "max": 6
+          "max": 6,
+          "targetModelId": "ophydian-destroyer"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perModel",
+          "scope": "perModelType",
           "applies": [
             "ophydian-destroyer"
           ],
@@ -4843,7 +4851,7 @@
         {
           "id": "plasmacyte",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Unit upgrade",
           "choices": [
             {
@@ -4898,11 +4906,11 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "canoptek-doomstalker",
           "label": "Add Canoptek Doomstalkers",
           "ptsEach": 231,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "targetModelId": "canoptek-doomstalker"
         }
       ]
     },
@@ -4950,16 +4958,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "lokhust-destroyer",
           "label": "Add Lokhust Destroyers",
           "ptsEach": 74,
           "min": 0,
-          "max": 6
+          "max": 6,
+          "targetModelId": "lokhust-destroyer"
         },
         {
           "id": "plasmacyte",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Unit upgrade",
           "choices": [
             {
@@ -5015,16 +5023,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "heavy-lokhust-destroyer",
           "label": "Add Heavy Lokhust Destroyers",
           "ptsEach": 98,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "targetModelId": "heavy-lokhust-destroyer"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perModel",
+          "scope": "perModelType",
           "applies": [
             "heavy-lokhust-destroyer"
           ],
@@ -5046,7 +5054,7 @@
         {
           "id": "plasmacyte",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Unit upgrade",
           "choices": [
             {
@@ -5112,16 +5120,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "annihilation-barge",
           "label": "Add Annihilation Barges",
           "ptsEach": 113,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "targetModelId": "annihilation-barge"
         },
         {
           "id": "hull-swap",
           "type": "weaponSwap",
-          "scope": "perModel",
+          "scope": "perModelType",
           "applies": [
             "annihilation-barge"
           ],
@@ -5249,7 +5257,7 @@
         {
           "id": "secondary-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "tesseract-ark"
           ],
@@ -5312,16 +5320,16 @@
         {
           "id": "squad-size",
           "type": "squadSize",
-          "modelId": "sentry-pylon",
           "label": "Add Sentry Pylons",
           "ptsEach": 81,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "targetModelId": "sentry-pylon"
         },
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perModel",
+          "scope": "perModelType",
           "applies": [
             "sentry-pylon"
           ],
@@ -5597,7 +5605,7 @@
         {
           "id": "ctan-power",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Choose one C'Tan Power (or randomly choose one each turn)",
           "choices": [
             {
@@ -5678,7 +5686,7 @@
         {
           "id": "ctan-power",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Choose one C'Tan Power (or randomly choose one each turn)",
           "choices": [
             {
@@ -5759,7 +5767,7 @@
         {
           "id": "ctan-power",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Choose one C'Tan Power (or randomly choose one each turn)",
           "choices": [
             {
@@ -5837,7 +5845,7 @@
         {
           "id": "ctan-powers",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Choose up to two C'Tan Powers",
           "choices": [
             {
@@ -5968,7 +5976,7 @@
         {
           "id": "weapon-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "seraptek-heavy-construct"
           ],
@@ -6085,7 +6093,7 @@
         {
           "id": "ctan-powers",
           "type": "toggle",
-          "scope": "perUnit",
+          "scope": "unit",
           "label": "Purchase up to two Charged C'Tan Powers",
           "choices": [
             {
@@ -6182,7 +6190,7 @@
         {
           "id": "sponson-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "monolith"
           ],
@@ -6264,7 +6272,7 @@
         {
           "id": "sponson-swap",
           "type": "weaponSwap",
-          "scope": "perUnit",
+          "scope": "unit",
           "applies": [
             "doomsday-monolith"
           ],
@@ -6356,7 +6364,7 @@
         {
           "id": "sponson-swap",
           "type": "weaponSwap",
-          "scope": "perModel",
+          "scope": "perModelType",
           "applies": [
             "megalith"
           ],

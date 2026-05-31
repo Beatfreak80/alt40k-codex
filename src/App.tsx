@@ -202,18 +202,15 @@ function fmtRange(p) {
   return `${min}${p.maxRange}"`;
 }
 // ── Persistence ──────────────────────────────────────────────────────────────
-const LAST_KEY = 'alt40k-last';
 const stateKey = (file) => `alt40k-${file}`;
 
-function saveState(file, hiddenUnits, selectedSubfaction, activePage, detailMode) {
+function saveState(file, hiddenUnits, selectedSubfaction, detailMode) {
   try {
     localStorage.setItem(stateKey(file), JSON.stringify({
       hidden: [...hiddenUnits],
       subfaction: selectedSubfaction,
-      page: activePage,
       detail: detailMode,
     }));
-    localStorage.setItem(LAST_KEY, file);
   } catch(_) {}
 }
 
@@ -223,9 +220,8 @@ function readState(file) {
     if (!raw) return null;
     const s = JSON.parse(raw);
     return {
-      hiddenUnits:       new Set(Array.isArray(s.hidden) ? s.hidden : []),
+      hiddenUnits:        new Set(Array.isArray(s.hidden) ? s.hidden : []),
       selectedSubfaction: s.subfaction ?? '',
-      activePage:         s.page      ?? 'army-rules',
       detailMode:         !!s.detail,
     };
   } catch(_) { return null; }
@@ -1207,13 +1203,7 @@ export default function App() {
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}factions.json`)
       .then(r => r.json())
-      .then(list => {
-        setFactionList(list);
-        try {
-          const last = localStorage.getItem(LAST_KEY);
-          if (last && list.some(f => f.file === last)) loadFaction(last);
-        } catch(_) {}
-      })
+      .then(list => setFactionList(list))
       .catch(e => setError("Failed to load faction list: " + e.message));
   }, []);
 
@@ -1232,9 +1222,8 @@ export default function App() {
         setCurrentFile(file);
         setHiddenUnits(saved?.hiddenUnits       ?? new Set());
         setSelectedSubfaction(saved?.selectedSubfaction ?? "");
-        setActivePage(saved?.activePage         ?? "army-rules");
+        setActivePage("army-rules");
         setDetailMode(saved?.detailMode         ?? false);
-        try { localStorage.setItem(LAST_KEY, file); } catch(_) {}
       })
       .catch(e => setError("Failed to load faction: " + e.message))
       .finally(() => setLoading(false));
@@ -1257,8 +1246,8 @@ export default function App() {
   // Save state whenever anything on the Options page changes
   useEffect(() => {
     if (!currentFile) return;
-    saveState(currentFile, hiddenUnits, selectedSubfaction, activePage, detailMode);
-  }, [currentFile, hiddenUnits, selectedSubfaction, activePage, detailMode]);
+    saveState(currentFile, hiddenUnits, selectedSubfaction, detailMode);
+  }, [currentFile, hiddenUnits, selectedSubfaction, detailMode]);
 
   // If the current slot page becomes fully hidden or doesn't exist, redirect to army-rules
   useEffect(() => {
