@@ -84,18 +84,20 @@ function normaliseRule(str, coreIds, ruleMap) {
 }
 
 function normaliseWeapons(weapons, coreIds, ruleMap) {
-  const mapped = {};   // originalString → coreId (for report)
-  const unmapped = {}; // string → count (strings with no core ID)
+  // Weapon profile rules are intentionally kept as display strings (per schema spec).
+  // This function only reports unmapped strings for informational purposes; it does
+  // NOT modify p.rules.
+  const mapped = {};
+  const unmapped = {};
 
   for (const w of weapons) {
     for (const p of (w.profiles || [])) {
       if (!p.rules) continue;
-      p.rules = p.rules.map(r => {
+      for (const r of p.rules) {
         const { id, changed } = normaliseRule(r, coreIds, ruleMap);
         if (changed) mapped[r] = id;
         if (!coreIds.has(id)) unmapped[r] = (unmapped[r] || 0) + 1;
-        return id;
-      });
+      }
     }
   }
   return { mapped, unmapped };
@@ -167,6 +169,33 @@ function validate(d, coreIds) {
       if (!sfIds.has(u.chapterRestriction))
         warnings.push(`${u.name} chapterRestriction "${u.chapterRestriction}" has no matching subfaction`);
     }
+
+    // Platoon sub-units — validate weapon and rule refs the same way as top-level units
+    for (const pu of (u.platoonUnits || [])) {
+      const puInlineIds = new Set((pu.inlineRules || []).map(r => r.id));
+      const puAllRuleIds = new Set([...coreIds, ...armyIds, ...puInlineIds, ...keywordIds]);
+      for (const m of (pu.models || [])) {
+        for (const ref of (m.baseWargear || [])) {
+          const wid = typeof ref === 'string' ? ref : ref.weaponId;
+          if (wid && !wepIds.has(wid))
+            errors.push(`${u.name}/${pu.name}/${m.name} baseWargear → unknown weapon "${wid}"`);
+        }
+        for (const r of (m.specialRules || [])) {
+          if (!puAllRuleIds.has(r))
+            warnings.push(`${u.name}/${pu.name}/${m.name} specialRules → unknown rule "${r}"`);
+        }
+      }
+      for (const o of (pu.options || [])) {
+        if (o.type === 'namedUpgrade' && !upgradeIds.has(o.upgradeId))
+          errors.push(`${u.name}/${pu.name} option "${o.id}" → unknown namedUpgrade "${o.upgradeId}"`);
+        if (o.weaponListId && !listIds.has(o.weaponListId))
+          errors.push(`${u.name}/${pu.name} option "${o.id}" → unknown weaponList "${o.weaponListId}"`);
+        for (const c of (o.choices || [])) {
+          if (c.weaponId && !wepIds.has(c.weaponId))
+            errors.push(`${u.name}/${pu.name} option "${o.id}" choice → unknown weapon "${c.weaponId}"`);
+        }
+      }
+    }
   }
 
   return { errors, warnings };
@@ -208,11 +237,11 @@ const { mapped, unmapped } = normaliseWeapons(cleaned.commonWargear || [], coreI
 const mappedCount = Object.keys(mapped).length;
 
 if (mappedCount > 0) {
-  console.log(`[NORM]  Normalised ${mappedCount} distinct rule string(s):`);
+  console.log(`[NORM]  ${mappedCount} weapon rule string(s) have core ID equivalents (kept as display strings):`);
   for (const [from, to] of Object.entries(mapped))
-    console.log(`          "${from}" → "${to}"`);
+    console.log(`          "${from}" (core: "${to}")`);
 } else {
-  console.log('[NORM]  All weapon rules already use core IDs — nothing to normalise');
+  console.log('[NORM]  All weapon rules are display strings with no core ID conflicts');
 }
 
 const unmappedCount = Object.keys(unmapped).length;

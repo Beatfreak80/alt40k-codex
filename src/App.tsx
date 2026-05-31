@@ -95,6 +95,14 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .option-cost { color: #7a5800; font-weight: 600; margin-left: 4px; }
 .upgrade-note { font-size: 8.5pt; font-weight: 400; color: #666; font-style: italic; display: block; line-height: 1.4; margin-top: 1px; }
 
+.platoon-badge { display: inline-block; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6e1a1a; background: #fff0f0; border: 1px solid #c06060; border-radius: 3px; padding: 1px 6px; margin-left: 6px; vertical-align: middle; }
+.platoon-composition { font-size: 9pt; color: #555; margin-top: 4px; line-height: 1.5; }
+.platoon-toggle { font-family: 'Rajdhani', sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #f5f5f5; border: 1px solid #ddd; border-radius: 3px; padding: 4px 12px; cursor: pointer; color: #6e1a1a; margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; transition: background 0.15s; }
+.platoon-toggle:hover { background: #ffe8e8; border-color: #c06060; }
+.platoon-units { border-left: 3px solid #e8d48a; padding-left: 16px; margin-top: 14px; display: flex; flex-direction: column; gap: 20px; }
+.platoon-unit-label { font-size: 7.5pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+.platoon-squad-count { font-size: 8.5pt; color: #888; font-style: italic; margin-left: 8px; }
+
 @media (max-width: 600px) {
   .two-col { columns: 1; margin-top: 0; }
   .codex-page { padding: 16px 14px; }
@@ -985,8 +993,74 @@ function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
   );
 }
 
+function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, detailMode }) {
+  const squadCount = (pu.minSquads != null || pu.maxSquads != null)
+    ? (pu.minSquads === pu.maxSquads ? `${pu.minSquads} per platoon` : `${pu.minSquads ?? 0}–${pu.maxSquads ?? "∞"} per platoon`)
+    : null;
+  return (
+    <div>
+      <div className="platoon-unit-label">
+        {pu.name}
+        {squadCount && <span className="platoon-squad-count">({squadCount})</span>}
+      </div>
+      <div className="unit-block" style={{marginTop:0}}>
+        <div className="unit-header">
+          <div>
+            <div className="unit-name" style={{fontSize:"18pt"}}>{pu.name}</div>
+            <div className="unit-comp">Composition: {compStr(pu.models)}</div>
+          </div>
+          <div className="unit-pts-block">
+            <div className="unit-pts-label">Per squad</div>
+            <div className="unit-pts">{pu.basePts} pts</div>
+          </div>
+        </div>
+        <StatTable models={pu.models}/>
+        {detailMode
+          ? <DetailSpecialRules unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}/>
+          : <SpecialRulesSection unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}/>
+        }
+        {detailMode
+          ? <DetailOptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}/>
+          : <OptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}/>
+        }
+      </div>
+    </div>
+  );
+}
+
 function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, detailMode }) {
+  const [platoonOpen, setPlatoonOpen] = useState(false);
   if (hidden) return null;
+
+  if (unit.platoon) {
+    return (
+      <div className="unit-block" id={`unit-${unit.id}`}>
+        <div className="unit-header" style={{position:"static",boxShadow:"none",paddingTop:0,marginTop:0}}>
+          <div>
+            <SlotBadge slot={unit.slot}/>
+            <span className="platoon-badge">Platoon</span>
+            <div className="unit-name">{unit.name}</div>
+            {unit.platoonComposition && (
+              <div className="platoon-composition">{unit.platoonComposition}</div>
+            )}
+          </div>
+        </div>
+        <button className="platoon-toggle" onClick={() => setPlatoonOpen(o => !o)}>
+          {platoonOpen ? "▲ Hide units" : "▼ Show units"}
+        </button>
+        {platoonOpen && (
+          <div className="platoon-units">
+            {(unit.platoonUnits || []).map(pu => (
+              <PlatoonUnitBlock key={pu.id} pu={pu} weapons={weapons} weaponLists={weaponLists}
+                namedUpgrades={namedUpgrades} armyRules={armyRules} coreRules={coreRules}
+                spellPools={spellPools} detailMode={detailMode}/>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="unit-block">
       <div className="unit-header">

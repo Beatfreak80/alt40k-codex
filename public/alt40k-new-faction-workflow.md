@@ -203,6 +203,49 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
 - Vehicle weapons that have a firing arc: full object `{ "weaponId": "...", "arcType": "Hull", "mountingTags": ["Primary"] }`
 - Omit `arcType` and `mountingTags` entirely for non-vehicle weapons
 
+### Platoon units
+
+Some factions (e.g. Imperial Guard) group squads into **Platoons** — a single Troop choice that contains multiple sub-unit types. Model this with `"platoon": true` on the parent unit and a `platoonUnits` array for the sub-units.
+
+**Key rules:**
+- The platoon itself has **no `basePts`**, no `models`, and no `options`. It is a named container only.
+- Sub-units inside `platoonUnits` are **not** listed as top-level units — they can only be purchased as part of their platoon.
+- Each sub-unit has `minSquads`/`maxSquads` (how many of that squad type the platoon may include) rather than the normal `models[].minCount`/`maxCount`.
+- The app renders each platoon as a collapsible card; clicking "Show units" expands all sub-units inline beneath it.
+- The postprocessor validates weapon and rule refs inside `platoonUnits` the same as top-level units.
+
+**Points:** The platoon's source cost is the minimum-roster cost (e.g. "153 pts" = 1 Command Squad + 2 Guardsman Squads). Derive each sub-unit's `basePts` from that: total − (other required squads × their cost).
+
+```json
+{
+  "id": "infantry-platoon",
+  "name": "Infantry Platoon",
+  "slot": "Troop",
+  "platoon": true,
+  "platoonComposition": "Requires 1 Platoon Command Squad and 2–5 Guardsman Squads. May also include 0–2 Special Weapon Squads, 0–5 Heavy Weapon Squads, and 0–1 Conscript Squads.",
+  "platoonUnits": [
+    {
+      "id": "platoon-command-squad",
+      "name": "Platoon Command Squad",
+      "basePts": 23,
+      "minSquads": 1,
+      "maxSquads": 1,
+      "models": [ { "id": "platoon-commander", "name": "Platoon Commander", ... } ],
+      "options": [ ... ]
+    },
+    {
+      "id": "guardsman-squad",
+      "name": "Guardsman Squad",
+      "basePts": 65,
+      "minSquads": 2,
+      "maxSquads": 5,
+      "models": [ { "id": "guardsman", "name": "Guardsman", ... } ],
+      "options": [ ... ]
+    }
+  ]
+}
+```
+
 ### `isUnique` flag vs `unique` special rule
 Mark unique characters with `"isUnique": true` on the unit. Do **not** add `"unique"` to `specialRules` — the app handles display from the flag.
 

@@ -14,5 +14,9 @@
   {
     "name": "Orks",
     "file": "orks_faction.json"
+  },
+  {
+    "name": "Imperial Guard",
+    "file": "imperial-guard_faction.json"
   }
 ]

@@ -1,0 +1,382 @@
+{
+  "units": [
+    {
+      "id": "company-command-squad",
+      "name": "Company Command Squad",
+      "slot": "HQ",
+      "basePts": 131,
+      "models": [
+        {
+          "id": "company-commander",
+          "name": "Company Commander",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 5, "I": 3, "A": 3, "Ld": 9, "Sv": "5+" },
+          "baseWargear": ["laspistol", "chainsword", "frag-grenades", "refractor-field"],
+          "specialRules": ["independent-character", "infantry", "infantry-orders-2", "character"]
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "minCount": 4,
+          "maxCount": 4,
+          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
+          "baseWargear": ["lasgun", "frag-grenades"],
+          "specialRules": ["infantry"]
+        },
+        {
+          "id": "veteran-heavy-weapon-team",
+          "name": "Veteran Heavy Weapon Team",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 4,
+          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "5+" },
+          "baseWargear": ["heavy-flamer", "lasgun", "frag-grenades"],
+          "specialRules": ["infantry", "bulky"],
+          "note": "2 Veterans become the Heavy Weapon Team."
+        }
+      ],
+      "inlineRules": [
+        { "id": "ccs-refractor-field", "name": "Refractor Field", "shortDesc": "5+ Invulnerability Save.", "fullDesc": "This model has a 5+ Invulnerability Save." }
+      ],
+      "options": [
+        { "id": "ccs-cmd-pistol", "type": "weaponSwap", "applies": ["company-commander"], "label": "Swap Laspistol for", "replaces": "laspistol", "weaponListId": "hq-officer-pistol" },
+        { "id": "ccs-cmd-melee", "type": "weaponSwap", "applies": ["company-commander"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "hq-officer-melee" },
+        {
+          "id": "ccs-vet-rifle",
+          "type": "weaponSwap",
+          "applies": ["veteran", "veteran-heavy-weapon-team"],
+          "label": "Swap Lasgun for",
+          "replaces": "lasgun",
+          "choices": [
+            { "weaponId": "laspistol", "label": "Laspistol", "pts": 0 },
+            { "weaponId": "shotgun", "label": "Shotgun", "pts": 1 }
+          ]
+        },
+        {
+          "id": "ccs-vet-heavy-flamer",
+          "type": "weaponSwap",
+          "applies": ["veteran"],
+          "label": "One Veteran: swap Lasgun for",
+          "replaces": "lasgun",
+          "choices": [{ "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 10 }]
+        },
+        {
+          "id": "ccs-vet-special",
+          "type": "weaponSwap",
+          "applies": ["veteran"],
+          "label": "Any Veteran: swap Lasgun for special weapon",
+          "replaces": "lasgun",
+          "weaponListId": "infantry-special-weapons"
+        },
+        { "id": "ccs-demochg", "type": "toggle", "label": "Demolition Charge (one Veteran)", "pts": 7, "grantsWargear": ["demolition-charge"] },
+        { "id": "ccs-hwt-swap", "type": "weaponSwap", "applies": ["veteran-heavy-weapon-team"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "infantry-heavy-weapons" },
+        { "id": "ccs-vet-melee", "type": "toggle", "label": "Veteran Chainsword (+1 pt each)", "pts": 1, "grantsWargear": ["chainsword"] },
+        { "id": "ccs-vet-sword", "type": "toggle", "label": "Veteran Power Sword (+4 pts each)", "pts": 4, "grantsWargear": ["power-sword"] },
+        { "id": "ccs-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
+        { "id": "ccs-standard", "type": "namedUpgrade", "upgradeId": "standard-upgrade", "pts": 40 },
+        { "id": "ccs-medicae", "type": "namedUpgrade", "upgradeId": "medicae-pack-upgrade", "pts": 75 },
+        { "id": "ccs-krak", "type": "namedUpgrade", "upgradeId": "krak-grenades-squad", "pts": 10 },
+        { "id": "ccs-carapace", "type": "namedUpgrade", "upgradeId": "infantry-carapace-armour", "pts": 6 },
+        { "id": "ccs-camo", "type": "namedUpgrade", "upgradeId": "infantry-camo-gear", "pts": 18 },
+        { "id": "ccs-steeds", "type": "namedUpgrade", "upgradeId": "steed-upgrade", "pts": 45 },
+        { "id": "ccs-ge-steeds", "type": "namedUpgrade", "upgradeId": "genetically-engineered-steed", "pts": 45 },
+        { "id": "ccs-jetbikes", "type": "namedUpgrade", "upgradeId": "jetbike-upgrade", "pts": 69 }
+      ]
+    },
+    {
+      "id": "lord-commissar",
+      "name": "Lord Commissar",
+      "slot": "HQ",
+      "basePts": 126,
+      "models": [
+        {
+          "id": "lord-commissar-model",
+          "name": "Lord Commissar",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 5, "I": 3, "A": 3, "Ld": 10, "Sv": "5+" },
+          "baseWargear": ["laspistol", "chainsword", "frag-grenades", "refractor-field"],
+          "specialRules": ["independent-character", "infantry", "stubborn", "aura-of-discipline", "summary-execution"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "lc-refractor", "name": "Refractor Field", "shortDesc": "5+ Invulnerability Save.", "fullDesc": "This model has a 5+ Invulnerability Save." }
+      ],
+      "options": [
+        {
+          "id": "lc-pistol",
+          "type": "weaponSwap",
+          "applies": ["lord-commissar-model"],
+          "label": "Swap Laspistol for",
+          "replaces": "laspistol",
+          "choices": [
+            { "weaponId": "laspistol", "label": "Laspistol", "pts": 0 },
+            { "weaponId": "bolt-pistol", "label": "Bolt Pistol", "pts": 2 },
+            { "weaponId": "boltgun", "label": "Boltgun", "pts": 2 },
+            { "weaponId": "handflamer", "label": "Handflamer", "pts": 5 },
+            { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 9 }
+          ]
+        },
+        {
+          "id": "lc-melee",
+          "type": "weaponSwap",
+          "applies": ["lord-commissar-model"],
+          "label": "Swap Chainsword for",
+          "replaces": "chainsword",
+          "choices": [
+            { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 },
+            { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+            { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+            { "weaponId": "power-maul", "label": "Power Maul", "pts": 8 },
+            { "weaponId": "power-fist", "label": "Power Fist", "pts": 12 }
+          ]
+        },
+        { "id": "lc-krak", "type": "toggle", "label": "Krak Grenades", "pts": 2, "grantsWargear": ["krak-grenades"] },
+        { "id": "lc-melta-bombs", "type": "toggle", "label": "Melta Bombs", "pts": 7, "grantsWargear": ["melta-bombs"] },
+        { "id": "lc-carapace", "type": "namedUpgrade", "upgradeId": "infantry-carapace-armour", "pts": 2 },
+        { "id": "lc-camo", "type": "namedUpgrade", "upgradeId": "infantry-camo-gear", "pts": 6 },
+        { "id": "lc-steed", "type": "namedUpgrade", "upgradeId": "steed-upgrade", "pts": 24 }
+      ]
+    },
+    {
+      "id": "tank-commander",
+      "name": "Tank Commander",
+      "slot": "HQ",
+      "basePts": 189,
+      "models": [
+        {
+          "id": "tank-commander-model",
+          "name": "Tank Commander",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 3, "S": 7, "FA": 14, "SA": 13, "RA": 10, "W": 12, "I": 1, "A": 3, "Ld": 9, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "nova-eradicator-cannon", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "heavy-flamer", "arcType": "Hull" }
+          ],
+          "specialRules": ["independent-character", "vehicle", "tank", "tank-orders-1", "grinding-advance"]
+        }
+      ],
+      "options": [
+        { "id": "tc-turret", "type": "weaponSwap", "applies": ["tank-commander-model"], "label": "Swap Nova Eradicator Cannon for", "replaces": "nova-eradicator-cannon", "weaponListId": "tank-commander-turret" },
+        { "id": "tc-hull", "type": "weaponSwap", "applies": ["tank-commander-model"], "label": "Swap Hull Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "leman-russ-hull" },
+        { "id": "tc-sponsons", "type": "weaponSwap", "applies": ["tank-commander-model"], "label": "Add Sponson Weapons", "weaponListId": "leman-russ-sponsons" },
+        { "id": "tc-pintle", "type": "weaponSwap", "applies": ["tank-commander-model"], "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
+        { "id": "tc-dozerblade", "type": "toggle", "label": "Dozerblade", "pts": 9, "grantsWargear": ["dozerblade"] },
+        { "id": "tc-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
+        { "id": "tc-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
+        { "id": "tc-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
+        { "id": "tc-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
+        { "id": "tc-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "tc-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
+        { "id": "tc-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+      ]
+    },
+    {
+      "id": "salamander-command",
+      "name": "Salamander Command Vehicle",
+      "slot": "HQ",
+      "basePts": 107,
+      "models": [
+        {
+          "id": "salamander-command-model",
+          "name": "Salamander Command",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 3, "S": 6, "FA": 12, "SA": 10, "RA": 10, "W": 11, "I": 1, "A": 3, "Ld": 9, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["independent-character", "vehicle", "tank", "infantry-orders-1", "open-topped"]
+        }
+      ],
+      "options": [
+        {
+          "id": "sc-hull",
+          "type": "weaponSwap",
+          "applies": ["salamander-command-model"],
+          "label": "Swap any Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "choices": [
+            { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "heavy-bolter", "label": "Heavy Bolter", "pts": 1, "arcType": "Hull", "mountingTags": ["Primary"] }
+          ]
+        },
+        { "id": "sc-pintle", "type": "weaponSwap", "applies": ["salamander-command-model"], "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
+        { "id": "sc-dozerblade", "type": "toggle", "label": "Dozerblade", "pts": 9, "grantsWargear": ["dozerblade"] },
+        { "id": "sc-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
+        { "id": "sc-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
+        { "id": "sc-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
+        { "id": "sc-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
+        { "id": "sc-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "sc-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
+        { "id": "sc-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+      ]
+    },
+    {
+      "id": "wing-commander",
+      "name": "Wing Commander",
+      "slot": "HQ",
+      "basePts": 240,
+      "models": [
+        {
+          "id": "wing-commander-model",
+          "name": "Wing Commander",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 4, "BS": 3, "S": 6, "FA": 11, "SA": 11, "RA": 10, "W": 15, "I": 1, "A": 3, "Ld": 9, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "wing-commander-autocannons", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "wing-commander-lascannons", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["independent-character", "vehicle", "wing-orders-1", "high-altitude", "deepstrike"]
+        }
+      ],
+      "options": [
+        {
+          "id": "wc-bombs",
+          "type": "weaponSwap",
+          "applies": ["wing-commander-model"],
+          "label": "Add Wing Weapon",
+          "choices": [
+            { "weaponId": "2-linked-tactical-bomb-racks", "label": "2 Linked Tactical Bomb Racks", "pts": 16, "arcType": "Hull" },
+            { "weaponId": "2-linked-hellstrike-missile-racks", "label": "2 Linked Hellstrike Missile Racks", "pts": 35, "arcType": "Hull" },
+            { "weaponId": "2-linked-hellfury-missile-racks", "label": "2 Linked Hellfury Missile Racks", "pts": 39, "arcType": "Hull" }
+          ]
+        },
+        { "id": "wc-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+      ]
+    },
+    {
+      "id": "captain-obadiah-schfeer",
+      "name": "Captain Obadiah Schfeer",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 282,
+      "models": [
+        {
+          "id": "steel-dog-alpha",
+          "name": "Steel Dog Alpha",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 4, "BS": 3, "S": 7, "FA": 14, "SA": 13, "RA": 10, "W": 12, "I": 1, "A": 3, "Ld": 9, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "long-vanquisher-cannon-stormbolter", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "lascannon", "arcType": "Hull" }
+          ],
+          "specialRules": ["independent-character", "vehicle", "tank", "infantry-orders-1", "tank-orders-1"],
+          "inlineRules": [
+            { "id": "cos-254th-reg", "name": "254th Varolian Regiment", "shortDesc": "This model ignores all Regiment rules for your army.", "fullDesc": "This model ignores all Regiment rules for your army." }
+          ]
+        }
+      ],
+      "options": [
+        { "id": "cos-pintle", "type": "weaponSwap", "applies": ["steel-dog-alpha"], "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
+        { "id": "cos-dozerblade", "type": "toggle", "label": "Dozerblade", "pts": 9, "grantsWargear": ["dozerblade"] },
+        { "id": "cos-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
+        { "id": "cos-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
+        { "id": "cos-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
+        { "id": "cos-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
+        { "id": "cos-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "cos-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
+        { "id": "cos-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+      ]
+    },
+    {
+      "id": "commissar-graves",
+      "name": "Commissar Graves",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 182,
+      "models": [
+        {
+          "id": "graves",
+          "name": "Graves",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 5, "I": 3, "A": 3, "Ld": 10, "Sv": "4+" },
+          "baseWargear": ["bolt-pistol", "power-sword", "manus-mortis", "refractor-field"],
+          "specialRules": ["independent-character", "infantry", "aura-of-discipline", "summary-execution"],
+          "inlineRules": [
+            { "id": "cg-mech-infantry-tactics", "name": "Mechanized Infantry Tactics", "shortDesc": "6\" Aura: this model and target unit gain 5+ Cover Save (or 4+ if already 5+) for 1 Turn when Disembarking from a Transport.", "fullDesc": "6\" Aura: this model and target unit gain a 5+ Cover Save for 1 Turn when Disembarking from a Transport. If they already got a 5+ Cover Save for doing so, they gain a 4+ instead." },
+            { "id": "cg-refractor", "name": "Refractor Field", "shortDesc": "5+ Invulnerability Save.", "fullDesc": "This model has a 5+ Invulnerability Save." }
+          ]
+        },
+        {
+          "id": "vigilance",
+          "name": "Vigilance",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 211,
+          "statline": { "type": "vehicle", "M": 10, "WS": 4, "BS": 2, "S": 6, "FA": 13, "SA": 12, "RA": 10, "W": 10, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "baseWargear": [
+            { "weaponId": "castigator-gatling-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-heavy-stubbers", "arcType": "Sponson" },
+            { "weaponId": "armoured-prow", "arcType": "Hull" },
+            "standard"
+          ],
+          "specialRules": ["independent-character", "vehicle", "tank", "open-topped", "fleet-intel", "fleet-interference"],
+          "inlineRules": [
+            { "id": "vig-transport", "name": "Dedicated Transport", "shortDesc": "Only Commissar Graves may embark. Access Rear. 1× 360° Fire Port.", "fullDesc": "Only Commissar Graves may embark on this model. Access Rear. 1× 360° Fire Port." }
+          ]
+        }
+      ],
+      "options": [
+        { "id": "cg-vig-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
+        { "id": "cg-vig-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
+        { "id": "cg-vig-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
+        { "id": "cg-vig-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "cg-vig-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
+        { "id": "cg-vig-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+      ]
+    },
+    {
+      "id": "lord-solar-leontus",
+      "name": "Lord Solar Leontus",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 329,
+      "models": [
+        {
+          "id": "lord-solar-leontus-model",
+          "name": "Lord Solar Leontus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 12, "WS": 2, "BS": 2, "S": 5, "T": 5, "W": 7, "I": 3, "A": 4, "Ld": 10, "Sv": "3+" },
+          "baseWargear": ["sols-righteous-gaze", "conquest", "konstantin", "artificer-refractor-helmet"],
+          "specialRules": ["independent-character", "infantry", "steed", "infantry-orders-2", "tank-orders-1", "outflank", "lord-solar"],
+          "inlineRules": [
+            { "id": "lsl-helmet", "name": "Artificer Refractor Helmet", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lord-solar-macharius",
+      "name": "Lord Solar Macharius",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 464,
+      "models": [
+        {
+          "id": "lord-solar-macharius-model",
+          "name": "Lord Solar Macharius",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 6, "I": 3, "A": 4, "Ld": 10, "Sv": "-" },
+          "baseWargear": ["the-emperors-sidearm", "doomherald"],
+          "specialRules": ["independent-character", "infantry", "infantry-orders-3", "tank-orders-2", "stubborn", "lord-solar"],
+          "inlineRules": [
+            { "id": "lsm-armour", "name": "Armour of the Warmasters", "shortDesc": "4+ Invulnerability Save. Cannot be targeted by Spells; immune to Spells if unit is affected.", "fullDesc": "This model has a 4+ Invulnerability Save and cannot be targeted with Spells. If this model's unit is affected by a Spell, this model is immune." },
+            { "id": "lsm-stave", "name": "Command Stave", "shortDesc": "Always counts as equipped with a Vox Caster; Orders range extended to 18\".", "fullDesc": "This model is always considered to be equipped with a Vox Caster and has the range of its Orders extended up to 18\" instead of the usual 12\"." },
+            { "id": "lsm-cloak", "name": "Crimson Cloak", "shortDesc": "12\" True Aura: friendly units gain A+1 and may reroll failed Ld Tests.", "fullDesc": "12\" True Aura: this model and all friendly units gain A+1 and may reroll failed Ld Tests." },
+            { "id": "lsm-helm", "name": "Helm of Macharius", "shortDesc": "12\" True Aura: all friendly units may use this model's Ld and Stubborn rules.", "fullDesc": "12\" True Aura: all friendly units may use this model's Ld and Stubborn rules." },
+            { "id": "lsm-strategist", "name": "Ferocious Strategist", "shortDesc": "During Deployment, one friendly Slot held in Reserves cannot be Pinned when arriving by Deepstrike.", "fullDesc": "During Deployment, nominate one friendly Slot (not category) holding in Reserves. Units in this Slot cannot be Pinned when arriving by Deepstrike, even if they normally would be." }
+          ]
+        }
+      ]
+    }
+  ]
+}

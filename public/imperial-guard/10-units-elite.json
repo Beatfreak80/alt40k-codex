@@ -1,0 +1,426 @@
+{
+  "units": [
+    {
+      "id": "beastmen-platoon",
+      "name": "Beastmen Platoon",
+      "slot": "Elite",
+      "platoon": true,
+      "platoonComposition": "Requires 1 Platoon Command Squad and 2–4 Beastmen Squads.",
+      "platoonUnits": [
+        {
+          "id": "beastmen-command-squad",
+          "name": "Platoon Command Squad",
+          "basePts": 89,
+          "minSquads": 1,
+          "maxSquads": 1,
+          "models": [
+            {
+              "id": "beastmen-platoon-commander",
+              "name": "Platoon Commander",
+              "minCount": 1,
+              "maxCount": 1,
+              "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
+              "baseWargear": ["laspistol", "chainsword", "frag-grenades"],
+              "specialRules": ["independent-character", "infantry", "infantry-orders-1"]
+            },
+            {
+              "id": "beastmen-cmd-veteran",
+              "name": "Veteran",
+              "minCount": 4,
+              "maxCount": 4,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
+              "baseWargear": ["lasgun", "frag-grenades"],
+              "specialRules": ["infantry"]
+            },
+            {
+              "id": "beastmen-cmd-hwt",
+              "name": "Veteran Heavy Weapon Team",
+              "minCount": 0,
+              "maxCount": 1,
+              "ptsEach": 0,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "5+" },
+              "baseWargear": ["heavy-flamer", "lasgun", "frag-grenades"],
+              "specialRules": ["infantry", "bulky"],
+              "note": "2 Veterans become the Heavy Weapon Team (no extra cost)."
+            }
+          ],
+          "options": [
+            { "id": "bcs-cmd-pistol", "type": "weaponSwap", "applies": ["beastmen-platoon-commander"], "label": "Swap Laspistol for", "replaces": "laspistol", "weaponListId": "platoon-commander-pistol" },
+            { "id": "bcs-cmd-melee", "type": "weaponSwap", "applies": ["beastmen-platoon-commander"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "platoon-commander-melee" },
+            { "id": "bcs-vet-rifle", "type": "weaponSwap", "applies": ["beastmen-cmd-veteran", "beastmen-cmd-hwt"], "label": "Swap Lasgun for", "replaces": "lasgun", "choices": [{ "weaponId": "laspistol", "label": "Laspistol", "pts": 0 }, { "weaponId": "shotgun", "label": "Shotgun", "pts": 1 }] },
+            { "id": "bcs-vet-hf", "type": "weaponSwap", "applies": ["beastmen-cmd-veteran"], "label": "One Veteran: swap Lasgun for Heavy Flamer", "replaces": "lasgun", "choices": [{ "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 10 }] },
+            { "id": "bcs-vet-special", "type": "weaponSwap", "applies": ["beastmen-cmd-veteran"], "label": "Any Veteran: swap Lasgun for special weapon", "replaces": "lasgun", "weaponListId": "infantry-special-weapons" },
+            { "id": "bcs-demochg", "type": "toggle", "label": "Demolition Charge (one Veteran)", "pts": 7, "grantsWargear": ["demolition-charge"] },
+            { "id": "bcs-hwt-swap", "type": "weaponSwap", "applies": ["beastmen-cmd-hwt"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "infantry-heavy-weapons" },
+            { "id": "bcs-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
+            { "id": "bcs-standard", "type": "namedUpgrade", "upgradeId": "standard-upgrade", "pts": 40 },
+            { "id": "bcs-medicae", "type": "namedUpgrade", "upgradeId": "medicae-pack-upgrade", "pts": 75 }
+          ]
+        },
+        {
+          "id": "beastmen-squad",
+          "name": "Beastmen Squad",
+          "basePts": 84,
+          "minSquads": 2,
+          "maxSquads": 4,
+          "models": [
+            {
+              "id": "beastmen-sergeant",
+              "name": "Sergeant",
+              "minCount": 1,
+              "maxCount": 1,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 4, "W": 1, "I": 3, "A": 2, "Ld": 8, "Sv": "5+" },
+              "baseWargear": ["brutal-weapon", "brutal-weapon", "frag-grenades"],
+              "specialRules": ["character", "infantry"]
+            },
+            {
+              "id": "beastman",
+              "name": "Beastman",
+              "minCount": 9,
+              "maxCount": 9,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
+              "baseWargear": ["brutal-weapon", "brutal-weapon", "frag-grenades"],
+              "specialRules": ["infantry"]
+            }
+          ],
+          "options": [
+            { "id": "bs-sgt-pistol", "type": "weaponSwap", "applies": ["beastmen-sergeant"], "label": "Sergeant: swap one Brutal Weapon for", "replaces": "brutal-weapon", "weaponListId": "platoon-commander-pistol" },
+            { "id": "bs-sgt-melee", "type": "weaponSwap", "applies": ["beastmen-sergeant"], "label": "Sergeant: swap one Brutal Weapon for", "replaces": "brutal-weapon", "weaponListId": "platoon-commander-melee" },
+            { "id": "bs-special", "type": "weaponSwap", "applies": ["beastman"], "label": "2 Beastmen: swap a Brutal Weapon for special weapon", "replaces": "brutal-weapon", "weaponListId": "infantry-special-weapons" },
+            { "id": "bs-rifle", "type": "weaponSwap", "applies": ["beastman"], "label": "Any Beastman: swap a Brutal Weapon for", "replaces": "brutal-weapon", "choices": [{ "weaponId": "lasgun", "label": "Lasgun", "pts": 0 }] },
+            { "id": "bs-pistol", "type": "weaponSwap", "applies": ["beastman"], "label": "Any Beastman: swap a Brutal Weapon for", "replaces": "brutal-weapon", "choices": [{ "weaponId": "laspistol", "label": "Laspistol", "pts": 0 }, { "weaponId": "sawed-off-shotgun", "label": "Sawed Off Shotgun", "pts": 0 }, { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 }] },
+            { "id": "bs-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
+            { "id": "bs-standard", "type": "namedUpgrade", "upgradeId": "standard-upgrade", "pts": 40 },
+            { "id": "bs-medicae", "type": "namedUpgrade", "upgradeId": "medicae-pack-upgrade", "pts": 75 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engineer-platoon",
+      "name": "Engineer Platoon",
+      "slot": "Elite",
+      "basePts": 64,
+      "models": [
+        {
+          "id": "engineer-sergeant",
+          "name": "Engineer Sergeant",
+          "minCount": 1,
+          "maxCount": 4,
+          "ptsEach": 64,
+          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 3, "Ld": 8, "Sv": "4+" },
+          "baseWargear": ["laspistol", "chainsword", "acid-gas-bombs"],
+          "specialRules": ["character", "infantry", "scout"],
+          "note": "Each Sergeant represents one Squad."
+        },
+        {
+          "id": "engineer",
+          "name": "Engineer",
+          "minCount": 4,
+          "maxCount": 36,
+          "ptsEach": 12,
+          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "4+" },
+          "baseWargear": ["shotgun", "acid-gas-bombs"],
+          "specialRules": ["infantry", "scout"]
+        },
+        {
+          "id": "engineer-hwt",
+          "name": "Engineer Heavy Weapon Team",
+          "minCount": 0,
+          "maxCount": 4,
+          "ptsEach": -1,
+          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
+          "baseWargear": ["shotgun", "mole-launcher", "acid-gas-bombs"],
+          "specialRules": ["infantry", "bulky", "scout"],
+          "note": "2 Engineers become an HWT at –1 pt."
+        }
+      ],
+      "options": [
+        { "id": "eng-sgt-pistol", "type": "weaponSwap", "applies": ["engineer-sergeant"], "label": "Swap Laspistol for", "replaces": "laspistol", "choices": [{ "weaponId": "bolt-pistol", "label": "Bolt Pistol", "pts": 2 }, { "weaponId": "boltgun", "label": "Boltgun", "pts": 2 }, { "weaponId": "shotgun", "label": "Shotgun", "pts": 1 }, { "weaponId": "handflamer", "label": "Handflamer", "pts": 5 }, { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 9 }] },
+        { "id": "eng-sgt-melee", "type": "weaponSwap", "applies": ["engineer-sergeant"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "engineer-sergeant-melee" },
+        { "id": "eng-hwt-swap", "type": "weaponSwap", "applies": ["engineer-hwt"], "label": "Swap Mole Launcher for", "replaces": "mole-launcher", "weaponListId": "engineer-heavy-weapons" },
+        { "id": "eng-special", "type": "weaponSwap", "applies": ["engineer"], "label": "Up to 3: swap Shotgun for special weapon", "replaces": "shotgun", "weaponListId": "engineer-special-weapons" },
+        { "id": "eng-demochg", "type": "toggle", "label": "Demolition Charge (one model)", "pts": 7, "grantsWargear": ["demolition-charge"] },
+        { "id": "eng-shield", "type": "toggle", "label": "Shield (+2 pts each)", "pts": 2, "note": "Sv-1 (improves by 1)." },
+        { "id": "eng-brutal-weapon", "type": "toggle", "label": "Breacher Axe (+4 pts each)", "pts": 4, "grantsWargear": ["breacher-axe"] },
+        { "id": "eng-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
+        { "id": "eng-recon", "type": "toggle", "label": "Doctrine: Remote Surveillance", "pts": 10, "note": "Target friendly unit may reroll Scatter dice for Blast weapons against a target this unit can see." },
+        { "id": "eng-cyclops", "type": "toggle", "label": "Cyclops Controller and Cyclops (one model)", "pts": 26, "note": "See Cyclops Demolition Team for details." }
+      ]
+    },
+    {
+      "id": "ratling-platoon",
+      "name": "Ratling Platoon",
+      "slot": "Elite",
+      "basePts": 90,
+      "models": [
+        {
+          "id": "ratling",
+          "name": "Ratling",
+          "minCount": 5,
+          "maxCount": 40,
+          "ptsEach": 18,
+          "statline": { "type": "infantry", "M": 6, "WS": 5, "BS": 3, "S": 2, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 6, "Sv": "5+" },
+          "baseWargear": ["laspistol", "sniper-rifle"],
+          "specialRules": ["infantry", "infiltrate", "stealth", "shoot-sharp-and-scarper"],
+          "note": "Each 5-10 Ratlings = 1 squad. Up to 4 squads (max 40 models). Base 90 pts = 5 Ratlings (1 squad). Additional Ratlings +18 pts each."
+        }
+      ]
+    },
+    {
+      "id": "stormtrooper-platoon",
+      "name": "Stormtrooper Platoon",
+      "slot": "Elite",
+      "platoon": true,
+      "platoonComposition": "Must include 1–3 Stormtrooper Squads. May optionally include 1 Stormtrooper Platoon Command Squad (+126 pts).",
+      "platoonUnits": [
+        {
+          "id": "stormtrooper-command-squad",
+          "name": "Stormtrooper Platoon Command Squad",
+          "basePts": 126,
+          "minSquads": 0,
+          "maxSquads": 1,
+          "models": [
+            {
+              "id": "stormtrooper-commander",
+              "name": "Stormtrooper Commander",
+              "minCount": 1,
+              "maxCount": 1,
+              "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "4+" },
+              "baseWargear": ["hotshot-laspistol", "chainsword", "frag-grenades", "krak-grenades"],
+              "specialRules": ["independent-character", "infantry", "infantry-orders-1", "deepstrike"]
+            },
+            {
+              "id": "stormtrooper-cmd",
+              "name": "Stormtrooper",
+              "minCount": 4,
+              "maxCount": 4,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "4+" },
+              "baseWargear": ["hotshot-lasgun", "frag-grenades", "krak-grenades"],
+              "specialRules": ["infantry", "deepstrike"]
+            },
+            {
+              "id": "stormtrooper-cmd-hwt",
+              "name": "Stormtrooper Heavy Weapon Team",
+              "minCount": 0,
+              "maxCount": 1,
+              "ptsEach": -1,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
+              "baseWargear": ["heavy-flamer", "hotshot-lasgun", "frag-grenades", "krak-grenades"],
+              "specialRules": ["infantry", "deepstrike"],
+              "note": "2 Stormtroopers become HWT at –1 pt."
+            }
+          ],
+          "options": [
+            { "id": "stc-cmd-pistol", "type": "weaponSwap", "applies": ["stormtrooper-commander"], "label": "Swap Hotshot Laspistol for", "replaces": "hotshot-laspistol", "weaponListId": "stormtrooper-commander-pistol" },
+            { "id": "stc-cmd-melee", "type": "weaponSwap", "applies": ["stormtrooper-commander"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "stormtrooper-commander-melee" },
+            { "id": "stc-special", "type": "weaponSwap", "applies": ["stormtrooper-cmd"], "label": "Swap Hotshot Lasgun for special weapon", "replaces": "hotshot-lasgun", "weaponListId": "stormtrooper-special-weapons" },
+            { "id": "stc-hwt-swap", "type": "weaponSwap", "applies": ["stormtrooper-cmd-hwt"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "stormtrooper-heavy-weapons" },
+            { "id": "stc-demochg", "type": "toggle", "label": "Demolition Charge (one model)", "pts": 7, "grantsWargear": ["demolition-charge"] },
+            { "id": "stc-pistol", "type": "toggle", "label": "Add Hotshot Laspistol (+3 pts)", "pts": 3, "grantsWargear": ["hotshot-laspistol"] },
+            { "id": "stc-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
+            { "id": "stc-standard", "type": "namedUpgrade", "upgradeId": "standard-upgrade", "pts": 40 },
+            { "id": "stc-medicae", "type": "namedUpgrade", "upgradeId": "medicae-pack-upgrade", "pts": 75 },
+            { "id": "stc-jumps", "type": "namedUpgrade", "upgradeId": "jump-packs", "pts": 7 }
+          ]
+        },
+        {
+          "id": "stormtrooper-squad",
+          "name": "Stormtrooper Squad",
+          "basePts": 80,
+          "minSquads": 1,
+          "maxSquads": 3,
+          "models": [
+            {
+              "id": "stormtrooper-sergeant",
+              "name": "Stormtrooper Sergeant",
+              "minCount": 1,
+              "maxCount": 1,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 8, "Sv": "4+" },
+              "baseWargear": ["hotshot-laspistol", "chainsword", "frag-grenades", "krak-grenades"],
+              "specialRules": ["character", "infantry", "deepstrike"]
+            },
+            {
+              "id": "stormtrooper",
+              "name": "Stormtrooper",
+              "minCount": 4,
+              "maxCount": 9,
+              "ptsEach": 15,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "4+" },
+              "baseWargear": ["hotshot-lasgun", "frag-grenades", "krak-grenades"],
+              "specialRules": ["infantry", "deepstrike"]
+            },
+            {
+              "id": "stormtrooper-hwt",
+              "name": "Stormtrooper Heavy Weapon Team",
+              "minCount": 0,
+              "maxCount": 1,
+              "ptsEach": -1,
+              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
+              "baseWargear": ["heavy-flamer", "hotshot-lasgun", "frag-grenades", "krak-grenades"],
+              "specialRules": ["infantry", "deepstrike"],
+              "note": "2 Stormtroopers become HWT at –1 pt."
+            }
+          ],
+          "options": [
+            { "id": "sts-sgt-pistol", "type": "weaponSwap", "applies": ["stormtrooper-sergeant"], "label": "Swap Hotshot Laspistol for", "replaces": "hotshot-laspistol", "weaponListId": "stormtrooper-commander-pistol" },
+            { "id": "sts-sgt-melee", "type": "weaponSwap", "applies": ["stormtrooper-sergeant"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "stormtrooper-commander-melee" },
+            { "id": "sts-special", "type": "weaponSwap", "applies": ["stormtrooper"], "label": "Swap Hotshot Lasgun for special weapon (up to 2)", "replaces": "hotshot-lasgun", "weaponListId": "stormtrooper-special-weapons" },
+            { "id": "sts-hwt-swap", "type": "weaponSwap", "applies": ["stormtrooper-hwt"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "stormtrooper-heavy-weapons" },
+            { "id": "sts-demochg", "type": "toggle", "label": "Demolition Charge (one Stormtrooper)", "pts": 7, "grantsWargear": ["demolition-charge"] },
+            { "id": "sts-pistol", "type": "toggle", "label": "Add Hotshot Laspistol (+3 pts)", "pts": 3, "grantsWargear": ["hotshot-laspistol"] },
+            { "id": "sts-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
+            { "id": "sts-jumps", "type": "namedUpgrade", "upgradeId": "jump-packs", "pts": 7 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wyrdvane-psykers",
+      "name": "Wyrdvane Psykers",
+      "slot": "Elite",
+      "basePts": 15,
+      "models": [
+        {
+          "id": "custodian",
+          "name": "Custodian",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 8, "Sv": "5+" },
+          "baseWargear": ["laspistol", "chainsword"],
+          "specialRules": ["character", "infantry"],
+          "inlineRules": [
+            { "id": "cust-mercy", "name": "Mercy Execution", "shortDesc": "When unit suffers Mortal Wounds from casting spells, remove d3 Wyrdvanes instead.", "fullDesc": "When the Unit suffers Mortal Wounds from casting spells, remove d3 Wyrdvanes instead of suffering the normal Mortal Wounds." }
+          ]
+        },
+        {
+          "id": "wyrdvane",
+          "name": "Wyrdvane",
+          "minCount": 3,
+          "maxCount": 9,
+          "ptsEach": 5,
+          "statline": { "type": "infantry", "M": 6, "WS": 5, "BS": 4, "S": 2, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
+          "baseWargear": ["laspistol"],
+          "specialRules": ["infantry"]
+        }
+      ],
+      "psychic": { "mastery": 1, "spellPoolId": "wyrdvane-powers" },
+      "options": [
+        { "id": "wyr-spell1", "type": "spellPick", "spellPoolId": "wyrdvane-powers" }
+      ]
+    },
+    {
+      "id": "bullgryn-platoon",
+      "name": "Bullgryn Platoon",
+      "slot": "Elite",
+      "basePts": 135,
+      "models": [
+        {
+          "id": "bonead-bullgryn",
+          "name": "Bone'ead",
+          "minCount": 1,
+          "maxCount": 4,
+          "ptsEach": 135,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 3, "BS": 4, "S": 5, "T": 5, "W": 3, "I": 2, "A": 4, "Ld": 7, "Sv": "4+" },
+          "baseWargear": ["grenadier-gauntlet", "frag-bombs", "slab-shield"],
+          "specialRules": ["character", "monstrous-infantry", "stubborn", "very-bulky"],
+          "inlineRules": [
+            { "id": "bg-slab", "name": "Slab Shield", "shortDesc": "Sv-1 (improves by 1).", "fullDesc": "Sv-1 (improves by 1)." }
+          ],
+          "note": "Each Bone'ead leads one squad."
+        },
+        {
+          "id": "bullgryn",
+          "name": "Bullgryn",
+          "minCount": 2,
+          "maxCount": 20,
+          "ptsEach": 43,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 3, "BS": 4, "S": 5, "T": 5, "W": 3, "I": 2, "A": 3, "Ld": 6, "Sv": "4+" },
+          "baseWargear": ["grenadier-gauntlet", "frag-bombs", "slab-shield"],
+          "specialRules": ["monstrous-infantry", "stubborn", "very-bulky"]
+        }
+      ],
+      "options": [
+        {
+          "id": "bg-melee",
+          "type": "weaponSwap",
+          "applies": ["bonead-bullgryn", "bullgryn"],
+          "label": "Swap Grenadier Gauntlet for",
+          "replaces": "grenadier-gauntlet",
+          "choices": [{ "weaponId": "shock-maul", "label": "Shock Maul", "pts": 8 }]
+        },
+        {
+          "id": "bg-shield",
+          "type": "weaponSwap",
+          "applies": ["bonead-bullgryn", "bullgryn"],
+          "label": "Swap Slab Shield for",
+          "replaces": "slab-shield",
+          "choices": [{ "weaponId": "brute-shield", "label": "Brute Shield (+4 pts)", "pts": 4 }]
+        }
+      ]
+    },
+    {
+      "id": "ogryn-platoon",
+      "name": "Ogryn Platoon",
+      "slot": "Elite",
+      "basePts": 126,
+      "models": [
+        {
+          "id": "bonead-ogryn",
+          "name": "Bone'ead",
+          "minCount": 1,
+          "maxCount": 4,
+          "ptsEach": 126,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 3, "BS": 4, "S": 5, "T": 5, "W": 3, "I": 2, "A": 4, "Ld": 7, "Sv": "5+" },
+          "baseWargear": ["ripper-gun", "frag-bombs"],
+          "specialRules": ["monstrous-infantry", "stubborn", "very-bulky"],
+          "note": "Each Bone'ead leads one squad."
+        },
+        {
+          "id": "ogryn",
+          "name": "Ogryn",
+          "minCount": 2,
+          "maxCount": 20,
+          "ptsEach": 40,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 3, "BS": 4, "S": 5, "T": 5, "W": 3, "I": 2, "A": 3, "Ld": 6, "Sv": "5+" },
+          "baseWargear": ["ripper-gun", "frag-bombs"],
+          "specialRules": ["monstrous-infantry", "stubborn", "very-bulky"]
+        }
+      ]
+    },
+    {
+      "id": "atlas-recovery-vehicle",
+      "name": "Atlas Recovery Vehicle",
+      "slot": "Elite",
+      "basePts": 135,
+      "models": [
+        {
+          "id": "atlas",
+          "name": "Atlas Recovery Vehicle",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 3, "S": 7, "FA": 14, "SA": 13, "RA": 10, "W": 12, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "specialRules": ["vehicle", "tank", "escort"],
+          "inlineRules": [
+            { "id": "atlas-repair", "name": "Heavy Repair Gear", "shortDesc": "3\" range: target Vehicle or Titanic Vehicle recovers d3 Wounds. On 3+, restore one damaged result.", "fullDesc": "3\" range: target Vehicle or Titanic Vehicle recovers d3 Wounds. On a 3+, remove one Weapon Disabled, Crew Stun, Immobilize, or Weapon Destroyed Result." }
+          ]
+        }
+      ],
+      "options": [
+        { "id": "atl-hull", "type": "weaponSwap", "applies": ["atlas"], "label": "Add Hull Weapon", "choices": [
+          { "weaponId": "heavy-flamer", "label": "Heavy Flamer (+5 pts)", "pts": 5, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "heavy-bolter", "label": "Heavy Bolter (+6 pts)", "pts": 6, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "atl-pintle", "type": "weaponSwap", "applies": ["atlas"], "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
+        { "id": "atl-dozerblade", "type": "toggle", "label": "Dozerblade", "pts": 9, "grantsWargear": ["dozerblade"] },
+        { "id": "atl-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
+        { "id": "atl-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
+        { "id": "atl-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
+        { "id": "atl-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
+        { "id": "atl-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "atl-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
+        { "id": "atl-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+      ]
+    }
+  ]
+}
