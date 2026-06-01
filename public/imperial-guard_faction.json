@@ -9987,7 +9987,8 @@
           "grantsRules": [
             "snare-mines",
             "shroud"
-          ]
+          ],
+          "note": "Gain Snare Mines, gain Shroud."
         },
         {
           "id": "vet-doc-assault",

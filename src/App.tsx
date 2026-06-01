@@ -338,7 +338,7 @@ function WeaponPopoverContent({ weapon, coreRules, armyRules }) {
 
 function RulePopoverContent({ rule }) {
   if (!rule) return null;
-  return <><strong>{rule.name}</strong>{rule.shortDesc||rule.fullDesc}</>;
+  return <><strong>{rule.name}</strong>{rule.shortDesc||rule.fullDesc||rule.text}</>;
 }
 
 function SpellPopoverContent({ spell }) {
@@ -374,24 +374,41 @@ function RulePill({ ruleId, label, armyRules, coreRules, inlineRules }) {
   return <Popover trigger={trigger} content={content}/>;
 }
 
-function UpgradePill({ label, cost, note, grantsWargear, weapons, coreRules, armyRules }) {
+function isRealWeapon(w) {
+  return w?.profiles?.some(p => p.strength !== "-");
+}
+
+function UpgradePill({ label, cost, note, grantsWargear, grantsRules, weapons, coreRules, armyRules }) {
   const grantedWeapons = (grantsWargear || []).map(ref => {
     const id = typeof ref === "string" ? ref : ref.weaponId;
-    return id ? wepById(id, weapons || []) : null;
+    const w = id ? wepById(id, weapons || []) : null;
+    return isRealWeapon(w) ? w : null;
   }).filter(Boolean);
 
-  const hasPopover = note || grantedWeapons.length > 0;
+  const grantedRules = (grantsRules || []).map(id =>
+    ruleById(id, armyRules, coreRules, [])
+  ).filter(Boolean);
+
+  const hasContent = note || grantedWeapons.length > 0 || grantedRules.length > 0;
   const trigger = (
-    <span className={`pill${hasPopover ? " clickable" : ""}`}>
+    <span className={`pill${hasContent ? " clickable" : ""}`}>
       <span className="pill-name">{label}</span>
       {cost ? <span className="pill-cost">+{cost} pts</span> : null}
     </span>
   );
-  if (!hasPopover) return trigger;
+  if (!hasContent) return trigger;
+
+  const hasBody = grantedRules.length > 0 || grantedWeapons.length > 0;
   const content = (
     <>
+      {note && (
+        <>
+          <strong>{label}</strong>
+          <span style={{display:"block", marginBottom: hasBody ? 6 : 0, fontStyle:"italic", color:"#aaa"}}>{note}</span>
+        </>
+      )}
+      {grantedRules.map(r => <RulePopoverContent key={r.id} rule={r}/>)}
       {grantedWeapons.map(w => <WeaponPopoverContent key={w.id} weapon={w} coreRules={coreRules} armyRules={armyRules}/>)}
-      {note && <span style={{display:"block", marginTop: grantedWeapons.length ? 6 : 0, fontStyle:"italic", color:"#aaa"}}>{note}</span>}
     </>
   );
   return <Popover trigger={trigger} content={content}/>;
@@ -590,7 +607,8 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools,
               {upgradeOpts.map(o => {
                 const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
                 const grantsWargear = o.grantsWargear || named?.grantsWargear;
-                return <UpgradePill key={o.id} label={named?.label||o.label} cost={o.pts} note={named?.note||o.note} grantsWargear={grantsWargear} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
+                const grantsRules = o.grantsRules || named?.grantsRules;
+                return <UpgradePill key={o.id} label={named?.label||o.label} cost={o.pts} note={named?.note||o.note} grantsWargear={grantsWargear} grantsRules={grantsRules} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
               })}
             </div>
           </div>
