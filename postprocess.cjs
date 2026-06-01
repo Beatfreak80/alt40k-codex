@@ -166,7 +166,7 @@ function validate(d, coreIds) {
 
     // Options
     for (const o of (u.options || [])) {
-      if (o.type === 'spellPick' && o.spellPoolId && !spellIds.has(o.spellPoolId))
+      if (o.type === 'spellPick' && o.spellPoolId && o.spellPoolId !== '$mark' && !spellIds.has(o.spellPoolId))
         errors.push(`${u.name} option "${o.id}" → unknown spellPool "${o.spellPoolId}"`);
       if (o.type === 'namedUpgrade' && !upgradeIds.has(o.upgradeId))
         errors.push(`${u.name} option "${o.id}" → unknown namedUpgrade "${o.upgradeId}"`);
@@ -179,7 +179,7 @@ function validate(d, coreIds) {
     }
 
     // Psychic spell pool ref
-    if (u.psychic?.spellPoolId && !spellIds.has(u.psychic.spellPoolId))
+    if (u.psychic?.spellPoolId && u.psychic.spellPoolId !== '$mark' && !spellIds.has(u.psychic.spellPoolId))
       errors.push(`${u.name} psychic.spellPoolId → unknown pool "${u.psychic.spellPoolId}"`);
 
     // chapterRestriction must match a subfaction id

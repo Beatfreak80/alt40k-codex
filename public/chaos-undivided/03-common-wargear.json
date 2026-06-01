@@ -1,0 +1,494 @@
+{
+  "commonWargear": [
+    { "id": "sigil-of-corruption", "name": "Sigil of Corruption", "profiles": [{ "strength": "-", "ap": "-", "rules": ["4+ Invulnerability Save"] }] },
+    { "id": "terminator-honours", "name": "Terminator Honours", "profiles": [{ "strength": "-", "ap": "-", "rules": ["5+ Invulnerability Save"] }] },
+    { "id": "atomantic-shielding", "name": "Atomantic Shielding", "profiles": [{ "strength": "-", "ap": "-", "rules": ["5+ Invulnerability Save"] }] },
+    { "id": "icon-of-chaos", "name": "Icon of Chaos", "profiles": [{ "strength": "-", "ap": "-", "rules": ["6\" Aura: this model and target unit gains A+1", "6\" Aura: this model and target unit may reroll failed Ld tests"] }] },
+    { "id": "tome-of-chaos", "name": "Tome of Chaos", "profiles": [{ "strength": "-", "ap": "-", "rules": ["Friendly spell caster within 6\" may use this model's spells in addition to their own. Dark Apostle may use an additional H option this model has purchased."] }] },
+    { "id": "augar-array", "name": "Augar Array", "profiles": [{ "strength": "-", "ap": "-", "rules": ["6\" Aura: target unit does not scatter when Deepstriking (cast when first model is placed)"] }] },
+    { "id": "extra-armour", "name": "Extra Armour", "profiles": [{ "strength": "-", "ap": "-", "rules": ["You may treat Crew Stun results as Weapon Disabled instead."] }] },
+    { "id": "flare-launchers", "name": "Flare Launchers", "profiles": [{ "strength": "-", "ap": "-", "rules": ["5+ Invulnerability Save vs ranged attacks"] }] },
+    { "id": "recovery-gear", "name": "Recovery Gear", "profiles": [{ "strength": "-", "ap": "-", "rules": ["Roll a d6, on a 5+ Repair the secondary effect from a Crew Stun or Immobilized result."] }] },
+    { "id": "smoke-launchers", "name": "Smoke Launchers", "profiles": [{ "strength": "-", "ap": "-", "rules": ["6\" Range, place 5\" Smoke Cloud causing –1 To Hit that scatters +1\" until next Command Phase. One Use Only. Shooting Phase only."] }] },
+    { "id": "chaff-launchers", "name": "Chaff Launchers", "profiles": [{ "strength": "-", "ap": "-", "rules": ["Improved protection against ranged attacks for this aircraft."] }] },
+    { "id": "collar-of-khorne", "name": "Collar of Khorne", "profiles": [{ "strength": "-", "ap": "-", "rules": ["May Deny the Witch as if Psychic Mastery Level 1."] }] },
+    { "id": "servo-arm", "name": "Servo Arm", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Auxiliary", "Slow", "Monsterbane", "Servo Arm – +1 to a Repair die roll to restore a weapon or mobilize result."] }] },
+
+    { "id": "autopistol", "name": "Autopistol", "profiles": [{ "maxRange": 12, "strength": "3", "ap": "-", "rules": ["Pistol 1"] }] },
+    { "id": "laspistol", "name": "Laspistol", "profiles": [{ "maxRange": 12, "strength": "3", "ap": "-", "rules": ["Pistol 1"] }] },
+    { "id": "bolt-pistol", "name": "Bolt Pistol", "profiles": [{ "maxRange": 12, "strength": "4", "ap": "5+", "rules": ["Pistol 1"] }] },
+    { "id": "plasma-pistol", "name": "Plasma Pistol", "profiles": [{ "maxRange": 12, "strength": "7", "ap": "2+", "rules": ["Pistol 1", "Gets Hot!"] }] },
+    { "id": "inferno-pistol", "name": "Inferno Pistol", "profiles": [{ "maxRange": 6, "strength": "8", "ap": "1+", "rules": ["Pistol 1", "Melta", "(Monsterbane)"] }] },
+    { "id": "soulburner-pistol", "name": "Soulburner Pistol", "profiles": [{ "maxRange": 12, "strength": "7", "ap": "2+", "rules": ["Pistol 2", "Gets Hot!"] }] },
+    { "id": "xyclos-needler", "name": "Xyclos Needler", "profiles": [{ "maxRange": 18, "strength": "3", "ap": "3+", "rules": ["Pistol 3", "Poisoned (3+)"] }] },
+    { "id": "absolver-bolt-pistol", "name": "Absolver Bolt Pistol", "profiles": [{ "maxRange": 18, "strength": "5", "ap": "5+", "rules": ["Pistol 1"] }] },
+    {
+      "id": "handflamer", "name": "Handflamer",
+      "profiles": [{ "strength": "3", "ap": "6+", "rules": ["Pistol 1"] }],
+      "templateType": "Flame"
+    },
+
+    { "id": "boltgun", "name": "Boltgun", "profiles": [{ "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 1", "Bolter"] }], "keywords": ["Bolter"] },
+    { "id": "autogun", "name": "Autogun", "profiles": [{ "maxRange": 24, "strength": "3", "ap": "-", "rules": ["Rapid Fire 1"] }] },
+    { "id": "shotgun", "name": "Shotgun", "profiles": [{ "maxRange": 12, "strength": "3", "ap": "-", "rules": ["Assault 2", "Scatter"] }] },
+    { "id": "stormbolter", "name": "Stormbolter", "profiles": [{ "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 2", "Bolter"] }], "keywords": ["Bolter"] },
+    {
+      "id": "combi-flamer", "name": "Combi Flamer",
+      "profiles": [
+        { "label": "Flamer", "strength": "4", "ap": "5+", "rules": ["Assault 1"], "templateType": "Flame" },
+        { "label": "Boltgun", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 1"] }
+      ]
+    },
+    {
+      "id": "combi-plasma", "name": "Combi Plasma",
+      "profiles": [
+        { "label": "Plasma", "maxRange": 24, "strength": "7", "ap": "2+", "rules": ["Rapid Fire 1", "Gets Hot!"] },
+        { "label": "Bolter", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 1", "Bolter"] }
+      ]
+    },
+    {
+      "id": "combi-melta", "name": "Combi Melta",
+      "profiles": [
+        { "label": "Melta", "maxRange": 12, "strength": "8", "ap": "1+", "rules": ["Assault 1", "Melta", "(Monsterbane)"] },
+        { "label": "Bolter", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 1", "Bolter"] }
+      ]
+    },
+    {
+      "id": "combi-volkite", "name": "Combi Volkite",
+      "profiles": [
+        { "label": "Volkite", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Heavy 1", "Beam"] },
+        { "label": "Bolter", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 1", "Bolter"] }
+      ]
+    },
+    { "id": "plasma-gun", "name": "Plasma Gun", "profiles": [{ "maxRange": 24, "strength": "7", "ap": "2+", "rules": ["Rapid Fire 1", "Gets Hot!"] }] },
+    { "id": "meltagun", "name": "Meltagun", "profiles": [{ "maxRange": 12, "strength": "8", "ap": "1+", "rules": ["Assault 1", "Melta", "(Monsterbane)"] }] },
+    { "id": "flamer", "name": "Flamer", "profiles": [{ "strength": "4", "ap": "5+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+    { "id": "baleflamer", "name": "Baleflamer", "profiles": [{ "strength": "6", "ap": "3+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+    { "id": "balefire-pike", "name": "Balefire Pike", "profiles": [{ "strength": "6", "ap": "4+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+    { "id": "heavy-flamer", "name": "Heavy Flamer", "profiles": [{ "strength": "5", "ap": "4+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+    {
+      "id": "grenade-launcher", "name": "Grenade Launcher",
+      "profiles": [
+        { "label": "Frag", "maxRange": 24, "strength": "3", "ap": "-", "rules": ["Assault 1", "3\" Blast"] },
+        { "label": "Krak", "maxRange": 24, "strength": "6", "ap": "4+", "rules": ["Assault 1"] }
+      ]
+    },
+    { "id": "heavy-stubber", "name": "Heavy Stubber", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "6+", "rules": ["Heavy 3"] }] },
+    { "id": "heavy-bolter", "name": "Heavy Bolter", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3"] }] },
+    { "id": "autocannon", "name": "Autocannon", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2", "Monsterbane"] }] },
+    { "id": "reaper-chaingun", "name": "Reaper Chaingun", "profiles": [{ "maxRange": 48, "strength": "5", "ap": "-", "rules": ["Heavy 8"] }] },
+    { "id": "reaper-autocannon", "name": "Reaper Autocannon", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 4", "Monsterbane"] }] },
+    {
+      "id": "missile-launcher", "name": "Missile Launcher",
+      "profiles": [
+        { "label": "Krak", "maxRange": 48, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "Monsterbane"] },
+        { "label": "Frag", "maxRange": 48, "strength": "4", "ap": "6+", "rules": ["Heavy 1", "3\" Blast"] }
+      ]
+    },
+    { "id": "lascannon", "name": "Lascannon", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1", "Monsterbane"] }] },
+    { "id": "warpfire-lance", "name": "Warpfire Lance", "profiles": [{ "maxRange": 18, "strength": "9", "ap": "2+", "rules": ["Heavy 2", "Lance"] }] },
+    { "id": "volkite-culverin", "name": "Volkite Culverin", "profiles": [{ "maxRange": 48, "strength": "6", "ap": "3+", "rules": ["Heavy 1", "Beam"] }] },
+    { "id": "infernal-cannon", "name": "Infernal Cannon", "profiles": [{ "maxRange": 24, "strength": "5", "ap": "4+", "rules": ["Assault 3"] }] },
+    { "id": "daemonic-flames", "name": "Daemonic Flames", "profiles": [{ "strength": "5", "ap": "4+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+    { "id": "londaxi-maimer", "name": "Londaxi Maimer", "profiles": [{ "maxRange": 12, "strength": "5", "ap": "-", "rules": ["Assault 2", "Scatter", "Rending"] }] },
+    { "id": "orbital-strike", "name": "Orbital Strike", "profiles": [{ "minRange": 12, "maxRange": 240, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "15\" Blast", "Destroyer", "Ordnance", "Monsterbane", "Indirect Fire", "Ignores Cover", "One Use Only"] }] },
+    { "id": "lashing-warp-energies", "name": "Lashing Warp Energies", "profiles": [{ "maxRange": 12, "strength": "5", "ap": "-", "rules": ["Assault 6", "Tesla"] }] },
+
+    { "id": "frag-grenades", "name": "Frag Grenades", "profiles": [{ "maxRange": 8, "strength": "3", "ap": "-", "rules": ["Grenade 1", "3\" Blast"] }] },
+    { "id": "krak-grenades", "name": "Krak Grenades", "profiles": [{ "maxRange": 8, "strength": "6", "ap": "4+", "rules": ["Grenade 1", "Nonblast"] }] },
+    { "id": "meltabombs", "name": "Meltabombs", "profiles": [{ "maxRange": 6, "strength": "8", "ap": "1+", "rules": ["Grenade 1", "Armourbane", "Monsterbane", "Nonblast"] }] },
+
+    { "id": "brutal-weapon", "name": "Brutal Weapon", "profiles": [{ "strength": "User", "ap": "-", "rules": ["Extra Attack 1"] }] },
+    { "id": "chainsword", "name": "Chainsword", "profiles": [{ "strength": "User", "ap": "6+", "rules": ["Rending"] }] },
+    { "id": "chain-axe", "name": "Chain Axe", "profiles": [{ "strength": "+1", "ap": "-", "rules": ["Rending"] }] },
+    { "id": "power-sword", "name": "Power Sword", "profiles": [{ "strength": "+1", "ap": "3+", "rules": [] }] },
+    { "id": "power-axe", "name": "Power Axe", "profiles": [{ "strength": "+2", "ap": "4+", "rules": [] }] },
+    { "id": "power-maul", "name": "Power Maul", "profiles": [{ "strength": "+2", "ap": "4+", "rules": ["Concussion"] }] },
+    { "id": "shock-maul", "name": "Shock Maul", "profiles": [{ "strength": "+2", "ap": "4+", "rules": ["Concussion"] }] },
+    { "id": "lightning-claw", "name": "Lightning Claw", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Reroll failed To Wound rolls"] }] },
+    { "id": "great-weapon", "name": "Great Weapon", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Extra Attack 1", "Slow", "Monsterbane"] }] },
+    { "id": "powerfist", "name": "Powerfist", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "monstrous-powerfists", "name": "Powerfists", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Extra Attack 1", "Slow", "Monsterbane"] }] },
+    { "id": "mauler-chainblade", "name": "Mauler Chainblade", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "daemonic-blade", "name": "Daemonic Blade", "profiles": [{ "strength": "+1", "ap": "2+", "rules": ["Extra Attack d6", "Daemonic Thirst"] }] },
+    { "id": "chain-fist", "name": "Chain Fist", "profiles": [{ "strength": "X2", "ap": "1+", "rules": ["Slow", "Monsterbane", "+1 on To Penetrate Rolls (not Vehicle Damage Chart)"] }] },
+    { "id": "thunderhammer", "name": "Thunderhammer", "profiles": [{ "strength": "10", "ap": "1+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "heavy-thunderhammer", "name": "Heavy Thunderhammer", "profiles": [{ "strength": "X2", "ap": "1+", "rules": ["Slow", "Monsterbane", "Concussion"] }] },
+    { "id": "dual-lightning-claws", "name": "Dual Lightning Claws", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Extra Attack 1", "Reroll failed To Wound rolls"] }] },
+    { "id": "rapture-lash", "name": "Rapture Lash", "profiles": [{ "strength": "User", "ap": "-", "rules": ["Extra Attack 2", "I+3"] }] },
+    { "id": "force-staff", "name": "Force Staff", "profiles": [{ "strength": "+2", "ap": "4+", "rules": ["Psychic Bane"] }] },
+    { "id": "force-axe", "name": "Force Axe", "profiles": [{ "strength": "+2", "ap": "4+", "rules": ["Psychic Bane"] }] },
+    { "id": "malefic-talons", "name": "Malefic Talons", "profiles": [{ "strength": "User", "ap": "4+", "rules": ["Extra Attack 1"] }] },
+    { "id": "infernal-axe", "name": "Infernal Axe", "profiles": [{ "strength": "+1", "ap": "2+", "rules": [] }] },
+    { "id": "mechatendrils", "name": "Mechatendrils", "profiles": [{ "strength": "User", "ap": "-", "rules": ["Auxiliary", "Extra Attack 3"] }] },
+    { "id": "techno-virus-injector", "name": "Techno-Virus Injector", "profiles": [{ "strength": "User", "ap": "1+", "rules": ["Auxiliary", "Extra Attack 2", "Haywire (3+)"] }] },
+    { "id": "bladed-limbs", "name": "Bladed Limbs", "profiles": [{ "strength": "User", "ap": "3+" }] },
+    { "id": "axe-of-dismemberment", "name": "Axe of Dismemberment", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "axe-of-ending", "name": "Axe of Ending", "profiles": [{ "strength": "+3", "ap": "2+", "rules": [] }] },
+    { "id": "power-scourge", "name": "Power Scourge", "profiles": [{ "strength": "+2", "ap": "2+" }] },
+    { "id": "bionic-gauntlet", "name": "Bionic Gauntlet", "profiles": [{ "strength": "User", "ap": "3+", "rules": [] }] },
+    { "id": "plunders-bite", "name": "Plunder's Bite", "profiles": [{ "strength": "User", "ap": "-", "rules": ["Rending"] }] },
+    { "id": "black-blade-of-venom", "name": "The Black Blade of Venom", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Poisoned (2+)"] }] },
+    { "id": "chirugeon", "name": "The Chirugeon", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Extra Attack 1"] }] },
+    { "id": "vashtorrs-hammer", "name": "Vashtorr's Hammer", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "vashtorrs-claw", "name": "Vashtorr's Claw", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Auxiliary", "Extra Attack 2"] }] },
+    { "id": "blade-of-shadows", "name": "The Blade of Shadows", "profiles": [{ "strength": "+1", "ap": "1+", "rules": ["Extra Attack 1", "Ignores Invulnerability Saves"] }] },
+    { "id": "drach-nyen", "name": "Drach'nyen", "profiles": [{ "strength": "+2", "ap": "1+", "rules": ["Extra Attack d6", "Daemonic Thirst"] }] },
+    {
+      "id": "talon-of-horus", "name": "Talon of Horus",
+      "profiles": [
+        { "label": "Ranged", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 2", "Bolter"] },
+        { "label": "Melee", "strength": "X2", "ap": "1+", "rules": ["Slow", "Monsterbane"] }
+      ],
+      "keywords": ["Bolter"]
+    },
+    { "id": "helspear", "name": "Helspear", "profiles": [{ "strength": "User", "ap": "2+", "rules": ["Poisoned (3+)", "Counterattack"] }] },
+    { "id": "heralds-talon", "name": "Herald's Talon", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Extra Attack 2"] }] },
+    {
+      "id": "tyrants-claw", "name": "Tyrant's Claw",
+      "profiles": [
+        { "label": "Flame", "strength": "5", "ap": "4+", "rules": ["Assault 1"], "templateType": "Flame" },
+        { "label": "Melee", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }
+      ]
+    },
+    { "id": "last-argument", "name": "Last Argument", "profiles": [{ "strength": "10", "ap": "1+", "rules": ["Slow", "Extra Attack 1", "Monsterbane"] }] },
+    {
+      "id": "accursed-crozius", "name": "Accursed Crozius",
+      "profiles": [
+        { "label": "Flame", "strength": "5", "ap": "4+", "rules": ["Assault 1", "One Use Only"], "templateType": "Flame" },
+        { "label": "Melee", "strength": "+2", "ap": "4+", "rules": ["Concussion"] }
+      ]
+    },
+    { "id": "reductor-array", "name": "Reductor Array", "profiles": [{ "strength": "User", "ap": "-", "rules": ["Auxiliary", "Extra Attack 1", "Poisoned (3+)"] }] },
+
+    { "id": "mutations", "name": "Mutations", "profiles": [{ "strength": "User", "ap": "-", "rules": ["Extra Attack 1", "Rending"] }] },
+    { "id": "chaos-spawn-mutations", "name": "Mutations", "profiles": [{ "strength": "User", "ap": "3+", "rules": [] }] },
+    { "id": "lethal-mutations", "name": "Lethal Mutations", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Extra Attack 1"] }] },
+    { "id": "giant-mutations", "name": "Giant Mutations", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Reroll failed To Wound rolls"] }] },
+    { "id": "flesh-metal-weapons", "name": "Flesh Metal Weapons", "profiles": [{ "strength": "+d3", "ap": "D3+", "rules": [] }] },
+    { "id": "flesh-metal-guns", "name": "Flesh Metal Guns", "profiles": [{ "maxRange": 24, "strength": "6+d3", "ap": "D3+1+", "rules": ["Heavy d3+1", "Monsterbane"] }] },
+    { "id": "fury-claws", "name": "Claws", "profiles": [{ "strength": "User", "ap": "-", "rules": ["Extra Attack 1", "Rending"] }] },
+    { "id": "jagged-claws", "name": "Jagged Claws", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Extra Attack 2"] }] },
+    { "id": "tusked-maw", "name": "Tusked Maw", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }] },
+
+    { "id": "warp-sword", "name": "Warp Sword", "profiles": [{ "strength": "User", "ap": "3+" }] },
+    { "id": "iron-claw", "name": "Iron Claw", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "defiler-claws", "name": "Defiler Claws", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Extra Attack 1", "Slow", "Monsterbane"] }] },
+    { "id": "daemon-jaws", "name": "Daemon Jaws", "profiles": [{ "strength": "User", "ap": "3+" }] },
+    { "id": "lasher-tendrils", "name": "Lasher Tendrils", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Auxiliary", "Extra Attack 1", "Counterattack"] }] },
+    { "id": "magma-cutter", "name": "Magma Cutter", "profiles": [{ "maxRange": 6, "strength": "8", "ap": "1+", "rules": ["Pistol 1", "Armourbane", "Monsterbane"] }] },
+    { "id": "eviscerating-claws", "name": "Eviscerating Claws", "profiles": [{ "strength": "+2", "ap": "2+" }] },
+    { "id": "soulflayer-tendrils", "name": "Soulflayer Tendrils", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Auxiliary", "Extra Attack 1"] }] },
+    { "id": "helldrake-claws", "name": "Helldrake Claws", "profiles": [{ "strength": "User", "ap": "3+", "rules": ["Extra Attack 1"] }] },
+    { "id": "bladed-struts", "name": "Bladed Struts", "profiles": [{ "strength": "X2", "ap": "1+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "possessed-mutations", "name": "Mutations", "profiles": [{ "strength": "User", "ap": "3+", "rules": [] }] },
+
+    { "id": "daemon-cannon", "name": "Daemon Cannon", "profiles": [{ "strength": "6", "ap": "3+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+    { "id": "ectoplasma-destructor", "name": "Ectoplasma Destructor", "profiles": [{ "maxRange": 36, "strength": "7", "ap": "2+", "rules": ["Heavy 2", "3\" Blast", "Gets Hot!"] }] },
+    { "id": "battle-cannon", "name": "Battle Cannon", "profiles": [{ "maxRange": 72, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "5\" Blast", "Ordnance", "Monsterbane"] }] },
+    { "id": "flail", "name": "Flail", "profiles": [{ "strength": "-2", "ap": "4+", "rules": ["Auxiliary", "Extra Attack 2"] }] },
+    { "id": "havoc-launcher", "name": "Havoc Launcher", "profiles": [{ "maxRange": 48, "strength": "5", "ap": "5+", "rules": ["Heavy 1", "3\" Blast"] }] },
+    { "id": "ectoplasma-cannon", "name": "Ectoplasma Cannon", "profiles": [{ "maxRange": 24, "strength": "8", "ap": "2+", "rules": ["Heavy 1", "3\" Blast", "Monsterbane", "Gets Hot!"] }] },
+    { "id": "hades-autocannon", "name": "Hades Autocannon", "profiles": [{ "maxRange": 36, "strength": "8", "ap": "4+", "rules": ["Heavy 4", "Monsterbane", "Pinning"] }] },
+    { "id": "rancid-vomit", "name": "Rancid Vomit", "profiles": [{ "strength": "3", "ap": "3+", "rules": ["Assault 1", "Poisoned (3+)"] }], "templateType": "Flame" },
+    { "id": "baleful-torrent", "name": "Baleful Torrent", "profiles": [{ "strength": "6", "ap": "4+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+    { "id": "warp-gaze", "name": "Warp Gaze", "profiles": [{ "maxRange": 24, "strength": "10", "ap": "1+", "rules": ["Heavy 1"] }] },
+    { "id": "rot-cannon", "name": "Rot Cannon", "profiles": [{ "maxRange": 36, "strength": "6", "ap": "3+", "rules": ["Heavy 1", "5\" Blast", "Rending", "Pinning"] }] },
+    { "id": "phlegm-bombardment", "name": "Phlegm Bombardment", "profiles": [{ "maxRange": 36, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "5\" Blast", "Ordnance", "Monsterbane"] }] },
+    { "id": "excruciator-cannons", "name": "2 Linked Excruciator Cannons", "profiles": [{ "maxRange": 36, "strength": "8", "ap": "3+", "rules": ["Assault 1", "3\" Blast", "Monsterbane"] }] },
+    { "id": "soulburner-petard", "name": "Soulburner Petard", "profiles": [{ "maxRange": 24, "strength": "3", "ap": "3+", "rules": ["Assault 1", "5\" Blast", "Poisoned (3+)"] }] },
+    { "id": "storm-laser", "name": "Storm Laser", "profiles": [{ "maxRange": 36, "strength": "6", "ap": "3+", "rules": ["Assault 6"] }] },
+    { "id": "decimator-butcher-cannon", "name": "Decimator Butcher Cannon", "profiles": [{ "maxRange": 60, "strength": "7", "ap": "4+", "rules": ["Heavy 4", "Monsterbane"] }] },
+    { "id": "decimator-conversion-beam", "name": "Decimator Conversion Beam", "profiles": [{ "maxRange": 72, "strength": "9", "ap": "3+", "rules": ["Heavy 1", "Beam"] }] },
+    { "id": "decimator-claw", "name": "Decimator Claw", "profiles": [{ "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }] },
+    { "id": "storm-cannon-array", "name": "Storm Cannon Array", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 12", "Monsterbane"] }] },
+
+    { "id": "volkite-culverin-2x", "name": "2 Linked Heavy Bolters", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3 x2"] }] },
+    { "id": "hellfire-plasma-carronade", "name": "Hellfire Plasma Carronade", "profiles": [{ "maxRange": 36, "strength": "7", "ap": "2+", "rules": ["Heavy 3", "Gets Hot!"] }] },
+    { "id": "anvillus-autocannon", "name": "Anvillus Auto Cannon", "profiles": [{ "maxRange": 36, "strength": "7", "ap": "4+", "rules": ["Heavy 4", "Monsterbane"] }] },
+    { "id": "volkite-falconet", "name": "Volkite Falconet", "profiles": [{ "maxRange": 36, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "Beam", "Monsterbane"] }] },
+    { "id": "arachnus-lascannon", "name": "Arachnus Heavy Lascannon", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 2", "Monsterbane"] }] },
+    { "id": "grav-flux-bombard", "name": "Grav Flux Bombard", "profiles": [{ "maxRange": 24, "strength": "*", "ap": "-", "rules": ["Heavy 1", "5\" Blast", "Grav"] }] },
+    { "id": "cyclonic-melta-lance", "name": "Cyclonic Melta Lance", "profiles": [{ "maxRange": 18, "strength": "9", "ap": "1+", "rules": ["Heavy 1", "5\" Blast", "Melta", "(Monsterbane)"] }] },
+    { "id": "bores-aa-missiles", "name": "Bores Air Defense Missiles", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1", "AA"] }] },
+    { "id": "aiolos-missile-launcher", "name": "Aiolos Missile Launcher", "profiles": [{ "maxRange": 48, "strength": "6", "ap": "5+", "rules": ["Heavy 1", "7\" Blast"] }] },
+    {
+      "id": "leviathan-siege-drill-meltagun", "name": "Leviathan Siege Drill and Meltagun",
+      "profiles": [
+        { "label": "Drill", "strength": "D", "ap": "1+", "rules": ["Destroyer", "Monsterbane", "Auxiliary"] },
+        { "label": "Meltagun", "maxRange": 12, "strength": "8", "ap": "1+", "rules": ["Assault 1", "Melta", "(Monsterbane)"] }
+      ]
+    },
+    {
+      "id": "leviathan-siege-claw-meltagun", "name": "Leviathan Siege Claw and Meltagun",
+      "profiles": [
+        { "label": "Claw", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] },
+        { "label": "Meltagun", "maxRange": 12, "strength": "8", "ap": "1+", "rules": ["Assault 1", "Melta", "(Monsterbane)"] }
+      ]
+    },
+    { "id": "hunter-killer-missile-rack", "name": "Hunter Killer Missile Rack", "profiles": [{ "maxRange": 120, "strength": "10", "ap": "3+", "rules": ["Heavy 1", "Monsterbane"] }] },
+    { "id": "2-linked-volkite-calivers", "name": "2 Linked Volkite Calivers", "profiles": [{ "maxRange": 30, "strength": "5", "ap": "5+", "rules": ["Heavy 2 x2", "Beam"] }] },
+
+    {
+      "id": "dreadnought-missile-launcher", "name": "Dreadnought Missile Launcher",
+      "profiles": [
+        { "label": "Krak", "maxRange": 48, "strength": "8", "ap": "3+", "rules": ["Heavy 2", "Monsterbane"] },
+        { "label": "Frag", "maxRange": 48, "strength": "4", "ap": "6+", "rules": ["Heavy 2", "3\" Blast"] }
+      ]
+    },
+    { "id": "conversion-beam-cannon", "name": "Conversion Beam Cannon", "profiles": [{ "maxRange": 72, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "Monsterbane", "Beam"] }] },
+    { "id": "multimelta", "name": "Multimelta", "profiles": [{ "maxRange": 24, "strength": "8", "ap": "1+", "rules": ["Heavy 2", "Melta", "(Monsterbane)"] }] },
+    { "id": "2-linked-autocannons", "name": "2 Linked Autocannons", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2 x2", "Monsterbane"] }] },
+    { "id": "assault-cannon", "name": "Assault Cannon", "profiles": [{ "maxRange": 36, "strength": "6", "ap": "4+", "rules": ["Assault 6", "Rending"] }] },
+    { "id": "2-linked-lascannons", "name": "2 Linked Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x2", "Monsterbane"] }] },
+    { "id": "kheres-assault-cannon", "name": "Kheres Assault Cannon", "profiles": [{ "maxRange": 24, "strength": "7", "ap": "4+", "rules": ["Heavy 6", "Monsterbane", "Rending"] }] },
+    { "id": "heavy-plasma-cannon", "name": "Heavy Plasma Cannon", "profiles": [{ "maxRange": 48, "strength": "8", "ap": "2+", "rules": ["Heavy 1", "5\" Blast", "Monsterbane"] }] },
+    {
+      "id": "dreadnought-combat-weapon-stormbolter", "name": "Dreadnought Combat Weapon and Stormbolter",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] },
+        { "label": "Stormbolter", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 2", "Bolter"] }
+      ]
+    },
+    {
+      "id": "dreadnought-combat-weapon-heavy-flamer", "name": "Dreadnought Combat Weapon and Heavy Flamer",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] },
+        { "label": "Heavy Flamer", "strength": "5", "ap": "4+", "rules": ["Assault 1"], "templateType": "Flame" }
+      ]
+    },
+    {
+      "id": "dreadnought-combat-weapon-graviton", "name": "Dreadnought Combat Weapon and Graviton Blaster",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] },
+        { "label": "Graviton Blaster", "maxRange": 18, "strength": "*", "ap": "-", "rules": ["Assault 2", "Grav"] }
+      ]
+    },
+    {
+      "id": "dreadnought-combat-weapon-meltagun", "name": "Dreadnought Combat Weapon and Meltagun",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] },
+        { "label": "Meltagun", "maxRange": 12, "strength": "8", "ap": "1+", "rules": ["Assault 1", "Melta", "(Monsterbane)"] }
+      ]
+    },
+    {
+      "id": "dreadnought-chain-fist-stormbolter", "name": "Dreadnought Chain Fist and Stormbolter",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "1+", "rules": ["Slow", "Armourbane", "Monsterbane"] },
+        { "label": "Stormbolter", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 2", "Bolter"] }
+      ]
+    },
+    {
+      "id": "dreadnought-chain-fist-heavy-flamer", "name": "Dreadnought Chain Fist and Heavy Flamer",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "1+", "rules": ["Slow", "Armourbane", "Monsterbane"] },
+        { "label": "Heavy Flamer", "strength": "5", "ap": "4+", "rules": ["Assault 1"], "templateType": "Flame" }
+      ]
+    },
+    {
+      "id": "dreadnought-chain-fist-graviton", "name": "Dreadnought Chain Fist and Graviton Blaster",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "1+", "rules": ["Slow", "Armourbane", "Monsterbane"] },
+        { "label": "Graviton Blaster", "maxRange": 18, "strength": "*", "ap": "-", "rules": ["Assault 2", "Grav"] }
+      ]
+    },
+    {
+      "id": "dreadnought-chain-fist-meltagun", "name": "Dreadnought Chain Fist and Meltagun",
+      "profiles": [
+        { "label": "Melee", "strength": "X2", "ap": "1+", "rules": ["Slow", "Armourbane", "Monsterbane"] },
+        { "label": "Meltagun", "maxRange": 12, "strength": "8", "ap": "1+", "rules": ["Assault 1", "Melta", "(Monsterbane)"] }
+      ]
+    },
+    {
+      "id": "hellbrute-combat-weapon-stormbolter", "name": "Dreadnought Combat Weapon with Stormbolter",
+      "profiles": [
+        { "label": "Stormbolter", "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 2", "Bolter"] },
+        { "label": "Melee", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }
+      ]
+    },
+    {
+      "id": "hellbrute-combat-weapon-flamer", "name": "Dreadnought Combat Weapon with Flamer",
+      "profiles": [
+        { "label": "Flamer", "strength": "4", "ap": "5+", "rules": ["Assault 1"], "templateType": "Flame" },
+        { "label": "Melee", "strength": "X2", "ap": "2+", "rules": ["Slow", "Monsterbane"] }
+      ]
+    },
+    { "id": "2-linked-heavy-flamers", "name": "2 Linked Heavy Flamers", "profiles": [{ "strength": "5", "ap": "4+", "rules": ["Assault 1 x2"] }], "templateType": "Flame" },
+    { "id": "2-linked-heavy-bolters", "name": "2 Linked Heavy Bolters", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3 x2"] }] },
+    { "id": "2-heavy-flamers", "name": "2 Heavy Flamers", "profiles": [{ "strength": "5", "ap": "4+", "rules": ["Assault 1 x2"] }], "templateType": "Flame" },
+    { "id": "2-heavy-bolters", "name": "2 Heavy Bolters", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3 x2"] }] },
+    { "id": "2-lascannons", "name": "2 Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x2", "Monsterbane"] }] },
+    { "id": "2-autocannons", "name": "2 Autocannons", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2 x2", "Monsterbane"] }] },
+    { "id": "2-volkite-culverins", "name": "2 Volkite Culverins", "profiles": [{ "maxRange": 48, "strength": "6", "ap": "3+", "rules": ["Heavy 1 x2", "Beam"] }] },
+    { "id": "dozerblade", "name": "Dozerblade", "profiles": [{ "strength": "+1", "ap": "6+", "rules": ["Accurate", "Dozerblade"] }] },
+    { "id": "siege-shield", "name": "Siege Shield", "profiles": [{ "strength": "+3", "ap": "4+", "rules": ["Accurate", "Siege Shield"] }] },
+    { "id": "hunter-killer-missile", "name": "Hunter Killer Missile", "profiles": [{ "maxRange": 120, "strength": "10", "ap": "3+", "rules": ["Heavy 1", "Monsterbane", "One Use Only"] }] },
+
+    { "id": "predator-autocannon", "name": "Predator Autocannon", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 6", "Monsterbane"] }] },
+    { "id": "volkite-macrosaker", "name": "Volkite Macrosaker", "profiles": [{ "maxRange": 48, "strength": "8", "ap": "3+", "rules": ["Heavy 2", "Beam", "Monsterbane"] }] },
+    { "id": "2-linked-plasma-destroyers", "name": "2 Linked Plasma Destroyers", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "2+", "rules": ["Heavy 1 x2", "3\" Blast", "Gets Hot!"] }] },
+    { "id": "graviton-cannon", "name": "Graviton Cannon", "profiles": [{ "maxRange": 36, "strength": "*", "ap": "-", "rules": ["Heavy 1", "5\" Blast", "Grav"] }] },
+    { "id": "tank-graviton-cannon", "name": "Graviton Cannon", "profiles": [{ "maxRange": 48, "strength": "*", "ap": "-", "rules": ["Heavy 1", "5\" Blast", "Grav"] }] },
+    { "id": "conversion-beam-cannon-destroyer", "name": "Conversion Beam Cannon", "profiles": [{ "maxRange": 72, "strength": "D", "ap": "2+", "rules": ["Heavy 1", "Destroyer", "Beam", "Monsterbane"] }] },
+    { "id": "2-linked-magna-melta-cannons", "name": "2 Linked Magna Melta Cannons", "profiles": [{ "maxRange": 36, "strength": "8", "ap": "1+", "rules": ["Heavy 1 x2", "3\" Blast", "Melta", "(Monsterbane)"] }] },
+    { "id": "2-linked-infernus-cannons", "name": "2 Linked Infernus Cannons", "profiles": [{ "strength": "6", "ap": "4+", "rules": ["Assault 1 x2"] }], "templateType": "Hellstorm" },
+    { "id": "2-linked-volkite-calivers-sponson", "name": "2 Linked Volkite Calivers", "profiles": [{ "maxRange": 30, "strength": "5", "ap": "5+", "rules": ["Heavy 1 x2", "Beam"] }] },
+    { "id": "2-sets-2-linked-lascannons", "name": "2 Sets of 2 Linked Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x2 (x2)", "Monsterbane"] }] },
+    { "id": "2-sets-4-linked-lascannons", "name": "2 Sets of 4 Linked Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x4 (x2)", "Monsterbane"] }] },
+    { "id": "2-sets-3-linked-laser-destroyers", "name": "2 Sets of 3 Linked Laser Destroyers", "profiles": [{ "maxRange": 60, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x3 (x2)", "Ordnance", "Monsterbane"] }] },
+    { "id": "thunderfire-cannon", "name": "Thunderfire Cannon",
+      "profiles": [
+        { "label": "Direct", "maxRange": 60, "strength": "8", "ap": "3+", "rules": ["Heavy 4", "Monsterbane"] },
+        { "label": "Indirect", "maxRange": 60, "strength": "4", "ap": "5+", "rules": ["Heavy 4", "3\" Blast"] }
+      ]
+    },
+    { "id": "2-sets-2-linked-volkite-culverins", "name": "2 Sets of 2 Linked Volkite Culverins", "profiles": [{ "maxRange": 48, "strength": "6", "ap": "3+", "rules": ["Heavy 1 x2 (x2)", "Beam"] }] },
+    { "id": "2-sets-2-linked-multimeltas", "name": "2 Sets of 2 Linked Multimeltas", "profiles": [{ "maxRange": 24, "strength": "8", "ap": "1+", "rules": ["Heavy 2 x2 (x2)", "Melta", "(Monsterbane)"] }] },
+    {
+      "id": "volkite-cardanelle-autocannon", "name": "Volkite Cardanelle and Autocannon",
+      "profiles": [
+        { "label": "Volkite Cardanelle", "maxRange": 48, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "Coaxial", "Beam", "Monsterbane"] },
+        { "label": "Autocannon", "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2", "Coaxial", "Monsterbane"] }
+      ]
+    },
+    {
+      "id": "melta-blast-gun-autocannon", "name": "Melta Blast Gun and Autocannon",
+      "profiles": [
+        { "label": "Melta Blast Gun", "maxRange": 36, "strength": "8", "ap": "1+", "rules": ["Heavy 1", "Coaxial", "5\" Blast", "Melta", "(Monsterbane)"] },
+        { "label": "Autocannon", "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2", "Coaxial", "Monsterbane"] }
+      ]
+    },
+    {
+      "id": "kratos-battle-cannon-autocannon", "name": "Kratos Battle Cannon and Autocannon",
+      "profiles": [
+        { "label": "Battle Cannon", "maxRange": 72, "strength": "9", "ap": "2+", "rules": ["Heavy 1", "Coaxial", "5\" Blast", "Ordnance", "Monsterbane"] },
+        { "label": "Autocannon", "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2", "Coaxial", "Monsterbane"] }
+      ]
+    },
+    { "id": "demolisher-cannon", "name": "Demolisher Cannon", "profiles": [{ "maxRange": 24, "strength": "10", "ap": "2+", "rules": ["Heavy 1", "5\" Blast", "Ordnance", "Monsterbane"] }] },
+    { "id": "4-linked-laser-destroyers", "name": "4 Linked Laser Destroyers", "profiles": [{ "maxRange": 60, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x4", "Ordnance", "Monsterbane"] }] },
+    { "id": "whirlwind-hyperios-launcher", "name": "Whirlwind Hyperios Launcher", "profiles": [{ "maxRange": 36, "strength": "8", "ap": "3+", "rules": ["Heavy 2", "Monsterbane", "AA"] }] },
+    { "id": "scorpius-multilauncher", "name": "Scorpius Multilauncher", "profiles": [{ "maxRange": 48, "strength": "4", "ap": "6+", "rules": ["Heavy 1", "7\" Blast", "Indirect"] }] },
+    { "id": "whirlwind-launcher", "name": "Whirlwind Launcher", "profiles": [{ "minRange": 12, "maxRange": 72, "strength": "6", "ap": "4+", "rules": ["Heavy 1", "5\" Blast", "Indirect", "Pinning"] }] },
+    { "id": "sicaran-laser-cannon", "name": "Sicaran Laser Cannon", "profiles": [{ "maxRange": 48, "strength": "D", "ap": "2+", "rules": ["Heavy 1", "3\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "2-linked-herakles-autocannons", "name": "2 Linked Herakles Autocannons", "profiles": [{ "maxRange": 48, "strength": "8", "ap": "4+", "rules": ["Heavy 3 x2", "Monsterbane"] }] },
+    { "id": "2-linked-arcus-multilaunchers", "name": "2 Linked Arcus Multilaunchers", "profiles": [{ "maxRange": 48, "strength": "4", "ap": "6+", "rules": ["Heavy 1 x2", "7\" Blast"] }] },
+    { "id": "punisher-rotary-cannon", "name": "Punisher Rotary Cannon", "profiles": [{ "maxRange": 36, "strength": "6", "ap": "4+", "rules": ["Heavy 18"] }] },
+    { "id": "2-linked-omega-plasma-arrays", "name": "2 Linked Omega Plasma Arrays", "profiles": [{ "maxRange": 36, "strength": "7", "ap": "2+", "rules": ["Heavy 2 x2", "3\" Blast"] }] },
+
+    { "id": "2-linked-lascannons-hull", "name": "2 Linked Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x2", "Monsterbane"] }] },
+    { "id": "4-linked-autocannons", "name": "4 Linked Autocannons", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2 x4", "Monsterbane"] }] },
+    { "id": "2-linked-infernal-bomb-racks", "name": "2 Linked Infernal Bomb Racks", "profiles": [{ "strength": "6", "ap": "4+", "rules": ["Heavy 1 x2", "5\" Blast"] }], "templateType": "Bomb" },
+    { "id": "4-linked-lascannons", "name": "4 Linked Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x4", "Monsterbane"] }] },
+    { "id": "xiphon-missile-battery", "name": "Xiphon Missile Battery", "profiles": [{ "maxRange": 60, "strength": "7", "ap": "3+", "rules": ["Heavy 3"] }] },
+
+    { "id": "thermal-jet", "name": "Thermal Jet", "profiles": [{ "strength": "8", "ap": "1+", "rules": ["Assault 1", "Armourbane", "Monsterbane"] }], "templateType": "Bomb" },
+    { "id": "terrax-melta-cutter", "name": "Terrax Melta Cutter", "profiles": [{ "maxRange": 12, "strength": "8", "ap": "1+", "rules": ["Heavy 5", "Melta", "(Monsterbane)"] }] },
+    { "id": "terrax-storm-bolter", "name": "Storm Bolter", "profiles": [{ "maxRange": 24, "strength": "4", "ap": "5+", "rules": ["Rapid Fire 2"] }] },
+    { "id": "2-linked-terrax-volkite-chargers", "name": "2 Linked Terrax Volkite Chargers", "profiles": [{ "maxRange": 18, "strength": "5", "ap": "4+", "rules": ["Heavy 1", "Beam"] }] },
+    { "id": "termite-drill", "name": "Termite Drill", "profiles": [{ "strength": "X2", "ap": "1+", "rules": ["Accurate", "Monsterbane"] }] },
+
+    { "id": "2-linked-avenger-bolt-cannons", "name": "2 Linked Avenger Bolt Cannons", "profiles": [{ "maxRange": 36, "strength": "6", "ap": "3+", "rules": ["Heavy 12 x2"] }] },
+    { "id": "2-sets-2-linked-autocannons", "name": "2 Sets of 2 Linked Autocannons", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 2 x2 (x2)", "Monsterbane"] }] },
+    { "id": "2-sets-4-linked-heavy-bolters", "name": "2 Sets of 4 Linked Heavy Bolters", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3 x4 (x2)"] }] },
+    { "id": "4-linked-hellstrike-missiles", "name": "4 Linked Hellstrike Missiles", "profiles": [{ "maxRange": 72, "strength": "8", "ap": "3+", "rules": ["Heavy 1 x4", "Ordnance", "Monsterbane", "One Use Only"] }] },
+    { "id": "2-linked-hellstrike-missile-racks", "name": "2 Linked Hellstrike Missile Racks", "profiles": [{ "maxRange": 72, "strength": "8", "ap": "3+", "rules": ["Heavy 1 x2", "Ordnance", "Monsterbane"] }] },
+    { "id": "2-linked-vengeance-launchers", "name": "2 Linked Vengeance Launchers", "profiles": [{ "maxRange": 48, "strength": "6", "ap": "4+", "rules": ["Heavy 1 x2", "5\" Blast"] }] },
+    {
+      "id": "2-linked-missile-launchers", "name": "2 Linked Missile Launchers",
+      "profiles": [
+        { "label": "Krak", "maxRange": 48, "strength": "8", "ap": "3+", "rules": ["Heavy 1 x2", "Monsterbane"] },
+        { "label": "Frag", "maxRange": 48, "strength": "4", "ap": "6+", "rules": ["Heavy 1 x2", "3\" Blast"] }
+      ]
+    },
+    { "id": "2-linked-multimeltas", "name": "2 Linked Multimeltas", "profiles": [{ "maxRange": 24, "strength": "8", "ap": "1+", "rules": ["Heavy 2 x2", "Melta", "(Monsterbane)"] }] },
+    { "id": "thunderhawk-heavy-cannon", "name": "Thunderhawk Heavy Cannon", "profiles": [{ "maxRange": 72, "strength": "8", "ap": "3+", "rules": ["Heavy 1", "7\" Blast", "Ordnance", "Monsterbane"] }] },
+    { "id": "turbo-laser-destructor", "name": "Turbo Laser Destructor", "profiles": [{ "maxRange": 96, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "5\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "4-sets-2-linked-heavy-bolters", "name": "4 Sets of 2 Linked Heavy Bolters", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3 x2 (x4)"] }] },
+    { "id": "2-linked-cluster-bomb-racks", "name": "2 Linked Cluster Bomb Racks", "profiles": [{ "strength": "6", "ap": "4+", "rules": ["Heavy 1 x2", "Apocalypse Barrage"] }], "templateType": "Bomb" },
+
+    { "id": "2-linked-volcano-cannons", "name": "2 Linked Volcano Cannons", "profiles": [{ "maxRange": 120, "strength": "D", "ap": "1+", "rules": ["Heavy 1 x2", "5\" Blast", "Destroyer", "Monsterbane"] }] },
+    {
+      "id": "2-linked-accelerator-cannons", "name": "2 Linked Accelerator Cannons",
+      "profiles": [
+        { "label": "Anti-armour", "maxRange": 72, "strength": "D", "ap": "2+", "rules": ["Heavy 1 x2", "Destroyer", "Monsterbane"] },
+        { "label": "Bombardment", "maxRange": 72, "strength": "8", "ap": "3+", "rules": ["Heavy 1 x2", "5\" Blast", "Ordnance", "Monsterbane"] }
+      ]
+    },
+    { "id": "3-linked-neutron-pulses", "name": "3 Linked Neutron Pulses", "profiles": [{ "maxRange": 48, "strength": "D", "ap": "2+", "rules": ["Heavy 1 x3", "3\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "dreadhammer-siege-cannon", "name": "Dreadhammer Siege Cannon", "profiles": [{ "maxRange": 24, "strength": "10", "ap": "1+", "rules": ["Heavy 1", "10\" Blast", "Ordnance", "Monsterbane"] }] },
+    { "id": "2-sets-2-linked-heavy-bolters", "name": "2 Sets of 2 Linked Heavy Bolters", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3 x2 (x2)"] }] },
+
+    { "id": "5-cyclone-missile-launchers", "name": "5 Cyclone Missile Launchers",
+      "profiles": [
+        { "label": "Krak", "maxRange": 36, "strength": "8", "ap": "3+", "rules": ["Heavy 2", "Monsterbane"] },
+        { "label": "Frag", "maxRange": 36, "strength": "4", "ap": "6+", "rules": ["Heavy 2", "3\" Blast"] }
+      ]
+    },
+    { "id": "siege-melta-array", "name": "Siege Melta Array",
+      "profiles": [
+        { "label": "Center", "maxRange": 24, "strength": "8", "ap": "1+", "rules": ["Heavy 1", "5\" Blast", "Melta", "(Monsterbane)"] },
+        { "label": "Wings", "maxRange": 24, "strength": "8", "ap": "1+", "rules": ["Heavy 1 x2", "3\" Blast", "Melta", "(Monsterbane)"] }
+      ]
+    },
+    { "id": "2-linked-sky-reaper-batteries", "name": "2 Linked Sky Reaper Batteries", "profiles": [{ "maxRange": 48, "strength": "7", "ap": "4+", "rules": ["Heavy 4 x2", "Monsterbane", "AA"] }] },
+    { "id": "2-lascannons-mastodon", "name": "2 Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x2", "Monsterbane"] }] },
+    { "id": "2-heavy-flamers-mastodon", "name": "2 Heavy Flamers", "profiles": [{ "strength": "5", "ap": "4+", "rules": ["Assault 1"] }], "templateType": "Flame" },
+
+    { "id": "melta-cannon", "name": "Melta Cannon", "profiles": [{ "maxRange": 72, "strength": "10", "ap": "1+", "rules": ["Heavy 1", "10\" Blast", "Melta", "(Monsterbane)"] }] },
+    { "id": "volcano-cannon", "name": "Volcano Cannon", "profiles": [{ "maxRange": 180, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "7\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "laser-blaster", "name": "Laser Blaster", "profiles": [{ "maxRange": 96, "strength": "D", "ap": "1+", "rules": ["Heavy 3", "5\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "gatling-blaster", "name": "Gatling Blaster", "profiles": [{ "maxRange": 72, "strength": "8", "ap": "3+", "rules": ["Heavy 6", "5\" Blast", "Monsterbane"] }] },
+    {
+      "id": "titan-powerfist", "name": "Titan Powerfist",
+      "profiles": [
+        { "label": "Ranged", "maxRange": 6, "strength": "D", "ap": "1+", "rules": ["Assault 1", "5\" Blast", "Destroyer", "Monsterbane"] },
+        { "label": "Melee", "strength": "D", "ap": "1+", "rules": ["Slow", "Destroyer", "Monsterbane"] }
+      ]
+    },
+    { "id": "vulcan-megabolter", "name": "Vulcan Megabolter", "profiles": [{ "maxRange": 60, "strength": "6", "ap": "3+", "rules": ["Heavy 20"] }] },
+    { "id": "3-linked-titan-inferno-cannons", "name": "3 Linked Titan Inferno Cannons", "profiles": [{ "strength": "7", "ap": "3+", "rules": ["Assault 1 x3"] }], "templateType": "Hellstorm" },
+    { "id": "deathstrike-missile", "name": "Deathstrike Missile", "profiles": [{ "minRange": 12, "maxRange": 240, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "15\" Blast", "Destroyer", "Ordnance", "Monsterbane", "Indirect Fire", "Ignores Cover", "One Use Only"] }] },
+    { "id": "2-linked-turbo-laser-destructors", "name": "2 Linked Turbo Laser Destructors", "profiles": [{ "maxRange": 96, "strength": "D", "ap": "1+", "rules": ["Heavy 1 x2", "5\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "plasma-blastgun", "name": "Plasma Blastgun", "profiles": [{ "maxRange": 72, "strength": "9", "ap": "2+", "rules": ["Heavy 2", "7\" Blast", "Ordnance", "Monsterbane"] }] },
+    { "id": "apocalypse-missile-launcher", "name": "Apocalypse Missile Launcher", "profiles": [{ "minRange": 24, "maxRange": 240, "strength": "7", "ap": "3+", "rules": ["Heavy 1", "Indirect", "Apocalyptic Barrage"] }] },
+    { "id": "reaver-crushing-feet", "name": "Crushing Feet", "profiles": [{ "strength": "9", "ap": "1+", "rules": ["Heavy 2", "5\" Blast", "Does Not Hit Self", "Monsterbane"] }], "templateType": "Bomb" },
+    { "id": "nemesis-volcano-cannon", "name": "Nemesis Volcano Cannon", "profiles": [{ "minRange": 24, "maxRange": 120, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "7\" Blast", "Destroyer", "Monsterbane"] }] },
+    {
+      "id": "nemesis-quake-cannon", "name": "Nemesis Quake Cannon",
+      "profiles": [
+        { "label": "Main", "minRange": 24, "maxRange": 240, "strength": "10", "ap": "1+", "rules": ["Heavy 1", "Indirect", "15\" Blast", "Monsterbane", "Earthshock"] }
+      ]
+    },
+    { "id": "2-sets-4-linked-anvillus", "name": "2 Sets of 4 Linked Anvillus Defense Batteries", "profiles": [{ "maxRange": 72, "strength": "8", "ap": "4+", "rules": ["Heavy 2 x4 (x2)", "AA", "Monsterbane"] }] },
+    { "id": "3-ardex-defensor-maulers", "name": "3 Ardex Defensor Maulers", "profiles": [{ "maxRange": 36, "strength": "6", "ap": "3+", "rules": ["Pistol 6 x3"] }] },
+    { "id": "warhound-crushing-feet", "name": "Crushing Feet", "profiles": [{ "strength": "9", "ap": "1+", "rules": ["Heavy 3", "3\" Blast", "Does Not Hit Self", "Monsterbane"] }], "templateType": "Bomb" },
+    { "id": "2-sets-2-linked-turbo-laser-destructors", "name": "2 Sets of 2 Linked Turbo Laser Destructors", "profiles": [{ "minRange": 12, "maxRange": 96, "strength": "D", "ap": "1+", "rules": ["Heavy 1 x2 (x2)", "5\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "2-linked-apocalypse-missile-launchers", "name": "2 Linked Apocalypse Missile Launchers", "profiles": [{ "minRange": 24, "maxRange": 240, "strength": "7", "ap": "3+", "rules": ["Heavy 1 x2", "Indirect", "Apocalyptic Barrage"] }] },
+    { "id": "2-linked-laser-blasters", "name": "2 Linked Laser Blasters", "profiles": [{ "minRange": 12, "maxRange": 96, "strength": "D", "ap": "1+", "rules": ["Heavy 3 x2", "5\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "belicosa-volcano-cannon", "name": "Belicosa Volcano Cannon", "profiles": [{ "maxRange": 120, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "7\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "sunfury-plasma-annihilator", "name": "Sunfury Plasma Annihilator", "profiles": [{ "maxRange": 72, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "10\" Blast", "Destroyer", "Monsterbane"] }] },
+    { "id": "macro-gatling-blaster", "name": "Macro Gatling Blaster", "profiles": [{ "maxRange": 96, "strength": "9", "ap": "1+", "rules": ["Heavy 6", "5\" Blast", "Monsterbane"] }] },
+    {
+      "id": "mori-quake-cannon", "name": "Mori Quake Cannon",
+      "profiles": [
+        { "label": "Main", "maxRange": 240, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "Indirect", "15\" Blast", "Destroyer", "Monsterbane", "Earthshock"] }
+      ]
+    },
+    {
+      "id": "arioch-power-claw-vulcan-megabolter", "name": "Arioch Power Claw and Vulcan Megabolter",
+      "profiles": [
+        { "label": "Megabolter", "maxRange": 36, "strength": "6", "ap": "3+", "rules": ["Heavy 20"] },
+        { "label": "Arm Ranged", "maxRange": 12, "strength": "D", "ap": "1+", "rules": ["Heavy 1", "10\" Blast", "Destroyer", "Monsterbane"] },
+        { "label": "Arm Melee", "strength": "D", "ap": "1+", "rules": ["Slow", "Destroyer", "Monsterbane", "World Ending Hammer"] }
+      ]
+    },
+    { "id": "2-ardex-defensor-lascannons", "name": "2 Ardex Defensor Lascannons", "profiles": [{ "maxRange": 48, "strength": "9", "ap": "2+", "rules": ["Pistol 1 x2", "Monsterbane"] }] },
+    { "id": "2-ardex-defensor-maulers", "name": "2 Ardex Defensor Maulers", "profiles": [{ "maxRange": 36, "strength": "6", "ap": "3+", "rules": ["Pistol 6 x2"] }] },
+    { "id": "warlord-crushing-feet", "name": "Crushing Feet", "profiles": [{ "strength": "10", "ap": "1+", "rules": ["Heavy 1", "10\" Blast", "Does Not Hit Self", "Monsterbane"] }], "templateType": "Bomb" },
+    { "id": "warbringer-crushing-feet", "name": "Crushing Feet", "profiles": [{ "strength": "9", "ap": "1+", "rules": ["Heavy 1", "7\" Blast", "Does Not Hit Self", "Monsterbane"] }], "templateType": "Bomb" },
+
+    { "id": "4-linked-heavy-bolters-rapier", "name": "4 Linked Heavy Bolters", "profiles": [{ "maxRange": 36, "strength": "5", "ap": "4+", "rules": ["Heavy 3 x4"] }] },
+    { "id": "4-linked-laser-destroyers-rapier", "name": "4 Linked Laser Destroyers", "profiles": [{ "maxRange": 60, "strength": "9", "ap": "2+", "rules": ["Heavy 1 x4", "Monsterbane", "Ordnance"] }] }
+  ]
+}

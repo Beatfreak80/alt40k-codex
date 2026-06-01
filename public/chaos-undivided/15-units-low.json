@@ -1,0 +1,579 @@
+{
+  "units": [
+    {
+      "id": "fire-raptor-gunship",
+      "name": "Fire Raptor Gunship",
+      "slot": "Lord of War",
+      "basePts": 549,
+      "models": [
+        {
+          "id": "fire-raptor",
+          "name": "Fire Raptor",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 3, "S": 8, "FA": 12, "SA": 12, "RA": 10, "W": 18, "I": 1, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-avenger-bolt-cannons", "arcType": "Hull" },
+            { "weaponId": "2-sets-2-linked-autocannons", "arcType": "Sponson" },
+            { "weaponId": "4-linked-hellstrike-missiles", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "deepstrike", "fearless", "high-altitude", "hover", "night-vision", "shock-assault"]
+        }
+      ],
+      "options": [
+        { "id": "fr-sponson", "type": "weaponSwap", "scope": "perModelType", "applies": ["fire-raptor"], "label": "Swap 2 Sets of 2 Linked Autocannons for", "replaces": "2-sets-2-linked-autocannons", "choices": [
+          { "weaponId": "2-sets-4-linked-heavy-bolters", "label": "2 Sets of 4 Linked Heavy Bolters", "pts": 24, "arcType": "Sponson" }
+        ]},
+        { "id": "fr-missiles", "type": "weaponSwap", "scope": "perModelType", "applies": ["fire-raptor"], "label": "Swap 4 Linked Hellstrike Missiles for", "replaces": "4-linked-hellstrike-missiles", "choices": [
+          { "weaponId": "4-linked-lascannons", "label": "4 Linked Lascannons", "pts": 16, "arcType": "Hull" }
+        ]},
+        { "id": "fr-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "fr-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launchers-upgrade", "pts": 18 }
+      ]
+    },
+    {
+      "id": "sokar-stormbird",
+      "name": "Sokar Stormbird",
+      "slot": "Lord of War",
+      "basePts": 878,
+      "models": [
+        {
+          "id": "stormbird",
+          "name": "Stormbird",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 3, "S": 10, "FA": 12, "SA": 12, "RA": 10, "W": 40, "I": 1, "A": 9, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-heavy-bolters", "arcType": "Sponson" },
+            { "weaponId": "2-linked-heavy-bolters", "arcType": "Sponson" },
+            { "weaponId": "2-linked-heavy-bolters", "arcType": "Sponson" },
+            { "weaponId": "2-linked-heavy-bolters", "arcType": "Sponson" },
+            { "weaponId": "2-linked-heavy-bolters", "arcType": "Sponson" },
+            { "weaponId": "2-linked-hellstrike-missile-racks", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "deepstrike", "fearless", "high-altitude", "hover", "night-vision", "shock-assault"]
+        }
+      ],
+      "transport": { "capacity": 50, "accessPoints": ["Front", "Sides"], "firePorts": [] },
+      "inlineRules": [
+        { "id": "rhino-transport-sb", "name": "Rhino Transport", "shortDesc": "May Transport up to 1 Rhino (or Rhino Chassis model). These do not benefit from Assault Ramps.", "fullDesc": "This model may Transport up to 1 Rhino (or model that uses the Rhino Chassis). These do not benefit from the Assault Ramps." }
+      ],
+      "options": [
+        { "id": "sb-sponson", "type": "weaponSwap", "scope": "perModelType", "applies": ["stormbird"], "label": "Swap any 2 Linked Heavy Bolters for", "replaces": "2-linked-heavy-bolters", "choices": [
+          { "weaponId": "2-linked-lascannons-hull", "label": "2 Linked Lascannons", "pts": 18, "arcType": "Sponson" }
+        ]},
+        { "id": "sb-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "sb-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launchers-upgrade", "pts": 18 }
+      ]
+    },
+    {
+      "id": "storm-eagle-gunship",
+      "name": "Storm Eagle Gunship",
+      "slot": "Lord of War",
+      "basePts": 545,
+      "models": [
+        {
+          "id": "storm-eagle",
+          "name": "Storm Eagle",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 3, "S": 8, "FA": 12, "SA": 12, "RA": 10, "W": 18, "I": 1, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-vengeance-launchers", "arcType": "Hull" },
+            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" },
+            { "weaponId": "4-linked-hellstrike-missiles", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "deepstrike", "fearless", "high-altitude", "hover", "night-vision", "shock-assault"]
+        }
+      ],
+      "transport": { "capacity": 20, "accessPoints": ["Front", "Sides", "Rear"], "firePorts": [] },
+      "options": [
+        { "id": "se-sponson", "type": "weaponSwap", "scope": "perModelType", "applies": ["storm-eagle"], "label": "Swap 2 Sets of 2 Linked Autocannons for (sponson upgrade)", "replaces": "2-linked-heavy-bolters", "choices": [
+          { "weaponId": "2-linked-missile-launchers", "label": "2 Linked Missile Launchers", "pts": 10, "arcType": "Hull" },
+          { "weaponId": "2-linked-multimeltas", "label": "2 Linked Multimeltas", "pts": 20, "arcType": "Hull" }
+        ]},
+        { "id": "se-missiles", "type": "weaponSwap", "scope": "perModelType", "applies": ["storm-eagle"], "label": "Swap 4 Linked Hellstrike Missiles for", "replaces": "4-linked-hellstrike-missiles", "choices": [
+          { "weaponId": "4-linked-lascannons", "label": "4 Linked Lascannons", "pts": 16, "arcType": "Hull" }
+        ]},
+        { "id": "se-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "se-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launchers-upgrade", "pts": 18 }
+      ]
+    },
+    {
+      "id": "thunderhawk-gunship",
+      "name": "Thunderhawk Gunship",
+      "slot": "Lord of War",
+      "basePts": 828,
+      "models": [
+        {
+          "id": "thunderhawk",
+          "name": "Thunderhawk",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 3, "S": 10, "FA": 12, "SA": 12, "RA": 10, "W": 30, "I": 1, "A": 9, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "thunderhawk-heavy-cannon", "arcType": "Hull" },
+            { "weaponId": "2-linked-lascannons-hull", "arcType": "Hull" },
+            { "weaponId": "4-sets-2-linked-heavy-bolters", "arcType": "Sponson" },
+            { "weaponId": "2-linked-hellstrike-missile-racks", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "deepstrike", "fearless", "high-altitude", "hover", "night-vision", "shock-assault"]
+        }
+      ],
+      "transport": { "capacity": 30, "accessPoints": ["Front", "Sides"], "firePorts": [] },
+      "options": [
+        { "id": "thg-main", "type": "weaponSwap", "scope": "perModelType", "applies": ["thunderhawk"], "label": "Swap Thunderhawk Heavy Cannon for", "replaces": "thunderhawk-heavy-cannon", "choices": [
+          { "weaponId": "turbo-laser-destructor", "label": "Turbo Laser Destructor", "pts": 9, "arcType": "Hull" }
+        ]},
+        { "id": "thg-missiles", "type": "weaponSwap", "scope": "perModelType", "applies": ["thunderhawk"], "label": "Swap 2 Linked Hellstrike Missile Racks for", "replaces": "2-linked-hellstrike-missile-racks", "choices": [
+          { "weaponId": "2-linked-cluster-bomb-racks", "label": "2 Linked Cluster Bomb Racks", "pts": 88, "arcType": "Hull" }
+        ]},
+        { "id": "thg-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "thg-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launchers-upgrade", "pts": 18 }
+      ]
+    },
+    {
+      "id": "thunderhawk-transporter",
+      "name": "Thunderhawk Transporter",
+      "slot": "Lord of War",
+      "basePts": 755,
+      "models": [
+        {
+          "id": "thunderhawk-transporter",
+          "name": "Thunderhawk Transporter",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 3, "S": 10, "FA": 12, "SA": 12, "RA": 10, "W": 30, "I": 1, "A": 9, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-lascannons-hull", "arcType": "Hull" },
+            { "weaponId": "4-sets-2-linked-heavy-bolters", "arcType": "Sponson" },
+            { "weaponId": "2-linked-hellstrike-missile-racks", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "deepstrike", "fearless", "high-altitude", "hover", "night-vision", "shock-assault"]
+        }
+      ],
+      "transport": { "capacity": 15, "accessPoints": ["Front", "Sides"], "firePorts": [] },
+      "inlineRules": [
+        { "id": "tank-transport-tt", "name": "Tank Transport", "shortDesc": "May transport up to 2 Rhinos or 1 Land Raider (chassis). These do not benefit from Assault Ramps.", "fullDesc": "This model may Transport up to 2 Rhinos (or model that uses the Rhino Chassis) or 1 Land Raider (or model that uses a Land Raider Chassis). These do not benefit from the Assault Ramps." }
+      ],
+      "options": [
+        { "id": "tht-missiles", "type": "weaponSwap", "scope": "perModelType", "applies": ["thunderhawk-transporter"], "label": "Swap 2 Linked Hellstrike Missile Racks for", "replaces": "2-linked-hellstrike-missile-racks", "choices": [
+          { "weaponId": "2-linked-cluster-bomb-racks", "label": "2 Linked Cluster Bomb Racks", "pts": 88, "arcType": "Hull" }
+        ]},
+        { "id": "tht-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "tht-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launchers-upgrade", "pts": 18 }
+      ]
+    },
+    {
+      "id": "falchion",
+      "name": "Falchion",
+      "slot": "Lord of War",
+      "basePts": 599,
+      "models": [
+        {
+          "id": "falchion",
+          "name": "Falchion",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 3, "S": 8, "FA": 14, "SA": 14, "RA": 14, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-volcano-cannons", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "malicious-volleys", "fearless", "night-vision", "shock-assault"]
+        }
+      ],
+      "options": [
+        { "id": "fal-sponson", "type": "toggle", "label": "2 Sets of 4 Linked Lascannons (+144 pts)", "pts": 144, "grantsWargear": [{ "weaponId": "2-sets-4-linked-lascannons", "arcType": "Sponson" }] },
+        { "id": "fal-sponson-2", "type": "toggle", "label": "2 Sets of 3 Linked Laser Destroyers (+174 pts)", "pts": 174, "grantsWargear": [{ "weaponId": "2-sets-3-linked-laser-destroyers", "arcType": "Sponson" }] },
+        { "id": "fal-hkm", "type": "toggle", "label": "Hunter Killer Missile (+5 pts)", "pts": 5, "grantsWargear": [{ "weaponId": "hunter-killer-missile", "arcType": "Hull" }] },
+        { "id": "fal-pintle", "type": "weaponSwap", "scope": "limitedSlot", "slots": 1, "applies": ["falchion"], "label": "Pintle weapon", "weaponListId": "vehicle-pintles-low" },
+        { "id": "fal-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "fal-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "fal-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 20 }
+      ]
+    },
+    {
+      "id": "fellblade",
+      "name": "Fellblade",
+      "slot": "Lord of War",
+      "basePts": 844,
+      "models": [
+        {
+          "id": "fellblade",
+          "name": "Fellblade",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 3, "S": 8, "FA": 14, "SA": 14, "RA": 14, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-accelerator-cannons", "arcType": "Turret", "mountingTags": ["Primary"] },
+            { "weaponId": "demolisher-cannon", "arcType": "Hull" },
+            { "weaponId": "2-linked-heavy-flamers", "arcType": "Hull" },
+            { "weaponId": "2-sets-4-linked-lascannons", "arcType": "Sponson" }
+          ],
+          "specialRules": ["titanic", "malicious-volleys", "fearless", "night-vision", "shock-assault"]
+        }
+      ],
+      "options": [
+        { "id": "fell-hull2", "type": "weaponSwap", "scope": "perModelType", "applies": ["fellblade"], "label": "Swap 2 Linked Heavy Flamers (hull) for", "replaces": "2-linked-heavy-flamers", "choices": [
+          { "weaponId": "2-linked-heavy-bolters", "label": "2 Linked Heavy Bolters", "pts": 2, "arcType": "Hull" }
+        ]},
+        { "id": "fell-sponson", "type": "weaponSwap", "scope": "perModelType", "applies": ["fellblade"], "label": "Swap 2 Sets of 4 Linked Lascannons for", "replaces": "2-sets-4-linked-lascannons", "choices": [
+          { "weaponId": "2-sets-3-linked-laser-destroyers", "label": "2 Sets of 3 Linked Laser Destroyers", "pts": 30, "arcType": "Sponson" }
+        ]},
+        { "id": "fell-hkm", "type": "toggle", "label": "Hunter Killer Missile (+5 pts)", "pts": 5, "grantsWargear": [{ "weaponId": "hunter-killer-missile", "arcType": "Hull" }] },
+        { "id": "fell-pintle", "type": "weaponSwap", "scope": "limitedSlot", "slots": 1, "applies": ["fellblade"], "label": "Pintle weapon", "weaponListId": "vehicle-pintles-low" },
+        { "id": "fell-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "fell-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "fell-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 20 }
+      ]
+    },
+    {
+      "id": "cerberus",
+      "name": "Cerberus",
+      "slot": "Lord of War",
+      "basePts": 473,
+      "models": [
+        {
+          "id": "cerberus",
+          "name": "Cerberus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 3, "S": 8, "FA": 14, "SA": 14, "RA": 14, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "3-linked-neutron-pulses", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "malicious-volleys", "fearless", "night-vision", "shock-assault"]
+        }
+      ],
+      "options": [
+        { "id": "cer-sponson", "type": "toggle", "label": "2 Sets of 2 Linked Heavy Bolters (+36 pts)", "pts": 36, "grantsWargear": [{ "weaponId": "2-sets-2-linked-heavy-bolters", "arcType": "Sponson" }] },
+        { "id": "cer-sponson-las", "type": "toggle", "label": "2 Sets of 2 Linked Lascannons (+72 pts)", "pts": 72, "grantsWargear": [{ "weaponId": "2-sets-2-linked-lascannons", "arcType": "Sponson" }] },
+        { "id": "cer-hkm", "type": "toggle", "label": "Hunter Killer Missile (+5 pts)", "pts": 5, "grantsWargear": [{ "weaponId": "hunter-killer-missile", "arcType": "Hull" }] },
+        { "id": "cer-pintle", "type": "weaponSwap", "scope": "limitedSlot", "slots": 1, "applies": ["cerberus"], "label": "Pintle weapon", "weaponListId": "vehicle-pintles-low" },
+        { "id": "cer-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "cer-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "cer-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 20 }
+      ]
+    },
+    {
+      "id": "spartan",
+      "name": "Spartan",
+      "slot": "Lord of War",
+      "basePts": 599,
+      "models": [
+        {
+          "id": "spartan",
+          "name": "Spartan",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 3, "S": 8, "FA": 14, "SA": 14, "RA": 14, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-heavy-flamers", "arcType": "Hull" },
+            { "weaponId": "2-sets-4-linked-lascannons", "arcType": "Sponson" }
+          ],
+          "specialRules": ["titanic", "malicious-volleys", "fearless", "night-vision", "shock-assault"]
+        }
+      ],
+      "transport": { "capacity": 25, "accessPoints": ["Front"], "firePorts": [] },
+      "options": [
+        { "id": "spar-hull", "type": "weaponSwap", "scope": "perModelType", "applies": ["spartan"], "label": "Swap 2 Linked Heavy Flamers for", "replaces": "2-linked-heavy-flamers", "choices": [
+          { "weaponId": "2-linked-heavy-bolters", "label": "2 Linked Heavy Bolters", "pts": 2, "arcType": "Hull" }
+        ]},
+        { "id": "spar-sponson", "type": "weaponSwap", "scope": "perModelType", "applies": ["spartan"], "label": "Swap 2 Sets of 4 Linked Lascannons for", "replaces": "2-sets-4-linked-lascannons", "choices": [
+          { "weaponId": "2-sets-3-linked-laser-destroyers", "label": "2 Sets of 3 Linked Laser Destroyers", "pts": 30, "arcType": "Sponson" }
+        ]},
+        { "id": "spar-hkm", "type": "toggle", "label": "Hunter Killer Missile (+5 pts)", "pts": 5, "grantsWargear": [{ "weaponId": "hunter-killer-missile", "arcType": "Hull" }] },
+        { "id": "spar-pintle", "type": "weaponSwap", "scope": "limitedSlot", "slots": 1, "applies": ["spartan"], "label": "Pintle weapon", "weaponListId": "vehicle-pintles-low" },
+        { "id": "spar-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "spar-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "spar-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 20 }
+      ]
+    },
+    {
+      "id": "typhon",
+      "name": "Typhon",
+      "slot": "Lord of War",
+      "basePts": 482,
+      "models": [
+        {
+          "id": "typhon",
+          "name": "Typhon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 3, "S": 8, "FA": 14, "SA": 14, "RA": 14, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "dreadhammer-siege-cannon", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "malicious-volleys", "fearless", "night-vision", "shock-assault"]
+        }
+      ],
+      "options": [
+        { "id": "typ-sponson", "type": "toggle", "label": "2 Sets of 2 Linked Heavy Bolters (+36 pts)", "pts": 36, "grantsWargear": [{ "weaponId": "2-sets-2-linked-heavy-bolters", "arcType": "Sponson" }] },
+        { "id": "typ-sponson-las", "type": "toggle", "label": "2 Sets of 2 Linked Lascannons (+72 pts)", "pts": 72, "grantsWargear": [{ "weaponId": "2-sets-2-linked-lascannons", "arcType": "Sponson" }] },
+        { "id": "typ-hkm", "type": "toggle", "label": "Hunter Killer Missile (+5 pts)", "pts": 5, "grantsWargear": [{ "weaponId": "hunter-killer-missile", "arcType": "Hull" }] },
+        { "id": "typ-pintle", "type": "weaponSwap", "scope": "limitedSlot", "slots": 1, "applies": ["typhon"], "label": "Pintle weapon", "weaponListId": "vehicle-pintles-low" },
+        { "id": "typ-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "typ-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "typ-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 20 }
+      ]
+    },
+    {
+      "id": "kharybdis-assault-claw",
+      "name": "Kharybdis Assault Claw",
+      "slot": "Lord of War",
+      "basePts": 537,
+      "models": [
+        {
+          "id": "assault-claw",
+          "name": "Assault Claw",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 12, "WS": 3, "BS": 3, "S": 8, "FA": 12, "SA": 12, "RA": 12, "W": 20, "I": 4, "A": 6, "Ld": 7, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "thermal-jet", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "bladed-struts" },
+            { "weaponId": "5-cyclone-missile-launchers", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "combat-walker", "deepstrike", "flyer"]
+        }
+      ],
+      "transport": { "capacity": 20, "accessPoints": ["Front", "Sides", "Rear"], "firePorts": [] },
+      "inlineRules": [
+        { "id": "khary-dreadnought-module", "name": "Dreadnought Module", "shortDesc": "May carry one Dreadnought with W13 or less instead of 10 Transport capacity.", "fullDesc": "This model may carry one Dreadnought with W13 or less instead of 10 of its Transport capability." }
+      ],
+      "options": [
+        { "id": "kac-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]}
+      ]
+    },
+    {
+      "id": "mastodon",
+      "name": "Mastodon",
+      "slot": "Lord of War",
+      "basePts": 880,
+      "models": [
+        {
+          "id": "mastodon",
+          "name": "Mastodon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 3, "S": 9, "FA": 15, "SA": 15, "RA": 14, "W": 30, "I": 1, "A": 9, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "siege-melta-array", "arcType": "Hull" },
+            { "weaponId": "2-linked-sky-reaper-batteries", "arcType": "Turret" },
+            { "weaponId": "2-lascannons-mastodon", "arcType": "Hull" },
+            { "weaponId": "2-heavy-flamers-mastodon", "arcType": "Hull" }
+          ],
+          "specialRules": ["titanic", "fearless", "night-vision", "shock-assault"]
+        }
+      ],
+      "transport": { "capacity": 40, "accessPoints": ["Front", "Rear"], "firePorts": [] },
+      "inlineRules": [
+        { "id": "void-shields-2", "name": "Void Shields 2", "shortDesc": "This model has 2 Void Shields.", "fullDesc": "Void Shields 2." },
+        { "id": "mastodon-dreadnought-transport", "name": "Dreadnought Transport", "shortDesc": "May transport up to 2 Dreadnoughts with 13 or fewer Wounds.", "fullDesc": "May transport up to 2 Dreadnoughts with 13 or less Wounds." }
+      ],
+      "options": [
+        { "id": "mast-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]},
+        { "id": "mast-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
+        { "id": "mast-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 20 }
+      ]
+    },
+    {
+      "id": "reaver-titan",
+      "name": "Reaver Titan",
+      "slot": "Lord of War",
+      "basePts": 1451,
+      "models": [
+        {
+          "id": "reaver",
+          "name": "Reaver",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 16, "WS": 3, "BS": 3, "S": 9, "FA": 14, "SA": 14, "RA": 13, "W": 70, "I": 4, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "melta-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "melta-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "reaver-crushing-feet" }
+          ],
+          "specialRules": ["titanic", "combat-walker", "fearless", "night-vision", "steady"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "void-shields-4", "name": "Void Shields 4", "shortDesc": "This model has 4 Void Shields.", "fullDesc": "Void Shields 4." },
+        { "id": "create-panic-reaver", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves (up to 1\" away). Immobile units prevent movement there.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
+        { "id": "nuclear-meltdown-reaver", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 3d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 3d6\" Radius." },
+        { "id": "titanic-god-engine", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." }
+      ],
+      "options": [
+        { "id": "rea-arm", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["reaver"], "label": "Swap either Melta Cannon for", "replaces": "melta-cannon", "choices": [
+          { "weaponId": "volcano-cannon", "label": "Volcano Cannon", "pts": 1, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "laser-blaster", "label": "Laser Blaster", "pts": 85, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "gatling-blaster", "label": "Gatling Blaster", "pts": 142, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "titan-powerfist", "label": "Titan Powerfist", "pts": 143, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "rea-carapace", "type": "toggle", "label": "Vulcan Megabolter (+39 pts)", "pts": 39, "grantsWargear": [{ "weaponId": "vulcan-megabolter", "arcType": "Hull", "mountingTags": ["Primary"] }] },
+        { "id": "rea-carapace-2", "type": "toggle", "label": "3 Linked Titan Inferno Cannons (+120 pts)", "pts": 120, "grantsWargear": [{ "weaponId": "3-linked-titan-inferno-cannons", "arcType": "Hull", "mountingTags": ["Primary"] }] },
+        { "id": "rea-carapace-3", "type": "toggle", "label": "Deathstrike Missile (+133 pts)", "pts": 133, "grantsWargear": [{ "weaponId": "deathstrike-missile", "arcType": "Hull" }] },
+        { "id": "rea-carapace-4", "type": "toggle", "label": "2 Linked Turbo Laser Destructors (+144 pts)", "pts": 144, "grantsWargear": [{ "weaponId": "2-linked-turbo-laser-destructors", "arcType": "Hull", "mountingTags": ["Primary"] }] },
+        { "id": "rea-carapace-5", "type": "toggle", "label": "Plasma Blastgun (+154 pts)", "pts": 154, "grantsWargear": [{ "weaponId": "plasma-blastgun", "arcType": "Hull", "mountingTags": ["Primary"] }] },
+        { "id": "rea-carapace-6", "type": "toggle", "label": "Apocalypse Missile Launcher (+170 pts)", "pts": 170, "grantsWargear": [{ "weaponId": "apocalypse-missile-launcher", "arcType": "Hull", "mountingTags": ["Primary"] }] },
+        { "id": "rea-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]}
+      ]
+    },
+    {
+      "id": "warbringer-nemesis",
+      "name": "Warbringer Nemesis",
+      "slot": "Lord of War",
+      "basePts": 2047,
+      "models": [
+        {
+          "id": "nemesis",
+          "name": "Nemesis",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 14, "WS": 5, "BS": 3, "S": 9, "FA": 14, "SA": 14, "RA": 13, "W": 100, "I": 4, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "nemesis-volcano-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "melta-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "melta-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-sets-4-linked-anvillus", "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "3-ardex-defensor-maulers", "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "warbringer-crushing-feet" }
+          ],
+          "specialRules": ["titanic", "combat-walker", "fearless", "night-vision", "steady"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "void-shields-6-nemesis", "name": "Void Shields 6", "shortDesc": "This model has 6 Void Shields.", "fullDesc": "Void Shields 6." },
+        { "id": "create-panic-nemesis", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
+        { "id": "nuclear-meltdown-nemesis", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ in a 4d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 4d6\" Radius." },
+        { "id": "titanic-god-engine-nemesis", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for movement.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." },
+        { "id": "earthshock-nemesis", "name": "Earthshock", "shortDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase.", "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase." }
+      ],
+      "options": [
+        { "id": "nem-main", "type": "weaponSwap", "scope": "perModelType", "applies": ["nemesis"], "label": "Swap Nemesis Volcano Cannon for", "replaces": "nemesis-volcano-cannon", "choices": [
+          { "weaponId": "nemesis-quake-cannon", "label": "Nemesis Quake Cannon", "pts": 86, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "nem-arm", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["nemesis"], "label": "Swap either Melta Cannon for", "replaces": "melta-cannon", "choices": [
+          { "weaponId": "volcano-cannon", "label": "Volcano Cannon", "pts": 1, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "laser-blaster", "label": "Laser Blaster", "pts": 85, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "gatling-blaster", "label": "Gatling Blaster", "pts": 142, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "nem-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]}
+      ]
+    },
+    {
+      "id": "warhound-titan",
+      "name": "Warhound Titan",
+      "slot": "Lord of War",
+      "basePts": 975,
+      "models": [
+        {
+          "id": "warhound",
+          "name": "Warhound",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 20, "WS": 5, "BS": 3, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 50, "I": 4, "A": 6, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "vulcan-megabolter", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "vulcan-megabolter", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "warhound-crushing-feet" }
+          ],
+          "specialRules": ["titanic", "combat-walker", "fearless", "night-vision", "steady"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "void-shields-1", "name": "Void Shields 1", "shortDesc": "This model has 1 Void Shield.", "fullDesc": "Void Shields 1." },
+        { "id": "create-panic-warhound", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
+        { "id": "nuclear-meltdown-warhound", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ in a 2d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 2d6\" Radius." },
+        { "id": "titanic-god-engine-warhound", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for movement.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." }
+      ],
+      "options": [
+        { "id": "wh-arm", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["warhound"], "label": "Swap either Vulcan Megabolter for", "replaces": "vulcan-megabolter", "choices": [
+          { "weaponId": "3-linked-titan-inferno-cannons", "label": "3 Linked Titan Inferno Cannons", "pts": 81, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "2-linked-turbo-laser-destructors", "label": "2 Linked Turbo Laser Destructors", "pts": 105, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "plasma-blastgun", "label": "Plasma Blastgun", "pts": 115, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "wh-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]}
+      ]
+    },
+    {
+      "id": "warlord-titan",
+      "name": "Warlord Titan",
+      "slot": "Lord of War",
+      "basePts": 2564,
+      "models": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 12, "WS": 3, "BS": 3, "S": 10, "FA": 14, "SA": 14, "RA": 13, "W": 120, "I": 4, "A": 9, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-sets-2-linked-turbo-laser-destructors", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "belicosa-volcano-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "belicosa-volcano-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-ardex-defensor-lascannons", "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "2-ardex-defensor-maulers", "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "warlord-crushing-feet" }
+          ],
+          "specialRules": ["titanic", "combat-walker", "fearless", "night-vision", "steady"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "void-shields-6-warlord", "name": "Void Shields 6", "shortDesc": "This model has 6 Void Shields.", "fullDesc": "Void Shields 6." },
+        { "id": "create-panic-warlord", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
+        { "id": "nuclear-meltdown-warlord", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ in a 6d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 6d6\" Radius." },
+        { "id": "towering-god-engine", "name": "Towering God Engine", "shortDesc": "This model may only be hit on a 5+ or worse in Melee.", "fullDesc": "This model may only be hit on a 5+ or worse in Melee." },
+        { "id": "titanic-god-engine-warlord", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for movement.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." },
+        { "id": "uparmoured", "name": "Uparmoured", "shortDesc": "Only Ardex Defensor weapons may be disabled on this model.", "fullDesc": "Only Ardex Defensor weapons may be disabled on this model." },
+        { "id": "world-ending-hammer", "name": "World Ending Hammer", "shortDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" (24\" for Titanic), scattering and causing Auto Hits.", "fullDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away, scattering like a template and causing Auto Hits against each model underneath them at their S# with AP-. Titanic units can be thrown this way, but only up to 24\" Instead and inflict S# AP2+. Roll for Explodes after the slain unit comes to a rest and Auto Hits are resolved." },
+        { "id": "earthshock-warlord", "name": "Earthshock", "shortDesc": "Units Hit by this Template move at Half Speed until next Command Phase.", "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase." }
+      ],
+      "options": [
+        { "id": "warl-carapace", "type": "weaponSwap", "scope": "perModelType", "applies": ["warlord"], "label": "Swap 2 Sets of 2 Linked Turbo Laser Destructors for", "replaces": "2-sets-2-linked-turbo-laser-destructors", "choices": [
+          { "weaponId": "2-linked-apocalypse-missile-launchers", "label": "2 Linked Apocalypse Missile Launchers", "pts": 58, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "2-linked-laser-blasters", "label": "2 Linked Laser Blasters", "pts": 138, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "warl-arm", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["warlord"], "label": "Swap either Belicosa Volcano Cannon for", "replaces": "belicosa-volcano-cannon", "choices": [
+          { "weaponId": "sunfury-plasma-annihilator", "label": "Sunfury Plasma Annihilator", "pts": 31, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "macro-gatling-blaster", "label": "Macro Gatling Blaster", "pts": 158, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "mori-quake-cannon", "label": "Mori Quake Cannon", "pts": 165, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "arioch-power-claw-vulcan-megabolter", "label": "Arioch Power Claw and Vulcan Megabolter", "pts": 423, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "warl-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 17 }, { "markId": "nurgle", "pts": 30 }, { "markId": "slaanesh", "pts": 20 }, { "markId": "tzeentch", "pts": 24 }
+        ]}
+      ]
+    }
+  ]
+}

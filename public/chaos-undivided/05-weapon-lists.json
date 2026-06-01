@@ -1,0 +1,69 @@
+{
+  "weaponLists": {
+    "vehicle-pintles-standard": [
+      { "weaponId": "combi-volkite", "label": "Combi Volkite", "pts": 6 },
+      { "weaponId": "stormbolter", "label": "Stormbolter", "pts": 7 },
+      { "weaponId": "combi-flamer", "label": "Combi Flamer", "pts": 10 },
+      { "weaponId": "combi-plasma", "label": "Combi Plasma", "pts": 12 },
+      { "weaponId": "havoc-launcher", "label": "Havoc Launcher", "pts": 13 },
+      { "weaponId": "heavy-bolter", "label": "Heavy Bolter", "pts": 13 },
+      { "weaponId": "combi-melta", "label": "Combi Melta", "pts": 27 },
+      { "weaponId": "multimelta", "label": "Multimelta", "pts": 31 }
+    ],
+    "vehicle-pintles-low": [
+      { "weaponId": "stormbolter", "label": "Stormbolter", "pts": 7 },
+      { "weaponId": "combi-flamer", "label": "Combi Flamer", "pts": 10 },
+      { "weaponId": "combi-plasma", "label": "Combi Plasma", "pts": 12 },
+      { "weaponId": "combi-melta", "label": "Combi Melta", "pts": 27 },
+      { "weaponId": "multimelta", "label": "Multimelta", "pts": 31 }
+    ],
+    "chaos-marine-special": [
+      { "weaponId": "flamer", "label": "Flamer", "pts": 5 },
+      { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 7 },
+      { "weaponId": "plasma-gun", "label": "Plasma Gun", "pts": 7 },
+      { "weaponId": "meltagun", "label": "Meltagun", "pts": 22 }
+    ],
+    "hq-melee": [
+      { "weaponId": "brutal-weapon", "label": "Brutal Weapon", "pts": 0 },
+      { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 },
+      { "weaponId": "chain-axe", "label": "Chain Axe", "pts": 1 },
+      { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+      { "weaponId": "lightning-claw", "label": "Lightning Claw", "pts": 6 },
+      { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+      { "weaponId": "power-maul", "label": "Power Maul", "pts": 8 },
+      { "weaponId": "powerfist", "label": "Powerfist", "pts": 16 },
+      { "weaponId": "daemonic-blade", "label": "Daemonic Blade", "pts": 17 },
+      { "weaponId": "great-weapon", "label": "Great Weapon", "pts": 17 },
+      { "weaponId": "chain-fist", "label": "Chain Fist", "pts": 21 },
+      { "weaponId": "thunderhammer", "label": "Thunderhammer", "pts": 28 }
+    ],
+    "hq-ranged": [
+      { "weaponId": "boltgun", "label": "Boltgun", "pts": 1 },
+      { "weaponId": "combi-flamer", "label": "Combi Flamer", "pts": 6 },
+      { "weaponId": "plasma-gun", "label": "Plasma Gun", "pts": 7 },
+      { "weaponId": "combi-plasma", "label": "Combi Plasma", "pts": 8 },
+      { "weaponId": "meltagun", "label": "Meltagun", "pts": 22 },
+      { "weaponId": "combi-melta", "label": "Combi Melta", "pts": 23 }
+    ],
+    "hq-pistol": [
+      { "weaponId": "bolt-pistol", "label": "Bolt Pistol", "pts": 0 },
+      { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 7 }
+    ],
+    "terminator-ranged": [
+      { "weaponId": "stormbolter", "label": "Stormbolter", "pts": 0 },
+      { "weaponId": "combi-flamer", "label": "Combi Flamer", "pts": 3 },
+      { "weaponId": "combi-plasma", "label": "Combi Plasma", "pts": 8 },
+      { "weaponId": "combi-melta", "label": "Combi Melta", "pts": 23 },
+      { "weaponId": "lightning-claw", "label": "Lightning Claw (as ranged swap)", "pts": 0 }
+    ],
+    "terminator-melee": [
+      { "weaponId": "chain-axe", "label": "Chain Axe", "pts": 0 },
+      { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+      { "weaponId": "lightning-claw", "label": "Lightning Claw", "pts": 6 },
+      { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+      { "weaponId": "shock-maul", "label": "Shock Maul", "pts": 8 },
+      { "weaponId": "powerfist", "label": "Powerfist", "pts": 16 },
+      { "weaponId": "chain-fist", "label": "Chain Fist", "pts": 21 }
+    ]
+  }
+}

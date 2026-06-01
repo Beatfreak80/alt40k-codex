@@ -1,0 +1,498 @@
+{
+  "units": [
+    {
+      "id": "chaos-lord",
+      "name": "Chaos Lord",
+      "slot": "HQ",
+      "basePts": 169,
+      "models": [
+        {
+          "id": "lord",
+          "name": "Lord",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 5, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["bolt-pistol", "brutal-weapon", "frag-grenades", "krak-grenades", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "infantry", "malicious-volleys", "night-vision", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "options": [
+        { "id": "lord-pistol", "type": "weaponSwap", "scope": "perModelType", "applies": ["lord"], "label": "Swap Bolt Pistol for", "replaces": "bolt-pistol", "choices": [
+          { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 7 }
+        ]},
+        { "id": "lord-ranged", "type": "weaponSwap", "scope": "perModelType", "applies": ["lord"], "label": "Swap Bolt Pistol for ranged weapon", "replaces": "bolt-pistol", "weaponListId": "hq-ranged" },
+        { "id": "lord-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["lord"], "label": "Swap Brutal Weapon for", "replaces": "brutal-weapon", "weaponListId": "hq-melee" },
+        { "id": "lord-grenades", "type": "weaponSwap", "scope": "perModelType", "applies": ["lord"], "label": "Swap Krak Grenades for Meltabombs", "replaces": "krak-grenades", "choices": [
+          { "weaponId": "meltabombs", "label": "Meltabombs", "pts": 5 }
+        ]},
+        { "id": "lord-terminator-armour", "type": "namedUpgrade", "upgradeId": "terminator-armour", "pts": 16 },
+        { "id": "lord-jump-pack", "type": "namedUpgrade", "upgradeId": "jump-pack", "pts": 20 },
+        { "id": "lord-bike", "type": "namedUpgrade", "upgradeId": "bike", "pts": 24 },
+        { "id": "lord-palanquin", "type": "namedUpgrade", "upgradeId": "palanquin", "pts": 31 },
+        { "id": "lord-juggernaut", "type": "namedUpgrade", "upgradeId": "juggernaut-steed", "pts": 28 },
+        { "id": "lord-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 },
+          { "markId": "nurgle", "pts": 15 },
+          { "markId": "slaanesh", "pts": 7 },
+          { "markId": "tzeentch", "pts": 12 },
+          { "markId": "undivided", "pts": 10 }
+        ]},
+        { "id": "lord-blessing", "type": "pureBlessingPick", "label": "Pure Blessing", "requiresOptionId": "lord-mark", "choices": [
+          { "markId": "khorne", "pts": 6 },
+          { "markId": "nurgle", "pts": 4 },
+          { "markId": "slaanesh", "pts": 6 },
+          { "markId": "tzeentch", "pts": 4 }
+        ]}
+      ]
+    },
+    {
+      "id": "chaos-sorcerer",
+      "name": "Chaos Sorcerer",
+      "slot": "HQ",
+      "basePts": 218,
+      "models": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 5, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["bolt-pistol", "force-staff", "frag-grenades", "krak-grenades", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "infantry", "night-vision", "shock-assault"]
+        }
+      ],
+      "psychic": { "masteryLevel": 3, "spellPoolId": "$mark", "masteryUpgrade": { "toLevel": 4, "pts": 75 } },
+      "options": [
+        { "id": "sorc-pistol", "type": "weaponSwap", "scope": "perModelType", "applies": ["sorcerer"], "label": "Swap Bolt Pistol for", "replaces": "bolt-pistol", "choices": [
+          { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 7 }
+        ]},
+        { "id": "sorc-ranged", "type": "weaponSwap", "scope": "perModelType", "applies": ["sorcerer"], "label": "Swap Bolt Pistol for ranged weapon", "replaces": "bolt-pistol", "weaponListId": "hq-ranged" },
+        { "id": "sorc-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["sorcerer"], "label": "Swap Force Staff for", "replaces": "force-staff", "choices": [
+          { "weaponId": "lightning-claw", "label": "Lightning Claw", "pts": 0 },
+          { "weaponId": "force-axe", "label": "Force Axe", "pts": 5 },
+          { "weaponId": "powerfist", "label": "Powerfist", "pts": 9 },
+          { "weaponId": "daemonic-blade", "label": "Daemonic Blade", "pts": 10 },
+          { "weaponId": "great-weapon", "label": "Great Weapon", "pts": 10 }
+        ]},
+        { "id": "sorc-grenades", "type": "weaponSwap", "scope": "perModelType", "applies": ["sorcerer"], "label": "Swap Krak Grenades for Meltabombs", "replaces": "krak-grenades", "choices": [
+          { "weaponId": "meltabombs", "label": "Meltabombs", "pts": 5 }
+        ]},
+        { "id": "sorc-terminator-armour", "type": "namedUpgrade", "upgradeId": "terminator-armour", "pts": 16 },
+        { "id": "sorc-jump-pack", "type": "namedUpgrade", "upgradeId": "jump-pack", "pts": 20 },
+        { "id": "sorc-bike", "type": "namedUpgrade", "upgradeId": "bike", "pts": 24 },
+        { "id": "sorc-palanquin", "type": "namedUpgrade", "upgradeId": "palanquin", "pts": 31 },
+        { "id": "sorc-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 },
+          { "markId": "nurgle", "pts": 15 },
+          { "markId": "slaanesh", "pts": 7 },
+          { "markId": "tzeentch", "pts": 12 },
+          { "markId": "undivided", "pts": 10 }
+        ]},
+        { "id": "sorc-blessing", "type": "pureBlessingPick", "label": "Pure Blessing", "requiresOptionId": "sorc-mark", "choices": [
+          { "markId": "khorne", "pts": 6 },
+          { "markId": "nurgle", "pts": 4 },
+          { "markId": "slaanesh", "pts": 6 },
+          { "markId": "tzeentch", "pts": 4 }
+        ]},
+        { "id": "sorc-spell-1", "type": "spellPick", "spellPoolId": "$mark" },
+        { "id": "sorc-spell-2", "type": "spellPick", "spellPoolId": "$mark" },
+        { "id": "sorc-spell-3", "type": "spellPick", "spellPoolId": "$mark" }
+      ]
+    },
+    {
+      "id": "daemon-prince",
+      "name": "Daemon Prince",
+      "slot": "HQ",
+      "basePts": 264,
+      "models": [
+        {
+          "id": "prince",
+          "name": "Prince",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monster", "M": 8, "WS": 2, "BS": 2, "S": 7, "T": 6, "W": 8, "I": 8, "A": 6, "Ld": 10, "Sv": 3 },
+          "baseWargear": ["malefic-talons", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "monster", "daemonic", "deepstrike", "fearless", "night-vision", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "options": [
+        { "id": "prince-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["prince"], "label": "Swap Malefic Talons for", "replaces": "malefic-talons", "choices": [
+          { "weaponId": "power-sword", "label": "Power Sword", "pts": 2 },
+          { "weaponId": "daemonic-blade", "label": "Daemonic Blade", "pts": 18 }
+        ]},
+        { "id": "prince-ranged", "type": "toggle", "label": "Infernal Cannon (+10 pts)", "pts": 10, "grantsWargear": ["infernal-cannon"] },
+        { "id": "prince-daemon-flames", "type": "toggle", "label": "Daemonic Flames (+11 pts)", "pts": 11, "grantsWargear": ["daemonic-flames"] },
+        { "id": "prince-wings", "type": "namedUpgrade", "upgradeId": "foetid-wings", "pts": 15 },
+        { "id": "prince-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 },
+          { "markId": "nurgle", "pts": 15 },
+          { "markId": "slaanesh", "pts": 9 },
+          { "markId": "tzeentch", "pts": 0 },
+          { "markId": "undivided", "pts": 10 }
+        ]},
+        { "id": "prince-blessing", "type": "pureBlessingPick", "label": "Pure Blessing", "requiresOptionId": "prince-mark", "choices": [
+          { "markId": "khorne", "pts": 6 },
+          { "markId": "nurgle", "pts": 4 },
+          { "markId": "slaanesh", "pts": 13 },
+          { "markId": "tzeentch", "pts": 4 }
+        ]},
+        { "id": "prince-collar", "type": "toggle", "label": "Collar of Khorne (+5 pts)", "pts": 5, "grantsWargear": ["collar-of-khorne"] },
+        { "id": "prince-psychic-1", "type": "toggle", "label": "Psychic Mastery Level 1 (+10 pts)", "pts": 10 },
+        { "id": "prince-psychic-2", "type": "toggle", "label": "Psychic Mastery Level 2 (+25 pts)", "pts": 25 },
+        { "id": "prince-psychic-3", "type": "toggle", "label": "Psychic Mastery Level 3 (+75 pts)", "pts": 75 },
+        { "id": "prince-spell-1", "type": "spellPick", "spellPoolId": "$mark" }
+      ]
+    },
+    {
+      "id": "dark-apostle",
+      "name": "Dark Apostle",
+      "slot": "HQ",
+      "basePts": 167,
+      "models": [
+        {
+          "id": "apostle",
+          "name": "Apostle",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 5, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["bolt-pistol", "brutal-weapon", "frag-grenades", "krak-grenades", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "infantry", "malicious-volleys", "night-vision", "shock-assault", "dark-zealotry"]
+        }
+      ],
+      "options": [
+        { "id": "apostle-pistol", "type": "weaponSwap", "scope": "perModelType", "applies": ["apostle"], "label": "Swap Bolt Pistol for", "replaces": "bolt-pistol", "choices": [
+          { "weaponId": "stormbolter", "label": "Stormbolter", "pts": 4 },
+          { "weaponId": "plasma-gun", "label": "Plasma Gun", "pts": 7 }
+        ]},
+        { "id": "apostle-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["apostle"], "label": "Swap Brutal Weapon for", "replaces": "brutal-weapon", "choices": [
+          { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 },
+          { "weaponId": "chain-axe", "label": "Chain Axe", "pts": 1 },
+          { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+          { "weaponId": "lightning-claw", "label": "Lightning Claw", "pts": 6 },
+          { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+          { "weaponId": "power-maul", "label": "Power Maul", "pts": 8 },
+          { "weaponId": "accursed-crozius", "label": "Accursed Crozius", "pts": 15 },
+          { "weaponId": "powerfist", "label": "Powerfist", "pts": 16 },
+          { "weaponId": "daemonic-blade", "label": "Daemonic Blade", "pts": 17 },
+          { "weaponId": "great-weapon", "label": "Great Weapon", "pts": 17 }
+        ]},
+        { "id": "apostle-grenades", "type": "weaponSwap", "scope": "perModelType", "applies": ["apostle"], "label": "Swap Krak Grenades for Meltabombs", "replaces": "krak-grenades", "choices": [
+          { "weaponId": "meltabombs", "label": "Meltabombs", "pts": 5 }
+        ]},
+        { "id": "apostle-terminator-armour", "type": "namedUpgrade", "upgradeId": "terminator-armour", "pts": 16 },
+        { "id": "apostle-jump-pack", "type": "namedUpgrade", "upgradeId": "jump-pack", "pts": 20 },
+        { "id": "apostle-bike", "type": "namedUpgrade", "upgradeId": "bike", "pts": 24 },
+        { "id": "apostle-palanquin", "type": "namedUpgrade", "upgradeId": "palanquin", "pts": 31 },
+        { "id": "apostle-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 },
+          { "markId": "nurgle", "pts": 15 },
+          { "markId": "slaanesh", "pts": 7 },
+          { "markId": "tzeentch", "pts": 12 },
+          { "markId": "undivided", "pts": 10 }
+        ]},
+        { "id": "apostle-blessing", "type": "pureBlessingPick", "label": "Pure Blessing", "requiresOptionId": "apostle-mark", "choices": [
+          { "markId": "khorne", "pts": 6 },
+          { "markId": "nurgle", "pts": 4 },
+          { "markId": "slaanesh", "pts": 6 },
+          { "markId": "tzeentch", "pts": 4 }
+        ]},
+        { "id": "apostle-omen-potency", "type": "toggle", "label": "Omen of Potency (+18 pts)", "pts": 18 },
+        { "id": "apostle-litany-despair", "type": "toggle", "label": "Litany of Despair (+20 pts)", "pts": 20 },
+        { "id": "apostle-warpsight-plea", "type": "toggle", "label": "Warpsight Plea (+80 pts)", "pts": 80 },
+        { "id": "apostle-illusory-supplication", "type": "toggle", "label": "Illusory Supplication (+120 pts)", "pts": 120 }
+      ],
+      "inlineRules": [
+        { "id": "omen-of-potency", "name": "Omen of Potency", "shortDesc": "This model gains A+3.", "fullDesc": "This model gains A+3." },
+        { "id": "litany-of-despair", "name": "Litany of Despair", "shortDesc": "6\" Aura: target unit takes Ld tests by rolling 3d6 and discarding the lowest die.", "fullDesc": "6\" Aura, target unit takes Ld tests by rolling 3d6 and discarding the lowest die." },
+        { "id": "warpsight-plea", "name": "Warpsight Plea", "shortDesc": "6\" Aura: this model and target unit gain BS-1 (Improves by 1).", "fullDesc": "6\" Aura, this model and target unit gain BS-1 (Improves by 1)." },
+        { "id": "illusory-supplication", "name": "Illusory Supplication", "shortDesc": "6\" Aura: target unit gains a 5+ Invulnerability Save or improves existing by 1 (max 4+).", "fullDesc": "6\" Aura, target unit gains a 5+ Invulnerability Save or has their existing Invulnerability Save improved by 1 to a maximum of 4+." }
+      ]
+    },
+    {
+      "id": "dark-commune",
+      "name": "Dark Commune",
+      "slot": "HQ",
+      "basePts": 266,
+      "models": [
+        {
+          "id": "demagogue",
+          "name": "Demagogue",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 7, "Sv": 6 },
+          "baseWargear": ["autopistol", "brutal-weapon"],
+          "specialRules": ["independent-character", "infantry", "lord-of-chaos"]
+        },
+        {
+          "id": "icon-bearer",
+          "name": "Icon Bearer",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 7, "Sv": 6 },
+          "baseWargear": ["autopistol", "brutal-weapon", "icon-of-chaos"],
+          "specialRules": ["character", "infantry"]
+        },
+        {
+          "id": "mindwitch",
+          "name": "Mindwitch",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 7, "Sv": 6 },
+          "baseWargear": ["brutal-weapon"],
+          "specialRules": ["character", "infantry"]
+        },
+        {
+          "id": "blessed-blade",
+          "name": "Blessed Blade",
+          "minCount": 2,
+          "maxCount": 2,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 7, "Sv": 6 },
+          "baseWargear": ["great-weapon"],
+          "specialRules": ["character", "infantry", "bodyguard"]
+        }
+      ],
+      "psychic": { "masteryLevel": 2, "spellPoolId": "$mark" },
+      "options": [
+        { "id": "commune-dem-pistol", "type": "weaponSwap", "scope": "perModelType", "applies": ["demagogue"], "label": "Demagogue — swap Autopistol for", "replaces": "autopistol", "choices": [
+          { "weaponId": "bolt-pistol", "label": "Bolt Pistol", "pts": 2 },
+          { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 9 }
+        ]},
+        { "id": "commune-dem-ranged", "type": "weaponSwap", "scope": "perModelType", "applies": ["demagogue"], "label": "Demagogue — swap Autopistol for ranged", "replaces": "autopistol", "choices": [
+          { "weaponId": "boltgun", "label": "Boltgun", "pts": 2 },
+          { "weaponId": "plasma-gun", "label": "Plasma Gun", "pts": 9 },
+          { "weaponId": "meltagun", "label": "Meltagun", "pts": 24 }
+        ]},
+        { "id": "commune-dem-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["demagogue"], "label": "Demagogue — swap Brutal Weapon for", "replaces": "brutal-weapon", "choices": [
+          { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 },
+          { "weaponId": "chain-axe", "label": "Chain Axe", "pts": 0 },
+          { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+          { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+          { "weaponId": "mauler-chainblade", "label": "Mauler Chainblade", "pts": 7 },
+          { "weaponId": "power-maul", "label": "Power Maul", "pts": 8 },
+          { "weaponId": "powerfist", "label": "Powerfist", "pts": 16 },
+          { "weaponId": "great-weapon", "label": "Great Weapon", "pts": 17 }
+        ]},
+        { "id": "commune-ib-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["icon-bearer"], "label": "Icon Bearer — swap Brutal Weapon for", "replaces": "brutal-weapon", "choices": [
+          { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 },
+          { "weaponId": "chain-axe", "label": "Chain Axe", "pts": 0 },
+          { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+          { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+          { "weaponId": "mauler-chainblade", "label": "Mauler Chainblade", "pts": 7 },
+          { "weaponId": "power-maul", "label": "Power Maul", "pts": 8 },
+          { "weaponId": "powerfist", "label": "Powerfist", "pts": 16 },
+          { "weaponId": "great-weapon", "label": "Great Weapon", "pts": 17 }
+        ]},
+        { "id": "commune-spell-1", "type": "spellPick", "spellPoolId": "$mark" },
+        { "id": "commune-spell-2", "type": "spellPick", "spellPoolId": "$mark" },
+        { "id": "commune-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 40 },
+          { "markId": "nurgle", "pts": 75 },
+          { "markId": "slaanesh", "pts": 35 },
+          { "markId": "tzeentch", "pts": 60 },
+          { "markId": "undivided", "pts": 50 }
+        ]},
+        { "id": "commune-blessing", "type": "pureBlessingPick", "label": "Pure Blessing", "requiresOptionId": "commune-mark", "choices": [
+          { "markId": "khorne", "pts": 30 },
+          { "markId": "nurgle", "pts": 20 },
+          { "markId": "slaanesh", "pts": 30 },
+          { "markId": "tzeentch", "pts": 20 }
+        ]}
+      ]
+    },
+    {
+      "id": "abaddon",
+      "name": "Abaddon the Despoiler",
+      "slot": "HQ",
+      "isUnique": true,
+      "chapterRestriction": "black-legion",
+      "basePts": 611,
+      "models": [
+        {
+          "id": "abaddon",
+          "name": "Abaddon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 2, "BS": 2, "S": 5, "T": 5, "W": 8, "I": 10, "A": 7, "Ld": 10, "Sv": 3 },
+          "baseWargear": ["talon-of-horus", "drach-nyen", "orbital-strike", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "monstrous-infantry", "daemonic", "malicious-volleys", "deepstrike", "fearless", "night-vision", "shock-assault", "stubborn"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "champion-of-chaos", "name": "Champion of Chaos", "shortDesc": "Does not require Mark of Undivided; counts as all Marks for Pure Blessings.", "fullDesc": "This model does not require a Mark of Undivided to field in your army and is considered to be all Marks of Chaos for the purpose of Pure Blessings of Chaos." },
+        { "id": "champion-of-undivided", "name": "Champion of Undivided", "shortDesc": "12\" True Aura: all friendly units may reroll 1s To Hit.", "fullDesc": "12\" True Aura, this model and all friendly units may reroll 1s To Hit." },
+        { "id": "mark-of-chaos-ascended", "name": "Mark of Chaos Ascended", "shortDesc": "6\" Aura: this model and target unit automatically pass Ld tests.", "fullDesc": "6\" Aura, this model and target unit automatically pass Ld tests." },
+        { "id": "the-hour-is-nigh-abaddon", "name": "The Hour is Nigh", "shortDesc": "Place a marker on field; barrage strikes next Command Phase (15\" Blast, scatter normally).", "fullDesc": "When the weapon is fired, place a marker on field at a valid target. In your next Command Phase, the barrage strikes! Scatter like normal, following the 15\" Blast radius rules." },
+        { "id": "t-minus-5-abaddon", "name": "T Minus 5", "shortDesc": "Cannot fire Turn 1. If carrier is destroyed, Orbital Strike still hits.", "fullDesc": "The weapon may not be fired Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits in your Command Phase." }
+      ]
+    },
+    {
+      "id": "be-lakor",
+      "name": "Be'Lakor",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 385,
+      "models": [
+        {
+          "id": "be-lakor",
+          "name": "Be'Lakor",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monster", "M": 8, "WS": 2, "BS": 2, "S": 7, "T": 6, "W": 8, "I": 8, "A": 6, "Ld": 10, "Sv": 3 },
+          "baseWargear": ["blade-of-shadows", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "monster", "daemonic", "deepstrike", "fearless", "night-vision", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "psychic": { "masteryLevel": 3, "spellPoolId": "hereticus" },
+      "inlineRules": [
+        { "id": "lord-of-torment", "name": "Lord of Torment", "shortDesc": "6\" Aura: target unit suffers Ld-1.", "fullDesc": "6\" Aura, target unit suffers Ld-1." },
+        { "id": "shadow-form", "name": "Shadow Form", "shortDesc": "This model may reroll failed Saves.", "fullDesc": "This model may reroll failed Saves." }
+      ],
+      "options": [
+        { "id": "belakor-ascended", "type": "toggle", "label": "Ascended (+111 pts)", "pts": 111, "note": "M+4, S+1, T+1, W+8, I+1, Sv+1 (Worsens by 1), gain Flying." },
+        { "id": "belakor-spell-1", "type": "spellPick", "spellPoolId": "hereticus" },
+        { "id": "belakor-spell-2", "type": "spellPick", "spellPoolId": "hereticus" },
+        { "id": "belakor-spell-3", "type": "spellPick", "spellPoolId": "hereticus" }
+      ]
+    },
+    {
+      "id": "haarken-worldclaimer",
+      "name": "Haarken Worldclaimer",
+      "slot": "HQ",
+      "isUnique": true,
+      "chapterRestriction": "black-legion",
+      "basePts": 217,
+      "models": [
+        {
+          "id": "haarken",
+          "name": "Haarken",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 12, "WS": 2, "BS": 5, "S": 4, "T": 4, "W": 5, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["helspear", "heralds-talon", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "infantry", "bulky", "deepstrike", "flyer", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "herald-of-abaddon", "name": "Herald of Abaddon", "shortDesc": "6\" Aura: target unit must take a Fear Test. Units in Melee cannot Fall Back or use Hit and Run.", "fullDesc": "6\" Aura, target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run." }
+      ]
+    },
+    {
+      "id": "huron-blackheart",
+      "name": "Huron Blackheart",
+      "slot": "HQ",
+      "isUnique": true,
+      "chapterRestriction": "red-corsairs",
+      "basePts": 244,
+      "models": [
+        {
+          "id": "huron",
+          "name": "Huron",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 5, "I": 4, "A": 5, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["tyrants-claw", "power-axe", "frag-grenades", "krak-grenades", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "infantry", "night-vision", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "psychic": { "masteryLevel": 1, "spellPoolId": "hereticus" },
+      "inlineRules": [
+        { "id": "tyrant-of-badab", "name": "Tyrant of Badab", "shortDesc": "6\" Aura: target unit suffers Ld-2.", "fullDesc": "6\" Aura, target unit suffers Ld-2." }
+      ],
+      "options": [
+        { "id": "huron-exalted", "type": "toggle", "label": "Exalted (+11 pts)", "pts": 11, "note": "W+1.", "statModifiers": [{ "modelId": "huron", "stat": "W", "op": "add", "value": 1 }] },
+        { "id": "huron-spell-1", "type": "spellPick", "spellPoolId": "hereticus" }
+      ]
+    },
+    {
+      "id": "kranon-the-relentless",
+      "name": "Kranon the Relentless",
+      "slot": "HQ",
+      "isUnique": true,
+      "chapterRestriction": "crimson-slaughter",
+      "basePts": 241,
+      "models": [
+        {
+          "id": "kranon",
+          "name": "Kranon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 5, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["plasma-pistol", "power-sword", "frag-grenades", "krak-grenades", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "infantry", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "the-hunt-for-the-stone", "name": "The Hunt for the Stone", "shortDesc": "6\" Aura: this model and target unit gains Objective Secured.", "fullDesc": "6\" Aura, this model and target unit gains Objective Secured." }
+      ]
+    },
+    {
+      "id": "kravek-morne",
+      "name": "Kravek Morne",
+      "slot": "HQ",
+      "isUnique": true,
+      "chapterRestriction": "iron-warriors",
+      "basePts": 349,
+      "models": [
+        {
+          "id": "morne",
+          "name": "Morne",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 4, "WS": 2, "BS": 2, "S": 4, "T": 5, "W": 7, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["stormbolter", "baleflamer", "last-argument", "powerfist", "servo-arm", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "monstrous-infantry", "malicious-volleys", "deepstrike", "steady", "shock-assault", "very-bulky"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "fortress-breaker", "name": "Fortress Breaker", "shortDesc": "12\" True Aura: when an affected model destroys Terrain and enemy must Force Disembark, they suffer 1 Autowound each instead of Dangerous Terrain Tests.", "fullDesc": "12\" True Aura, when an affected model destroys a Terrain piece and the enemy within has to Force Disembark, they suffer 1 Autowound each instead of taking Dangerous Terrain Tests like normal." },
+        { "id": "repair-morne", "name": "Repair", "shortDesc": "Target model in base contact Repairs 1 Wound; roll d6, 5+ to restore service for Weapon Disabled/Crew Shaken/Immobilized/Weapon Destroyed.", "fullDesc": "Target model in base contact Repairs 1 Wound. Roll a d6, on a 5+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed." }
+      ]
+    },
+    {
+      "id": "lord-arkos",
+      "name": "Lord Arkos the Faithless",
+      "slot": "HQ",
+      "isUnique": true,
+      "chapterRestriction": "the-faithless",
+      "basePts": 368,
+      "models": [
+        {
+          "id": "arkos",
+          "name": "Arkos",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 5, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["combi-melta", "black-blade-of-venom", "frag-grenades", "krak-grenades", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "infantry", "malicious-volleys", "night-vision", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "master-of-shadow-warfare", "name": "Master of Shadow Warfare", "shortDesc": "This model and its unit may Infiltrate.", "fullDesc": "This model and unit it is part of may Infiltrate." },
+        { "id": "sow-discontent", "name": "Sow Discontent", "shortDesc": "During the first Turn, all enemy models suffer Ld-1.", "fullDesc": "During the first Turn, all enemy models suffer Ld-1." }
+      ]
+    },
+    {
+      "id": "vashtorr",
+      "name": "Vashtorr the Arkifane",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 394,
+      "models": [
+        {
+          "id": "vashtorr",
+          "name": "Vashtorr",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monster", "M": 12, "WS": 2, "BS": 5, "S": 7, "T": 7, "W": 12, "I": 8, "A": 6, "Ld": 10, "Sv": "-" },
+          "baseWargear": ["vashtorrs-hammer", "vashtorrs-claw", "sigil-of-corruption"],
+          "specialRules": ["independent-character", "monster", "daemonic", "deepstrike", "fearless", "flyer", "shock-assault", "lord-of-chaos"]
+        }
+      ],
+      "inlineRules": [
+        { "id": "lord-of-terror", "name": "Lord of Terror", "shortDesc": "6\" Aura: target unit must take a Fear Test.", "fullDesc": "6\" Aura, target unit must take a Fear Test." },
+        { "id": "mind-in-the-machine", "name": "Mind in the Machine", "shortDesc": "In the Shooting Phase, target a non-Titanic Vehicle within 24\" and shoot one of its weapons.", "fullDesc": "In the shooting phase, target a non-Titanic Vehicle model within 24\" and shoot one weapon of your choice. You are allowed to target models friendly to the Vehicle, but not itself." },
+        { "id": "unholy-mechanisms", "name": "Unholy Mechanisms", "shortDesc": "6\" Aura: target Daemonic Engine unit gains +1 To Wound.", "fullDesc": "6\" Aura, target Daemonic Engine unit gains +1 To Wound." }
+      ]
+    }
+  ]
+}

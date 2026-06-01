@@ -73,8 +73,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .stripe-b td { background: #fafafa !important; }
 .rules-col { text-align: left !important; font-size: 8.5pt; color: #444; }
 .arc-col { font-size: 8pt; color: #888; }
-.mp-first td { border-bottom: none; font-weight: 600; }
-.mp-cont td { border-bottom: 1px solid #f0f0f0; font-size: 8.5pt; color: #666; }
+.mp-cont td {}
 
 .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 2px; }
 .pill { display: inline-flex; align-items: baseline; gap: 5px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 3px; padding: 2px 8px; font-size: 9pt; line-height: 1.4; cursor: default; position: relative; }
@@ -1355,8 +1354,7 @@ td:first-child { text-align: left; font-weight: 600; }
 tr:last-child td { border-bottom: none; }
 .stripe-a td { background: #fff; }
 .stripe-b td { background: #fafafa; }
-.mp-first td { border-bottom: none; font-weight: 600; }
-.mp-cont td { border-bottom: 1px solid #f0f0f0; font-size: 8.5pt; color: #666; }
+.mp-cont td {}
 .rules-col { text-align: left !important; font-size: 8pt; color: #444; }
 .rule-name { font-weight: 700; font-size: 9pt; }
 .option-list { list-style: none; }

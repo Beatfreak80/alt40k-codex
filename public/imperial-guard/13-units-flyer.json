@@ -11,20 +11,67 @@
           "name": "Aquila Lander",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 6, "FA": 11, "SA": 11, "RA": 11, "W": 12, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 12,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "heavy-bolter", "arcType": "Turret", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "heavy-bolter",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ],
-          "specialRules": ["vehicle", "high-altitude", "hover", "deepstrike"],
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "hover",
+            "deepstrike"
+          ],
           "inlineRules": [
-            { "id": "aql-transport", "name": "Transport 7", "shortDesc": "Transport capacity 7. Access Front.", "fullDesc": "This model may transport up to 7 models. Access: Front." },
-            { "id": "aql-command", "name": "Command Ship", "shortDesc": "Infantry Orders may be issued from Embarked units on this model with +12\" radius.", "fullDesc": "Infantry Orders may be issued from Embarked units on this model with a +12\" Radius." }
+            {
+              "id": "aql-transport",
+              "name": "Transport 7",
+              "shortDesc": "Transport capacity 7. Access Front.",
+              "fullDesc": "This model may transport up to 7 models. Access: Front."
+            },
+            {
+              "id": "aql-command",
+              "name": "Command Ship",
+              "shortDesc": "Infantry Orders may be issued from Embarked units on this model with +12\" radius.",
+              "fullDesc": "Infantry Orders may be issued from Embarked units on this model with a +12\" Radius."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "aql-main", "type": "weaponSwap", "label": "Swap Heavy Bolter for", "replaces": "heavy-bolter", "weaponListId": "aquila-main" },
-        { "id": "aql-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "aql-main",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Heavy Bolter for",
+          "replaces": "heavy-bolter",
+          "weaponListId": "aquila-main"
+        },
+        {
+          "id": "aql-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     },
     {
@@ -39,10 +86,34 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 132,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 8, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
-          "specialRules": ["vehicle", "high-altitude", "hover", "deepstrike"],
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 8,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "hover",
+            "deepstrike"
+          ],
           "inlineRules": [
-            { "id": "arv-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "arv-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
@@ -50,19 +121,73 @@
         {
           "id": "arv-hull",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Add Hull Primary Weapon",
           "choices": [
-            { "weaponId": "2-linked-heavy-stubbers", "label": "2 Linked Heavy Stubbers", "pts": 10, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-multilasers", "label": "2 Linked Multilasers", "pts": 12, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-autocannons", "label": "2 Linked Autocannons", "pts": 16, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-hellstrike-missiles", "label": "2 Linked Hellstrike Missiles", "pts": 16, "arcType": "Hull", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "2-linked-heavy-stubbers",
+              "label": "2 Linked Heavy Stubbers",
+              "pts": 10,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-multilasers",
+              "label": "2 Linked Multilasers",
+              "pts": 12,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-autocannons",
+              "label": "2 Linked Autocannons",
+              "pts": 16,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-hellstrike-missiles",
+              "label": "2 Linked Hellstrike Missiles",
+              "pts": 16,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
-        { "id": "arv-sponson", "type": "weaponSwap", "label": "Add Sponson Weapon", "choices": [
-          { "weaponId": "multilaser", "label": "Multilaser", "pts": 9, "arcType": "Sponson" }
-        ]},
-        { "id": "arv-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 },
-        { "id": "arv-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 }
+        {
+          "id": "arv-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Weapon",
+          "choices": [
+            {
+              "weaponId": "multilaser",
+              "label": "Multilaser",
+              "pts": 9,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "arv-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        },
+        {
+          "id": "arv-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        }
       ]
     },
     {
@@ -77,30 +202,96 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 202,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 10, "RA": 10, "W": 14, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 10,
+            "RA": 10,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "avenger-bolt-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-lascannons", "arcType": "Hull" },
-            { "weaponId": "heavy-stubber", "arcType": "Hull" }
+            {
+              "weaponId": "avenger-bolt-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-lascannons",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-stubber",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["vehicle", "high-altitude", "deepstrike"]
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "deepstrike"
+          ]
         }
       ],
       "options": [
         {
           "id": "asf-wing",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Add Wing Weapons",
           "choices": [
-            { "weaponId": "2-linked-multilasers", "label": "2 Linked Multilasers", "pts": 12, "arcType": "Hull" },
-            { "weaponId": "2-linked-autocannons", "label": "2 Linked Autocannons", "pts": 16, "arcType": "Hull" },
-            { "weaponId": "2-linked-hellstrike-missiles", "label": "2 Linked Hellstrike Missiles", "pts": 16, "arcType": "Hull" },
-            { "weaponId": "2-linked-tactical-bomb-racks", "label": "2 Linked Tactical Bomb Racks", "pts": 16, "arcType": "Hull" },
-            { "weaponId": "2-linked-hellfury-missiles", "label": "2 Linked Hellfury Missiles", "pts": 18, "arcType": "Hull" },
-            { "weaponId": "2-linked-missile-launchers", "label": "2 Linked Missile Launchers", "pts": 24, "arcType": "Hull" }
+            {
+              "weaponId": "2-linked-multilasers",
+              "label": "2 Linked Multilasers",
+              "pts": 12,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-autocannons",
+              "label": "2 Linked Autocannons",
+              "pts": 16,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellstrike-missiles",
+              "label": "2 Linked Hellstrike Missiles",
+              "pts": 16,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-tactical-bomb-racks",
+              "label": "2 Linked Tactical Bomb Racks",
+              "pts": 16,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellfury-missiles",
+              "label": "2 Linked Hellfury Missiles",
+              "pts": 18,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-missile-launchers",
+              "label": "2 Linked Missile Launchers",
+              "pts": 24,
+              "arcType": "Hull"
+            }
           ]
         },
-        { "id": "asf-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "asf-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     },
     {
@@ -115,26 +306,75 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 167,
-          "statline": { "type": "vehicle", "M": 60, "WS": 5, "BS": 4, "S": 6, "FA": 11, "SA": 10, "RA": 10, "W": 10, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 60,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 11,
+            "SA": 10,
+            "RA": 10,
+            "W": 10,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "long-barreled-autocannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-lascannons", "arcType": "Hull" }
+            {
+              "weaponId": "long-barreled-autocannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-lascannons",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["vehicle", "high-altitude", "deepstrike", "interceptor"]
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "deepstrike",
+            "interceptor"
+          ]
         }
       ],
       "options": [
         {
           "id": "lsf-wing",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Add Wing Weapon",
           "choices": [
-            { "weaponId": "tactical-bomb-racks", "label": "Tactical Bomb Racks", "pts": 8, "arcType": "Hull" },
-            { "weaponId": "hellstrike-missile-racks", "label": "Hellstrike Missile Racks", "pts": 17, "arcType": "Hull" },
-            { "weaponId": "hellfury-missile-racks", "label": "Hellfury Missile Racks", "pts": 19, "arcType": "Hull" }
+            {
+              "weaponId": "tactical-bomb-racks",
+              "label": "Tactical Bomb Racks",
+              "pts": 8,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "hellstrike-missile-racks",
+              "label": "Hellstrike Missile Racks",
+              "pts": 17,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "hellfury-missile-racks",
+              "label": "Hellfury Missile Racks",
+              "pts": 19,
+              "arcType": "Hull"
+            }
           ]
         },
-        { "id": "lsf-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "lsf-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     },
     {
@@ -149,26 +389,71 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 207,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 6, "FA": 11, "SA": 11, "RA": 10, "W": 15, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 11,
+            "SA": 11,
+            "RA": 10,
+            "W": 15,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "wing-commander-autocannons", "arcType": "Hull" },
-            { "weaponId": "2-linked-lascannons", "arcType": "Hull" }
+            {
+              "weaponId": "wing-commander-autocannons",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-lascannons",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["vehicle", "high-altitude", "deepstrike"]
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "deepstrike"
+          ]
         }
       ],
       "options": [
         {
           "id": "tbd-wing",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Add Wing Weapons",
           "choices": [
-            { "weaponId": "2-linked-tactical-bomb-racks", "label": "2 Linked Tactical Bomb Racks", "pts": 16, "arcType": "Hull" },
-            { "weaponId": "2-linked-hellstrike-missile-racks", "label": "2 Linked Hellstrike Missile Racks", "pts": 32, "arcType": "Hull" },
-            { "weaponId": "2-linked-hellfury-missile-racks", "label": "2 Linked Hellfury Missile Racks", "pts": 36, "arcType": "Hull" }
+            {
+              "weaponId": "2-linked-tactical-bomb-racks",
+              "label": "2 Linked Tactical Bomb Racks",
+              "pts": 16,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellstrike-missile-racks",
+              "label": "2 Linked Hellstrike Missile Racks",
+              "pts": 32,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellfury-missile-racks",
+              "label": "2 Linked Hellfury Missile Racks",
+              "pts": 36,
+              "arcType": "Hull"
+            }
           ]
         },
-        { "id": "tbd-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "tbd-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     },
     {
@@ -183,26 +468,94 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 220,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 12, "RA": 10, "W": 14, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 12,
+            "RA": 10,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "multilaser", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-hellstrike-missiles", "arcType": "Hull" },
+            {
+              "weaponId": "multilaser",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-hellstrike-missiles",
+              "arcType": "Hull"
+            },
             "searchlight"
           ],
-          "specialRules": ["vehicle", "high-altitude", "hover", "deepstrike"],
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "hover",
+            "deepstrike"
+          ],
           "inlineRules": [
-            { "id": "val-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Sides and Rear.", "fullDesc": "This model may transport up to 12 models. Access: Sides and Rear." },
-            { "id": "val-grav", "name": "Grav Chute Insertion", "shortDesc": "Embarked units may deploy anywhere along the Movement Path taken this turn, each taking a Dangerous Terrain Test.", "fullDesc": "Embarked Units may deploy anywhere along the Movement Path the Valkyrie took this turn. If a unit chooses to Disembark this way, each model must take a Dangerous Terrain Test." }
+            {
+              "id": "val-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Sides and Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Sides and Rear."
+            },
+            {
+              "id": "val-grav",
+              "name": "Grav Chute Insertion",
+              "shortDesc": "Embarked units may deploy anywhere along the Movement Path taken this turn, each taking a Dangerous Terrain Test.",
+              "fullDesc": "Embarked Units may deploy anywhere along the Movement Path the Valkyrie took this turn. If a unit chooses to Disembark this way, each model must take a Dangerous Terrain Test."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "val-main", "type": "weaponSwap", "label": "Swap Multilaser for", "replaces": "multilaser", "weaponListId": "valkyrie-main" },
-        { "id": "val-sponson", "type": "weaponSwap", "label": "Add Sponson Weapons", "choices": [
-          { "weaponId": "2-linked-heavy-bolters", "label": "2 Linked Heavy Bolters", "pts": 18, "arcType": "Sponson" }
-        ]},
-        { "id": "val-weapons", "type": "weaponSwap", "label": "Swap Hellstrike Missiles for", "replaces": "2-linked-hellstrike-missiles", "weaponListId": "valkyrie-weapons" },
-        { "id": "val-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "val-main",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Multilaser for",
+          "replaces": "multilaser",
+          "weaponListId": "valkyrie-main"
+        },
+        {
+          "id": "val-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Weapons",
+          "choices": [
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "label": "2 Linked Heavy Bolters",
+              "pts": 18,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "val-weapons",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Hellstrike Missiles for",
+          "replaces": "2-linked-hellstrike-missiles",
+          "weaponListId": "valkyrie-weapons"
+        },
+        {
+          "id": "val-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     },
     {
@@ -217,29 +570,112 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 192,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 12, "RA": 10, "W": 14, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 12,
+            "RA": 10,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "multilaser", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-hellstrike-missiles", "arcType": "Hull" },
+            {
+              "weaponId": "multilaser",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-hellstrike-missiles",
+              "arcType": "Hull"
+            },
             "searchlight"
           ],
-          "specialRules": ["vehicle", "high-altitude", "hover", "deepstrike"],
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "hover",
+            "deepstrike"
+          ],
           "inlineRules": [
-            { "id": "vst-transport", "name": "Transport (Special)", "shortDesc": "May Embark up to 2 Sentinel variants or 1 Tauros variant.", "fullDesc": "This model may Embark up to 2 Sentinel variants or 1 Tauros variant." }
+            {
+              "id": "vst-transport",
+              "name": "Transport (Special)",
+              "shortDesc": "May Embark up to 2 Sentinel variants or 1 Tauros variant.",
+              "fullDesc": "This model may Embark up to 2 Sentinel variants or 1 Tauros variant."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "vst-main", "type": "weaponSwap", "label": "Swap Multilaser for", "replaces": "multilaser", "choices": [
-          { "weaponId": "multilaser", "label": "Multilaser", "pts": 0, "arcType": "Hull", "mountingTags": ["Primary"] },
-          { "weaponId": "lascannon", "label": "Lascannon", "pts": 6, "arcType": "Hull", "mountingTags": ["Primary"] }
-        ]},
-        { "id": "vst-weapons", "type": "weaponSwap", "label": "Swap Hellstrike Missiles for", "replaces": "2-linked-hellstrike-missiles", "choices": [
-          { "weaponId": "2-linked-hellstrike-missiles", "label": "2 Linked Hellstrike Missiles", "pts": 0, "arcType": "Hull" },
-          { "weaponId": "2-linked-hellfury-missiles", "label": "2 Linked Hellfury Missiles", "pts": 2, "arcType": "Hull" },
-          { "weaponId": "2-linked-multiple-rocket-pods", "label": "2 Linked Multiple Rocket Pods", "pts": 2, "arcType": "Hull" }
-        ]},
-        { "id": "vst-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "vst-main",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Multilaser for",
+          "replaces": "multilaser",
+          "choices": [
+            {
+              "weaponId": "multilaser",
+              "label": "Multilaser",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "lascannon",
+              "label": "Lascannon",
+              "pts": 6,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vst-weapons",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Hellstrike Missiles for",
+          "replaces": "2-linked-hellstrike-missiles",
+          "choices": [
+            {
+              "weaponId": "2-linked-hellstrike-missiles",
+              "label": "2 Linked Hellstrike Missiles",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellfury-missiles",
+              "label": "2 Linked Hellfury Missiles",
+              "pts": 2,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-multiple-rocket-pods",
+              "label": "2 Linked Multiple Rocket Pods",
+              "pts": 2,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "vst-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     },
     {
@@ -254,24 +690,62 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 181,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 10, "RA": 10, "W": 14, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 10,
+            "RA": 10,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "2-linked-lascannons", "arcType": "Hull" }
+            {
+              "weaponId": "2-linked-lascannons",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["vehicle", "high-altitude", "deepstrike", "interceptor"]
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "deepstrike",
+            "interceptor"
+          ]
         }
       ],
       "options": [
         {
           "id": "vsf-wing",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Add Wing Weapons",
           "choices": [
-            { "weaponId": "2-linked-hellstrike-missile-racks", "label": "2 Linked Hellstrike Missile Racks", "pts": 32, "arcType": "Hull" },
-            { "weaponId": "2-linked-hellfury-missile-racks", "label": "2 Linked Hellfury Missile Racks", "pts": 36, "arcType": "Hull" }
+            {
+              "weaponId": "2-linked-hellstrike-missile-racks",
+              "label": "2 Linked Hellstrike Missile Racks",
+              "pts": 32,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellfury-missile-racks",
+              "label": "2 Linked Hellfury Missile Racks",
+              "pts": 36,
+              "arcType": "Hull"
+            }
           ]
         },
-        { "id": "vsf-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "vsf-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     },
     {
@@ -286,42 +760,151 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 171,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 12, "RA": 10, "W": 14, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 12,
+            "RA": 10,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "heavy-bolter", "arcType": "Turret" },
-            { "weaponId": "2-linked-multilasers", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-multilasers", "arcType": "Hull", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "heavy-bolter",
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "2-linked-multilasers",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-multilasers",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ],
-          "specialRules": ["vehicle", "high-altitude", "deepstrike"]
+          "specialRules": [
+            "vehicle",
+            "high-altitude",
+            "deepstrike"
+          ]
         }
       ],
       "options": [
         {
           "id": "vg-wing1",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap one 2 Linked Multilasers wing for",
           "replaces": "2-linked-multilasers",
           "choices": [
-            { "weaponId": "2-linked-multilasers", "label": "2 Linked Multilasers", "pts": 0, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-autocannons", "label": "2 Linked Autocannons", "pts": 4, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-hellstrike-missiles", "label": "2 Linked Hellstrike Missiles (One Use)", "pts": 4, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-tactical-bomb-racks", "label": "2 Linked Tactical Bomb Racks", "pts": 4, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-hellfury-missiles", "label": "2 Linked Hellfury Missiles (One Use)", "pts": 6, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-multiple-rocket-pods", "label": "2 Linked Multiple Rocket Pods", "pts": 8, "arcType": "Hull" },
-            { "weaponId": "2-linked-lascannons", "label": "2 Linked Lascannons", "pts": 12, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-missile-launchers", "label": "2 Linked Missile Launchers", "pts": 12, "arcType": "Hull", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "2-linked-multilasers",
+              "label": "2 Linked Multilasers",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-autocannons",
+              "label": "2 Linked Autocannons",
+              "pts": 4,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-hellstrike-missiles",
+              "label": "2 Linked Hellstrike Missiles (One Use)",
+              "pts": 4,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-tactical-bomb-racks",
+              "label": "2 Linked Tactical Bomb Racks",
+              "pts": 4,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-hellfury-missiles",
+              "label": "2 Linked Hellfury Missiles (One Use)",
+              "pts": 6,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-multiple-rocket-pods",
+              "label": "2 Linked Multiple Rocket Pods",
+              "pts": 8,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-lascannons",
+              "label": "2 Linked Lascannons",
+              "pts": 12,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-missile-launchers",
+              "label": "2 Linked Missile Launchers",
+              "pts": 12,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
         {
           "id": "vg-both-wings",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap both 2 Linked Multilasers for",
           "replaces": "2-linked-multilasers",
           "choices": [
-            { "weaponId": "2-linked-punisher-gatlings", "label": "2 Linked Punisher Gatling Guns", "pts": 44, "arcType": "Hull", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "2-linked-punisher-gatlings",
+              "label": "2 Linked Punisher Gatling Guns",
+              "pts": 44,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
-        { "id": "vg-chaff", "type": "namedUpgrade", "upgradeId": "chaff-launcher-upgrade", "pts": 9 }
+        {
+          "id": "vg-chaff",
+          "type": "namedUpgrade",
+          "upgradeId": "chaff-launcher-upgrade",
+          "pts": 9
+        }
       ]
     }
   ]

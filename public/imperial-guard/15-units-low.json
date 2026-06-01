@@ -12,13 +12,45 @@
           "minCount": 0,
           "maxCount": 1,
           "ptsEach": 52,
-          "statline": { "type": "vehicle", "M": 6, "WS": 4, "BS": 3, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 4,
+            "BS": 3,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "baneblade-cannon-autocannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "demolisher-cannon", "arcType": "Hull" },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "baneblade-cannon-autocannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "demolisher-cannon",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless", "tank-orders-1"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless",
+            "tank-orders-1"
+          ],
           "note": "One Baneblade is replaced by the Baneblade Commander."
         },
         {
@@ -27,37 +59,165 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 783,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "baneblade-cannon-autocannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "demolisher-cannon", "arcType": "Hull" },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "baneblade-cannon-autocannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "demolisher-cannon",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "bb-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "bb-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "bb-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "bb-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "bb-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "bb-lucius", "type": "namedUpgrade", "upgradeId": "lucius-pattern-variant", "pts": 0 },
-        { "id": "bb-mars", "type": "namedUpgrade", "upgradeId": "mars-pattern-variant", "pts": 0 },
-        { "id": "bb-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "bb-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "bb-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "bb-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "bb-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "bb-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "bb-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "bb-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "bb-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "bb-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "bb-lucius",
+          "type": "namedUpgrade",
+          "upgradeId": "lucius-pattern-variant",
+          "pts": 0
+        },
+        {
+          "id": "bb-mars",
+          "type": "namedUpgrade",
+          "upgradeId": "mars-pattern-variant",
+          "pts": 0
+        },
+        {
+          "id": "bb-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "bb-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "bb-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "bb-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "bb-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "bb-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "bb-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -71,34 +231,150 @@
           "name": "Banehammer",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "tremor-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "tremor-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless", "earthshock"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless",
+            "earthshock"
+          ],
           "inlineRules": [
-            { "id": "bnh-transport", "name": "Transport 25", "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.", "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear." }
+            {
+              "id": "bnh-transport",
+              "name": "Transport 25",
+              "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.",
+              "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "bnh-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "bnh-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "bnh-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "bnh-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "bnh-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "bnh-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "bnh-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "bnh-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "bnh-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "bnh-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "bnh-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "bnh-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "bnh-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "bnh-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "bnh-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "bnh-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "bnh-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "bnh-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "bnh-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "bnh-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -112,34 +388,150 @@
           "name": "Banesword",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "quake-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "quake-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless", "earthshock"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless",
+            "earthshock"
+          ],
           "inlineRules": [
-            { "id": "bns-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "bns-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "bns-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "bns-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "bns-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "bns-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "bns-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "bns-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "bns-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "bns-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "bns-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "bns-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "bns-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "bns-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "bns-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "bns-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "bns-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "bns-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "bns-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "bns-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "bns-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "bns-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -153,34 +545,149 @@
           "name": "Doomhammer",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "magma-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "magma-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "dmh-transport", "name": "Transport 25", "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.", "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear." }
+            {
+              "id": "dmh-transport",
+              "name": "Transport 25",
+              "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.",
+              "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "dmh-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "dmh-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "dmh-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "dmh-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "dmh-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "dmh-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "dmh-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "dmh-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "dmh-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "dmh-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "dmh-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "dmh-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "dmh-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "dmh-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "dmh-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "dmh-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "dmh-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "dmh-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "dmh-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "dmh-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -194,35 +701,153 @@
           "name": "Hellhammer",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "hellhammer-cannon-autocannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "demolisher-cannon", "arcType": "Hull" },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "hellhammer-cannon-autocannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "demolisher-cannon",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "hh-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "hh-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "hh-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "hh-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "hh-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "hh-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "hh-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "hh-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "hh-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "hh-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "hh-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "hh-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "hh-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "hh-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "hh-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "hh-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "hh-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "hh-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "hh-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "hh-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "hh-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "hh-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -236,37 +861,162 @@
           "name": "Shadowsword",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "volcano-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" },
+            {
+              "weaponId": "volcano-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            },
             "shadowsword-sensors"
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "ss-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." },
-            { "id": "ss-sensors", "name": "Shadowsword Sensors", "shortDesc": "May reroll all To Hit and Scatter dice when targeting Titanic units.", "fullDesc": "This model may Reroll all To Hit and Scatter dice when targeting Titanic units." }
+            {
+              "id": "ss-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            },
+            {
+              "id": "ss-sensors",
+              "name": "Shadowsword Sensors",
+              "shortDesc": "May reroll all To Hit and Scatter dice when targeting Titanic units.",
+              "fullDesc": "This model may Reroll all To Hit and Scatter dice when targeting Titanic units."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "sw-lucius-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "sw-lucius-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "sw-mars", "type": "namedUpgrade", "upgradeId": "mars-pattern-variant", "pts": 0 },
-        { "id": "sw-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "sw-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "sw-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "sw-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "sw-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "sw-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "sw-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "sw-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "sw-lucius-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "sw-lucius-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "sw-mars",
+          "type": "namedUpgrade",
+          "upgradeId": "mars-pattern-variant",
+          "pts": 0
+        },
+        {
+          "id": "sw-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "sw-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "sw-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "sw-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "sw-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sw-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "sw-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "sw-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -280,36 +1030,156 @@
           "name": "Stormblade",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "plasma-blastgun-heavy-bolter", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" },
+            {
+              "weaponId": "plasma-blastgun-heavy-bolter",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            },
             "shadowsword-sensors"
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "sbl-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." },
-            { "id": "sbl-sensors", "name": "Shadowsword Sensors", "shortDesc": "May reroll To Hit and Scatter dice when targeting Titanic units.", "fullDesc": "This model may reroll To Hit and Scatter dice when targeting Titanic Units." }
+            {
+              "id": "sbl-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            },
+            {
+              "id": "sbl-sensors",
+              "name": "Shadowsword Sensors",
+              "shortDesc": "May reroll To Hit and Scatter dice when targeting Titanic units.",
+              "fullDesc": "This model may reroll To Hit and Scatter dice when targeting Titanic Units."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "sbl-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "sbl-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "sbl-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "sbl-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "sbl-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "sbl-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "sbl-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "sbl-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "sbl-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "sbl-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "sbl-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "sbl-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "sbl-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "sbl-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "sbl-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "sbl-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "sbl-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sbl-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "sbl-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "sbl-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -323,37 +1193,163 @@
           "name": "Stormlord",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "vulcan-megabolter", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" },
-            { "weaponId": "heavy-stubber", "arcType": "Hull" },
-            { "weaponId": "heavy-stubber", "arcType": "Hull" }
+            {
+              "weaponId": "vulcan-megabolter",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-stubber",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-stubber",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "sl-transport", "name": "Transport 25", "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.", "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear." },
-            { "id": "sl-full-power", "name": "Full Power to the Weapon", "shortDesc": "May fire the Vulcan Megabolter twice per Shooting Phase.", "fullDesc": "You may fire the Vulcan Megabolter twice per Shooting Phase." }
+            {
+              "id": "sl-transport",
+              "name": "Transport 25",
+              "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.",
+              "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear."
+            },
+            {
+              "id": "sl-full-power",
+              "name": "Full Power to the Weapon",
+              "shortDesc": "May fire the Vulcan Megabolter twice per Shooting Phase.",
+              "fullDesc": "You may fire the Vulcan Megabolter twice per Shooting Phase."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "sl-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "sl-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "sl-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "sl-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "sl-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "sl-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "sl-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "sl-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "sl-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "sl-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "sl-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "sl-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "sl-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "sl-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "sl-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "sl-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "sl-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sl-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "sl-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "sl-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -367,35 +1363,147 @@
           "name": "Stormhammer Lucius",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 28, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 28,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "2-linked-battle-cannons", "arcType": "Turret" },
-            { "weaponId": "2-linked-battle-cannons", "arcType": "Turret" },
-            { "weaponId": "4-lascannons-turret", "arcType": "Turret" },
-            { "weaponId": "2-linked-heavy-flamers", "arcType": "Sponson" },
-            { "weaponId": "2-linked-heavy-flamers", "arcType": "Sponson" },
-            { "weaponId": "2-linked-heavy-flamers", "arcType": "Sponson" },
-            { "weaponId": "2-linked-heavy-flamers", "arcType": "Sponson" }
+            {
+              "weaponId": "2-linked-battle-cannons",
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "2-linked-battle-cannons",
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "4-lascannons-turret",
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "2-linked-heavy-flamers",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "2-linked-heavy-flamers",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "2-linked-heavy-flamers",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "2-linked-heavy-flamers",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "shl-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "shl-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "shl-sponson-swap", "type": "weaponSwap", "label": "Swap any 2 Linked Heavy Flamers for", "replaces": "2-linked-heavy-flamers", "choices": [
-          { "weaponId": "2-linked-heavy-flamers", "label": "2 Linked Heavy Flamers", "pts": 0, "arcType": "Sponson" },
-          { "weaponId": "2-linked-heavy-bolters", "label": "2 Linked Heavy Bolters", "pts": 2, "arcType": "Sponson" }
-        ]},
-        { "id": "shl-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "shl-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "shl-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "shl-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "shl-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "shl-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "shl-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "shl-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "shl-sponson-swap",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap any 2 Linked Heavy Flamers for",
+          "replaces": "2-linked-heavy-flamers",
+          "choices": [
+            {
+              "weaponId": "2-linked-heavy-flamers",
+              "label": "2 Linked Heavy Flamers",
+              "pts": 0,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "label": "2 Linked Heavy Bolters",
+              "pts": 2,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "shl-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "shl-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "shl-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "shl-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "shl-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "shl-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "shl-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "shl-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -409,36 +1517,165 @@
           "name": "Stormhammer Mars Alpha",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "stormhammer-cannon-multilaser", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-battle-cannons", "arcType": "Hull" },
-            { "weaponId": "lascannon", "arcType": "Hull" },
-            { "weaponId": "6-multilasers", "arcType": "Sponson" }
+            {
+              "weaponId": "stormhammer-cannon-multilaser",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-battle-cannons",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "lascannon",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "6-multilasers",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "sma-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "sma-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "sma-turret", "type": "weaponSwap", "label": "Swap Stormhammer Cannon and Multilaser for", "replaces": "stormhammer-cannon-multilaser", "choices": [
-          { "weaponId": "stormhammer-cannon-multilaser", "label": "Stormhammer Cannon and Multilaser", "pts": 0, "arcType": "Turret", "mountingTags": ["Primary"] },
-          { "weaponId": "stormhammer-cannon-lascannon", "label": "Stormhammer Cannon and Lascannon", "pts": 17, "arcType": "Turret", "mountingTags": ["Primary"] }
-        ]},
-        { "id": "sma-sponson", "type": "weaponSwap", "label": "Swap 6 Multilasers for", "replaces": "6-multilasers", "choices": [
-          { "weaponId": "6-multilasers", "label": "6 Multilasers", "pts": 0, "arcType": "Sponson" },
-          { "weaponId": "6-lascannons", "label": "6 Lascannons", "pts": 54, "arcType": "Sponson" }
-        ]},
-        { "id": "sma-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "sma-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "sma-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "sma-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "sma-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "sma-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "sma-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "sma-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "sma-turret",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Stormhammer Cannon and Multilaser for",
+          "replaces": "stormhammer-cannon-multilaser",
+          "choices": [
+            {
+              "weaponId": "stormhammer-cannon-multilaser",
+              "label": "Stormhammer Cannon and Multilaser",
+              "pts": 0,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "stormhammer-cannon-lascannon",
+              "label": "Stormhammer Cannon and Lascannon",
+              "pts": 17,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sma-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap 6 Multilasers for",
+          "replaces": "6-multilasers",
+          "choices": [
+            {
+              "weaponId": "6-multilasers",
+              "label": "6 Multilasers",
+              "pts": 0,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "6-lascannons",
+              "label": "6 Lascannons",
+              "pts": 54,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "sma-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "sma-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "sma-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "sma-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "sma-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sma-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "sma-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "sma-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -452,34 +1689,149 @@
           "name": "Stormsword",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 26, "I": 1, "A": 9, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 26,
+            "I": 1,
+            "A": 9,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "stormsword-siege-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "stormsword-siege-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ],
           "inlineRules": [
-            { "id": "ssw-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "ssw-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "ssw-sponson1", "type": "weaponSwap", "label": "Add Sponson Pack 1", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "ssw-sponson2", "type": "weaponSwap", "label": "Add Sponson Pack 2", "choices": [
-          { "weaponId": "baneblade-sponson-flamers", "label": "Lascannon and 2 Linked Heavy Flamers x2", "pts": 83, "arcType": "Sponson" },
-          { "weaponId": "baneblade-sponson-bolters", "label": "Lascannon and 2 Linked Heavy Bolters x2", "pts": 87, "arcType": "Sponson" }
-        ]},
-        { "id": "ssw-side-skirts", "type": "namedUpgrade", "upgradeId": "side-skirts", "pts": 10 },
-        { "id": "ssw-dozerblade", "type": "toggle", "label": "Baneblade Dozerblade", "pts": 27, "grantsWargear": ["baneblade-dozerblade"] },
-        { "id": "ssw-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "ssw-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "ssw-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "ssw-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "ssw-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "ssw-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "ssw-sponson1",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 1",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "ssw-sponson2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Pack 2",
+          "choices": [
+            {
+              "weaponId": "baneblade-sponson-flamers",
+              "label": "Lascannon and 2 Linked Heavy Flamers x2",
+              "pts": 83,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "label": "Lascannon and 2 Linked Heavy Bolters x2",
+              "pts": 87,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "ssw-side-skirts",
+          "type": "namedUpgrade",
+          "upgradeId": "side-skirts",
+          "pts": 10
+        },
+        {
+          "id": "ssw-dozerblade",
+          "type": "toggle",
+          "label": "Baneblade Dozerblade",
+          "pts": 27,
+          "grantsWargear": [
+            "baneblade-dozerblade"
+          ]
+        },
+        {
+          "id": "ssw-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "ssw-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "ssw-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ssw-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "ssw-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "ssw-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -487,31 +1839,110 @@
       "name": "Crassus",
       "slot": "Lord of War",
       "basePts": 449,
-      "transport": { "capacity": 35, "access": "Rear" },
+      "transport": {
+        "capacity": 35,
+        "access": "Rear"
+      },
       "models": [
         {
           "id": "crassus-model",
           "name": "Crassus",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" }
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "infantry-orders-1", "fearless"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "infantry-orders-1",
+            "fearless"
+          ]
         }
       ],
       "options": [
-        { "id": "crs-sponson", "type": "weaponSwap", "label": "Swap any Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "crassus-sponsons" },
-        { "id": "crs-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "crs-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "crs-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "crs-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "crs-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "crs-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "crs-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap any Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "crassus-sponsons"
+        },
+        {
+          "id": "crs-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "crs-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "crs-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "crs-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "crs-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "crs-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -525,23 +1956,98 @@
           "name": "Dominus Bombard",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "3-linked-colossus-siege-mortars", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" }
+            {
+              "weaponId": "3-linked-colossus-siege-mortars",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ]
         }
       ],
       "options": [
-        { "id": "dom-sponson", "type": "weaponSwap", "label": "Swap any Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "crassus-sponsons" },
-        { "id": "dom-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "dom-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "dom-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "dom-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "dom-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "dom-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "dom-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap any Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "crassus-sponsons"
+        },
+        {
+          "id": "dom-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "dom-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "dom-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "dom-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "dom-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "dom-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -549,35 +2055,130 @@
       "name": "Gorgon",
       "slot": "Lord of War",
       "basePts": 566,
-      "transport": { "capacity": 50, "access": "Front and Rear", "note": "Assault Ramps." },
+      "transport": {
+        "capacity": 50,
+        "access": "Front and Rear",
+        "note": "Assault Ramps."
+      },
       "models": [
         {
           "id": "gorgon-model",
           "name": "Gorgon",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 15, "SA": 14, "RA": 10, "W": 24, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 15,
+            "SA": 14,
+            "RA": 10,
+            "W": 24,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "gorgon-armoured-prow", "arcType": "Hull" },
-            { "weaponId": "gorgon-mortars", "arcType": "Hull" },
-            { "weaponId": "2-linked-heavy-stubbers", "arcType": "Sponson" },
-            { "weaponId": "2-linked-heavy-stubbers", "arcType": "Sponson" }
+            {
+              "weaponId": "gorgon-armoured-prow",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "gorgon-mortars",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-heavy-stubbers",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "2-linked-heavy-stubbers",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless", "aquatic", "open-topped"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless",
+            "aquatic",
+            "open-topped"
+          ]
         }
       ],
       "options": [
-        { "id": "gor-sponson", "type": "weaponSwap", "label": "Swap 2 Gorgon Mortars for", "replaces": "gorgon-mortars", "choices": [
-          { "weaponId": "gorgon-mortars", "label": "2 Gorgon Mortars", "pts": 0, "arcType": "Hull" },
-          { "weaponId": "4-heavy-flamers-sponson", "label": "4 Heavy Flamers", "pts": 8, "arcType": "Sponson" },
-          { "weaponId": "4-heavy-stubbers-sponson", "label": "4 Heavy Stubbers", "pts": 10, "arcType": "Sponson" },
-          { "weaponId": "4-heavy-bolters-sponson", "label": "4 Heavy Bolters", "pts": 12, "arcType": "Sponson" }
-        ]},
-        { "id": "gor-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "gor-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "gor-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "gor-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "gor-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "gor-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap 2 Gorgon Mortars for",
+          "replaces": "gorgon-mortars",
+          "choices": [
+            {
+              "weaponId": "gorgon-mortars",
+              "label": "2 Gorgon Mortars",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "4-heavy-flamers-sponson",
+              "label": "4 Heavy Flamers",
+              "pts": 8,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "4-heavy-stubbers-sponson",
+              "label": "4 Heavy Stubbers",
+              "pts": 10,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "4-heavy-bolters-sponson",
+              "label": "4 Heavy Bolters",
+              "pts": 12,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "gor-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "gor-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "gor-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "gor-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "gor-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -591,22 +2192,93 @@
           "name": "Macharius Battle Tank",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "2-linked-macharius-battle-cannons", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "2-heavy-stubbers-sponson", "arcType": "Hull" }
+            {
+              "weaponId": "2-linked-macharius-battle-cannons",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-heavy-stubbers-sponson",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ]
         }
       ],
       "options": [
-        { "id": "mach-sponson", "type": "weaponSwap", "label": "Add Sponson Weapons", "weaponListId": "macharius-sponsons" },
-        { "id": "mach-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "mach-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "mach-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "mach-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "mach-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "mach-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "mach-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Weapons",
+          "weaponListId": "macharius-sponsons"
+        },
+        {
+          "id": "mach-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "mach-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "mach-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "mach-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "mach-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "mach-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -620,21 +2292,90 @@
           "name": "Macharius Omega",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "plasma-blastgun", "arcType": "Hull", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "plasma-blastgun",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless", "open-topped"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless",
+            "open-topped"
+          ]
         }
       ],
       "options": [
-        { "id": "mo-sponson", "type": "weaponSwap", "label": "Add Sponson Weapons", "weaponListId": "macharius-sponsons" },
-        { "id": "mo-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "mo-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "mo-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "mo-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "mo-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "mo-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "mo-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Weapons",
+          "weaponListId": "macharius-sponsons"
+        },
+        {
+          "id": "mo-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "mo-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "mo-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "mo-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "mo-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "mo-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -648,22 +2389,93 @@
           "name": "Macharius Vanquisher",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "2-linked-long-vanquisher-cannons", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "2-heavy-stubbers-sponson", "arcType": "Hull" }
+            {
+              "weaponId": "2-linked-long-vanquisher-cannons",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-heavy-stubbers-sponson",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ]
         }
       ],
       "options": [
-        { "id": "mv-sponson", "type": "weaponSwap", "label": "Add Sponson Weapons", "weaponListId": "macharius-sponsons" },
-        { "id": "mv-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "mv-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "mv-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "mv-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "mv-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "mv-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "mv-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Weapons",
+          "weaponListId": "macharius-sponsons"
+        },
+        {
+          "id": "mv-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "mv-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "mv-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "mv-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "mv-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "mv-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -677,22 +2489,93 @@
           "name": "Macharius Vulcan",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "vulcan-megabolter", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-heavy-stubbers-sponson", "arcType": "Hull" }
+            {
+              "weaponId": "vulcan-megabolter",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-heavy-stubbers-sponson",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ]
         }
       ],
       "options": [
-        { "id": "mvul-sponson", "type": "weaponSwap", "label": "Add Sponson Weapons", "weaponListId": "macharius-sponsons" },
-        { "id": "mvul-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "mvul-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "mvul-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "mvul-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "mvul-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "mvul-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "mvul-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Sponson Weapons",
+          "weaponListId": "macharius-sponsons"
+        },
+        {
+          "id": "mvul-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "mvul-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "mvul-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "mvul-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "mvul-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "mvul-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -706,23 +2589,99 @@
           "name": "Minotaur Artillery",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "earthshaker-cannon-2x", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" }
+            {
+              "weaponId": "earthshaker-cannon-2x",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless", "open-topped"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless",
+            "open-topped"
+          ]
         }
       ],
       "options": [
-        { "id": "min-sponson", "type": "weaponSwap", "label": "Swap any Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "crassus-sponsons" },
-        { "id": "min-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "min-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "min-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "min-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "min-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "min-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "min-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap any Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "crassus-sponsons"
+        },
+        {
+          "id": "min-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "min-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "min-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "min-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "min-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "min-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -736,27 +2695,125 @@
           "name": "Praetor Launcher",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 5, "BS": 4, "S": 8, "FA": 14, "SA": 13, "RA": 12, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "pilum-salvo", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" },
-            { "weaponId": "heavy-flamer", "arcType": "Sponson" }
+            {
+              "weaponId": "pilum-salvo",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless"
+          ]
         }
       ],
       "options": [
-        { "id": "pra-main", "type": "weaponSwap", "label": "Swap Pilum Salvo for", "replaces": "pilum-salvo", "choices": [
-          { "weaponId": "pilum-salvo", "label": "Pilum Salvo", "pts": 0, "arcType": "Hull", "mountingTags": ["Primary"] },
-          { "weaponId": "foehammer", "label": "Foehammer", "pts": 167, "arcType": "Hull", "mountingTags": ["Primary"] }
-        ]},
-        { "id": "pra-sponson", "type": "weaponSwap", "label": "Swap any Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "crassus-sponsons" },
-        { "id": "pra-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "pra-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "pra-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "pra-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "pra-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "pra-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "pra-main",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Pilum Salvo for",
+          "replaces": "pilum-salvo",
+          "choices": [
+            {
+              "weaponId": "pilum-salvo",
+              "label": "Pilum Salvo",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "foehammer",
+              "label": "Foehammer",
+              "pts": 167,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pra-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap any Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "crassus-sponsons"
+        },
+        {
+          "id": "pra-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "pra-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "pra-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "pra-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "pra-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "pra-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -770,25 +2827,103 @@
           "name": "Marauder Bomber",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 8, "FA": 11, "SA": 11, "RA": 10, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 11,
+            "SA": 11,
+            "RA": 10,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "2-linked-lascannons", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Turret" },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" }
+            {
+              "weaponId": "2-linked-lascannons",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "fearless", "high-altitude", "deepstrike"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "fearless",
+            "high-altitude",
+            "deepstrike"
+          ]
         }
       ],
       "options": [
-        { "id": "mb-bombs", "type": "weaponSwap", "label": "Add Bomb/Payload", "choices": [
-          { "weaponId": "hellstorm-bomb-rack", "label": "Hellstorm Bomb Rack", "pts": 24, "arcType": "Hull", "mountingTags": ["Primary"] },
-          { "weaponId": "heavy-bomb-cluster-rack", "label": "Heavy Bomb Cluster Rack", "pts": 60, "arcType": "Hull", "mountingTags": ["Primary"] }
-        ]},
-        { "id": "mb-wing", "type": "weaponSwap", "label": "Add Wing Weapons", "choices": [
-          { "weaponId": "2-linked-hellstrike-missile-racks", "label": "2 Linked Hellstrike Missile Racks", "pts": 32, "arcType": "Hull" },
-          { "weaponId": "2-linked-hellfury-missile-racks", "label": "2 Linked Hellfury Missile Racks", "pts": 36, "arcType": "Hull" }
-        ]},
-        { "id": "mb-chaff", "type": "toggle", "label": "Chaff Launcher x2", "pts": 18, "grantsWargear": ["chaff-launcher"] }
+        {
+          "id": "mb-bombs",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Bomb/Payload",
+          "choices": [
+            {
+              "weaponId": "hellstorm-bomb-rack",
+              "label": "Hellstorm Bomb Rack",
+              "pts": 24,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-bomb-cluster-rack",
+              "label": "Heavy Bomb Cluster Rack",
+              "pts": 60,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mb-wing",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Wing Weapons",
+          "choices": [
+            {
+              "weaponId": "2-linked-hellstrike-missile-racks",
+              "label": "2 Linked Hellstrike Missile Racks",
+              "pts": 32,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellfury-missile-racks",
+              "label": "2 Linked Hellfury Missile Racks",
+              "pts": 36,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "mb-chaff",
+          "type": "toggle",
+          "label": "Chaff Launcher x2",
+          "pts": 18,
+          "grantsWargear": [
+            "chaff-launcher"
+          ]
+        }
       ]
     },
     {
@@ -802,25 +2937,100 @@
           "name": "Marauder Destroyer",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 4, "S": 8, "FA": 11, "SA": 11, "RA": 10, "W": 20, "I": 1, "A": 6, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 4,
+            "S": 8,
+            "FA": 11,
+            "SA": 11,
+            "RA": 10,
+            "W": 20,
+            "I": 1,
+            "A": 6,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "6-linked-autocannons", "arcType": "Hull" },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Turret" },
-            { "weaponId": "2-linked-assault-cannons", "arcType": "Turret" }
+            {
+              "weaponId": "6-linked-autocannons",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "2-linked-assault-cannons",
+              "arcType": "Turret"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "fearless", "high-altitude", "deepstrike"]
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "fearless",
+            "high-altitude",
+            "deepstrike"
+          ]
         }
       ],
       "options": [
-        { "id": "md-bombs", "type": "weaponSwap", "label": "Add Bomb/Payload", "choices": [
-          { "weaponId": "hellstorm-bomb-rack", "label": "Hellstorm Bomb", "pts": 12, "arcType": "Hull", "mountingTags": ["Primary"] },
-          { "weaponId": "heavy-bomb-cluster-rack", "label": "Heavy Bomb Cluster", "pts": 30, "arcType": "Hull", "mountingTags": ["Primary"] }
-        ]},
-        { "id": "md-wing", "type": "weaponSwap", "label": "Add Wing Weapons", "choices": [
-          { "weaponId": "2-linked-hellstrike-missile-racks", "label": "2 Linked Hellstrike Missile Racks", "pts": 32, "arcType": "Hull" },
-          { "weaponId": "2-linked-hellfury-missile-racks", "label": "2 Linked Hellfury Missile Racks", "pts": 36, "arcType": "Hull" }
-        ]},
-        { "id": "md-chaff", "type": "toggle", "label": "Chaff Launcher x2", "pts": 18, "grantsWargear": ["chaff-launcher"] }
+        {
+          "id": "md-bombs",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Bomb/Payload",
+          "choices": [
+            {
+              "weaponId": "hellstorm-bomb-rack",
+              "label": "Hellstorm Bomb",
+              "pts": 12,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-bomb-cluster-rack",
+              "label": "Heavy Bomb Cluster",
+              "pts": 30,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "md-wing",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Wing Weapons",
+          "choices": [
+            {
+              "weaponId": "2-linked-hellstrike-missile-racks",
+              "label": "2 Linked Hellstrike Missile Racks",
+              "pts": 32,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-hellfury-missile-racks",
+              "label": "2 Linked Hellfury Missile Racks",
+              "pts": 36,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "md-chaff",
+          "type": "toggle",
+          "label": "Chaff Launcher x2",
+          "pts": 18,
+          "grantsWargear": [
+            "chaff-launcher"
+          ]
+        }
       ]
     },
     {
@@ -828,43 +3038,162 @@
       "name": "Capitol Imperialis",
       "slot": "Lord of War",
       "basePts": 3860,
-      "transport": { "capacity": 300, "access": "Front and Rear", "firePorts": "40 Fire Ports each Side, 20 Front and Rear", "note": "Assault Ramps. Motor Pool: up to 10 non-Titanic Tanks, 3 Baneblade/Macharius Tanks, and 1 Arvus Lighter." },
+      "transport": {
+        "capacity": 300,
+        "access": "Front and Rear",
+        "firePorts": "40 Fire Ports each Side, 20 Front and Rear",
+        "note": "Assault Ramps. Motor Pool: up to 10 non-Titanic Tanks, 3 Baneblade/Macharius Tanks, and 1 Arvus Lighter."
+      },
       "models": [
         {
           "id": "capitol-imperialis-model",
           "name": "Capitol Imperialis",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 4, "WS": 5, "BS": 4, "S": 12, "FA": 15, "SA": 14, "RA": 13, "W": 200, "I": 1, "A": 15, "Ld": 10, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 4,
+            "WS": 5,
+            "BS": 4,
+            "S": 12,
+            "FA": 15,
+            "SA": 14,
+            "RA": 13,
+            "W": 200,
+            "I": 1,
+            "A": 15,
+            "Ld": 10,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "imperialis-volcano-cannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Turret" }
+            {
+              "weaponId": "imperialis-volcano-cannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Turret"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "fearless", "infantry-orders-4", "tank-orders-3", "wing-orders-1"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "fearless",
+            "infantry-orders-4",
+            "tank-orders-3",
+            "wing-orders-1"
+          ],
           "inlineRules": [
-            { "id": "ci-void-shields", "name": "Void Shields 6", "shortDesc": "This model has 6 Void Shields.", "fullDesc": "This model has 6 Void Shields." },
-            { "id": "ci-commanding", "name": "Commanding Presence", "shortDesc": "Orders from this model have a 48\" radius. All units testing on Orders may use this model's Ld.", "fullDesc": "Orders from this model have a 48\" radius. All units testing on Orders cast from this model may use this model's Ld in place of their own." },
-            { "id": "ci-shadow", "name": "In the Shadow of the Imperium", "shortDesc": "24\" True Aura: all enemy models suffer Ld−2.", "fullDesc": "24\" True Aura: all enemy models suffer Ld–2." },
-            { "id": "ci-path", "name": "Destructive Path", "shortDesc": "Destroys all Terrain and Fortifications it moves over. May only pivot up to current M value.", "fullDesc": "All Terrain is destroyed by this model moving over it, including Titanic Terrain. Any Fortifications touched by this model are Destroyed. This model may only pivot up to its current M value when turning. This model displaces all models when it moves including Titanic ones." }
+            {
+              "id": "ci-void-shields",
+              "name": "Void Shields 6",
+              "shortDesc": "This model has 6 Void Shields.",
+              "fullDesc": "This model has 6 Void Shields."
+            },
+            {
+              "id": "ci-commanding",
+              "name": "Commanding Presence",
+              "shortDesc": "Orders from this model have a 48\" radius. All units testing on Orders may use this model's Ld.",
+              "fullDesc": "Orders from this model have a 48\" radius. All units testing on Orders cast from this model may use this model's Ld in place of their own."
+            },
+            {
+              "id": "ci-shadow",
+              "name": "In the Shadow of the Imperium",
+              "shortDesc": "24\" True Aura: all enemy models suffer Ld−2.",
+              "fullDesc": "24\" True Aura: all enemy models suffer Ld–2."
+            },
+            {
+              "id": "ci-path",
+              "name": "Destructive Path",
+              "shortDesc": "Destroys all Terrain and Fortifications it moves over. May only pivot up to current M value.",
+              "fullDesc": "All Terrain is destroyed by this model moving over it, including Titanic Terrain. Any Fortifications touched by this model are Destroyed. This model may only pivot up to its current M value when turning. This model displaces all models when it moves including Titanic ones."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "ci-s1-swap", "type": "weaponSwap", "label": "Swap 2 Heavy Bolters (Turret) for", "replaces": "2-linked-heavy-bolters", "choices": [
-          { "weaponId": "2-linked-heavy-bolters", "label": "2 Heavy Bolters", "pts": 0, "arcType": "Turret" },
-          { "weaponId": "2-lascannons-sponson", "label": "2 Lascannons", "pts": 24, "arcType": "Turret" },
-          { "weaponId": "6-heavy-plasma-cannons", "label": "6 Heavy Plasma Cannons", "pts": 282, "arcType": "Sponson" },
-          { "weaponId": "6-sets-2-linked-heavy-plasma-cannons", "label": "6 Sets of 2 Linked Heavy Plasma Cannons", "pts": 564, "arcType": "Sponson" }
-        ]},
-        { "id": "ci-s2", "type": "weaponSwap", "label": "Add Hull Lascannon Battery", "choices": [
-          { "weaponId": "20-lascannons", "label": "20 Lascannons", "pts": 240, "arcType": "Hull" }
-        ]},
-        { "id": "ci-aa", "type": "weaponSwap", "label": "Add AA Battery", "choices": [
-          { "weaponId": "4-sets-4-linked-autocannons", "label": "4 Sets of 4 Linked Autocannons", "pts": 272, "arcType": "Turret" }
-        ]},
-        { "id": "ci-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "ci-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "ci-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 }
+        {
+          "id": "ci-s1-swap",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap 2 Heavy Bolters (Turret) for",
+          "replaces": "2-linked-heavy-bolters",
+          "choices": [
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "label": "2 Heavy Bolters",
+              "pts": 0,
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "2-lascannons-sponson",
+              "label": "2 Lascannons",
+              "pts": 24,
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "6-heavy-plasma-cannons",
+              "label": "6 Heavy Plasma Cannons",
+              "pts": 282,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "6-sets-2-linked-heavy-plasma-cannons",
+              "label": "6 Sets of 2 Linked Heavy Plasma Cannons",
+              "pts": 564,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "ci-s2",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Hull Lascannon Battery",
+          "choices": [
+            {
+              "weaponId": "20-lascannons",
+              "label": "20 Lascannons",
+              "pts": 240,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "ci-aa",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add AA Battery",
+          "choices": [
+            {
+              "weaponId": "4-sets-4-linked-autocannons",
+              "label": "4 Sets of 4 Linked Autocannons",
+              "pts": 272,
+              "arcType": "Turret"
+            }
+          ]
+        },
+        {
+          "id": "ci-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ci-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "ci-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        }
       ]
     },
     {
@@ -872,38 +3201,144 @@
       "name": "Leviathan Regimental HQ",
       "slot": "Lord of War",
       "basePts": 2311,
-      "transport": { "capacity": 100, "access": "Rear", "firePorts": "20 Fire Ports each Side, 10 Rear" },
+      "transport": {
+        "capacity": 100,
+        "access": "Rear",
+        "firePorts": "20 Fire Ports each Side, 10 Rear"
+      },
       "models": [
         {
           "id": "leviathan-model",
           "name": "Leviathan Regimental HQ",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 6, "WS": 5, "BS": 4, "S": 10, "FA": 14, "SA": 14, "RA": 13, "W": 120, "I": 1, "A": 12, "Ld": 9, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 4,
+            "S": 10,
+            "FA": 14,
+            "SA": 14,
+            "RA": 13,
+            "W": 120,
+            "I": 1,
+            "A": 12,
+            "Ld": 9,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "doomsday-cannon", "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "battle-cannon", "arcType": "Turret" },
-            { "weaponId": "6-sets-2-linked-lascannons", "arcType": "Sponson" }
+            {
+              "weaponId": "doomsday-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "battle-cannon",
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "6-sets-2-linked-lascannons",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "fearless", "infantry-orders-4"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "fearless",
+            "infantry-orders-4"
+          ],
           "inlineRules": [
-            { "id": "lev-void", "name": "Void Shields 4", "shortDesc": "This model has 4 Void Shields.", "fullDesc": "This model has 4 Void Shields." },
-            { "id": "lev-inspiring", "name": "Inspiring Presence", "shortDesc": "Orders from this model have a 24\" radius. All units testing on Orders may use this model's Ld.", "fullDesc": "Orders from this model have a 24\" radius. All units testing on Orders cast from this model may use this model's Ld in place of their own." },
-            { "id": "lev-panic", "name": "Create Panic", "shortDesc": "Displaces all models when it moves. Immobile units prevent it from moving there.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" away. Immobile units prevent this model from moving there." },
-            { "id": "lev-bulk", "name": "Immense Bulk", "shortDesc": "May only Pivot up to its current M value.", "fullDesc": "This model may only Pivot up to its current M value. It may still move as normal." }
+            {
+              "id": "lev-void",
+              "name": "Void Shields 4",
+              "shortDesc": "This model has 4 Void Shields.",
+              "fullDesc": "This model has 4 Void Shields."
+            },
+            {
+              "id": "lev-inspiring",
+              "name": "Inspiring Presence",
+              "shortDesc": "Orders from this model have a 24\" radius. All units testing on Orders may use this model's Ld.",
+              "fullDesc": "Orders from this model have a 24\" radius. All units testing on Orders cast from this model may use this model's Ld in place of their own."
+            },
+            {
+              "id": "lev-panic",
+              "name": "Create Panic",
+              "shortDesc": "Displaces all models when it moves. Immobile units prevent it from moving there.",
+              "fullDesc": "This model displaces all models when it moves, place them up to 1\" away. Immobile units prevent this model from moving there."
+            },
+            {
+              "id": "lev-bulk",
+              "name": "Immense Bulk",
+              "shortDesc": "May only Pivot up to its current M value.",
+              "fullDesc": "This model may only Pivot up to its current M value. It may still move as normal."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "lev-turret", "type": "weaponSwap", "label": "Swap Battle Cannon for", "replaces": "battle-cannon", "choices": [
-          { "weaponId": "battle-cannon", "label": "Battle Cannon", "pts": 0, "arcType": "Turret" },
-          { "weaponId": "mega-battle-cannon-autocannon", "label": "Mega Battle Cannon and Autocannon", "pts": 193, "arcType": "Turret", "mountingTags": ["Primary"] }
-        ]},
-        { "id": "lev-hkm", "type": "toggle", "label": "2 Sets of 2 Linked Hunter Killer Missile Racks", "pts": 80, "grantsWargear": ["2-sets-2-linked-hunter-killer-racks"] },
-        { "id": "lev-s1", "type": "toggle", "label": "Add 8 Sets of 2 Linked Heavy Bolters (Sponson)", "pts": 144, "grantsWargear": ["8-sets-2-linked-heavy-bolters"] },
-        { "id": "lev-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "lev-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "lev-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 }
+        {
+          "id": "lev-turret",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Battle Cannon for",
+          "replaces": "battle-cannon",
+          "choices": [
+            {
+              "weaponId": "battle-cannon",
+              "label": "Battle Cannon",
+              "pts": 0,
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "mega-battle-cannon-autocannon",
+              "label": "Mega Battle Cannon and Autocannon",
+              "pts": 193,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lev-hkm",
+          "type": "toggle",
+          "label": "2 Sets of 2 Linked Hunter Killer Missile Racks",
+          "pts": 80,
+          "grantsWargear": [
+            "2-sets-2-linked-hunter-killer-racks"
+          ]
+        },
+        {
+          "id": "lev-s1",
+          "type": "toggle",
+          "label": "Add 8 Sets of 2 Linked Heavy Bolters (Sponson)",
+          "pts": 144,
+          "grantsWargear": [
+            "8-sets-2-linked-heavy-bolters"
+          ]
+        },
+        {
+          "id": "lev-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "lev-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "lev-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        }
       ]
     },
     {
@@ -918,89 +3353,456 @@
           "name": "Colonel Schaeffer",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 5, "I": 3, "A": 4, "Ld": 10, "Sv": "4+" },
-          "baseWargear": ["plasma-pistol", "power-sword", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth", "infantry-orders-2", "fearless", "execution"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 3,
+            "T": 3,
+            "W": 5,
+            "I": 3,
+            "A": 4,
+            "Ld": 10,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "plasma-pistol",
+            "power-sword",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth",
+            "infantry-orders-2",
+            "fearless",
+            "execution"
+          ],
           "inlineRules": [
-            { "id": "slc-regiment", "name": "13th Penal Legion", "shortDesc": "These models cannot grant or receive Auras or Orders to/from any other unit. Not affected by Regiment rules.", "fullDesc": "These models cannot grant or receive Auras or Orders to or from any other unit. They are not affected by any Regiment Rules." }
+            {
+              "id": "slc-regiment",
+              "name": "13th Penal Legion",
+              "shortDesc": "These models cannot grant or receive Auras or Orders to/from any other unit. Not affected by Regiment rules.",
+              "fullDesc": "These models cannot grant or receive Auras or Orders to or from any other unit. They are not affected by any Regiment Rules."
+            }
           ]
         },
         {
-          "id": "slc-animal", "name": "Animal", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["meltagun", "chainsword", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "animal-savage", "name": "Savage", "shortDesc": "May declare Charges after Advancing or Disembarking.", "fullDesc": "This model and his unit may declare Charges after Advancing or Disembarking." }]
+          "id": "slc-animal",
+          "name": "Animal",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "meltagun",
+            "chainsword",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "animal-savage",
+              "name": "Savage",
+              "shortDesc": "May declare Charges after Advancing or Disembarking.",
+              "fullDesc": "This model and his unit may declare Charges after Advancing or Disembarking."
+            }
+          ]
         },
         {
-          "id": "slc-brains", "name": "Brains", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["lasgun", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "brains-jerry", "name": "Jerry Rigger", "shortDesc": "Repair d3 Wounds; on 4+ restore a Disabled result.", "fullDesc": "Repair d3 Wounds, on a 4+ restore a Weapon Disabled, Crew Stun, Immobilize, or Weapon Destroyed Result." }]
+          "id": "slc-brains",
+          "name": "Brains",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "lasgun",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "brains-jerry",
+              "name": "Jerry Rigger",
+              "shortDesc": "Repair d3 Wounds; on 4+ restore a Disabled result.",
+              "fullDesc": "Repair d3 Wounds, on a 4+ restore a Weapon Disabled, Crew Stun, Immobilize, or Weapon Destroyed Result."
+            }
+          ]
         },
         {
-          "id": "slc-demolition-man", "name": "Demolition Man", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["high-capacity-lascarbine", "demolition-charge", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "demo-expert", "name": "Demolition Expert", "shortDesc": "Blast Templates never scatter and may reroll 1s To Wound.", "fullDesc": "This model and his unit's Blast Templates never Scatter and may reroll 1s To Wound." }]
+          "id": "slc-demolition-man",
+          "name": "Demolition Man",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "high-capacity-lascarbine",
+            "demolition-charge",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "demo-expert",
+              "name": "Demolition Expert",
+              "shortDesc": "Blast Templates never scatter and may reroll 1s To Wound.",
+              "fullDesc": "This model and his unit's Blast Templates never Scatter and may reroll 1s To Wound."
+            }
+          ]
         },
         {
-          "id": "slc-fingers", "name": "Fingers", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["lasgun", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth", "objective-secured"],
-          "inlineRules": [{ "id": "fingers-loader", "name": "Rocket Loader", "shortDesc": "Rocket Girl may fire 1 additional time each time she is nominated to shoot.", "fullDesc": "Rocket Girl may fire 1 additional time each time she is nominated to shoot." }]
+          "id": "slc-fingers",
+          "name": "Fingers",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "lasgun",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth",
+            "objective-secured"
+          ],
+          "inlineRules": [
+            {
+              "id": "fingers-loader",
+              "name": "Rocket Loader",
+              "shortDesc": "Rocket Girl may fire 1 additional time each time she is nominated to shoot.",
+              "fullDesc": "Rocket Girl may fire 1 additional time each time she is nominated to shoot."
+            }
+          ]
         },
         {
-          "id": "slc-grease-monkey", "name": "Grease Monkey", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["bolt-pistol", "combat-knife", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "grease-hijack", "name": "Hijacker", "shortDesc": "When Assaulting a Vehicle with Transport 10+, on a 5+ take control of it and immediately Embark.", "fullDesc": "When Assaulting a Vehicle, roll a d6 before attacking. On a 5+, take control of the target Vehicle so long as it has Transport 10+ and immediately Embark regardless of Transport size. Use BS3+ for this Vehicle." }]
+          "id": "slc-grease-monkey",
+          "name": "Grease Monkey",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "grease-hijack",
+              "name": "Hijacker",
+              "shortDesc": "When Assaulting a Vehicle with Transport 10+, on a 5+ take control of it and immediately Embark.",
+              "fullDesc": "When Assaulting a Vehicle, roll a d6 before attacking. On a 5+, take control of the target Vehicle so long as it has Transport 10+ and immediately Embark regardless of Transport size. Use BS3+ for this Vehicle."
+            }
+          ]
         },
         {
-          "id": "slc-hero", "name": "Hero", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["lasgun", "laspistol", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "hero-lastchance", "name": "Last Chance", "shortDesc": "3+ Feel No Pain when taking Wounds on behalf of the Squad willingly.", "fullDesc": "This model gains a 3+ Feel No Pain when taking Wounds on behalf of the Squad willingly." }]
+          "id": "slc-hero",
+          "name": "Hero",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "lasgun",
+            "laspistol",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "hero-lastchance",
+              "name": "Last Chance",
+              "shortDesc": "3+ Feel No Pain when taking Wounds on behalf of the Squad willingly.",
+              "fullDesc": "This model gains a 3+ Feel No Pain when taking Wounds on behalf of the Squad willingly."
+            }
+          ]
         },
         {
-          "id": "slc-ox", "name": "Ox", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 4, "T": 4, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["heavy-bolter", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "ox-suppressive", "name": "Suppressive Fire", "shortDesc": "Ranged attacks by Ox gain Grav.", "fullDesc": "Ranged attacks by Ox gain Grav." }]
+          "id": "slc-ox",
+          "name": "Ox",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "heavy-bolter",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "ox-suppressive",
+              "name": "Suppressive Fire",
+              "shortDesc": "Ranged attacks by Ox gain Grav.",
+              "fullDesc": "Ranged attacks by Ox gain Grav."
+            }
+          ]
         },
         {
-          "id": "slc-rocket-girl", "name": "Rocket Girl", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["missile-launcher", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "rg-tankbuster", "name": "Tank Buster", "shortDesc": "Gains Armourbane when using a Missile Launcher.", "fullDesc": "This model gains Armourbane when using a Missile Launcher." }]
+          "id": "slc-rocket-girl",
+          "name": "Rocket Girl",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "missile-launcher",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "rg-tankbuster",
+              "name": "Tank Buster",
+              "shortDesc": "Gains Armourbane when using a Missile Launcher.",
+              "fullDesc": "This model gains Armourbane when using a Missile Launcher."
+            }
+          ]
         },
         {
-          "id": "slc-scope", "name": "Scope", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 3, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["sniper-rifle", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "scope-deadeye", "name": "Deadeye", "shortDesc": "Models taking Pinning Tests from this model take it at Ld−3.", "fullDesc": "Models taking Pinning Tests inflicted by this model take the test at Ld–3." }]
+          "id": "slc-scope",
+          "name": "Scope",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "sniper-rifle",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "scope-deadeye",
+              "name": "Deadeye",
+              "shortDesc": "Models taking Pinning Tests from this model take it at Ld−3.",
+              "fullDesc": "Models taking Pinning Tests inflicted by this model take the test at Ld–3."
+            }
+          ]
         },
         {
-          "id": "slc-shiv", "name": "Shiv", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 6, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["plasma-pistol", "combat-knife", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "shiv-stealth", "name": "Stealth Attack", "shortDesc": "This model and his unit gain Furious Charge and Shock Assault.", "fullDesc": "This model and his unit gain Furious Charge and Shock Assault." }]
+          "id": "slc-shiv",
+          "name": "Shiv",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 6,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "plasma-pistol",
+            "combat-knife",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "shiv-stealth",
+              "name": "Stealth Attack",
+              "shortDesc": "This model and his unit gain Furious Charge and Shock Assault.",
+              "fullDesc": "This model and his unit gain Furious Charge and Shock Assault."
+            }
+          ]
         },
         {
-          "id": "slc-warrior-woman", "name": "Warrior Woman", "minCount": 1, "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 3, "I": 5, "A": 3, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["lasgun", "exotic-sword", "exotic-knife", "frag-grenades"],
-          "specialRules": ["character", "infantry", "infiltrate", "stealth"],
-          "inlineRules": [{ "id": "ww-warrior", "name": "Way of the Warrior", "shortDesc": "May change Weapon # to Pistol # and Overwatch at BS#+. No model may fire more than 2 weapons as Pistols.", "fullDesc": "This model and her unit may change their Weapon # to Pistol # and Overwatch at their BS#+ instead of the usual Overwatch #+. No model may fire more than 2 weapons as Pistols each (and removes the normal Grenade restrictions)." }]
+          "id": "slc-warrior-woman",
+          "name": "Warrior Woman",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 3,
+            "I": 5,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "lasgun",
+            "exotic-sword",
+            "exotic-knife",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry",
+            "infiltrate",
+            "stealth"
+          ],
+          "inlineRules": [
+            {
+              "id": "ww-warrior",
+              "name": "Way of the Warrior",
+              "shortDesc": "May change Weapon # to Pistol # and Overwatch at BS#+. No model may fire more than 2 weapons as Pistols.",
+              "fullDesc": "This model and her unit may change their Weapon # to Pistol # and Overwatch at their BS#+ instead of the usual Overwatch #+. No model may fire more than 2 weapons as Pistols each (and removes the normal Grenade restrictions)."
+            }
+          ]
         }
       ]
     },
@@ -1015,10 +3817,30 @@
           "name": "Gate",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "fortification", "M": "-", "WS": "-", "BS": "-", "S": "-", "T": 8, "W": 20, "I": "-", "A": "-", "Ld": "-", "Sv": "3+" },
-          "specialRules": ["building", "titanic"],
+          "statline": {
+            "type": "fortification",
+            "M": "-",
+            "WS": "-",
+            "BS": "-",
+            "S": "-",
+            "T": 8,
+            "W": 20,
+            "I": "-",
+            "A": "-",
+            "Ld": "-",
+            "Sv": "3+"
+          },
+          "specialRules": [
+            "building",
+            "titanic"
+          ],
           "inlineRules": [
-            { "id": "gate-heavy-gate", "name": "Heavy Gate", "shortDesc": "In your Command Phase, declare if the Gate is Open or Closed. Models may not move through a Closed Gate.", "fullDesc": "In your Command Phase you may declare if the Gate is Open or Closed. Models may not move through the Gate when it is Closed. The Gate cannot be Closed if models are Obstructing the Gate." }
+            {
+              "id": "gate-heavy-gate",
+              "name": "Heavy Gate",
+              "shortDesc": "In your Command Phase, declare if the Gate is Open or Closed. Models may not move through a Closed Gate.",
+              "fullDesc": "In your Command Phase you may declare if the Gate is Open or Closed. Models may not move through the Gate when it is Closed. The Gate cannot be Closed if models are Obstructing the Gate."
+            }
           ]
         },
         {
@@ -1026,10 +3848,37 @@
           "name": "Gate Tower",
           "minCount": 2,
           "maxCount": 2,
-          "statline": { "type": "fortification", "M": "-", "WS": "-", "BS": 4, "S": "-", "T": 8, "W": 30, "I": "-", "A": "-", "Ld": "-", "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "2-linked-heavy-bolters", "arcType": "Turret" }],
-          "specialRules": ["building", "titanic"],
-          "inlineRules": [{ "id": "gtower-transport", "name": "Transport 10", "shortDesc": "Transport capacity 10. 4 Fire Ports Front, Sides, Rear. Access Rear.", "fullDesc": "Transport 10. 4 Fire Ports Front, Sides, Rear. Access Rear." }]
+          "statline": {
+            "type": "fortification",
+            "M": "-",
+            "WS": "-",
+            "BS": 4,
+            "S": "-",
+            "T": 8,
+            "W": 30,
+            "I": "-",
+            "A": "-",
+            "Ld": "-",
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Turret"
+            }
+          ],
+          "specialRules": [
+            "building",
+            "titanic"
+          ],
+          "inlineRules": [
+            {
+              "id": "gtower-transport",
+              "name": "Transport 10",
+              "shortDesc": "Transport capacity 10. 4 Fire Ports Front, Sides, Rear. Access Rear.",
+              "fullDesc": "Transport 10. 4 Fire Ports Front, Sides, Rear. Access Rear."
+            }
+          ]
         },
         {
           "id": "fortress-wall",
@@ -1037,8 +3886,23 @@
           "minCount": 2,
           "maxCount": 100,
           "ptsEach": 299,
-          "statline": { "type": "fortification", "M": "-", "WS": "-", "BS": "-", "S": "-", "T": 8, "W": 30, "I": "-", "A": "-", "Ld": "-", "Sv": "3+" },
-          "specialRules": ["building", "titanic"]
+          "statline": {
+            "type": "fortification",
+            "M": "-",
+            "WS": "-",
+            "BS": "-",
+            "S": "-",
+            "T": 8,
+            "W": 30,
+            "I": "-",
+            "A": "-",
+            "Ld": "-",
+            "Sv": "3+"
+          },
+          "specialRules": [
+            "building",
+            "titanic"
+          ]
         },
         {
           "id": "fortress-tower",
@@ -1046,14 +3910,47 @@
           "minCount": 2,
           "maxCount": 100,
           "ptsEach": 387,
-          "statline": { "type": "fortification", "M": "-", "WS": "-", "BS": 4, "S": "-", "T": 8, "W": 30, "I": "-", "A": "-", "Ld": "-", "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "2-linked-autocannons-aa", "arcType": "Turret" }],
-          "specialRules": ["building", "titanic"],
-          "inlineRules": [{ "id": "ftower-transport", "name": "Transport 10", "shortDesc": "Transport capacity 10. 4 Fire Ports Front, Sides, Rear. Access Rear.", "fullDesc": "Transport 10. 4 Fire Ports Front, Sides, Rear. Access Rear." }]
+          "statline": {
+            "type": "fortification",
+            "M": "-",
+            "WS": "-",
+            "BS": 4,
+            "S": "-",
+            "T": 8,
+            "W": 30,
+            "I": "-",
+            "A": "-",
+            "Ld": "-",
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-autocannons-aa",
+              "arcType": "Turret"
+            }
+          ],
+          "specialRules": [
+            "building",
+            "titanic"
+          ],
+          "inlineRules": [
+            {
+              "id": "ftower-transport",
+              "name": "Transport 10",
+              "shortDesc": "Transport capacity 10. 4 Fire Ports Front, Sides, Rear. Access Rear.",
+              "fullDesc": "Transport 10. 4 Fire Ports Front, Sides, Rear. Access Rear."
+            }
+          ]
         }
       ],
       "options": [
-        { "id": "if-gate-ext", "type": "toggle", "label": "Additional Gate Section (1 Gate + 2 Gate Towers)", "pts": 967, "note": "Adds 1 Gate + 2 Gate Towers." }
+        {
+          "id": "if-gate-ext",
+          "type": "toggle",
+          "label": "Additional Gate Section (1 Gate + 2 Gate Towers)",
+          "pts": 967,
+          "note": "Adds 1 Gate + 2 Gate Towers."
+        }
       ]
     },
     {
@@ -1061,16 +3958,39 @@
       "name": "Primaris Redoubt",
       "slot": "Lord of War",
       "basePts": 629,
-      "transport": { "capacity": 20, "access": "Rear" },
+      "transport": {
+        "capacity": 20,
+        "access": "Rear"
+      },
       "models": [
         {
           "id": "primaris-redoubt-model",
           "name": "Primaris Redoubt",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "fortification", "M": "-", "WS": "-", "BS": 4, "S": "-", "T": 8, "W": 30, "I": "-", "A": "-", "Ld": "-", "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "2-linked-turbolaser-destructors", "arcType": "Turret" }],
-          "specialRules": ["titanic", "building"]
+          "statline": {
+            "type": "fortification",
+            "M": "-",
+            "WS": "-",
+            "BS": 4,
+            "S": "-",
+            "T": 8,
+            "W": 30,
+            "I": "-",
+            "A": "-",
+            "Ld": "-",
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-turbolaser-destructors",
+              "arcType": "Turret"
+            }
+          ],
+          "specialRules": [
+            "titanic",
+            "building"
+          ]
         }
       ]
     }

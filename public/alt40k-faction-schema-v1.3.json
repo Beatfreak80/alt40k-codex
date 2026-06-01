@@ -276,7 +276,8 @@
         "statline":    { "$ref": "#/definitions/Statline" },
         "baseWargear": { "type": "array", "items": { "$ref": "#/definitions/WeaponReference" } },
         "specialRules":{ "type": "array", "items": { "type": "string" } },
-        "inlineRules": { "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } }
+        "inlineRules": { "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } },
+        "note":        { "type": "string" }
       }
     },
 
@@ -405,6 +406,8 @@
         },
         "isUnique":           { "type": "boolean" },
         "isCompound":         { "type": "boolean" },
+        "platoon":            { "type": "boolean" },
+        "platoonComposition": { "type": "string" },
         "chapterRestriction": { "type": "string" },
         "fluff":              { "type": "string" },
         "basePts":            { "type": "number" },
@@ -425,6 +428,8 @@
         "id":          { "type": "string" },
         "name":        { "type": "string" },
         "basePts":     { "type": "number" },
+        "minSquads":   { "type": "integer", "minimum": 0 },
+        "maxSquads":   { "type": "integer", "minimum": 0 },
         "inlineRules": { "type": "array", "items": { "$ref": "#/definitions/SpecialRule" } },
         "models":      { "type": "array", "items": { "$ref": "#/definitions/Model" } },
         "options":     { "type": "array", "items": { "$ref": "#/definitions/Option" } }

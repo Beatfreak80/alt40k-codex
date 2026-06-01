@@ -1,0 +1,114 @@
+{
+  "units": [
+    {
+      "id": "hellblade-interceptor",
+      "name": "Hellblade Interceptor",
+      "slot": "Flyer",
+      "basePts": 171,
+      "models": [
+        {
+          "id": "hellblade",
+          "name": "Hellblade",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 60, "WS": 5, "BS": 3, "S": 6, "FA": 10, "SA": 10, "RA": 10, "W": 9, "I": 1, "A": 3, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-lascannons-hull", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "daemonic-engine", "deepstrike", "high-altitude", "interceptor", "night-vision"]
+        }
+      ],
+      "options": [
+        { "id": "hbi-main", "type": "weaponSwap", "scope": "perModelType", "applies": ["hellblade"], "label": "Swap 2 Linked Lascannons for", "replaces": "2-linked-lascannons-hull", "choices": [
+          { "weaponId": "4-linked-autocannons", "label": "4 Linked Autocannons", "pts": 8, "arcType": "Hull" }
+        ]},
+        { "id": "hbi-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 }, { "markId": "nurgle", "pts": 15 }, { "markId": "slaanesh", "pts": 7 }, { "markId": "tzeentch", "pts": 12 }
+        ]}
+      ]
+    },
+    {
+      "id": "helldrake",
+      "name": "Helldrake",
+      "slot": "Flyer",
+      "basePts": 238,
+      "models": [
+        {
+          "id": "helldrake",
+          "name": "Helldrake",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 3, "BS": 3, "S": 7, "FA": 12, "SA": 12, "RA": 10, "W": 12, "I": 1, "A": 4, "Ld": 7, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "hades-autocannon", "arcType": "Sponson", "mountingTags": ["Primary"] },
+            { "weaponId": "helldrake-claws" }
+          ],
+          "specialRules": ["vehicle", "combat-walker", "daemonic-engine", "deepstrike", "high-altitude", "hover", "night-vision"]
+        }
+      ],
+      "options": [
+        { "id": "hd-main", "type": "weaponSwap", "scope": "perModelType", "applies": ["helldrake"], "label": "Swap Hades Autocannon for", "replaces": "hades-autocannon", "choices": [
+          { "weaponId": "baleflamer", "label": "Baleflamer", "pts": 3, "arcType": "Sponson" }
+        ]},
+        { "id": "hd-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 }, { "markId": "nurgle", "pts": 15 }, { "markId": "slaanesh", "pts": 7 }, { "markId": "tzeentch", "pts": 12 }
+        ]}
+      ]
+    },
+    {
+      "id": "hell-talon",
+      "name": "Hell Talon",
+      "slot": "Flyer",
+      "basePts": 226,
+      "models": [
+        {
+          "id": "hell-talon",
+          "name": "Hell Talon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 50, "WS": 5, "BS": 3, "S": 6, "FA": 11, "SA": 11, "RA": 10, "W": 14, "I": 1, "A": 3, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "2-linked-lascannons-hull", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "havoc-launcher", "arcType": "Hull" },
+            { "weaponId": "2-linked-infernal-bomb-racks", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "daemonic-engine", "deepstrike", "high-altitude", "night-vision"]
+        }
+      ],
+      "options": [
+        { "id": "ht-secondary", "type": "weaponSwap", "scope": "perModelType", "applies": ["hell-talon"], "label": "Swap Havoc Launcher for", "replaces": "havoc-launcher", "choices": [
+          { "weaponId": "autocannon", "label": "Autocannon", "pts": 2, "arcType": "Hull" }
+        ]},
+        { "id": "ht-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 }, { "markId": "nurgle", "pts": 15 }, { "markId": "slaanesh", "pts": 7 }, { "markId": "tzeentch", "pts": 12 }
+        ]}
+      ]
+    },
+    {
+      "id": "xiphon-interceptor",
+      "name": "Xiphon Interceptor",
+      "slot": "Flyer",
+      "basePts": 226,
+      "models": [
+        {
+          "id": "xiphon",
+          "name": "Xiphon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 60, "WS": 5, "BS": 3, "S": 6, "FA": 12, "SA": 12, "RA": 10, "W": 12, "I": 1, "A": 3, "Ld": 8, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "4-linked-lascannons", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "xiphon-missile-battery", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "deepstrike", "high-altitude", "interceptor", "night-vision", "shock-assault"]
+        }
+      ],
+      "options": [
+        { "id": "xi-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 }, { "markId": "nurgle", "pts": 15 }, { "markId": "slaanesh", "pts": 7 }, { "markId": "tzeentch", "pts": 12 }
+        ]},
+        { "id": "xi-flare", "type": "namedUpgrade", "upgradeId": "flare-launchers", "pts": 9 }
+      ]
+    }
+  ]
+}

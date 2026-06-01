@@ -18,5 +18,9 @@
   {
     "name": "Imperial Guard",
     "file": "imperial-guard_faction.json"
+  },
+  {
+    "name": "Chaos Undivided",
+    "file": "chaos-undivided_faction.json"
   }
 ]

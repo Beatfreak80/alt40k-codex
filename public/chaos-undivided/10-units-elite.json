@@ -1,0 +1,427 @@
+{
+  "units": [
+    {
+      "id": "accursed-cultists",
+      "name": "Accursed Cultists",
+      "slot": "Elite",
+      "basePts": 238,
+      "models": [
+        {
+          "id": "mutant",
+          "name": "Mutant",
+          "minCount": 5,
+          "maxCount": 10,
+          "ptsEach": 20,
+          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 4, "T": 4, "W": 2, "I": 4, "A": 2, "Ld": 7, "Sv": "-" },
+          "baseWargear": ["mutations"],
+          "specialRules": ["infantry", "daemonic", "fearless"]
+        },
+        {
+          "id": "torment",
+          "name": "Torment",
+          "minCount": 3,
+          "maxCount": 6,
+          "ptsEach": 46,
+          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 3, "BS": 5, "S": 5, "T": 4, "W": 3, "I": 4, "A": 3, "Ld": 7, "Sv": "-" },
+          "baseWargear": ["lethal-mutations"],
+          "specialRules": ["monstrous-infantry", "daemonic", "fearless"]
+        }
+      ],
+      "options": [
+        { "id": "ac-mutant-size", "type": "squadSize", "label": "Additional Mutants", "targetModelId": "mutant", "ptsEach": 20, "max": 5 },
+        { "id": "ac-torment-size", "type": "squadSize", "label": "Additional Torments", "targetModelId": "torment", "ptsEach": 46, "max": 3 },
+        { "id": "ac-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 4, "note": "+4 per Mutant, +8 per Torment" },
+          { "markId": "nurgle", "pts": 5, "note": "+5 per Mutant, +15 per Torment" },
+          { "markId": "slaanesh", "pts": 3, "note": "+3 per Mutant, +6 per Torment" },
+          { "markId": "tzeentch", "pts": 4, "note": "+4 per Mutant, +12 per Torment" }
+        ]}
+      ]
+    },
+    {
+      "id": "chosen",
+      "name": "Chosen",
+      "slot": "Elite",
+      "basePts": 229,
+      "models": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 2, "I": 4, "A": 3, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["boltgun", "bolt-pistol", "frag-grenades", "krak-grenades"],
+          "specialRules": ["character", "infantry", "malicious-volleys", "fearless", "night-vision", "shock-assault"]
+        },
+        {
+          "id": "chosen",
+          "name": "Chosen",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 45,
+          "statline": { "type": "infantry", "M": 6, "WS": 2, "BS": 2, "S": 4, "T": 4, "W": 2, "I": 4, "A": 2, "Ld": 8, "Sv": 3 },
+          "baseWargear": ["boltgun", "bolt-pistol", "frag-grenades", "krak-grenades"],
+          "specialRules": ["infantry", "malicious-volleys", "fearless", "night-vision", "shock-assault"]
+        }
+      ],
+      "options": [
+        { "id": "cho-squad-size", "type": "squadSize", "label": "Additional Chosen", "targetModelId": "chosen", "ptsEach": 45, "max": 5 },
+        { "id": "cho-ranged", "type": "weaponSwap", "scope": "perModelType", "applies": ["champion", "chosen"], "label": "Swap Boltgun for", "replaces": "boltgun", "choices": [
+          { "weaponId": "flamer", "label": "Flamer", "pts": 4 },
+          { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 6 },
+          { "weaponId": "plasma-gun", "label": "Plasma Gun", "pts": 6 },
+          { "weaponId": "meltagun", "label": "Meltagun", "pts": 21 },
+          { "weaponId": "lightning-claw", "label": "Lightning Claw (melee)", "pts": 1 }
+        ]},
+        { "id": "cho-pistol", "type": "weaponSwap", "scope": "perModelType", "applies": ["champion", "chosen"], "label": "Swap Bolt Pistol for", "replaces": "bolt-pistol", "choices": [
+          { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 7 }
+        ]},
+        { "id": "cho-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["champion", "chosen"], "label": "Take one melee weapon", "choices": [
+          { "weaponId": "brutal-weapon", "label": "Brutal Weapon", "pts": 1 },
+          { "weaponId": "chainsword", "label": "Chainsword", "pts": 1 },
+          { "weaponId": "chain-axe", "label": "Chain Axe", "pts": 1 },
+          { "weaponId": "power-sword", "label": "Power Sword", "pts": 3 },
+          { "weaponId": "power-axe", "label": "Power Axe", "pts": 4 },
+          { "weaponId": "power-maul", "label": "Power Maul", "pts": 5 },
+          { "weaponId": "powerfist", "label": "Powerfist", "pts": 10 },
+          { "weaponId": "daemonic-blade", "label": "Daemonic Weapon", "pts": 11 },
+          { "weaponId": "great-weapon", "label": "Great Weapon", "pts": 11 },
+          { "weaponId": "thunderhammer", "label": "Thunderhammer", "pts": 18 }
+        ]},
+        { "id": "cho-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "ptsPerModel": 4 }, { "markId": "nurgle", "ptsPerModel": 5 }, { "markId": "slaanesh", "ptsPerModel": 3 }, { "markId": "tzeentch", "ptsPerModel": 4 }
+        ]},
+        { "id": "cho-blessing", "type": "pureBlessingPick", "label": "Pure Blessing", "requiresOptionId": "cho-mark", "choices": [
+          { "markId": "khorne", "ptsPerModel": 6 }, { "markId": "nurgle", "ptsPerModel": 2 }, { "markId": "slaanesh", "ptsPerModel": 2 }, { "markId": "tzeentch", "ptsPerModel": 2 }
+        ]}
+      ]
+    },
+    {
+      "id": "mutilators",
+      "name": "Mutilators",
+      "slot": "Elite",
+      "basePts": 225,
+      "models": [
+        {
+          "id": "mutilator",
+          "name": "Mutilator",
+          "minCount": 3,
+          "maxCount": 6,
+          "ptsEach": 75,
+          "statline": { "type": "monstrous-infantry", "M": 4, "WS": 3, "BS": 5, "S": 5, "T": 5, "W": 4, "I": 4, "A": 3, "Ld": 7, "Sv": 3 },
+          "baseWargear": ["flesh-metal-weapons"],
+          "specialRules": ["monstrous-infantry", "daemonic", "deepstrike", "fearless", "shock-assault", "steady", "very-bulky"]
+        }
+      ],
+      "options": [
+        { "id": "mut-size", "type": "squadSize", "label": "Additional Mutilators", "targetModelId": "mutilator", "ptsEach": 75, "max": 3 },
+        { "id": "mut-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "ptsPerModel": 8 }, { "markId": "nurgle", "ptsPerModel": 15 }, { "markId": "slaanesh", "ptsPerModel": 7 }, { "markId": "tzeentch", "ptsPerModel": 12 }
+        ]}
+      ]
+    },
+    {
+      "id": "possessed",
+      "name": "Possessed",
+      "slot": "Elite",
+      "basePts": 242,
+      "models": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 8, "WS": 2, "BS": 5, "S": 4, "T": 4, "W": 3, "I": 4, "A": 4, "Ld": 9, "Sv": 3 },
+          "baseWargear": ["brutal-weapon"],
+          "specialRules": ["character", "monstrous-infantry", "daemonic", "deepstrike", "fearless", "shock-assault", "very-bulky"]
+        },
+        {
+          "id": "possessed",
+          "name": "Possessed",
+          "minCount": 2,
+          "maxCount": 7,
+          "ptsEach": 78,
+          "statline": { "type": "monstrous-infantry", "M": 8, "WS": 2, "BS": 5, "S": 4, "T": 4, "W": 3, "I": 4, "A": 3, "Ld": 8, "Sv": 3 },
+          "baseWargear": ["brutal-weapon"],
+          "specialRules": ["monstrous-infantry", "daemonic", "deepstrike", "fearless", "shock-assault", "very-bulky"]
+        }
+      ],
+      "options": [
+        { "id": "pos-size", "type": "squadSize", "label": "Additional Possessed", "targetModelId": "possessed", "ptsEach": 78, "max": 5 },
+        { "id": "pos-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["champion", "possessed"], "label": "Swap Brutal Weapon for", "replaces": "brutal-weapon", "choices": [
+          { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 },
+          { "weaponId": "possessed-mutations", "label": "Mutations", "pts": 5 }
+        ]},
+        { "id": "pos-monstrous-stature", "type": "namedUpgrade", "upgradeId": "monstrous-stature", "pts": 8 },
+        { "id": "pos-wings", "type": "namedUpgrade", "upgradeId": "possessed-wings", "pts": 15 },
+        { "id": "pos-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "ptsPerModel": 8 }, { "markId": "nurgle", "ptsPerModel": 15 }, { "markId": "slaanesh", "ptsPerModel": 7 }, { "markId": "tzeentch", "ptsPerModel": 12 }
+        ]},
+        { "id": "pos-blessing", "type": "pureBlessingPick", "label": "Pure Blessing", "requiresOptionId": "pos-mark", "choices": [
+          { "markId": "khorne", "ptsPerModel": 14 }, { "markId": "nurgle", "ptsPerModel": 4 }, { "markId": "slaanesh", "ptsPerModel": 6 }, { "markId": "tzeentch", "ptsPerModel": 4 }
+        ]}
+      ]
+    },
+    {
+      "id": "terminators",
+      "name": "Terminators",
+      "slot": "Elite",
+      "basePts": 320,
+      "models": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "monstrous-infantry", "M": 4, "WS": 3, "BS": 3, "S": 4, "T": 4, "W": 3, "I": 4, "A": 3, "Ld": 8, "Sv": 3 },
+          "baseWargear": ["stormbolter", "chain-axe", "terminator-honours"],
+          "specialRules": ["character", "monstrous-infantry", "malicious-volleys", "deepstrike", "night-vision", "shock-assault", "steady", "very-bulky"]
+        },
+        {
+          "id": "terminator",
+          "name": "Terminator",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 63,
+          "statline": { "type": "monstrous-infantry", "M": 4, "WS": 3, "BS": 3, "S": 4, "T": 4, "W": 3, "I": 4, "A": 2, "Ld": 7, "Sv": 3 },
+          "baseWargear": ["stormbolter", "chain-axe", "terminator-honours"],
+          "specialRules": ["monstrous-infantry", "malicious-volleys", "deepstrike", "night-vision", "shock-assault", "steady", "very-bulky"]
+        }
+      ],
+      "options": [
+        { "id": "term-size", "type": "squadSize", "label": "Additional Terminators", "targetModelId": "terminator", "ptsEach": 63, "max": 5 },
+        { "id": "term-champ-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["champion"], "label": "Champion — swap Chain Axe for", "replaces": "chain-axe", "choices": [
+          { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+          { "weaponId": "lightning-claw", "label": "Lightning Claw", "pts": 6 },
+          { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+          { "weaponId": "shock-maul", "label": "Shock Maul", "pts": 8 },
+          { "weaponId": "powerfist", "label": "Powerfist", "pts": 16 },
+          { "weaponId": "chain-fist", "label": "Chain Fist", "pts": 21 },
+          { "weaponId": "daemonic-blade", "label": "Daemonic Weapon", "pts": 17 }
+        ]},
+        { "id": "term-ranged", "type": "weaponSwap", "scope": "perModelType", "applies": ["terminator"], "label": "Terminator — swap Stormbolter for", "replaces": "stormbolter", "choices": [
+          { "weaponId": "combi-flamer", "label": "Combi Flamer", "pts": 3 },
+          { "weaponId": "combi-plasma", "label": "Combi Plasma", "pts": 8 },
+          { "weaponId": "combi-melta", "label": "Combi Melta", "pts": 23 },
+          { "weaponId": "lightning-claw", "label": "Lightning Claw (replaces ranged)", "pts": 0 }
+        ]},
+        { "id": "term-melee", "type": "weaponSwap", "scope": "perModelType", "applies": ["terminator"], "label": "Terminator — swap Chain Axe for", "replaces": "chain-axe", "choices": [
+          { "weaponId": "power-sword", "label": "Power Sword", "pts": 5 },
+          { "weaponId": "lightning-claw", "label": "Lightning Claw", "pts": 6 },
+          { "weaponId": "power-axe", "label": "Power Axe", "pts": 6 },
+          { "weaponId": "shock-maul", "label": "Shock Maul", "pts": 8 },
+          { "weaponId": "powerfist", "label": "Powerfist", "pts": 16 },
+          { "weaponId": "chain-fist", "label": "Chain Fist", "pts": 21 }
+        ]},
+        { "id": "term-heavy-2", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["terminator"], "label": "Up to two Terminators — swap Stormbolter for Heavy Weapon", "replaces": "stormbolter", "choices": [
+          { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 4 },
+          { "weaponId": "reaper-autocannon", "label": "Reaper Autocannon", "pts": 17 }
+        ]},
+        { "id": "term-stolen-suits", "type": "namedUpgrade", "upgradeId": "stolen-terminator-suits", "pts": 7 },
+        { "id": "term-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "ptsPerModel": 5 }, { "markId": "nurgle", "ptsPerModel": 15 }, { "markId": "slaanesh", "ptsPerModel": 7 }, { "markId": "tzeentch", "ptsPerModel": 12 }
+        ]}
+      ]
+    },
+    {
+      "id": "contemptor-dreadnought",
+      "name": "Contemptor Dreadnought",
+      "slot": "Elite",
+      "basePts": 141,
+      "models": [
+        {
+          "id": "contemptor",
+          "name": "Contemptor",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 3, "BS": 3, "S": 7, "FA": 12, "SA": 12, "RA": 10, "W": 9, "I": 4, "A": 4, "Ld": 7, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "volkite-culverin", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "volkite-culverin", "arcType": "Hull", "mountingTags": ["Primary"] },
+            "atomantic-shielding"
+          ],
+          "specialRules": ["vehicle", "combat-walker", "malicious-volleys", "night-vision", "shock-assault", "steady"]
+        }
+      ],
+      "options": [
+        { "id": "cont-arm1", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["contemptor"], "label": "Swap either Volkite Culverin for", "replaces": "volkite-culverin", "choices": [
+          { "weaponId": "2-linked-heavy-bolters", "label": "2 Linked Heavy Bolters", "pts": 3, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-missile-launcher", "label": "Dreadnought Missile Launcher", "pts": 4, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "conversion-beam-cannon", "label": "Conversion Beam Cannon", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "multimelta", "label": "Multimelta", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "2-linked-autocannons", "label": "2 Linked Autocannons", "pts": 8, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "assault-cannon", "label": "Assault Cannon", "pts": 10, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "2-linked-lascannons", "label": "2 Linked Lascannons", "pts": 16, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "kheres-assault-cannon", "label": "Kheres Assault Cannon", "pts": 16, "arcType": "Hull" },
+          { "weaponId": "dreadnought-combat-weapon-stormbolter", "label": "Dreadnought Combat Weapon and Stormbolter", "pts": 17, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-combat-weapon-heavy-flamer", "label": "Dreadnought Combat Weapon and Heavy Flamer", "pts": 19, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-combat-weapon-graviton", "label": "Dreadnought Combat Weapon and Graviton Blaster", "pts": 20, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "heavy-plasma-cannon", "label": "Heavy Plasma Cannon", "pts": 24, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-combat-weapon-meltagun", "label": "Dreadnought Combat Weapon and Meltagun", "pts": 27, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-chain-fist-stormbolter", "label": "Dreadnought Chain Fist and Stormbolter", "pts": 33, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-chain-fist-heavy-flamer", "label": "Dreadnought Chain Fist and Heavy Flamer", "pts": 35, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-chain-fist-graviton", "label": "Dreadnought Chain Fist and Graviton Blaster", "pts": 36, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "dreadnought-chain-fist-meltagun", "label": "Dreadnought Chain Fist and Meltagun", "pts": 43, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "cont-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 }, { "markId": "nurgle", "pts": 15 }, { "markId": "slaanesh", "pts": 7 }, { "markId": "tzeentch", "pts": 12 }
+        ]},
+        { "id": "cont-extra-armour", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 }
+      ]
+    },
+    {
+      "id": "decimator",
+      "name": "Decimator",
+      "slot": "Elite",
+      "basePts": 180,
+      "models": [
+        {
+          "id": "decimator",
+          "name": "Decimator",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 3, "BS": 3, "S": 7, "FA": 12, "SA": 12, "RA": 10, "W": 14, "I": 4, "A": 4, "Ld": 7, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "combat-walker", "daemonic-engine", "fearless", "night-vision", "shock-assault", "steady"]
+        }
+      ],
+      "options": [
+        { "id": "dec-main-arm", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["decimator"], "label": "Swap 2 Linked Heavy Flamers for (each arm)", "replaces": "heavy-flamer", "choices": [
+          { "weaponId": "soulburner-petard", "label": "Soulburner Petard", "pts": 3, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "storm-laser", "label": "Storm Laser", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "decimator-butcher-cannon", "label": "Decimator Butcher Cannon", "pts": 8, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "decimator-conversion-beam", "label": "Decimator Conversion Beam", "pts": 14, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "decimator-claw", "label": "Decimator Claw", "pts": 17 },
+          { "weaponId": "storm-cannon-array", "label": "Storm Cannon Array", "pts": 20, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "dec-melee-up3", "type": "toggle", "label": "Up to three Decimator Claws (as additional)", "pts": 17, "grantsWargear": [{ "weaponId": "decimator-claw" }] },
+        { "id": "dec-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "ptsPerModel": 8 }, { "markId": "nurgle", "ptsPerModel": 15 }, { "markId": "slaanesh", "ptsPerModel": 7 }, { "markId": "tzeentch", "ptsPerModel": 12 }
+        ]}
+      ]
+    },
+    {
+      "id": "deredeo-dreadnought",
+      "name": "Deredeo Dreadnought",
+      "slot": "Elite",
+      "basePts": 157,
+      "models": [
+        {
+          "id": "deredeo",
+          "name": "Deredeo",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 3, "BS": 3, "S": 6, "FA": 12, "SA": 12, "RA": 10, "W": 12, "I": 4, "A": 4, "Ld": 7, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "hellfire-plasma-carronade", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "hellfire-plasma-carronade", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-heavy-flamers", "arcType": "Hull" },
+            "atomantic-shielding"
+          ],
+          "specialRules": ["vehicle", "combat-walker", "night-vision", "shock-assault", "steady"]
+        }
+      ],
+      "options": [
+        { "id": "der-main", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["deredeo"], "label": "Swap Hellfire Plasma Carronade for", "replaces": "hellfire-plasma-carronade", "choices": [
+          { "weaponId": "anvillus-autocannon", "label": "Anvillus Auto Cannon", "pts": 5, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "volkite-falconet", "label": "Volkite Falconet", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "arachnus-lascannon", "label": "Arachnus Heavy Lascannon", "pts": 8, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "der-secondary", "type": "weaponSwap", "scope": "perModelType", "applies": ["deredeo"], "label": "Swap 2 Linked Heavy Flamers for", "replaces": "2-linked-heavy-flamers", "choices": [
+          { "weaponId": "2-linked-heavy-bolters", "label": "2 Linked Heavy Bolters", "pts": 2, "arcType": "Hull" }
+        ]},
+        { "id": "der-missiles", "type": "toggle", "label": "Bores Air Defense Missiles (+12 pts)", "pts": 12, "grantsWargear": [{ "weaponId": "bores-aa-missiles", "arcType": "Hull" }] },
+        { "id": "der-aiolos", "type": "toggle", "label": "Aiolos Missile Launcher (+27 pts)", "pts": 27, "grantsWargear": [{ "weaponId": "aiolos-missile-launcher", "arcType": "Hull" }] },
+        { "id": "der-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 }, { "markId": "nurgle", "pts": 15 }, { "markId": "slaanesh", "pts": 7 }, { "markId": "tzeentch", "pts": 12 }
+        ]},
+        { "id": "der-extra-armour", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 }
+      ]
+    },
+    {
+      "id": "hellbrute-dreadnoughts",
+      "name": "Hellbrute Dreadnoughts",
+      "slot": "Elite",
+      "basePts": 126,
+      "models": [
+        {
+          "id": "hellbrute",
+          "name": "Hellbrute",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 126,
+          "statline": { "type": "vehicle", "M": 6, "WS": 3, "BS": 3, "S": 6, "FA": 12, "SA": 12, "RA": 10, "W": 8, "I": 4, "A": 4, "Ld": 7, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "heavy-bolter", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "heavy-bolter", "arcType": "Hull", "mountingTags": ["Primary"] }
+          ],
+          "specialRules": ["vehicle", "combat-walker", "daemonic-engine", "malicious-volleys", "fearless", "night-vision", "shock-assault", "steady"]
+        }
+      ],
+      "options": [
+        { "id": "hb-size", "type": "squadSize", "label": "Additional Hellbrutes", "targetModelId": "hellbrute", "ptsEach": 126, "max": 2 },
+        { "id": "hb-arm", "type": "weaponSwap", "scope": "perModelType", "applies": ["hellbrute"], "label": "Any Hellbrute — swap any Heavy Bolter for", "replaces": "heavy-bolter", "choices": [
+          { "weaponId": "lascannon", "label": "Lascannon", "pts": 6, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "reaper-autocannon", "label": "Reaper Autocannon", "pts": 6, "arcType": "Hull" },
+          { "weaponId": "missile-launcher", "label": "Missile Launcher", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "multimelta", "label": "Multimelta", "pts": 9, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "2-linked-lascannons", "label": "2 Linked Lascannons", "pts": 12, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "heavy-plasma-cannon", "label": "Heavy Plasma Cannon", "pts": 25, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "power-scourge", "label": "Power Scourge (melee)", "pts": 10 },
+          { "weaponId": "hellbrute-combat-weapon-stormbolter", "label": "Dreadnought Combat Weapon with Stormbolter", "pts": 15 },
+          { "weaponId": "hellbrute-combat-weapon-flamer", "label": "Dreadnought Combat Weapon with Flamer", "pts": 16 },
+          { "weaponId": "heavy-thunderhammer", "label": "Heavy Thunderhammer (melee)", "pts": 21 }
+        ]},
+        { "id": "hb-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "ptsPerModel": 8 }, { "markId": "nurgle", "ptsPerModel": 15 }, { "markId": "slaanesh", "ptsPerModel": 7 }, { "markId": "tzeentch", "ptsPerModel": 12 }
+        ]}
+      ]
+    },
+    {
+      "id": "leviathan-dreadnought",
+      "name": "Leviathan Dreadnought",
+      "slot": "Elite",
+      "basePts": 181,
+      "models": [
+        {
+          "id": "leviathan",
+          "name": "Leviathan",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": { "type": "vehicle", "M": 8, "WS": 3, "BS": 3, "S": 7, "FA": 13, "SA": 12, "RA": 10, "W": 14, "I": 4, "A": 8, "Ld": 7, "Sv": 3 },
+          "baseWargear": [
+            { "weaponId": "hellfire-plasma-carronade", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "hellfire-plasma-carronade", "arcType": "Hull", "mountingTags": ["Primary"] },
+            { "weaponId": "2-linked-heavy-flamers", "arcType": "Hull" },
+            "atomantic-shielding"
+          ],
+          "specialRules": ["vehicle", "combat-walker", "night-vision", "shock-assault", "steady"]
+        }
+      ],
+      "options": [
+        { "id": "lev-main", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["leviathan"], "label": "Swap Hellfire Plasma Carronade for", "replaces": "hellfire-plasma-carronade", "choices": [
+          { "weaponId": "anvillus-autocannon", "label": "Anvillus Auto Cannon", "pts": 5, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "volkite-falconet", "label": "Volkite Falconet", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "arachnus-lascannon", "label": "Arachnus Heavy Lascannon", "pts": 8, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "grav-flux-bombard", "label": "Grav Flux Bombard", "pts": 18, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "storm-cannon-array", "label": "Storm Cannon Array", "pts": 22, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "cyclonic-melta-lance", "label": "Cyclonic Melta Lance", "pts": 35, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "leviathan-siege-drill-meltagun", "label": "Leviathan Siege Drill and Meltagun", "pts": 38, "arcType": "Hull", "mountingTags": ["Primary"] },
+          { "weaponId": "leviathan-siege-claw-meltagun", "label": "Leviathan Siege Claw and Meltagun", "pts": 42, "arcType": "Hull", "mountingTags": ["Primary"] }
+        ]},
+        { "id": "lev-secondary", "type": "weaponSwap", "scope": "perModelType", "applies": ["leviathan"], "label": "Swap 2 Linked Heavy Flamers for", "replaces": "2-linked-heavy-flamers", "choices": [
+          { "weaponId": "2-linked-heavy-bolters", "label": "2 Linked Heavy Bolters", "pts": 2, "arcType": "Hull" },
+          { "weaponId": "2-linked-volkite-calivers", "label": "2 Linked Volkite Calivers", "pts": 2, "arcType": "Hull" }
+        ]},
+        { "id": "lev-hkm", "type": "toggle", "label": "Hunter Killer Missile Rack (+10 pts)", "pts": 10, "grantsWargear": [{ "weaponId": "hunter-killer-missile-rack", "arcType": "Hull" }] },
+        { "id": "lev-mark", "type": "markPick", "label": "Mark of Chaos", "choices": [
+          { "markId": "khorne", "pts": 8 }, { "markId": "nurgle", "pts": 15 }, { "markId": "slaanesh", "pts": 7 }, { "markId": "tzeentch", "pts": 12 }
+        ]},
+        { "id": "lev-extra-armour", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 }
+      ]
+    }
+  ]
+}

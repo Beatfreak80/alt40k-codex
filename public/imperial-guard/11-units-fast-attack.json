@@ -19,32 +19,174 @@
               "name": "Platoon Commander",
               "minCount": 1,
               "maxCount": 1,
-              "statline": { "type": "infantry", "M": 12, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 5, "I": 3, "A": 2, "Ld": 9, "Sv": "5+" },
-              "baseWargear": ["infantry-lance", "chainsword", "laspistol", "frag-grenades"],
-              "specialRules": ["character", "infantry", "infantry-orders-1", "outflank", "steed", "very-bulky"]
+              "statline": {
+                "type": "infantry",
+                "M": 12,
+                "WS": 3,
+                "BS": 3,
+                "S": 3,
+                "T": 4,
+                "W": 5,
+                "I": 3,
+                "A": 2,
+                "Ld": 9,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "infantry-lance",
+                "chainsword",
+                "laspistol",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "character",
+                "infantry",
+                "infantry-orders-1",
+                "outflank",
+                "steed",
+                "very-bulky"
+              ]
             },
             {
               "id": "rr-cmd-veteran",
               "name": "Veteran",
               "minCount": 4,
               "maxCount": 4,
-              "statline": { "type": "infantry", "M": 12, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 2, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["infantry-lance", "chainsword", "laspistol", "frag-grenades"],
-              "specialRules": ["infantry", "outflank", "steed", "very-bulky"]
+              "statline": {
+                "type": "infantry",
+                "M": 12,
+                "WS": 4,
+                "BS": 3,
+                "S": 3,
+                "T": 4,
+                "W": 2,
+                "I": 3,
+                "A": 1,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "infantry-lance",
+                "chainsword",
+                "laspistol",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry",
+                "outflank",
+                "steed",
+                "very-bulky"
+              ]
             }
           ],
           "options": [
-            { "id": "rrc-cmd-pistol", "type": "weaponSwap", "applies": ["rr-platoon-commander"], "label": "Swap Laspistol for", "replaces": "laspistol", "weaponListId": "hq-officer-pistol" },
-            { "id": "rrc-cmd-melee", "type": "weaponSwap", "applies": ["rr-platoon-commander"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "rough-rider-officer-melee" },
-            { "id": "rrc-vet-special", "type": "weaponSwap", "applies": ["rr-cmd-veteran"], "label": "Any Veteran: swap Laspistol for special weapon", "replaces": "laspistol", "weaponListId": "rough-rider-special-weapons" },
-            { "id": "rrc-vet-demochg", "type": "toggle", "label": "Demolition Charge (one Veteran)", "pts": 7, "grantsWargear": ["demolition-charge"] },
-            { "id": "rrc-vet-melee", "type": "weaponSwap", "applies": ["rr-cmd-veteran"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "rough-rider-melee" },
-            { "id": "rrc-hunt-lance", "type": "weaponSwap", "applies": ["rr-platoon-commander", "rr-cmd-veteran"], "label": "Swap Infantry Lance for", "replaces": "infantry-lance", "choices": [{ "weaponId": "hunting-lance", "label": "Hunting Lance", "pts": 4 }] },
-            { "id": "rrc-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
-            { "id": "rrc-standard", "type": "namedUpgrade", "upgradeId": "standard-upgrade", "pts": 40 },
-            { "id": "rrc-medicae", "type": "namedUpgrade", "upgradeId": "medicae-pack-upgrade", "pts": 75 },
-            { "id": "rrc-jetbike", "type": "toggle", "label": "Jet Bikes (+2 pts/model)", "pts": 2, "grantsRules": ["fly", "deepstrike"], "note": "Gain Flying and Deepstrike. Lose Outflank." },
-            { "id": "rrc-ge-steed", "type": "toggle", "label": "Genetically Engineered Steeds (+2 pts/model)", "pts": 2, "note": "W+1. Lose Outflank." }
+            {
+              "id": "rrc-cmd-pistol",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "rr-platoon-commander"
+              ],
+              "label": "Swap Laspistol for",
+              "replaces": "laspistol",
+              "weaponListId": "hq-officer-pistol"
+            },
+            {
+              "id": "rrc-cmd-melee",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "rr-platoon-commander"
+              ],
+              "label": "Swap Chainsword for",
+              "replaces": "chainsword",
+              "weaponListId": "rough-rider-officer-melee"
+            },
+            {
+              "id": "rrc-vet-special",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "rr-cmd-veteran"
+              ],
+              "label": "Any Veteran: swap Laspistol for special weapon",
+              "replaces": "laspistol",
+              "weaponListId": "rough-rider-special-weapons"
+            },
+            {
+              "id": "rrc-vet-demochg",
+              "type": "toggle",
+              "label": "Demolition Charge (one Veteran)",
+              "pts": 7,
+              "grantsWargear": [
+                "demolition-charge"
+              ]
+            },
+            {
+              "id": "rrc-vet-melee",
+              "type": "weaponSwap",
+              "scope": "unit",
+              "applies": [
+                "rr-cmd-veteran"
+              ],
+              "label": "Swap Chainsword for",
+              "replaces": "chainsword",
+              "weaponListId": "rough-rider-melee"
+            },
+            {
+              "id": "rrc-hunt-lance",
+              "type": "weaponSwap",
+              "scope": "unit",
+              "applies": [
+                "rr-platoon-commander",
+                "rr-cmd-veteran"
+              ],
+              "label": "Swap Infantry Lance for",
+              "replaces": "infantry-lance",
+              "choices": [
+                {
+                  "weaponId": "hunting-lance",
+                  "label": "Hunting Lance",
+                  "pts": 4
+                }
+              ]
+            },
+            {
+              "id": "rrc-vox",
+              "type": "namedUpgrade",
+              "upgradeId": "vox-caster-upgrade",
+              "pts": 5
+            },
+            {
+              "id": "rrc-standard",
+              "type": "namedUpgrade",
+              "upgradeId": "standard-upgrade",
+              "pts": 40
+            },
+            {
+              "id": "rrc-medicae",
+              "type": "namedUpgrade",
+              "upgradeId": "medicae-pack-upgrade",
+              "pts": 75
+            },
+            {
+              "id": "rrc-jetbike",
+              "type": "toggle",
+              "label": "Jet Bikes (+2 pts/model)",
+              "pts": 2,
+              "grantsRules": [
+                "fly",
+                "deepstrike"
+              ],
+              "note": "Gain Flying and Deepstrike. Lose Outflank."
+            },
+            {
+              "id": "rrc-ge-steed",
+              "type": "toggle",
+              "label": "Genetically Engineered Steeds (+2 pts/model)",
+              "pts": 2,
+              "note": "W+1. Lose Outflank."
+            }
           ]
         },
         {
@@ -59,9 +201,32 @@
               "name": "Sergeant",
               "minCount": 1,
               "maxCount": 1,
-              "statline": { "type": "infantry", "M": 12, "WS": 4, "BS": 4, "S": 3, "T": 4, "W": 2, "I": 3, "A": 2, "Ld": 8, "Sv": "5+" },
-              "baseWargear": ["infantry-lance", "chainsword", "laspistol", "frag-grenades"],
-              "specialRules": ["character", "infantry", "outflank", "steed", "very-bulky"]
+              "statline": {
+                "type": "infantry",
+                "M": 12,
+                "WS": 4,
+                "BS": 4,
+                "S": 3,
+                "T": 4,
+                "W": 2,
+                "I": 3,
+                "A": 2,
+                "Ld": 8,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "infantry-lance",
+                "chainsword",
+                "laspistol",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "character",
+                "infantry",
+                "outflank",
+                "steed",
+                "very-bulky"
+              ]
             },
             {
               "id": "rough-rider",
@@ -69,23 +234,148 @@
               "minCount": 4,
               "maxCount": 9,
               "ptsEach": 19,
-              "statline": { "type": "infantry", "M": 12, "WS": 4, "BS": 4, "S": 3, "T": 4, "W": 2, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["infantry-lance", "chainsword", "laspistol", "frag-grenades"],
-              "specialRules": ["infantry", "outflank", "steed", "very-bulky"]
+              "statline": {
+                "type": "infantry",
+                "M": 12,
+                "WS": 4,
+                "BS": 4,
+                "S": 3,
+                "T": 4,
+                "W": 2,
+                "I": 3,
+                "A": 1,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "infantry-lance",
+                "chainsword",
+                "laspistol",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry",
+                "outflank",
+                "steed",
+                "very-bulky"
+              ]
             }
           ],
           "options": [
-            { "id": "rrs-sgt-pistol", "type": "weaponSwap", "applies": ["rr-sergeant"], "label": "Sergeant: swap Laspistol for", "replaces": "laspistol", "weaponListId": "hq-officer-pistol" },
-            { "id": "rrs-sgt-melee", "type": "weaponSwap", "applies": ["rr-sergeant"], "label": "Sergeant: swap Chainsword for", "replaces": "chainsword", "weaponListId": "rough-rider-officer-melee" },
-            { "id": "rrs-special", "type": "weaponSwap", "applies": ["rough-rider"], "label": "Up to 2: swap Laspistol for special weapon", "replaces": "laspistol", "weaponListId": "rough-rider-special-weapons" },
-            { "id": "rrs-demochg", "type": "toggle", "label": "Demolition Charge (one Rough Rider)", "pts": 7, "grantsWargear": ["demolition-charge"] },
-            { "id": "rrs-rifle", "type": "weaponSwap", "applies": ["rough-rider"], "label": "Any Rough Rider: swap Laspistol for Lasgun (+1 pt)", "replaces": "laspistol", "choices": [{ "weaponId": "lasgun", "label": "Lasgun", "pts": 1 }] },
-            { "id": "rrs-hunt-lance", "type": "weaponSwap", "applies": ["rr-sergeant", "rough-rider"], "label": "Swap Infantry Lance for", "replaces": "infantry-lance", "choices": [{ "weaponId": "hunting-lance", "label": "Hunting Lance", "pts": 4 }] },
-            { "id": "rrs-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
-            { "id": "rrs-standard", "type": "namedUpgrade", "upgradeId": "standard-upgrade", "pts": 40 },
-            { "id": "rrs-medicae", "type": "namedUpgrade", "upgradeId": "medicae-pack-upgrade", "pts": 75 },
-            { "id": "rrs-jetbike", "type": "toggle", "label": "Jet Bikes (+2 pts/model)", "pts": 2, "grantsRules": ["fly", "deepstrike"], "note": "Gain Flying and Deepstrike. Lose Outflank." },
-            { "id": "rrs-ge-steed", "type": "toggle", "label": "Genetically Engineered Steeds (+2 pts/model)", "pts": 2, "note": "W+1. Lose Outflank." }
+            {
+              "id": "rrs-sgt-pistol",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "rr-sergeant"
+              ],
+              "label": "Sergeant: swap Laspistol for",
+              "replaces": "laspistol",
+              "weaponListId": "hq-officer-pistol"
+            },
+            {
+              "id": "rrs-sgt-melee",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "rr-sergeant"
+              ],
+              "label": "Sergeant: swap Chainsword for",
+              "replaces": "chainsword",
+              "weaponListId": "rough-rider-officer-melee"
+            },
+            {
+              "id": "rrs-special",
+              "type": "weaponSwap",
+              "scope": "limitedSlot",
+              "slots": 2,
+              "applies": [
+                "rough-rider"
+              ],
+              "label": "Up to 2: swap Laspistol for special weapon",
+              "replaces": "laspistol",
+              "weaponListId": "rough-rider-special-weapons"
+            },
+            {
+              "id": "rrs-demochg",
+              "type": "toggle",
+              "label": "Demolition Charge (one Rough Rider)",
+              "pts": 7,
+              "grantsWargear": [
+                "demolition-charge"
+              ]
+            },
+            {
+              "id": "rrs-rifle",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "rough-rider"
+              ],
+              "label": "Any Rough Rider: swap Laspistol for Lasgun (+1 pt)",
+              "replaces": "laspistol",
+              "choices": [
+                {
+                  "weaponId": "lasgun",
+                  "label": "Lasgun",
+                  "pts": 1
+                }
+              ]
+            },
+            {
+              "id": "rrs-hunt-lance",
+              "type": "weaponSwap",
+              "scope": "unit",
+              "applies": [
+                "rr-sergeant",
+                "rough-rider"
+              ],
+              "label": "Swap Infantry Lance for",
+              "replaces": "infantry-lance",
+              "choices": [
+                {
+                  "weaponId": "hunting-lance",
+                  "label": "Hunting Lance",
+                  "pts": 4
+                }
+              ]
+            },
+            {
+              "id": "rrs-vox",
+              "type": "namedUpgrade",
+              "upgradeId": "vox-caster-upgrade",
+              "pts": 5
+            },
+            {
+              "id": "rrs-standard",
+              "type": "namedUpgrade",
+              "upgradeId": "standard-upgrade",
+              "pts": 40
+            },
+            {
+              "id": "rrs-medicae",
+              "type": "namedUpgrade",
+              "upgradeId": "medicae-pack-upgrade",
+              "pts": 75
+            },
+            {
+              "id": "rrs-jetbike",
+              "type": "toggle",
+              "label": "Jet Bikes (+2 pts/model)",
+              "pts": 2,
+              "grantsRules": [
+                "fly",
+                "deepstrike"
+              ],
+              "note": "Gain Flying and Deepstrike. Lose Outflank."
+            },
+            {
+              "id": "rrs-ge-steed",
+              "type": "toggle",
+              "label": "Genetically Engineered Steeds (+2 pts/model)",
+              "pts": 2,
+              "note": "W+1. Lose Outflank."
+            }
           ]
         }
       ]
@@ -101,9 +391,35 @@
           "name": "Armoured Sentinel Sergeant",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 12, "SA": 10, "RA": 10, "W": 6, "I": 3, "A": 3, "Ld": 8, "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["character", "vehicle", "combat-walker"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 12,
+            "SA": 10,
+            "RA": 10,
+            "W": 6,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "character",
+            "vehicle",
+            "combat-walker"
+          ]
         },
         {
           "id": "armoured-sentinel",
@@ -111,20 +427,93 @@
           "minCount": 2,
           "maxCount": 9,
           "ptsEach": 62,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 12, "SA": 10, "RA": 10, "W": 6, "I": 3, "A": 2, "Ld": 7, "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "combat-walker"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 12,
+            "SA": 10,
+            "RA": 10,
+            "W": 6,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "combat-walker"
+          ]
         }
       ],
       "options": [
-        { "id": "as-main", "type": "weaponSwap", "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "armoured-sentinel-main" },
-        { "id": "as-chainsaw", "type": "toggle", "label": "Sentinel Chainsaw", "pts": 4, "grantsWargear": ["sentinel-chainsaw"] },
-        { "id": "as-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "as-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "as-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "as-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "as-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "as-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "as-main",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "armoured-sentinel-main"
+        },
+        {
+          "id": "as-chainsaw",
+          "type": "toggle",
+          "label": "Sentinel Chainsaw",
+          "pts": 4,
+          "grantsWargear": [
+            "sentinel-chainsaw"
+          ]
+        },
+        {
+          "id": "as-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "as-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "as-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "as-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "as-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "as-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -138,9 +527,37 @@
           "name": "Drop Sentinel Sergeant",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 3, "A": 3, "Ld": 8, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["character", "vehicle", "combat-walker", "deepstrike", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "character",
+            "vehicle",
+            "combat-walker",
+            "deepstrike",
+            "open-topped"
+          ]
         },
         {
           "id": "drop-sentinel",
@@ -148,20 +565,95 @@
           "minCount": 2,
           "maxCount": 9,
           "ptsEach": 39,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "combat-walker", "deepstrike", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "combat-walker",
+            "deepstrike",
+            "open-topped"
+          ]
         }
       ],
       "options": [
-        { "id": "ds-main", "type": "weaponSwap", "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "drop-sentinel-main" },
-        { "id": "ds-chainsaw", "type": "toggle", "label": "Sentinel Chainsaw", "pts": 4, "grantsWargear": ["sentinel-chainsaw"] },
-        { "id": "ds-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "ds-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "ds-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "ds-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "ds-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "ds-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "ds-main",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "drop-sentinel-main"
+        },
+        {
+          "id": "ds-chainsaw",
+          "type": "toggle",
+          "label": "Sentinel Chainsaw",
+          "pts": 4,
+          "grantsWargear": [
+            "sentinel-chainsaw"
+          ]
+        },
+        {
+          "id": "ds-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "ds-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ds-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "ds-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ds-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "ds-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -175,9 +667,36 @@
           "name": "Powerlifter Sentinel Sergeant",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 3, "A": 3, "Ld": 8, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "powerlifter", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["character", "vehicle", "combat-walker", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "powerlifter",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "character",
+            "vehicle",
+            "combat-walker",
+            "open-topped"
+          ]
         },
         {
           "id": "powerlifter-sentinel",
@@ -185,18 +704,77 @@
           "minCount": 2,
           "maxCount": 9,
           "ptsEach": 64,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "powerlifter", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "combat-walker", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "powerlifter",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "combat-walker",
+            "open-topped"
+          ]
         }
       ],
       "options": [
-        { "id": "pl-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "pl-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "pl-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "pl-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "pl-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "pl-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "pl-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "pl-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "pl-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "pl-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "pl-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "pl-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -210,9 +788,37 @@
           "name": "Scout Sentinel Sergeant",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 3, "A": 3, "Ld": 8, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["character", "vehicle", "combat-walker", "scout", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "character",
+            "vehicle",
+            "combat-walker",
+            "scout",
+            "open-topped"
+          ]
         },
         {
           "id": "scout-sentinel",
@@ -220,20 +826,95 @@
           "minCount": 2,
           "maxCount": 9,
           "ptsEach": 39,
-          "statline": { "type": "vehicle", "M": 12, "WS": 4, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "combat-walker", "scout", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "combat-walker",
+            "scout",
+            "open-topped"
+          ]
         }
       ],
       "options": [
-        { "id": "ss-main", "type": "weaponSwap", "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "scout-sentinel-main" },
-        { "id": "ss-chainsaw", "type": "toggle", "label": "Sentinel Chainsaw", "pts": 4, "grantsWargear": ["sentinel-chainsaw"] },
-        { "id": "ss-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "ss-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "ss-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "ss-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "ss-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "ss-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "ss-main",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "scout-sentinel-main"
+        },
+        {
+          "id": "ss-chainsaw",
+          "type": "toggle",
+          "label": "Sentinel Chainsaw",
+          "pts": 4,
+          "grantsWargear": [
+            "sentinel-chainsaw"
+          ]
+        },
+        {
+          "id": "ss-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "ss-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ss-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "ss-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ss-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "ss-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -248,43 +929,144 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 143,
-          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 11, "RA": 10, "W": 8, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 11,
+            "RA": 10,
+            "W": 8,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "vigilator-cannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "coaxial-heavy-stubber", "arcType": "Turret" }
+            {
+              "weaponId": "vigilator-cannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "coaxial-heavy-stubber",
+              "arcType": "Turret"
+            }
           ],
-          "specialRules": ["vehicle", "tank", "grinding-advance"]
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "grinding-advance"
+          ]
         }
       ],
       "options": [
         {
           "id": "hfv-turret",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap Vigilator Cannon for",
           "replaces": "vigilator-cannon",
           "choices": [
-            { "weaponId": "vigilator-cannon", "label": "Vigilator Cannon", "pts": 0, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "melta-cannon", "label": "Melta Cannon", "pts": 1, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "castigator-gatling-cannon", "label": "Castigator Gatling Cannon", "pts": 18, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-lascannon", "label": "Heavy Lascannon", "pts": 30, "arcType": "Turret", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "vigilator-cannon",
+              "label": "Vigilator Cannon",
+              "pts": 0,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "melta-cannon",
+              "label": "Melta Cannon",
+              "pts": 1,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "castigator-gatling-cannon",
+              "label": "Castigator Gatling Cannon",
+              "pts": 18,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-lascannon",
+              "label": "Heavy Lascannon",
+              "pts": 30,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
         {
           "id": "hfv-coaxial",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap Coaxial Heavy Stubber for",
           "replaces": "coaxial-heavy-stubber",
           "choices": [
-            { "weaponId": "coaxial-heavy-stubber", "label": "Coaxial Heavy Stubber", "pts": 0, "arcType": "Turret" },
-            { "weaponId": "coaxial-meltagun", "label": "Coaxial Meltagun", "pts": 17, "arcType": "Turret" }
+            {
+              "weaponId": "coaxial-heavy-stubber",
+              "label": "Coaxial Heavy Stubber",
+              "pts": 0,
+              "arcType": "Turret"
+            },
+            {
+              "weaponId": "coaxial-meltagun",
+              "label": "Coaxial Meltagun",
+              "pts": 17,
+              "arcType": "Turret"
+            }
           ]
         },
-        { "id": "hfv-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "hfv-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "hfv-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "hfv-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "hfv-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "hfv-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "hfv-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "hfv-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "hfv-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "hfv-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "hfv-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "hfv-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -299,28 +1081,123 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 103,
-          "statline": { "type": "vehicle", "M": 14, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 10, "RA": 10, "W": 8, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 14,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 10,
+            "RA": 10,
+            "W": 8,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "multilaser", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-flamer", "arcType": "Hull" }
+            {
+              "weaponId": "multilaser",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["vehicle", "tank", "scout"]
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "scout"
+          ]
         }
       ],
       "options": [
-        { "id": "peg-turret", "type": "weaponSwap", "label": "Swap Multilaser for", "replaces": "multilaser", "weaponListId": "pegasus-turret" },
-        { "id": "peg-hull", "type": "weaponSwap", "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "choices": [
-          { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull" },
-          { "weaponId": "heavy-bolter", "label": "Heavy Bolter", "pts": 1, "arcType": "Hull" }
-        ]},
-        { "id": "peg-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "peg-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "peg-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "peg-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "peg-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "peg-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "peg-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "peg-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "peg-turret",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Multilaser for",
+          "replaces": "multilaser",
+          "weaponListId": "pegasus-turret"
+        },
+        {
+          "id": "peg-hull",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 1,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "peg-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "peg-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "peg-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "peg-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "peg-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "peg-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "peg-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "peg-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -335,30 +1212,120 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 37,
-          "statline": { "type": "vehicle", "M": 16, "WS": 5, "BS": 4, "S": 5, "FA": 9, "SA": 9, "RA": 9, "W": 5, "I": 1, "A": 3, "Ld": 8, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "tank", "outflank", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 16,
+            "WS": 5,
+            "BS": 4,
+            "S": 5,
+            "FA": 9,
+            "SA": 9,
+            "RA": 9,
+            "W": 5,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "outflank",
+            "open-topped"
+          ]
         }
       ],
       "options": [
         {
           "id": "ta-main",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap Heavy Flamer for",
           "replaces": "heavy-flamer",
           "choices": [
-            { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "tauros-grenade-launcher", "label": "Tauros Grenade Launcher", "pts": 6, "arcType": "Hull", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "tauros-grenade-launcher",
+              "label": "Tauros Grenade Launcher",
+              "pts": 6,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
-        { "id": "ta-hkm1", "type": "toggle", "label": "Hunter Killer Missile (1st)", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "ta-hkm2", "type": "toggle", "label": "Hunter Killer Missile (2nd)", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "ta-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "ta-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "ta-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "ta-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "ta-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "ta-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "ta-hkm1",
+          "type": "toggle",
+          "label": "Hunter Killer Missile (1st)",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "ta-hkm2",
+          "type": "toggle",
+          "label": "Hunter Killer Missile (2nd)",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "ta-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ta-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "ta-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ta-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "ta-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "ta-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -373,29 +1340,111 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 61,
-          "statline": { "type": "vehicle", "M": 16, "WS": 5, "BS": 4, "S": 5, "FA": 9, "SA": 9, "RA": 9, "W": 6, "I": 1, "A": 3, "Ld": 8, "Sv": "4+" },
-          "baseWargear": [{ "weaponId": "2-linked-venators-multilasers", "arcType": "Turret", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "tank", "outflank", "open-topped"]
+          "statline": {
+            "type": "vehicle",
+            "M": 16,
+            "WS": 5,
+            "BS": 4,
+            "S": 5,
+            "FA": 9,
+            "SA": 9,
+            "RA": 9,
+            "W": 6,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-venators-multilasers",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "outflank",
+            "open-topped"
+          ]
         }
       ],
       "options": [
         {
           "id": "tv-turret",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap 2 Linked Multilasers for",
           "replaces": "2-linked-venators-multilasers",
           "choices": [
-            { "weaponId": "2-linked-lascannons-taurox", "label": "2 Linked Lascannons", "pts": 24, "arcType": "Turret", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "2-linked-lascannons-taurox",
+              "label": "2 Linked Lascannons",
+              "pts": 24,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
-        { "id": "tv-hkm1", "type": "toggle", "label": "Hunter Killer Missile (1st)", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "tv-hkm2", "type": "toggle", "label": "Hunter Killer Missile (2nd)", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "tv-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "tv-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "tv-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "tv-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "tv-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "tv-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "tv-hkm1",
+          "type": "toggle",
+          "label": "Hunter Killer Missile (1st)",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "tv-hkm2",
+          "type": "toggle",
+          "label": "Hunter Killer Missile (2nd)",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "tv-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "tv-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "tv-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "tv-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "tv-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "tv-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -410,32 +1459,137 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 143,
-          "statline": { "type": "vehicle", "M": 10, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 12, "RA": 11, "W": 12, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 10,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 12,
+            "RA": 11,
+            "W": 12,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "inferno-cannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-flamer", "arcType": "Hull" }
+            {
+              "weaponId": "inferno-cannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["vehicle", "tank"],
+          "specialRules": [
+            "vehicle",
+            "tank"
+          ],
           "inlineRules": [
-            { "id": "ah-fuel-tanks", "name": "Enlarged Fuel Tanks", "shortDesc": "Reroll 1s to Wound with Flame weapons. Explodes on 4+ instead of 6+.", "fullDesc": "Reroll 1s to Wound with Flame weapons. The model explodes on a 4+ instead of 6+." }
+            {
+              "id": "ah-fuel-tanks",
+              "name": "Enlarged Fuel Tanks",
+              "shortDesc": "Reroll 1s to Wound with Flame weapons. Explodes on 4+ instead of 6+.",
+              "fullDesc": "Reroll 1s to Wound with Flame weapons. The model explodes on a 4+ instead of 6+."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "ah-hull", "type": "weaponSwap", "label": "Swap Hull Heavy Flamer for", "replaces": "heavy-flamer", "choices": [
-          { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull" },
-          { "weaponId": "heavy-bolter", "label": "Heavy Bolter", "pts": 1, "arcType": "Hull" },
-          { "weaponId": "multimelta-short", "label": "Multimelta", "pts": 10, "arcType": "Hull" }
-        ]},
-        { "id": "ah-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "ah-dozerblade", "type": "toggle", "label": "Dozerblade", "pts": 9, "grantsWargear": ["dozerblade"] },
-        { "id": "ah-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "ah-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "ah-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "ah-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "ah-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "ah-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "ah-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "ah-hull",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Hull Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 1,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "multimelta-short",
+              "label": "Multimelta",
+              "pts": 10,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "ah-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "ah-dozerblade",
+          "type": "toggle",
+          "label": "Dozerblade",
+          "pts": 9,
+          "grantsWargear": [
+            "dozerblade"
+          ]
+        },
+        {
+          "id": "ah-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "ah-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ah-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "ah-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "ah-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "ah-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "ah-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -450,40 +1604,165 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 117,
-          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 12, "RA": 10, "W": 11, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 12,
+            "RA": 10,
+            "W": 11,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "chem-cannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-flamer", "arcType": "Hull" }
+            {
+              "weaponId": "chem-cannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["vehicle", "tank"]
+          "specialRules": [
+            "vehicle",
+            "tank"
+          ]
         }
       ],
       "options": [
         {
           "id": "hnd-turret",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap Chem Cannon for",
           "replaces": "chem-cannon",
           "choices": [
-            { "weaponId": "chem-cannon", "label": "Chem Cannon", "pts": 0, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "inferno-cannon", "label": "Inferno Cannon", "pts": 18, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "melta-cannon", "label": "Melta Cannon", "pts": 32, "arcType": "Turret", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "chem-cannon",
+              "label": "Chem Cannon",
+              "pts": 0,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "inferno-cannon",
+              "label": "Inferno Cannon",
+              "pts": 18,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "melta-cannon",
+              "label": "Melta Cannon",
+              "pts": 32,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
-        { "id": "hnd-hull", "type": "weaponSwap", "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "choices": [
-          { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull" },
-          { "weaponId": "heavy-bolter", "label": "Heavy Bolter", "pts": 1, "arcType": "Hull" },
-          { "weaponId": "multimelta-short", "label": "Multimelta", "pts": 10, "arcType": "Hull" }
-        ]},
-        { "id": "hnd-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "hnd-dozerblade", "type": "toggle", "label": "Dozerblade", "pts": 9, "grantsWargear": ["dozerblade"] },
-        { "id": "hnd-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "hnd-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "hnd-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "hnd-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "hnd-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "hnd-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "hnd-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "hnd-hull",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 1,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "multimelta-short",
+              "label": "Multimelta",
+              "pts": 10,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "hnd-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "hnd-dozerblade",
+          "type": "toggle",
+          "label": "Dozerblade",
+          "pts": 9,
+          "grantsWargear": [
+            "dozerblade"
+          ]
+        },
+        {
+          "id": "hnd-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "hnd-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "hnd-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "hnd-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "hnd-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "hnd-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "hnd-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -498,32 +1777,131 @@
           "minCount": 1,
           "maxCount": 3,
           "ptsEach": 96,
-          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 10, "RA": 10, "W": 11, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 10,
+            "RA": 10,
+            "W": 11,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "autocannon", "arcType": "Hull" },
-            { "weaponId": "heavy-flamer", "arcType": "Hull" },
+            {
+              "weaponId": "autocannon",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull"
+            },
             "auspex-array"
           ],
-          "specialRules": ["vehicle", "tank", "open-topped", "scout"],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "open-topped",
+            "scout"
+          ],
           "inlineRules": [
-            { "id": "sal-auspex", "name": "Auspex Array", "shortDesc": "6\" Aura: this model and target unit inflict –1 to Cover Saves from their Shooting.", "fullDesc": "6\" Aura: this model and target unit inflict a –1 to Cover Saves taken from their Shooting." }
+            {
+              "id": "sal-auspex",
+              "name": "Auspex Array",
+              "shortDesc": "6\" Aura: this model and target unit inflict –1 to Cover Saves from their Shooting.",
+              "fullDesc": "6\" Aura: this model and target unit inflict a –1 to Cover Saves taken from their Shooting."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "sal-hull", "type": "weaponSwap", "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "choices": [
-          { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull" },
-          { "weaponId": "heavy-bolter", "label": "Heavy Bolter", "pts": 1, "arcType": "Hull" }
-        ]},
-        { "id": "sal-pintle", "type": "weaponSwap", "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "sal-dozerblade", "type": "toggle", "label": "Dozerblade", "pts": 9, "grantsWargear": ["dozerblade"] },
-        { "id": "sal-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "sal-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "sal-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "sal-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "sal-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "sal-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "sal-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "sal-hull",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 1,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "sal-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "sal-dozerblade",
+          "type": "toggle",
+          "label": "Dozerblade",
+          "pts": 9,
+          "grantsWargear": [
+            "dozerblade"
+          ]
+        },
+        {
+          "id": "sal-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "sal-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sal-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "sal-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sal-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "sal-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "sal-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -537,9 +1915,36 @@
           "name": "Scylla Sergeant",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["character", "vehicle", "tank", "outflank"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "character",
+            "vehicle",
+            "tank",
+            "outflank"
+          ]
         },
         {
           "id": "scylla",
@@ -547,31 +1952,128 @@
           "minCount": 2,
           "maxCount": 9,
           "ptsEach": 56,
-          "statline": { "type": "vehicle", "M": 12, "WS": 5, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 5, "I": 1, "A": 2, "Ld": 7, "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Hull", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "tank", "outflank"]
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 5,
+            "I": 1,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "outflank"
+          ]
         }
       ],
       "options": [
         {
           "id": "scy-main",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap Heavy Flamer for",
           "replaces": "heavy-flamer",
           "choices": [
-            { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "multilaser", "label": "Multilaser", "pts": 1, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "autocannon", "label": "Autocannon", "pts": 3, "arcType": "Hull", "mountingTags": ["Primary"] },
-            { "weaponId": "lascannon", "label": "Lascannon", "pts": 7, "arcType": "Hull", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "multilaser",
+              "label": "Multilaser",
+              "pts": 1,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "autocannon",
+              "label": "Autocannon",
+              "pts": 3,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "lascannon",
+              "label": "Lascannon",
+              "pts": 7,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
-        { "id": "scy-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "scy-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "scy-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "scy-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "scy-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "scy-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "scy-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "scy-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "scy-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "scy-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "scy-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "scy-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "scy-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "scy-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -585,9 +2087,35 @@
           "name": "Siegfried Sergeant",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 10, "WS": 5, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 6, "I": 1, "A": 3, "Ld": 8, "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Turret", "mountingTags": ["Primary"] }],
-          "specialRules": ["character", "vehicle", "tank"]
+          "statline": {
+            "type": "vehicle",
+            "M": 10,
+            "WS": 5,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 6,
+            "I": 1,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "character",
+            "vehicle",
+            "tank"
+          ]
         },
         {
           "id": "siegfried",
@@ -595,31 +2123,127 @@
           "minCount": 2,
           "maxCount": 9,
           "ptsEach": 56,
-          "statline": { "type": "vehicle", "M": 10, "WS": 5, "BS": 4, "S": 5, "FA": 10, "SA": 10, "RA": 10, "W": 6, "I": 1, "A": 2, "Ld": 7, "Sv": "3+" },
-          "baseWargear": [{ "weaponId": "heavy-flamer", "arcType": "Turret", "mountingTags": ["Primary"] }],
-          "specialRules": ["vehicle", "tank"]
+          "statline": {
+            "type": "vehicle",
+            "M": 10,
+            "WS": 5,
+            "BS": 4,
+            "S": 5,
+            "FA": 10,
+            "SA": 10,
+            "RA": 10,
+            "W": 6,
+            "I": 1,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank"
+          ]
         }
       ],
       "options": [
         {
           "id": "sig-turret",
           "type": "weaponSwap",
+          "scope": "unit",
           "label": "Swap Heavy Flamer for",
           "replaces": "heavy-flamer",
           "choices": [
-            { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "multilaser", "label": "Multilaser", "pts": 2, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "autocannon", "label": "Autocannon", "pts": 6, "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "lascannon", "label": "Lascannon", "pts": 14, "arcType": "Turret", "mountingTags": ["Primary"] }
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "multilaser",
+              "label": "Multilaser",
+              "pts": 2,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "autocannon",
+              "label": "Autocannon",
+              "pts": 6,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "lascannon",
+              "label": "Lascannon",
+              "pts": 14,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
           ]
         },
-        { "id": "sig-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "sig-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "sig-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "sig-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "sig-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "sig-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "sig-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "sig-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "sig-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sig-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "sig-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "sig-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "sig-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "sig-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     }
   ]

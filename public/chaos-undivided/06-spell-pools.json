@@ -1,0 +1,52 @@
+{
+  "spellPools": {
+    "hereticus": [
+      { "id": "infernal-gaze", "name": "Infernal Gaze", "castMechanic": "roll", "castValue": 7, "pts": 10, "range": 18, "description": "Assault 1, Beam, S5, AP3+.", "isAttack": true },
+      { "id": "wreathing-shadows", "name": "Wreathing Shadows", "castMechanic": "roll", "castValue": 7, "pts": 10, "range": 18, "description": "Target unit suffers –1 to Cover Saves until your next Psychic Phase.", "isAttack": false },
+      { "id": "prescience", "name": "Prescience", "castMechanic": "roll", "castValue": 7, "pts": 15, "range": 18, "description": "Target unit may reroll 1s To Hit until your next Psychic Phase. If they can already reroll 1s To Hit they reroll 2s instead.", "isAttack": false },
+      { "id": "pall-of-despair", "name": "Pall of Despair", "castMechanic": "roll", "castValue": 7, "pts": 20, "range": 12, "description": "Target unit suffers Ld-2 until your next Psychic Phase.", "isAttack": false },
+      { "id": "dark-smoke", "name": "Dark Smoke", "castMechanic": "roll", "castValue": 6, "pts": 45, "range": 18, "description": "Target unit gains Shroud until your next Psychic Phase.", "isAttack": false },
+      { "id": "diabolic-strength", "name": "Diabolic Strength", "castMechanic": "roll", "castValue": 7, "pts": 60, "range": 18, "description": "Target unit gains S+1 until your next Psychic Phase.", "isAttack": false }
+    ],
+    "khorne": [
+      { "id": "bloodgorge", "name": "Bloodgorge", "castMechanic": "sacrifice", "castValue": 3, "pts": 5, "range": 0, "description": "User. This model gains A+3, but each roll of a 1 To Hit inflicts 1 Mortal Wound. Lasts until your next Psychic Phase.", "isAttack": false },
+      { "id": "warp-gateway", "name": "Warp Gateway", "castMechanic": "sacrifice", "castValue": 2, "pts": 5, "range": 6, "description": "Target unit may declare Charges on the turn they arrived from Reserves.", "isAttack": false },
+      { "id": "blood-torrent", "name": "Blood Torrent", "castMechanic": "sacrifice", "castValue": 1, "pts": 22, "range": 18, "description": "Target unit gains Shroud.", "isAttack": false },
+      { "id": "hatred-of-magick", "name": "Hatred of Magick", "castMechanic": "sacrifice", "castValue": 1, "pts": 25, "range": 0, "description": "This model may roll 1 extra Deny the Witch die per Sacrifice paid until your next Psychic Phase. These dice may only be used once each, but this model may Deny the Witch unlimited times with the default 2 dice for free.", "isAttack": false },
+      { "id": "ascension", "name": "Ascension", "castMechanic": "sacrifice", "castValue": 30, "pts": 26, "range": 0, "description": "This model gains M+2, S+2, T+2, W+2, I+2, A+2, and is fully Healed. A model may only be ascended once.", "isAttack": false },
+      { "id": "tear-in-reality", "name": "Tear in Reality", "castMechanic": "sacrifice", "castValue": 10, "pts": 57, "range": 6, "description": "Summon 10 Bloodletters as if they had just arrived from Deepstrike, but they do not Scatter. Cannot be cast on Turn 1.", "isAttack": false }
+    ],
+    "nurgle": [
+      { "id": "plague-wind", "name": "Plague Wind", "castMechanic": "roll", "castValue": 7, "pts": 4, "range": 18, "description": "Assault 1, 5\" Blast, Poisoned (3+), S3, AP4+.", "isAttack": true },
+      { "id": "gift-of-contagion", "name": "Gift of Contagion", "castMechanic": "roll", "castValue": 8, "pts": 15, "range": 18, "description": "Target unit suffers S-1 until your next Psychic Phase.", "isAttack": false },
+      { "id": "miasma-of-pestilence", "name": "Miasma of Pestilence", "castMechanic": "roll", "castValue": 7, "pts": 20, "range": 18, "description": "Target unit with the Mark of Nurgle inflicts –1 To Hit them from Ranged Attacks until your next Psychic Phase.", "isAttack": false },
+      { "id": "curse-of-the-leper", "name": "Curse of the Leper", "castMechanic": "roll", "castValue": 8, "pts": 30, "range": 18, "description": "Assault 6. For each successful Hit, target unit takes a Toughness Test. For each one Failed, they suffer 1 Mortal Wound.", "isAttack": true },
+      { "id": "gift-of-plagues", "name": "Gift of Plagues", "castMechanic": "roll", "castValue": 7, "pts": 30, "range": 18, "description": "Target unit suffers T-1 until your next Psychic Phase.", "isAttack": false },
+      { "id": "putrescent-vitality", "name": "Putrescent Vitality", "castMechanic": "roll", "castValue": 7, "pts": 80, "range": 18, "description": "Target unit with the Mark of Nurgle gains S+1 and T+1 until your next Psychic Phase.", "isAttack": false }
+    ],
+    "slaanesh": [
+      { "id": "phantasmgoria", "name": "Phantasmgoria", "castMechanic": "roll", "castValue": 6, "pts": 10, "range": 12, "description": "Target unit suffers Ld-2.", "isAttack": false },
+      { "id": "cacophonic-choir", "name": "Cacophonic Choir", "castMechanic": "roll", "castValue": 8, "pts": 15, "range": 18, "description": "Target unit takes a Ld test. For each point they fail by the unit suffers 1 Mortal Wound.", "isAttack": false },
+      { "id": "pavane-of-slaanesh", "name": "Pavane of Slaanesh", "castMechanic": "roll", "castValue": 6, "pts": 25, "range": 18, "description": "Target unit may move up to 6\".", "isAttack": false },
+      { "id": "symphony-of-pain", "name": "Symphony of Pain", "castMechanic": "roll", "castValue": 8, "pts": 30, "range": 18, "description": "Target unit suffers –1 To Hit until your next Psychic Phase.", "isAttack": false },
+      { "id": "hysterical-frenzy", "name": "Hysterical Frenzy", "castMechanic": "roll", "castValue": 7, "pts": 45, "range": 18, "description": "Target unit gains A+1 until your next Psychic Phase.", "isAttack": false },
+      { "id": "delightful-agonies", "name": "Delightful Agonies", "castMechanic": "roll", "castValue": 7, "pts": 75, "range": 18, "description": "Target unit with the Mark of Slaanesh gains a 5+ Feel No Pain until your next Psychic Phase.", "isAttack": false }
+    ],
+    "tzeentch": [
+      { "id": "infernal-gateway", "name": "Infernal Gateway", "castMechanic": "roll", "castValue": 6, "pts": 10, "range": 18, "description": "Target unit with the Mark of Tzeentch immediately deploys out of Reserves within 18\" of the Caster. This can happen on Turn 1.", "isAttack": false },
+      { "id": "boon-of-change", "name": "Boon of Change", "castMechanic": "roll", "castValue": 6, "pts": 14, "range": 18, "description": "Target model gains S+1, T+1, A+1 until your next Psychic Phase.", "isAttack": false },
+      { "id": "treason-of-tzeentch", "name": "Treason of Tzeentch", "castMechanic": "roll", "castValue": 0, "pts": 15, "range": 12, "description": "Target model becomes under your control and performs their Melee or Ranged attack, treating friendly units as enemies. The Cast value is the target model's remaining W, cannot target Titanic. Declare target before rolling to Cast.", "isAttack": false },
+      { "id": "bolt-of-change", "name": "Bolt of Change", "castMechanic": "roll", "castValue": 8, "pts": 20, "range": 18, "description": "Assault 1, Sniper (2+), S3, AP2+. If target Independent Character dies, place a Chaos Spawn in their place. If in a unit, the unit is in Ongoing Melee and Engaged.", "isAttack": true },
+      { "id": "gaze-of-fate", "name": "Gaze of Fate", "castMechanic": "roll", "castValue": 6, "pts": 20, "range": 0, "description": "This model may reroll 1 die each time it rolls any dice until your next Psychic Phase.", "isAttack": false },
+      { "id": "flickering-flames", "name": "Flickering Flames", "castMechanic": "roll", "castValue": 7, "pts": 45, "range": 18, "description": "Target unit with the Mark of Tzeentch gains Accurate until your next Psychic Phase.", "isAttack": false }
+    ],
+    "master-of-possessions": [
+      { "id": "sacrifice", "name": "Sacrifice", "castMechanic": "roll", "castValue": 6, "pts": 5, "range": 6, "description": "Remove one Friendly model from the game within 6\". Heal one Friendly model within 6\" d3 Wounds.", "isAttack": false },
+      { "id": "possession", "name": "Possession", "castMechanic": "roll", "castValue": 6, "pts": 6, "range": 18, "description": "Assault 1, Sniper (2+), S3, AP2+.", "isAttack": true },
+      { "id": "incursion", "name": "Incursion", "castMechanic": "roll", "castValue": 6, "pts": 15, "range": 18, "description": "Target Daemonic or Daemonic Engine unit is removed from the board and immediately Deepstrikes.", "isAttack": false },
+      { "id": "mutated-invigoration", "name": "Mutated Invigoration", "castMechanic": "roll", "castValue": 6, "pts": 43, "range": 18, "description": "Target Daemonic or Daemonic Engine gains one of the following randomized on a d3 until your next Psychic Phase: S+1, T+1, A+1.", "isAttack": false },
+      { "id": "cursed-earth", "name": "Cursed Earth", "castMechanic": "roll", "castValue": 6, "pts": 75, "range": 18, "description": "Target Daemonic or Daemonic Engine gains +1 To their Invulnerability Save until your next Psychic Phase. This cannot get better than a 3+.", "isAttack": false },
+      { "id": "infernal-power", "name": "Infernal Power", "castMechanic": "roll", "castValue": 6, "pts": 75, "range": 18, "description": "Target unit gains +1 To Hit until your next Psychic Phase.", "isAttack": false }
+    ]
+  }
+}

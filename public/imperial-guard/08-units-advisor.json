@@ -11,21 +11,52 @@
           "name": "Bodyguard",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol", "chainsword", "frag-grenades"],
-          "specialRules": ["independent-character", "infantry", "bodyguard"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "chainsword",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "bodyguard"
+          ]
         }
       ],
       "options": [
         {
           "id": "bg-melee",
           "type": "weaponSwap",
-          "applies": ["bodyguard-model"],
+          "scope": "perModelType",
+          "applies": [
+            "bodyguard-model"
+          ],
           "label": "Swap Chainsword for",
           "replaces": "chainsword",
           "choices": [
-            { "weaponId": "chainsword", "label": "Chainsword", "pts": 0 },
-            { "weaponId": "brutal-weapon", "label": "Brutal Weapon", "pts": 0 }
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            },
+            {
+              "weaponId": "brutal-weapon",
+              "label": "Brutal Weapon",
+              "pts": 0
+            }
           ]
         }
       ]
@@ -41,15 +72,62 @@
           "name": "Commissar",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 9, "Sv": "5+" },
-          "baseWargear": ["laspistol", "chainsword", "frag-grenades"],
-          "specialRules": ["independent-character", "infantry", "stubborn", "aura-of-discipline", "execution"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 9,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "chainsword",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "stubborn",
+            "aura-of-discipline",
+            "execution"
+          ]
         }
       ],
       "options": [
-        { "id": "com-pistol", "type": "weaponSwap", "applies": ["commissar-model"], "label": "Swap Laspistol for", "replaces": "laspistol", "weaponListId": "commissar-pistol" },
-        { "id": "com-melee", "type": "weaponSwap", "applies": ["commissar-model"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "hq-officer-melee" },
-        { "id": "com-steed", "type": "namedUpgrade", "upgradeId": "steed-upgrade", "pts": 24 }
+        {
+          "id": "com-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "commissar-model"
+          ],
+          "label": "Swap Laspistol for",
+          "replaces": "laspistol",
+          "weaponListId": "commissar-pistol"
+        },
+        {
+          "id": "com-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "commissar-model"
+          ],
+          "label": "Swap Chainsword for",
+          "replaces": "chainsword",
+          "weaponListId": "hq-officer-melee"
+        },
+        {
+          "id": "com-steed",
+          "type": "namedUpgrade",
+          "upgradeId": "steed-upgrade",
+          "pts": 24
+        }
       ]
     },
     {
@@ -63,11 +141,38 @@
           "name": "Enginseer",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "3+" },
-          "baseWargear": ["laspistol", "omnissian-axe", "servo-arm", "frag-grenades", "krak-grenades"],
-          "specialRules": ["independent-character", "infantry", "ig-repair"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 4,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "3+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "omnissian-axe",
+            "servo-arm",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "ig-repair"
+          ],
           "inlineRules": [
-            { "id": "eng-servo-arm", "name": "Servo Arm", "shortDesc": "Each model with a Servo Arm may add +1 to a Repair roll.", "fullDesc": "Each model with a Servo Arm may add +1 to a Repair roll to restore a weapon or mobilize result." }
+            {
+              "id": "eng-servo-arm",
+              "name": "Servo Arm",
+              "shortDesc": "Each model with a Servo Arm may add +1 to a Repair roll.",
+              "fullDesc": "Each model with a Servo Arm may add +1 to a Repair roll to restore a weapon or mobilize result."
+            }
           ]
         },
         {
@@ -76,21 +181,58 @@
           "minCount": 0,
           "maxCount": 9,
           "ptsEach": 21,
-          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 8, "Sv": "4+" },
-          "baseWargear": ["servo-arm"],
-          "specialRules": ["infantry", "steady", "lobotomized"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 4,
+            "BS": 4,
+            "S": 3,
+            "T": 4,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "servo-arm"
+          ],
+          "specialRules": [
+            "infantry",
+            "steady",
+            "lobotomized"
+          ]
         }
       ],
       "options": [
         {
           "id": "eng-grenade",
           "type": "weaponSwap",
-          "applies": ["enginseer-model"],
+          "scope": "perModelType",
+          "applies": [
+            "enginseer-model"
+          ],
           "label": "Swap Krak Grenades for",
           "replaces": "krak-grenades",
-          "choices": [{ "weaponId": "melta-bombs", "label": "Melta Bombs", "pts": 5 }]
+          "choices": [
+            {
+              "weaponId": "melta-bombs",
+              "label": "Melta Bombs",
+              "pts": 5
+            }
+          ]
         },
-        { "id": "eng-servitor-weapon", "type": "weaponSwap", "applies": ["servitor"], "label": "Swap Servo Arm for", "replaces": "servo-arm", "weaponListId": "servitor-weapons" }
+        {
+          "id": "eng-servitor-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "servitor"
+          ],
+          "label": "Swap Servo Arm for",
+          "replaces": "servo-arm",
+          "weaponListId": "servitor-weapons"
+        }
       ]
     },
     {
@@ -105,8 +247,24 @@
           "name": "Navigator",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "specialRules": ["independent-character", "infantry", "imperial-navigator"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "imperial-navigator"
+          ]
         }
       ]
     },
@@ -121,9 +279,28 @@
           "name": "Master of Ordnance",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol", "frag-grenades"],
-          "specialRules": ["independent-character", "infantry", "ordnance-master"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "ordnance-master"
+          ]
         }
       ]
     },
@@ -138,11 +315,37 @@
           "name": "Ministorum Priest",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol", "chainsword", "frag-grenades", "rosarius"],
-          "specialRules": ["independent-character", "infantry", "zealot"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "chainsword",
+            "frag-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "zealot"
+          ],
           "inlineRules": [
-            { "id": "mp-rosarius", "name": "Rosarius", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+            {
+              "id": "mp-rosarius",
+              "name": "Rosarius",
+              "shortDesc": "4+ Invulnerability Save.",
+              "fullDesc": "This model has a 4+ Invulnerability Save."
+            }
           ]
         },
         {
@@ -151,21 +354,94 @@
           "minCount": 0,
           "maxCount": 9,
           "ptsEach": 27,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
-          "baseWargear": ["power-sword", "stormshield"],
-          "specialRules": ["infantry"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 5,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "power-sword",
+            "stormshield"
+          ],
+          "specialRules": [
+            "infantry"
+          ],
           "inlineRules": [
-            { "id": "crus-stormshield", "name": "Stormshield", "shortDesc": "4+ Invulnerability Save and Sv-1 (improves by 1).", "fullDesc": "4+ Invulnerability Save and Sv-1 (improves by 1)." }
+            {
+              "id": "crus-stormshield",
+              "name": "Stormshield",
+              "shortDesc": "4+ Invulnerability Save and Sv-1 (improves by 1).",
+              "fullDesc": "4+ Invulnerability Save and Sv-1 (improves by 1)."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "mp-pistol", "type": "weaponSwap", "applies": ["ministorum-priest-model"], "label": "Swap Laspistol for", "replaces": "laspistol", "weaponListId": "ministorum-pistol" },
-        { "id": "mp-plasma-ranged", "type": "weaponSwap", "applies": ["ministorum-priest-model"], "label": "Swap Laspistol for Plasma Gun", "replaces": "laspistol", "choices": [{ "weaponId": "plasma-gun", "label": "Plasma Gun", "pts": 9 }] },
-        { "id": "mp-melee", "type": "weaponSwap", "applies": ["ministorum-priest-model"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "ministorum-melee" },
-        { "id": "mp-prayer-protects", "type": "namedUpgrade", "upgradeId": "prayer-emperor-protects", "pts": 40 },
-        { "id": "mp-prayer-strength", "type": "namedUpgrade", "upgradeId": "prayer-emperors-strength", "pts": 45 },
-        { "id": "mp-prayer-righteous", "type": "namedUpgrade", "upgradeId": "prayer-righteousness", "pts": 10 }
+        {
+          "id": "mp-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "ministorum-priest-model"
+          ],
+          "label": "Swap Laspistol for",
+          "replaces": "laspistol",
+          "weaponListId": "ministorum-pistol"
+        },
+        {
+          "id": "mp-plasma-ranged",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "ministorum-priest-model"
+          ],
+          "label": "Swap Laspistol for Plasma Gun",
+          "replaces": "laspistol",
+          "choices": [
+            {
+              "weaponId": "plasma-gun",
+              "label": "Plasma Gun",
+              "pts": 9
+            }
+          ]
+        },
+        {
+          "id": "mp-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "ministorum-priest-model"
+          ],
+          "label": "Swap Chainsword for",
+          "replaces": "chainsword",
+          "weaponListId": "ministorum-melee"
+        },
+        {
+          "id": "mp-prayer-protects",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperor-protects",
+          "pts": 40
+        },
+        {
+          "id": "mp-prayer-strength",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperors-strength",
+          "pts": 45
+        },
+        {
+          "id": "mp-prayer-righteous",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-righteousness",
+          "pts": 10
+        }
       ]
     },
     {
@@ -179,9 +455,28 @@
           "name": "Officer of the Fleet",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol"],
-          "specialRules": ["independent-character", "infantry", "fleet-intel", "fleet-interference"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "fleet-intel",
+            "fleet-interference"
+          ]
         }
       ]
     },
@@ -196,28 +491,133 @@
           "name": "Pegasus Command Vehicle",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 14, "WS": 5, "BS": 4, "S": 6, "FA": 12, "SA": 10, "RA": 10, "W": 8, "I": 1, "A": 3, "Ld": 9, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 14,
+            "WS": 5,
+            "BS": 4,
+            "S": 6,
+            "FA": 12,
+            "SA": 10,
+            "RA": 10,
+            "W": 8,
+            "I": 1,
+            "A": 3,
+            "Ld": 9,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "multilaser", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "heavy-flamer", "arcType": "Hull" }
+            {
+              "weaponId": "multilaser",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "arcType": "Hull"
+            }
           ],
-          "specialRules": ["independent-character", "vehicle", "tank", "infantry-orders-1"]
+          "specialRules": [
+            "independent-character",
+            "vehicle",
+            "tank",
+            "infantry-orders-1"
+          ]
         }
       ],
       "options": [
-        { "id": "pcc-turret", "type": "weaponSwap", "applies": ["pegasus-command-model"], "label": "Swap Multilaser for", "replaces": "multilaser", "weaponListId": "pegasus-turret" },
-        { "id": "pcc-hull", "type": "weaponSwap", "applies": ["pegasus-command-model"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "choices": [
-          { "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 0, "arcType": "Hull" },
-          { "weaponId": "heavy-bolter", "label": "Heavy Bolter", "pts": 1, "arcType": "Hull" }
-        ]},
-        { "id": "pcc-pintle", "type": "weaponSwap", "applies": ["pegasus-command-model"], "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "pcc-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "pcc-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "pcc-camo", "type": "namedUpgrade", "upgradeId": "camo-netting-upgrade", "pts": 6 },
-        { "id": "pcc-extra", "type": "namedUpgrade", "upgradeId": "extra-armour-upgrade", "pts": 5 },
-        { "id": "pcc-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "pcc-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "pcc-smoke", "type": "namedUpgrade", "upgradeId": "smoke-launchers-upgrade", "pts": 10 }
+        {
+          "id": "pcc-turret",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "pegasus-command-model"
+          ],
+          "label": "Swap Multilaser for",
+          "replaces": "multilaser",
+          "weaponListId": "pegasus-turret"
+        },
+        {
+          "id": "pcc-hull",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "pegasus-command-model"
+          ],
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 1,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "pcc-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "pegasus-command-model"
+          ],
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "pcc-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "pcc-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "pcc-camo",
+          "type": "namedUpgrade",
+          "upgradeId": "camo-netting-upgrade",
+          "pts": 6
+        },
+        {
+          "id": "pcc-extra",
+          "type": "namedUpgrade",
+          "upgradeId": "extra-armour-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "pcc-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "pcc-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "pcc-smoke",
+          "type": "namedUpgrade",
+          "upgradeId": "smoke-launchers-upgrade",
+          "pts": 10
+        }
       ]
     },
     {
@@ -231,16 +631,51 @@
           "name": "Primaris Psyker",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol", "force-staff"],
-          "specialRules": ["independent-character", "infantry"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "force-staff"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry"
+          ]
         }
       ],
-      "psychic": { "mastery": 1, "spellPoolId": "ig-psyker-powers" },
+      "psychic": {
+        "mastery": 1,
+        "spellPoolId": "ig-psyker-powers"
+      },
       "options": [
-        { "id": "pp-mastery2", "type": "toggle", "label": "Upgrade to Psychic Mastery 2", "pts": 15, "note": "Gains additional spell pick." },
-        { "id": "pp-spell1", "type": "spellPick", "spellPoolId": "ig-psyker-powers" },
-        { "id": "pp-spell2", "type": "spellPick", "spellPoolId": "ig-psyker-powers" }
+        {
+          "id": "pp-mastery2",
+          "type": "toggle",
+          "label": "Upgrade to Psychic Mastery 2",
+          "pts": 15,
+          "note": "Gains additional spell pick."
+        },
+        {
+          "id": "pp-spell1",
+          "type": "spellPick",
+          "spellPoolId": "ig-psyker-powers"
+        },
+        {
+          "id": "pp-spell2",
+          "type": "spellPick",
+          "spellPoolId": "ig-psyker-powers"
+        }
       ]
     },
     {
@@ -255,15 +690,44 @@
           "name": "Aradia Madellan",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol", "force-staff"],
-          "specialRules": ["independent-character", "infantry"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "force-staff"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry"
+          ]
         }
       ],
-      "psychic": { "mastery": 2, "spellPoolId": "ig-psyker-powers" },
+      "psychic": {
+        "mastery": 2,
+        "spellPoolId": "ig-psyker-powers"
+      },
       "options": [
-        { "id": "am-spell1", "type": "spellPick", "spellPoolId": "ig-psyker-powers" },
-        { "id": "am-spell2", "type": "spellPick", "spellPoolId": "ig-psyker-powers" }
+        {
+          "id": "am-spell1",
+          "type": "spellPick",
+          "spellPoolId": "ig-psyker-powers"
+        },
+        {
+          "id": "am-spell2",
+          "type": "spellPick",
+          "spellPoolId": "ig-psyker-powers"
+        }
       ]
     },
     {
@@ -278,12 +742,45 @@
           "name": "Arch Confessor Kyrinov",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 5, "I": 3, "A": 4, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["bolt-pistol", "mace-of-valaan", "frag-grenades", "krak-grenades", "rosarius", "icon-of-chiros"],
-          "specialRules": ["independent-character", "infantry", "zealot"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 5,
+            "I": 3,
+            "A": 4,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "mace-of-valaan",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius",
+            "icon-of-chiros"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "zealot"
+          ],
           "inlineRules": [
-            { "id": "kyr-rosarius", "name": "Rosarius", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." },
-            { "id": "kyr-icon", "name": "Icon of Chiros", "shortDesc": "6\" Aura: this model and target unit may roll one additional d6 for Ld tests and discard the highest d6.", "fullDesc": "6\" Aura: this model and target unit may roll one additional d6 for Ld tests and discard the highest d6." }
+            {
+              "id": "kyr-rosarius",
+              "name": "Rosarius",
+              "shortDesc": "4+ Invulnerability Save.",
+              "fullDesc": "This model has a 4+ Invulnerability Save."
+            },
+            {
+              "id": "kyr-icon",
+              "name": "Icon of Chiros",
+              "shortDesc": "6\" Aura: this model and target unit may roll one additional d6 for Ld tests and discard the highest d6.",
+              "fullDesc": "6\" Aura: this model and target unit may roll one additional d6 for Ld tests and discard the highest d6."
+            }
           ]
         },
         {
@@ -292,15 +789,47 @@
           "minCount": 0,
           "maxCount": 9,
           "ptsEach": 27,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
-          "baseWargear": ["power-sword", "stormshield"],
-          "specialRules": ["infantry"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 5,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "power-sword",
+            "stormshield"
+          ],
+          "specialRules": [
+            "infantry"
+          ]
         }
       ],
       "options": [
-        { "id": "kyr-prayer-protects", "type": "namedUpgrade", "upgradeId": "prayer-emperor-protects", "pts": 40 },
-        { "id": "kyr-prayer-strength", "type": "namedUpgrade", "upgradeId": "prayer-emperors-strength", "pts": 45 },
-        { "id": "kyr-prayer-righteous", "type": "namedUpgrade", "upgradeId": "prayer-righteousness", "pts": 10 }
+        {
+          "id": "kyr-prayer-protects",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperor-protects",
+          "pts": 40
+        },
+        {
+          "id": "kyr-prayer-strength",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperors-strength",
+          "pts": 45
+        },
+        {
+          "id": "kyr-prayer-righteous",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-righteousness",
+          "pts": 10
+        }
       ]
     },
     {
@@ -315,11 +844,38 @@
           "name": "Commissar Severina Raine",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["evanfall", "penance", "frag-grenades"],
-          "specialRules": ["independent-character", "infantry", "stubborn", "aura-of-discipline", "execution"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "evanfall",
+            "penance",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "stubborn",
+            "aura-of-discipline",
+            "execution"
+          ],
           "inlineRules": [
-            { "id": "raine-lftf", "name": "Leading From the Front", "shortDesc": "6\" Aura: when this model is in base contact with an enemy, target unit automatically passes all Ld Tests including Order Tests.", "fullDesc": "6\" Aura: when this model is locked in Base Contact with an enemy model, target unit automatically passes all Ld Tests including Order Tests." }
+            {
+              "id": "raine-lftf",
+              "name": "Leading From the Front",
+              "shortDesc": "6\" Aura: when this model is in base contact with an enemy, target unit automatically passes all Ld Tests including Order Tests.",
+              "fullDesc": "6\" Aura: when this model is locked in Base Contact with an enemy model, target unit automatically passes all Ld Tests including Order Tests."
+            }
           ]
         }
       ]
@@ -336,10 +892,31 @@
           "name": "Espern Locarno",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "specialRules": ["independent-character", "infantry", "imperial-navigator"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "imperial-navigator"
+          ],
           "inlineRules": [
-            { "id": "el-contracts", "name": "Navigator House Contracts", "shortDesc": "6\" Aura: target unit loses Objective Secured, or counts as half its models for Contesting Objectives if none had it.", "fullDesc": "6\" Aura: target unit loses Objective Secured. If no models had Objective Secured, the unit counts as only half the total models for Contesting Objective Markers." }
+            {
+              "id": "el-contracts",
+              "name": "Navigator House Contracts",
+              "shortDesc": "6\" Aura: target unit loses Objective Secured, or counts as half its models for Contesting Objectives if none had it.",
+              "fullDesc": "6\" Aura: target unit loses Objective Secured. If no models had Objective Secured, the unit counts as only half the total models for Contesting Objective Markers."
+            }
           ]
         }
       ]
@@ -356,20 +933,70 @@
           "name": "Grotfret de Montbard",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "4+" },
-          "baseWargear": ["power-sword", "stormshield"],
-          "specialRules": ["independent-character", "infantry", "zealot"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "power-sword",
+            "stormshield"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "zealot"
+          ],
           "inlineRules": [
-            { "id": "gro-stormshield", "name": "Stormshield", "shortDesc": "4+ Invulnerability Save and Sv-1 (improves by 1).", "fullDesc": "4+ Invulnerability Save and Sv-1 (improves by 1)." },
-            { "id": "gro-hacking", "name": "Hacking Advance", "shortDesc": "Each natural 6 To Hit in Melee generates one Auto Hit.", "fullDesc": "Each natural 6 Grotfret rolls To Hit in Melee generates one Auto Hit." },
-            { "id": "gro-shield", "name": "Shield of Faith", "shortDesc": "May attempt to Deny the Witch once per Round at Psychic Mastery 0.", "fullDesc": "Grotfret may attempt to Deny the Witch once per Round at Psychic Mastery 0." }
+            {
+              "id": "gro-stormshield",
+              "name": "Stormshield",
+              "shortDesc": "4+ Invulnerability Save and Sv-1 (improves by 1).",
+              "fullDesc": "4+ Invulnerability Save and Sv-1 (improves by 1)."
+            },
+            {
+              "id": "gro-hacking",
+              "name": "Hacking Advance",
+              "shortDesc": "Each natural 6 To Hit in Melee generates one Auto Hit.",
+              "fullDesc": "Each natural 6 Grotfret rolls To Hit in Melee generates one Auto Hit."
+            },
+            {
+              "id": "gro-shield",
+              "name": "Shield of Faith",
+              "shortDesc": "May attempt to Deny the Witch once per Round at Psychic Mastery 0.",
+              "fullDesc": "Grotfret may attempt to Deny the Witch once per Round at Psychic Mastery 0."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "gro-prayer-protects", "type": "namedUpgrade", "upgradeId": "prayer-emperor-protects", "pts": 40, "note": "Must purchase one prayer." },
-        { "id": "gro-prayer-strength", "type": "namedUpgrade", "upgradeId": "prayer-emperors-strength", "pts": 45 },
-        { "id": "gro-prayer-righteous", "type": "namedUpgrade", "upgradeId": "prayer-righteousness", "pts": 10 }
+        {
+          "id": "gro-prayer-protects",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperor-protects",
+          "pts": 40,
+          "note": "Must purchase one prayer."
+        },
+        {
+          "id": "gro-prayer-strength",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperors-strength",
+          "pts": 45
+        },
+        {
+          "id": "gro-prayer-righteous",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-righteousness",
+          "pts": 10
+        }
       ]
     },
     {
@@ -384,30 +1011,128 @@
           "name": "Arethusa",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "vehicle", "M": 8, "WS": 4, "BS": 3, "S": 9, "FA": 14, "SA": 13, "RA": 12, "W": 24, "I": 1, "A": 9, "Ld": 9, "Sv": "3+" },
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 4,
+            "BS": 3,
+            "S": 9,
+            "FA": 14,
+            "SA": 13,
+            "RA": 12,
+            "W": 24,
+            "I": 1,
+            "A": 9,
+            "Ld": 9,
+            "Sv": "3+"
+          },
           "baseWargear": [
-            { "weaponId": "baneblade-cannon-autocannon", "arcType": "Turret", "mountingTags": ["Primary"] },
-            { "weaponId": "demolisher-cannon", "arcType": "Hull" },
-            { "weaponId": "2-linked-heavy-bolters", "arcType": "Hull" },
-            { "weaponId": "baneblade-sponson-bolters", "arcType": "Sponson" },
-            { "weaponId": "baneblade-sponson-bolters", "arcType": "Sponson" }
+            {
+              "weaponId": "baneblade-cannon-autocannon",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "demolisher-cannon",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "baneblade-sponson-bolters",
+              "arcType": "Sponson"
+            }
           ],
-          "specialRules": ["titanic", "vehicle", "tank", "fearless", "tank-orders-1"],
+          "specialRules": [
+            "titanic",
+            "vehicle",
+            "tank",
+            "fearless",
+            "tank-orders-1"
+          ],
           "inlineRules": [
-            { "id": "aret-konig", "name": "Konig 9th Heavy Tank Company", "shortDesc": "This model ignores the Regimental rules for your army.", "fullDesc": "This model ignores the Regimental rules for your army." },
-            { "id": "aret-hardened", "name": "Hardened Crew", "shortDesc": "On a 4+, ignore Immobilize and Weapon Disabled results (roll for each instance).", "fullDesc": "This model ignores Immobilize and Weapon Disabled results on a 4+. Roll for each instance." },
-            { "id": "aret-illfated", "name": "Ill Fated", "shortDesc": "Must roll d6 when destroying non-Titanic Terrain while moving. On a 1, stuck for the rest of the game.", "fullDesc": "Arethusa still destroys non-Titanic Terrain when moving through Terrain like normal, but must roll a d6 each time it does so. On a 1, it is stuck for the rest of the game." },
-            { "id": "aret-transport", "name": "Transport 12", "shortDesc": "Transport capacity 12. Access Rear.", "fullDesc": "This model may transport up to 12 models. Access: Rear." }
+            {
+              "id": "aret-konig",
+              "name": "Konig 9th Heavy Tank Company",
+              "shortDesc": "This model ignores the Regimental rules for your army.",
+              "fullDesc": "This model ignores the Regimental rules for your army."
+            },
+            {
+              "id": "aret-hardened",
+              "name": "Hardened Crew",
+              "shortDesc": "On a 4+, ignore Immobilize and Weapon Disabled results (roll for each instance).",
+              "fullDesc": "This model ignores Immobilize and Weapon Disabled results on a 4+. Roll for each instance."
+            },
+            {
+              "id": "aret-illfated",
+              "name": "Ill Fated",
+              "shortDesc": "Must roll d6 when destroying non-Titanic Terrain while moving. On a 1, stuck for the rest of the game.",
+              "fullDesc": "Arethusa still destroys non-Titanic Terrain when moving through Terrain like normal, but must roll a d6 each time it does so. On a 1, it is stuck for the rest of the game."
+            },
+            {
+              "id": "aret-transport",
+              "name": "Transport 12",
+              "shortDesc": "Transport capacity 12. Access Rear.",
+              "fullDesc": "This model may transport up to 12 models. Access: Rear."
+            }
           ]
         }
       ],
       "options": [
-        { "id": "aret-hkm", "type": "toggle", "label": "Hunter Killer Missile", "pts": 5, "grantsWargear": ["hunter-killer-missile"] },
-        { "id": "aret-pintle", "type": "weaponSwap", "applies": ["arethusa-model"], "label": "Add Pintle Weapon", "weaponListId": "vehicle-pintle" },
-        { "id": "aret-augar", "type": "namedUpgrade", "upgradeId": "augar-array-upgrade", "pts": 5 },
-        { "id": "aret-recovery", "type": "namedUpgrade", "upgradeId": "recovery-gear-upgrade", "pts": 2 },
-        { "id": "aret-searchlight", "type": "namedUpgrade", "upgradeId": "searchlight-upgrade", "pts": 1 },
-        { "id": "aret-smoke", "type": "toggle", "label": "Smoke Launchers x2", "pts": 20, "grantsWargear": ["smoke-launchers"] }
+        {
+          "id": "aret-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "aret-pintle",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "arethusa-model"
+          ],
+          "label": "Add Pintle Weapon",
+          "weaponListId": "vehicle-pintle"
+        },
+        {
+          "id": "aret-augar",
+          "type": "namedUpgrade",
+          "upgradeId": "augar-array-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "aret-recovery",
+          "type": "namedUpgrade",
+          "upgradeId": "recovery-gear-upgrade",
+          "pts": 2
+        },
+        {
+          "id": "aret-searchlight",
+          "type": "namedUpgrade",
+          "upgradeId": "searchlight-upgrade",
+          "pts": 1
+        },
+        {
+          "id": "aret-smoke",
+          "type": "toggle",
+          "label": "Smoke Launchers x2",
+          "pts": 20,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
       ]
     },
     {
@@ -422,13 +1147,50 @@
           "name": "Nork Deddog",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "monstrous-infantry", "M": 6, "WS": 3, "BS": 3, "S": 5, "T": 5, "W": 6, "I": 3, "A": 4, "Ld": 8, "Sv": "4+" },
-          "baseWargear": ["ripper-gun", "frag-bombs"],
-          "specialRules": ["independent-character", "monstrous-infantry", "stubborn", "bodyguard", "furious-charge", "very-bulky"],
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 5,
+            "T": 5,
+            "W": 6,
+            "I": 3,
+            "A": 4,
+            "Ld": 8,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "ripper-gun",
+            "frag-bombs"
+          ],
+          "specialRules": [
+            "independent-character",
+            "monstrous-infantry",
+            "stubborn",
+            "bodyguard",
+            "furious-charge",
+            "very-bulky"
+          ],
           "inlineRules": [
-            { "id": "nork-nerves", "name": "Dead Nerves", "shortDesc": "5+ Feel No Pain.", "fullDesc": "This model has a 5+ Feel No Pain." },
-            { "id": "nork-loyal", "name": "Loyal to the End", "shortDesc": "If a model uses Execution or Summary Execution on an IC in Nork's squad, Nork removes the executioner from play.", "fullDesc": "If a model uses Execution or Summary Execution to remove an Independent Character from Nork Deddog's Squad, Nork removes the executioner from the game." },
-            { "id": "nork-sacrifice", "name": "Heroic Sacrifice", "shortDesc": "If Nork is slain in Melee, inflict d6 S6 AP– Auto Hits on the unit that killed him.", "fullDesc": "If Nork Deddog is slain in Melee, inflict d6 S6 AP– Auto Hits on the unit that killed him." }
+            {
+              "id": "nork-nerves",
+              "name": "Dead Nerves",
+              "shortDesc": "5+ Feel No Pain.",
+              "fullDesc": "This model has a 5+ Feel No Pain."
+            },
+            {
+              "id": "nork-loyal",
+              "name": "Loyal to the End",
+              "shortDesc": "If a model uses Execution or Summary Execution on an IC in Nork's squad, Nork removes the executioner from play.",
+              "fullDesc": "If a model uses Execution or Summary Execution to remove an Independent Character from Nork Deddog's Squad, Nork removes the executioner from the game."
+            },
+            {
+              "id": "nork-sacrifice",
+              "name": "Heroic Sacrifice",
+              "shortDesc": "If Nork is slain in Melee, inflict d6 S6 AP– Auto Hits on the unit that killed him.",
+              "fullDesc": "If Nork Deddog is slain in Melee, inflict d6 S6 AP– Auto Hits on the unit that killed him."
+            }
           ]
         }
       ]
@@ -445,11 +1207,37 @@
           "name": "Rein",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 5, "BS": 2, "S": 2, "T": 3, "W": 4, "I": 4, "A": 3, "Ld": 6, "Sv": "6+" },
-          "baseWargear": ["sniper-rifle", "stub-pistol"],
-          "specialRules": ["independent-character", "infantry", "infiltrate", "stealth", "shoot-sharp-and-scarper"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 5,
+            "BS": 2,
+            "S": 2,
+            "T": 3,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 6,
+            "Sv": "6+"
+          },
+          "baseWargear": [
+            "sniper-rifle",
+            "stub-pistol"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "infiltrate",
+            "stealth",
+            "shoot-sharp-and-scarper"
+          ],
           "inlineRules": [
-            { "id": "rein-twins", "name": "The Ratling Twins", "shortDesc": "Rein may reroll To Hit and To Wound if Rauss can draw Line of Sight to the target.", "fullDesc": "Rein may reroll To Hit and To Wound if Rauss can draw Line of Sight to the target." }
+            {
+              "id": "rein-twins",
+              "name": "The Ratling Twins",
+              "shortDesc": "Rein may reroll To Hit and To Wound if Rauss can draw Line of Sight to the target.",
+              "fullDesc": "Rein may reroll To Hit and To Wound if Rauss can draw Line of Sight to the target."
+            }
           ]
         },
         {
@@ -457,11 +1245,38 @@
           "name": "Rauss",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 5, "BS": 2, "S": 2, "T": 3, "W": 4, "I": 4, "A": 3, "Ld": 6, "Sv": "6+" },
-          "baseWargear": ["stub-pistol", "demolition-charge", "grappling-hook"],
-          "specialRules": ["independent-character", "infantry", "infiltrate", "stealth", "shoot-sharp-and-scarper"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 5,
+            "BS": 2,
+            "S": 2,
+            "T": 3,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 6,
+            "Sv": "6+"
+          },
+          "baseWargear": [
+            "stub-pistol",
+            "demolition-charge",
+            "grappling-hook"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "infiltrate",
+            "stealth",
+            "shoot-sharp-and-scarper"
+          ],
           "inlineRules": [
-            { "id": "rauss-grapple", "name": "Grappling Hook", "shortDesc": "6\" Aura: this model and target Infantry Unit may ignore Terrain and Enemy Models when Moving.", "fullDesc": "6\" Aura: this model and target Infantry Unit may ignore Terrain and Enemy Models when Moving." }
+            {
+              "id": "rauss-grapple",
+              "name": "Grappling Hook",
+              "shortDesc": "6\" Aura: this model and target Infantry Unit may ignore Terrain and Enemy Models when Moving.",
+              "fullDesc": "6\" Aura: this model and target Infantry Unit may ignore Terrain and Enemy Models when Moving."
+            }
           ]
         }
       ]
@@ -478,12 +1293,44 @@
           "name": "Taddeus the Purifier",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol", "servo-stubber", "power-maul", "frag-grenades", "rosarius"],
-          "specialRules": ["independent-character", "infantry", "zealot"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "servo-stubber",
+            "power-maul",
+            "frag-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "zealot"
+          ],
           "inlineRules": [
-            { "id": "tadd-rosarius", "name": "Rosarius", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." },
-            { "id": "tadd-purifier", "name": "The Purifier", "shortDesc": "6\" Aura: this model and target unit gain A+1.", "fullDesc": "6\" Aura: this model and target unit gain A+1." }
+            {
+              "id": "tadd-rosarius",
+              "name": "Rosarius",
+              "shortDesc": "4+ Invulnerability Save.",
+              "fullDesc": "This model has a 4+ Invulnerability Save."
+            },
+            {
+              "id": "tadd-purifier",
+              "name": "The Purifier",
+              "shortDesc": "6\" Aura: this model and target unit gain A+1.",
+              "fullDesc": "6\" Aura: this model and target unit gain A+1."
+            }
           ]
         },
         {
@@ -492,9 +1339,27 @@
           "minCount": 0,
           "maxCount": 1,
           "ptsEach": 41,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 7, "Sv": "-" },
-          "baseWargear": ["vindicator"],
-          "specialRules": ["independent-character", "infantry", "zealot"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 7,
+            "Sv": "-"
+          },
+          "baseWargear": [
+            "vindicator"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "zealot"
+          ]
         },
         {
           "id": "taddeus-crusader",
@@ -502,15 +1367,47 @@
           "minCount": 0,
           "maxCount": 9,
           "ptsEach": 27,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
-          "baseWargear": ["power-sword", "stormshield"],
-          "specialRules": ["infantry"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 5,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "power-sword",
+            "stormshield"
+          ],
+          "specialRules": [
+            "infantry"
+          ]
         }
       ],
       "options": [
-        { "id": "tadd-prayer-protects", "type": "namedUpgrade", "upgradeId": "prayer-emperor-protects", "pts": 40 },
-        { "id": "tadd-prayer-strength", "type": "namedUpgrade", "upgradeId": "prayer-emperors-strength", "pts": 45 },
-        { "id": "tadd-prayer-righteous", "type": "namedUpgrade", "upgradeId": "prayer-righteousness", "pts": 10 }
+        {
+          "id": "tadd-prayer-protects",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperor-protects",
+          "pts": 40
+        },
+        {
+          "id": "tadd-prayer-strength",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperors-strength",
+          "pts": 45
+        },
+        {
+          "id": "tadd-prayer-righteous",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-righteousness",
+          "pts": 10
+        }
       ]
     },
     {
@@ -525,11 +1422,38 @@
           "name": "Uriah Jacobus",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["bolt-pistol", "the-redeemer", "frag-grenades", "krak-grenades", "rosarius"],
-          "specialRules": ["independent-character", "infantry", "zealot"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "the-redeemer",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "zealot"
+          ],
           "inlineRules": [
-            { "id": "uriah-rosarius", "name": "Rosarius", "shortDesc": "4+ Invulnerability Save.", "fullDesc": "This model has a 4+ Invulnerability Save." }
+            {
+              "id": "uriah-rosarius",
+              "name": "Rosarius",
+              "shortDesc": "4+ Invulnerability Save.",
+              "fullDesc": "This model has a 4+ Invulnerability Save."
+            }
           ]
         },
         {
@@ -538,15 +1462,47 @@
           "minCount": 0,
           "maxCount": 9,
           "ptsEach": 27,
-          "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 5, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 7, "Sv": "4+" },
-          "baseWargear": ["power-sword", "stormshield"],
-          "specialRules": ["infantry"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 5,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "4+"
+          },
+          "baseWargear": [
+            "power-sword",
+            "stormshield"
+          ],
+          "specialRules": [
+            "infantry"
+          ]
         }
       ],
       "options": [
-        { "id": "uriah-prayer-protects", "type": "namedUpgrade", "upgradeId": "prayer-emperor-protects", "pts": 40 },
-        { "id": "uriah-prayer-strength", "type": "namedUpgrade", "upgradeId": "prayer-emperors-strength", "pts": 45 },
-        { "id": "uriah-prayer-righteous", "type": "namedUpgrade", "upgradeId": "prayer-righteousness", "pts": 10 }
+        {
+          "id": "uriah-prayer-protects",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperor-protects",
+          "pts": 40
+        },
+        {
+          "id": "uriah-prayer-strength",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-emperors-strength",
+          "pts": 45
+        },
+        {
+          "id": "uriah-prayer-righteous",
+          "type": "namedUpgrade",
+          "upgradeId": "prayer-righteousness",
+          "pts": 10
+        }
       ]
     }
   ]

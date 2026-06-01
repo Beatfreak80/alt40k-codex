@@ -19,18 +19,55 @@
               "name": "Platoon Commander",
               "minCount": 1,
               "maxCount": 1,
-              "statline": { "type": "infantry", "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 4, "I": 3, "A": 3, "Ld": 8, "Sv": "5+" },
-              "baseWargear": ["laspistol", "chainsword", "frag-grenades"],
-              "specialRules": ["independent-character", "infantry", "infantry-orders-1"]
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 3,
+                "BS": 3,
+                "S": 3,
+                "T": 3,
+                "W": 4,
+                "I": 3,
+                "A": 3,
+                "Ld": 8,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "laspistol",
+                "chainsword",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "independent-character",
+                "infantry",
+                "infantry-orders-1"
+              ]
             },
             {
               "id": "platoon-veteran",
               "name": "Veteran",
               "minCount": 4,
               "maxCount": 4,
-              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["lasgun", "frag-grenades"],
-              "specialRules": ["infantry"]
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 4,
+                "BS": 3,
+                "S": 3,
+                "T": 3,
+                "W": 1,
+                "I": 3,
+                "A": 1,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "lasgun",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry"
+              ]
             },
             {
               "id": "platoon-veteran-hwt",
@@ -38,35 +75,162 @@
               "minCount": 0,
               "maxCount": 1,
               "ptsEach": 4,
-              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["heavy-flamer", "lasgun", "frag-grenades"],
-              "specialRules": ["infantry", "bulky"],
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 4,
+                "BS": 3,
+                "S": 3,
+                "T": 3,
+                "W": 2,
+                "I": 3,
+                "A": 2,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "heavy-flamer",
+                "lasgun",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry",
+                "bulky"
+              ],
               "note": "2 Veterans become the Heavy Weapon Team."
             }
           ],
           "options": [
-            { "id": "pcs-cmd-pistol", "type": "weaponSwap", "applies": ["platoon-commander"], "label": "Swap Laspistol for", "replaces": "laspistol", "weaponListId": "platoon-commander-pistol" },
-            { "id": "pcs-cmd-melee", "type": "weaponSwap", "applies": ["platoon-commander"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "platoon-commander-melee" },
+            {
+              "id": "pcs-cmd-pistol",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "platoon-commander"
+              ],
+              "label": "Swap Laspistol for",
+              "replaces": "laspistol",
+              "weaponListId": "platoon-commander-pistol"
+            },
+            {
+              "id": "pcs-cmd-melee",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "platoon-commander"
+              ],
+              "label": "Swap Chainsword for",
+              "replaces": "chainsword",
+              "weaponListId": "platoon-commander-melee"
+            },
             {
               "id": "pcs-vet-rifle",
               "type": "weaponSwap",
-              "applies": ["platoon-veteran", "platoon-veteran-hwt"],
+              "scope": "unit",
+              "applies": [
+                "platoon-veteran",
+                "platoon-veteran-hwt"
+              ],
               "label": "Swap Lasgun for",
               "replaces": "lasgun",
               "choices": [
-                { "weaponId": "laspistol", "label": "Laspistol", "pts": 0 },
-                { "weaponId": "shotgun", "label": "Shotgun", "pts": 1 }
+                {
+                  "weaponId": "laspistol",
+                  "label": "Laspistol",
+                  "pts": 0
+                },
+                {
+                  "weaponId": "shotgun",
+                  "label": "Shotgun",
+                  "pts": 1
+                }
               ]
             },
-            { "id": "pcs-vet-hf", "type": "weaponSwap", "applies": ["platoon-veteran"], "label": "One Veteran: swap Lasgun for Heavy Flamer", "replaces": "lasgun", "choices": [{ "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 10 }] },
-            { "id": "pcs-vet-special", "type": "weaponSwap", "applies": ["platoon-veteran"], "label": "Any Veteran: swap Lasgun for special weapon", "replaces": "lasgun", "weaponListId": "infantry-special-weapons" },
-            { "id": "pcs-demochg", "type": "toggle", "label": "Demolition Charge (one Veteran)", "pts": 7, "grantsWargear": ["demolition-charge"] },
-            { "id": "pcs-hwt-swap", "type": "weaponSwap", "applies": ["platoon-veteran-hwt"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "infantry-heavy-weapons" },
-            { "id": "pcs-vet-melee", "type": "toggle", "label": "Veteran Chainsword (+1 pt)", "pts": 1, "grantsWargear": ["chainsword"] },
-            { "id": "pcs-vet-sword", "type": "toggle", "label": "Veteran Power Sword (+4 pts)", "pts": 4, "grantsWargear": ["power-sword"] },
-            { "id": "pcs-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
-            { "id": "pcs-standard", "type": "namedUpgrade", "upgradeId": "standard-upgrade", "pts": 40 },
-            { "id": "pcs-medicae", "type": "namedUpgrade", "upgradeId": "medicae-pack-upgrade", "pts": 75 }
+            {
+              "id": "pcs-vet-hf",
+              "type": "weaponSwap",
+              "scope": "limitedSlot",
+              "slots": 1,
+              "applies": [
+                "platoon-veteran"
+              ],
+              "label": "One Veteran: swap Lasgun for Heavy Flamer",
+              "replaces": "lasgun",
+              "choices": [
+                {
+                  "weaponId": "heavy-flamer",
+                  "label": "Heavy Flamer",
+                  "pts": 10
+                }
+              ]
+            },
+            {
+              "id": "pcs-vet-special",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "platoon-veteran"
+              ],
+              "label": "Any Veteran: swap Lasgun for special weapon",
+              "replaces": "lasgun",
+              "weaponListId": "infantry-special-weapons"
+            },
+            {
+              "id": "pcs-demochg",
+              "type": "toggle",
+              "label": "Demolition Charge (one Veteran)",
+              "pts": 7,
+              "grantsWargear": [
+                "demolition-charge"
+              ]
+            },
+            {
+              "id": "pcs-hwt-swap",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "platoon-veteran-hwt"
+              ],
+              "label": "Swap Heavy Flamer for",
+              "replaces": "heavy-flamer",
+              "weaponListId": "infantry-heavy-weapons"
+            },
+            {
+              "id": "pcs-vet-melee",
+              "type": "toggle",
+              "label": "Veteran Chainsword (+1 pt)",
+              "pts": 1,
+              "grantsWargear": [
+                "chainsword"
+              ]
+            },
+            {
+              "id": "pcs-vet-sword",
+              "type": "toggle",
+              "label": "Veteran Power Sword (+4 pts)",
+              "pts": 4,
+              "grantsWargear": [
+                "power-sword"
+              ]
+            },
+            {
+              "id": "pcs-vox",
+              "type": "namedUpgrade",
+              "upgradeId": "vox-caster-upgrade",
+              "pts": 5
+            },
+            {
+              "id": "pcs-standard",
+              "type": "namedUpgrade",
+              "upgradeId": "standard-upgrade",
+              "pts": 40
+            },
+            {
+              "id": "pcs-medicae",
+              "type": "namedUpgrade",
+              "upgradeId": "medicae-pack-upgrade",
+              "pts": 75
+            }
           ]
         },
         {
@@ -81,18 +245,55 @@
               "name": "Sergeant",
               "minCount": 1,
               "maxCount": 1,
-              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 8, "Sv": "5+" },
-              "baseWargear": ["laspistol", "chainsword", "frag-grenades"],
-              "specialRules": ["character", "infantry"]
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 4,
+                "BS": 4,
+                "S": 3,
+                "T": 3,
+                "W": 1,
+                "I": 3,
+                "A": 2,
+                "Ld": 8,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "laspistol",
+                "chainsword",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "character",
+                "infantry"
+              ]
             },
             {
               "id": "guardsman",
               "name": "Guardsman",
               "minCount": 9,
               "maxCount": 9,
-              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["lasgun", "frag-grenades"],
-              "specialRules": ["infantry", "infantry-tactics"]
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 4,
+                "BS": 4,
+                "S": 3,
+                "T": 3,
+                "W": 1,
+                "I": 3,
+                "A": 1,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "lasgun",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry",
+                "infantry-tactics"
+              ]
             },
             {
               "id": "guardsman-hwt",
@@ -100,29 +301,106 @@
               "minCount": 0,
               "maxCount": 1,
               "ptsEach": 4,
-              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["heavy-flamer", "lasgun", "frag-grenades"],
-              "specialRules": ["infantry", "bulky"],
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 4,
+                "BS": 4,
+                "S": 3,
+                "T": 3,
+                "W": 2,
+                "I": 3,
+                "A": 2,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "heavy-flamer",
+                "lasgun",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry",
+                "bulky"
+              ],
               "note": "2 Guardsmen become the Heavy Weapon Team."
             }
           ],
           "options": [
-            { "id": "gs-sgt-pistol", "type": "weaponSwap", "applies": ["sergeant"], "label": "Sergeant: swap Laspistol for", "replaces": "laspistol", "weaponListId": "platoon-commander-pistol" },
-            { "id": "gs-sgt-melee", "type": "weaponSwap", "applies": ["sergeant"], "label": "Sergeant: swap Chainsword for any PM", "replaces": "chainsword", "weaponListId": "platoon-commander-melee" },
+            {
+              "id": "gs-sgt-pistol",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "sergeant"
+              ],
+              "label": "Sergeant: swap Laspistol for",
+              "replaces": "laspistol",
+              "weaponListId": "platoon-commander-pistol"
+            },
+            {
+              "id": "gs-sgt-melee",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "sergeant"
+              ],
+              "label": "Sergeant: swap Chainsword for any PM",
+              "replaces": "chainsword",
+              "weaponListId": "platoon-commander-melee"
+            },
             {
               "id": "gs-rifle",
               "type": "weaponSwap",
-              "applies": ["guardsman", "guardsman-hwt"],
+              "scope": "unit",
+              "applies": [
+                "guardsman",
+                "guardsman-hwt"
+              ],
               "label": "Swap Lasgun for",
               "replaces": "lasgun",
               "choices": [
-                { "weaponId": "laspistol", "label": "Laspistol", "pts": 0 },
-                { "weaponId": "shotgun", "label": "Shotgun", "pts": 1 }
+                {
+                  "weaponId": "laspistol",
+                  "label": "Laspistol",
+                  "pts": 0
+                },
+                {
+                  "weaponId": "shotgun",
+                  "label": "Shotgun",
+                  "pts": 1
+                }
               ]
             },
-            { "id": "gs-special", "type": "weaponSwap", "applies": ["guardsman"], "label": "One Guardsman: swap Lasgun for special weapon", "replaces": "lasgun", "weaponListId": "infantry-special-weapons" },
-            { "id": "gs-hwt-swap", "type": "weaponSwap", "applies": ["guardsman-hwt"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "infantry-heavy-weapons" },
-            { "id": "gs-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 }
+            {
+              "id": "gs-special",
+              "type": "weaponSwap",
+              "scope": "limitedSlot",
+              "slots": 1,
+              "applies": [
+                "guardsman"
+              ],
+              "label": "One Guardsman: swap Lasgun for special weapon",
+              "replaces": "lasgun",
+              "weaponListId": "infantry-special-weapons"
+            },
+            {
+              "id": "gs-hwt-swap",
+              "type": "weaponSwap",
+              "scope": "perModelType",
+              "applies": [
+                "guardsman-hwt"
+              ],
+              "label": "Swap Heavy Flamer for",
+              "replaces": "heavy-flamer",
+              "weaponListId": "infantry-heavy-weapons"
+            },
+            {
+              "id": "gs-vox",
+              "type": "namedUpgrade",
+              "upgradeId": "vox-caster-upgrade",
+              "pts": 5
+            }
           ]
         },
         {
@@ -137,17 +415,80 @@
               "name": "Guardsman",
               "minCount": 6,
               "maxCount": 6,
-              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["lasgun", "frag-grenades"],
-              "specialRules": ["infantry"]
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 4,
+                "BS": 4,
+                "S": 3,
+                "T": 3,
+                "W": 1,
+                "I": 3,
+                "A": 1,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "lasgun",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry"
+              ]
             }
           ],
           "options": [
-            { "id": "sws-special1", "type": "weaponSwap", "applies": ["sws-guardsman"], "label": "Guardsman 1: swap Lasgun for special weapon", "replaces": "lasgun", "weaponListId": "infantry-special-weapons" },
-            { "id": "sws-special2", "type": "weaponSwap", "applies": ["sws-guardsman"], "label": "Guardsman 2: swap Lasgun for special weapon", "replaces": "lasgun", "weaponListId": "infantry-special-weapons" },
-            { "id": "sws-special3", "type": "weaponSwap", "applies": ["sws-guardsman"], "label": "Guardsman 3: swap Lasgun for special weapon", "replaces": "lasgun", "weaponListId": "infantry-special-weapons" },
-            { "id": "sws-demochg", "type": "toggle", "label": "Demolition Charge (one Guardsman)", "pts": 7, "grantsWargear": ["demolition-charge"] },
-            { "id": "sws-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 }
+            {
+              "id": "sws-special1",
+              "type": "weaponSwap",
+              "scope": "limitedSlot",
+              "slots": 1,
+              "applies": [
+                "sws-guardsman"
+              ],
+              "label": "Guardsman 1: swap Lasgun for special weapon",
+              "replaces": "lasgun",
+              "weaponListId": "infantry-special-weapons"
+            },
+            {
+              "id": "sws-special2",
+              "type": "weaponSwap",
+              "scope": "limitedSlot",
+              "slots": 1,
+              "applies": [
+                "sws-guardsman"
+              ],
+              "label": "Guardsman 2: swap Lasgun for special weapon",
+              "replaces": "lasgun",
+              "weaponListId": "infantry-special-weapons"
+            },
+            {
+              "id": "sws-special3",
+              "type": "weaponSwap",
+              "scope": "limitedSlot",
+              "slots": 1,
+              "applies": [
+                "sws-guardsman"
+              ],
+              "label": "Guardsman 3: swap Lasgun for special weapon",
+              "replaces": "lasgun",
+              "weaponListId": "infantry-special-weapons"
+            },
+            {
+              "id": "sws-demochg",
+              "type": "toggle",
+              "label": "Demolition Charge (one Guardsman)",
+              "pts": 7,
+              "grantsWargear": [
+                "demolition-charge"
+              ]
+            },
+            {
+              "id": "sws-vox",
+              "type": "namedUpgrade",
+              "upgradeId": "vox-caster-upgrade",
+              "pts": 5
+            }
           ]
         },
         {
@@ -162,22 +503,65 @@
               "name": "Heavy Weapon Team",
               "minCount": 3,
               "maxCount": 3,
-              "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "5+" },
-              "baseWargear": ["heavy-flamer", "lasgun", "frag-grenades"],
-              "specialRules": ["infantry", "bulky"]
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 4,
+                "BS": 4,
+                "S": 3,
+                "T": 3,
+                "W": 2,
+                "I": 3,
+                "A": 2,
+                "Ld": 7,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "heavy-flamer",
+                "lasgun",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry",
+                "bulky"
+              ]
             }
           ],
           "options": [
-            { "id": "hws-weapon", "type": "weaponSwap", "applies": ["hws-team"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "infantry-heavy-weapons" },
+            {
+              "id": "hws-weapon",
+              "type": "weaponSwap",
+              "scope": "unit",
+              "applies": [
+                "hws-team"
+              ],
+              "label": "Swap Heavy Flamer for",
+              "replaces": "heavy-flamer",
+              "weaponListId": "infantry-heavy-weapons"
+            },
             {
               "id": "hws-pistol",
               "type": "weaponSwap",
-              "applies": ["hws-team"],
+              "scope": "unit",
+              "applies": [
+                "hws-team"
+              ],
               "label": "Swap Lasgun for Laspistol",
               "replaces": "lasgun",
-              "choices": [{ "weaponId": "laspistol", "label": "Laspistol", "pts": 0 }]
+              "choices": [
+                {
+                  "weaponId": "laspistol",
+                  "label": "Laspistol",
+                  "pts": 0
+                }
+              ]
             },
-            { "id": "hws-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 }
+            {
+              "id": "hws-vox",
+              "type": "namedUpgrade",
+              "upgradeId": "vox-caster-upgrade",
+              "pts": 5
+            }
           ]
         },
         {
@@ -193,9 +577,26 @@
               "minCount": 20,
               "maxCount": 50,
               "ptsEach": 3,
-              "statline": { "type": "infantry", "M": 6, "WS": 5, "BS": 5, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 5, "Sv": "5+" },
-              "baseWargear": ["lasgun", "frag-grenades"],
-              "specialRules": ["infantry"]
+              "statline": {
+                "type": "infantry",
+                "M": 6,
+                "WS": 5,
+                "BS": 5,
+                "S": 3,
+                "T": 3,
+                "W": 1,
+                "I": 3,
+                "A": 1,
+                "Ld": 5,
+                "Sv": "5+"
+              },
+              "baseWargear": [
+                "lasgun",
+                "frag-grenades"
+              ],
+              "specialRules": [
+                "infantry"
+              ]
             }
           ]
         }
@@ -212,18 +613,54 @@
           "name": "Veteran Sergeant",
           "minCount": 1,
           "maxCount": 1,
-          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 2, "Ld": 8, "Sv": "5+" },
-          "baseWargear": ["laspistol", "chainsword", "frag-grenades"],
-          "specialRules": ["character", "infantry"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 2,
+            "Ld": 8,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "laspistol",
+            "chainsword",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "infantry"
+          ]
         },
         {
           "id": "veteran-guardsman",
           "name": "Veteran Guardsman",
           "minCount": 9,
           "maxCount": 9,
-          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["lasgun", "frag-grenades"],
-          "specialRules": ["infantry"]
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "lasgun",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "infantry"
+          ]
         },
         {
           "id": "veteran-hwt",
@@ -231,39 +668,194 @@
           "minCount": 0,
           "maxCount": 1,
           "ptsEach": 4,
-          "statline": { "type": "infantry", "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 2, "I": 3, "A": 2, "Ld": 7, "Sv": "5+" },
-          "baseWargear": ["heavy-flamer", "lasgun", "frag-grenades"],
-          "specialRules": ["infantry", "bulky"],
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 2,
+            "I": 3,
+            "A": 2,
+            "Ld": 7,
+            "Sv": "5+"
+          },
+          "baseWargear": [
+            "heavy-flamer",
+            "lasgun",
+            "frag-grenades"
+          ],
+          "specialRules": [
+            "infantry",
+            "bulky"
+          ],
           "note": "2 Veterans become the Heavy Weapon Team."
         }
       ],
       "options": [
-        { "id": "vet-sgt-pistol", "type": "weaponSwap", "applies": ["veteran-sergeant"], "label": "Swap Laspistol for", "replaces": "laspistol", "weaponListId": "veteran-sergeant-pistol" },
-        { "id": "vet-sgt-melee", "type": "weaponSwap", "applies": ["veteran-sergeant"], "label": "Swap Chainsword for", "replaces": "chainsword", "weaponListId": "veteran-sergeant-melee" },
+        {
+          "id": "vet-sgt-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "veteran-sergeant"
+          ],
+          "label": "Swap Laspistol for",
+          "replaces": "laspistol",
+          "weaponListId": "veteran-sergeant-pistol"
+        },
+        {
+          "id": "vet-sgt-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "veteran-sergeant"
+          ],
+          "label": "Swap Chainsword for",
+          "replaces": "chainsword",
+          "weaponListId": "veteran-sergeant-melee"
+        },
         {
           "id": "vet-rifle",
           "type": "weaponSwap",
-          "applies": ["veteran-guardsman", "veteran-hwt"],
+          "scope": "unit",
+          "applies": [
+            "veteran-guardsman",
+            "veteran-hwt"
+          ],
           "label": "Swap Lasgun for",
           "replaces": "lasgun",
           "choices": [
-            { "weaponId": "laspistol", "label": "Laspistol", "pts": 0 },
-            { "weaponId": "shotgun", "label": "Shotgun", "pts": 1 }
+            {
+              "weaponId": "laspistol",
+              "label": "Laspistol",
+              "pts": 0
+            },
+            {
+              "weaponId": "shotgun",
+              "label": "Shotgun",
+              "pts": 1
+            }
           ]
         },
-        { "id": "vet-hf", "type": "weaponSwap", "applies": ["veteran-guardsman"], "label": "One Veteran: swap Lasgun for Heavy Flamer", "replaces": "lasgun", "choices": [{ "weaponId": "heavy-flamer", "label": "Heavy Flamer", "pts": 10 }] },
-        { "id": "vet-special", "type": "weaponSwap", "applies": ["veteran-guardsman"], "label": "Swap Lasgun for special weapon (up to 3)", "replaces": "lasgun", "weaponListId": "infantry-special-weapons" },
-        { "id": "vet-demochg", "type": "toggle", "label": "Demolition Charge (one Veteran)", "pts": 7, "grantsWargear": ["demolition-charge"] },
-        { "id": "vet-hwt-swap", "type": "weaponSwap", "applies": ["veteran-hwt"], "label": "Swap Heavy Flamer for", "replaces": "heavy-flamer", "weaponListId": "veteran-heavy-weapons" },
-        { "id": "vet-pistol-add", "type": "toggle", "label": "Add Laspistol (any model, +1 pt)", "pts": 1, "grantsWargear": ["laspistol"] },
-        { "id": "vet-krak", "type": "toggle", "label": "Krak Grenades (squad)", "pts": 10, "grantsWargear": ["krak-grenades"] },
-        { "id": "vet-vox", "type": "namedUpgrade", "upgradeId": "vox-caster-upgrade", "pts": 5 },
-        { "id": "vet-doc-mastiff", "type": "toggle", "label": "Doctrine: Cyber Mastiff", "pts": 10, "note": "Unit gains Ld+1. Sergeant gains Melta Bombs." },
-        { "id": "vet-doc-demo", "type": "toggle", "label": "Doctrine: Demolitions", "pts": 14, "grantsWargear": ["melta-bombs", "demolition-charge"], "note": "Sergeant gains Melta Bombs. One model gains a Demolition Charge." },
-        { "id": "vet-doc-grenadier", "type": "namedUpgrade", "upgradeId": "grenadier-doctrine", "pts": 10 },
-        { "id": "vet-doc-recon", "type": "toggle", "label": "Doctrine: Remote Surveillance", "pts": 10, "note": "Target friendly unit may reroll Scatter dice for Blast weapons against a target this unit can draw Line of Sight to." },
-        { "id": "vet-doc-sentries", "type": "namedUpgrade", "upgradeId": "snare-mines", "pts": 40 },
-        { "id": "vet-doc-assault", "type": "namedUpgrade", "upgradeId": "assault-troopers-doctrine", "pts": 90 }
+        {
+          "id": "vet-hf",
+          "type": "weaponSwap",
+          "scope": "limitedSlot",
+          "slots": 1,
+          "applies": [
+            "veteran-guardsman"
+          ],
+          "label": "One Veteran: swap Lasgun for Heavy Flamer",
+          "replaces": "lasgun",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 10
+            }
+          ]
+        },
+        {
+          "id": "vet-special",
+          "type": "weaponSwap",
+          "scope": "limitedSlot",
+          "slots": 3,
+          "applies": [
+            "veteran-guardsman"
+          ],
+          "label": "Swap Lasgun for special weapon (up to 3)",
+          "replaces": "lasgun",
+          "weaponListId": "infantry-special-weapons"
+        },
+        {
+          "id": "vet-demochg",
+          "type": "toggle",
+          "label": "Demolition Charge (one Veteran)",
+          "pts": 7,
+          "grantsWargear": [
+            "demolition-charge"
+          ]
+        },
+        {
+          "id": "vet-hwt-swap",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "veteran-hwt"
+          ],
+          "label": "Swap Heavy Flamer for",
+          "replaces": "heavy-flamer",
+          "weaponListId": "veteran-heavy-weapons"
+        },
+        {
+          "id": "vet-pistol-add",
+          "type": "toggle",
+          "label": "Add Laspistol (any model, +1 pt)",
+          "pts": 1,
+          "grantsWargear": [
+            "laspistol"
+          ]
+        },
+        {
+          "id": "vet-krak",
+          "type": "toggle",
+          "label": "Krak Grenades (squad)",
+          "pts": 10,
+          "grantsWargear": [
+            "krak-grenades"
+          ]
+        },
+        {
+          "id": "vet-vox",
+          "type": "namedUpgrade",
+          "upgradeId": "vox-caster-upgrade",
+          "pts": 5
+        },
+        {
+          "id": "vet-doc-mastiff",
+          "type": "toggle",
+          "label": "Doctrine: Cyber Mastiff",
+          "pts": 10,
+          "note": "Unit gains Ld+1. Sergeant gains Melta Bombs."
+        },
+        {
+          "id": "vet-doc-demo",
+          "type": "toggle",
+          "label": "Doctrine: Demolitions",
+          "pts": 14,
+          "grantsWargear": [
+            "melta-bombs",
+            "demolition-charge"
+          ],
+          "note": "Sergeant gains Melta Bombs. One model gains a Demolition Charge."
+        },
+        {
+          "id": "vet-doc-grenadier",
+          "type": "namedUpgrade",
+          "upgradeId": "grenadier-doctrine",
+          "pts": 10
+        },
+        {
+          "id": "vet-doc-recon",
+          "type": "toggle",
+          "label": "Doctrine: Remote Surveillance",
+          "pts": 10,
+          "note": "Target friendly unit may reroll Scatter dice for Blast weapons against a target this unit can draw Line of Sight to."
+        },
+        {
+          "id": "vet-doc-sentries",
+          "type": "namedUpgrade",
+          "upgradeId": "snare-mines",
+          "pts": 40
+        },
+        {
+          "id": "vet-doc-assault",
+          "type": "namedUpgrade",
+          "upgradeId": "assault-troopers-doctrine",
+          "pts": 90
+        }
       ]
     }
   ]
