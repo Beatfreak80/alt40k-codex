@@ -1,7 +1,7 @@
 # Alternate 40k — New Faction Authoring Workflow
 
 > **Read this before writing any faction JSON.**
-> Also read `alt40k-faction-schema-v1.3.md` and `alt40k-faction-json-guide.md` in this directory.
+> Also read `alt40k-faction-json-guide.md` in this directory.
 > This document covers the *project workflow* — the things not in those two docs.
 >
 > **Reference faction:** Use `necrons_faction.json` as your structural reference when building new factions. Do **not** load `space-marines_faction.json` as a reference — it is the largest faction file and will exceed the standard context window.
@@ -134,6 +134,19 @@ Shot counts and target numbers **must** come from the codex — they differ per 
 
 The `rule-map.json` and postprocessor normalise display strings in **unit** `specialRules[]` (e.g. `"Rending"` → `"rending"` for tooltip lookups) but weapon profile rules are intentionally kept as display strings.
 
+### Weapon range encoding
+
+| Situation | `minRange` | `maxRange` | `templateType` |
+|---|---|---|---|
+| Standard ranged | *(omit)* | `48` | *(omit)* |
+| Has a minimum range | `12` | `48` | *(omit)* |
+| Melee | *(omit)* | *(omit)* | *(omit)* |
+| Flame template | *(omit)* | *(omit)* | `"Flame"` |
+| Hellstorm template | *(omit)* | *(omit)* | `"Hellstorm"` |
+| Bomb | *(omit)* | *(omit)* | `"Bomb"` |
+
+Omit `minRange`, `maxRange`, and `templateType` entirely when they carry no value (per §12 / omit-null rule).
+
 ### Unit option types — use these exact strings
 
 The app only recognises these `type` values. **Do not invent your own.**  Verify against an existing faction JSON before writing — the Necron codex is the reference.
@@ -253,10 +266,25 @@ Mark unique characters with `"isUnique": true` on the unit. Do **not** add `"uni
 `tank`, `open-topped`, `titanic`, `combat-walker` etc. go in `specialRules` (they exist in `core-rules.json`). They are not statline types — statline type is one of `infantry`, `vehicle`, `monstrous-infantry`, `monster`, `fortification`.
 
 ### Statline notes
-- Infantry/monster/fortification: M, WS, BS, S, T, W, I, A, Ld, Sv
-- Vehicle: M, WS, BS, S, FA, SA, RA, W, I, A, Ld, Sv
-- Sv with no save: string `"-"` (not null)
-- Strength `"User"`, `"X2"`, `"*"`, `"+1"` etc. are strings; numeric values are numbers
+
+Stat fields present per statline type:
+- **Infantry / monster / monstrous-infantry / fortification:** M, WS, BS, S, T, W, I, A, Ld, Sv
+- **Vehicle:** M, WS, BS, S, FA, SA, RA, W, I, A, Ld, Sv
+
+Storage and display:
+
+| Stat | Storage | Renders as |
+|---|---|---|
+| `M` | integer | appends `"` — `6"` |
+| `WS`, `BS`, `Sv` | integer 1–7 | appends `+` — `3+` |
+| `Sv` (no save) | string `"-"` | `–` |
+| `S`, `T`, `W`, `I`, `A`, `Ld`, `FA`, `SA`, `RA` | integer | as-is |
+| Null / not applicable | *(omit)* | `–` |
+| Non-numeric | string | as-is — `"User"`, `"X2"`, `"*"`, `"+1"` |
+
+- `Sv` must be an integer (1–7) or the literal string `"-"` — never `"4+"` etc.
+- Vehicle Combat Walkers have `I` and `A` in their statline; standard tanks do not.
+- Fortification / immobile models: `"isImmobile": true`, `M` omitted.
 
 ---
 
@@ -369,6 +397,27 @@ When a rule appears on units across multiple factions but doesn't exist in core 
 { "id": "new-rule", "name": "New Rule", "shortDesc": "...", "fullDesc": "..." }
 ```
 Then reference it by ID in the faction files and add the mapping to `rule-map.json` if needed.
+
+---
+
+## Points calculation reference
+
+The app calculates unit cost at runtime using this formula:
+
+```
+unitTotal = basePts
+  + Σ squadSize.value × ptsEach
+  + Σ toggle.active    ? pts              : 0
+  + Σ toggle.active    ? modelCount × ptsPerModel : 0
+  + Σ namedUpgrade.active ? pts           : 0
+  + Σ weaponSwap.selectedChoice.pts       (ptsOverrides applied)
+  + Σ_i perModelWeapon[i].selectedChoice.pts
+  + Σ spellPick.selectedSpell.pts
+  + Σ_modelType markPick.ptsPerModel × count(modelType)
+  + Σ_modelType pureBlessingPick.ptsPerModel × count(modelType)
+```
+
+`basePts` is the cost of the unit at minimum legal size with default wargear — all selectable costs sit on top.
 
 ---
 

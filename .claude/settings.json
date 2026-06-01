@@ -15,7 +15,13 @@
       "Bash(npm install *)",
       "Bash(node postprocess.cjs public/space-marines_faction.json --dry-run)",
       "Bash(node -e ' *)",
-      "Bash(node postprocess.cjs public/orks_faction.json --dry-run)"
+      "Bash(node postprocess.cjs public/orks_faction.json --dry-run)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\garyk\\\\Documents\\\\alt40k-codex\\\\public\\\\alt40k-faction-schema-v1.3.md\")",
+      "PowerShell(Remove-Item \"c:\\\\Users\\\\garyk\\\\Documents\\\\alt40k-codex\\\\public\\\\alt40k-faction-schema-v1.3.md\" -Confirm:$false)",
+      "Read(//c/Users/garyk/.claude/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\garyk\\.claude"
     ]
   }
 }
