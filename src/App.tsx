@@ -73,7 +73,8 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .stripe-b td { background: #fafafa !important; }
 .rules-col { text-align: left !important; font-size: 8.5pt; color: #444; }
 .arc-col { font-size: 8pt; color: #888; }
-.mp-cont td {}
+.mp-first td, .mp-cont td { border-bottom: none; }
+.mp-last td { border-bottom: 1px solid #f0f0f0; }
 
 .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 2px; }
 .pill { display: inline-flex; align-items: baseline; gap: 5px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 3px; padding: 2px 8px; font-size: 9pt; line-height: 1.4; cursor: default; position: relative; }
@@ -131,6 +132,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .pop-wep-table td { font-size: 8pt; color: #ddd; padding: 2px 4px; text-align: center; border-bottom: 1px solid #2a2a2a; }
 .pop-wep-table td:first-child { text-align: left; color: #fff; }
 .pop-wep-table tr:last-child td { border-bottom: none; }
+.pop-wep-table.multi-profile td { border-bottom: none; }
 
 .unit-divider { margin: 28px 0; border: none; border-top: 1px solid #ddd; }
 
@@ -317,15 +319,13 @@ function WeaponPopoverContent({ weapon, coreRules, armyRules }) {
   return (
     <>
       <strong>{weapon.name}</strong>
-      <table className="pop-wep-table">
+      <table className={`pop-wep-table${weapon.profiles.length>1?" multi-profile":""}`}>
         <thead><tr>
-          {weapon.profiles.length>1 && <th style={{textAlign:"left"}}>Mode</th>}
           <th>Rng</th><th>S</th><th>AP</th><th style={{textAlign:"left"}}>Rules</th>
         </tr></thead>
         <tbody>
           {weapon.profiles.map((p,i) => (
             <tr key={i}>
-              {weapon.profiles.length>1 && <td>{p.label||`Mode ${i+1}`}</td>}
               <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
               <td style={{textAlign:"left",fontSize:"7.5pt"}}>{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
             </tr>
@@ -789,7 +789,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
               );
             }
             return w.profiles.map((p, pi) => (
-              <tr key={`${ri}-${pi}`} className={`${pi===0?"mp-first":"mp-cont"} ${sc}`}>
+              <tr key={`${ri}-${pi}`} className={`${pi===0?"mp-first":"mp-cont"}${pi===w.profiles.length-1?" mp-last":""} ${sc}`}>
                 <td>{pi===0?w.name:""}</td>
                 {showArc && <td className="arc-col">{pi===0?(r.arcType||""):""}</td>}
                 <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
@@ -885,7 +885,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                       );
                     }
                     return w.profiles.map((p, pi) => (
-                      <tr key={`${ci}-${pi}`} className={`${pi===0?"mp-first":"mp-cont"} ${sc}`}>
+                      <tr key={`${ci}-${pi}`} className={`${pi===0?"mp-first":"mp-cont"}${pi===w.profiles.length-1?" mp-last":""} ${sc}`}>
                         <td>{pi===0?(c.label||w.name):""}</td>
                         <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
                         <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
@@ -1129,11 +1129,33 @@ function ArmyRulesPage({ faction, armyRules, selectedSubfaction }) {
   const visibleSubfactions = selectedSubfaction
     ? allSubfactions.filter(sf => sf.id === selectedSubfaction)
     : allSubfactions;
+
+  // Collapse "Name N" rules that have multiple numbered variants into a single "Name X" entry
+  const baseCounts = new Map();
+  for (const r of armyRules) {
+    const m = r.name.match(/^(.+) (\d+)$/);
+    if (m) baseCounts.set(m[1], (baseCounts.get(m[1]) || 0) + 1);
+  }
+  const seenBases = new Set();
+  const displayRules = [];
+  for (const r of armyRules) {
+    const m = r.name.match(/^(.+) (\d+)$/);
+    if (m && baseCounts.get(m[1]) > 1) {
+      const base = m[1];
+      if (seenBases.has(base)) continue;
+      seenBases.add(base);
+      const rx = (s: string|undefined) => s?.replace(/\b\d+\b/, 'X');
+      displayRules.push({ ...r, name: `${base} X`, shortDesc: rx(r.shortDesc), fullDesc: rx(r.fullDesc) });
+    } else {
+      displayRules.push(r);
+    }
+  }
+
   return (
     <div>
       <div className="section-head">Army Special Rules</div>
       <div className="two-col">
-        {armyRules.map(r => (
+        {displayRules.map(r => (
           <div key={r.id} className="col-block rule-entry">
             <div className="rule-entry-name">{r.name}</div>
             <div className="rule-entry-desc">{r.fullDesc||r.shortDesc}</div>
@@ -1418,7 +1440,8 @@ td:first-child { text-align: left; font-weight: 600; }
 tr:last-child td { border-bottom: none; }
 .stripe-a td { background: #fff; }
 .stripe-b td { background: #fafafa; }
-.mp-cont td {}
+.mp-first td, .mp-cont td { border-bottom: none; }
+.mp-last td { border-bottom: 1px solid #f0f0f0; }
 .rules-col { text-align: left !important; font-size: 8pt; color: #444; }
 .rule-name { font-weight: 700; font-size: 9pt; }
 .option-list { list-style: none; }

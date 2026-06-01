@@ -677,8 +677,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -695,7 +695,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ]
@@ -709,8 +709,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2",
+            "Bolter"
           ]
         }
       ],
@@ -726,7 +726,7 @@
           "strength": "3",
           "ap": "6+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ],
@@ -741,8 +741,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "pistol",
-            "gets-hot"
+            "Pistol 1",
+            "Gets Hot!"
           ]
         }
       ]
@@ -756,8 +756,8 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "pistol",
-            "grav"
+            "Pistol 1",
+            "Grav"
           ]
         }
       ]
@@ -771,9 +771,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "pistol",
-            "melta",
-            "monsterbane"
+            "Pistol 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -787,8 +787,8 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "pistol",
-            "beam"
+            "Pistol 1",
+            "Beam"
           ]
         }
       ]
@@ -802,7 +802,7 @@
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ]
@@ -816,7 +816,7 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ]
@@ -829,7 +829,7 @@
           "strength": "3",
           "ap": "4+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ],
@@ -844,7 +844,7 @@
           "strength": "4",
           "ap": "2+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ]
@@ -857,7 +857,7 @@
           "strength": "User",
           "ap": "-",
           "rules": [
-            "extra-attack"
+            "Extra Attack 1"
           ]
         }
       ]
@@ -870,7 +870,7 @@
           "strength": "User",
           "ap": "6+",
           "rules": [
-            "rending"
+            "Rending"
           ]
         }
       ]
@@ -903,7 +903,7 @@
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "concussion"
+            "Concussion"
           ]
         }
       ]
@@ -916,8 +916,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         }
       ]
@@ -930,8 +930,8 @@
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         }
       ]
@@ -977,10 +977,10 @@
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "slow",
-            "armourbane",
-            "monsterbane",
-            "psychic-bane"
+            "Slow",
+            "Armourbane",
+            "Monsterbane",
+            "Psychic Bane"
           ]
         }
       ]
@@ -993,8 +993,8 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "monsterbane",
+            "Slow",
+            "Monsterbane",
             "+1 on To Penetrate Rolls (not Vehicle Damage Chart)"
           ]
         }
@@ -1008,7 +1008,7 @@
           "strength": "User",
           "ap": "3+",
           "rules": [
-            "extra-attack",
+            "Extra Attack 1",
             "Reroll all failed To Hit and To Wound rolls"
           ]
         }
@@ -1022,9 +1022,9 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "extra-attack",
-            "slow",
-            "monsterbane"
+            "Extra Attack 1",
+            "Slow",
+            "Monsterbane"
           ]
         }
       ]
@@ -1037,9 +1037,9 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "armourbane",
-            "monsterbane"
+            "Slow",
+            "Armourbane",
+            "Monsterbane"
           ]
         }
       ]
@@ -1062,8 +1062,8 @@
           "strength": "+2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         }
       ]
@@ -1076,7 +1076,7 @@
           "strength": "User",
           "ap": "3+",
           "rules": [
-            "psychic-bane"
+            "Psychic Bane"
           ]
         }
       ]
@@ -1089,7 +1089,7 @@
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "psychic-bane"
+            "Psychic Bane"
           ]
         }
       ]
@@ -1102,8 +1102,8 @@
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "psychic-bane",
-            "counterattack"
+            "Psychic Bane",
+            "Counterattack"
           ]
         }
       ]
@@ -1117,7 +1117,7 @@
           "strength": "+2",
           "ap": "4+",
           "rules": [
-            "concussion"
+            "Concussion"
           ]
         },
         {
@@ -1125,8 +1125,8 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault",
-            "one-use-only"
+            "Assault 1",
+            "One Use Only"
           ]
         }
       ]
@@ -1149,9 +1149,9 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane",
-            "auxiliary",
+            "Slow",
+            "Monsterbane",
+            "Auxiliary",
             "Servo Arm"
           ]
         }
@@ -1165,7 +1165,7 @@
           "strength": "User",
           "ap": "5+",
           "rules": [
-            "extra-attack"
+            "Extra Attack 1"
           ]
         }
       ]
@@ -1178,7 +1178,7 @@
           "strength": "+3",
           "ap": "2+",
           "rules": [
-            "psychic-bane"
+            "Psychic Bane"
           ]
         }
       ]
@@ -1205,8 +1205,8 @@
           "strength": "19",
           "ap": "1+",
           "rules": [
-            "slow",
-            "monsterbane",
+            "Slow",
+            "Monsterbane",
             "Storm Shield"
           ]
         }
@@ -1221,9 +1221,9 @@
           "strength": "5",
           "ap": "1+",
           "rules": [
-            "pistol",
-            "armourbane",
-            "monsterbane"
+            "Pistol 1",
+            "Armourbane",
+            "Monsterbane"
           ]
         }
       ]
@@ -1250,7 +1250,7 @@
           "strength": "+1",
           "ap": "2+",
           "rules": [
-            "counterattack"
+            "Counterattack"
           ]
         },
         {
@@ -1259,8 +1259,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -1276,8 +1276,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         }
       ]
@@ -1291,8 +1291,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -1301,8 +1301,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2",
+            "Bolter"
           ]
         }
       ],
@@ -1319,8 +1319,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -1328,7 +1328,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         }
       ]
@@ -1342,8 +1342,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -1352,9 +1352,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -1368,8 +1368,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -1378,8 +1378,8 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "assault",
-            "grav"
+            "Assault 2",
+            "Grav"
           ]
         }
       ]
@@ -1393,9 +1393,9 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "armourbane",
-            "monsterbane"
+            "Slow",
+            "Armourbane",
+            "Monsterbane"
           ]
         },
         {
@@ -1404,8 +1404,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2",
+            "Bolter"
           ]
         }
       ],
@@ -1422,9 +1422,9 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "armourbane",
-            "monsterbane"
+            "Slow",
+            "Armourbane",
+            "Monsterbane"
           ]
         },
         {
@@ -1432,7 +1432,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         }
       ]
@@ -1446,9 +1446,9 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "armourbane",
-            "monsterbane"
+            "Slow",
+            "Armourbane",
+            "Monsterbane"
           ]
         },
         {
@@ -1457,8 +1457,8 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "assault",
-            "grav"
+            "Assault 2",
+            "Grav"
           ]
         }
       ]
@@ -1472,9 +1472,9 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "armourbane",
-            "monsterbane"
+            "Slow",
+            "Armourbane",
+            "Monsterbane"
           ]
         },
         {
@@ -1483,9 +1483,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -1499,8 +1499,8 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "monsterbane",
+            "Slow",
+            "Monsterbane",
             "Reroll 1s To Hit"
           ]
         },
@@ -1510,8 +1510,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2",
+            "Bolter"
           ]
         }
       ],
@@ -1528,8 +1528,8 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "monsterbane",
+            "Slow",
+            "Monsterbane",
             "Reroll 1s To Hit"
           ]
         },
@@ -1538,7 +1538,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         }
       ]
@@ -1552,8 +1552,8 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "slow",
-            "monsterbane",
+            "Slow",
+            "Monsterbane",
             "Reroll 1s To Hit"
           ]
         },
@@ -1563,9 +1563,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -1579,8 +1579,8 @@
           "strength": "6",
           "ap": "-",
           "rules": [
-            "pistol",
-            "rending"
+            "Pistol 6",
+            "Rending"
           ]
         }
       ]
@@ -1594,7 +1594,7 @@
           "strength": "3",
           "ap": "-",
           "rules": [
-            "grenade",
+            "Grenade 1",
             "3\" Blast"
           ]
         }
@@ -1609,8 +1609,8 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "grenade",
-            "nonblast"
+            "Grenade 1",
+            "Nonblast"
           ]
         }
       ]
@@ -1624,10 +1624,10 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "grenade",
-            "armourbane",
-            "monsterbane",
-            "nonblast"
+            "Grenade 1",
+            "Armourbane",
+            "Monsterbane",
+            "Nonblast"
           ]
         }
       ]
@@ -1641,9 +1641,9 @@
           "strength": "3",
           "ap": "3+",
           "rules": [
-            "grenade",
-            "haywire",
-            "nonblast"
+            "Grenade 1",
+            "Haywire (2+)",
+            "Nonblast"
           ]
         }
       ]
@@ -1656,7 +1656,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         }
       ],
@@ -1671,9 +1671,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -1687,8 +1687,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "rapid-fire",
-            "gets-hot"
+            "Rapid Fire 1",
+            "Gets Hot!"
           ]
         }
       ]
@@ -1702,8 +1702,8 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "rapid-fire",
-            "grav"
+            "Rapid Fire 1",
+            "Grav"
           ]
         }
       ]
@@ -1717,8 +1717,8 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
-            "sniper"
+            "Heavy 1",
+            "Sniper (3+)"
           ]
         }
       ]
@@ -1732,8 +1732,8 @@
           "strength": "4",
           "ap": "-",
           "rules": [
-            "assault",
-            "scatter"
+            "Assault 2",
+            "Scatter"
           ]
         }
       ]
@@ -1747,7 +1747,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "assault"
+            "Assault 3"
           ]
         }
       ]
@@ -1761,8 +1761,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -1779,8 +1779,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "sniper"
+            "Heavy 2",
+            "Sniper (3+)"
           ]
         }
       ]
@@ -1794,8 +1794,8 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -1812,7 +1812,7 @@
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "heavy"
+            "Heavy 1"
           ]
         }
       ]
@@ -1826,7 +1826,7 @@
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 3"
           ]
         }
       ]
@@ -1840,8 +1840,8 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -1858,7 +1858,7 @@
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 3"
           ]
         }
       ]
@@ -1872,8 +1872,8 @@
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -1890,8 +1890,8 @@
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "sniper"
+            "Heavy 2",
+            "Sniper (3+)"
           ]
         }
       ]
@@ -1905,8 +1905,8 @@
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "sniper"
+            "Heavy 2",
+            "Sniper (3+)"
           ]
         }
       ]
@@ -1920,7 +1920,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 3"
           ]
         }
       ]
@@ -1934,8 +1934,8 @@
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -1952,8 +1952,8 @@
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2",
+            "Bolter"
           ]
         }
       ],
@@ -1970,7 +1970,7 @@
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "pistol"
+            "Pistol 1"
           ]
         }
       ]
@@ -1984,7 +1984,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 3"
           ]
         }
       ]
@@ -1997,7 +1997,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         }
       ],
@@ -2012,8 +2012,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1",
+            "Monsterbane"
           ]
         }
       ]
@@ -2028,8 +2028,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1",
+            "Monsterbane"
           ]
         },
         {
@@ -2038,7 +2038,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast"
           ]
         }
@@ -2053,9 +2053,9 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast",
-            "gets-hot"
+            "Gets Hot!"
           ]
         }
       ]
@@ -2069,9 +2069,9 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast",
-            "grav"
+            "Grav"
           ]
         }
       ]
@@ -2085,9 +2085,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "melta",
-            "monsterbane"
+            "Heavy 2",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -2101,8 +2101,8 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "assault",
-            "rending"
+            "Assault 6",
+            "Rending"
           ]
         }
       ]
@@ -2116,8 +2116,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -2131,7 +2131,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 3 x2"
           ]
         }
       ]
@@ -2145,8 +2145,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -2159,7 +2159,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ],
@@ -2175,8 +2175,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2",
+            "Monsterbane"
           ]
         },
         {
@@ -2185,7 +2185,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 2",
             "3\" Blast"
           ]
         }
@@ -2200,9 +2200,9 @@
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -2216,8 +2216,8 @@
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "beam"
+            "Heavy 1",
+            "Beam"
           ]
         }
       ]
@@ -2231,9 +2231,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "rending"
+            "Heavy 6",
+            "Monsterbane",
+            "Rending"
           ]
         }
       ]
@@ -2247,9 +2247,9 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "beam"
+            "Heavy 1",
+            "Monsterbane",
+            "Beam"
           ]
         }
       ]
@@ -2263,8 +2263,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "gets-hot"
+            "Heavy 3",
+            "Gets Hot!"
           ]
         }
       ]
@@ -2278,8 +2278,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 4",
+            "Monsterbane"
           ]
         }
       ]
@@ -2293,9 +2293,9 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "beam",
-            "monsterbane"
+            "Heavy 1",
+            "Beam",
+            "Monsterbane"
           ]
         }
       ]
@@ -2309,8 +2309,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2",
+            "Monsterbane"
           ]
         }
       ]
@@ -2324,8 +2324,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "aa"
+            "Heavy 1",
+            "AA"
           ]
         }
       ]
@@ -2339,7 +2339,7 @@
           "strength": "6",
           "ap": "5+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "7\" Blast"
           ]
         }
@@ -2355,8 +2355,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2",
+            "Monsterbane"
           ]
         },
         {
@@ -2365,7 +2365,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 2",
             "3\" Blast"
           ]
         }
@@ -2381,8 +2381,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2",
+            "Monsterbane"
           ]
         },
         {
@@ -2391,7 +2391,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 2",
             "3\" Blast"
           ]
         },
@@ -2401,8 +2401,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2",
+            "Bolter"
           ]
         }
       ],
@@ -2419,9 +2419,9 @@
           "strength": "10",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "one-use-only"
+            "Heavy 1",
+            "Monsterbane",
+            "One Use Only"
           ]
         }
       ]
@@ -2437,16 +2437,16 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "15\" Blast",
-            "destroyer",
-            "ordnance",
-            "monsterbane",
-            "indirect",
-            "ignores-cover",
+            "Destroyer",
+            "Ordnance",
+            "Monsterbane",
+            "Indirect Fire",
+            "Ignores Cover",
             "The Hour is Nigh",
             "T Minus 5",
-            "one-use-only"
+            "One Use Only"
           ]
         },
         {
@@ -2456,16 +2456,16 @@
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "15\" Blast",
-            "destroyer",
-            "ordnance",
-            "monsterbane",
-            "indirect",
-            "ignores-cover",
+            "Destroyer",
+            "Ordnance",
+            "Monsterbane",
+            "Indirect Fire",
+            "Ignores Cover",
             "The Hour is Nigh",
             "T Minus 5",
-            "one-use-only"
+            "One Use Only"
           ]
         },
         {
@@ -2475,16 +2475,16 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "15\" Blast",
-            "destroyer",
-            "ordnance",
-            "monsterbane",
-            "indirect",
-            "ignores-cover",
+            "Destroyer",
+            "Ordnance",
+            "Monsterbane",
+            "Indirect Fire",
+            "Ignores Cover",
             "The Hour is Nigh",
             "T Minus 5",
-            "one-use-only"
+            "One Use Only"
           ]
         }
       ]
@@ -2498,7 +2498,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         },
         {
@@ -2507,8 +2507,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2526,8 +2526,8 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "rapid-fire",
-            "grav"
+            "Rapid Fire 1",
+            "Grav"
           ]
         },
         {
@@ -2536,8 +2536,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2555,8 +2555,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "rapid-fire",
-            "gets-hot"
+            "Rapid Fire 1",
+            "Gets Hot!"
           ]
         },
         {
@@ -2565,8 +2565,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2584,9 +2584,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         },
         {
@@ -2595,8 +2595,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2613,7 +2613,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         },
         {
@@ -2622,8 +2622,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2641,8 +2641,8 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "rapid-fire",
-            "grav"
+            "Rapid Fire 1",
+            "Grav"
           ]
         },
         {
@@ -2651,8 +2651,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2670,8 +2670,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "rapid-fire",
-            "gets-hot"
+            "Rapid Fire 1",
+            "Gets Hot!"
           ]
         },
         {
@@ -2680,8 +2680,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2699,9 +2699,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         },
         {
@@ -2710,8 +2710,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2729,9 +2729,9 @@
           "strength": "5",
           "ap": "1+",
           "rules": [
-            "rapid-fire",
-            "armourbane",
-            "monsterbane"
+            "Rapid Fire 1",
+            "Armourbane",
+            "Monsterbane"
           ]
         },
         {
@@ -2740,8 +2740,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -2758,7 +2758,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 3 x2"
           ]
         }
       ]
@@ -2771,7 +2771,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ],
@@ -2786,9 +2786,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1 x2",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -2802,7 +2802,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 3 x2"
           ]
         }
       ]
@@ -2816,8 +2816,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "assault",
-            "gets-hot"
+            "Assault 3 x2",
+            "Gets Hot!"
           ]
         }
       ]
@@ -2831,7 +2831,7 @@
           "strength": "4",
           "ap": "-",
           "rules": [
-            "assault",
+            "Assault 1",
             "3\" Blast"
           ]
         }
@@ -2846,7 +2846,7 @@
           "strength": "4",
           "ap": "-",
           "rules": [
-            "assault",
+            "Assault 1 x2",
             "3\" Blast"
           ]
         }
@@ -2861,8 +2861,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 6",
+            "Bolter"
           ]
         }
       ],
@@ -2879,7 +2879,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "assault",
+            "Assault 2",
             "Counts as being armed with Grenades"
           ]
         }
@@ -2894,9 +2894,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "pinning",
-            "monsterbane"
+            "Heavy 3",
+            "Pinning",
+            "Monsterbane"
           ]
         }
       ]
@@ -2910,8 +2910,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1 x2",
+            "Bolter"
           ]
         }
       ],
@@ -2928,7 +2928,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "assault"
+            "Assault 3 x2"
           ]
         }
       ]
@@ -2942,8 +2942,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2 x2",
+            "Bolter"
           ]
         }
       ],
@@ -2960,9 +2960,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "melta",
-            "monsterbane"
+            "Heavy 2 x2",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -2976,8 +2976,8 @@
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "heavy",
-            "beam"
+            "Heavy 2 x2",
+            "Beam"
           ]
         }
       ]
@@ -2991,7 +2991,7 @@
           "strength": "4",
           "ap": "-",
           "rules": [
-            "heavy"
+            "Heavy 10"
           ]
         }
       ]
@@ -3005,7 +3005,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 12"
           ]
         }
       ]
@@ -3020,8 +3020,8 @@
           "strength": "9",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2",
+            "Monsterbane"
           ]
         },
         {
@@ -3030,7 +3030,7 @@
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 2",
             "3\" Blast"
           ]
         }
@@ -3045,8 +3045,8 @@
           "strength": "10",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -3060,9 +3060,9 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -3075,9 +3075,9 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "extra-attack",
-            "slow",
-            "monsterbane"
+            "Extra Attack 1",
+            "Slow",
+            "Monsterbane"
           ]
         }
       ]
@@ -3091,8 +3091,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -3101,7 +3101,7 @@
           "strength": "4",
           "ap": "-",
           "rules": [
-            "heavy"
+            "Heavy 10"
           ]
         }
       ]
@@ -3115,8 +3115,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -3125,8 +3125,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1 x2",
+            "Bolter"
           ]
         }
       ],
@@ -3143,8 +3143,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -3153,7 +3153,7 @@
           "strength": "4",
           "ap": "-",
           "rules": [
-            "assault",
+            "Assault 1",
             "3\" Blast"
           ]
         }
@@ -3169,8 +3169,8 @@
           "strength": "8",
           "ap": "4+",
           "rules": [
-            "assault",
-            "monsterbane"
+            "Assault 1",
+            "Monsterbane"
           ]
         },
         {
@@ -3179,7 +3179,7 @@
           "strength": "3",
           "ap": "-",
           "rules": [
-            "assault",
+            "Assault 1",
             "3\" Blast"
           ]
         }
@@ -3195,7 +3195,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         },
         {
@@ -3204,7 +3204,7 @@
           "strength": "3",
           "ap": "-",
           "rules": [
-            "assault",
+            "Assault 1",
             "3\" Blast"
           ]
         }
@@ -3219,8 +3219,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2 x5",
+            "Monsterbane"
           ]
         }
       ]
@@ -3234,8 +3234,8 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "assault",
-            "rending"
+            "Assault 6 x5",
+            "Rending"
           ]
         }
       ]
@@ -3248,7 +3248,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         }
       ],
@@ -3263,7 +3263,7 @@
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "heavy"
+            "Heavy 3 x2"
           ]
         }
       ]
@@ -3277,7 +3277,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "pistol"
+            "Pistol 3"
           ]
         }
       ]
@@ -3292,8 +3292,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 3 x2",
+            "Monsterbane"
           ]
         },
         {
@@ -3302,7 +3302,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 3 x2",
             "3\" Blast"
           ]
         }
@@ -3317,8 +3317,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "aa"
+            "Heavy 2",
+            "AA"
           ]
         }
       ]
@@ -3333,9 +3333,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "lance",
-            "monsterbane"
+            "Heavy 1",
+            "Lance",
+            "Monsterbane"
           ]
         },
         {
@@ -3344,7 +3344,7 @@
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast"
           ]
         }
@@ -3359,9 +3359,9 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "grav"
+            "Grav"
           ]
         }
       ]
@@ -3375,8 +3375,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 12",
+            "Monsterbane"
           ]
         }
       ]
@@ -3390,10 +3390,10 @@
           "strength": "9",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "melta",
-            "monsterbane"
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -3407,9 +3407,9 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "destroyer",
-            "monsterbane",
-            "auxiliary"
+            "Destroyer",
+            "Monsterbane",
+            "Auxiliary"
           ]
         },
         {
@@ -3418,9 +3418,9 @@
           "strength": "1+",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -3434,8 +3434,8 @@
           "strength": "X2",
           "ap": "2+",
           "rules": [
-            "slow",
-            "monsterbane"
+            "Slow",
+            "Monsterbane"
           ]
         },
         {
@@ -3444,9 +3444,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -3461,7 +3461,7 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "pistol"
+            "Pistol 2"
           ]
         },
         {
@@ -3470,7 +3470,7 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "pistol"
+            "Pistol 2"
           ]
         }
       ]
@@ -3483,7 +3483,7 @@
           "strength": "+1",
           "ap": "6+",
           "rules": [
-            "accurate",
+            "Accurate",
             "Dozerblade"
           ]
         }
@@ -3497,7 +3497,7 @@
           "strength": "User",
           "ap": "3+",
           "rules": [
-            "extra-attack",
+            "Extra Attack 1",
             "Reroll all failed To Hit and To Wound rolls"
           ]
         }
@@ -3512,8 +3512,8 @@
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -3530,7 +3530,7 @@
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "heavy"
+            "Heavy 3"
           ]
         }
       ]
@@ -3544,8 +3544,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "rapid-fire",
-            "gets-hot"
+            "Rapid Fire 1 x2",
+            "Gets Hot!"
           ]
         }
       ]
@@ -3558,7 +3558,7 @@
           "strength": "5",
           "ap": "3+",
           "rules": [
-            "assault"
+            "Assault 1"
           ]
         }
       ],
@@ -3808,7 +3808,7 @@
           "strength": "-",
           "ap": "-",
           "rules": [
-            "deepstrike"
+            "Deepstrike"
           ]
         }
       ]
@@ -3821,7 +3821,7 @@
           "strength": "-",
           "ap": "-",
           "rules": [
-            "stealth"
+            "Stealth"
           ]
         }
       ]
@@ -3887,8 +3887,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2",
+            "Monsterbane"
           ]
         }
       ]
@@ -3902,8 +3902,8 @@
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -3917,8 +3917,8 @@
           "strength": "10",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -3932,8 +3932,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 3 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -3947,8 +3947,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -3962,9 +3962,9 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "grav"
+            "Grav"
           ]
         }
       ]
@@ -3978,7 +3978,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 3 x4"
           ]
         }
       ]
@@ -3992,9 +3992,9 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "ordnance"
+            "Heavy 1 x4",
+            "Monsterbane",
+            "Ordnance"
           ]
         }
       ]
@@ -4009,8 +4009,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 4",
+            "Monsterbane"
           ]
         },
         {
@@ -4019,9 +4019,9 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "heavy",
+            "Heavy 4",
             "3\" Blast",
-            "indirect"
+            "Indirect Fire"
           ]
         }
       ]
@@ -4035,7 +4035,7 @@
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "heavy"
+            "Heavy 3"
           ]
         }
       ]
@@ -4049,7 +4049,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast"
           ]
         }
@@ -4064,9 +4064,9 @@
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "one-use-only"
+            "Heavy 1 x2",
+            "Monsterbane",
+            "One Use Only"
           ]
         }
       ]
@@ -4080,10 +4080,10 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "destroyer",
-            "monsterbane",
-            "one-use-only"
+            "Heavy 1",
+            "Destroyer",
+            "Monsterbane",
+            "One Use Only"
           ]
         }
       ]
@@ -4097,8 +4097,8 @@
           "strength": "5",
           "ap": "2+",
           "rules": [
-            "assault",
-            "gets-hot"
+            "Assault 3",
+            "Gets Hot!"
           ]
         }
       ]
@@ -4112,8 +4112,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "rapid-fire",
-            "gets-hot"
+            "Rapid Fire 1",
+            "Gets Hot!"
           ]
         }
       ]
@@ -4127,9 +4127,9 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "gets-hot"
+            "Heavy 1",
+            "Monsterbane",
+            "Gets Hot!"
           ]
         }
       ]
@@ -4143,9 +4143,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "assault",
-            "melta",
-            "monsterbane"
+            "Assault 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -4159,9 +4159,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "melta",
-            "monsterbane"
+            "Heavy 1",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -4175,8 +4175,8 @@
           "strength": "4",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "sniper"
+            "Heavy 2",
+            "Sniper (3+)"
           ]
         }
       ],
@@ -4193,8 +4193,8 @@
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1",
+            "Monsterbane"
           ]
         }
       ]
@@ -4208,9 +4208,9 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -4224,8 +4224,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 6",
+            "Monsterbane"
           ]
         }
       ]
@@ -4239,9 +4239,9 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "beam",
-            "monsterbane"
+            "Heavy 2",
+            "Beam",
+            "Monsterbane"
           ]
         }
       ]
@@ -4255,9 +4255,9 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "3\" Blast",
-            "gets-hot"
+            "Gets Hot!"
           ]
         }
       ]
@@ -4271,9 +4271,9 @@
           "strength": "*",
           "ap": "-",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "grav"
+            "Grav"
           ]
         }
       ]
@@ -4287,10 +4287,10 @@
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "destroyer",
-            "beam",
-            "monsterbane"
+            "Heavy 1",
+            "Destroyer",
+            "Beam",
+            "Monsterbane"
           ]
         }
       ]
@@ -4304,10 +4304,10 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "3\" Blast",
-            "melta",
-            "monsterbane"
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -4320,7 +4320,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ],
@@ -4334,7 +4334,7 @@
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ],
@@ -4349,8 +4349,8 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "assault",
-            "rending"
+            "Assault 6 x2",
+            "Rending"
           ]
         }
       ]
@@ -4365,8 +4365,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "heavy",
-            "beam"
+            "Heavy 1",
+            "Beam"
           ]
         },
         {
@@ -4375,8 +4375,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 1",
+            "Bolter"
           ]
         }
       ],
@@ -4393,7 +4393,7 @@
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast"
           ]
         }
@@ -4408,8 +4408,8 @@
           "strength": "5",
           "ap": "5+",
           "rules": [
-            "heavy",
-            "beam"
+            "Heavy 2 x2",
+            "Beam"
           ]
         }
       ]
@@ -4422,7 +4422,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ],
@@ -4437,7 +4437,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 3 x2"
           ]
         }
       ]
@@ -4451,8 +4451,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -4466,8 +4466,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -4481,8 +4481,8 @@
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "ordnance",
+            "Heavy 2",
+            "Ordnance",
             "Grinding Advance"
           ]
         }
@@ -4497,7 +4497,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 12 x2"
           ]
         }
       ]
@@ -4511,8 +4511,8 @@
           "strength": "4",
           "ap": "4+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 4 x2",
+            "Bolter"
           ]
         }
       ],
@@ -4529,9 +4529,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "melta",
-            "monsterbane"
+            "Heavy 2",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -4545,8 +4545,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "heavy",
-            "ignores-cover"
+            "Heavy 2 x2",
+            "Ignores Cover"
           ]
         }
       ]
@@ -4560,7 +4560,7 @@
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "heavy"
+            "Heavy 3"
           ]
         }
       ]
@@ -4574,7 +4574,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ]
@@ -4588,8 +4588,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 2 x2",
+            "Bolter"
           ]
         }
       ],
@@ -4606,7 +4606,7 @@
           "strength": "4",
           "ap": "-",
           "rules": [
-            "heavy"
+            "Heavy 10"
           ]
         }
       ]
@@ -4620,8 +4620,8 @@
           "strength": "4",
           "ap": "5+",
           "rules": [
-            "rapid-fire",
-            "bolter"
+            "Rapid Fire 6 x2",
+            "Bolter"
           ]
         }
       ],
@@ -4637,7 +4637,7 @@
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ],
@@ -4653,7 +4653,7 @@
           "ap": "2+",
           "rules": [
             "Heavy 1 x2 (x2)",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -4667,7 +4667,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 3 x2"
           ]
         }
       ]
@@ -4682,7 +4682,7 @@
           "ap": "3+",
           "rules": [
             "Heavy 1 x2 (x2)",
-            "beam"
+            "Beam"
           ]
         }
       ]
@@ -4697,8 +4697,8 @@
           "ap": "1+",
           "rules": [
             "Heavy 2 x2 (x2)",
-            "melta",
-            "monsterbane"
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -4712,9 +4712,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 2 x2",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -4728,9 +4728,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 6 x2",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -4745,11 +4745,11 @@
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast",
-            "destroyer",
-            "monsterbane",
-            "indirect"
+            "Destroyer",
+            "Monsterbane",
+            "Indirect Fire"
           ]
         }
       ]
@@ -4764,10 +4764,10 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "beam",
-            "monsterbane",
-            "co-axial"
+            "Heavy 1",
+            "Beam",
+            "Monsterbane",
+            "Co-axial"
           ]
         },
         {
@@ -4776,9 +4776,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "co-axial"
+            "Heavy 2",
+            "Monsterbane",
+            "Co-axial"
           ]
         }
       ]
@@ -4793,11 +4793,11 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "melta",
-            "monsterbane",
-            "co-axial"
+            "Melta",
+            "(Monsterbane)",
+            "Co-axial"
           ]
         },
         {
@@ -4806,9 +4806,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "co-axial"
+            "Heavy 2",
+            "Monsterbane",
+            "Co-axial"
           ]
         }
       ]
@@ -4823,11 +4823,11 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "ordnance",
-            "monsterbane",
-            "co-axial"
+            "Ordnance",
+            "Monsterbane",
+            "Co-axial"
           ]
         },
         {
@@ -4836,9 +4836,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "co-axial"
+            "Heavy 2",
+            "Monsterbane",
+            "Co-axial"
           ]
         }
       ]
@@ -4852,8 +4852,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2",
+            "Monsterbane"
           ]
         }
       ]
@@ -4867,10 +4867,10 @@
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "3\" Blast",
-            "destroyer",
-            "monsterbane"
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -4884,8 +4884,8 @@
           "strength": "8",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 3 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -4899,7 +4899,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "7\" Blast"
           ]
         }
@@ -4914,7 +4914,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 18"
           ]
         }
       ]
@@ -4928,7 +4928,7 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 2 x2",
             "3\" Blast"
           ]
         }
@@ -4943,8 +4943,8 @@
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "heavy",
-            "aa"
+            "Heavy 3 x2",
+            "AA"
           ]
         }
       ]
@@ -4958,10 +4958,10 @@
           "strength": "10",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "ordnance",
-            "monsterbane"
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -4975,9 +4975,9 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "ordnance",
-            "monsterbane"
+            "Heavy 1 x4",
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -4990,7 +4990,7 @@
           "strength": "+3",
           "ap": "4+",
           "rules": [
-            "accurate",
+            "Accurate",
             "Siege Shield"
           ]
         }
@@ -5005,9 +5005,9 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 2",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -5021,9 +5021,9 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "7\" Blast",
-            "indirect"
+            "Indirect Fire"
           ]
         }
       ]
@@ -5038,10 +5038,10 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "indirect",
-            "pinning"
+            "Indirect Fire",
+            "Pinning"
           ]
         }
       ]
@@ -5068,7 +5068,7 @@
           "strength": "7",
           "ap": "3+",
           "rules": [
-            "heavy"
+            "Heavy 2"
           ]
         }
       ]
@@ -5082,8 +5082,8 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 6",
+            "Monsterbane"
           ]
         }
       ]
@@ -5097,9 +5097,9 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "3\" Blast",
-            "gets-hot"
+            "Gets Hot!"
           ]
         }
       ]
@@ -5113,7 +5113,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "5\" Blast"
           ]
         }
@@ -5128,8 +5128,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -5143,8 +5143,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x4",
+            "Monsterbane"
           ]
         }
       ]
@@ -5158,7 +5158,7 @@
           "strength": "7",
           "ap": "3+",
           "rules": [
-            "heavy"
+            "Heavy 3"
           ]
         }
       ]
@@ -5172,7 +5172,7 @@
           "strength": "5",
           "ap": "-",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast"
           ]
         }
@@ -5200,8 +5200,8 @@
           "strength": "5",
           "ap": "6+",
           "rules": [
-            "heavy",
-            "aa"
+            "Heavy 3 x2",
+            "AA"
           ]
         }
       ]
@@ -5216,9 +5216,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "melta",
-            "monsterbane"
+            "Heavy 2",
+            "Melta",
+            "(Monsterbane)"
           ]
         },
         {
@@ -5227,8 +5227,8 @@
           "strength": "7",
           "ap": "2+",
           "rules": [
-            "rapid-fire",
-            "gets-hot"
+            "Rapid Fire 1",
+            "Gets Hot!"
           ]
         }
       ]
@@ -5242,9 +5242,9 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
-            "melta",
-            "monsterbane"
+            "Heavy 5",
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -5257,8 +5257,8 @@
           "strength": "X2",
           "ap": "1+",
           "rules": [
-            "accurate",
-            "monsterbane"
+            "Accurate",
+            "Monsterbane"
           ]
         }
       ]
@@ -5272,8 +5272,8 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "beam"
+            "Heavy 1 x2",
+            "Beam"
           ]
         }
       ]
@@ -5288,8 +5288,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Monsterbane"
           ]
         },
         {
@@ -5298,7 +5298,7 @@
           "strength": "4",
           "ap": "6+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "3\" Blast"
           ]
         }
@@ -5313,7 +5313,7 @@
           "strength": "6",
           "ap": "3+",
           "rules": [
-            "heavy"
+            "Heavy 12 x2"
           ]
         }
       ]
@@ -5328,7 +5328,7 @@
           "ap": "4+",
           "rules": [
             "Heavy 2 x2 (x2)",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -5342,10 +5342,10 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "ordnance",
-            "monsterbane",
-            "one-use-only"
+            "Heavy 1 x4",
+            "Ordnance",
+            "Monsterbane",
+            "One Use Only"
           ]
         }
       ]
@@ -5373,9 +5373,9 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "ordnance",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -5389,10 +5389,10 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "7\" Blast",
-            "ordnance",
-            "monsterbane"
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -5406,10 +5406,10 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "destroyer",
-            "monsterbane"
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -5436,7 +5436,7 @@
           "strength": "6",
           "ap": "4+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "Apocalypse Barrage"
           ]
         }
@@ -5451,10 +5451,10 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "5\" Blast",
-            "destroyer",
-            "monsterbane"
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -5469,7 +5469,7 @@
           "ap": "2+",
           "rules": [
             "Heavy 1 x4 (x2)",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -5484,8 +5484,8 @@
           "ap": "2+",
           "rules": [
             "Heavy 1 x3 (x2)",
-            "ordnance",
-            "monsterbane"
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -5500,9 +5500,9 @@
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "destroyer",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Destroyer",
+            "Monsterbane"
           ]
         },
         {
@@ -5511,10 +5511,10 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "5\" Blast",
-            "ordnance",
-            "monsterbane"
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -5528,10 +5528,10 @@
           "strength": "D",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1 x3",
             "3\" Blast",
-            "destroyer",
-            "monsterbane"
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -5559,10 +5559,10 @@
           "strength": "10",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "10\" Blast",
-            "ordnance",
-            "monsterbane"
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -5576,8 +5576,8 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 6 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -5591,8 +5591,8 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 2 x2",
+            "Monsterbane"
           ]
         }
       ]
@@ -5606,9 +5606,9 @@
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "5\" Blast",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -5622,9 +5622,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 4 x2",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -5639,10 +5639,10 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "melta",
-            "monsterbane"
+            "Melta",
+            "(Monsterbane)"
           ]
         },
         {
@@ -5651,10 +5651,10 @@
           "strength": "8",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "3\" Blast",
-            "melta",
-            "monsterbane"
+            "Melta",
+            "(Monsterbane)"
           ]
         }
       ]
@@ -5668,10 +5668,10 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "5\" Blast",
-            "destroyer",
-            "monsterbane"
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -5685,9 +5685,9 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 1",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -5701,9 +5701,9 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 1 x2",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -5717,9 +5717,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 2 x2",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -5733,9 +5733,9 @@
           "strength": "7",
           "ap": "4+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 2 x2 (x2)",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -5749,9 +5749,9 @@
           "strength": "8",
           "ap": "2+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "7\" Blast",
-            "monsterbane"
+            "Monsterbane"
           ]
         }
       ]
@@ -5765,10 +5765,10 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "destroyer",
-            "monsterbane"
+            "Destroyer",
+            "Monsterbane"
           ]
         }
       ]
@@ -5783,13 +5783,13 @@
           "strength": "D",
           "ap": "1+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "15\" Blast",
-            "destroyer",
-            "ordnance",
-            "monsterbane",
-            "indirect",
-            "ignores-cover",
+            "Destroyer",
+            "Ordnance",
+            "Monsterbane",
+            "Indirect Fire",
+            "Ignores Cover",
             "The Hour is Nigh",
             "T Minus 5"
           ]
@@ -5805,7 +5805,7 @@
           "strength": "5",
           "ap": "-",
           "rules": [
-            "heavy"
+            "Heavy 20"
           ]
         }
       ]
@@ -5819,10 +5819,10 @@
           "strength": "8",
           "ap": "3+",
           "rules": [
-            "heavy",
+            "Heavy 1",
             "5\" Blast",
-            "ordnance",
-            "monsterbane"
+            "Ordnance",
+            "Monsterbane"
           ]
         }
       ]
@@ -5836,9 +5836,9 @@
           "strength": "9",
           "ap": "2+",
           "rules": [
-            "heavy",
-            "monsterbane",
-            "aa"
+            "Heavy 1 x4",
+            "Monsterbane",
+            "AA"
           ]
         }
       ]
@@ -5851,7 +5851,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1 x2 (x4)"
           ]
         }
       ],
@@ -5867,8 +5867,8 @@
           "strength": "10",
           "ap": "3+",
           "rules": [
-            "heavy",
-            "monsterbane"
+            "Heavy 1 x2",
+            "Monsterbane"
           ]
         },
         {
@@ -5877,7 +5877,7 @@
           "strength": "6",
           "ap": "5+",
           "rules": [
-            "heavy",
+            "Heavy 1 x2",
             "5\" Blast"
           ]
         }
@@ -5892,7 +5892,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "heavy"
+            "Heavy 3 x4"
           ]
         }
       ]
@@ -5931,7 +5931,7 @@
           "strength": "5",
           "ap": "4+",
           "rules": [
-            "assault"
+            "Assault 1 x2"
           ]
         }
       ],
