@@ -470,9 +470,9 @@
       ],
       "inlineRules": [
         { "id": "void-shields-6-nemesis", "name": "Void Shields 6", "shortDesc": "This model has 6 Void Shields.", "fullDesc": "Void Shields 6." },
-        { "id": "create-panic-nemesis", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
-        { "id": "nuclear-meltdown-nemesis", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ in a 4d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 4d6\" Radius." },
-        { "id": "titanic-god-engine-nemesis", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for movement.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." },
+        { "id": "create-panic-nemesis", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
+        { "id": "nuclear-meltdown-nemesis", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 4d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 4d6\" Radius." },
+        { "id": "titanic-god-engine-nemesis", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." },
         { "id": "earthshock-nemesis", "name": "Earthshock", "shortDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase.", "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase." }
       ],
       "options": [
@@ -511,9 +511,9 @@
       ],
       "inlineRules": [
         { "id": "void-shields-1", "name": "Void Shields 1", "shortDesc": "This model has 1 Void Shield.", "fullDesc": "Void Shields 1." },
-        { "id": "create-panic-warhound", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
-        { "id": "nuclear-meltdown-warhound", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ in a 2d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 2d6\" Radius." },
-        { "id": "titanic-god-engine-warhound", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for movement.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." }
+        { "id": "create-panic-warhound", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
+        { "id": "nuclear-meltdown-warhound", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 2d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 2d6\" Radius." },
+        { "id": "titanic-god-engine-warhound", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." }
       ],
       "options": [
         { "id": "wh-arm", "type": "weaponSwap", "scope": "limitedSlot", "slots": 2, "applies": ["warhound"], "label": "Swap either Vulcan Megabolter for", "replaces": "vulcan-megabolter", "choices": [
@@ -551,13 +551,13 @@
       ],
       "inlineRules": [
         { "id": "void-shields-6-warlord", "name": "Void Shields 6", "shortDesc": "This model has 6 Void Shields.", "fullDesc": "Void Shields 6." },
-        { "id": "create-panic-warlord", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
-        { "id": "nuclear-meltdown-warlord", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ in a 6d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 6d6\" Radius." },
+        { "id": "create-panic-warlord", "name": "Create Panic", "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.", "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there." },
+        { "id": "nuclear-meltdown-warlord", "name": "Nuclear Meltdown", "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 6d6\" radius.", "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 6d6\" Radius." },
         { "id": "towering-god-engine", "name": "Towering God Engine", "shortDesc": "This model may only be hit on a 5+ or worse in Melee.", "fullDesc": "This model may only be hit on a 5+ or worse in Melee." },
-        { "id": "titanic-god-engine-warlord", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for movement.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." },
+        { "id": "titanic-god-engine-warlord", "name": "Titanic God Engine", "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.", "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging." },
         { "id": "uparmoured", "name": "Uparmoured", "shortDesc": "Only Ardex Defensor weapons may be disabled on this model.", "fullDesc": "Only Ardex Defensor weapons may be disabled on this model." },
-        { "id": "world-ending-hammer", "name": "World Ending Hammer", "shortDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" (24\" for Titanic), scattering and causing Auto Hits.", "fullDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away, scattering like a template and causing Auto Hits against each model underneath them at their S# with AP-. Titanic units can be thrown this way, but only up to 24\" Instead and inflict S# AP2+. Roll for Explodes after the slain unit comes to a rest and Auto Hits are resolved." },
-        { "id": "earthshock-warlord", "name": "Earthshock", "shortDesc": "Units Hit by this Template move at Half Speed until next Command Phase.", "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase." }
+        { "id": "world-ending-hammer", "name": "World Ending Hammer", "shortDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away (24\" for Titanic), scattering like a template and causing Auto Hits at S# AP- (AP2+ for Titanic). Roll for Explodes after Auto Hits are resolved.", "fullDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away, scattering like a template and causing Auto Hits against each model underneath them at their S# with AP-. Titanic units can be thrown this way, but only up to 24\" Instead and inflict S# AP2+. Roll for Explodes after the slain unit comes to a rest and Auto Hits are resolved." },
+        { "id": "earthshock-warlord", "name": "Earthshock", "shortDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase.", "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase." }
       ],
       "options": [
         { "id": "warl-carapace", "type": "weaponSwap", "scope": "perModelType", "applies": ["warlord"], "label": "Swap 2 Sets of 2 Linked Turbo Laser Destructors for", "replaces": "2-sets-2-linked-turbo-laser-destructors", "choices": [

@@ -203,12 +203,14 @@ function fmtRange(p) {
 // ── Persistence ──────────────────────────────────────────────────────────────
 const stateKey = (file) => `alt40k-${file}`;
 
-function saveState(file, hiddenUnits, selectedSubfaction, detailMode) {
+function saveState(file, hiddenUnits, selectedSubfaction, detailMode, activePage, scrollY) {
   try {
     localStorage.setItem(stateKey(file), JSON.stringify({
       hidden: [...hiddenUnits],
       subfaction: selectedSubfaction,
       detail: detailMode,
+      page: activePage,
+      scrollY: Math.round(scrollY),
     }));
   } catch(_) {}
 }
@@ -222,6 +224,8 @@ function readState(file) {
       hiddenUnits:        new Set(Array.isArray(s.hidden) ? s.hidden : []),
       selectedSubfaction: s.subfaction ?? '',
       detailMode:         !!s.detail,
+      activePage:         s.page ?? 'army-rules',
+      scrollY:            s.scrollY ?? 0,
     };
   } catch(_) { return null; }
 }
@@ -370,15 +374,27 @@ function RulePill({ ruleId, label, armyRules, coreRules, inlineRules }) {
   return <Popover trigger={trigger} content={content}/>;
 }
 
-function UpgradePill({ label, cost, note }) {
+function UpgradePill({ label, cost, note, grantsWargear, weapons, coreRules, armyRules }) {
+  const grantedWeapons = (grantsWargear || []).map(ref => {
+    const id = typeof ref === "string" ? ref : ref.weaponId;
+    return id ? wepById(id, weapons || []) : null;
+  }).filter(Boolean);
+
+  const hasPopover = note || grantedWeapons.length > 0;
   const trigger = (
-    <span className={`pill${note?" clickable":""}`}>
+    <span className={`pill${hasPopover ? " clickable" : ""}`}>
       <span className="pill-name">{label}</span>
       {cost ? <span className="pill-cost">+{cost} pts</span> : null}
     </span>
   );
-  if (!note) return trigger;
-  return <Popover trigger={trigger} content={<><strong>{label}</strong>{note}</>}/>;
+  if (!hasPopover) return trigger;
+  const content = (
+    <>
+      {grantedWeapons.map(w => <WeaponPopoverContent key={w.id} weapon={w} coreRules={coreRules} armyRules={armyRules}/>)}
+      {note && <span style={{display:"block", marginTop: grantedWeapons.length ? 6 : 0, fontStyle:"italic", color:"#aaa"}}>{note}</span>}
+    </>
+  );
+  return <Popover trigger={trigger} content={content}/>;
 }
 
 function SlotBadge({ slot }) {
@@ -573,7 +589,8 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools,
             <div className="pills">
               {upgradeOpts.map(o => {
                 const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
-                return <UpgradePill key={o.id} label={named?.label||o.label} cost={o.pts} note={named?.note||o.note}/>;
+                const grantsWargear = o.grantsWargear || named?.grantsWargear;
+                return <UpgradePill key={o.id} label={named?.label||o.label} cost={o.pts} note={named?.note||o.note} grantsWargear={grantsWargear} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
               })}
             </div>
           </div>
@@ -1197,7 +1214,10 @@ export default function App() {
   const [selectedSubfaction, setSelectedSubfaction] = useState("");
   const [detailMode, setDetailMode] = useState(false);
   const [pendingScroll, setPendingScroll] = useState<string|null>(null);
+  const [pendingScrollY, setPendingScrollY] = useState<number|null>(null);
   const navWrapRef = useRef(null);
+  const activePageRef = useRef(activePage);
+  const scrollSaveTimer = useRef<ReturnType<typeof setTimeout>|null>(null);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}factions.json`)
@@ -1221,8 +1241,9 @@ export default function App() {
         setCurrentFile(file);
         setHiddenUnits(saved?.hiddenUnits       ?? new Set());
         setSelectedSubfaction(saved?.selectedSubfaction ?? "");
-        setActivePage("army-rules");
+        setActivePage(saved?.activePage         ?? "army-rules");
         setDetailMode(saved?.detailMode         ?? false);
+        setPendingScrollY(saved?.scrollY        ?? 0);
       })
       .catch(e => setError("Failed to load faction: " + e.message))
       .finally(() => setLoading(false));
@@ -1242,11 +1263,36 @@ export default function App() {
     return g;
   }, [factionData]);
 
-  // Save state whenever anything on the Options page changes
+  // Keep ref in sync so the scroll listener can read current activePage
+  useEffect(() => { activePageRef.current = activePage; }, [activePage]);
+
+  // Save state on significant changes (page nav, options, subfaction, detail mode)
   useEffect(() => {
     if (!currentFile) return;
-    saveState(currentFile, hiddenUnits, selectedSubfaction, detailMode);
+    saveState(currentFile, hiddenUnits, selectedSubfaction, detailMode, activePage, window.scrollY);
+  }, [currentFile, hiddenUnits, selectedSubfaction, detailMode, activePage]);
+
+  // Debounced scroll save
+  useEffect(() => {
+    if (!currentFile) return;
+    function onScroll() {
+      if (scrollSaveTimer.current) clearTimeout(scrollSaveTimer.current);
+      scrollSaveTimer.current = setTimeout(() => {
+        saveState(currentFile, hiddenUnits, selectedSubfaction, detailMode, activePageRef.current, window.scrollY);
+      }, 200);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => { window.removeEventListener("scroll", onScroll); };
   }, [currentFile, hiddenUnits, selectedSubfaction, detailMode]);
+
+  // Restore scroll position after faction loads and renders
+  useEffect(() => {
+    if (pendingScrollY === null) return;
+    const y = pendingScrollY;
+    setPendingScrollY(null);
+    // Double RAF ensures the full page has painted before we scroll
+    requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior })));
+  }, [pendingScrollY]);
 
   // If the current slot page becomes fully hidden or doesn't exist, redirect to army-rules
   useEffect(() => {

@@ -9,19 +9,19 @@
     {
       "id": "daemonic-engine",
       "name": "Daemonic Engine",
-      "shortDesc": "5+ Invulnerability Save; immune to secondary effects of Weapon Disabled and Crew Stun.",
+      "shortDesc": "5+ Invulnerability Save; immune to secondary effects of Weapon Disabled and Crew Stun. Still takes Wounds from the Penetration Charts.",
       "fullDesc": "This model has a 5+ Invulnerability Save and is immune to the secondary effects of Weapon Disabled and Crew Stun. It still takes the additional Wounds from the Penetration Charts."
     },
     {
       "id": "daemonic-thirst",
       "name": "Daemonic Thirst",
-      "shortDesc": "Inflicts a Mortal Wound on its bearer each Command Phase if no Wound was caused with this weapon last Turn.",
+      "shortDesc": "Inflicts a Mortal Wound on its bearer each Command Phase if no Wound was caused with this weapon last Turn. Does not trigger on Turn 1.",
       "fullDesc": "A weapon with this rule inflicts a Mortal Wound on its bearer in each of your Command Phases if you did not cause a Wound with the weapon during the last Turn. This does not trigger on Turn 1."
     },
     {
       "id": "malicious-volleys",
       "name": "Malicious Volleys",
-      "shortDesc": "If not Moving this Turn, treat Bolter weapons as half range.",
+      "shortDesc": "If not Moving this Turn, may treat weapons with the Bolter rule as if they were in half range.",
       "fullDesc": "If this model does not count as Moving this Turn, it may treat weapons with the Bolter rule as if they were in half range."
     },
     {

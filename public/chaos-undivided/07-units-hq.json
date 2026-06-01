@@ -319,10 +319,10 @@
       ],
       "inlineRules": [
         { "id": "champion-of-chaos", "name": "Champion of Chaos", "shortDesc": "Does not require Mark of Undivided; counts as all Marks for Pure Blessings.", "fullDesc": "This model does not require a Mark of Undivided to field in your army and is considered to be all Marks of Chaos for the purpose of Pure Blessings of Chaos." },
-        { "id": "champion-of-undivided", "name": "Champion of Undivided", "shortDesc": "12\" True Aura: all friendly units may reroll 1s To Hit.", "fullDesc": "12\" True Aura, this model and all friendly units may reroll 1s To Hit." },
+        { "id": "champion-of-undivided", "name": "Champion of Undivided", "shortDesc": "12\" True Aura: this model and all friendly units may reroll 1s To Hit.", "fullDesc": "12\" True Aura, this model and all friendly units may reroll 1s To Hit." },
         { "id": "mark-of-chaos-ascended", "name": "Mark of Chaos Ascended", "shortDesc": "6\" Aura: this model and target unit automatically pass Ld tests.", "fullDesc": "6\" Aura, this model and target unit automatically pass Ld tests." },
         { "id": "the-hour-is-nigh-abaddon", "name": "The Hour is Nigh", "shortDesc": "Place a marker on field; barrage strikes next Command Phase (15\" Blast, scatter normally).", "fullDesc": "When the weapon is fired, place a marker on field at a valid target. In your next Command Phase, the barrage strikes! Scatter like normal, following the 15\" Blast radius rules." },
-        { "id": "t-minus-5-abaddon", "name": "T Minus 5", "shortDesc": "Cannot fire Turn 1. If carrier is destroyed, Orbital Strike still hits.", "fullDesc": "The weapon may not be fired Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits in your Command Phase." }
+        { "id": "t-minus-5-abaddon", "name": "T Minus 5", "shortDesc": "Cannot fire Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits.", "fullDesc": "The weapon may not be fired Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits in your Command Phase." }
       ]
     },
     {
@@ -373,7 +373,7 @@
         }
       ],
       "inlineRules": [
-        { "id": "herald-of-abaddon", "name": "Herald of Abaddon", "shortDesc": "6\" Aura: target unit must take a Fear Test. Units in Melee cannot Fall Back or use Hit and Run.", "fullDesc": "6\" Aura, target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run." }
+        { "id": "herald-of-abaddon", "name": "Herald of Abaddon", "shortDesc": "6\" Aura: target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run.", "fullDesc": "6\" Aura, target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run." }
       ]
     },
     {
@@ -490,7 +490,7 @@
       ],
       "inlineRules": [
         { "id": "lord-of-terror", "name": "Lord of Terror", "shortDesc": "6\" Aura: target unit must take a Fear Test.", "fullDesc": "6\" Aura, target unit must take a Fear Test." },
-        { "id": "mind-in-the-machine", "name": "Mind in the Machine", "shortDesc": "In the Shooting Phase, target a non-Titanic Vehicle within 24\" and shoot one of its weapons.", "fullDesc": "In the shooting phase, target a non-Titanic Vehicle model within 24\" and shoot one weapon of your choice. You are allowed to target models friendly to the Vehicle, but not itself." },
+        { "id": "mind-in-the-machine", "name": "Mind in the Machine", "shortDesc": "In the Shooting Phase, target a non-Titanic Vehicle within 24\" and shoot one weapon of your choice. May target models friendly to the Vehicle, but not itself.", "fullDesc": "In the shooting phase, target a non-Titanic Vehicle model within 24\" and shoot one weapon of your choice. You are allowed to target models friendly to the Vehicle, but not itself." },
         { "id": "unholy-mechanisms", "name": "Unholy Mechanisms", "shortDesc": "6\" Aura: target Daemonic Engine unit gains +1 To Wound.", "fullDesc": "6\" Aura, target Daemonic Engine unit gains +1 To Wound." }
       ]
     }

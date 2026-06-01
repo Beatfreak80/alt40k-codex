@@ -152,7 +152,7 @@
         }
       ],
       "inlineRules": [
-        { "id": "warpflame-strike", "name": "Warpflame Strike", "shortDesc": "6\" Aura: when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (worse) until next Command Phase.", "fullDesc": "6\" Aura, when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (1 worse) until your next Command Phase. Cast as a unit." }
+        { "id": "warpflame-strike", "name": "Warpflame Strike", "shortDesc": "6\" Aura: when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (worse) until next Command Phase. Cast as a unit.", "fullDesc": "6\" Aura, when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (1 worse) until your next Command Phase. Cast as a unit." }
       ],
       "options": [
         { "id": "wt-size", "type": "squadSize", "label": "Additional Talons", "targetModelId": "talon", "ptsEach": 47, "max": 5 },

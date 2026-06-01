@@ -377,7 +377,7 @@
         }
       ],
       "inlineRules": [
-        { "id": "enhanced-warriors", "name": "Enhanced Warriors", "shortDesc": "6\" Aura: target unit gains S+1, T+1, or A+1 (randomized on d3) for the rest of the game. One-time effect per unit.", "fullDesc": "6\" Aura, target unit gains one of the following randomized on a d3. S+1, T+1, or A+1. This lasts until the end of the game, but a unit cannot be affected by this more than once. Independent Characters are not affected by this." },
+        { "id": "enhanced-warriors", "name": "Enhanced Warriors", "shortDesc": "6\" Aura: target unit gains S+1, T+1, or A+1 (randomized on d3) for the rest of the game. One-time effect per unit. Independent Characters are not affected.", "fullDesc": "6\" Aura, target unit gains one of the following randomized on a d3. S+1, T+1, or A+1. This lasts until the end of the game, but a unit cannot be affected by this more than once. Independent Characters are not affected by this." },
         { "id": "fallen-apothecary", "name": "Fallen Apothecary", "shortDesc": "6\" Aura: this model and target unit gains a 4+ Feel No Pain.", "fullDesc": "6\" Aura, this model and target unit gains a 4+ Feel No Pain." },
         { "id": "the-chirugeon-rule", "name": "The Chirugeon", "shortDesc": "This model Heals 1 Wound in each of your Command Phases.", "fullDesc": "This model Heals 1 Wound in each of your Command Phases." }
       ]

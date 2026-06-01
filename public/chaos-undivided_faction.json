@@ -289,19 +289,19 @@
     {
       "id": "daemonic-engine",
       "name": "Daemonic Engine",
-      "shortDesc": "5+ Invulnerability Save; immune to secondary effects of Weapon Disabled and Crew Stun.",
+      "shortDesc": "5+ Invulnerability Save; immune to secondary effects of Weapon Disabled and Crew Stun. Still takes Wounds from the Penetration Charts.",
       "fullDesc": "This model has a 5+ Invulnerability Save and is immune to the secondary effects of Weapon Disabled and Crew Stun. It still takes the additional Wounds from the Penetration Charts."
     },
     {
       "id": "daemonic-thirst",
       "name": "Daemonic Thirst",
-      "shortDesc": "Inflicts a Mortal Wound on its bearer each Command Phase if no Wound was caused with this weapon last Turn.",
+      "shortDesc": "Inflicts a Mortal Wound on its bearer each Command Phase if no Wound was caused with this weapon last Turn. Does not trigger on Turn 1.",
       "fullDesc": "A weapon with this rule inflicts a Mortal Wound on its bearer in each of your Command Phases if you did not cause a Wound with the weapon during the last Turn. This does not trigger on Turn 1."
     },
     {
       "id": "malicious-volleys",
       "name": "Malicious Volleys",
-      "shortDesc": "If not Moving this Turn, treat Bolter weapons as half range.",
+      "shortDesc": "If not Moving this Turn, may treat weapons with the Bolter rule as if they were in half range.",
       "fullDesc": "If this model does not count as Moving this Turn, it may treat weapons with the Bolter rule as if they were in half range."
     },
     {
@@ -6861,7 +6861,7 @@
         {
           "id": "champion-of-undivided",
           "name": "Champion of Undivided",
-          "shortDesc": "12\" True Aura: all friendly units may reroll 1s To Hit.",
+          "shortDesc": "12\" True Aura: this model and all friendly units may reroll 1s To Hit.",
           "fullDesc": "12\" True Aura, this model and all friendly units may reroll 1s To Hit."
         },
         {
@@ -6879,7 +6879,7 @@
         {
           "id": "t-minus-5-abaddon",
           "name": "T Minus 5",
-          "shortDesc": "Cannot fire Turn 1. If carrier is destroyed, Orbital Strike still hits.",
+          "shortDesc": "Cannot fire Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits.",
           "fullDesc": "The weapon may not be fired Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits in your Command Phase."
         }
       ]
@@ -7014,7 +7014,7 @@
         {
           "id": "herald-of-abaddon",
           "name": "Herald of Abaddon",
-          "shortDesc": "6\" Aura: target unit must take a Fear Test. Units in Melee cannot Fall Back or use Hit and Run.",
+          "shortDesc": "6\" Aura: target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run.",
           "fullDesc": "6\" Aura, target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run."
         }
       ]
@@ -7316,7 +7316,7 @@
         {
           "id": "mind-in-the-machine",
           "name": "Mind in the Machine",
-          "shortDesc": "In the Shooting Phase, target a non-Titanic Vehicle within 24\" and shoot one of its weapons.",
+          "shortDesc": "In the Shooting Phase, target a non-Titanic Vehicle within 24\" and shoot one weapon of your choice. May target models friendly to the Vehicle, but not itself.",
           "fullDesc": "In the shooting phase, target a non-Titanic Vehicle model within 24\" and shoot one weapon of your choice. You are allowed to target models friendly to the Vehicle, but not itself."
         },
         {
@@ -8717,7 +8717,7 @@
         {
           "id": "enhanced-warriors",
           "name": "Enhanced Warriors",
-          "shortDesc": "6\" Aura: target unit gains S+1, T+1, or A+1 (randomized on d3) for the rest of the game. One-time effect per unit.",
+          "shortDesc": "6\" Aura: target unit gains S+1, T+1, or A+1 (randomized on d3) for the rest of the game. One-time effect per unit. Independent Characters are not affected.",
           "fullDesc": "6\" Aura, target unit gains one of the following randomized on a d3. S+1, T+1, or A+1. This lasts until the end of the game, but a unit cannot be affected by this more than once. Independent Characters are not affected by this."
         },
         {
@@ -12109,7 +12109,7 @@
         {
           "id": "warpflame-strike",
           "name": "Warpflame Strike",
-          "shortDesc": "6\" Aura: when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (worse) until next Command Phase.",
+          "shortDesc": "6\" Aura: when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (worse) until next Command Phase. Cast as a unit.",
           "fullDesc": "6\" Aura, when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (1 worse) until your next Command Phase. Cast as a unit."
         }
       ],
@@ -17808,19 +17808,19 @@
         {
           "id": "create-panic-nemesis",
           "name": "Create Panic",
-          "shortDesc": "This model displaces all models when it moves.",
+          "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.",
           "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there."
         },
         {
           "id": "nuclear-meltdown-nemesis",
           "name": "Nuclear Meltdown",
-          "shortDesc": "Explodes on a 4+ in a 4d6\" radius.",
+          "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 4d6\" radius.",
           "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 4d6\" Radius."
         },
         {
           "id": "titanic-god-engine-nemesis",
           "name": "Titanic God Engine",
-          "shortDesc": "May ignore all non-Titanic models and Terrain for movement.",
+          "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.",
           "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging."
         },
         {
@@ -17981,19 +17981,19 @@
         {
           "id": "create-panic-warhound",
           "name": "Create Panic",
-          "shortDesc": "This model displaces all models when it moves.",
+          "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.",
           "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there."
         },
         {
           "id": "nuclear-meltdown-warhound",
           "name": "Nuclear Meltdown",
-          "shortDesc": "Explodes on a 4+ in a 2d6\" radius.",
+          "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 2d6\" radius.",
           "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 2d6\" Radius."
         },
         {
           "id": "titanic-god-engine-warhound",
           "name": "Titanic God Engine",
-          "shortDesc": "May ignore all non-Titanic models and Terrain for movement.",
+          "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.",
           "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging."
         }
       ],
@@ -18148,13 +18148,13 @@
         {
           "id": "create-panic-warlord",
           "name": "Create Panic",
-          "shortDesc": "This model displaces all models when it moves.",
+          "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.",
           "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there."
         },
         {
           "id": "nuclear-meltdown-warlord",
           "name": "Nuclear Meltdown",
-          "shortDesc": "Explodes on a 4+ in a 6d6\" radius.",
+          "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 6d6\" radius.",
           "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 6d6\" Radius."
         },
         {
@@ -18166,7 +18166,7 @@
         {
           "id": "titanic-god-engine-warlord",
           "name": "Titanic God Engine",
-          "shortDesc": "May ignore all non-Titanic models and Terrain for movement.",
+          "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.",
           "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging."
         },
         {
@@ -18178,13 +18178,13 @@
         {
           "id": "world-ending-hammer",
           "name": "World Ending Hammer",
-          "shortDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" (24\" for Titanic), scattering and causing Auto Hits.",
+          "shortDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away (24\" for Titanic), scattering like a template and causing Auto Hits at S# AP- (AP2+ for Titanic). Roll for Explodes after Auto Hits are resolved.",
           "fullDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away, scattering like a template and causing Auto Hits against each model underneath them at their S# with AP-. Titanic units can be thrown this way, but only up to 24\" Instead and inflict S# AP2+. Roll for Explodes after the slain unit comes to a rest and Auto Hits are resolved."
         },
         {
           "id": "earthshock-warlord",
           "name": "Earthshock",
-          "shortDesc": "Units Hit by this Template move at Half Speed until next Command Phase.",
+          "shortDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase.",
           "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase."
         }
       ],
