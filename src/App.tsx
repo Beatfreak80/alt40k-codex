@@ -132,6 +132,8 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
   .option-list li { font-size: 11pt; padding: 4px 0; }
   .option-cost { font-size: 10.5pt; }
   .upgrade-note { font-size: 10pt; }
+  .rule-name { font-size: 13pt; }
+  .rules-detail-li { font-size: 12pt; }
   .rule-entry-name { font-size: 12pt; }
   .rule-entry-desc { font-size: 11pt; }
   .subfaction-head { font-size: 15pt; }
@@ -152,7 +154,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 }
 
 /* Popover — hover + tap */
-.popover-wrap { position: relative; display: inline-block; }
+.popover-wrap { position: relative; display: inline-block; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
 .popover-box {
   display: none; position: fixed;
   background: #1a1a1a; color: #e8e0d0; font-size: 8pt; font-weight: 500;
@@ -183,6 +185,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .rules-list li { padding: 2.5px 0; border-bottom: 1px solid #f0f0f0; font-size: 9pt; font-weight: 500; line-height: 1.4; }
 .rules-list li:last-child { border-bottom: none; }
 .rule-name { font-weight: 700; font-size: 9pt; color: #1a1a1a; }
+.rules-detail-li { font-size: 9pt; }
 .rules-model-section { margin-bottom: 6px; }
 .rules-model-head { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 3px; }
 .options-intro { font-size: 10pt; line-height: 1.6; color: #444; margin-bottom: 20px; padding: 14px 16px; background: #fdf3d7; border: 1px solid #e8d48a; border-radius: 4px; }
@@ -340,9 +343,9 @@ function Popover({ trigger, content }) {
 
   return (
     <span ref={wrapRef} className={`popover-wrap${open ? " open" : ""}`}
-      onPointerEnter={handleOpen}
-      onPointerLeave={() => setOpen(false)}
-      onPointerDown={e => { e.stopPropagation(); if (open) setOpen(false); else handleOpen(); }}>
+      onPointerEnter={e => { if (e.pointerType !== 'touch') handleOpen(); }}
+      onPointerLeave={e => { if (e.pointerType !== 'touch') setOpen(false); }}
+      onClick={e => { e.stopPropagation(); e.preventDefault(); if (open) setOpen(false); else handleOpen(); }}>
       {trigger}
       <span ref={boxRef} className="popover-box" style={{ top: pos.top, left: pos.left }}>
         {content}
@@ -766,7 +769,7 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules })
           const modelNote = specific.find(r => r.id === id)?.label;
           return (
             <div key={id} className="col-block-tight">
-              <li style={{listStyle:"none", padding:"3px 0", fontSize:"9pt", lineHeight:1.4}}>
+              <li className="rules-detail-li" style={{listStyle:"none", padding:"3px 0", lineHeight:1.4}}>
                 <span className="rule-name">{rule?.name || idToLabel(id)}</span>
                 {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
                 {rule
