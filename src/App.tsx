@@ -21,6 +21,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .nav-print-toggle { display: flex; align-items: center; gap: 8px; padding-left: 4px; }
 .nav-print-label { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #888; cursor: pointer; white-space: nowrap; }
 .nav-print-label:hover { color: #c9a84c; }
+.nav-mobile-select { font-family: 'Rajdhani', sans-serif; font-size: 11pt; font-weight: 600; letter-spacing: 0.04em; padding: 5px 10px; border-radius: 3px; border: 1px solid #c9a84c; background: #2a2008; color: #c9a84c; cursor: pointer; display: none; }
 .nav-search-wrap { position: relative; }
 .nav-search-input { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 500; padding: 4px 10px; border-radius: 3px; border: 1px solid #555; background: #111; color: #e8e0d0; outline: none; width: 150px; transition: border-color 0.15s; }
 .nav-search-input::placeholder { color: #666; }
@@ -104,10 +105,46 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .platoon-squad-count { font-size: 8.5pt; color: #888; font-style: italic; margin-left: 8px; }
 
 @media (max-width: 600px) {
+  .codex-outer { padding: 0; }
+  .codex-page { padding: 12px; box-shadow: none; max-width: 100%; }
   .two-col { columns: 1; margin-top: 0; }
-  .codex-page { padding: 16px 14px; }
-  .unit-name { font-size: 18pt; }
-  .faction-name { font-size: 20pt; }
+  .faction-name { font-size: 22pt; }
+  .faction-subtitle { font-size: 10pt; }
+  .unit-name { font-size: 20pt; }
+  .unit-comp { font-size: 12pt; }
+  .unit-pts { font-size: 22pt; }
+  .unit-pts-label { font-size: 11pt; }
+  .slot-section-head { font-size: 18pt; }
+  .slot-section-limits { font-size: 12pt; }
+  .section-head { font-size: 13pt; }
+  .group-head { font-size: 11pt; }
+  .stat-table th { font-size: 9pt; }
+  .stat-table td { font-size: 11pt; }
+  .stat-table td:first-child { font-size: 11pt; }
+  .wep-table th, .ref-table th { font-size: 9pt; }
+  .wep-table td, .ref-table td { font-size: 10.5pt; }
+  .rules-col { font-size: 9.5pt; }
+  .pill { font-size: 11pt; padding: 3px 10px; }
+  .pill-name { font-size: 11pt; }
+  .pill-cost { font-size: 10pt; }
+  .rule-pill { font-size: 11pt; padding: 3px 10px; }
+  .rules-model-label { font-size: 10pt; }
+  .option-list li { font-size: 11pt; padding: 4px 0; }
+  .option-cost { font-size: 10.5pt; }
+  .upgrade-note { font-size: 10pt; }
+  .rule-entry-name { font-size: 12pt; }
+  .rule-entry-desc { font-size: 11pt; }
+  .subfaction-head { font-size: 15pt; }
+  .platoon-composition { font-size: 11pt; }
+  .platoon-toggle { font-size: 11pt; }
+  .popover-box { font-size: 10pt; width: 240px; }
+  .nav-search-input { width: 120px; font-size: 11pt; }
+  .nav-search-name { font-size: 11pt; }
+  .nav-page-btn { display: none !important; }
+  .nav-mobile-select { display: block; }
+}
+@media (min-width: 601px) {
+  .nav-mobile-select { display: none; }
 }
 .detail-mode .two-col { columns: 1; }
 @media (min-width: 780px) {
@@ -1534,11 +1571,14 @@ document.body.innerHTML+=body;`;
       <div className="codex-nav-wrap" ref={navWrapRef}>
         <nav className="codex-nav">
           <span className="nav-label">{faction.name||"Codex"}</span>
+          <select className="nav-mobile-select" value={activePage} onChange={e=>setActivePage(e.target.value)}>
+            {navPages.map(p=><option key={p.id} value={p.id}>{p.label}</option>)}
+          </select>
           {navPages.map(p=>{
             const isFn = p.id === "options";
             return (
               <button key={p.id}
-                className={`nav-btn${activePage===p.id?" active":""}`}
+                className={`nav-btn nav-page-btn${activePage===p.id?" active":""}`}
                 style={isFn ? {color:"#888",borderColor:"#333"} : undefined}
                 onClick={()=>setActivePage(p.id)}>
                 {p.label}
