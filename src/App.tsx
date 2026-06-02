@@ -2900,19 +2900,27 @@ document.body.innerHTML+=body;`;
         <nav className="codex-nav">
           <span className="nav-label">{faction.name||"Codex"}</span>
           <select className="nav-mobile-select" value={activePage} onChange={e=>setActivePage(e.target.value)}>
-            {navPages.map(p=><option key={p.id} value={p.id}>{p.label}</option>)}
+            {navPages.filter(p=>p.id!=="list-builder"&&p.id!=="options").map(p=><option key={p.id} value={p.id}>{p.label}</option>)}
           </select>
-          {navPages.map(p=>{
-            const isFn = p.id === "options";
-            return (
-              <button key={p.id}
-                className={`nav-btn nav-page-btn${activePage===p.id?" active":""}`}
-                style={isFn ? {color:"#888",borderColor:"#333"} : undefined}
-                onClick={()=>setActivePage(p.id)}>
-                {p.label}
-              </button>
-            );
-          })}
+          {navPages.filter(p=>p.id!=="list-builder"&&p.id!=="options").map(p=>(
+            <button key={p.id}
+              className={`nav-btn nav-page-btn${activePage===p.id?" active":""}`}
+              onClick={()=>setActivePage(p.id)}>
+              {p.label}
+            </button>
+          ))}
+          <button
+            className={`nav-btn${activePage==="list-builder"?" active":""}`}
+            style={activePage==="list-builder"?undefined:{color:"#888",borderColor:"#333"}}
+            onClick={()=>setActivePage("list-builder")}>
+            List Builder
+          </button>
+          <button
+            className={`nav-btn${activePage==="options"?" active":""}`}
+            style={activePage==="options"?undefined:{color:"#888",borderColor:"#333"}}
+            onClick={()=>setActivePage("options")}>
+            Options
+          </button>
           <UnitSearch allUnits={factionData.units||[]} hiddenUnits={hiddenUnits} onSelect={handleUnitSelect}/>
           <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
           <span className="nav-print-toggle">
