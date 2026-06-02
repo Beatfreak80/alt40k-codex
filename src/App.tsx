@@ -215,6 +215,78 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
   .popover-box { display: none !important; }
   .two-col { columns: 2; }
 }
+
+/* ── List Builder ───────────────────────────────────────────────────────── */
+.lb-header { display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:12px 0 16px; border-bottom:2px solid #e8d48a; margin-bottom:18px; }
+.lb-name-input { font-family:'Rajdhani',sans-serif; font-size:16pt; font-weight:700; border:none; border-bottom:2px solid transparent; background:transparent; color:#1a1a1a; outline:none; padding:2px 0; min-width:120px; flex:1; cursor:pointer; }
+.lb-name-input:focus { border-color:#7a5800; cursor:text; }
+.lb-btn { font-family:'Rajdhani',sans-serif; font-size:9.5pt; font-weight:600; letter-spacing:.06em; text-transform:uppercase; padding:4px 11px; border-radius:3px; border:1px solid #555; background:transparent; color:#c9a84c; cursor:pointer; white-space:nowrap; transition:background .12s; }
+.lb-btn:hover { background:#2a2008; border-color:#c9a84c; }
+.lb-btn-danger { color:#c04040; border-color:#c04040; }
+.lb-btn-danger:hover { background:#200808; border-color:#c04040; }
+.lb-btn-primary { background:#2a2008; border-color:#c9a84c; }
+.lb-btn-primary:hover { background:#3a2a10; }
+.lb-list-grid { display:flex; flex-direction:column; gap:8px; margin:16px 0; }
+.lb-list-card { display:flex; align-items:center; gap:12px; background:#fdf3d7; border:1px solid #e8d48a; border-radius:4px; padding:12px 16px; cursor:pointer; transition:background .12s; }
+.lb-list-card:hover { background:#f5e8a0; }
+.lb-list-name { font-size:13pt; font-weight:700; color:#1a1a1a; flex:1; }
+.lb-list-meta { font-size:9.5pt; color:#666; margin-top:2px; }
+.lb-foc { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:14px; padding:9px 12px; background:#f9f9f9; border:1px solid #e4e4e4; border-radius:4px; }
+.lb-foc-chip { display:inline-flex; align-items:center; gap:4px; padding:2px 8px; border-radius:3px; font-size:8.5pt; font-weight:700; border:1px solid #ccc; }
+.lb-foc-ok { border-color:#4a9a4a; background:#f0fff0; color:#2a6a2a; }
+.lb-foc-warn { border-color:#b09040; background:#fffde0; color:#7a5800; }
+.lb-foc-err { border-color:#c04040; background:#fff2f2; color:#802020; }
+.lb-slot-head { font-size:9.5pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#7a5800; border-bottom:1px solid #e8d48a; padding-bottom:3px; margin:16px 0 7px; }
+.lb-entry { display:flex; align-items:center; gap:8px; padding:7px 11px; border:1px solid #e0e0e0; border-radius:4px; margin-bottom:5px; background:#fff; transition:border-color .12s; }
+.lb-entry:hover { border-color:#c9a84c; background:#fdf9f0; }
+.lb-entry-name { font-size:10.5pt; font-weight:700; color:#1a1a1a; flex:1; }
+.lb-entry-pts { font-size:10pt; font-weight:700; color:#7a5800; white-space:nowrap; }
+.lb-icon-btn { background:none; border:1px solid transparent; border-radius:3px; cursor:pointer; padding:2px 7px; font-size:10pt; color:#888; }
+.lb-icon-btn:hover { background:#f0f0f0; color:#333; border-color:#ddd; }
+.lb-icon-btn.danger:hover { background:#fff0f0; color:#c04040; border-color:#e8a0a0; }
+.lb-modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.62); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; }
+.lb-modal { background:#fff; border-radius:6px; max-width:640px; width:100%; max-height:88vh; overflow-y:auto; padding:24px; position:relative; }
+.lb-modal-head { font-size:16pt; font-weight:700; color:#1a1a1a; }
+.lb-modal-pts { font-size:10pt; color:#7a5800; font-weight:700; margin-left:10px; }
+.lb-modal-sub { font-size:9.5pt; color:#888; margin:2px 0 16px; }
+.lb-opt-section { margin:10px 0 0; }
+.lb-opt-section-head { font-size:8.5pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#999; padding-bottom:2px; border-bottom:1px solid #f0f0f0; margin-bottom:5px; }
+.lb-opt-row { display:flex; align-items:flex-start; justify-content:space-between; padding:5px 0; border-bottom:1px solid #f6f6f6; gap:10px; }
+.lb-opt-row:last-child { border-bottom:none; }
+.lb-opt-label { font-size:10pt; font-weight:600; color:#1a1a1a; flex:1; }
+.lb-opt-pts { font-size:9pt; color:#7a5800; font-weight:600; }
+.lb-opt-note { font-size:8.5pt; color:#888; font-style:italic; display:block; margin-top:1px; }
+.lb-select { font-family:'Rajdhani',sans-serif; font-size:10pt; font-weight:600; padding:3px 8px; border:1px solid #ccc; border-radius:3px; background:#fff; cursor:pointer; }
+.lb-num-ctrl { display:flex; align-items:center; gap:6px; }
+.lb-num-btn { width:24px; height:24px; border:1px solid #bbb; border-radius:3px; background:#f5f5f5; cursor:pointer; font-size:14pt; line-height:1; display:flex; align-items:center; justify-content:center; color:#333; }
+.lb-num-btn:hover { background:#e8e8e8; }
+.lb-num-val { font-size:11pt; font-weight:700; min-width:22px; text-align:center; }
+.lb-modal-actions { display:flex; gap:9px; justify-content:flex-end; margin-top:14px; padding-top:12px; border-top:1px solid #f0f0f0; }
+.lb-pick-filter { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px; }
+.lb-pick-slot-head { font-size:8.5pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#7a5800; border-bottom:1px solid #e8d48a; padding-bottom:2px; margin:10px 0 5px; }
+.lb-pick-row { display:flex; align-items:center; gap:10px; padding:5px 9px; border:1px solid #e8e8e8; border-radius:3px; cursor:pointer; margin-bottom:3px; }
+.lb-pick-row:hover { background:#fdf3d7; border-color:#c9a84c; }
+.lb-pick-name { font-size:10pt; font-weight:700; flex:1; color:#1a1a1a; }
+.lb-pick-pts { font-size:9.5pt; color:#7a5800; font-weight:600; }
+.lb-battle-entry { display:flex; align-items:center; gap:10px; padding:8px 14px; border:1px solid #e0e0e0; border-radius:4px; cursor:pointer; background:#fff; transition:border-color .12s; margin-bottom:4px; }
+.lb-battle-entry.lb-active { border-color:#c9a84c; background:#fdf3d7; }
+.lb-battle-entry:hover { border-color:#c9a84c; }
+.lb-battle-name { font-size:11pt; font-weight:700; color:#1a1a1a; flex:1; }
+.lb-battle-pts { font-size:9.5pt; color:#7a5800; font-weight:600; white-space:nowrap; }
+.lb-resolved-head { font-weight:700; font-size:10pt; letter-spacing:.12em; text-transform:uppercase; color:#7a5800; border-bottom:2px solid #e8d48a; padding-bottom:2px; margin:12px 0 7px; }
+.lb-permodel-tbl { width:100%; border-collapse:collapse; font-size:9pt; margin:4px 0 8px; }
+.lb-permodel-tbl td { padding:2px 6px; border-bottom:1px solid #f0f0f0; }
+.lb-permodel-tbl td:first-child { font-weight:600; color:#555; width:30%; }
+.lb-permodel-tbl tr:last-child td { border-bottom:none; }
+.lb-pts-bar { background:#e0e0e0; border-radius:3px; height:5px; margin:4px 0 0; overflow:hidden; flex:0 0 100%; order:99; }
+.lb-pts-fill { background:#7a5800; height:100%; border-radius:3px; transition:width .2s; }
+.lb-pts-fill.over { background:#c04040; }
+@media (max-width:768px) {
+  .lb-modal { padding:16px; }
+  .lb-list-name { font-size:12pt; }
+  .lb-entry-name { font-size:10pt; }
+  .lb-pick-filter { gap:4px; }
+}
 `;
 
 const SLOT_STYLE = {
@@ -300,6 +372,121 @@ function slotLimitStr(limits) {
   if (min === max) return `${min}`;
   if (max === null) return `${min}+`;
   return `${min}–${max}`;
+}
+
+// ── List Builder Utilities ───────────────────────────────────────────────────
+
+function toRoman(n: number): string {
+  if (n < 1) return String(n);
+  const vals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  const syms = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+  let r = ""; for (let i = 0; i < vals.length; i++) while (n >= vals[i]) { r += syms[i]; n -= vals[i]; } return r;
+}
+function genId(): string { return Math.random().toString(36).slice(2, 10); }
+
+const listsKey = (f: string) => `alt40k-lists-${f}`;
+function loadLists(file: string): any[] {
+  try { const r = localStorage.getItem(listsKey(file)); return r ? JSON.parse(r) : []; } catch { return []; }
+}
+function saveLists(file: string, lists: any[]) {
+  try { localStorage.setItem(listsKey(file), JSON.stringify(lists)); } catch {}
+}
+
+function resolveChoicesForOpt(o: any, wL: any): any[] {
+  if (o.weaponListId && wL[o.weaponListId]) {
+    const ov = o.ptsOverrides || {};
+    return wL[o.weaponListId].map((c: any) => ({ ...c, pts: ov[c.weaponId] ?? c.pts }));
+  }
+  return o.choices || [];
+}
+
+function defaultOpts(unit: any, wL: any): Record<string, any> {
+  const out: Record<string, any> = {};
+  for (const o of (unit.options || [])) {
+    if (o.type === "squadSize") out[o.id] = 0;
+    else if (o.type === "toggle") out[o.id] = false;
+    else if (o.type === "namedUpgrade") out[o.id] = false;
+    else if (o.type === "weaponSwap") { const ch = resolveChoicesForOpt(o, wL); out[o.id] = ch[0]?.weaponId ?? null; }
+    else if (o.type === "spellPick") out[o.id] = [];
+  }
+  return out;
+}
+
+function defaultPerModel(unit: any): Record<string, Record<string, string>> {
+  const out: Record<string, Record<string, string>> = {};
+  for (const o of (unit.options || [])) {
+    if (o.type !== "perModelWeapon") continue;
+    const ch = o.choices || []; if (!ch[0]) continue;
+    const model = (unit.models || []).find((m: any) => (o.applies || []).includes(m.id));
+    const count = model?.minCount ?? 1;
+    out[o.id] = {};
+    for (let i = 0; i < count; i++) out[o.id][String(i)] = ch[0].weaponId;
+  }
+  return out;
+}
+
+function calcEntryCost(entry: any, unit: any, fd: any): number {
+  let c = unit.basePts;
+  const wL = fd.weaponLists || {}, sP = fd.spellPools || {};
+  for (const o of (unit.options || [])) {
+    const v = entry.options?.[o.id];
+    if (v == null) continue;
+    if (o.type === "squadSize") c += (v as number) * o.ptsEach;
+    else if ((o.type === "toggle" || o.type === "namedUpgrade") && v) c += o.pts || 0;
+    else if (o.type === "weaponSwap") {
+      const ch = resolveChoicesForOpt(o, wL).find((x: any) => x.weaponId === v);
+      if (ch) c += ch.pts || 0;
+    } else if (o.type === "spellPick" && Array.isArray(v)) {
+      const pool = sP[unit.psychic?.spellPoolId] || [];
+      for (const sid of v as string[]) { const s = pool.find((x: any) => x.id === sid); if (s) c += s.pts || 0; }
+    }
+  }
+  for (const o of (unit.options || [])) {
+    if (o.type !== "perModelWeapon") continue;
+    for (const idx of Object.keys(entry.perModelOptions?.[o.id] || {})) {
+      const wid = entry.perModelOptions[o.id][idx];
+      const ch = (o.choices || []).find((x: any) => x.weaponId === wid);
+      if (ch) c += ch.pts || 0;
+    }
+  }
+  return c;
+}
+
+function calcListTotal(list: any, fd: any): number {
+  const units = fd.units || [];
+  return (list.entries || []).reduce((s: number, e: any) => {
+    const u = units.find((x: any) => x.id === e.unitId);
+    return s + (u ? calcEntryCost(e, u, fd) : 0);
+  }, 0);
+}
+
+function effectiveSlot(unitId: string, baseSlot: string, subfaction: any): string {
+  if (!subfaction) return baseSlot;
+  const r = (subfaction.slotReclassifications || []).find((x: any) => x.unitId === unitId);
+  return r ? (r.toSlot || r.newSlot || baseSlot) : baseSlot;
+}
+
+function buildFOC(entries: any[], faction: any, subfaction: any) {
+  const limits = faction.slotLimits || {};
+  const counts: Record<string, number> = {};
+  for (const e of entries) counts[e.slot] = (counts[e.slot] || 0) + 1;
+  return SLOT_ORDER.filter(s => limits[s]).map(s => {
+    const [mn, mx] = limits[s]; const cnt = counts[s] || 0;
+    return { slot: s, count: cnt, min: mn, max: mx, ok: cnt >= mn && (mx === null || cnt <= mx) };
+  });
+}
+
+function buildDisplayNames(entries: any[], units: any[]): Map<string, string> {
+  const byUnitId: Record<string, string[]> = {};
+  for (const e of entries) { if (!byUnitId[e.unitId]) byUnitId[e.unitId] = []; byUnitId[e.unitId].push(e.entryId); }
+  const m = new Map<string, string>();
+  for (const e of entries) {
+    const u = units.find((x: any) => x.id === e.unitId);
+    const base = u?.name || e.unitId;
+    const ids = byUnitId[e.unitId];
+    m.set(e.entryId, ids.length === 1 ? base : `${base} ${toRoman(ids.indexOf(e.entryId) + 1)}`);
+  }
+  return m;
 }
 
 // ── Popover (hover + tap, viewport-aware positioning) ────────────────────────
@@ -1165,6 +1352,718 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
   );
 }
 
+// ── List Builder Components ───────────────────────────────────────────────────
+
+function LBModal({ children, onClose }: { children: any; onClose: () => void }) {
+  return (
+    <div className="lb-modal-overlay" onPointerDown={e => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="lb-modal">{children}</div>
+    </div>
+  );
+}
+
+function FOCStatus({ foc }: { foc: any[] }) {
+  return (
+    <div className="lb-foc">
+      {foc.map(f => {
+        const cls = !f.ok ? "lb-foc-chip lb-foc-err" : f.count > 0 ? "lb-foc-chip lb-foc-ok" : "lb-foc-chip lb-foc-warn";
+        const lim = f.max === null ? `${f.min}+` : f.min === f.max ? String(f.min) : `${f.min}–${f.max}`;
+        return (
+          <span key={f.slot} className={cls}>
+            <SlotBadge slot={f.slot}/> {f.count}/{lim}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode }: any) {
+  const wL = weaponLists || {};
+
+  // Build resolved weapon set per model — apply weapon swaps over base wargear
+  const modelWargear: Map<string, string[]> = new Map();
+  for (const m of (unit.models || [])) {
+    const base = (m.baseWargear || []).map((r: any) => typeof r === "string" ? r : r.weaponId);
+    modelWargear.set(m.id, [...base]);
+  }
+  for (const o of (unit.options || [])) {
+    if (o.type !== "weaponSwap") continue;
+    const chosen = entry.options?.[o.id];
+    if (!chosen) continue;
+    const choices = resolveChoicesForOpt(o, wL);
+    if (choices[0]?.weaponId === chosen) continue;
+    const applyTo: string[] = o.applies ? o.applies : (unit.models || []).map((m: any) => m.id);
+    for (const mid of applyTo) {
+      const weps = modelWargear.get(mid) || [];
+      const idx = weps.indexOf(o.replaces);
+      if (idx !== -1) weps[idx] = chosen; else weps.push(chosen);
+      modelWargear.set(mid, weps);
+    }
+  }
+  for (const o of (unit.options || [])) {
+    if (o.type !== "toggle" || !entry.options?.[o.id] || !o.grantsWargear) continue;
+    for (const [mid, weps] of modelWargear) modelWargear.set(mid, [...weps, ...o.grantsWargear]);
+  }
+
+  const isV = (unit.models || []).some((m: any) => m.statline?.type === "vehicle");
+
+  // Group models by identical resolved wargear
+  const groups: Map<string, { refs: string[]; names: string[] }> = new Map();
+  for (const m of (unit.models || [])) {
+    const key = (modelWargear.get(m.id) || []).join(",");
+    if (!groups.has(key)) groups.set(key, { refs: modelWargear.get(m.id) || [], names: [] });
+    groups.get(key)!.names.push(m.name);
+  }
+  const wgGroups = [...groups.values()].filter(g => g.refs.length > 0);
+  const multiGroup = wgGroups.length > 1;
+
+  // Per-model weapon rows
+  const perModelSections: any[] = [];
+  for (const o of (unit.options || [])) {
+    if (o.type !== "perModelWeapon") continue;
+    const modelOpts = entry.perModelOptions?.[o.id] || {};
+    const choices = o.choices || [];
+    const rows = Object.keys(modelOpts).map(idx => {
+      const wid = modelOpts[idx];
+      const ch = choices.find((c: any) => c.weaponId === wid);
+      const w = (weapons || []).find((x: any) => x.id === wid);
+      return { idx: Number(idx), label: ch?.label || w?.name || wid };
+    }).sort((a, b) => a.idx - b.idx);
+    if (rows.length) perModelSections.push({ label: o.label, rows });
+  }
+
+  // Chosen upgrades (toggle + namedUpgrade)
+  const chosenUpgrades: string[] = [];
+  for (const o of (unit.options || [])) {
+    if (!entry.options?.[o.id]) continue;
+    if (o.type === "namedUpgrade") { const named = namedUpgrades?.[o.upgradeId]; chosenUpgrades.push(named?.label || o.label || o.upgradeId); }
+    else if (o.type === "toggle" && !o.grantsWargear) chosenUpgrades.push(o.label || o.id);
+  }
+
+  // Chosen spells
+  const chosenSpells: any[] = [];
+  for (const o of (unit.options || [])) {
+    if (o.type !== "spellPick") continue;
+    const pool = spellPools?.[unit.psychic?.spellPoolId] || [];
+    const chosen = (entry.options?.[o.id] || []) as string[];
+    chosenSpells.push(...chosen.map((sid: string) => pool.find((s: any) => s.id === sid)).filter(Boolean));
+  }
+
+  // Squad size summary
+  const squads: string[] = [];
+  for (const o of (unit.options || [])) {
+    if (o.type !== "squadSize") continue;
+    const extra = entry.options?.[o.id] as number;
+    if (extra > 0) { const m2 = (unit.models || []).find((x: any) => x.id === o.targetModelId); squads.push(`+${extra} ${m2?.name || "models"}`); }
+  }
+
+  return (
+    <div>
+      <div className="lb-resolved-head">Wargear</div>
+      {wgGroups.map((g, gi) => (
+        <div key={gi} style={{marginBottom:8}}>
+          {multiGroup && <div className="group-head">{g.names.join(" & ")}</div>}
+          {detailMode ? (
+            <table className="wep-table">
+              <thead><tr><th>Weapon</th>{isV && <th>Arc</th>}<th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th></tr></thead>
+              <tbody>
+                {g.refs.map((wid, wi) => {
+                  const w = (weapons||[]).find((x: any) => x.id === wid);
+                  if (!w) return <tr key={wid}><td colSpan={6}>{wid}</td></tr>;
+                  return w.profiles.length === 1 ? (
+                    <tr key={wid} className={wi%2===0?"stripe-a":"stripe-b"}>
+                      <td>{w.name}</td>{isV && <td/>}<td>{fmtRange(w.profiles[0])}</td>
+                      <td>{w.profiles[0].strength}</td><td>{w.profiles[0].ap}</td>
+                      <td className="rules-col">{resolveRuleNames(w.profiles[0].rules, coreRules||[], armyRules||[])}</td>
+                    </tr>
+                  ) : w.profiles.map((p: any, pi: number) => (
+                    <tr key={`${wid}-${pi}`} className={pi===0?"mp-first":(pi===w.profiles.length-1?"mp-last":"mp-cont")}>
+                      <td>{pi===0?w.name:""}</td>{isV && <td/>}<td>{fmtRange(p)}</td>
+                      <td>{p.strength}</td><td>{p.ap}</td>
+                      <td className="rules-col">{resolveRuleNames(p.rules, coreRules||[], armyRules||[])}</td>
+                    </tr>
+                  ));
+                })}
+              </tbody>
+            </table>
+          ) : (
+            <div className="pills">
+              {g.refs.map((wid: string) => (
+                <WargearPill key={wid} weaponId={wid} label={undefined} cost={undefined} weapons={weapons||[]} armyRules={armyRules||[]} coreRules={coreRules||[]}/>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+
+      {perModelSections.map((sec: any, si: number) => (
+        <div key={si} style={{marginBottom:8}}>
+          <div className="group-head">{sec.label}</div>
+          <table className="lb-permodel-tbl"><tbody>
+            {sec.rows.map((row: any) => <tr key={row.idx}><td>Model {row.idx+1}</td><td>{row.label}</td></tr>)}
+          </tbody></table>
+        </div>
+      ))}
+
+      {chosenUpgrades.length > 0 && (
+        <div style={{marginBottom:8}}>
+          <div className="group-head">Upgrades</div>
+          <div className="pills">
+            {chosenUpgrades.map((u, i) => <span key={i} className="pill"><span className="pill-name">{u}</span></span>)}
+          </div>
+        </div>
+      )}
+
+      {chosenSpells.length > 0 && (
+        <div>
+          <div className="group-head">Chosen Spells</div>
+          <ul className="option-list">
+            {chosenSpells.map((s: any) => <li key={s.id}><strong>{s.name}</strong> — Cast {s.castValue}+: {s.description}</li>)}
+          </ul>
+        </div>
+      )}
+
+      {squads.length > 0 && (
+        <div style={{fontSize:"9pt",color:"#888",marginTop:4,fontStyle:"italic"}}>Reinforced: {squads.join(", ")}</div>
+      )}
+    </div>
+  );
+}
+
+function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode, entryCost }: any) {
+  return (
+    <div className="unit-block">
+      <div className="unit-header">
+        <div>
+          <SlotBadge slot={unit.slot}/>
+          {unit.isUnique && <span style={{fontSize:"8pt",fontWeight:700,color:"#7a5800",marginLeft:6}}>UNIQUE</span>}
+          <div className="unit-name">{displayName}</div>
+          <div className="unit-comp">Composition: {compStr(unit.models)}</div>
+        </div>
+        <div className="unit-pts-block">
+          <div className="unit-pts-label">Army cost</div>
+          <div className="unit-pts">{entryCost} pts</div>
+        </div>
+      </div>
+      <StatTable models={unit.models}/>
+      {detailMode
+        ? <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}/>
+        : <SpecialRulesSection unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}/>
+      }
+      <ResolvedWargearSection
+        entry={entry} unit={unit} weapons={weapons} weaponLists={weaponLists}
+        namedUpgrades={namedUpgrades} spellPools={spellPools}
+        armyRules={armyRules} coreRules={coreRules} detailMode={detailMode}
+      />
+    </div>
+  );
+}
+
+function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOptions, setPerModelOptions }: any) {
+  const wL = factionData.weaponLists || {};
+  const nU = factionData.namedUpgrades || {};
+  const sP = factionData.spellPools || {};
+  const opts = unit.options || [];
+
+  const squadSizeOpts = opts.filter((o: any) => o.type === "squadSize");
+  const toggleOpts = opts.filter((o: any) => o.type === "toggle" || o.type === "namedUpgrade");
+  const swapOpts = opts.filter((o: any) => o.type === "weaponSwap");
+  const pmOpts = opts.filter((o: any) => o.type === "perModelWeapon");
+  const spellOpts = opts.filter((o: any) => o.type === "spellPick");
+
+  if (opts.length === 0) {
+    return <div style={{color:"#888",fontSize:"9.5pt",fontStyle:"italic",padding:"8px 0"}}>No configurable options for this unit.</div>;
+  }
+
+  return (
+    <div>
+      {squadSizeOpts.map((o: any) => (
+        <div key={o.id} className="lb-opt-section">
+          <div className="lb-opt-section-head">Squad Size</div>
+          <div className="lb-opt-row">
+            <span className="lb-opt-label">{o.label}</span>
+            <div className="lb-num-ctrl">
+              <button className="lb-num-btn" onClick={() => setOptions((p: any) => ({...p, [o.id]: Math.max(0, (p[o.id]||0)-1)}))}>−</button>
+              <span className="lb-num-val">{options[o.id]||0}</span>
+              <button className="lb-num-btn" onClick={() => setOptions((p: any) => ({...p, [o.id]: Math.min(o.max, (p[o.id]||0)+1)}))}>+</button>
+              <span className="lb-opt-pts">×{o.ptsEach} pts each</span>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {toggleOpts.length > 0 && (
+        <div className="lb-opt-section">
+          <div className="lb-opt-section-head">Upgrades</div>
+          {toggleOpts.map((o: any) => {
+            const named = o.type === "namedUpgrade" ? (nU[o.upgradeId] || null) : null;
+            const label = named?.label || o.label || o.upgradeId;
+            const note = named?.note || o.note;
+            return (
+              <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+                <span className="lb-opt-label">
+                  <input type="checkbox" checked={!!options[o.id]}
+                    onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
+                    style={{marginRight:8}}/>
+                  {label}
+                  {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
+                  {note && <span className="lb-opt-note">{note}</span>}
+                </span>
+              </label>
+            );
+          })}
+        </div>
+      )}
+
+      {swapOpts.map((o: any) => {
+        const choices = resolveChoicesForOpt(o, wL);
+        return (
+          <div key={o.id} className="lb-opt-section">
+            <div className="lb-opt-section-head">{o.label}</div>
+            <div className="lb-opt-row">
+              <select className="lb-select" style={{flex:1}} value={options[o.id]||""}
+                onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value}))}>
+                {choices.map((c: any) => {
+                  const w = (factionData.commonWargear||[]).find((x: any) => x.id === c.weaponId);
+                  const nm = c.label || w?.name || c.weaponId;
+                  return <option key={c.weaponId} value={c.weaponId}>{nm}{c.pts ? ` (+${c.pts} pts)` : ""}</option>;
+                })}
+              </select>
+            </div>
+          </div>
+        );
+      })}
+
+      {pmOpts.map((o: any) => {
+        const choices = o.choices || [];
+        const model = (unit.models || []).find((m: any) => (o.applies || []).includes(m.id));
+        const count = model?.minCount ?? 1;
+        return (
+          <div key={o.id} className="lb-opt-section">
+            <div className="lb-opt-section-head">{o.label} — per model</div>
+            {Array.from({length: count}, (_, i) => (
+              <div key={i} className="lb-opt-row">
+                <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>Model {i+1}</span>
+                <select className="lb-select"
+                  value={perModelOptions[o.id]?.[String(i)] || choices[0]?.weaponId || ""}
+                  onChange={e => setPerModelOptions((p: any) => ({...p, [o.id]: {...(p[o.id]||{}), [String(i)]: e.target.value}}))}>
+                  {choices.map((c: any) => {
+                    const w = (factionData.commonWargear||[]).find((x: any) => x.id === c.weaponId);
+                    const nm = c.label || w?.name || c.weaponId;
+                    return <option key={c.weaponId} value={c.weaponId}>{nm}{c.pts ? ` (+${c.pts} pts)` : ""}</option>;
+                  })}
+                </select>
+              </div>
+            ))}
+          </div>
+        );
+      })}
+
+      {spellOpts.map((o: any) => {
+        const pool = sP[unit.psychic?.spellPoolId] || [];
+        const chosen = (options[o.id] || []) as string[];
+        if (!pool.length) return null;
+        return (
+          <div key={o.id} className="lb-opt-section">
+            <div className="lb-opt-section-head">Psychic Spells — Mastery {unit.psychic?.masteryLevel}</div>
+            {pool.map((s: any) => (
+              <label key={s.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+                <span className="lb-opt-label">
+                  <input type="checkbox" checked={chosen.includes(s.id)}
+                    onChange={e => {
+                      const nx = e.target.checked ? [...chosen, s.id] : chosen.filter((x: string) => x !== s.id);
+                      setOptions((p: any) => ({...p, [o.id]: nx}));
+                    }}
+                    style={{marginRight:8}}/>
+                  {s.name}
+                  <span className="lb-opt-pts"> +{s.pts} pts</span>
+                  <span className="lb-opt-note">Cast {s.castValue}+: {s.description}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function AddEditEntryModal({ unit, existingEntry, factionData, onSave, onCancel }: any) {
+  const [options, setOptions] = useState(() =>
+    existingEntry ? { ...existingEntry.options } : defaultOpts(unit, factionData.weaponLists || {})
+  );
+  const [perModelOptions, setPerModelOptions] = useState(() =>
+    existingEntry ? { ...existingEntry.perModelOptions } : defaultPerModel(unit)
+  );
+  const cost = calcEntryCost({ options, perModelOptions }, unit, factionData);
+
+  return (
+    <LBModal onClose={onCancel}>
+      <div className="lb-modal-head">
+        {unit.name}
+        <span className="lb-modal-pts">{cost} pts</span>
+      </div>
+      <div className="lb-modal-sub">Base: {unit.basePts} pts · {compStr(unit.models)}</div>
+      <EntryOptionConfig
+        unit={unit} factionData={factionData}
+        options={options} setOptions={setOptions}
+        perModelOptions={perModelOptions} setPerModelOptions={setPerModelOptions}
+      />
+      <div className="lb-modal-actions">
+        <button className="lb-btn" onClick={onCancel}>Cancel</button>
+        <button className="lb-btn lb-btn-primary" onClick={() => onSave({ options, perModelOptions })}>
+          {existingEntry ? "Save Changes" : "Add to List"}
+        </button>
+      </div>
+    </LBModal>
+  );
+}
+
+function UnitPickerModal({ factionData, onSelect, onCancel }: any) {
+  const [filterSlot, setFilterSlot] = useState("all");
+  const units = factionData.units || [];
+  const availableSlots = SLOT_ORDER.filter(s => units.some((u: any) => u.slot === s));
+  const filtered = filterSlot === "all" ? units : units.filter((u: any) => u.slot === filterSlot);
+  const grouped: Record<string, any[]> = {};
+  for (const u of filtered) { if (!grouped[u.slot]) grouped[u.slot] = []; grouped[u.slot].push(u); }
+
+  return (
+    <LBModal onClose={onCancel}>
+      <div className="lb-modal-head">Add Unit</div>
+      <div className="lb-modal-sub">Select a unit to add to your list</div>
+      <div className="lb-pick-filter">
+        <button className={`lb-btn${filterSlot==="all"?" lb-btn-primary":""}`} onClick={() => setFilterSlot("all")}>All</button>
+        {availableSlots.map(s => (
+          <button key={s} className={`lb-btn${filterSlot===s?" lb-btn-primary":""}`} onClick={() => setFilterSlot(s)}>{s}</button>
+        ))}
+      </div>
+      {SLOT_ORDER.filter(s => grouped[s]).map(s => (
+        <div key={s}>
+          <div className="lb-pick-slot-head">{s}</div>
+          {grouped[s].map((u: any) => (
+            <div key={u.id} className="lb-pick-row" onClick={() => onSelect(u)}>
+              <SlotBadge slot={u.slot}/>
+              <span className="lb-pick-name">{u.name}</span>
+              <span className="lb-pick-pts">{u.basePts} pts</span>
+            </div>
+          ))}
+        </div>
+      ))}
+    </LBModal>
+  );
+}
+
+function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, faction, selectedSubfaction, setSelectedSubfaction, detailMode }: any) {
+  const subfactions = faction.subfactions || [];
+  const sfLabel = faction.subfactionLabel || "Chapter";
+  const lastPtsKey = "alt40k-last-pts";
+  const getLastPts = () => { try { return parseInt(localStorage.getItem(lastPtsKey)||"") || 2000; } catch { return 2000; } };
+  const saveLastPts = (v: number) => { try { localStorage.setItem(lastPtsKey, String(v)); } catch {} };
+
+  const [lists, setListsRaw] = useState<any[]>(() => loadLists(currentFile));
+  const [activeListId, setActiveListId] = useState<string|null>(null);
+  const [battleMode, setBattleMode] = useState(false);
+  const [showUnitPicker, setShowUnitPicker] = useState(false);
+  const [pendingUnit, setPendingUnit] = useState<any|null>(null);
+  const [editEntryId, setEditEntryId] = useState<string|null>(null);
+  const [expandedBattleId, setExpandedBattleId] = useState<string|null>(null);
+  const [renamingListId, setRenamingListId] = useState<string|null>(null);
+
+  function setLists(next: any[]) { setListsRaw(next); saveLists(currentFile, next); }
+
+  const activeList = lists.find(l => l.listId === activeListId) || null;
+  const activeSubfaction = subfactions.find((s: any) => s.id === activeList?.subfactionId) || null;
+  const foc = activeList ? buildFOC(activeList.entries, faction, activeSubfaction) : [];
+  const ptsUsed = activeList ? calcListTotal(activeList, factionData) : 0;
+  const displayNames = activeList ? buildDisplayNames(activeList.entries, factionData.units||[]) : new Map<string,string>();
+
+  function updateList(listId: string, updater: (l: any) => any) {
+    setLists(lists.map(l => l.listId === listId ? updater(l) : l));
+  }
+
+  function createList() {
+    const pts = getLastPts();
+    const newList = { listId: genId(), name: "New List", subfactionId: selectedSubfaction||"", pointsTarget: pts, entries: [] };
+    setLists([...lists, newList]);
+    setActiveListId(newList.listId);
+    setBattleMode(false);
+  }
+
+  function loadList(listId: string) {
+    const l = lists.find(x => x.listId === listId);
+    if (!l) return;
+    setActiveListId(listId);
+    setBattleMode(false);
+    setExpandedBattleId(null);
+    if (l.subfactionId) setSelectedSubfaction(l.subfactionId);
+  }
+
+  function deleteList(listId: string) {
+    setLists(lists.filter(l => l.listId !== listId));
+    if (activeListId === listId) { setActiveListId(null); setBattleMode(false); }
+  }
+
+  function addEntry(unit: any, options: any, perModelOptions: any) {
+    if (!activeList) return;
+    const slot = effectiveSlot(unit.id, unit.slot, activeSubfaction);
+    updateList(activeList.listId, l => ({ ...l, entries: [...l.entries, { entryId: genId(), unitId: unit.id, slot, options, perModelOptions }] }));
+  }
+
+  function updateEntry(entryId: string, options: any, perModelOptions: any) {
+    if (!activeList) return;
+    updateList(activeList.listId, l => ({
+      ...l, entries: l.entries.map((e: any) => e.entryId === entryId ? { ...e, options, perModelOptions } : e)
+    }));
+  }
+
+  function deleteEntry(entryId: string) {
+    if (!activeList) return;
+    updateList(activeList.listId, l => ({ ...l, entries: l.entries.filter((e: any) => e.entryId !== entryId) }));
+  }
+
+  function exportList(list: any) {
+    const blob = new Blob([JSON.stringify(list, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = `${list.name.replace(/\s+/g, "_")}.json`; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  }
+
+  function importList() {
+    const inp = document.createElement("input");
+    inp.type = "file"; inp.accept = ".json";
+    inp.onchange = (e: any) => {
+      const f = e.target.files?.[0]; if (!f) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try {
+          const data = JSON.parse(ev.target?.result as string);
+          if (!data.entries) { alert("Invalid list file"); return; }
+          setLists([...lists, { ...data, listId: genId() }]);
+        } catch { alert("Could not parse list file"); }
+      };
+      reader.readAsText(f);
+    };
+    inp.click();
+  }
+
+  // ── No active list: list selector ────────────────────────────────────────
+  if (!activeList) {
+    return (
+      <div>
+        <div className="lb-header">
+          <div style={{fontSize:"18pt",fontWeight:700,flex:1,color:"#1a1a1a"}}>Army Lists</div>
+          <button className="lb-btn" onClick={importList}>↑ Import</button>
+          <button className="lb-btn lb-btn-primary" onClick={createList}>+ New List</button>
+        </div>
+        {lists.length === 0 ? (
+          <div style={{color:"#888",fontSize:"10pt",fontStyle:"italic",padding:"20px 0"}}>No lists yet. Click "New List" to get started.</div>
+        ) : (
+          <div className="lb-list-grid">
+            {lists.map(l => {
+              const used = calcListTotal(l, factionData);
+              const sf = subfactions.find((s: any) => s.id === l.subfactionId);
+              const over = used > l.pointsTarget;
+              return (
+                <div key={l.listId} className="lb-list-card" onClick={() => loadList(l.listId)}>
+                  <div style={{flex:1}}>
+                    <div className="lb-list-name">
+                      {l.name}
+                      <span style={{fontWeight:500,color:over?"#c04040":"#888",fontSize:"11pt",marginLeft:10}}>
+                        ({used}/{l.pointsTarget})
+                      </span>
+                    </div>
+                    <div className="lb-list-meta">
+                      {sf ? sf.name : `No ${sfLabel.toLowerCase()}`} · {l.entries.length} unit{l.entries.length!==1?"s":""}
+                    </div>
+                  </div>
+                  <button className="lb-btn lb-btn-danger" style={{flexShrink:0}}
+                    onClick={e => { e.stopPropagation(); if (confirm(`Delete "${l.name}"?`)) deleteList(l.listId); }}>
+                    Delete
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── Shared header (used in build + battle mode) ──────────────────────────
+  const pct = Math.min(100, Math.round(ptsUsed / activeList.pointsTarget * 100));
+  const over = ptsUsed > activeList.pointsTarget;
+
+  const listHeader = (
+    <div className="lb-header">
+      <button className="lb-btn" onClick={() => setActiveListId(null)}>← Lists</button>
+
+      {renamingListId === activeList.listId
+        ? <input autoFocus className="lb-name-input"
+            defaultValue={activeList.name}
+            onBlur={e => { updateList(activeList.listId, l => ({...l, name: e.target.value.trim()||"New List"})); setRenamingListId(null); }}
+            onKeyDown={e => { if (e.key==="Enter"||e.key==="Escape") (e.target as HTMLInputElement).blur(); }}
+          />
+        : <div className="lb-name-input" onClick={() => setRenamingListId(activeList.listId)} title="Click to rename">
+            {activeList.name}
+          </div>
+      }
+
+      <select className="lb-select" value={activeList.subfactionId}
+        onChange={e => { updateList(activeList.listId, l => ({...l, subfactionId: e.target.value})); setSelectedSubfaction(e.target.value); }}>
+        <option value="">— {sfLabel} —</option>
+        {subfactions.map((s: any) => <option key={s.id} value={s.id}>{s.name}</option>)}
+      </select>
+
+      <div style={{display:"flex",alignItems:"center",gap:5}}>
+        <span style={{fontSize:"18pt",fontWeight:700,color:over?"#c04040":"#7a5800"}}>{ptsUsed}</span>
+        <span style={{fontSize:"11pt",color:"#999"}}>/</span>
+        <input type="number" className="lb-select" style={{width:70,textAlign:"center",fontWeight:700,fontSize:"11pt"}}
+          value={activeList.pointsTarget}
+          onChange={e => { const v=parseInt(e.target.value)||2000; saveLastPts(v); updateList(activeList.listId, l=>({...l,pointsTarget:v})); }}
+        />
+        <span style={{fontSize:"9.5pt",color:"#888"}}>pts</span>
+      </div>
+
+      <span style={{display:"flex",alignItems:"center",gap:7,marginLeft:4}}>
+        <span style={{fontSize:"9.5pt",color:"#888",fontWeight:600,letterSpacing:".06em",textTransform:"uppercase"}}>Battle</span>
+        <label className="toggle-switch" style={{flexShrink:0}}>
+          <input type="checkbox" checked={battleMode} onChange={e => { setBattleMode(e.target.checked); setExpandedBattleId(null); }}/>
+          <span className="toggle-slider"/>
+        </label>
+      </span>
+
+      <button className="lb-btn" onClick={() => exportList(activeList)}>↓ Export</button>
+
+      <div className="lb-pts-bar" style={{width:"100%"}}>
+        <div className={`lb-pts-fill${over?" over":""}`} style={{width:`${pct}%`}}/>
+      </div>
+    </div>
+  );
+
+  // ── Battle mode ──────────────────────────────────────────────────────────
+  if (battleMode) {
+    const bySlot: Record<string, any[]> = {};
+    for (const e of activeList.entries) { if (!bySlot[e.slot]) bySlot[e.slot]=[]; bySlot[e.slot].push(e); }
+    return (
+      <div>
+        {listHeader}
+        {activeList.entries.length === 0 && (
+          <div style={{color:"#888",fontSize:"10pt",fontStyle:"italic"}}>No units in this list.</div>
+        )}
+        {SLOT_ORDER.filter(s => bySlot[s]).map(s => (
+          <div key={s}>
+            <div className="lb-slot-head">{s}</div>
+            {bySlot[s].map((e: any) => {
+              const unit = (factionData.units||[]).find((u: any) => u.id === e.unitId);
+              if (!unit) return null;
+              const dn = displayNames.get(e.entryId) || unit.name;
+              const cost = calcEntryCost(e, unit, factionData);
+              const expanded = expandedBattleId === e.entryId;
+              return (
+                <div key={e.entryId}>
+                  <div className={`lb-battle-entry${expanded?" lb-active":""}`}
+                    onClick={() => setExpandedBattleId(expanded ? null : e.entryId)}>
+                    <SlotBadge slot={e.slot}/>
+                    <span className="lb-battle-name">{dn}</span>
+                    <span className="lb-battle-pts">{cost} pts</span>
+                    <span style={{color:"#aaa",fontSize:"9pt"}}>{expanded?"▲":"▼"}</span>
+                  </div>
+                  {expanded && (
+                    <div style={{marginBottom:10}}>
+                      <BattleUnitBlock
+                        entry={e} displayName={dn} unit={unit}
+                        weapons={weapons} weaponLists={weaponLists}
+                        namedUpgrades={namedUpgrades} spellPools={spellPools}
+                        armyRules={armyRules} coreRules={coreRules}
+                        detailMode={detailMode} entryCost={cost}
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // ── Build mode ───────────────────────────────────────────────────────────
+  const bySlot2: Record<string, any[]> = {};
+  for (const e of activeList.entries) { if (!bySlot2[e.slot]) bySlot2[e.slot]=[]; bySlot2[e.slot].push(e); }
+  const focOk = foc.every(f => f.ok);
+
+  return (
+    <div>
+      {listHeader}
+      {foc.length > 0 && <FOCStatus foc={foc}/>}
+      {!focOk && (
+        <div style={{fontSize:"9pt",color:"#c04040",marginBottom:10,fontStyle:"italic"}}>
+          ⚠ FOC requirements not met — check slot counts above.
+        </div>
+      )}
+
+      {activeList.entries.length === 0 ? (
+        <div style={{color:"#888",fontSize:"10pt",fontStyle:"italic",padding:"10px 0"}}>No units yet. Click "Add Unit" to start building.</div>
+      ) : (
+        SLOT_ORDER.filter(s => bySlot2[s]).map(slot => (
+          <div key={slot}>
+            <div className="lb-slot-head">{slot}</div>
+            {bySlot2[slot].map((e: any) => {
+              const unit = (factionData.units||[]).find((u: any) => u.id === e.unitId);
+              if (!unit) return null;
+              const dn = displayNames.get(e.entryId) || unit.name;
+              const cost = calcEntryCost(e, unit, factionData);
+              return (
+                <div key={e.entryId} className="lb-entry">
+                  <SlotBadge slot={e.slot}/>
+                  <span className="lb-entry-name">{dn}</span>
+                  <span className="lb-entry-pts">{cost} pts</span>
+                  <button className="lb-icon-btn" title="Edit" onClick={() => setEditEntryId(e.entryId)}>✎</button>
+                  <button className="lb-icon-btn danger" title="Remove"
+                    onClick={() => { if (confirm(`Remove ${dn}?`)) deleteEntry(e.entryId); }}>✕</button>
+                </div>
+              );
+            })}
+          </div>
+        ))
+      )}
+
+      <div style={{marginTop:16}}>
+        <button className="lb-btn lb-btn-primary" onClick={() => setShowUnitPicker(true)}>+ Add Unit</button>
+      </div>
+
+      {showUnitPicker && !pendingUnit && (
+        <UnitPickerModal factionData={factionData}
+          onSelect={u => { setShowUnitPicker(false); setPendingUnit(u); }}
+          onCancel={() => setShowUnitPicker(false)}
+        />
+      )}
+
+      {pendingUnit && (
+        <AddEditEntryModal unit={pendingUnit} existingEntry={null} factionData={factionData}
+          onSave={({ options, perModelOptions }) => { addEntry(pendingUnit, options, perModelOptions); setPendingUnit(null); }}
+          onCancel={() => setPendingUnit(null)}
+        />
+      )}
+
+      {editEntryId && (() => {
+        const e = activeList.entries.find((x: any) => x.entryId === editEntryId);
+        const unit = e ? (factionData.units||[]).find((u: any) => u.id === e.unitId) : null;
+        if (!e || !unit) return null;
+        return (
+          <AddEditEntryModal unit={unit} existingEntry={e} factionData={factionData}
+            onSave={({ options, perModelOptions }) => { updateEntry(editEntryId, options, perModelOptions); setEditEntryId(null); }}
+            onCancel={() => setEditEntryId(null)}
+          />
+        );
+      })()}
+    </div>
+  );
+}
+
 function ArmyRulesPage({ faction, armyRules, selectedSubfaction }) {
   const subfactionLabel = faction.subfactionLabel || "Chapter";
   const allSubfactions = faction.subfactions || [];
@@ -1446,6 +2345,7 @@ export default function App() {
   const navPages = [
     { id:"army-rules", label:"Army Rules" },
     ...SLOT_ORDER.filter(s => unitsBySlot[s] && unitsBySlot[s].some(u => !hiddenUnits.has(u.id))).map(s=>({ id:`slot-${s}`, label:s })),
+    { id:"list-builder", label:"List Builder" },
     { id:"options", label:"Options" },
   ];
 
@@ -1649,6 +2549,18 @@ document.body.innerHTML+=body;`;
               ))}
             </div>
           ))}
+
+          {activePage==="list-builder" && (
+            <ListBuilderTab
+              factionData={factionData} currentFile={currentFile}
+              weapons={weapons} weaponLists={weaponLists}
+              namedUpgrades={namedUpgrades} spellPools={spellPools}
+              armyRules={armyRules} coreRules={coreRules}
+              faction={faction}
+              selectedSubfaction={selectedSubfaction} setSelectedSubfaction={setSelectedSubfaction}
+              detailMode={detailMode}
+            />
+          )}
 
           {activePage==="options" && (
             <OptionsPage
