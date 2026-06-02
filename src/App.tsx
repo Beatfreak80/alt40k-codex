@@ -104,7 +104,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .platoon-unit-label { font-size: 7.5pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
 .platoon-squad-count { font-size: 8.5pt; color: #888; font-style: italic; margin-left: 8px; }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .codex-outer { padding: 0; }
   .codex-page { padding: 12px; box-shadow: none; max-width: 100%; }
   .two-col { columns: 1; margin-top: 0; }
@@ -132,8 +132,6 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
   .option-list li { font-size: 11pt; padding: 4px 0; }
   .option-cost { font-size: 10.5pt; }
   .upgrade-note { font-size: 10pt; }
-  .rule-name { font-size: 13pt; }
-  .rules-detail-li { font-size: 12pt; }
   .rule-entry-name { font-size: 12pt; }
   .rule-entry-desc { font-size: 11pt; }
   .subfaction-head { font-size: 15pt; }
@@ -145,11 +143,11 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
   .nav-page-btn { display: none !important; }
   .nav-mobile-select { display: block; }
 }
-@media (min-width: 601px) {
+@media (min-width: 769px) {
   .nav-mobile-select { display: none; }
 }
 .detail-mode .two-col { columns: 1; }
-@media (min-width: 780px) {
+@media (min-width: 769px) {
   .detail-mode .two-col { columns: 2; }
 }
 
@@ -186,6 +184,10 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .rules-list li:last-child { border-bottom: none; }
 .rule-name { font-weight: 700; font-size: 9pt; color: #1a1a1a; }
 .rules-detail-li { font-size: 9pt; }
+@media (max-width: 768px) {
+  .rule-name { font-size: 12pt; }
+  .rules-detail-li { font-size: 10.5pt; }
+}
 .rules-model-section { margin-bottom: 6px; }
 .rules-model-head { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 3px; }
 .options-intro { font-size: 10pt; line-height: 1.6; color: #444; margin-bottom: 20px; padding: 14px 16px; background: #fdf3d7; border: 1px solid #e8d48a; border-radius: 4px; }
@@ -763,13 +765,13 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules })
   return (
     <>
       <div className="section-head">Special Rules</div>
-      <div className="two-col">
+      <div className="two-col" style={{marginTop:0}}>
         {deduped.map(id => {
           const rule = ruleById(id, armyRules, coreRules, allInline);
           const modelNote = specific.find(r => r.id === id)?.label;
           return (
             <div key={id} className="col-block-tight">
-              <li className="rules-detail-li" style={{listStyle:"none", padding:"3px 0", lineHeight:1.4}}>
+              <li className="rules-detail-li" style={{listStyle:"none", padding:"1px 0", lineHeight:1.4}}>
                 <span className="rule-name">{rule?.name || idToLabel(id)}</span>
                 {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
                 {rule
