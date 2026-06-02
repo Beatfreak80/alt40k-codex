@@ -400,14 +400,63 @@ function resolveChoicesForOpt(o: any, wL: any): any[] {
   return o.choices || [];
 }
 
+// returns true if this weaponSwap option targets a model type with maxCount > 1
+function isMultiModelSwap(o: any, unit: any): boolean {
+  const model = (unit.models||[]).find((m: any) => (o.applies||[]).includes(m.id));
+  return !!model && model.maxCount > 1;
+}
+
+// total count of a model type including any squadSize additions
+function modelTypeCount(unit: any, modelId: string, options: any): number {
+  const model = (unit.models||[]).find((m: any) => m.id === modelId);
+  if (!model) return 1;
+  const sq = (unit.options||[]).find((o: any) => o.type === "squadSize" && o.targetModelId === modelId);
+  return model.minCount + (sq ? (options[sq.id] || 0) : 0);
+}
+
+// how many models of 'modelId' have already consumed the 'replacesId' pool
+function poolUsed(unit: any, modelId: string, replacesId: string, options: any): number {
+  let used = 0;
+  for (const o of (unit.options||[])) {
+    if (o.type !== "weaponSwap") continue;
+    if (!(o.applies||[]).includes(modelId)) continue;
+    if (o.replaces !== replacesId) continue;
+    const v = options[o.id];
+    if (o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
+      if (typeof v === "number") used += v;
+      else if (v && typeof v === "object") used += Object.values(v as Record<string,number>).reduce((s: number, n: any) => s+n, 0);
+    } else if (o.scope === "limitedSlot" && v != null) {
+      used += 1;
+    }
+  }
+  return used;
+}
+
+// total model count across all model types
+function totalUnitModels(unit: any, options: any): number {
+  return (unit.models||[]).reduce((s: number, m: any) => s + modelTypeCount(unit, m.id, options), 0);
+}
+
 function defaultOpts(unit: any, wL: any): Record<string, any> {
   const out: Record<string, any> = {};
   for (const o of (unit.options || [])) {
     if (o.type === "squadSize") out[o.id] = 0;
     else if (o.type === "toggle") out[o.id] = false;
     else if (o.type === "namedUpgrade") out[o.id] = false;
-    else if (o.type === "weaponSwap") { const ch = resolveChoicesForOpt(o, wL); out[o.id] = ch[0]?.weaponId ?? null; }
+    else if (o.type === "markPick") out[o.id] = null;
+    else if (o.type === "pureBlessingPick") out[o.id] = false;
     else if (o.type === "spellPick") out[o.id] = [];
+    else if (o.type === "weaponSwap") {
+      if (o.scope === "limitedSlot") {
+        out[o.id] = null;
+      } else if (o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
+        out[o.id] = {};  // { weaponId: count }
+      } else {
+        // scope: "unit" or perModelType single-model
+        const ch = resolveChoicesForOpt(o, wL);
+        out[o.id] = ch[0]?.weaponId ?? null;
+      }
+    }
   }
   return out;
 }
@@ -430,13 +479,40 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
   const wL = fd.weaponLists || {}, sP = fd.spellPools || {};
   for (const o of (unit.options || [])) {
     const v = entry.options?.[o.id];
-    if (v == null) continue;
-    if (o.type === "squadSize") c += (v as number) * o.ptsEach;
+    if (o.type === "squadSize" && v != null) c += (v as number) * o.ptsEach;
     else if ((o.type === "toggle" || o.type === "namedUpgrade") && v) c += o.pts || 0;
-    else if (o.type === "weaponSwap") {
-      const ch = resolveChoicesForOpt(o, wL).find((x: any) => x.weaponId === v);
+    else if (o.type === "markPick" && v) {
+      const ch = (o.choices||[]).find((x: any) => x.markId === v);
+      if (ch) c += (ch.ptsPerModel || 0) * totalUnitModels(unit, entry.options || {});
+    }
+    else if (o.type === "pureBlessingPick" && v) {
+      const reqOpt = (unit.options||[]).find((x: any) => x.id === o.requiresOptionId);
+      const mark = reqOpt ? entry.options?.[reqOpt.id] : null;
+      const ch = (o.choices||[]).find((x: any) => x.markId === mark);
       if (ch) c += ch.pts || 0;
-    } else if (o.type === "spellPick" && Array.isArray(v)) {
+    }
+    else if (o.type === "weaponSwap") {
+      if (o.scope === "limitedSlot") {
+        if (v != null) {
+          const ch = resolveChoicesForOpt(o, wL).find((x: any) => x.weaponId === v);
+          if (ch) c += ch.pts || 0;
+        }
+      } else if (o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
+        const choices = resolveChoicesForOpt(o, wL);
+        if (typeof v === "number") {
+          c += v * (choices[0]?.pts || 0);
+        } else if (v && typeof v === "object") {
+          for (const [wid, cnt] of Object.entries(v as Record<string, number>)) {
+            const ch = choices.find((x: any) => x.weaponId === wid);
+            c += cnt * (ch?.pts || 0);
+          }
+        }
+      } else if (v != null) {
+        const ch = resolveChoicesForOpt(o, wL).find((x: any) => x.weaponId === v);
+        if (ch) c += ch.pts || 0;
+      }
+    }
+    else if (o.type === "spellPick" && Array.isArray(v)) {
       const pool = sP[unit.psychic?.spellPoolId] || [];
       for (const sid of v as string[]) { const s = pool.find((x: any) => x.id === sid); if (s) c += s.pts || 0; }
     }
@@ -1381,23 +1457,26 @@ function FOCStatus({ foc }: { foc: any[] }) {
 function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode }: any) {
   const wL = weaponLists || {};
 
-  // Build resolved weapon set per model — apply weapon swaps over base wargear
+  function wName(id: string) {
+    return (weapons||[]).find((x: any) => x.id === id)?.name || id;
+  }
+
+  // Apply swaps that have a single string value (scope:unit or single-model perModelType)
   const modelWargear: Map<string, string[]> = new Map();
   for (const m of (unit.models || [])) {
-    const base = (m.baseWargear || []).map((r: any) => typeof r === "string" ? r : r.weaponId);
-    modelWargear.set(m.id, [...base]);
+    modelWargear.set(m.id, (m.baseWargear || []).map((r: any) => typeof r === "string" ? r : r.weaponId));
   }
   for (const o of (unit.options || [])) {
     if (o.type !== "weaponSwap") continue;
-    const chosen = entry.options?.[o.id];
-    if (!chosen) continue;
+    const v = entry.options?.[o.id];
+    if (!v || typeof v !== "string") continue; // skip multi-model count objects
     const choices = resolveChoicesForOpt(o, wL);
-    if (choices[0]?.weaponId === chosen) continue;
-    const applyTo: string[] = o.applies ? o.applies : (unit.models || []).map((m: any) => m.id);
+    if (choices[0]?.weaponId === v) continue; // default, unchanged
+    const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
     for (const mid of applyTo) {
-      const weps = modelWargear.get(mid) || [];
+      const weps = [...(modelWargear.get(mid) || [])];
       const idx = weps.indexOf(o.replaces);
-      if (idx !== -1) weps[idx] = chosen; else weps.push(chosen);
+      if (idx !== -1) weps[idx] = v; else weps.push(v);
       modelWargear.set(mid, weps);
     }
   }
@@ -1406,56 +1485,119 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     for (const [mid, weps] of modelWargear) modelWargear.set(mid, [...weps, ...o.grantsWargear]);
   }
 
-  const isV = (unit.models || []).some((m: any) => m.statline?.type === "vehicle");
+  const isV = (unit.models||[]).some((m: any) => m.statline?.type === "vehicle");
 
-  // Group models by identical resolved wargear
+  // Group models by resolved wargear
   const groups: Map<string, { refs: string[]; names: string[] }> = new Map();
-  for (const m of (unit.models || [])) {
-    const key = (modelWargear.get(m.id) || []).join(",");
-    if (!groups.has(key)) groups.set(key, { refs: modelWargear.get(m.id) || [], names: [] });
+  for (const m of (unit.models||[])) {
+    const key = (modelWargear.get(m.id)||[]).join(",");
+    if (!groups.has(key)) groups.set(key, { refs: modelWargear.get(m.id)||[], names: [] });
     groups.get(key)!.names.push(m.name);
   }
   const wgGroups = [...groups.values()].filter(g => g.refs.length > 0);
   const multiGroup = wgGroups.length > 1;
 
-  // Per-model weapon rows
+  // Build "chosen options" lines for multi-model perModelType + limitedSlot + mark + blessing + squads
+  const chosenLines: string[] = [];
+
+  for (const o of (unit.options||[])) {
+    if (o.type === "squadSize") {
+      const extra = entry.options?.[o.id] as number;
+      if (extra > 0) { const m2 = (unit.models||[]).find((x: any) => x.id === o.targetModelId); chosenLines.push(`+${extra} ${m2?.name||"models"}`); }
+    }
+    else if (o.type === "markPick" && entry.options?.[o.id]) {
+      const mk = entry.options[o.id] as string;
+      chosenLines.push(`Mark of ${mk.charAt(0).toUpperCase()+mk.slice(1)}`);
+    }
+    else if (o.type === "pureBlessingPick" && entry.options?.[o.id]) {
+      const reqOpt = (unit.options||[]).find((x: any) => x.id === o.requiresOptionId);
+      const mk = reqOpt ? entry.options?.[reqOpt.id] : null;
+      if (mk) chosenLines.push(`${mk.charAt(0).toUpperCase()+mk.slice(1)} Pure Blessing`);
+    }
+    else if (o.type === "namedUpgrade" && entry.options?.[o.id]) {
+      const named = namedUpgrades?.[o.upgradeId];
+      chosenLines.push(named?.label || o.label || o.upgradeId);
+    }
+    else if (o.type === "toggle" && entry.options?.[o.id] && !o.grantsWargear) {
+      chosenLines.push(o.label || o.id);
+    }
+    else if (o.type === "weaponSwap" && o.scope === "limitedSlot") {
+      const v = entry.options?.[o.id];
+      if (v) {
+        const choices = resolveChoicesForOpt(o, wL);
+        const ch = choices.find((c: any) => c.weaponId === v);
+        chosenLines.push(`${ch?.label || wName(v)} (${o.label})`);
+      }
+    }
+    else if (o.type === "weaponSwap" && o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
+      const v = entry.options?.[o.id];
+      if (v && typeof v === "object") {
+        const choices = resolveChoicesForOpt(o, wL);
+        for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
+          if (cnt > 0) {
+            const ch = choices.find((c: any) => c.weaponId === wid);
+            chosenLines.push(`${cnt}× ${ch?.label || wName(wid)}`);
+          }
+        }
+      }
+    }
+  }
+
+  // Per-model weapon rows (perModelWeapon type)
   const perModelSections: any[] = [];
-  for (const o of (unit.options || [])) {
+  for (const o of (unit.options||[])) {
     if (o.type !== "perModelWeapon") continue;
     const modelOpts = entry.perModelOptions?.[o.id] || {};
     const choices = o.choices || [];
     const rows = Object.keys(modelOpts).map(idx => {
       const wid = modelOpts[idx];
       const ch = choices.find((c: any) => c.weaponId === wid);
-      const w = (weapons || []).find((x: any) => x.id === wid);
-      return { idx: Number(idx), label: ch?.label || w?.name || wid };
+      return { idx: Number(idx), label: ch?.label || wName(wid) };
     }).sort((a, b) => a.idx - b.idx);
     if (rows.length) perModelSections.push({ label: o.label, rows });
   }
 
-  // Chosen upgrades (toggle + namedUpgrade)
-  const chosenUpgrades: string[] = [];
-  for (const o of (unit.options || [])) {
-    if (!entry.options?.[o.id]) continue;
-    if (o.type === "namedUpgrade") { const named = namedUpgrades?.[o.upgradeId]; chosenUpgrades.push(named?.label || o.label || o.upgradeId); }
-    else if (o.type === "toggle" && !o.grantsWargear) chosenUpgrades.push(o.label || o.id);
-  }
-
   // Chosen spells
   const chosenSpells: any[] = [];
-  for (const o of (unit.options || [])) {
+  for (const o of (unit.options||[])) {
     if (o.type !== "spellPick") continue;
     const pool = spellPools?.[unit.psychic?.spellPoolId] || [];
-    const chosen = (entry.options?.[o.id] || []) as string[];
-    chosenSpells.push(...chosen.map((sid: string) => pool.find((s: any) => s.id === sid)).filter(Boolean));
+    for (const sid of (entry.options?.[o.id] || []) as string[]) {
+      const s = pool.find((x: any) => x.id === sid);
+      if (s) chosenSpells.push(s);
+    }
   }
 
-  // Squad size summary
-  const squads: string[] = [];
-  for (const o of (unit.options || [])) {
-    if (o.type !== "squadSize") continue;
-    const extra = entry.options?.[o.id] as number;
-    if (extra > 0) { const m2 = (unit.models || []).find((x: any) => x.id === o.targetModelId); squads.push(`+${extra} ${m2?.name || "models"}`); }
+  function renderWeaponTable(refs: string[]) {
+    if (!detailMode) return (
+      <div className="pills">
+        {refs.map((wid: string) => <WargearPill key={wid} weaponId={wid} label={undefined} cost={undefined} weapons={weapons||[]} armyRules={armyRules||[]} coreRules={coreRules||[]}/>)}
+      </div>
+    );
+    return (
+      <table className="wep-table">
+        <thead><tr><th>Weapon</th>{isV&&<th>Arc</th>}<th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th></tr></thead>
+        <tbody>
+          {refs.map((wid, wi) => {
+            const w = (weapons||[]).find((x: any) => x.id === wid);
+            if (!w) return <tr key={wid}><td colSpan={6}>{wid}</td></tr>;
+            return w.profiles.length === 1 ? (
+              <tr key={wid} className={wi%2===0?"stripe-a":"stripe-b"}>
+                <td>{w.name}</td>{isV&&<td/>}<td>{fmtRange(w.profiles[0])}</td>
+                <td>{w.profiles[0].strength}</td><td>{w.profiles[0].ap}</td>
+                <td className="rules-col">{resolveRuleNames(w.profiles[0].rules, coreRules||[], armyRules||[])}</td>
+              </tr>
+            ) : w.profiles.map((p: any, pi: number) => (
+              <tr key={`${wid}-${pi}`} className={pi===0?"mp-first":(pi===w.profiles.length-1?"mp-last":"mp-cont")}>
+                <td>{pi===0?w.name:""}</td>{isV&&<td/>}<td>{fmtRange(p)}</td>
+                <td>{p.strength}</td><td>{p.ap}</td>
+                <td className="rules-col">{resolveRuleNames(p.rules, coreRules||[], armyRules||[])}</td>
+              </tr>
+            ));
+          })}
+        </tbody>
+      </table>
+    );
   }
 
   return (
@@ -1464,36 +1606,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
       {wgGroups.map((g, gi) => (
         <div key={gi} style={{marginBottom:8}}>
           {multiGroup && <div className="group-head">{g.names.join(" & ")}</div>}
-          {detailMode ? (
-            <table className="wep-table">
-              <thead><tr><th>Weapon</th>{isV && <th>Arc</th>}<th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th></tr></thead>
-              <tbody>
-                {g.refs.map((wid, wi) => {
-                  const w = (weapons||[]).find((x: any) => x.id === wid);
-                  if (!w) return <tr key={wid}><td colSpan={6}>{wid}</td></tr>;
-                  return w.profiles.length === 1 ? (
-                    <tr key={wid} className={wi%2===0?"stripe-a":"stripe-b"}>
-                      <td>{w.name}</td>{isV && <td/>}<td>{fmtRange(w.profiles[0])}</td>
-                      <td>{w.profiles[0].strength}</td><td>{w.profiles[0].ap}</td>
-                      <td className="rules-col">{resolveRuleNames(w.profiles[0].rules, coreRules||[], armyRules||[])}</td>
-                    </tr>
-                  ) : w.profiles.map((p: any, pi: number) => (
-                    <tr key={`${wid}-${pi}`} className={pi===0?"mp-first":(pi===w.profiles.length-1?"mp-last":"mp-cont")}>
-                      <td>{pi===0?w.name:""}</td>{isV && <td/>}<td>{fmtRange(p)}</td>
-                      <td>{p.strength}</td><td>{p.ap}</td>
-                      <td className="rules-col">{resolveRuleNames(p.rules, coreRules||[], armyRules||[])}</td>
-                    </tr>
-                  ));
-                })}
-              </tbody>
-            </table>
-          ) : (
-            <div className="pills">
-              {g.refs.map((wid: string) => (
-                <WargearPill key={wid} weaponId={wid} label={undefined} cost={undefined} weapons={weapons||[]} armyRules={armyRules||[]} coreRules={coreRules||[]}/>
-              ))}
-            </div>
-          )}
+          {renderWeaponTable(g.refs)}
         </div>
       ))}
 
@@ -1506,11 +1619,11 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
         </div>
       ))}
 
-      {chosenUpgrades.length > 0 && (
+      {chosenLines.length > 0 && (
         <div style={{marginBottom:8}}>
-          <div className="group-head">Upgrades</div>
+          <div className="group-head">Chosen Options</div>
           <div className="pills">
-            {chosenUpgrades.map((u, i) => <span key={i} className="pill"><span className="pill-name">{u}</span></span>)}
+            {chosenLines.map((l, i) => <span key={i} className="pill"><span className="pill-name">{l}</span></span>)}
           </div>
         </div>
       )}
@@ -1522,10 +1635,6 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
             {chosenSpells.map((s: any) => <li key={s.id}><strong>{s.name}</strong> — Cast {s.castValue}+: {s.description}</li>)}
           </ul>
         </div>
-      )}
-
-      {squads.length > 0 && (
-        <div style={{fontSize:"9pt",color:"#888",marginTop:4,fontStyle:"italic"}}>Reinforced: {squads.join(", ")}</div>
       )}
     </div>
   );
@@ -1566,19 +1675,20 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
   const sP = factionData.spellPools || {};
   const opts = unit.options || [];
 
-  const squadSizeOpts = opts.filter((o: any) => o.type === "squadSize");
-  const toggleOpts = opts.filter((o: any) => o.type === "toggle" || o.type === "namedUpgrade");
-  const swapOpts = opts.filter((o: any) => o.type === "weaponSwap");
-  const pmOpts = opts.filter((o: any) => o.type === "perModelWeapon");
-  const spellOpts = opts.filter((o: any) => o.type === "spellPick");
-
   if (opts.length === 0) {
     return <div style={{color:"#888",fontSize:"9.5pt",fontStyle:"italic",padding:"8px 0"}}>No configurable options for this unit.</div>;
   }
 
+  function wepName(weaponId: string, choice?: any): string {
+    const w = (factionData.commonWargear||[]).find((x: any) => x.id === weaponId);
+    return choice?.label || w?.name || weaponId;
+  }
+
   return (
     <div>
-      {squadSizeOpts.map((o: any) => (
+
+      {/* Squad Size */}
+      {opts.filter((o: any) => o.type === "squadSize").map((o: any) => (
         <div key={o.id} className="lb-opt-section">
           <div className="lb-opt-section-head">Squad Size</div>
           <div className="lb-opt-row">
@@ -1593,41 +1703,20 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         </div>
       ))}
 
-      {toggleOpts.length > 0 && (
-        <div className="lb-opt-section">
-          <div className="lb-opt-section-head">Upgrades</div>
-          {toggleOpts.map((o: any) => {
-            const named = o.type === "namedUpgrade" ? (nU[o.upgradeId] || null) : null;
-            const label = named?.label || o.label || o.upgradeId;
-            const note = named?.note || o.note;
-            return (
-              <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
-                <span className="lb-opt-label">
-                  <input type="checkbox" checked={!!options[o.id]}
-                    onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
-                    style={{marginRight:8}}/>
-                  {label}
-                  {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
-                  {note && <span className="lb-opt-note">{note}</span>}
-                </span>
-              </label>
-            );
-          })}
-        </div>
-      )}
-
-      {swapOpts.map((o: any) => {
-        const choices = resolveChoicesForOpt(o, wL);
+      {/* Mark of Chaos */}
+      {opts.filter((o: any) => o.type === "markPick").map((o: any) => {
+        const totalModels = totalUnitModels(unit, options);
         return (
           <div key={o.id} className="lb-opt-section">
             <div className="lb-opt-section-head">{o.label}</div>
             <div className="lb-opt-row">
               <select className="lb-select" style={{flex:1}} value={options[o.id]||""}
-                onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value}))}>
-                {choices.map((c: any) => {
-                  const w = (factionData.commonWargear||[]).find((x: any) => x.id === c.weaponId);
-                  const nm = c.label || w?.name || c.weaponId;
-                  return <option key={c.weaponId} value={c.weaponId}>{nm}{c.pts ? ` (+${c.pts} pts)` : ""}</option>;
+                onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value || null}))}>
+                <option value="">— None —</option>
+                {(o.choices||[]).map((c: any) => {
+                  const label = c.markId.charAt(0).toUpperCase() + c.markId.slice(1);
+                  const cost = c.ptsPerModel * totalModels;
+                  return <option key={c.markId} value={c.markId}>{label} (+{c.ptsPerModel}×{totalModels} = {cost} pts)</option>;
                 })}
               </select>
             </div>
@@ -1635,9 +1724,157 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         );
       })}
 
-      {pmOpts.map((o: any) => {
+      {/* Pure Blessing (conditional on mark) */}
+      {opts.filter((o: any) => o.type === "pureBlessingPick").map((o: any) => {
+        const reqOpt = opts.find((x: any) => x.id === o.requiresOptionId);
+        const mark = reqOpt ? options[reqOpt.id] : null;
+        if (!mark) return null;
+        const ch = (o.choices||[]).find((c: any) => c.markId === mark);
+        if (!ch) return null;
+        const label = mark.charAt(0).toUpperCase() + mark.slice(1);
+        return (
+          <div key={o.id} className="lb-opt-section">
+            <div className="lb-opt-section-head">{o.label}</div>
+            <label className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+              <span className="lb-opt-label">
+                <input type="checkbox" checked={!!options[o.id]}
+                  onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
+                  style={{marginRight:8}}/>
+                {label} Blessing
+                <span className="lb-opt-pts"> +{ch.pts} pts</span>
+              </span>
+            </label>
+          </div>
+        );
+      })}
+
+      {/* Upgrades (toggle + namedUpgrade) */}
+      {(() => {
+        const topts = opts.filter((o: any) => o.type === "toggle" || o.type === "namedUpgrade");
+        if (!topts.length) return null;
+        return (
+          <div className="lb-opt-section">
+            <div className="lb-opt-section-head">Upgrades</div>
+            {topts.map((o: any) => {
+              const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
+              const label = named?.label || o.label || o.upgradeId;
+              const note = named?.note || o.note;
+              return (
+                <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+                  <span className="lb-opt-label">
+                    <input type="checkbox" checked={!!options[o.id]}
+                      onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
+                      style={{marginRight:8}}/>
+                    {label}
+                    {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
+                    {note && <span className="lb-opt-note">{note}</span>}
+                  </span>
+                </label>
+              );
+            })}
+          </div>
+        );
+      })()}
+
+      {/* Weapon Swaps */}
+      {opts.filter((o: any) => o.type === "weaponSwap").map((o: any) => {
+        const choices = resolveChoicesForOpt(o, wL);
+        const modelId = (o.applies||[])[0];
+
+        // scope "unit" or perModelType on a single-model type → single dropdown
+        if (o.scope === "unit" || !isMultiModelSwap(o, unit)) {
+          return (
+            <div key={o.id} className="lb-opt-section">
+              <div className="lb-opt-section-head">{o.label}</div>
+              <div className="lb-opt-row">
+                <select className="lb-select" style={{flex:1}} value={options[o.id]||""}
+                  onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value}))}>
+                  {choices.map((c: any) => (
+                    <option key={c.weaponId} value={c.weaponId}>
+                      {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          );
+        }
+
+        // perModelType on multi-model type → count spinners per choice with pool display
+        if (o.scope === "perModelType") {
+          const modelCount = modelTypeCount(unit, modelId, options);
+          const used = poolUsed(unit, modelId, o.replaces, options);
+          const remaining = modelCount - used;
+          const curCounts = (options[o.id] || {}) as Record<string, number>;
+          return (
+            <div key={o.id} className="lb-opt-section">
+              <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                <span>{o.label}</span>
+                <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",
+                  color: remaining === 0 ? "#4a9a4a" : "#888"}}>
+                  {used}/{modelCount} assigned
+                </span>
+              </div>
+              {choices.map((c: any) => {
+                const cur = curCounts[c.weaponId] || 0;
+                return (
+                  <div key={c.weaponId} className="lb-opt-row">
+                    <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
+                      {wepName(c.weaponId, c)}
+                      {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
+                    </span>
+                    <div className="lb-num-ctrl">
+                      <button className="lb-num-btn" disabled={cur === 0}
+                        onClick={() => setOptions((p: any) => {
+                          const v: Record<string,number> = {...(p[o.id]||{}), [c.weaponId]: Math.max(0, (p[o.id]?.[c.weaponId]||0)-1)};
+                          if (!v[c.weaponId]) delete v[c.weaponId];
+                          return {...p, [o.id]: v};
+                        })}>−</button>
+                      <span className="lb-num-val">{cur}</span>
+                      <button className="lb-num-btn" disabled={remaining <= 0}
+                        onClick={() => setOptions((p: any) => ({...p, [o.id]: {...(p[o.id]||{}), [c.weaponId]: (p[o.id]?.[c.weaponId]||0)+1}}))}>+</button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        }
+
+        // limitedSlot → single dropdown, first option is always "None"
+        if (o.scope === "limitedSlot") {
+          const modelCount = modelTypeCount(unit, modelId, options);
+          const used = poolUsed(unit, modelId, o.replaces, options);
+          const isTaken = options[o.id] != null;
+          const remaining = modelCount - used;
+          const canTake = isTaken || remaining > 0;
+          return (
+            <div key={o.id} className="lb-opt-section">
+              <div className="lb-opt-section-head">{o.label}</div>
+              <div className="lb-opt-row">
+                <select className="lb-select" value={options[o.id] || ""}
+                  disabled={!canTake}
+                  style={{opacity: canTake ? 1 : 0.45}}
+                  onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value || null}))}>
+                  <option value="">None{!canTake ? " (pool exhausted)" : ""}</option>
+                  {choices.map((c: any) => (
+                    <option key={c.weaponId} value={c.weaponId}>
+                      {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          );
+        }
+
+        return null;
+      })}
+
+      {/* Per-model weapon choices */}
+      {opts.filter((o: any) => o.type === "perModelWeapon").map((o: any) => {
         const choices = o.choices || [];
-        const model = (unit.models || []).find((m: any) => (o.applies || []).includes(m.id));
+        const model = (unit.models||[]).find((m: any) => (o.applies||[]).includes(m.id));
         const count = model?.minCount ?? 1;
         return (
           <div key={o.id} className="lb-opt-section">
@@ -1648,11 +1885,11 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                 <select className="lb-select"
                   value={perModelOptions[o.id]?.[String(i)] || choices[0]?.weaponId || ""}
                   onChange={e => setPerModelOptions((p: any) => ({...p, [o.id]: {...(p[o.id]||{}), [String(i)]: e.target.value}}))}>
-                  {choices.map((c: any) => {
-                    const w = (factionData.commonWargear||[]).find((x: any) => x.id === c.weaponId);
-                    const nm = c.label || w?.name || c.weaponId;
-                    return <option key={c.weaponId} value={c.weaponId}>{nm}{c.pts ? ` (+${c.pts} pts)` : ""}</option>;
-                  })}
+                  {choices.map((c: any) => (
+                    <option key={c.weaponId} value={c.weaponId}>
+                      {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
+                    </option>
+                  ))}
                 </select>
               </div>
             ))}
@@ -1660,7 +1897,8 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         );
       })}
 
-      {spellOpts.map((o: any) => {
+      {/* Psychic spells */}
+      {opts.filter((o: any) => o.type === "spellPick").map((o: any) => {
         const pool = sP[unit.psychic?.spellPoolId] || [];
         const chosen = (options[o.id] || []) as string[];
         if (!pool.length) return null;
@@ -1671,10 +1909,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
               <label key={s.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
                 <span className="lb-opt-label">
                   <input type="checkbox" checked={chosen.includes(s.id)}
-                    onChange={e => {
-                      const nx = e.target.checked ? [...chosen, s.id] : chosen.filter((x: string) => x !== s.id);
-                      setOptions((p: any) => ({...p, [o.id]: nx}));
-                    }}
+                    onChange={e => { const nx = e.target.checked ? [...chosen, s.id] : chosen.filter((x: string) => x !== s.id); setOptions((p: any) => ({...p, [o.id]: nx})); }}
                     style={{marginRight:8}}/>
                   {s.name}
                   <span className="lb-opt-pts"> +{s.pts} pts</span>
@@ -1685,6 +1920,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
           </div>
         );
       })}
+
     </div>
   );
 }
