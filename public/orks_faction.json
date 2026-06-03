@@ -385,10 +385,7 @@
           "maxRange": 36,
           "strength": "5",
           "ap": "5+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 3 x2, Dakka"
         }
       ]
     },
@@ -400,10 +397,7 @@
           "maxRange": 18,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "heavy",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 2 x2, 3\" Blast"
         }
       ]
     },
@@ -416,20 +410,14 @@
           "maxRange": 36,
           "strength": "7",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 1 x2, Dakka"
         },
         {
           "label": "Blast",
           "maxRange": 36,
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "assault",
-            "3\" Blast"
-          ]
+          "rules": "Assault 1 x2, 3\" Blast"
         }
       ]
     },
@@ -441,10 +429,7 @@
           "maxRange": 36,
           "strength": "5",
           "ap": "5+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 3 x2, Dakka"
         }
       ]
     },
@@ -456,11 +441,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka",
-            "tesla"
-          ]
+          "rules": "Assault 3 x2, Dakka, Tesla"
         }
       ]
     },
@@ -471,12 +452,7 @@
         {
           "strength": "7",
           "ap": "2+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "armourbane",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Armourbane, One Use Only"
         }
       ],
       "templateType": "Bomb"
@@ -488,11 +464,7 @@
         {
           "strength": "6",
           "ap": "4+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "pinning"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Pinning"
         }
       ],
       "templateType": "Bomb"
@@ -504,12 +476,7 @@
         {
           "strength": "6",
           "ap": "4+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "pinning",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Pinning, One Use Only"
         }
       ],
       "templateType": "Bomb"
@@ -521,12 +488,7 @@
         {
           "strength": "5",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "ignores-cover",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1 x2, 5\" Blast, Ignores Cover, One Use Only"
         }
       ],
       "templateType": "Bomb"
@@ -538,9 +500,7 @@
         {
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1 x2"
         }
       ],
       "templateType": "Flame"
@@ -553,10 +513,7 @@
           "maxRange": 18,
           "strength": "5",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 3 x2, Dakka"
         }
       ]
     },
@@ -568,11 +525,7 @@
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
-          "rules": [
-            "Heavy d3+1",
-            "Dakka",
-            "monsterbane"
-          ]
+          "rules": "Heavy d3+1, Dakka, Monsterbane"
         }
       ]
     },
@@ -584,14 +537,7 @@
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "indirect",
-            "monsterbane",
-            "one-use-only",
-            "May reroll Scatter Dice"
-          ]
+          "rules": "Heavy 1 x2, 5\" Blast, Indirect Fire, Monsterbane, One Use Only, May reroll Scatter Dice"
         }
       ]
     },
@@ -603,10 +549,7 @@
           "maxRange": 18,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "heavy",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 2 x2, 3\" Blast"
         }
       ]
     },
@@ -618,12 +561,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "monsterbane",
-            "gets-hot"
-          ]
+          "rules": "Assault 1 x2, Dakka, Monsterbane, Gets Hot!"
         }
       ]
     },
@@ -635,11 +573,7 @@
           "maxRange": 36,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "heavy",
-            "3\" Blast",
-            "gets-hot"
-          ]
+          "rules": "Heavy 1 x2, 3\" Blast, Gets Hot!"
         }
       ]
     },
@@ -651,11 +585,7 @@
           "maxRange": 24,
           "strength": "4",
           "ap": "6+",
-          "rules": [
-            "Assault 2d6",
-            "Dakka",
-            "Jam!"
-          ]
+          "rules": "Assault 2d6, Dakka, Jam!"
         }
       ]
     },
@@ -667,11 +597,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "monsterbane"
-          ]
+          "rules": "Assault 1 x2, Dakka, Monsterbane"
         }
       ]
     },
@@ -683,10 +609,7 @@
           "maxRange": 12,
           "strength": "7",
           "ap": "3+",
-          "rules": [
-            "pistol",
-            "Dakka"
-          ]
+          "rules": "Pistol 1 x2, Dakka"
         }
       ]
     },
@@ -698,12 +621,7 @@
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "monsterbane",
-            "armourbane"
-          ]
+          "rules": "Assault 1 x2, Dakka, Monsterbane, Armourbane"
         }
       ]
     },
@@ -715,13 +633,7 @@
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "monsterbane",
-            "armourbane",
-            "one-use-only"
-          ]
+          "rules": "Assault 1 x2, Dakka, Monsterbane, Armourbane, One Use Only"
         }
       ]
     },
@@ -733,10 +645,7 @@
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 2 x2, Dakka"
         }
       ]
     },
@@ -748,12 +657,7 @@
           "maxRange": 24,
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "ignores-cover",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1 x2, 5\" Blast, Ignores Cover, One Use Only"
         }
       ]
     },
@@ -764,9 +668,7 @@
         {
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1 x2"
         }
       ],
       "templateType": "Flame"
@@ -779,10 +681,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "4+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 3 x2, Dakka"
         }
       ]
     },
@@ -794,12 +693,7 @@
           "maxRange": 18,
           "strength": "*",
           "ap": "2+",
-          "rules": [
-            "heavy",
-            "Dakka",
-            "destroyer",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, Dakka, Destroyer, Monsterbane"
         }
       ]
     },
@@ -811,11 +705,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "armourbane"
-          ]
+          "rules": "Assault 1 x2, Dakka, Armourbane"
         }
       ]
     },
@@ -827,12 +717,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "gets-hot",
-            "monsterbane"
-          ]
+          "rules": "Assault 1 x2, Dakka, Gets Hot!, Monsterbane"
         }
       ]
     },
@@ -844,11 +729,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "monsterbane"
-          ]
+          "rules": "Assault 1 x2, Dakka, Monsterbane"
         }
       ]
     },
@@ -859,9 +740,7 @@
         {
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1 x2"
         }
       ],
       "templateType": "Flame"
@@ -874,10 +753,7 @@
           "maxRange": 36,
           "strength": "5",
           "ap": "5+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 3 x3, Dakka"
         }
       ]
     },
@@ -889,11 +765,7 @@
           "maxRange": 12,
           "strength": "5",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka",
-            "scatter"
-          ]
+          "rules": "Assault 2 x3, Dakka, Scatter"
         }
       ]
     },
@@ -905,10 +777,7 @@
           "maxRange": 36,
           "strength": "5",
           "ap": "5+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 3 x4, Dakka"
         }
       ]
     },
@@ -920,12 +789,7 @@
           "maxRange": 36,
           "strength": "7",
           "ap": "4+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "aa",
-            "monsterbane"
-          ]
+          "rules": "Assault 2 x4, Dakka, AA, Monsterbane"
         }
       ]
     },
@@ -937,11 +801,7 @@
           "maxRange": 72,
           "strength": "7",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "10\" Blast",
-            "ordnance"
-          ]
+          "rules": "Heavy 1, 10\" Blast, Ordnance"
         }
       ]
     },
@@ -963,12 +823,7 @@
           "maxRange": 72,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "indirect",
-            "pinning"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Indirect, Pinning"
         }
       ]
     },
@@ -980,10 +835,7 @@
           "maxRange": 36,
           "strength": "5",
           "ap": "5+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 3, Dakka"
         }
       ]
     },
@@ -995,11 +847,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka",
-            "tesla"
-          ]
+          "rules": "Assault 3, Dakka, Tesla"
         }
       ]
     },
@@ -1010,12 +858,7 @@
         {
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "heavy",
-            "3\" Blast",
-            "Bomb",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1, 3\" Blast, Bomb, One Use Only"
         }
       ],
       "templateType": "Bomb"
@@ -1027,11 +870,7 @@
         {
           "strength": "6",
           "ap": "4+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1, 5\" Blast, One Use Only"
         }
       ],
       "templateType": "Bomb"
@@ -1044,10 +883,7 @@
           "maxRange": 18,
           "strength": "6",
           "ap": "1+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 1, Dakka"
         }
       ]
     },
@@ -1059,11 +895,7 @@
           "maxRange": 36,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Monsterbane"
         }
       ]
     },
@@ -1076,11 +908,7 @@
           "maxRange": 48,
           "strength": "6",
           "ap": "4+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "indirect"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Indirect"
         }
       ]
     },
@@ -1091,9 +919,7 @@
         {
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1"
         }
       ],
       "templateType": "Flame"
@@ -1106,11 +932,7 @@
           "maxRange": 8,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "grenade",
-            "3\" Blast",
-            "ignores-cover"
-          ]
+          "rules": "Grenade 1, 3\" Blast, Ignores Cover"
         }
       ]
     },
@@ -1121,9 +943,7 @@
         {
           "strength": "User",
           "ap": "-",
-          "rules": [
-            "extra-attack"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -1134,12 +954,7 @@
         {
           "strength": "10",
           "ap": "1+",
-          "rules": [
-            "heavy",
-            "7\" Blast",
-            "No Scatter",
-            "Does Not Hit Self"
-          ]
+          "rules": "Heavy 1, 7\" Blast, No Scatter, Does Not Hit Self"
         }
       ],
       "templateType": "Bomb"
@@ -1151,9 +966,7 @@
         {
           "strength": "+2",
           "ap": "2+",
-          "rules": [
-            "tesla"
-          ]
+          "rules": "Tesla"
         }
       ]
     },
@@ -1164,10 +977,7 @@
         {
           "strength": "+2",
           "ap": "2+",
-          "rules": [
-            "auxiliary",
-            "extra-attack"
-          ]
+          "rules": "Auxiliary, Extra Attack 1"
         }
       ]
     },
@@ -1179,12 +989,7 @@
           "maxRange": 72,
           "strength": "10",
           "ap": "1+",
-          "rules": [
-            "heavy",
-            "7\" Blast",
-            "ordnance",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, 7\" Blast, Ordnance, Monsterbane"
         }
       ]
     },
@@ -1195,11 +1000,7 @@
         {
           "strength": "X2",
           "ap": "2+",
-          "rules": [
-            "slow",
-            "accurate",
-            "monsterbane"
-          ]
+          "rules": "Slow, Accurate, Monsterbane"
         }
       ]
     },
@@ -1211,11 +1012,7 @@
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
-          "rules": [
-            "Heavy d3+1",
-            "Dakka",
-            "monsterbane"
-          ]
+          "rules": "Heavy d3+1, Dakka, Monsterbane"
         }
       ]
     },
@@ -1227,10 +1024,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 18, Dakka"
         }
       ]
     },
@@ -1241,11 +1035,7 @@
         {
           "strength": "X2",
           "ap": "2+",
-          "rules": [
-            "extra-attack",
-            "slow",
-            "monsterbane"
-          ]
+          "rules": "Extra Attack 1, Slow, Monsterbane"
         }
       ]
     },
@@ -1256,11 +1046,7 @@
         {
           "strength": "*",
           "ap": "1+",
-          "rules": [
-            "slow",
-            "destroyer",
-            "monsterbane"
-          ]
+          "rules": "Slow, Destroyer, Monsterbane"
         }
       ]
     },
@@ -1272,10 +1058,7 @@
           "maxRange": 24,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "heavy",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, Monsterbane"
         }
       ]
     },
@@ -1287,12 +1070,7 @@
           "maxRange": 60,
           "strength": "*",
           "ap": "1+",
-          "rules": [
-            "heavy",
-            "Dakka",
-            "destroyer",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, Dakka, Destroyer, Monsterbane"
         }
       ]
     },
@@ -1304,10 +1082,7 @@
           "maxRange": 48,
           "strength": "6",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "Dakka"
-          ]
+          "rules": "Heavy 20, Dakka"
         }
       ]
     },
@@ -1318,9 +1093,7 @@
         {
           "strength": "+1",
           "ap": "-",
-          "rules": [
-            "tesla"
-          ]
+          "rules": "Tesla"
         }
       ]
     },
@@ -1331,10 +1104,7 @@
         {
           "strength": "+1",
           "ap": "2+",
-          "rules": [
-            "auxiliary",
-            "Extra Attack 4"
-          ]
+          "rules": "Auxiliary, Extra Attack 4"
         }
       ]
     },
@@ -1345,9 +1115,7 @@
         {
           "strength": "User",
           "ap": "-",
-          "rules": [
-            "sniper"
-          ]
+          "rules": "Sniper 3+"
         }
       ]
     },
@@ -1358,12 +1126,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "extra-attack",
-            "accurate",
-            "sniper",
-            "auxiliary"
-          ]
+          "rules": "Extra Attack 1, Accurate, Sniper (3+), Auxiliary"
         }
       ]
     },
@@ -1375,10 +1138,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "pistol",
-            "Dakka"
-          ]
+          "rules": "Pistol 1, Dakka"
         }
       ]
     },
@@ -1390,14 +1150,7 @@
           "maxRange": 72,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "indirect",
-            "monsterbane",
-            "Reroll Scatter Dice",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Indirect, Monsterbane, Reroll Scatter Dice, One Use Only"
         }
       ]
     },
@@ -1408,10 +1161,7 @@
         {
           "strength": "2",
           "ap": "5+",
-          "rules": [
-            "rending",
-            "auxiliary"
-          ]
+          "rules": "Rending, Auxiliary"
         }
       ]
     },
@@ -1423,10 +1173,7 @@
           "maxRange": 18,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "heavy",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 2, 3\" Blast"
         }
       ]
     },
@@ -1449,21 +1196,14 @@
           "maxRange": 36,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "monsterbane"
-          ]
+          "rules": "Assault 1, Dakka, Monsterbane"
         },
         {
           "label": "Blast",
           "maxRange": 36,
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "assault",
-            "5\" Blast"
-          ]
+          "rules": "Assault 1, 5\" Blast"
         }
       ]
     },
@@ -1486,24 +1226,14 @@
           "maxRange": 60,
           "strength": "*",
           "ap": "1+",
-          "rules": [
-            "heavy",
-            "3\" Blast",
-            "destroyer",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, 3\" Blast, Destroyer, Monsterbane"
         },
         {
           "label": "Ordnance",
           "maxRange": 60,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "ordnance",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Ordnance, Monsterbane"
         }
       ]
     },
@@ -1515,10 +1245,7 @@
           "maxRange": 24,
           "strength": "7",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast"
-          ]
+          "rules": "Heavy 1, 5\" Blast"
         }
       ]
     },
@@ -1541,19 +1268,13 @@
           "maxRange": 6,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "assault",
-            "melta",
-            "(Monsterbane)"
-          ]
+          "rules": "Assault 2, Melta, (Monsterbane)"
         },
         {
           "label": "Flame",
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1"
         }
       ],
       "templateType": "Flame"
@@ -1576,19 +1297,14 @@
           "label": "Flame",
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1"
         },
         {
           "label": "Shoota",
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 2, Dakka"
         }
       ],
       "templateType": "Flame"
@@ -1602,21 +1318,14 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "monsterbane",
-            "Dakka"
-          ]
+          "rules": "Assault 1, Monsterbane, Dakka"
         },
         {
           "label": "Shoota",
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 2, Dakka"
         }
       ]
     },
@@ -1628,12 +1337,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "gets-hot",
-            "monsterbane"
-          ]
+          "rules": "Assault 1, Dakka, Gets Hot!, Monsterbane"
         }
       ]
     },
@@ -1645,11 +1349,7 @@
           "maxRange": 36,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "assault",
-            "7\" Blast",
-            "monsterbane"
-          ]
+          "rules": "Assault 1, 7\" Blast, Monsterbane"
         }
       ]
     },
@@ -1661,12 +1361,7 @@
           "maxRange": 12,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "pistol",
-            "Dakka",
-            "gets-hot",
-            "monsterbane"
-          ]
+          "rules": "Pistol 1, Dakka, Gets Hot!, Monsterbane"
         }
       ]
     },
@@ -1678,12 +1373,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "assault",
-            "Dakka",
-            "tesla",
-            "gets-hot"
-          ]
+          "rules": "Assault 2, Dakka, Tesla, Gets Hot!"
         }
       ]
     },
@@ -1695,10 +1385,7 @@
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 4, Dakka"
         }
       ]
     },
@@ -1710,12 +1397,7 @@
           "maxRange": 72,
           "strength": "*",
           "ap": "1+",
-          "rules": [
-            "heavy",
-            "3\" Blast",
-            "destroyer",
-            "monsterbane"
-          ]
+          "rules": "Heavy 1, 3\" Blast, Destroyer, Monsterbane"
         }
       ]
     },
@@ -1727,12 +1409,7 @@
           "maxRange": 48,
           "strength": "5",
           "ap": "5+",
-          "rules": [
-            "heavy",
-            "3\" Blast",
-            "indirect",
-            "pinning"
-          ]
+          "rules": "Heavy 1, 3\" Blast, Indirect Fire, Pinning"
         }
       ]
     },
@@ -1743,11 +1420,7 @@
         {
           "strength": "*",
           "ap": "1+",
-          "rules": [
-            "slow",
-            "destroyer",
-            "monsterbane"
-          ]
+          "rules": "Slow, Destroyer, Monsterbane"
         }
       ]
     },
@@ -1759,12 +1432,7 @@
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "assault",
-            "melta",
-            "Dakka",
-            "(Monsterbane)"
-          ]
+          "rules": "Assault 1, Melta, Dakka, (Monsterbane)"
         }
       ]
     },
@@ -1775,10 +1443,7 @@
         {
           "strength": "User",
           "ap": "5+",
-          "rules": [
-            "poisoned",
-            "rending"
-          ]
+          "rules": "Poisoned (3+), Rending"
         }
       ]
     },
@@ -1789,9 +1454,7 @@
         {
           "strength": "+2",
           "ap": "3+",
-          "rules": [
-            "accurate"
-          ]
+          "rules": "Accurate"
         }
       ]
     },
@@ -1802,10 +1465,7 @@
         {
           "strength": "X2",
           "ap": "2+",
-          "rules": [
-            "slow",
-            "monsterbane"
-          ]
+          "rules": "Slow, Monsterbane"
         }
       ]
     },
@@ -1828,16 +1488,7 @@
           "maxRange": 120,
           "strength": "*",
           "ap": "-",
-          "rules": [
-            "heavy",
-            "indirect",
-            "10\" Blast",
-            "grav",
-            "Pulsa",
-            "The Hour is Nigh",
-            "T Minus 5",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1, Indirect Fire, 10\" Blast, Grav, Pulsa, The Hour is Nigh, T Minus 5, One Use Only"
         }
       ]
     },
@@ -1849,11 +1500,7 @@
           "maxRange": 24,
           "strength": "4",
           "ap": "6+",
-          "rules": [
-            "Assault 2d6",
-            "Dakka",
-            "Jam!"
-          ]
+          "rules": "Assault 2d6, Dakka, Jam!"
         }
       ]
     },
@@ -1864,9 +1511,7 @@
         {
           "strength": "User",
           "ap": "2+",
-          "rules": [
-            "accurate"
-          ]
+          "rules": "Accurate"
         }
       ]
     },
@@ -1877,10 +1522,7 @@
         {
           "strength": "X2",
           "ap": "2+",
-          "rules": [
-            "slow",
-            "monsterbane"
-          ]
+          "rules": "Slow, Monsterbane"
         }
       ]
     },
@@ -1892,10 +1534,7 @@
           "maxRange": 36,
           "strength": "7",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 6, Dakka"
         }
       ]
     },
@@ -1907,11 +1546,7 @@
           "maxRange": 24,
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "assault",
-            "3\" Blast",
-            "indirect"
-          ]
+          "rules": "Assault 1, 3\" Blast, Indirect Fire"
         }
       ]
     },
@@ -1923,10 +1558,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "5\" Blast"
-          ]
+          "rules": "Assault 1, 5\" Blast"
         }
       ]
     },
@@ -1938,11 +1570,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "monsterbane",
-            "Dakka"
-          ]
+          "rules": "Assault 1, Monsterbane, Dakka"
         }
       ]
     },
@@ -1953,10 +1581,7 @@
         {
           "strength": "+1",
           "ap": "6+",
-          "rules": [
-            "accurate",
-            "rending"
-          ]
+          "rules": "Accurate, Rending"
         }
       ]
     },
@@ -1967,10 +1592,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "auxiliary",
-            "extra-attack"
-          ]
+          "rules": "Auxiliary, Extra Attack 1"
         }
       ]
     },
@@ -1982,11 +1604,7 @@
           "maxRange": 36,
           "strength": "2d6",
           "ap": "1d6+",
-          "rules": [
-            "Heavy 1d3",
-            "Dakka",
-            "tesla"
-          ]
+          "rules": "Heavy 1d3, Dakka, Tesla"
         }
       ]
     },
@@ -1998,11 +1616,7 @@
           "maxRange": 12,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka",
-            "scatter"
-          ]
+          "rules": "Assault 2, Dakka, Scatter"
         }
       ]
     },
@@ -2014,10 +1628,7 @@
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka"
-          ]
+          "rules": "Assault 2, Dakka"
         }
       ]
     },
@@ -2029,12 +1640,7 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "3\" Blast",
-            "armourbane",
-            "monsterbane"
-          ]
+          "rules": "Assault 1, 3\" Blast, Armourbane, Monsterbane"
         }
       ]
     },
@@ -2045,9 +1651,7 @@
         {
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1"
         }
       ],
       "templateType": "Flame"
@@ -2059,10 +1663,7 @@
         {
           "strength": "5",
           "ap": "4+",
-          "rules": [
-            "assault",
-            "Flame Kart"
-          ]
+          "rules": "Assault 1, Flame Kart"
         }
       ],
       "templateType": "Flame"
@@ -2075,10 +1676,7 @@
           "maxRange": 12,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "pistol",
-            "Dakka"
-          ]
+          "rules": "Pistol 1, Dakka"
         }
       ]
     },
@@ -2090,10 +1688,7 @@
           "maxRange": 48,
           "strength": "10",
           "ap": "1+",
-          "rules": [
-            "heavy",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 1, 3\" Blast"
         }
       ]
     },
@@ -2105,11 +1700,7 @@
           "maxRange": 24,
           "strength": "6",
           "ap": "-",
-          "rules": [
-            "assault",
-            "Dakka",
-            "tesla"
-          ]
+          "rules": "Assault 3, Dakka, Tesla"
         }
       ]
     },
@@ -2121,11 +1712,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "heavy",
-            "3\" Blast",
-            "Chained Rokkitz"
-          ]
+          "rules": "Heavy 1, 3\" Blast, Chained Rokkitz"
         }
       ]
     },
@@ -2138,12 +1725,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "rending",
-            "pinning"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Rending, Pinning"
         }
       ]
     },
@@ -2154,9 +1736,7 @@
         {
           "strength": "+1",
           "ap": "4+",
-          "rules": [
-            "auxiliary"
-          ]
+          "rules": "Auxiliary"
         }
       ]
     },
@@ -2167,9 +1747,7 @@
         {
           "strength": "User",
           "ap": "-",
-          "rules": [
-            "furious-charge"
-          ]
+          "rules": "Furious Charge"
         }
       ]
     },
@@ -2181,10 +1759,7 @@
           "maxRange": 12,
           "strength": "6",
           "ap": "3+",
-          "rules": [
-            "assault",
-            "Tear Free"
-          ]
+          "rules": "Assault 1, Tear Free"
         }
       ]
     },
@@ -2196,10 +1771,7 @@
           "maxRange": 24,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "grenade",
-            "3\" Blast"
-          ]
+          "rules": "Grenade 1, 3\" Blast"
         }
       ]
     },
@@ -2211,10 +1783,7 @@
           "maxRange": 8,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "grenade",
-            "3\" Blast"
-          ]
+          "rules": "Grenade 1, 3\" Blast"
         }
       ]
     },
@@ -2226,10 +1795,7 @@
           "maxRange": 60,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "heavy",
-            "5\" Blast"
-          ]
+          "rules": "Heavy 1, 5\" Blast"
         }
       ]
     },
@@ -2240,9 +1806,7 @@
         {
           "strength": "6",
           "ap": "3+",
-          "rules": [
-            "assault"
-          ]
+          "rules": "Assault 1"
         }
       ],
       "templateType": "Flame"
@@ -2255,11 +1819,7 @@
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
-          "rules": [
-            "heavy",
-            "Dakka",
-            "monsterbane"
-          ]
+          "rules": "Heavy 20, Dakka, Monsterbane"
         }
       ]
     },
@@ -2271,12 +1831,7 @@
           "maxRange": 120,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "ordnance",
-            "one-use-only"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Ordnance, One Use Only"
         }
       ]
     },
@@ -2288,11 +1843,7 @@
           "maxRange": 120,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "5\" Blast",
-            "ordnance"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Ordnance"
         }
       ]
     },
@@ -2304,12 +1855,7 @@
           "maxRange": 6,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "grenade",
-            "nonblast",
-            "armourbane",
-            "monsterbane"
-          ]
+          "rules": "Grenade 1, Nonblast, Armourbane, Monsterbane"
         }
       ]
     },
@@ -2320,10 +1866,7 @@
         {
           "strength": "10",
           "ap": "2+",
-          "rules": [
-            "slow",
-            "monsterbane"
-          ]
+          "rules": "Slow, Monsterbane"
         }
       ]
     },
@@ -2335,10 +1878,7 @@
           "maxRange": 18,
           "strength": "6",
           "ap": "4+",
-          "rules": [
-            "assault",
-            "3\" Blast"
-          ]
+          "rules": "Assault 1, 3\" Blast"
         }
       ]
     },
@@ -2349,12 +1889,7 @@
         {
           "strength": "*",
           "ap": "1+",
-          "rules": [
-            "slow",
-            "accurate",
-            "destroyer",
-            "monsterbane"
-          ]
+          "rules": "Slow, Accurate, Destroyer, Monsterbane"
         }
       ]
     },
@@ -2366,12 +1901,7 @@
           "maxRange": 36,
           "strength": "9",
           "ap": "3+",
-          "rules": [
-            "heavy",
-            "aa",
-            "Dakka",
-            "monsterbane"
-          ]
+          "rules": "Heavy 2, AA, Dakka, Monsterbane"
         }
       ]
     },
@@ -2382,10 +1912,7 @@
         {
           "strength": "User",
           "ap": "5+",
-          "rules": [
-            "accurate",
-            "rending"
-          ]
+          "rules": "Accurate, Rending"
         }
       ]
     },
@@ -2396,9 +1923,7 @@
         {
           "strength": "User",
           "ap": "-",
-          "rules": [
-            "poisoned"
-          ]
+          "rules": "Poisoned (2+)"
         }
       ]
     },
@@ -2409,10 +1934,7 @@
         {
           "strength": "+2",
           "ap": "4+",
-          "rules": [
-            "concussion",
-            "psychic-bane"
-          ]
+          "rules": "Concussion, Psychicbane"
         }
       ]
     },
@@ -2423,9 +1945,7 @@
         {
           "strength": "+3",
           "ap": "2+",
-          "rules": [
-            "extra-attack"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     }

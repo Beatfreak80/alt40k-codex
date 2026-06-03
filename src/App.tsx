@@ -40,7 +40,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .col-block-tight { break-inside: avoid; padding-top: 2px; }
 .two-col { columns: 2; column-gap: 18px; column-fill: balance; margin-top: -10px; }
 
-.slot-section-row { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #e8d48a; padding-bottom: 6px; margin: 0 0 20px; }
+.slot-section-row { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #e8d48a; padding-bottom: 6px; margin: 0 0 20px; position: sticky; top: var(--nav-height, 44px); background: #fff; z-index: 9; }
 .slot-section-head { font-size: 22pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7a5800; }
 .slot-section-limits { font-size: 10pt; font-weight: 600; color: #1a1a1a; }
 
@@ -96,8 +96,8 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 
 .platoon-badge { display: inline-block; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6e1a1a; background: #fff0f0; border: 1px solid #c06060; border-radius: 3px; padding: 1px 6px; margin-left: 6px; vertical-align: middle; }
 .platoon-composition { font-size: 9pt; color: #555; margin-top: 4px; line-height: 1.5; }
-.platoon-toggle { font-family: 'Rajdhani', sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #f5f5f5; border: 1px solid #ddd; border-radius: 3px; padding: 4px 12px; cursor: pointer; color: #6e1a1a; margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; transition: background 0.15s; }
-.platoon-toggle:hover { background: #ffe8e8; border-color: #c06060; }
+.platoon-toggle { font-family: 'Rajdhani', sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #fff8e8; border: 1px solid #7a5800; border-radius: 3px; padding: 4px 12px; cursor: pointer; color: #7a5800; margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; transition: background 0.15s; }
+.platoon-toggle:hover { background: #fef0c8; border-color: #5a4000; color: #5a4000; }
 .platoon-units { border-left: 3px solid #e8d48a; padding-left: 16px; margin-top: 14px; display: flex; flex-direction: column; gap: 20px; }
 .platoon-unit-label { font-size: 7.5pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
 .platoon-squad-count { font-size: 8.5pt; color: #888; font-style: italic; margin-left: 8px; }
@@ -276,6 +276,9 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-battle-name { font-size:11pt; font-weight:700; color:#1a1a1a; flex:1; }
 .lb-battle-pts { font-size:9.5pt; color:#7a5800; font-weight:600; white-space:nowrap; }
 .lb-resolved-head { font-weight:700; font-size:10pt; letter-spacing:.12em; text-transform:uppercase; color:#7a5800; border-bottom:2px solid #e8d48a; padding-bottom:2px; margin:12px 0 7px; }
+.lb-collapse-head { cursor:pointer; display:flex; align-items:center; gap:6px; }
+.lb-collapse-head:hover { opacity:0.7; }
+.lb-collapse-icon { font-size:9pt; color:#888; font-weight:400; letter-spacing:0; text-transform:none; }
 .lb-permodel-tbl { width:100%; border-collapse:collapse; font-size:9pt; margin:4px 0 8px; }
 .lb-permodel-tbl td { padding:2px 6px; border-bottom:1px solid #f0f0f0; }
 .lb-permodel-tbl td:first-child { font-weight:600; color:#555; width:30%; }
@@ -355,7 +358,9 @@ function idToLabel(id) {
   return id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 function resolveRuleNames(ids, coreRules, armyRules) {
-  if (!ids || !ids.length) return "—";
+  if (!ids) return "—";
+  if (typeof ids === "string") return ids || "—";
+  if (!ids.length) return "—";
   return ids.map(id => {
     const r = (coreRules||[]).find(r => r.id === id) || (armyRules||[]).find(r => r.id === id);
     return r ? r.name : id;
@@ -429,8 +434,10 @@ function poolUsed(unit: any, applies: string[], replacesId: string, options: any
     if (o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
       if (typeof v === "number") used += v;
       else if (v && typeof v === "object") used += Object.values(v as Record<string,number>).reduce((s: number, n: any) => s+n, 0);
-    } else if (o.scope === "limitedSlot" && v != null) {
-      used += 1;
+    } else if (o.scope === "limitedSlot") {
+      if ((o.slots||1) > 1 && v && typeof v === "object")
+        used += Object.values(v as Record<string,number>).reduce((s: number, n: any) => s+n, 0);
+      else if (v != null) used += 1;
     }
   }
   return used;
@@ -439,6 +446,13 @@ function poolUsed(unit: any, applies: string[], replacesId: string, options: any
 // total model count across all model types
 function totalUnitModels(unit: any, options: any): number {
   return (unit.models||[]).reduce((s: number, m: any) => s + modelTypeCount(unit, m.id, options), 0);
+}
+
+// how many slots a limitedSlot option provides (scales with squad size if slotsPerN set)
+function availableSlots(o: any, unit: any, options: any): number {
+  const slots = o.slots || 1;
+  if (!o.slotsPerN) return slots;
+  return slots * Math.floor(totalUnitModels(unit, options) / o.slotsPerN);
 }
 
 function defaultOpts(unit: any, wL: any): Record<string, any> {
@@ -456,7 +470,7 @@ function defaultOpts(unit: any, wL: any): Record<string, any> {
     else if (o.type === "spellPick") out[o.id] = [];
     else if (o.type === "weaponSwap") {
       if (o.scope === "limitedSlot") {
-        out[o.id] = null;
+        out[o.id] = (o.slots||1) > 1 ? {} : null;
       } else if (o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
         out[o.id] = {};  // { weaponId: count }
       } else {
@@ -508,8 +522,14 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
     }
     else if (o.type === "weaponSwap") {
       if (o.scope === "limitedSlot") {
-        if (v != null) {
-          const ch = resolveChoicesForOpt(o, wL).find((x: any) => x.weaponId === v);
+        const choices = resolveChoicesForOpt(o, wL);
+        if ((o.slots||1) > 1 && v && typeof v === "object") {
+          for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
+            const ch = choices.find((x: any) => x.weaponId === wid);
+            c += (cnt as number) * (ch?.pts || 0);
+          }
+        } else if (v != null && typeof v === "string") {
+          const ch = choices.find((x: any) => x.weaponId === v);
           if (ch) c += ch.pts || 0;
         }
       } else if (o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
@@ -793,7 +813,7 @@ function buildSyntheticRules(unit, coreRules, armyRules) {
   return synthetic;
 }
 
-function SpecialRulesSection({ unit, models, armyRules, coreRules, inlineRules }) {
+function SpecialRulesSection({ unit, models, armyRules, coreRules, inlineRules, collapsed = false, onToggle = null }: any) {
   const synthetic = buildSyntheticRules(unit, coreRules, armyRules);
   const allInline = [...(inlineRules||[]), ...synthetic];
 
@@ -829,9 +849,11 @@ function SpecialRulesSection({ unit, models, armyRules, coreRules, inlineRules }
 
   return (
     <>
-      <div className="section-head">Special Rules</div>
-      {onlyOneRow ? (
-        // Single model type — just pills, no label
+      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
+        {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
+        Special Rules
+      </div>
+      {!collapsed && (onlyOneRow ? (
         <div className="rules-pills" style={{paddingLeft:0}}>
           {rows[0].rules.map(id => (
             <RulePill key={id} ruleId={id} armyRules={armyRules} coreRules={coreRules} inlineRules={allInline}/>
@@ -854,12 +876,12 @@ function SpecialRulesSection({ unit, models, armyRules, coreRules, inlineRules }
             ))}
           </tbody>
         </table>
-      )}
+      ))}
     </>
   );
 }
 
-function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, coreRules, armyRules }) {
+function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, coreRules, armyRules, collapsed = false, onToggle = null }: any) {
   const opts = unit.options || [];
   const hasBaseWargear = unit.models.some(m => (m.baseWargear||[]).length > 0);
   if (!opts.length && !hasBaseWargear) return null;
@@ -893,8 +915,11 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools,
 
   return (
     <>
-      <div className="section-head">Wargear &amp; Options</div>
-      <div className="two-col">
+      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
+        {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
+        Wargear &amp; Options
+      </div>
+      {!collapsed && <div className="two-col">
 
         {squadSizeOpts.map(o => (
           <div key={o.id} className="col-block">
@@ -1001,7 +1026,7 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools,
           </div>
         )}
 
-      </div>
+      </div>}
     </>
   );
 }
@@ -1011,7 +1036,7 @@ function compStr(models) {
 }
 
 // ── Print mode: special rules as definition list ─────────────────────────────
-function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules }) {
+function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, collapsed = false, onToggle = null }: any) {
   const synthetic = buildSyntheticRules(unit, coreRules, armyRules);
   const allInline = [...(inlineRules||[]), ...synthetic];
 
@@ -1039,31 +1064,36 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules })
 
   return (
     <>
-      <div className="section-head">Special Rules</div>
-      <div className="two-col" style={{marginTop:0}}>
-        {deduped.map(id => {
-          const rule = ruleById(id, armyRules, coreRules, allInline);
-          const modelNote = specific.find(r => r.id === id)?.label;
-          return (
-            <div key={id} className="col-block-tight">
-              <li className="rules-detail-li" style={{listStyle:"none", padding:"1px 0", lineHeight:1.4}}>
-                <span className="rule-name">{rule?.name || idToLabel(id)}</span>
-                {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
-                {rule
-                  ? (rule.shortDesc || rule.fullDesc) && <span> — {rule.shortDesc || rule.fullDesc}</span>
-                  : <span style={{color:"#888",fontStyle:"italic"}}> — Keyword only</span>
-                }
-              </li>
-            </div>
-          );
-        })}
+      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
+        {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
+        Special Rules
       </div>
+      {!collapsed && (
+        <div className="two-col" style={{marginTop:0}}>
+          {deduped.map(id => {
+            const rule = ruleById(id, armyRules, coreRules, allInline);
+            const modelNote = specific.find(r => r.id === id)?.label;
+            return (
+              <div key={id} className="col-block-tight">
+                <li className="rules-detail-li" style={{listStyle:"none", padding:"1px 0", lineHeight:1.4}}>
+                  <span className="rule-name">{rule?.name || idToLabel(id)}</span>
+                  {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
+                  {rule
+                    ? (rule.shortDesc || rule.fullDesc) && <span> — {rule.shortDesc || rule.fullDesc}</span>
+                    : <span style={{color:"#888",fontStyle:"italic"}}> — Keyword only</span>
+                  }
+                </li>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }
 
 // ── Print mode: options with full weapon profiles ─────────────────────────────
-function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules }) {
+function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, collapsed = false, onToggle = null }: any) {
   const opts = unit.options || [];
   const hasBaseWargear = unit.models.some(m => (m.baseWargear||[]).length > 0);
   if (!opts.length && !hasBaseWargear) return null;
@@ -1139,8 +1169,11 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
 
   return (
     <>
-      <div className="section-head">Wargear &amp; Options</div>
-      <div className="two-col">
+      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
+        {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
+        Wargear &amp; Options
+      </div>
+      {!collapsed && <div className="two-col">
 
         {squadSizeOpts.map(o => (
           <div key={o.id} className="col-block">
@@ -1274,7 +1307,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
           </div>
         )}
 
-      </div>
+      </div>}
     </>
   );
 }
@@ -1340,7 +1373,8 @@ function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
   );
 }
 
-function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, detailMode }) {
+function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, detailMode, collapsedSections, toggleSection }: any) {
+  const rulesCollapsed = collapsedSections?.has("specialRules") ?? false;
   const squadCount = (pu.minSquads != null || pu.maxSquads != null)
     ? (pu.minSquads === pu.maxSquads ? `${pu.minSquads} per platoon` : `${pu.minSquads ?? 0}–${pu.maxSquads ?? "∞"} per platoon`)
     : null;
@@ -1363,20 +1397,25 @@ function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, 
         </div>
         <StatTable models={pu.models}/>
         {detailMode
-          ? <DetailSpecialRules unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}/>
-          : <SpecialRulesSection unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}/>
+          ? <DetailSpecialRules unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
+              collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
+          : <SpecialRulesSection unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
+              collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
         }
         {detailMode
-          ? <DetailOptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}/>
-          : <OptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}/>
+          ? <DetailOptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}
+              collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
+          : <OptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}
+              collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
         }
       </div>
     </div>
   );
 }
 
-function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, detailMode }) {
+function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, detailMode, collapsedSections, toggleSection }: any) {
   const [platoonOpen, setPlatoonOpen] = useState(false);
+  const rulesCollapsed = collapsedSections?.has("specialRules") ?? false;
   if (hidden) return null;
 
   if (unit.platoon) {
@@ -1384,7 +1423,6 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
       <div className="unit-block" id={`unit-${unit.id}`}>
         <div className="unit-header" style={{position:"static",boxShadow:"none",paddingTop:0,marginTop:0}}>
           <div>
-            <span className="platoon-badge">Platoon</span>
             <div className="unit-name">{unit.name}</div>
             {unit.platoonComposition && (
               <div className="platoon-composition">{unit.platoonComposition}</div>
@@ -1399,7 +1437,8 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
             {(unit.platoonUnits || []).map(pu => (
               <PlatoonUnitBlock key={pu.id} pu={pu} weapons={weapons} weaponLists={weaponLists}
                 namedUpgrades={namedUpgrades} armyRules={armyRules} coreRules={coreRules}
-                spellPools={spellPools} detailMode={detailMode}/>
+                spellPools={spellPools} detailMode={detailMode}
+                collapsedSections={collapsedSections} toggleSection={toggleSection}/>
             ))}
           </div>
         )}
@@ -1427,12 +1466,16 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
       )}
       <StatTable models={unit.models}/>
       {detailMode
-        ? <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}/>
-        : <SpecialRulesSection unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}/>
+        ? <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+            collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
+        : <SpecialRulesSection unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+            collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
       }
       {detailMode
-        ? <DetailOptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}/>
-        : <OptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}/>
+        ? <DetailOptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}
+            collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
+        : <OptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}
+            collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
       }
     </div>
   );
@@ -1469,7 +1512,7 @@ function FOCSlotPanel({ foc, onAddUnit }: { foc: any[]; onAddUnit: (slot: string
   );
 }
 
-function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode }: any) {
+function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode, collapsedWargear = false, onToggleWargear = null }: any) {
   const wL = weaponLists || {};
 
   function wName(id: string) {
@@ -1583,6 +1626,27 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     }
   }
 
+  // Collect weapon IDs chosen via object-value options (multi-model perModelType,
+  // limitedSlot slots>1) and perModelWeapon — these aren't in modelWargear so have no profiles yet
+  const chosenWeaponIds: string[] = [];
+  const seenChosenWep = new Set<string>();
+  function addChosenWep(wid: string) {
+    if (!seenChosenWep.has(wid)) { seenChosenWep.add(wid); chosenWeaponIds.push(wid); }
+  }
+  for (const o of (unit.options||[])) {
+    if (o.type === "weaponSwap") {
+      const v = entry.options?.[o.id];
+      if (v && typeof v === "object") {
+        for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
+          if ((cnt as number) > 0) addChosenWep(wid);
+        }
+      }
+    } else if (o.type === "perModelWeapon") {
+      const modelOpts = entry.perModelOptions?.[o.id] || {};
+      for (const wid of Object.values(modelOpts) as string[]) addChosenWep(wid);
+    }
+  }
+
   function renderWeaponTable(refs: string[]) {
     if (!detailMode) return (
       <div className="pills">
@@ -1617,7 +1681,11 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
 
   return (
     <div>
-      <div className="lb-resolved-head">Wargear</div>
+      <div className={`lb-resolved-head${onToggleWargear ? " lb-collapse-head" : ""}`} onClick={onToggleWargear || undefined}>
+        {onToggleWargear && <span className="lb-collapse-icon">{collapsedWargear ? "▶" : "▼"}</span>}
+        Wargear
+      </div>
+      {!collapsedWargear && (<>
       {wgGroups.map((g, gi) => (
         <div key={gi} style={{marginBottom:8}}>
           {multiGroup && <div className="group-head">{g.names.join(" & ")}</div>}
@@ -1633,6 +1701,13 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
           </tbody></table>
         </div>
       ))}
+
+      {chosenWeaponIds.length > 0 && (
+        <div style={{marginBottom:8}}>
+          <div className="group-head">Selected Weapons</div>
+          {renderWeaponTable(chosenWeaponIds)}
+        </div>
+      )}
 
       {chosenLines.length > 0 && (
         <div style={{marginBottom:8}}>
@@ -1651,11 +1726,14 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
           </ul>
         </div>
       )}
+      </>)}
     </div>
   );
 }
 
-function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode, entryCost }: any) {
+function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode, entryCost, collapsedSections, toggleSection }: any) {
+  const rulesCollapsed = collapsedSections?.has("specialRules") ?? false;
+  const wargearCollapsed = collapsedSections?.has("wargear") ?? false;
   return (
     <div className="unit-block">
       <div className="unit-header">
@@ -1671,13 +1749,17 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
       </div>
       <StatTable models={unit.models}/>
       {detailMode
-        ? <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}/>
-        : <SpecialRulesSection unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}/>
+        ? <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+            collapsed={rulesCollapsed} onToggle={toggleSection ? () => toggleSection("specialRules") : null}/>
+        : <SpecialRulesSection unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+            collapsed={rulesCollapsed} onToggle={toggleSection ? () => toggleSection("specialRules") : null}/>
       }
       <ResolvedWargearSection
         entry={entry} unit={unit} weapons={weapons} weaponLists={weaponLists}
         namedUpgrades={namedUpgrades} spellPools={spellPools}
         armyRules={armyRules} coreRules={coreRules} detailMode={detailMode}
+        collapsedWargear={wargearCollapsed}
+        onToggleWargear={toggleSection ? () => toggleSection("wargear") : null}
       />
     </div>
   );
@@ -1862,7 +1944,49 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
           );
         }
 
-        // limitedSlot → single dropdown, first option is always "None"
+        // limitedSlot with multiple slots → count spinners (same pattern as perModelType multi)
+        if (o.scope === "limitedSlot" && (o.slots||1) > 1) {
+          const slotBudget = availableSlots(o, unit, options);
+          const allUsed = poolUsed(unit, o.applies||[], o.replaces, options);
+          const ownCounts = (options[o.id] || {}) as Record<string,number>;
+          const ownUsed = Object.values(ownCounts).reduce((s: number, n: any) => s+n, 0);
+          const remaining = Math.min(slotBudget - ownUsed, totalAppliesCount(unit, o, options) - allUsed);
+          return (
+            <div key={o.id} className="lb-opt-section">
+              <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                <span>{o.label}</span>
+                <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",
+                  color: ownUsed === slotBudget ? "#4a9a4a" : "#888"}}>
+                  {ownUsed}/{slotBudget} slots used
+                </span>
+              </div>
+              {choices.map((c: any) => {
+                const cur = ownCounts[c.weaponId] || 0;
+                return (
+                  <div key={c.weaponId} className="lb-opt-row">
+                    <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
+                      {wepName(c.weaponId, c)}
+                      {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
+                    </span>
+                    <div className="lb-num-ctrl">
+                      <button className="lb-num-btn" disabled={cur === 0}
+                        onClick={() => setOptions((p: any) => {
+                          const v: Record<string,number> = {...(p[o.id]||{}), [c.weaponId]: Math.max(0,(p[o.id]?.[c.weaponId]||0)-1)};
+                          if (!v[c.weaponId]) delete v[c.weaponId];
+                          return {...p, [o.id]: v};
+                        })}>−</button>
+                      <span className="lb-num-val">{cur}</span>
+                      <button className="lb-num-btn" disabled={remaining <= 0}
+                        onClick={() => setOptions((p: any) => ({...p, [o.id]: {...(p[o.id]||{}), [c.weaponId]: (p[o.id]?.[c.weaponId]||0)+1}}))}>+</button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        }
+
+        // limitedSlot with one slot → None + choices dropdown
         if (o.scope === "limitedSlot") {
           const modelCount = totalAppliesCount(unit, o, options);
           const used = poolUsed(unit, o.applies||[], o.replaces, options);
@@ -2088,7 +2212,7 @@ function CoreRulesOverlay({ coreRules, onClose }: any) {
   );
 }
 
-function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, faction, selectedSubfaction, setSelectedSubfaction, detailMode }: any) {
+function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, faction, selectedSubfaction, setSelectedSubfaction, detailMode, collapsedSections, toggleSection }: any) {
   const subfactions = faction.subfactions || [];
   const sfLabel = faction.subfactionLabel || "Chapter";
   const lastPtsKey = "alt40k-last-pts";
@@ -2362,6 +2486,8 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
                         namedUpgrades={namedUpgrades} spellPools={spellPools}
                         armyRules={armyRules} coreRules={coreRules}
                         detailMode={detailMode} entryCost={cost}
+                        collapsedSections={collapsedSections}
+                        toggleSection={toggleSection}
                       />
                     </div>
                   )}
@@ -2617,6 +2743,18 @@ export default function App() {
   const [hiddenUnits, setHiddenUnits] = useState(new Set());
   const [selectedSubfaction, setSelectedSubfaction] = useState("");
   const [detailMode, setDetailMode] = useState(false);
+  const [collapsedSections, setCollapsedSections] = useState<Set<string>>(() => {
+    try { const s = localStorage.getItem("alt40k-collapsed-sections"); return new Set(s ? JSON.parse(s) : []); }
+    catch { return new Set(); }
+  });
+  function toggleSection(id: string) {
+    setCollapsedSections(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      try { localStorage.setItem("alt40k-collapsed-sections", JSON.stringify([...next])); } catch {}
+      return next;
+    });
+  }
   const [pendingScroll, setPendingScroll] = useState<string|null>(null);
   const [pendingScrollY, setPendingScrollY] = useState<number|null>(null);
   const navWrapRef = useRef(null);
@@ -2823,7 +2961,7 @@ function fS(v,k){if(v==null)return"—";if(k==="M")return v+'"';if(["WS","BS","S
 function fR(p){if(p.templateType==="Flame")return"Flame";if(p.templateType==="Hellstorm")return"Hellstorm";if(!p.maxRange&&!p.templateType)return"Melee";return(p.minRange?p.minRange+'"–':"")+p.maxRange+'"';}
 function wB(id){return d.weapons.find(w=>w.id===id);}
 function rB(id,inl){return(inl||[]).find(r=>r.id===id)||d.armyRules.find(r=>r.id===id)||d.coreRules.find(r=>r.id===id);}
-function rN(ids){return(ids&&ids.length)?ids.map(id=>{const r=rB(id,[]);return r?r.name:id;}).join(", "):"—";}
+function rN(ids){if(!ids)return"—";if(typeof ids==="string")return ids||"—";return ids.length?ids.map(id=>{const r=rB(id,[]);return r?r.name:id;}).join(", "):"—";}
 function slStr(lim){if(!lim)return"";const[mn,mx]=lim;if(mn===mx)return mn+" slot"+(mn!==1?"s":"");if(mx===null)return mn+"+ slots";return mn+"–"+mx+" slots";}
 function synth(u){const o=[];if(u.transport){const t=u.transport;o.push({id:"__transport__",name:"Transport "+t.capacity,shortDesc:["Capacity "+t.capacity,t.firePorts?.length?"Fire Ports: "+t.firePorts.join(", "):"",t.accessPoints?.length?"Access: "+t.accessPoints.join(", "):""].filter(Boolean).join(" · ")});}if(u.psychic){const p=u.psychic;o.push({id:"__psychic__",name:"Psychic Mastery "+p.masteryLevel,shortDesc:"Mastery Level "+p.masteryLevel+(p.denyBonusPerPhase?" · +"+p.denyBonusPerPhase+" Deny per phase":"")});}return o;}
 function wepTbl(refs,showArc,choices){
@@ -2921,6 +3059,12 @@ document.body.innerHTML+=body;`;
             onClick={()=>setActivePage("options")}>
             Options
           </button>
+          <button
+            className={`nav-btn${activePage==="core-rules"?" active":""}`}
+            style={activePage==="core-rules"?undefined:{color:"#888",borderColor:"#333"}}
+            onClick={()=>setActivePage("core-rules")}>
+            Core Rules
+          </button>
           <UnitSearch allUnits={factionData.units||[]} hiddenUnits={hiddenUnits} onSelect={handleUnitSelect}/>
           <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
           <span className="nav-print-toggle">
@@ -2975,6 +3119,7 @@ document.body.innerHTML+=body;`;
                     coreRules={coreRules} spellPools={spellPools}
                     hidden={hiddenUnits.has(unit.id)}
                     detailMode={detailMode}
+                    collapsedSections={collapsedSections} toggleSection={toggleSection}
                   />
                 </div>
               ))}
@@ -2990,6 +3135,7 @@ document.body.innerHTML+=body;`;
               faction={faction}
               selectedSubfaction={selectedSubfaction} setSelectedSubfaction={setSelectedSubfaction}
               detailMode={detailMode}
+              collapsedSections={collapsedSections} toggleSection={toggleSection}
             />
           )}
 
@@ -3000,6 +3146,10 @@ document.body.innerHTML+=body;`;
               selectedSubfaction={selectedSubfaction} setSelectedSubfaction={setSelectedSubfaction}
               detailMode={detailMode} setDetailMode={setDetailMode}
             />
+          )}
+
+          {activePage==="core-rules" && (
+            <CoreRulesOverlay coreRules={coreRules} onClose={()=>setActivePage("army-rules")}/>
           )}
         </div>
       </div>

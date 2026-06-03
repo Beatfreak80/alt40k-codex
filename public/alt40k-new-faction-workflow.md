@@ -112,16 +112,18 @@ Per schema §12: omit `null`, `[]`, `false`. The postprocessor strips these auto
 **Required regardless:** `schemaVersion`, `id`, `name`, `slot` (on units), `type` (on options).
 
 ### Weapon rules use display strings
-All weapon profile `rules[]` entries are **human-readable display strings** — no kebab-case IDs.
+Weapon profile `rules` is a **single comma-separated string** — no arrays, no kebab-case IDs.
 
 ```json
-"rules": ["Assault 2", "Rending"]             // correct
-"rules": ["assault", "rending"]               // wrong — bare IDs not used in weapon rules
-"rules": ["Pistol 1", "Poisoned (3+)"]        // correct
-"rules": ["pistol", "poisoned"]               // wrong
+"rules": "Assault 2, Rending"                 // correct
+"rules": ["Assault 2", "Rending"]             // wrong — must be a string, not an array
+"rules": "assault, rending"                   // wrong — bare IDs not used in weapon rules
+"rules": "Pistol 1, Poisoned (3+)"            // correct
+"rules": "pistol, poisoned"                   // wrong
 
-"rules": ["Heavy 1", "5\" Blast", "Monsterbane"]  // correct
-"rules": ["heavy", "monsterbane"]                 // wrong
+"rules": "Heavy 1, 5\" Blast, Monsterbane"    // correct
+"rules": ["Heavy 1", "5\" Blast"]             // wrong — array
+"rules": "heavy, monsterbane"                 // wrong — bare IDs
 ```
 
 Shot counts and target numbers **must** come from the codex — they differ per weapon:
@@ -153,11 +155,25 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
 
 | `type` | Purpose | Required fields |
 |---|---|---|
-| `"weaponSwap"` | Swap a weapon for one or more alternatives | `id`, `label`, `replaces` (if replacing existing), `choices[]` or `weaponListId` |
+| `"weaponSwap"` | Swap a weapon for one or more alternatives | `id`, `label`, `scope`, `applies[]`, `replaces`, `choices[]` or `weaponListId` |
 | `"toggle"` | Equipment/upgrade that can be switched on | `id`, `label`, `pts`; optionally `grantsWargear[]`, `grantsRules[]`, `note` |
 | `"namedUpgrade"` | Reference a shared upgrade from `namedUpgrades` | `id`, `upgradeId`, `pts` |
 | `"squadSize"` | Add more models to a unit | `id`, `label`, `targetModelId`, `ptsEach`, `max` |
 | `"spellPick"` | Let the unit pick from a spell pool | `id`, `spellPoolId` |
+| `"markPick"` | Mark of Chaos selector (Chaos only) | `id`, `label`, `choices[]` — each choice: `markId`, `name`, `ptsPerModel` |
+| `"pureBlessingPick"` | Pure Blessing checkbox (Chaos only, conditional on mark) | `id`, `label`, `requiresOptionId` (id of the `markPick` option), `choices[]` — each choice: `markId`, `pts` |
+
+**`weaponSwap` scopes** — `scope` is required on every weaponSwap:
+
+| `scope` | Meaning | `slots` | `slotsPerN` | List builder UI |
+|---|---|---|---|---|
+| `"unit"` | One choice for the whole unit | — | — | Single dropdown |
+| `"perModelType"` | Each model of the type independently | — | — | Dropdown (single model) or count spinners (multi-model) |
+| `"limitedSlot"` | Up to N models in the unit may take it | required | optional | Dropdown with None (slots 1) or count spinners (slots > 1) |
+
+`slotsPerN` scales available slots with squad size: `slots × floor(totalModels / slotsPerN)`. Use for rules like "Per 10 models, up to 3 may swap…"
+
+**MIXED applies** — `applies[]` may include both a single-model leader and a multi-model troop type (e.g. `["sergeant", "marine"]`) when the codex rule genuinely says "any model" and includes the leader. The list builder treats the leader's 1 slot as part of the shared pool.
 
 **Every option must have a unique `id` field** — the app uses it to track state.
 
@@ -407,14 +423,16 @@ The app calculates unit cost at runtime using this formula:
 ```
 unitTotal = basePts
   + Σ squadSize.value × ptsEach
-  + Σ toggle.active    ? pts              : 0
-  + Σ toggle.active    ? modelCount × ptsPerModel : 0
-  + Σ namedUpgrade.active ? pts           : 0
-  + Σ weaponSwap.selectedChoice.pts       (ptsOverrides applied)
+  + Σ toggle.active         ? pts                              : 0
+  + Σ namedUpgrade.active   ? pts                              : 0
+  + Σ markPick.chosen       ? ptsPerModel × totalModelCount    : 0
+  + Σ pureBlessingPick.active ? pts (from matching mark choice) : 0
+  + Σ weaponSwap (scope "unit" or perModelType single-model)   → selectedChoice.pts
+  + Σ weaponSwap (scope "perModelType" multi-model)            → Σ_choice count[choice] × choice.pts
+  + Σ weaponSwap (scope "limitedSlot", slots 1)                → selectedChoice.pts if taken, else 0
+  + Σ weaponSwap (scope "limitedSlot", slots > 1)              → Σ_choice count[choice] × choice.pts
   + Σ_i perModelWeapon[i].selectedChoice.pts
   + Σ spellPick.selectedSpell.pts
-  + Σ_modelType markPick.ptsPerModel × count(modelType)
-  + Σ_modelType pureBlessingPick.ptsPerModel × count(modelType)
 ```
 
 `basePts` is the cost of the unit at minimum legal size with default wargear — all selectable costs sit on top.

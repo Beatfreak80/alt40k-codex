@@ -102,8 +102,9 @@ Each weapon has:
   - `maxRange` — number or `null` (null = Melee or template)
   - `strength` — string: `"4"`, `"X2"`, `"User"`, `"*"`, `"+1"`, `"D"`
   - `ap` — string: `"5+"`, `"2+"`, `"-"`, `"1+"`
-  - `rules` — array of **human-readable display strings** taken directly from the codex.
+  - `rules` — a **single string** of comma-separated display rules taken directly from the codex.
     All rules use Title Case display strings — no kebab-case IDs in weapon profiles.
+    Multiple rules are joined with `, `: `"Assault 2, Rending, Monsterbane"`.
     - **Shot/count rules** embed the number from the codex: `"Assault 2"`, `"Heavy 1"`,
       `"Pistol 1"`, `"Rapid Fire 1"`, `"Grenade 1"`, `"Extra Attack 1"`.
       Linked variants add a multiplier: `"Assault 3 x2"`, `"Heavy 1 x4"`.
@@ -269,13 +270,87 @@ Each unit contains:
 
 **`options[]`** — list of available upgrades. Types:
 - `squadSize` — number spinner for extra models
-- `weaponSwap` — replace a weapon; uses inline `choices[]` or `weaponListId`
+- `weaponSwap` — replace a weapon; uses inline `choices[]` or `weaponListId`. **Always requires `scope`** — see the Weapon Swap Scopes section below.
 - `perModelWeapon` — independent weapon choice per model instance
 - `toggle` — checkbox for a unit-specific upgrade
 - `namedUpgrade` — checkbox for a shared upgrade (from `namedUpgrades`)
 - `spellPick` — spell slot selector
-- `markPick` — Mark of Chaos selector (Chaos only)
-- `pureBlessingPick` — Pure Blessing selector (Chaos only)
+- `markPick` — Mark of Chaos selector (Chaos only). Requires `choices[]` where each choice has `markId` and `ptsPerModel`.
+- `pureBlessingPick` — Pure Blessing selector (Chaos only). Requires `requiresOptionId` (id of the markPick option it depends on) and `choices[]` where each choice has `markId` and `pts`. Only rendered when the matching mark is selected.
+
+---
+
+## Weapon Swap Scopes
+
+Every `weaponSwap` option must have a `scope` field. The scope controls both **how many models** can take the swap and **what UI is shown** in the list builder.
+
+### `scope: "unit"` — whole-unit swap
+
+One selection applies to every model in the unit. Renders as a single dropdown. Use when all models must carry the same weapon variant.
+
+```jsonc
+{ "id": "leman-russ-main", "type": "weaponSwap", "scope": "unit",
+  "applies": ["leman-russ"], "label": "Main battle cannon",
+  "replaces": "battle-cannon", "weaponListId": "leman-russ-mains" }
+```
+
+### `scope: "perModelType"` — each model independently
+
+Every model of the specified type can independently take the swap. Renders as:
+- **Single model** (leader/character — `maxCount: 1`): a dropdown
+- **Multiple models** (`maxCount > 1`): count spinners per choice with a live pool counter
+
+**Pool rule:** If multiple `perModelType` options share the same `applies` model and `replaces` weapon, they compete for the same pool. E.g. if 9 marines can each swap their bolt pistol, two separate options offering different alternatives still share those 9 slots.
+
+**MIXED applies** (leader + troops in the same option): When `applies` includes both a single-model leader and a multi-model troop type (e.g. `["sergeant", "marine"]`), the option renders as count spinners with the leader's 1 slot included in the pool. Use this when the codex rule genuinely says "any model" and the sergeant is included.
+
+```jsonc
+// All marines (and optionally the sergeant) may independently swap
+{ "id": "tac-marine-pistol", "type": "weaponSwap", "scope": "perModelType",
+  "applies": ["tactical-sgt", "tactical-marine"],
+  "label": "Any model: swap Bolt Pistol for",
+  "replaces": "bolt-pistol", "weaponListId": "pistol-upgrades" }
+
+// Sergeant only (single model → dropdown)
+{ "id": "tac-sgt-ranged", "type": "weaponSwap", "scope": "perModelType",
+  "applies": ["tactical-sgt"],
+  "label": "Sergeant: swap Boltgun for",
+  "replaces": "boltgun", "weaponListId": "sergeant-ranged-standard" }
+```
+
+### `scope: "limitedSlot"` — up to N models
+
+Only a fixed number of models in the unit may take this swap. The number of available slots is controlled by `slots` (and optionally `slotsPerN`).
+
+**`slots: 1`** — renders as a single None + weapon dropdown. The "None" option means the slot is not taken. Use for "One model may swap…" rules.
+
+**`slots > 1`** — renders as count spinners per weapon choice with a "X/N slots used" counter, exactly like `perModelType` multi-model. Use for "Up to N models may swap…" rules.
+
+**`slotsPerN`** — optional. When set, available slots scale with squad size: `slots × floor(totalModels / slotsPerN)`. Use for rules like "Per 10 models, up to 3 may swap…".
+
+All `limitedSlot` options that share the same `applies` model type and `replaces` weapon compete for the same model pool. If one marine takes the special weapon slot, the heavy weapon slot shows one fewer marine available.
+
+```jsonc
+// One marine may take a special weapon
+{ "id": "tac-special", "type": "weaponSwap", "scope": "limitedSlot",
+  "applies": ["tactical-marine"], "slots": 1,
+  "label": "One Marine: swap Boltgun for special weapon",
+  "replaces": "boltgun",
+  "choices": [
+    { "weaponId": "flamer",    "label": "Flamer",    "pts": 4 },
+    { "weaponId": "melta-gun", "label": "Meltagun",  "pts": 21 }
+  ] }
+
+// Per 10 models, up to 3 may take a heavy weapon
+{ "id": "cult-special", "type": "weaponSwap", "scope": "limitedSlot",
+  "applies": ["cultist"], "slots": 3, "slotsPerN": 10,
+  "label": "Per 10 models — up to three may swap Autogun for",
+  "replaces": "autogun",
+  "choices": [
+    { "weaponId": "flamer",           "label": "Flamer",           "pts": 7 },
+    { "weaponId": "heavy-stubber",    "label": "Heavy Stubber",    "pts": 10 }
+  ] }
+```
 
 ---
 
@@ -400,8 +475,9 @@ file opened in an older app won't lose data.
 | Writing the same `choices[]` array on ten different units | Extract to `weaponLists` and reference with `weaponListId` |
 | Using `"3+"` strings for WS/BS/Sv values | Store as number `3`; renderer adds `+` |
 | Using `"6\""` strings for M values | Store as number `6`; renderer adds `"` |
-| Using `"assault"`, `"heavy"`, `"pistol"` etc. without a shot count | All weapon rules are display strings with numbers: `"Assault 2"`, `"Heavy 1"`, `"Pistol 1"` |
+| Using `"assault"`, `"heavy"`, `"pistol"` etc. without a shot count | Weapon `rules` is a comma-separated string with numbers: `"Assault 2"`, `"Heavy 1"`, `"Pistol 1"` |
 | Using `"poisoned"`, `"sniper"`, `"haywire"` without a target number | Always embed the target from the codex: `"Poisoned (3+)"`, `"Sniper (3+)"`, `"Haywire (3+)"` |
-| Using kebab-case ids like `"rending"`, `"monsterbane"` in weapon profile rules | Weapon profile `rules[]` use display strings only: `"Rending"`, `"Monsterbane"` |
+| Using an array for weapon profile `rules` | `rules` is a single string: `"Assault 2, Rending, Monsterbane"` — not `["Assault 2", "Rending"]` |
+| Using kebab-case ids like `"rending"`, `"monsterbane"` in weapon profile rules | Weapon profile `rules` uses display strings only: `"Rending"`, `"Monsterbane"` |
 | Writing `null`, `[]`, or `false` fields on weapons or units | Omit them entirely; the app treats missing fields as their default |
 | Omitting `schemaVersion` | Always include `"schemaVersion": "1.3"` |

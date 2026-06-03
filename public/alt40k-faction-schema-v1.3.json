@@ -138,7 +138,7 @@
         "minRange":     { "type": "number" },
         "strength":     { "type": "string" },
         "ap":           { "type": "string" },
-        "rules":        { "type": "array", "items": { "type": "string" } },
+        "rules":        { "type": "string" },
         "castValue":    { "type": "number" },
         "templateType": { "type": "string", "enum": ["Flame", "Hellstorm", "Bomb"] },
         "keywords":     { "type": "array", "items": { "type": "string" } }
@@ -345,6 +345,7 @@
         "max":                  { "type": "integer", "minimum": 0 },
         "scope":                { "type": "string", "enum": ["perModelType", "limitedSlot", "unit"] },
         "slots":                { "type": "integer", "minimum": 1 },
+        "slotsPerN":            { "type": "integer", "minimum": 2 },
         "applies":              { "type": "array", "items": { "type": "string" } },
         "replaces":             { "type": "string" },
         "choices":              { "type": "array" },
@@ -385,6 +386,10 @@
         {
           "if": { "properties": { "type": { "const": "spellPick" } }, "required": ["type"] },
           "then": { "required": ["spellPoolId"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "markPick" } }, "required": ["type"] },
+          "then": { "required": ["choices"] }
         },
         {
           "if": { "properties": { "type": { "const": "pureBlessingPick" } }, "required": ["type"] },

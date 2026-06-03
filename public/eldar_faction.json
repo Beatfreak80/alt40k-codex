@@ -157,8 +157,7 @@
         2
       ],
       "Ded. Transport": [
-        0,
-        null
+        0
       ],
       "Lord of War": [
         0,
@@ -283,10 +282,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Pistol 1",
-            "Rending"
-          ]
+          "rules": "Pistol 1, Rending"
         }
       ]
     },
@@ -298,10 +294,7 @@
           "maxRange": 18,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Assault 2",
-            "Rending"
-          ]
+          "rules": "Assault 2, Rending"
         }
       ]
     },
@@ -313,10 +306,7 @@
           "maxRange": 18,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Assault 2",
-            "Rending"
-          ]
+          "rules": "Assault 2, Rending"
         }
       ]
     },
@@ -328,9 +318,7 @@
           "maxRange": 24,
           "strength": "3",
           "ap": "5+",
-          "rules": [
-            "Assault 3"
-          ]
+          "rules": "Assault 3"
         }
       ]
     },
@@ -342,10 +330,7 @@
           "maxRange": 12,
           "strength": "*",
           "ap": "-",
-          "rules": [
-            "Assault 2",
-            "Grav"
-          ]
+          "rules": "Assault 2, Rending"
         }
       ]
     },
@@ -358,19 +343,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "Heavy 1",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, Monsterbane"
         },
         {
           "label": "Starswarm",
           "maxRange": 48,
           "strength": "5",
           "ap": "3+",
-          "rules": [
-            "Heavy 2"
-          ]
+          "rules": "Heavy 2"
         }
       ]
     },
@@ -382,11 +362,7 @@
           "maxRange": 6,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Pistol 1",
-            "Melta",
-            "(Monsterbane)"
-          ]
+          "rules": "Pistol 1, Melta, (Monsterbane)"
         }
       ]
     },
@@ -398,11 +374,7 @@
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Assault 1",
-            "Melta",
-            "Monsterbane"
-          ]
+          "rules": "Assault 1, Melta, Monsterbane"
         }
       ]
     },
@@ -414,11 +386,7 @@
           "maxRange": 36,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Rapid Fire 1",
-            "Melta",
-            "Monsterbane"
-          ]
+          "rules": "Rapid Fire 1, Melta, Monsterbane"
         }
       ]
     },
@@ -430,9 +398,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Heavy 2"
-          ]
+          "rules": "Heavy 2"
         }
       ]
     },
@@ -444,10 +410,7 @@
           "maxRange": 24,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "Assault 3",
-            "Rending"
-          ]
+          "rules": "Assault 3, Rending"
         }
       ]
     },
@@ -459,10 +422,7 @@
           "maxRange": 36,
           "strength": "7",
           "ap": "6+",
-          "rules": [
-            "Heavy 4",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4, Monsterbane"
         }
       ]
     },
@@ -475,20 +435,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "Heavy 1",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, Monsterbane"
         },
         {
           "label": "Plasma Blast",
           "maxRange": 48,
           "strength": "4",
           "ap": "4+",
-          "rules": [
-            "Heavy 1",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 1, 3\" Blast"
         }
       ]
     },
@@ -500,11 +454,7 @@
           "maxRange": 36,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "Heavy 1",
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, Lance, Monsterbane"
         }
       ]
     },
@@ -516,10 +466,7 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, Monsterbane"
         }
       ]
     },
@@ -531,10 +478,7 @@
           "maxRange": 36,
           "strength": "3",
           "ap": "6+",
-          "rules": [
-            "Heavy 1",
-            "Sniper (3+)"
-          ]
+          "rules": "Heavy 1, Sniper (3+)"
         }
       ]
     },
@@ -546,10 +490,7 @@
           "maxRange": 48,
           "strength": "3",
           "ap": "2+",
-          "rules": [
-            "Heavy 1",
-            "Sniper (2+)"
-          ]
+          "rules": "Heavy 1, Sniper (2+)"
         }
       ]
     },
@@ -561,10 +502,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "2+",
-          "rules": [
-            "Pistol 1",
-            "Poisoned (2+)"
-          ]
+          "rules": "Pistol 1, Poisoned (2+)"
         }
       ]
     },
@@ -576,11 +514,7 @@
           "maxRange": 24,
           "strength": "3",
           "ap": "4+",
-          "rules": [
-            "Assault 3",
-            "Rending",
-            "Poisoned (2+)"
-          ]
+          "rules": "Assault 3, Rending, Poisoned (2+)"
         }
       ]
     },
@@ -592,9 +526,7 @@
           "maxRange": 24,
           "strength": "5",
           "ap": "5+",
-          "rules": [
-            "Assault 3"
-          ]
+          "rules": "Assault 3"
         }
       ]
     },
@@ -606,9 +538,7 @@
           "maxRange": 24,
           "strength": "3",
           "ap": "3+",
-          "rules": [
-            "Assault 3"
-          ]
+          "rules": "Assault 3"
         }
       ]
     },
@@ -620,10 +550,7 @@
           "maxRange": 24,
           "strength": "3",
           "ap": "3+",
-          "rules": [
-            "Assault 2",
-            "Haywire (3+)"
-          ]
+          "rules": "Assault 2, Haywire (3+)"
         }
       ]
     },
@@ -635,10 +562,7 @@
           "maxRange": 24,
           "strength": "3",
           "ap": "3+",
-          "rules": [
-            "Heavy 2",
-            "Haywire (3+)"
-          ]
+          "rules": "Heavy 2, Haywire (3+)"
         }
       ]
     },
@@ -650,10 +574,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Assault 1",
-            "Ghostlight"
-          ]
+          "rules": "Assault 1, Prism"
         }
       ]
     },
@@ -665,11 +586,7 @@
           "maxRange": 18,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, Lance, Monsterbane"
         }
       ]
     },
@@ -681,11 +598,7 @@
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "Heavy 1",
-            "Monsterbane",
-            "Pinning"
-          ]
+          "rules": "Heavy 1, Monsterbane, Pinning"
         }
       ]
     },
@@ -697,12 +610,7 @@
           "maxRange": 48,
           "strength": "6",
           "ap": "6+",
-          "rules": [
-            "Heavy 1",
-            "Indirect",
-            "5\" Blast",
-            "Rending"
-          ]
+          "rules": "Heavy 1, Indirect Fire, 5\" Blast, Rending"
         }
       ]
     },
@@ -714,12 +622,7 @@
           "maxRange": 48,
           "strength": "10",
           "ap": "1+",
-          "rules": [
-            "Heavy 1",
-            "Indirect",
-            "3\" Blast",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, Indirect Fire, 3\" Blast, Monsterbane"
         }
       ]
     },
@@ -731,9 +634,7 @@
           "maxRange": 12,
           "strength": "4",
           "ap": "2+",
-          "rules": [
-            "Assault 4"
-          ]
+          "rules": "Assault 4"
         }
       ]
     },
@@ -745,9 +646,7 @@
           "maxRange": 6,
           "strength": "2",
           "ap": "-",
-          "rules": [
-            "Pistol 2"
-          ]
+          "rules": "Pistol 2"
         }
       ]
     },
@@ -759,10 +658,7 @@
           "maxRange": 18,
           "strength": "*",
           "ap": "2+",
-          "rules": [
-            "Rapid Fire 1",
-            "Grav"
-          ]
+          "rules": "Rapid Fire 1"
         }
       ]
     },
@@ -774,10 +670,7 @@
           "maxRange": 12,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Grenade 1",
-            "3\" Blast"
-          ]
+          "rules": "Grenade 1, 3\" Blast"
         }
       ]
     },
@@ -789,11 +682,7 @@
           "maxRange": 36,
           "strength": "10",
           "ap": "2+",
-          "rules": [
-            "Heavy 1",
-            "5\" Blast",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Monsterbane"
         }
       ]
     },
@@ -805,12 +694,7 @@
           "maxRange": 72,
           "strength": "D",
           "ap": "1+",
-          "rules": [
-            "Heavy 1",
-            "3\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, 3\" Blast, Destroyer, Monsterbane"
         }
       ]
     },
@@ -822,12 +706,7 @@
           "maxRange": 60,
           "strength": "D",
           "ap": "2+",
-          "rules": [
-            "Heavy 1",
-            "5\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, 5\" Blast, Destroyer, Monsterbane"
         }
       ]
     },
@@ -839,12 +718,7 @@
           "maxRange": 120,
           "strength": "D",
           "ap": "1+",
-          "rules": [
-            "Heavy 1",
-            "7\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, 7\" Blast, Destroyer, Monsterbane"
         }
       ]
     },
@@ -856,13 +730,7 @@
           "maxRange": 120,
           "strength": "D",
           "ap": "1+",
-          "rules": [
-            "Heavy 1",
-            "7\" Blast",
-            "Destroyer",
-            "Monsterbane",
-            "Distortion Rift"
-          ]
+          "rules": "Heavy 1, 7\" Blast, Destroyer, Monsterbane, Distortion Rift"
         }
       ]
     },
@@ -874,13 +742,7 @@
           "maxRange": 72,
           "strength": "D",
           "ap": "2+",
-          "rules": [
-            "Heavy 1",
-            "10\" Blast",
-            "Destroyer",
-            "Monsterbane",
-            "Spatial Rift"
-          ]
+          "rules": "Heavy 1, 10\" Blast, Destroyer, Monsterbane, Spatial Rift"
         }
       ]
     },
@@ -891,10 +753,7 @@
         {
           "strength": "9",
           "ap": "3+",
-          "rules": [
-            "Assault 1",
-            "Monsterbane"
-          ]
+          "rules": "Assault 1, Monsterbane"
         }
       ],
       "templateType": "Hellstorm"
@@ -907,11 +766,7 @@
           "maxRange": 36,
           "strength": "D",
           "ap": "2+",
-          "rules": [
-            "Assault 1",
-            "Destroyer",
-            "Monsterbane"
-          ]
+          "rules": "Assault 1, Destroyer, Monsterbane"
         }
       ]
     },
@@ -923,10 +778,7 @@
           "maxRange": 48,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Heavy 3",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 3, 3\" Blast"
         }
       ]
     },
@@ -938,11 +790,7 @@
           "maxRange": 36,
           "strength": "9",
           "ap": "1+",
-          "rules": [
-            "Heavy 4",
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4, Lance, Monsterbane"
         }
       ]
     },
@@ -954,12 +802,7 @@
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
-          "rules": [
-            "Heavy 1",
-            "7\" Blast",
-            "Rending",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, 7\" Blast, Rending, Monsterbane"
         }
       ]
     },
@@ -971,11 +814,7 @@
           "maxRange": 48,
           "strength": "9",
           "ap": "3+",
-          "rules": [
-            "Heavy 4",
-            "Ordnance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4, Ordnance, Monsterbane"
         }
       ]
     },
@@ -987,12 +826,7 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "Heavy 4",
-            "AA",
-            "Ordnance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4, AA, Ordnance, Monsterbane"
         }
       ]
     },
@@ -1004,10 +838,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Assault 2 x2",
-            "Rending"
-          ]
+          "rules": "Assault 2 x2, Rending"
         }
       ]
     },
@@ -1019,10 +850,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Assault 2 x3",
-            "Rending"
-          ]
+          "rules": "Assault 2 x3, Rending"
         }
       ]
     },
@@ -1034,10 +862,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Pistol 1 x2",
-            "Rending"
-          ]
+          "rules": "Pistol 1 x2, Rending"
         }
       ]
     },
@@ -1049,9 +874,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Heavy 2 x2"
-          ]
+          "rules": "Heavy 2 x2"
         }
       ]
     },
@@ -1063,10 +886,7 @@
           "maxRange": 24,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "Assault 3 x2",
-            "Rending"
-          ]
+          "rules": "Assault 3 x2, Rending"
         }
       ]
     },
@@ -1078,10 +898,7 @@
           "maxRange": 36,
           "strength": "7",
           "ap": "6+",
-          "rules": [
-            "Heavy 4 x2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4 x2, Monsterbane"
         }
       ]
     },
@@ -1093,11 +910,7 @@
           "maxRange": 36,
           "strength": "7",
           "ap": "4+",
-          "rules": [
-            "Heavy 4 x3",
-            "AA",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4 x3, AA, Monsterbane"
         }
       ]
     },
@@ -1110,20 +923,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "Heavy 1 x2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1 x2, Monsterbane"
         },
         {
           "label": "Plasma Blast",
           "maxRange": 48,
           "strength": "4",
           "ap": "4+",
-          "rules": [
-            "Heavy 1 x2",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 1 x2, 3\" Blast"
         }
       ]
     },
@@ -1135,11 +942,7 @@
           "maxRange": 36,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "Heavy 1 x2",
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1 x2, Lance, Monsterbane"
         }
       ]
     },
@@ -1151,10 +954,7 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2 x2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2 x2, Monsterbane"
         }
       ]
     },
@@ -1166,12 +966,7 @@
           "maxRange": 60,
           "strength": "D",
           "ap": "2+",
-          "rules": [
-            "Heavy 1 x2",
-            "5\" Blast",
-            "Destroyer",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1 x2, 5\" Blast, Destroyer, Monsterbane"
         }
       ]
     },
@@ -1182,9 +977,7 @@
         {
           "strength": "6",
           "ap": "-",
-          "rules": [
-            "Assault 1 x2"
-          ]
+          "rules": "Assault 1 x2"
         }
       ],
       "templateType": "Hellstorm"
@@ -1197,9 +990,7 @@
           "maxRange": 48,
           "strength": "5",
           "ap": "3+",
-          "rules": [
-            "Heavy 3 x2"
-          ]
+          "rules": "Heavy 3 x2"
         }
       ]
     },
@@ -1211,9 +1002,7 @@
           "maxRange": 48,
           "strength": "5",
           "ap": "3+",
-          "rules": [
-            "Heavy 3 x4"
-          ]
+          "rules": "Heavy 3 x4"
         }
       ]
     },
@@ -1225,12 +1014,7 @@
           "maxRange": 48,
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "Heavy 1 x2",
-            "3\" Blast",
-            "Ignores Cover",
-            "Pinning"
-          ]
+          "rules": "Heavy 1 x2, 3\" Blast, Ignores Cover, Pinning"
         }
       ]
     },
@@ -1242,12 +1026,7 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "Heavy 4 x2",
-            "AA",
-            "Ordnance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4 x2, AA, Ordnance, Monsterbane"
         }
       ]
     },
@@ -1260,21 +1039,14 @@
           "maxRange": 24,
           "strength": "9",
           "ap": "1+",
-          "rules": [
-            "Assault 1",
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Assault 1, Lance, Monsterbane"
         },
         {
           "label": "Blast",
           "maxRange": 24,
           "strength": "4",
           "ap": "3+",
-          "rules": [
-            "Assault 1",
-            "5\" Blast"
-          ]
+          "rules": "Assault 1, 5\" Blast"
         }
       ]
     },
@@ -1287,22 +1059,14 @@
           "maxRange": 60,
           "strength": "9",
           "ap": "1+",
-          "rules": [
-            "Heavy 1",
-            "Lance",
-            "Monsterbane",
-            "Linked Fire"
-          ]
+          "rules": "Heavy 1, Lance, Monsterbane, Linked Fire"
         },
         {
           "label": "Blast",
           "maxRange": 60,
           "strength": "5",
           "ap": "3+",
-          "rules": [
-            "Heavy 1",
-            "5\" Blast"
-          ]
+          "rules": "Heavy 1, 5\" Blast"
         }
       ]
     },
@@ -1315,20 +1079,13 @@
           "maxRange": 48,
           "strength": "*",
           "ap": "-",
-          "rules": [
-            "Heavy 1 x2",
-            "5\" Blast",
-            "Grav"
-          ]
+          "rules": "Heavy 1 x2, Indirect Fire, 5\" Blast, Rending"
         },
         {
           "label": "Flame",
           "strength": "*",
           "ap": "-",
-          "rules": [
-            "Assault 1 x2",
-            "Grav"
-          ]
+          "rules": "Assault 1 x2, Rending"
         }
       ],
       "templateType": "Flame"
@@ -1342,19 +1099,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, Monsterbane"
         },
         {
           "label": "Starcannon",
           "maxRange": 36,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Heavy 2 x2"
-          ]
+          "rules": "Heavy 2 x2"
         }
       ]
     },
@@ -1367,20 +1119,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, Monsterbane"
         },
         {
           "label": "Shuriken Cannon",
           "maxRange": 24,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "Assault 3",
-            "Rending"
-          ]
+          "rules": "Assault 3, Rending"
         }
       ]
     },
@@ -1393,20 +1139,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, Monsterbane"
         },
         {
           "label": "Scatter Laser",
           "maxRange": 36,
           "strength": "7",
           "ap": "6+",
-          "rules": [
-            "Heavy 4",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 4, Monsterbane"
         }
       ]
     },
@@ -1419,30 +1159,21 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, Monsterbane"
         },
         {
           "label": "Plasma Shot",
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
-          "rules": [
-            "Heavy 1",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, Monsterbane"
         },
         {
           "label": "Plasma Blast",
           "maxRange": 48,
           "strength": "4",
           "ap": "4+",
-          "rules": [
-            "Heavy 1",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 1, 3\" Blast"
         }
       ]
     },
@@ -1455,21 +1186,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, Monsterbane"
         },
         {
           "label": "Bright Lance",
           "maxRange": 48,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "Heavy 1",
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 1, Lance, Monsterbane"
         }
       ]
     },
@@ -1482,19 +1206,13 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Heavy 2 x2"
-          ]
+          "rules": "Heavy 2 x2"
         },
         {
           "label": "Glaive",
           "strength": "D",
           "ap": "1+",
-          "rules": [
-            "Slow",
-            "Destroyer",
-            "Monsterbane"
-          ]
+          "rules": "Slow, Destroyer, Monsterbane"
         }
       ]
     },
@@ -1507,20 +1225,13 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 2 x2",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2 x2, Monsterbane"
         },
         {
           "label": "Glaive",
           "strength": "D",
           "ap": "1+",
-          "rules": [
-            "Slow",
-            "Destroyer",
-            "Monsterbane"
-          ]
+          "rules": "Slow, Destroyer, Monsterbane"
         }
       ]
     },
@@ -1531,11 +1242,7 @@
         {
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "Heavy 2",
-            "3\" Blast",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 2, 3\" Blast, Monsterbane"
         }
       ]
     },
@@ -1546,11 +1253,7 @@
         {
           "strength": "8",
           "ap": "2+",
-          "rules": [
-            "Heavy 3",
-            "3\" Blast",
-            "Monsterbane"
-          ]
+          "rules": "Heavy 3, 3\" Blast, Monsterbane"
         }
       ]
     },
@@ -1561,10 +1264,7 @@
         {
           "strength": "X2",
           "ap": "2+",
-          "rules": [
-            "Slow",
-            "Monsterbane"
-          ]
+          "rules": "Slow, Monsterbane"
         }
       ]
     },
@@ -1577,20 +1277,13 @@
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Assault 1",
-            "Melta",
-            "(Monsterbane)"
-          ]
+          "rules": "Assault 1, Melta, (Monsterbane)"
         },
         {
           "label": "Melee",
           "strength": "X2",
           "ap": "1+",
-          "rules": [
-            "Slow",
-            "Monsterbane"
-          ]
+          "rules": "Slow, Monsterbane"
         }
       ]
     },
@@ -1601,9 +1294,7 @@
         {
           "strength": "+1",
           "ap": "6+",
-          "rules": [
-            "Rending"
-          ]
+          "rules": "Rending"
         }
       ]
     },
@@ -1634,9 +1325,7 @@
         {
           "strength": "+2",
           "ap": "4+",
-          "rules": [
-            "Concussion"
-          ]
+          "rules": "Concussion"
         }
       ]
     },
@@ -1647,9 +1336,7 @@
         {
           "strength": "+1",
           "ap": "3+",
-          "rules": [
-            "Counterattack"
-          ]
+          "rules": "Counterattack"
         }
       ]
     },
@@ -1660,10 +1347,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Extra Attack 1",
-            "Poisoned (3+)"
-          ]
+          "rules": "Extra Attack 1, Poisoned (3+)"
         }
       ]
     },
@@ -1674,9 +1358,7 @@
         {
           "strength": "User",
           "ap": "-",
-          "rules": [
-            "Poisoned (2+)"
-          ]
+          "rules": "Poisoned (2+)"
         }
       ]
     },
@@ -1689,18 +1371,13 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "3+",
-          "rules": [
-            "Assault 1",
-            "Poisoned (3+)"
-          ]
+          "rules": "Assault 1, Poisoned (3+)"
         },
         {
           "label": "Melee",
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Poisoned (3+)"
-          ]
+          "rules": "Poisoned (3+)"
         }
       ]
     },
@@ -1711,9 +1388,7 @@
         {
           "strength": "+1",
           "ap": "3+",
-          "rules": [
-            "Extra Attack 1"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -1724,9 +1399,7 @@
         {
           "strength": "6",
           "ap": "-",
-          "rules": [
-            "Assault 1"
-          ]
+          "rules": "Assault 1"
         }
       ],
       "templateType": "Flame"
@@ -1739,10 +1412,7 @@
           "maxRange": 18,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Assault 1",
-            "Monsterbane"
-          ]
+          "rules": "Assault 1, Monsterbane"
         }
       ]
     },
@@ -1753,10 +1423,7 @@
         {
           "strength": "X2",
           "ap": "2+",
-          "rules": [
-            "Slow",
-            "Monsterbane"
-          ]
+          "rules": "Slow, Monsterbane"
         }
       ]
     },
@@ -1767,9 +1434,7 @@
         {
           "strength": "User",
           "ap": "4+",
-          "rules": [
-            "Extra Attack 1"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -1780,9 +1445,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Poisoned (3+)"
-          ]
+          "rules": "Poisoned (3+)"
         }
       ]
     },
@@ -1813,10 +1476,7 @@
         {
           "strength": "+2",
           "ap": "4+",
-          "rules": [
-            "Psychic Bane",
-            "Concussion"
-          ]
+          "rules": "Psychicbane, Concussion"
         }
       ]
     },
@@ -1827,10 +1487,7 @@
         {
           "strength": "X2",
           "ap": "2+",
-          "rules": [
-            "Slow",
-            "Monsterbane"
-          ]
+          "rules": "Slow, Monsterbane"
         }
       ]
     },
@@ -1841,9 +1498,7 @@
         {
           "strength": "User",
           "ap": "2+",
-          "rules": [
-            "Poisoned (2+)"
-          ]
+          "rules": "Poisoned (2+)"
         }
       ]
     },
@@ -1854,9 +1509,7 @@
         {
           "strength": "+1",
           "ap": "3+",
-          "rules": [
-            "Concussion"
-          ]
+          "rules": "Concussion"
         }
       ]
     },
@@ -1867,9 +1520,7 @@
         {
           "strength": "+1",
           "ap": "2+",
-          "rules": [
-            "Monsterbane"
-          ]
+          "rules": "Monsterbane"
         }
       ]
     },
@@ -1882,10 +1533,7 @@
           "maxRange": 36,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "Assault 3",
-            "Rending"
-          ]
+          "rules": "Assault 3, Rending"
         },
         {
           "label": "Melee",
@@ -1901,10 +1549,7 @@
         {
           "strength": "+1",
           "ap": "2+",
-          "rules": [
-            "Extra Attack d6",
-            "Daemonic Thirst"
-          ]
+          "rules": "Extra Attack d6, Daemonic Thirst"
         }
       ]
     },
@@ -1916,18 +1561,13 @@
           "label": "Flame",
           "strength": "3",
           "ap": "3+",
-          "rules": [
-            "Assault 1",
-            "Poisoned (3+)"
-          ]
+          "rules": "Assault 1, Poisoned (3+)"
         },
         {
           "label": "Melee",
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Poisoned (3+)"
-          ]
+          "rules": "Poisoned (3+)"
         }
       ],
       "templateType": "Flame"
@@ -1939,9 +1579,7 @@
         {
           "strength": "User",
           "ap": "1+",
-          "rules": [
-            "Armourbane"
-          ]
+          "rules": "Armourbane"
         }
       ]
     },
@@ -1954,9 +1592,7 @@
           "maxRange": 6,
           "strength": "6",
           "ap": "3+",
-          "rules": [
-            "Assault 1"
-          ]
+          "rules": "Assault 1"
         },
         {
           "label": "Melee",
@@ -1974,20 +1610,13 @@
           "maxRange": 6,
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "Assault 1",
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Assault 1, Lance, Monsterbane"
         },
         {
           "label": "Melee",
           "strength": "9",
           "ap": "2+",
-          "rules": [
-            "Lance",
-            "Monsterbane"
-          ]
+          "rules": "Lance, Monsterbane"
         }
       ]
     },
@@ -1998,9 +1627,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Extra Attack 1"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -2011,10 +1638,7 @@
         {
           "strength": "User",
           "ap": "6+",
-          "rules": [
-            "Extra Attack 1",
-            "Rending"
-          ]
+          "rules": "Extra Attack 1, Rending"
         }
       ]
     },
@@ -2025,9 +1649,7 @@
         {
           "strength": "+2",
           "ap": "4+",
-          "rules": [
-            "Rending"
-          ]
+          "rules": "Rending"
         }
       ]
     },
@@ -2038,9 +1660,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Extra Attack 1"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -2063,9 +1683,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "3+",
-          "rules": [
-            "Assault 3"
-          ]
+          "rules": "Assault 3"
         },
         {
           "label": "Melee",
@@ -2081,9 +1699,7 @@
         {
           "strength": "+1",
           "ap": "3+",
-          "rules": [
-            "Counterattack"
-          ]
+          "rules": "Counterattack"
         }
       ]
     },
@@ -2094,9 +1710,7 @@
         {
           "strength": "+2",
           "ap": "2+",
-          "rules": [
-            "Ignores Feel No Pain"
-          ]
+          "rules": "Ignores Feel No Pain"
         }
       ]
     },
@@ -2107,9 +1721,7 @@
         {
           "strength": "+1",
           "ap": "3+",
-          "rules": [
-            "Counterattack"
-          ]
+          "rules": "Counterattack"
         }
       ]
     },
@@ -2120,9 +1732,7 @@
         {
           "strength": "User",
           "ap": "2+",
-          "rules": [
-            "Extra Attack 1"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -2133,9 +1743,7 @@
         {
           "strength": "+1",
           "ap": "3+",
-          "rules": [
-            "Ignores Invulnerability Saves"
-          ]
+          "rules": "Ignores Invulnerability Saves"
         }
       ]
     },
@@ -2146,10 +1754,7 @@
         {
           "strength": "User",
           "ap": "2+",
-          "rules": [
-            "Poisoned (2+)",
-            "Ignores Invulnerability Saves"
-          ]
+          "rules": "Poisoned (2+), Ignores Invulnerability Saves"
         }
       ]
     },
@@ -2160,9 +1765,7 @@
         {
           "strength": "User",
           "ap": "2+",
-          "rules": [
-            "Ignores Invulnerability Saves"
-          ]
+          "rules": "Ignores Invulnerability Saves"
         }
       ]
     },
@@ -2174,11 +1777,7 @@
           "maxRange": 8,
           "strength": "3",
           "ap": "3+",
-          "rules": [
-            "Grenade 1",
-            "Nonblast",
-            "Haywire (3+)"
-          ]
+          "rules": "Grenade 1, Nonblast, Haywire (3+)"
         }
       ]
     },
@@ -2190,11 +1789,7 @@
           "maxRange": 8,
           "strength": "4",
           "ap": "4+",
-          "rules": [
-            "Grenade 1",
-            "Nonblast",
-            "Blind"
-          ]
+          "rules": "Grenade 1, Nonblast, Blind"
         }
       ]
     },
@@ -2206,12 +1801,7 @@
           "maxRange": 6,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Grenade 1",
-            "Nonblast",
-            "Armourbane",
-            "Monsterbane"
-          ]
+          "rules": "Grenade 1, Nonblast, Armourbane, Monsterbane"
         }
       ]
     },
@@ -2222,9 +1812,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "4+ Invulnerability Save"
-          ]
+          "rules": "4+ Invulnerability Save"
         }
       ]
     },
@@ -2235,9 +1823,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "4+ Invulnerability Save"
-          ]
+          "rules": "4+ Invulnerability Save"
         }
       ]
     },
@@ -2248,9 +1834,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "4+ Invulnerability Save"
-          ]
+          "rules": "4+ Invulnerability Save"
         }
       ]
     },
@@ -2261,9 +1845,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "4+ Invulnerability Save"
-          ]
+          "rules": "4+ Invulnerability Save"
         }
       ]
     },
@@ -2274,9 +1856,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "4+ Invulnerability Save"
-          ]
+          "rules": "4+ Invulnerability Save"
         }
       ]
     },
@@ -2287,9 +1867,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "5+ Invulnerability Save"
-          ]
+          "rules": "5+ Invulnerability Save"
         }
       ]
     },
@@ -2300,9 +1878,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "5+ Invulnerability Save"
-          ]
+          "rules": "5+ Invulnerability Save"
         }
       ]
     },
@@ -2313,9 +1889,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "5+ Cover Save"
-          ]
+          "rules": "5+ Cover Save"
         }
       ]
     },
@@ -2326,9 +1900,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "5+ Invulnerability Save"
-          ]
+          "rules": "5+ Invulnerability Save"
         }
       ]
     },
@@ -2339,9 +1911,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "5+ Invulnerability Save"
-          ]
+          "rules": "5+ Invulnerability Save"
         }
       ]
     },
@@ -2352,9 +1922,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "Ignores Terrain and Models for Moving, Advancing, Charging, and Falling Back"
-          ]
+          "rules": "Ignores Terrain and Models for Moving, Advancing, Charging, and Falling Back"
         }
       ]
     },
@@ -2365,9 +1933,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "Immune to Perils of the Warp"
-          ]
+          "rules": "Immune to Perils of the Warp"
         }
       ]
     },
@@ -2378,9 +1944,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "Ignores Terrain and Models for Moving, Advancing, Charging, and Falling Back"
-          ]
+          "rules": "Ignores Terrain and Models for Moving, Advancing, Charging, and Falling Back"
         }
       ]
     },
@@ -2391,10 +1955,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "Shroud",
-            "May treat Crew Stun as Weapon Disabled"
-          ]
+          "rules": "Shroud, May treat Crew Stun as Weapon Disabled"
         }
       ]
     },
@@ -2405,9 +1966,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "May treat Crew Stun as Weapon Disabled"
-          ]
+          "rules": "May treat Crew Stun as Weapon Disabled"
         }
       ]
     },
@@ -2418,9 +1977,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "May Pivot immediately after resolving Shooting attacks"
-          ]
+          "rules": "May Pivot immediately after resolving Shooting attacks"
         }
       ]
     },
@@ -2431,9 +1988,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "+1 to Deny the Witch"
-          ]
+          "rules": "+1 to Deny the Witch"
         }
       ]
     },
@@ -2444,9 +1999,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "+1 To Cast"
-          ]
+          "rules": "+1 To Cast"
         }
       ]
     },
@@ -2457,9 +2010,7 @@
         {
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "Assault 1"
-          ]
+          "rules": "Assault 1"
         }
       ],
       "templateType": "Flame"
@@ -2472,11 +2023,7 @@
           "maxRange": 36,
           "strength": "4",
           "ap": "3+",
-          "rules": [
-            "Heavy 2",
-            "Indirect",
-            "3\" Blast"
-          ]
+          "rules": "Heavy 2, Indirect Fire, 3\" Blast"
         }
       ]
     },
@@ -2487,10 +2034,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Auxiliary",
-            "Extra Attack 1"
-          ]
+          "rules": "Auxiliary, Extra Attack 1"
         }
       ]
     },
@@ -2502,9 +2046,7 @@
           "maxRange": 24,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Rapid Fire 1"
-          ]
+          "rules": "Rapid Fire 1"
         }
       ]
     },
@@ -2516,9 +2058,7 @@
           "maxRange": 12,
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Pistol 1 x2"
-          ]
+          "rules": "Pistol 1 x2"
         }
       ]
     },
@@ -2529,9 +2069,7 @@
         {
           "strength": "User",
           "ap": "3+",
-          "rules": [
-            "Poisoned (3+)"
-          ]
+          "rules": "Poisoned (3+)"
         }
       ]
     },
@@ -2542,9 +2080,7 @@
         {
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Extra Attack 1"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -2555,9 +2091,7 @@
         {
           "strength": "User",
           "ap": "-",
-          "rules": [
-            "Extra Attack 1"
-          ]
+          "rules": "Extra Attack 1"
         }
       ]
     },
@@ -2569,10 +2103,7 @@
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
-          "rules": [
-            "Assault 2",
-            "Rending"
-          ]
+          "rules": "Assault 2, Rending"
         }
       ]
     },
@@ -2584,10 +2115,7 @@
           "maxRange": 18,
           "strength": "4",
           "ap": "5+",
-          "rules": [
-            "Pistol 2 x2",
-            "Rending"
-          ]
+          "rules": "Pistol 2 x2, Rending"
         }
       ]
     },
@@ -2599,11 +2127,7 @@
           "maxRange": 24,
           "strength": "6",
           "ap": "5+",
-          "rules": [
-            "Assault 4",
-            "Rending",
-            "Pinning"
-          ]
+          "rules": "Assault 4, Rending, Pinning"
         }
       ]
     },
@@ -2615,11 +2139,7 @@
           "maxRange": 36,
           "strength": "8",
           "ap": "1+",
-          "rules": [
-            "Assault 2",
-            "Melta",
-            "(Monsterbane)"
-          ]
+          "rules": "Assault 2, Melta, (Monsterbane)"
         }
       ]
     },
@@ -2631,10 +2151,7 @@
           "maxRange": 48,
           "strength": "6",
           "ap": "2+",
-          "rules": [
-            "Heavy 5",
-            "Pinning"
-          ]
+          "rules": "Heavy 5, Pinning"
         }
       ]
     },
@@ -2645,10 +2162,7 @@
         {
           "strength": "User",
           "ap": "2+",
-          "rules": [
-            "Poisoned (2+)",
-            "Ignores Feel No Pain"
-          ]
+          "rules": "Poisoned (2+), Ignores Feel No Pain"
         }
       ]
     },
@@ -2659,10 +2173,7 @@
         {
           "strength": "3",
           "ap": "-",
-          "rules": [
-            "Pistol 1 (x2)",
-            "Grav"
-          ]
+          "rules": "Pistol 1 x2, Grav"
         }
       ],
       "templateType": "Flame"
@@ -2675,9 +2186,7 @@
           "maxRange": 240,
           "strength": "-",
           "ap": "-",
-          "rules": [
-            "Target unit may reroll all failed Saves until your next Psychic Phase"
-          ],
+          "rules": "Target unit may reroll all failed Saves until your next Psychic Phase",
           "castValue": 8
         }
       ]
@@ -2690,11 +2199,7 @@
           "maxRange": 36,
           "strength": "3",
           "ap": "6+",
-          "rules": [
-            "Heavy 1",
-            "Sniper (3+)",
-            "Ignores Cover"
-          ]
+          "rules": "Heavy 1, Sniper (3+), Ignores Cover"
         }
       ]
     },
