@@ -308,7 +308,8 @@
         2
       ],
       "Advisor": [
-        0
+        0,
+        null
       ],
       "Troop": [
         2,
@@ -331,14 +332,16 @@
         2
       ],
       "Ded. Transport": [
-        0
+        0,
+        null
       ],
       "Lord of War": [
         0,
         1
       ],
       "Fortification": [
-        0
+        0,
+        null
       ]
     }
   },
@@ -5622,7 +5625,8 @@
           ],
           "label": "Swap Laspistol for",
           "replaces": "laspistol",
-          "weaponListId": "hq-officer-pistol"
+          "weaponListId": "hq-officer-pistol",
+          "upgradeGroup": "Company Commander"
         },
         {
           "id": "ccs-cmd-melee",
@@ -5633,7 +5637,8 @@
           ],
           "label": "Swap Chainsword for",
           "replaces": "chainsword",
-          "weaponListId": "hq-officer-melee"
+          "weaponListId": "hq-officer-melee",
+          "upgradeGroup": "Company Commander"
         },
         {
           "id": "ccs-vet-rifle",
@@ -5656,7 +5661,8 @@
               "label": "Shotgun",
               "pts": 1
             }
-          ]
+          ],
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "ccs-vet-heavy-flamer",
@@ -5685,7 +5691,8 @@
           ],
           "label": "Any Veteran: swap Lasgun for special weapon",
           "replaces": "lasgun",
-          "weaponListId": "infantry-special-weapons"
+          "weaponListId": "infantry-special-weapons",
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "ccs-demochg",
@@ -5694,7 +5701,8 @@
           "pts": 7,
           "grantsWargear": [
             "demolition-charge"
-          ]
+          ],
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "ccs-hwt-swap",
@@ -5705,7 +5713,8 @@
           ],
           "label": "Swap Heavy Flamer for",
           "replaces": "heavy-flamer",
-          "weaponListId": "infantry-heavy-weapons"
+          "weaponListId": "infantry-heavy-weapons",
+          "upgradeGroup": "Veteran Heavy Weapon Team"
         },
         {
           "id": "ccs-vet-melee",
@@ -5714,7 +5723,8 @@
           "pts": 1,
           "grantsWargear": [
             "chainsword"
-          ]
+          ],
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "ccs-vet-sword",
@@ -5723,7 +5733,8 @@
           "pts": 4,
           "grantsWargear": [
             "power-sword"
-          ]
+          ],
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "ccs-vox",
@@ -6940,7 +6951,8 @@
               "label": "Melta Bombs",
               "pts": 5
             }
-          ]
+          ],
+          "upgradeGroup": "Enginseer"
         },
         {
           "id": "eng-servitor-weapon",
@@ -6951,7 +6963,8 @@
           ],
           "label": "Swap Servo Arm for",
           "replaces": "servo-arm",
-          "weaponListId": "servitor-weapons"
+          "weaponListId": "servitor-weapons",
+          "upgradeGroup": "Servitor"
         }
       ]
     },
@@ -7114,7 +7127,8 @@
           ],
           "label": "Swap Laspistol for",
           "replaces": "laspistol",
-          "weaponListId": "ministorum-pistol"
+          "weaponListId": "ministorum-pistol",
+          "upgradeGroup": "Ministorum Priest"
         },
         {
           "id": "mp-plasma-ranged",
@@ -7131,7 +7145,8 @@
               "label": "Plasma Gun",
               "pts": 9
             }
-          ]
+          ],
+          "upgradeGroup": "Ministorum Priest"
         },
         {
           "id": "mp-melee",
@@ -7142,25 +7157,29 @@
           ],
           "label": "Swap Chainsword for",
           "replaces": "chainsword",
-          "weaponListId": "ministorum-melee"
+          "weaponListId": "ministorum-melee",
+          "upgradeGroup": "Ministorum Priest"
         },
         {
           "id": "mp-prayer-protects",
           "type": "namedUpgrade",
           "upgradeId": "prayer-emperor-protects",
-          "pts": 40
+          "pts": 40,
+          "upgradeGroup": "Ministorum Priest"
         },
         {
           "id": "mp-prayer-strength",
           "type": "namedUpgrade",
           "upgradeId": "prayer-emperors-strength",
-          "pts": 45
+          "pts": 45,
+          "upgradeGroup": "Ministorum Priest"
         },
         {
           "id": "mp-prayer-righteous",
           "type": "namedUpgrade",
           "upgradeId": "prayer-righteousness",
-          "pts": 10
+          "pts": 10,
+          "upgradeGroup": "Ministorum Priest"
         }
       ]
     },
@@ -8928,7 +8947,8 @@
           ],
           "label": "Swap Laspistol for",
           "replaces": "laspistol",
-          "weaponListId": "veteran-sergeant-pistol"
+          "weaponListId": "veteran-sergeant-pistol",
+          "upgradeGroup": "Veteran Sergeant"
         },
         {
           "id": "vet-sgt-melee",
@@ -8939,7 +8959,8 @@
           ],
           "label": "Swap Chainsword for",
           "replaces": "chainsword",
-          "weaponListId": "veteran-sergeant-melee"
+          "weaponListId": "veteran-sergeant-melee",
+          "upgradeGroup": "Veteran Sergeant"
         },
         {
           "id": "vet-rifle",
@@ -8962,7 +8983,8 @@
               "label": "Shotgun",
               "pts": 1
             }
-          ]
+          ],
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "vet-hf",
@@ -8980,7 +9002,8 @@
               "label": "Heavy Flamer",
               "pts": 10
             }
-          ]
+          ],
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "vet-special",
@@ -8992,7 +9015,8 @@
           ],
           "label": "Swap Lasgun for special weapon (up to 3)",
           "replaces": "lasgun",
-          "weaponListId": "infantry-special-weapons"
+          "weaponListId": "infantry-special-weapons",
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "vet-demochg",
@@ -9001,7 +9025,8 @@
           "pts": 7,
           "grantsWargear": [
             "demolition-charge"
-          ]
+          ],
+          "upgradeGroup": "Veteran"
         },
         {
           "id": "vet-hwt-swap",
@@ -9012,7 +9037,8 @@
           ],
           "label": "Swap Heavy Flamer for",
           "replaces": "heavy-flamer",
-          "weaponListId": "veteran-heavy-weapons"
+          "weaponListId": "veteran-heavy-weapons",
+          "upgradeGroup": "Veteran Heavy Weapon Team"
         },
         {
           "id": "vet-pistol-add",

@@ -245,7 +245,8 @@
         2
       ],
       "Advisor": [
-        0
+        0,
+        null
       ],
       "Troop": [
         2,
@@ -268,14 +269,16 @@
         2
       ],
       "Ded. Transport": [
-        0
+        0,
+        null
       ],
       "Lord of War": [
         0,
         1
       ],
       "Fortification": [
-        0
+        0,
+        null
       ]
     }
   },
@@ -5659,7 +5662,8 @@
               "label": "Plasma Pistol",
               "pts": 9
             }
-          ]
+          ],
+          "upgradeGroup": "Demagogue"
         },
         {
           "id": "commune-dem-ranged",
@@ -5686,7 +5690,8 @@
               "label": "Meltagun",
               "pts": 24
             }
-          ]
+          ],
+          "upgradeGroup": "Demagogue"
         },
         {
           "id": "commune-dem-melee",
@@ -5738,7 +5743,8 @@
               "label": "Great Weapon",
               "pts": 17
             }
-          ]
+          ],
+          "upgradeGroup": "Demagogue"
         },
         {
           "id": "commune-ib-melee",
@@ -5790,17 +5796,20 @@
               "label": "Great Weapon",
               "pts": 17
             }
-          ]
+          ],
+          "upgradeGroup": "Icon Bearer"
         },
         {
           "id": "commune-spell-1",
           "type": "spellPick",
-          "spellPoolId": "$mark"
+          "spellPoolId": "$mark",
+          "upgradeGroup": "Mindwitch"
         },
         {
           "id": "commune-spell-2",
           "type": "spellPick",
-          "spellPoolId": "$mark"
+          "spellPoolId": "$mark",
+          "upgradeGroup": "Mindwitch"
         },
         {
           "id": "commune-mark",
@@ -8189,7 +8198,8 @@
               "label": "Plasma Pistol",
               "pts": 9
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "bh-melee",
@@ -8374,7 +8384,8 @@
               "label": "Meltagun",
               "pts": 22
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "csm-champ-ranged",
@@ -8416,7 +8427,8 @@
               "label": "Combi Melta",
               "pts": 23
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "csm-champ-melee",
@@ -8473,7 +8485,8 @@
               "label": "Great Weapon",
               "pts": 11
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "csm-marine-ranged",
@@ -8490,7 +8503,8 @@
               "label": "Boltgun",
               "pts": 1
             }
-          ]
+          ],
+          "upgradeGroup": "Marine"
         },
         {
           "id": "csm-marine-melee",
@@ -8537,7 +8551,8 @@
               "label": "Great Weapon",
               "pts": 11
             }
-          ]
+          ],
+          "upgradeGroup": "Marine"
         },
         {
           "id": "csm-special-1",
@@ -8549,7 +8564,8 @@
           ],
           "label": "One Marine — swap Bolt Pistol for Special Weapon",
           "replaces": "bolt-pistol",
-          "weaponListId": "chaos-marine-special"
+          "weaponListId": "chaos-marine-special",
+          "upgradeGroup": "Marine"
         },
         {
           "id": "csm-special-2",
@@ -8607,7 +8623,8 @@
               "label": "Reaper Chaingun",
               "pts": 29
             }
-          ]
+          ],
+          "upgradeGroup": "Marine"
         },
         {
           "id": "csm-mark",
@@ -9512,7 +9529,8 @@
               "label": "Daemonic Weapon",
               "pts": 17
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "term-ranged",
@@ -9544,7 +9562,8 @@
               "label": "Lightning Claw (replaces ranged)",
               "pts": 0
             }
-          ]
+          ],
+          "upgradeGroup": "Terminator"
         },
         {
           "id": "term-melee",
@@ -9586,7 +9605,8 @@
               "label": "Chain Fist",
               "pts": 21
             }
-          ]
+          ],
+          "upgradeGroup": "Terminator"
         },
         {
           "id": "term-heavy-2",
@@ -9609,7 +9629,8 @@
               "label": "Reaper Autocannon",
               "pts": 17
             }
-          ]
+          ],
+          "upgradeGroup": "Terminator"
         },
         {
           "id": "term-stolen-suits",
@@ -10705,7 +10726,8 @@
               "label": "Meltagun",
               "pts": 22
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "bik-champ-melee",
@@ -10757,7 +10779,8 @@
               "label": "Daemonic Weapon",
               "pts": 11
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "bik-marine-melee",
@@ -10784,7 +10807,8 @@
               "label": "Great Weapon",
               "pts": 11
             }
-          ]
+          ],
+          "upgradeGroup": "Marine"
         },
         {
           "id": "bik-special",
@@ -10796,7 +10820,8 @@
           ],
           "label": "Up to two Marines — swap Bolt Pistol for Special Weapon",
           "replaces": "bolt-pistol",
-          "weaponListId": "chaos-marine-special"
+          "weaponListId": "chaos-marine-special",
+          "upgradeGroup": "Marine"
         },
         {
           "id": "bik-mark",
@@ -11003,7 +11028,8 @@
               "label": "Meltagun",
               "pts": 22
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "rap-champ-melee",
@@ -11045,7 +11071,8 @@
               "label": "Daemonic Weapon",
               "pts": 11
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "rap-special",
@@ -11057,7 +11084,8 @@
           ],
           "label": "Up to two Marines — swap Bolt Pistol for Special Weapon",
           "replaces": "bolt-pistol",
-          "weaponListId": "chaos-marine-special"
+          "weaponListId": "chaos-marine-special",
+          "upgradeGroup": "Marine"
         },
         {
           "id": "rap-mark",
@@ -11411,7 +11439,8 @@
               "label": "Boltgun",
               "pts": 1
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "hav-champ-melee",
@@ -11463,7 +11492,8 @@
               "label": "Great Weapon",
               "pts": 11
             }
-          ]
+          ],
+          "upgradeGroup": "Champion"
         },
         {
           "id": "hav-marine-heavy",
@@ -11495,7 +11525,8 @@
               "label": "Reaper Chaingun",
               "pts": 19
             }
-          ]
+          ],
+          "upgradeGroup": "Marine"
         },
         {
           "id": "hav-marine-melee",
@@ -11522,7 +11553,8 @@
               "label": "Great Weapon",
               "pts": 11
             }
-          ]
+          ],
+          "upgradeGroup": "Marine"
         },
         {
           "id": "hav-mark",

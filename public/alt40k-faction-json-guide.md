@@ -58,8 +58,15 @@ Contains:
 - `markSystem` — **Chaos only**. Defines Marks and Pure Blessings.
   Omit entirely for non-Chaos factions.
 - `slotLimits` — the army org chart as `[min, max]` pairs.
-  `null` upper limit = unbounded (app enforces special rules like
-  "3 Advisors per Troop slot" in code).
+  Three slots always use `[0, null]` — the app computes the max dynamically
+  from the current list state (same rule for every faction):
+  - `"Advisor": [0, null]` — max = 3 × number of Troop units in the list
+  - `"Ded. Transport": [0, null]` — max = number of units in the list whose
+    models carry the Infantry, Bulky, or Very Bulky special rule
+  - `"Fortification": [0, null]` — max = 1 per 1000 pts of the battle limit
+    (e.g. 2 in a 2000 pt game, regardless of points spent)
+  All other slots use a fixed `[min, max]` pair (or `[min, null]` if
+  genuinely unbounded).
 
 **Decision rule:** If a faction has no sub-factions (e.g. Tyranids with
 Splinter Fleet as the base option), `subfactions` can be omitted or set

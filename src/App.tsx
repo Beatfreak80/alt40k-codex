@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect, Fragment } from "react";
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
@@ -36,15 +36,16 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 
 .section-head { font-weight: 700; font-size: 11pt; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5800; margin: 16px 0 8px; border-bottom: 2px solid #e8d48a; padding-bottom: 2px; }
 .group-head { font-weight: 700; font-size: 9.5pt; letter-spacing: 0.10em; text-transform: uppercase; color: #333; margin: 0 0 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+.upgrade-group-head { column-span: all; font-weight: 700; font-size: 9.5pt; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5800; margin: 10px 0 0; padding: 3px 0 2px; border-top: 1px solid #e8d48a; border-bottom: 1px solid #e8d48a; background: #fffdf5; }
 .col-block { break-inside: avoid; padding-top: 10px; }
 .col-block-tight { break-inside: avoid; padding-top: 2px; }
 .two-col { columns: 2; column-gap: 18px; column-fill: balance; margin-top: -10px; }
 
-.slot-section-row { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #e8d48a; padding-bottom: 6px; margin: 0 0 20px; position: sticky; top: var(--nav-height, 44px); background: #fff; z-index: 9; }
+.slot-section-row { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #e8d48a; padding-bottom: 6px; margin: 0 0 20px; position: sticky; top: var(--nav-height, 44px); background: #fff; z-index: 11; }
 .slot-section-head { font-size: 22pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7a5800; }
 .slot-section-limits { font-size: 10pt; font-weight: 600; color: #1a1a1a; }
 
-.unit-header { display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 6px; margin-bottom: 10px; position: sticky; top: var(--nav-height, 44px); background: #fff; z-index: 10; padding-top: 8px; margin-top: -8px; box-shadow: 0 3px 8px rgba(255,255,255,1); }
+.unit-header { display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 6px; margin-bottom: 10px; position: sticky; top: calc(var(--nav-height, 44px) + 40px); background: #fff; z-index: 10; padding-top: 8px; margin-top: -8px; box-shadow: 0 3px 8px rgba(255,255,255,1); }
 @media print { .unit-header { position: static; box-shadow: none; padding-top: 0; margin-top: 0; } }
 .unit-name { font-size: 24pt; font-weight: 700; letter-spacing: 0.02em; line-height: 1; color: #1a1a1a; }
 .unit-comp { font-size: 10pt; font-weight: 500; color: #555; margin-top: 3px; }
@@ -249,6 +250,7 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-modal-sub { font-size:9.5pt; color:#888; margin:2px 0 16px; }
 .lb-opt-section { margin:10px 0 0; }
 .lb-opt-section-head { font-size:8.5pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#7a5800; padding-bottom:2px; border-bottom:1px solid #e8d48a; margin-bottom:5px; }
+.lb-opt-group-head { font-size:9.5pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#7a5800; margin:16px 0 4px; padding:3px 0 2px; border-top:1px solid #e8d48a; border-bottom:1px solid #e8d48a; background:#fffdf5; }
 .lb-opt-row { display:flex; align-items:flex-start; justify-content:space-between; padding:5px 0; border-bottom:1px solid #f6f6f6; gap:10px; }
 .lb-opt-row:last-child { border-bottom:none; }
 .lb-opt-label { font-size:10pt; font-weight:600; color:#1a1a1a; flex:1; }
@@ -367,13 +369,15 @@ function resolveRuleNames(ids, coreRules, armyRules) {
   }).join(", ");
 }
 
-function slotLimitStr(limits) {
+function slotLimitStr(limits, slotName?: string) {
   if (!limits) return null;
+  if (slotName === "Advisor") return "0–3 per Troop";
+  if (slotName === "Ded. Transport") return "0–1 per transportable unit";
+  if (slotName === "Fortification") return "0–1 per 1000pts";
   const [min, max] = limits;
-  if (min === 0 && max === null) return "0+";
-  if (min === max) return `${min}`;
-  if (max === null) return `${min}+`;
-  return `${min}–${max}`;
+  if (min === max) return `${min} slot${min !== 1 ? 's' : ''}`;
+  if (max === null) return min > 0 ? `${min}+ slots` : "0+ slots";
+  return `${min}–${max} slots`;
 }
 
 // ── List Builder Utilities ───────────────────────────────────────────────────
@@ -577,13 +581,29 @@ function effectiveSlot(unitId: string, baseSlot: string, subfaction: any): strin
   return r ? (r.toSlot || r.newSlot || baseSlot) : baseSlot;
 }
 
-function buildFOC(entries: any[], faction: any, subfaction: any) {
+const TRANSPORTABLE_RULES = new Set(["infantry", "bulky", "very-bulky"]);
+
+function buildFOC(entries: any[], faction: any, subfaction: any, allUnits: any[] = [], battleLimit: number = 0) {
   const limits = faction.slotLimits || {};
   const counts: Record<string, number> = {};
   for (const e of entries) counts[e.slot] = (counts[e.slot] || 0) + 1;
+
+  const troopCount = counts["Troop"] || 0;
+  const transportableCount = entries.filter(e => {
+    const unit = allUnits.find((u: any) => u.id === e.unitId);
+    if (!unit) return false;
+    return (unit.models || []).some((m: any) =>
+      (m.specialRules || []).some((r: string) => TRANSPORTABLE_RULES.has(r))
+    );
+  }).length;
+  const fortLimit = Math.floor(battleLimit / 1000);
+
   return SLOT_ORDER.filter(s => limits[s]).map(s => {
     const [mn, mx] = limits[s]; const cnt = counts[s] || 0;
-    const mxSafe = (mx === undefined ? null : mx);
+    let mxSafe: number | null = (mx === undefined ? null : mx);
+    if (s === "Advisor") mxSafe = troopCount * 3;
+    if (s === "Ded. Transport") mxSafe = transportableCount;
+    if (s === "Fortification") mxSafe = fortLimit;
     return { slot: s, count: cnt, min: mn, max: mxSafe, ok: cnt >= mn && (mxSafe === null || cnt <= mxSafe) };
   });
 }
@@ -913,6 +933,58 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools,
   const wargearGroups = getWargearGroups();
   const multiGroup = wargearGroups.length > 1;
 
+  // Partition options into ungrouped and grouped (by upgradeGroup)
+  const ungroupedUpgrades = upgradeOpts.filter(o => !o.upgradeGroup);
+  const ungroupedSwaps    = swapOpts.filter(o => !o.upgradeGroup);
+  const ungroupedPerModel = perModelOpts.filter(o => !o.upgradeGroup);
+  const upgradeGroupMap = new Map<string, any[]>();
+  for (const o of [...upgradeOpts, ...swapOpts, ...perModelOpts]) {
+    if (o.upgradeGroup) {
+      if (!upgradeGroupMap.has(o.upgradeGroup)) upgradeGroupMap.set(o.upgradeGroup, []);
+      upgradeGroupMap.get(o.upgradeGroup)!.push(o);
+    }
+  }
+
+  function stripGroupPrefix(label: string, groupName: string): string {
+    const p1 = groupName + ": ";
+    const p2 = groupName + " — ";
+    if (label.startsWith(p1)) return label.slice(p1.length);
+    if (label.startsWith(p2)) return label.slice(p2.length);
+    return label;
+  }
+
+  function renderSwapBlock(o: any, groupName?: string) {
+    const choices = resolveChoices(o).filter(c => c.pts);
+    if (!choices.length) return null;
+    const headLabel = groupName ? stripGroupPrefix(o.label, groupName) : o.label;
+    return (
+      <div key={o.id} className="col-block">
+        <div className="group-head">{headLabel}</div>
+        <div className="pills">
+          {choices.map(c => (
+            <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  function renderPerModelBlock(o: any, groupName?: string) {
+    const choices = (o.choices||[]).filter(c => c.pts);
+    if (!choices.length) return null;
+    const headLabel = groupName ? stripGroupPrefix(o.label, groupName) : o.label;
+    return (
+      <div key={o.id} className="col-block">
+        <div className="group-head">{headLabel} <span style={{fontWeight:400,fontSize:"8.5pt",color:"#888"}}>(per model)</span></div>
+        <div className="pills">
+          {choices.map(c => (
+            <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
@@ -936,17 +1008,17 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools,
             <div className="pills">
               {g.refs.map((ref,j) => {
                 const r = resolveRef(ref);
-                return <WargearPill key={j} weaponId={r.weaponId} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
+                return <WargearPill key={j} weaponId={r.weaponId} label={undefined} cost={undefined} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
               })}
             </div>
           </div>
         ))}
 
-        {upgradeOpts.length > 0 && (
+        {ungroupedUpgrades.length > 0 && (
           <div className="col-block">
             <div className="group-head">Upgrades</div>
             <div className="pills">
-              {upgradeOpts.map(o => {
+              {ungroupedUpgrades.map(o => {
                 const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
                 const grantsWargear = o.grantsWargear || named?.grantsWargear;
                 const grantsRules = o.grantsRules || named?.grantsRules;
@@ -956,33 +1028,32 @@ function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools,
           </div>
         )}
 
-        {swapOpts.map(o => {
-          const choices = resolveChoices(o).filter(c => c.pts);
-          if (!choices.length) return null;
-          return (
-            <div key={o.id} className="col-block">
-              <div className="group-head">{o.label}</div>
-              <div className="pills">
-                {choices.map(c => (
-                  <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
-                ))}
-              </div>
-            </div>
-          );
-        })}
+        {ungroupedSwaps.map(o => renderSwapBlock(o))}
+        {ungroupedPerModel.map(o => renderPerModelBlock(o))}
 
-        {perModelOpts.map(o => {
-          const choices = (o.choices||[]).filter(c => c.pts);
-          if (!choices.length) return null;
+        {[...upgradeGroupMap.entries()].map(([groupName, groupOpts]) => {
+          const gUpgrades   = groupOpts.filter(o => o.type==="toggle" || o.type==="namedUpgrade");
+          const gSwaps      = groupOpts.filter(o => o.type==="weaponSwap");
+          const gPerModel   = groupOpts.filter(o => o.type==="perModelWeapon");
           return (
-            <div key={o.id} className="col-block">
-              <div className="group-head">{o.label} <span style={{fontWeight:400,fontSize:"8.5pt",color:"#888"}}>(per model)</span></div>
-              <div className="pills">
-                {choices.map(c => (
-                  <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
-                ))}
-              </div>
-            </div>
+            <Fragment key={groupName}>
+              <div className="upgrade-group-head">{groupName}</div>
+              {gUpgrades.length > 0 && (
+                <div className="col-block">
+                  <div className="group-head">{groupName} Upgrades</div>
+                  <div className="pills">
+                    {gUpgrades.map(o => {
+                      const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
+                      const grantsWargear = o.grantsWargear || named?.grantsWargear;
+                      const grantsRules = o.grantsRules || named?.grantsRules;
+                      return <UpgradePill key={o.id} label={named?.label||o.label} cost={o.pts} note={named?.note||o.note} grantsWargear={grantsWargear} grantsRules={grantsRules} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
+                    })}
+                  </div>
+                </div>
+              )}
+              {gSwaps.map(o => renderSwapBlock(o, groupName))}
+              {gPerModel.map(o => renderPerModelBlock(o, groupName))}
+            </Fragment>
           );
         })}
 
@@ -1167,6 +1238,95 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
   const perModelOpts  = opts.filter(o => o.type === "perModelWeapon");
   const spellOpts     = opts.filter(o => o.type === "spellPick");
 
+  const ungroupedUpgrades2 = upgradeOpts.filter(o => !o.upgradeGroup);
+  const ungroupedSwaps2    = swapOpts.filter(o => !o.upgradeGroup);
+  const ungroupedPerModel2 = perModelOpts.filter(o => !o.upgradeGroup);
+  const upgradeGroupMap2 = new Map<string, any[]>();
+  for (const o of [...upgradeOpts, ...swapOpts, ...perModelOpts]) {
+    if (o.upgradeGroup) {
+      if (!upgradeGroupMap2.has(o.upgradeGroup)) upgradeGroupMap2.set(o.upgradeGroup, []);
+      upgradeGroupMap2.get(o.upgradeGroup)!.push(o);
+    }
+  }
+
+  function stripGroupPrefix2(label: string, groupName: string): string {
+    const p1 = groupName + ": ";
+    const p2 = groupName + " — ";
+    if (label.startsWith(p1)) return label.slice(p1.length);
+    if (label.startsWith(p2)) return label.slice(p2.length);
+    return label;
+  }
+
+  function renderSwapTable(o: any, groupName?: string) {
+    const choices = resolveChoices(o).filter(c => c.pts);
+    if (!choices.length) return null;
+    const headLabel = groupName ? stripGroupPrefix2(o.label, groupName) : o.label;
+    return (
+      <div key={o.id} className="col-block">
+        <div className="group-head">{headLabel}</div>
+        <table className="wep-table">
+          <thead><tr><th>Weapon</th><th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th><th>Cost</th></tr></thead>
+          <tbody>
+            {choices.map((c, ci) => {
+              const w = wepById(c.weaponId, weapons);
+              if (!w) return <tr key={ci}><td>{c.label||c.weaponId}</td><td></td><td></td><td></td><td></td><td className="rules-col" style={{textAlign:"right",color:"#7a5800",fontWeight:700}}>+{c.pts} pts</td></tr>;
+              const sc = ci%2===0 ? "stripe-a" : "stripe-b";
+              if (w.profiles.length === 1) {
+                const p = w.profiles[0];
+                return (
+                  <tr key={ci} className={sc}>
+                    <td>{c.label||w.name}</td>
+                    <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
+                    <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
+                    <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>+{c.pts} pts</td>
+                  </tr>
+                );
+              }
+              return w.profiles.map((p, pi) => (
+                <tr key={`${ci}-${pi}`} className={`${pi===0?"mp-first":"mp-cont"}${pi===w.profiles.length-1?" mp-last":""} ${sc}`}>
+                  <td>{pi===0?(c.label||w.name):""}</td>
+                  <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
+                  <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
+                  <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>{pi===0?`+${c.pts} pts`:""}</td>
+                </tr>
+              ));
+            })}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
+  function renderPerModelTable(o: any, groupName?: string) {
+    const choices = (o.choices||[]).filter(c => c.pts);
+    if (!choices.length) return null;
+    const headLabel = groupName ? stripGroupPrefix2(o.label, groupName) : o.label;
+    return (
+      <div key={o.id} className="col-block">
+        <div className="group-head">{headLabel} <span style={{fontWeight:400,fontSize:"8.5pt",color:"#888"}}>(per model)</span></div>
+        <table className="wep-table">
+          <thead><tr><th>Weapon</th><th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th><th>Cost</th></tr></thead>
+          <tbody>
+            {choices.map((c, ci) => {
+              const w = wepById(c.weaponId, weapons);
+              const sc = ci%2===0 ? "stripe-a" : "stripe-b";
+              if (!w) return <tr key={ci} className={sc}><td>{c.label||c.weaponId}</td><td></td><td></td><td></td><td></td><td style={{textAlign:"right",color:"#7a5800",fontWeight:700}}>+{c.pts} pts</td></tr>;
+              const p = w.profiles[0];
+              return (
+                <tr key={ci} className={sc}>
+                  <td>{c.label||w.name}</td>
+                  <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
+                  <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
+                  <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>+{c.pts} pts</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
@@ -1191,11 +1351,11 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
           </div>
         ))}
 
-        {upgradeOpts.length > 0 && (
+        {ungroupedUpgrades2.length > 0 && (
           <div className="col-block">
             <div className="group-head">Upgrades</div>
             <ul className="option-list">
-              {upgradeOpts.map(o => {
+              {ungroupedUpgrades2.map(o => {
                 const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
                 const note = named?.note || o.note;
                 return (
@@ -1209,72 +1369,36 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
           </div>
         )}
 
-        {swapOpts.map(o => {
-          const choices = resolveChoices(o).filter(c => c.pts);
-          if (!choices.length) return null;
-          const wepRefs = choices.map(c => ({ weaponId: c.weaponId, _pts: c.pts, _label: c.label }));
-          return (
-            <div key={o.id} className="col-block">
-              <div className="group-head">{o.label}</div>
-              <table className="wep-table">
-                <thead><tr><th>Weapon</th><th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th><th>Cost</th></tr></thead>
-                <tbody>
-                  {choices.map((c, ci) => {
-                    const w = wepById(c.weaponId, weapons);
-                    if (!w) return <tr key={ci}><td>{c.label||c.weaponId}</td><td></td><td></td><td></td><td></td><td className="rules-col" style={{textAlign:"right",color:"#7a5800",fontWeight:700}}>+{c.pts} pts</td></tr>;
-                    const sc = ci%2===0 ? "stripe-a" : "stripe-b";
-                    if (w.profiles.length === 1) {
-                      const p = w.profiles[0];
-                      return (
-                        <tr key={ci} className={sc}>
-                          <td>{c.label||w.name}</td>
-                          <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                          <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
-                          <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>+{c.pts} pts</td>
-                        </tr>
-                      );
-                    }
-                    return w.profiles.map((p, pi) => (
-                      <tr key={`${ci}-${pi}`} className={`${pi===0?"mp-first":"mp-cont"}${pi===w.profiles.length-1?" mp-last":""} ${sc}`}>
-                        <td>{pi===0?(c.label||w.name):""}</td>
-                        <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                        <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
-                        <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>{pi===0?`+${c.pts} pts`:""}</td>
-                      </tr>
-                    ));
-                  })}
-                </tbody>
-              </table>
-            </div>
-          );
-        })}
+        {ungroupedSwaps2.map(o => renderSwapTable(o))}
+        {ungroupedPerModel2.map(o => renderPerModelTable(o))}
 
-        {perModelOpts.map(o => {
-          const choices = (o.choices||[]).filter(c => c.pts);
-          if (!choices.length) return null;
+        {[...upgradeGroupMap2.entries()].map(([groupName, groupOpts]) => {
+          const gUpgrades   = groupOpts.filter(o => o.type==="toggle" || o.type==="namedUpgrade");
+          const gSwaps      = groupOpts.filter(o => o.type==="weaponSwap");
+          const gPerModel   = groupOpts.filter(o => o.type==="perModelWeapon");
           return (
-            <div key={o.id} className="col-block">
-              <div className="group-head">{o.label} <span style={{fontWeight:400,fontSize:"8.5pt",color:"#888"}}>(per model)</span></div>
-              <table className="wep-table">
-                <thead><tr><th>Weapon</th><th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th><th>Cost</th></tr></thead>
-                <tbody>
-                  {choices.map((c, ci) => {
-                    const w = wepById(c.weaponId, weapons);
-                    const sc = ci%2===0 ? "stripe-a" : "stripe-b";
-                    if (!w) return <tr key={ci} className={sc}><td>{c.label||c.weaponId}</td><td></td><td></td><td></td><td></td><td style={{textAlign:"right",color:"#7a5800",fontWeight:700}}>+{c.pts} pts</td></tr>;
-                    const p = w.profiles[0];
-                    return (
-                      <tr key={ci} className={sc}>
-                        <td>{c.label||w.name}</td>
-                        <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-                        <td className="rules-col">{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
-                        <td style={{textAlign:"right",color:"#7a5800",fontWeight:700,whiteSpace:"nowrap"}}>+{c.pts} pts</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+            <Fragment key={groupName}>
+              <div className="upgrade-group-head">{groupName}</div>
+              {gUpgrades.length > 0 && (
+                <div className="col-block">
+                  <div className="group-head">{groupName} Upgrades</div>
+                  <ul className="option-list">
+                    {gUpgrades.map(o => {
+                      const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
+                      const note = named?.note || o.note;
+                      return (
+                        <li key={o.id}>{named?.label||o.label}
+                          <span className="option-cost"> +{o.pts} pts</span>
+                          {note && <span className="upgrade-note">{note}</span>}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+              {gSwaps.map(o => renderSwapTable(o, groupName))}
+              {gPerModel.map(o => renderPerModelTable(o, groupName))}
+            </Fragment>
           );
         })}
 
@@ -1852,195 +1976,206 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         );
       })}
 
-      {/* Upgrades (toggle + namedUpgrade) */}
+      {/* Upgrades / Swaps / Per-model — partitioned by upgradeGroup */}
       {(() => {
-        const topts = opts.filter((o: any) => o.type === "toggle" || o.type === "namedUpgrade");
-        if (!topts.length) return null;
+        const upgradeOpts = opts.filter((o: any) => o.type === "toggle" || o.type === "namedUpgrade");
+        const swapOpts    = opts.filter((o: any) => o.type === "weaponSwap");
+        const pmOpts      = opts.filter((o: any) => o.type === "perModelWeapon");
+
+        const ungroupedUpgrades = upgradeOpts.filter((o: any) => !o.upgradeGroup);
+        const ungroupedSwaps    = swapOpts.filter((o: any) => !o.upgradeGroup);
+        const ungroupedPm       = pmOpts.filter((o: any) => !o.upgradeGroup);
+        const optGroupMap = new Map<string, any[]>();
+        for (const o of [...upgradeOpts, ...swapOpts, ...pmOpts]) {
+          if (o.upgradeGroup) {
+            if (!optGroupMap.has(o.upgradeGroup)) optGroupMap.set(o.upgradeGroup, []);
+            optGroupMap.get(o.upgradeGroup)!.push(o);
+          }
+        }
+
+        function renderUpgradeBlock(topts: any[], sectionLabel: string) {
+          if (!topts.length) return null;
+          return (
+            <div className="lb-opt-section">
+              <div className="lb-opt-section-head">{sectionLabel}</div>
+              {topts.map((o: any) => {
+                const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
+                const label = named?.label || o.label || o.upgradeId;
+                const note = named?.note || o.note;
+                return (
+                  <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+                    <span className="lb-opt-label">
+                      <input type="checkbox" checked={!!options[o.id]}
+                        onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
+                        style={{marginRight:8}}/>
+                      {label}
+                      {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
+                      {note && <span className="lb-opt-note">{note}</span>}
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+          );
+        }
+
+        function renderSwapOpt(o: any) {
+          const choices = resolveChoicesForOpt(o, wL);
+          if (o.scope === "unit" || !isMultiModelSwap(o, unit)) {
+            return (
+              <div key={o.id} className="lb-opt-section">
+                <div className="lb-opt-section-head">{o.label}</div>
+                <div className="lb-opt-row">
+                  <select className="lb-select" style={{flex:1}} value={options[o.id]||""}
+                    onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value}))}>
+                    {choices.map((c: any) => (
+                      <option key={c.weaponId} value={c.weaponId}>
+                        {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            );
+          }
+          if (o.scope === "perModelType") {
+            const modelCount = totalAppliesCount(unit, o, options);
+            const used = poolUsed(unit, o.applies||[], o.replaces, options);
+            const remaining = modelCount - used;
+            const curCounts = (options[o.id] || {}) as Record<string, number>;
+            return (
+              <div key={o.id} className="lb-opt-section">
+                <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                  <span>{o.label}</span>
+                  <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",color:remaining===0?"#4a9a4a":"#888"}}>{used}/{modelCount} assigned</span>
+                </div>
+                {choices.map((c: any) => {
+                  const cur = curCounts[c.weaponId] || 0;
+                  return (
+                    <div key={c.weaponId} className="lb-opt-row">
+                      <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
+                        {wepName(c.weaponId, c)}
+                        {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
+                      </span>
+                      <div className="lb-num-ctrl">
+                        <button className="lb-num-btn" disabled={cur===0}
+                          onClick={() => setOptions((p: any) => { const v: Record<string,number>={...(p[o.id]||{}),[c.weaponId]:Math.max(0,(p[o.id]?.[c.weaponId]||0)-1)}; if(!v[c.weaponId])delete v[c.weaponId]; return {...p,[o.id]:v}; })}>−</button>
+                        <span className="lb-num-val">{cur}</span>
+                        <button className="lb-num-btn" disabled={remaining<=0}
+                          onClick={() => setOptions((p: any) => ({...p,[o.id]:{...(p[o.id]||{}),[c.weaponId]:(p[o.id]?.[c.weaponId]||0)+1}}))}>+</button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          }
+          if (o.scope === "limitedSlot" && (o.slots||1) > 1) {
+            const slotBudget = availableSlots(o, unit, options);
+            const allUsed = poolUsed(unit, o.applies||[], o.replaces, options);
+            const ownCounts = (options[o.id] || {}) as Record<string,number>;
+            const ownUsed = Object.values(ownCounts).reduce((s: number, n: any) => s+n, 0);
+            const remaining = Math.min(slotBudget - ownUsed, totalAppliesCount(unit, o, options) - allUsed);
+            return (
+              <div key={o.id} className="lb-opt-section">
+                <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                  <span>{o.label}</span>
+                  <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",color:ownUsed===slotBudget?"#4a9a4a":"#888"}}>{ownUsed}/{slotBudget} slots used</span>
+                </div>
+                {choices.map((c: any) => {
+                  const cur = ownCounts[c.weaponId] || 0;
+                  return (
+                    <div key={c.weaponId} className="lb-opt-row">
+                      <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
+                        {wepName(c.weaponId, c)}
+                        {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
+                      </span>
+                      <div className="lb-num-ctrl">
+                        <button className="lb-num-btn" disabled={cur===0}
+                          onClick={() => setOptions((p: any) => { const v: Record<string,number>={...(p[o.id]||{}),[c.weaponId]:Math.max(0,(p[o.id]?.[c.weaponId]||0)-1)}; if(!v[c.weaponId])delete v[c.weaponId]; return {...p,[o.id]:v}; })}>−</button>
+                        <span className="lb-num-val">{cur}</span>
+                        <button className="lb-num-btn" disabled={remaining<=0}
+                          onClick={() => setOptions((p: any) => ({...p,[o.id]:{...(p[o.id]||{}),[c.weaponId]:(p[o.id]?.[c.weaponId]||0)+1}}))}>+</button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          }
+          if (o.scope === "limitedSlot") {
+            const modelCount = totalAppliesCount(unit, o, options);
+            const used = poolUsed(unit, o.applies||[], o.replaces, options);
+            const isTaken = options[o.id] != null;
+            const remaining = modelCount - used;
+            const canTake = isTaken || remaining > 0;
+            return (
+              <div key={o.id} className="lb-opt-section">
+                <div className="lb-opt-section-head">{o.label}</div>
+                <div className="lb-opt-row">
+                  <select className="lb-select" value={options[o.id]||""} disabled={!canTake}
+                    style={{opacity:canTake?1:0.45}}
+                    onChange={e => setOptions((p: any) => ({...p,[o.id]:e.target.value||null}))}>
+                    <option value="">None{!canTake?" (pool exhausted)":""}</option>
+                    {choices.map((c: any) => (
+                      <option key={c.weaponId} value={c.weaponId}>
+                        {wepName(c.weaponId, c)}{c.pts?` (+${c.pts} pts)`:""}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            );
+          }
+          return null;
+        }
+
+        function renderPmOpt(o: any) {
+          const choices = o.choices || [];
+          const model = (unit.models||[]).find((m: any) => (o.applies||[]).includes(m.id));
+          const count = model?.minCount ?? 1;
+          return (
+            <div key={o.id} className="lb-opt-section">
+              <div className="lb-opt-section-head">{o.label} — per model</div>
+              {Array.from({length: count}, (_, i) => (
+                <div key={i} className="lb-opt-row">
+                  <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>Model {i+1}</span>
+                  <select className="lb-select"
+                    value={perModelOptions[o.id]?.[String(i)] || choices[0]?.weaponId || ""}
+                    onChange={e => setPerModelOptions((p: any) => ({...p,[o.id]:{...(p[o.id]||{}),[String(i)]:e.target.value}}))}>
+                    {choices.map((c: any) => (
+                      <option key={c.weaponId} value={c.weaponId}>
+                        {wepName(c.weaponId, c)}{c.pts?` (+${c.pts} pts)`:""}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+            </div>
+          );
+        }
+
         return (
-          <div className="lb-opt-section">
-            <div className="lb-opt-section-head">Upgrades</div>
-            {topts.map((o: any) => {
-              const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
-              const label = named?.label || o.label || o.upgradeId;
-              const note = named?.note || o.note;
+          <>
+            {renderUpgradeBlock(ungroupedUpgrades, "Upgrades")}
+            {ungroupedSwaps.map(renderSwapOpt)}
+            {ungroupedPm.map(renderPmOpt)}
+            {[...optGroupMap.entries()].map(([groupName, groupOpts]) => {
+              const gUpgrades = groupOpts.filter((o: any) => o.type==="toggle"||o.type==="namedUpgrade");
+              const gSwaps    = groupOpts.filter((o: any) => o.type==="weaponSwap");
+              const gPm       = groupOpts.filter((o: any) => o.type==="perModelWeapon");
               return (
-                <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
-                  <span className="lb-opt-label">
-                    <input type="checkbox" checked={!!options[o.id]}
-                      onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
-                      style={{marginRight:8}}/>
-                    {label}
-                    {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
-                    {note && <span className="lb-opt-note">{note}</span>}
-                  </span>
-                </label>
+                <Fragment key={groupName}>
+                  <div className="lb-opt-group-head">{groupName}</div>
+                  {renderUpgradeBlock(gUpgrades, groupName + " Upgrades")}
+                  {gSwaps.map(renderSwapOpt)}
+                  {gPm.map(renderPmOpt)}
+                </Fragment>
               );
             })}
-          </div>
+          </>
         );
       })()}
-
-      {/* Weapon Swaps */}
-      {opts.filter((o: any) => o.type === "weaponSwap").map((o: any) => {
-        const choices = resolveChoicesForOpt(o, wL);
-
-        // scope "unit" or perModelType on a single-model type → single dropdown
-        if (o.scope === "unit" || !isMultiModelSwap(o, unit)) {
-          return (
-            <div key={o.id} className="lb-opt-section">
-              <div className="lb-opt-section-head">{o.label}</div>
-              <div className="lb-opt-row">
-                <select className="lb-select" style={{flex:1}} value={options[o.id]||""}
-                  onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value}))}>
-                  {choices.map((c: any) => (
-                    <option key={c.weaponId} value={c.weaponId}>
-                      {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          );
-        }
-
-        // perModelType on multi-model type → count spinners per choice with pool display
-        if (o.scope === "perModelType") {
-          const modelCount = totalAppliesCount(unit, o, options);
-          const used = poolUsed(unit, o.applies||[], o.replaces, options);
-          const remaining = modelCount - used;
-          const curCounts = (options[o.id] || {}) as Record<string, number>;
-          return (
-            <div key={o.id} className="lb-opt-section">
-              <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                <span>{o.label}</span>
-                <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",
-                  color: remaining === 0 ? "#4a9a4a" : "#888"}}>
-                  {used}/{modelCount} assigned
-                </span>
-              </div>
-              {choices.map((c: any) => {
-                const cur = curCounts[c.weaponId] || 0;
-                return (
-                  <div key={c.weaponId} className="lb-opt-row">
-                    <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
-                      {wepName(c.weaponId, c)}
-                      {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
-                    </span>
-                    <div className="lb-num-ctrl">
-                      <button className="lb-num-btn" disabled={cur === 0}
-                        onClick={() => setOptions((p: any) => {
-                          const v: Record<string,number> = {...(p[o.id]||{}), [c.weaponId]: Math.max(0, (p[o.id]?.[c.weaponId]||0)-1)};
-                          if (!v[c.weaponId]) delete v[c.weaponId];
-                          return {...p, [o.id]: v};
-                        })}>−</button>
-                      <span className="lb-num-val">{cur}</span>
-                      <button className="lb-num-btn" disabled={remaining <= 0}
-                        onClick={() => setOptions((p: any) => ({...p, [o.id]: {...(p[o.id]||{}), [c.weaponId]: (p[o.id]?.[c.weaponId]||0)+1}}))}>+</button>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        }
-
-        // limitedSlot with multiple slots → count spinners (same pattern as perModelType multi)
-        if (o.scope === "limitedSlot" && (o.slots||1) > 1) {
-          const slotBudget = availableSlots(o, unit, options);
-          const allUsed = poolUsed(unit, o.applies||[], o.replaces, options);
-          const ownCounts = (options[o.id] || {}) as Record<string,number>;
-          const ownUsed = Object.values(ownCounts).reduce((s: number, n: any) => s+n, 0);
-          const remaining = Math.min(slotBudget - ownUsed, totalAppliesCount(unit, o, options) - allUsed);
-          return (
-            <div key={o.id} className="lb-opt-section">
-              <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                <span>{o.label}</span>
-                <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",
-                  color: ownUsed === slotBudget ? "#4a9a4a" : "#888"}}>
-                  {ownUsed}/{slotBudget} slots used
-                </span>
-              </div>
-              {choices.map((c: any) => {
-                const cur = ownCounts[c.weaponId] || 0;
-                return (
-                  <div key={c.weaponId} className="lb-opt-row">
-                    <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
-                      {wepName(c.weaponId, c)}
-                      {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
-                    </span>
-                    <div className="lb-num-ctrl">
-                      <button className="lb-num-btn" disabled={cur === 0}
-                        onClick={() => setOptions((p: any) => {
-                          const v: Record<string,number> = {...(p[o.id]||{}), [c.weaponId]: Math.max(0,(p[o.id]?.[c.weaponId]||0)-1)};
-                          if (!v[c.weaponId]) delete v[c.weaponId];
-                          return {...p, [o.id]: v};
-                        })}>−</button>
-                      <span className="lb-num-val">{cur}</span>
-                      <button className="lb-num-btn" disabled={remaining <= 0}
-                        onClick={() => setOptions((p: any) => ({...p, [o.id]: {...(p[o.id]||{}), [c.weaponId]: (p[o.id]?.[c.weaponId]||0)+1}}))}>+</button>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        }
-
-        // limitedSlot with one slot → None + choices dropdown
-        if (o.scope === "limitedSlot") {
-          const modelCount = totalAppliesCount(unit, o, options);
-          const used = poolUsed(unit, o.applies||[], o.replaces, options);
-          const isTaken = options[o.id] != null;
-          const remaining = modelCount - used;
-          const canTake = isTaken || remaining > 0;
-          return (
-            <div key={o.id} className="lb-opt-section">
-              <div className="lb-opt-section-head">{o.label}</div>
-              <div className="lb-opt-row">
-                <select className="lb-select" value={options[o.id] || ""}
-                  disabled={!canTake}
-                  style={{opacity: canTake ? 1 : 0.45}}
-                  onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value || null}))}>
-                  <option value="">None{!canTake ? " (pool exhausted)" : ""}</option>
-                  {choices.map((c: any) => (
-                    <option key={c.weaponId} value={c.weaponId}>
-                      {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          );
-        }
-
-        return null;
-      })}
-
-      {/* Per-model weapon choices */}
-      {opts.filter((o: any) => o.type === "perModelWeapon").map((o: any) => {
-        const choices = o.choices || [];
-        const model = (unit.models||[]).find((m: any) => (o.applies||[]).includes(m.id));
-        const count = model?.minCount ?? 1;
-        return (
-          <div key={o.id} className="lb-opt-section">
-            <div className="lb-opt-section-head">{o.label} — per model</div>
-            {Array.from({length: count}, (_, i) => (
-              <div key={i} className="lb-opt-row">
-                <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>Model {i+1}</span>
-                <select className="lb-select"
-                  value={perModelOptions[o.id]?.[String(i)] || choices[0]?.weaponId || ""}
-                  onChange={e => setPerModelOptions((p: any) => ({...p, [o.id]: {...(p[o.id]||{}), [String(i)]: e.target.value}}))}>
-                  {choices.map((c: any) => (
-                    <option key={c.weaponId} value={c.weaponId}>
-                      {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            ))}
-          </div>
-        );
-      })}
 
       {/* Psychic spells */}
       {opts.filter((o: any) => o.type === "spellPick").map((o: any) => {
@@ -2235,7 +2370,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
 
   const activeList = lists.find(l => l.listId === activeListId) || null;
   const activeSubfaction = subfactions.find((s: any) => s.id === activeList?.subfactionId) || null;
-  const foc = activeList ? buildFOC(activeList.entries, faction, activeSubfaction) : [];
+  const foc = activeList ? buildFOC(activeList.entries, faction, activeSubfaction, factionData.units || [], activeList.pointsTarget || 0) : [];
   const ptsUsed = activeList ? calcListTotal(activeList, factionData) : 0;
   const displayNames = activeList ? buildDisplayNames(activeList.entries, factionData.units||[]) : new Map<string,string>();
 
@@ -2962,7 +3097,7 @@ function fR(p){if(p.templateType==="Flame")return"Flame";if(p.templateType==="He
 function wB(id){return d.weapons.find(w=>w.id===id);}
 function rB(id,inl){return(inl||[]).find(r=>r.id===id)||d.armyRules.find(r=>r.id===id)||d.coreRules.find(r=>r.id===id);}
 function rN(ids){if(!ids)return"—";if(typeof ids==="string")return ids||"—";return ids.length?ids.map(id=>{const r=rB(id,[]);return r?r.name:id;}).join(", "):"—";}
-function slStr(lim){if(!lim)return"";const[mn,mx]=lim;if(mn===mx)return mn+" slot"+(mn!==1?"s":"");if(mx===null)return mn+"+ slots";return mn+"–"+mx+" slots";}
+function slStr(lim,slot){if(!lim)return"";if(slot==="Advisor")return"0–3 per Troop";if(slot==="Ded. Transport")return"0–1 per transportable unit";if(slot==="Fortification")return"0–1 per 1000pts";const[mn,mx]=lim;if(mn===mx)return mn+" slot"+(mn!==1?"s":"");if(mx===null)return mn+"+ slots";return mn+"–"+mx+" slots";}
 function synth(u){const o=[];if(u.transport){const t=u.transport;o.push({id:"__transport__",name:"Transport "+t.capacity,shortDesc:["Capacity "+t.capacity,t.firePorts?.length?"Fire Ports: "+t.firePorts.join(", "):"",t.accessPoints?.length?"Access: "+t.accessPoints.join(", "):""].filter(Boolean).join(" · ")});}if(u.psychic){const p=u.psychic;o.push({id:"__psychic__",name:"Psychic Mastery "+p.masteryLevel,shortDesc:"Mastery Level "+p.masteryLevel+(p.denyBonusPerPhase?" · +"+p.denyBonusPerPhase+" Deny per phase":"")});}return o;}
 function wepTbl(refs,showArc,choices){
   const rows=(choices||refs.map(r=>typeof r==="string"?{weaponId:r,arcType:null}:{arcType:null,...r})).map((c,i)=>({w:wB(c.weaponId),pts:c.pts,label:c.label,arc:c.arcType,i})).filter(x=>x.w);
@@ -3020,7 +3155,7 @@ armyRulesHtml+='</div>';
 const visibleSubfactions=(d.faction.subfactions||[]).filter(sf=>!d.selectedSubfaction||sf.id===d.selectedSubfaction);
 if(visibleSubfactions.length){armyRulesHtml+='<div class="section-head">'+(d.faction.subfactionLabel||"Chapter")+' Rules</div>';visibleSubfactions.forEach(sf=>{armyRulesHtml+='<div style="font-size:13pt;font-weight:700;letter-spacing:0.06em;border-bottom:1px solid #ccc;padding-bottom:2px;margin:12px 0 4px">'+sf.name+'</div><div class="two-col">';(sf.rules||[]).forEach(r=>{armyRulesHtml+='<div class="col-block"><div style="font-weight:700;font-size:10pt;margin-bottom:2px">'+(r.name||'')+'</div><div style="font-size:9.5pt;color:#444;line-height:1.4">'+(r.fullDesc||r.shortDesc||'')+'</div></div>';});armyRulesHtml+='</div>';});}
 let body='<div class="faction-header"><div><div class="faction-name">'+(d.faction.name||"Codex")+'</div><div class="faction-subtitle">Alternate 40k Rules · Unofficial Codex</div></div><div style="text-align:right;font-size:8pt;color:#bbb">v'+(d.faction.version||"1.0")+'</div></div>'+armyRulesHtml;
-SO.filter(s=>bySlot[s]).forEach(slot=>{const lim=d.slotLimits[slot];body+='<div class="slot-section-row"><div class="slot-section-head">'+slot+'</div>'+(lim?'<div class="slot-section-limits">'+slStr(lim)+'</div>':'')+'</div>';bySlot[slot].forEach((unit,i)=>{if(i>0)body+='<hr class="unit-divider">';body+=renderUnit(unit);});});
+SO.filter(s=>bySlot[s]).forEach(slot=>{const lim=d.slotLimits[slot];body+='<div class="slot-section-row"><div class="slot-section-head">'+slot+'</div>'+(lim?'<div class="slot-section-limits">'+slStr(lim,slot)+'</div>':'')+'</div>';bySlot[slot].forEach((unit,i)=>{if(i>0)body+='<hr class="unit-divider">';body+=renderUnit(unit);});});
 document.body.innerHTML+=body;`;
 
     const factionName = (faction.name || "Codex").replace(/[<>"]/g, '');
@@ -3107,7 +3242,7 @@ document.body.innerHTML+=body;`;
               <div className="slot-section-row">
                 <div className="slot-section-head">{slot}</div>
                 {slotLimits[slot] && (
-                  <div className="slot-section-limits">{slotLimitStr(slotLimits[slot])} slots</div>
+                  <div className="slot-section-limits">{slotLimitStr(slotLimits[slot], slot)}</div>
                 )}
               </div>
               {unitsBySlot[slot].map((unit,i)=>(

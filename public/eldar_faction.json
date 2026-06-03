@@ -134,7 +134,7 @@
       ],
       "Advisor": [
         0,
-        3
+        null
       ],
       "Troop": [
         2,
@@ -157,7 +157,8 @@
         2
       ],
       "Ded. Transport": [
-        0
+        0,
+        null
       ],
       "Lord of War": [
         0,
@@ -165,7 +166,7 @@
       ],
       "Fortification": [
         0,
-        1
+        null
       ]
     }
   },
@@ -2536,7 +2537,8 @@
           ],
           "label": "Swap one Shuriken Pistol for",
           "replaces": "shuriken-pistol",
-          "weaponListId": "autarch-ranged"
+          "weaponListId": "autarch-ranged",
+          "upgradeGroup": "Defender"
         },
         {
           "id": "pistol-swap",
@@ -3109,7 +3111,8 @@
           ],
           "label": "Swap Shuriken Pistol for",
           "replaces": "shuriken-pistol",
-          "weaponListId": "autarch-ranged"
+          "weaponListId": "autarch-ranged",
+          "upgradeGroup": "Defender"
         },
         {
           "id": "melee-swap",
@@ -3684,7 +3687,8 @@
               "label": "Avenger Shuriken Catapult",
               "pts": 2
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         },
         {
           "id": "exarch-melee-swap",
@@ -3701,7 +3705,8 @@
               "label": "Diresword",
               "pts": 5
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         },
         {
           "id": "simmerfield",
@@ -3803,7 +3808,8 @@
               "label": "Dual Laspistols",
               "pts": 1
             }
-          ]
+          ],
+          "upgradeGroup": "Defender"
         },
         {
           "id": "platform-weapon-swap",
@@ -3821,7 +3827,8 @@
             "scatter-laser": 5,
             "plasma-missile-launcher": 10,
             "bright-lance": 18
-          }
+          },
+          "upgradeGroup": "Platform"
         }
       ]
     },
@@ -4103,7 +4110,8 @@
               "label": "Fusion Gun",
               "pts": 24
             }
-          ]
+          ],
+          "upgradeGroup": "Guardian"
         }
       ]
     },
@@ -4204,7 +4212,8 @@
               "label": "Fire Pike",
               "pts": 20
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         },
         {
           "id": "exarch-melee",
@@ -4220,7 +4229,8 @@
               "label": "Dragon Axe",
               "pts": 19
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         }
       ]
     },
@@ -4432,7 +4442,8 @@
               "label": "Triskele",
               "pts": 8
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         }
       ]
     },
@@ -4593,7 +4604,8 @@
               "label": "Prism Blaster",
               "pts": 21
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         }
       ],
       "inlineRules": [
@@ -4710,7 +4722,8 @@
               "label": "Biting Blade",
               "pts": 6
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         }
       ]
     },
@@ -4838,7 +4851,8 @@
               "label": "Star Lance",
               "pts": 37
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         }
       ]
     },
@@ -5315,7 +5329,8 @@
               "label": "Hawk's Talon",
               "pts": 6
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         },
         {
           "id": "exarch-melee-swap",
@@ -5337,7 +5352,8 @@
               "label": "Power Maul",
               "pts": 2
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         }
       ],
       "inlineRules": [
@@ -5444,7 +5460,8 @@
               "label": "Spinneret Rifle",
               "pts": 15
             }
-          ]
+          ],
+          "upgradeGroup": "Exarch"
         },
         {
           "id": "exarch-pistol",

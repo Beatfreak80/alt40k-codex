@@ -361,6 +361,7 @@
         "isUniqueMaker":        { "type": "boolean" },
         "psychicModifiers":     {},
         "doctrineGroup":        { "type": "string" },
+        "upgradeGroup":         { "type": "string" },
         "note":                 { "type": "string" },
         "upgradeId":            { "type": "string" },
         "spellPoolId":          { "type": "string" },

@@ -2971,7 +2971,8 @@
           "id": "bb-boss-nob",
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
-          "pts": 14
+          "pts": 14,
+          "upgradeGroup": "Spanner"
         }
       ]
     },
@@ -3352,7 +3353,8 @@
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
           "pts": 8,
-          "note": "Applies to Boss Boy."
+          "note": "Applies to Boss Boy.",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "ob-ard-boyz",
@@ -3390,7 +3392,8 @@
               "pts": 24
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "ob-boss-melee",
@@ -3401,7 +3404,8 @@
           "label": "Swap Boss Boy Choppa for",
           "replaces": "choppa",
           "weaponListId": "boyz-melee",
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "ob-boy-melee",
@@ -3417,7 +3421,8 @@
               "pts": 1
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Ork Boy"
         },
         {
           "id": "ob-special",
@@ -3448,7 +3453,8 @@
               "pts": 7
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Ork Boy"
         }
       ]
     },
@@ -3590,14 +3596,16 @@
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
           "pts": 8,
-          "note": "Applies to Spanner."
+          "note": "Applies to Spanner.",
+          "upgradeGroup": "Spanner"
         },
         {
           "id": "bb-grot-oiler",
           "type": "toggle",
           "label": "Grot Oiler",
           "pts": 2,
-          "note": "Applies to Spanner. One Use Only. May reroll the Repair Die."
+          "note": "Applies to Spanner. One Use Only. May reroll the Repair Die.",
+          "upgradeGroup": "Spanner"
         },
         {
           "id": "bb-ard-boyz",
@@ -3635,7 +3643,8 @@
               "pts": 24
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Spanner"
         },
         {
           "id": "bb-spanner-melee",
@@ -3646,7 +3655,8 @@
           "label": "Swap Spanner Choppa for",
           "replaces": "choppa",
           "weaponListId": "boyz-melee",
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Spanner"
         },
         {
           "id": "bb-boy-burna",
@@ -3662,7 +3672,8 @@
               "pts": 0
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Burna Boy"
         }
       ]
     },
@@ -3759,7 +3770,8 @@
           "id": "ko-boss-nob",
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
-          "pts": 8
+          "pts": 8,
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "ko-ard-boyz",
@@ -3797,7 +3809,8 @@
               "pts": 24
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "ko-boss-melee",
@@ -3808,7 +3821,8 @@
           "label": "Swap Boss Choppa for",
           "replaces": "choppa",
           "weaponListId": "boyz-melee",
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "ko-special",
@@ -3839,7 +3853,8 @@
               "pts": 7
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Kommando"
         }
       ]
     },
@@ -4117,7 +4132,8 @@
           "id": "tb-boss-nob",
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
-          "pts": 8
+          "pts": 8,
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "tb-ard-boyz",
@@ -4134,7 +4150,8 @@
           "label": "Swap Boss Choppa for",
           "replaces": "choppa",
           "weaponListId": "boyz-melee",
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "tb-special",
@@ -4161,7 +4178,8 @@
               "pts": 7
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Tank Busta"
         }
       ]
     },
@@ -4825,7 +4843,8 @@
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
           "pts": 8,
-          "note": "Applies to Boss Boy."
+          "note": "Applies to Boss Boy.",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "dk-weapon",
@@ -4880,7 +4899,8 @@
               "pts": 11
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "dk-bigbomm",
@@ -5046,7 +5066,8 @@
           "applies": [
             "nob-warbiker-boss"
           ],
-          "note": "W+2, gains Slugga."
+          "note": "W+2, gains Slugga.",
+          "upgradeGroup": "Boss Nob"
         },
         {
           "id": "nwb-boss-ranged",
@@ -5078,7 +5099,8 @@
               "pts": 15
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Nob"
         },
         {
           "id": "nwb-pistol",
@@ -5285,7 +5307,8 @@
           "id": "sb-boss-nob",
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
-          "pts": 8
+          "pts": 8,
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "sb-ard-boyz",
@@ -5318,7 +5341,8 @@
               "pts": 15
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "sb-boss-melee",
@@ -5329,7 +5353,8 @@
           "label": "Swap Boss Choppa for",
           "replaces": "choppa",
           "weaponListId": "boyz-melee",
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Boy"
         },
         {
           "id": "sb-special",
@@ -5360,7 +5385,8 @@
               "pts": 7
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Storm Boy"
         }
       ]
     },
@@ -5459,7 +5485,8 @@
           "id": "wb3-boss-nob",
           "type": "namedUpgrade",
           "upgradeId": "boss-nob",
-          "pts": 8
+          "pts": 8,
+          "upgradeGroup": "Boss Nob"
         },
         {
           "id": "wb3-ard-boyz",
@@ -6269,7 +6296,8 @@
               "arcType": "Hull"
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Grot Kommanda"
         },
         {
           "id": "gt-turret",
@@ -6526,14 +6554,16 @@
               "pts": 11
             }
           ],
-          "scope": "perModelType"
+          "scope": "perModelType",
+          "upgradeGroup": "Boss Nob"
         },
         {
           "id": "lo-grot-oiler",
           "type": "toggle",
           "label": "Grot Oiler (+2 pts)",
           "pts": 2,
-          "note": "Applies to Boss Nob."
+          "note": "Applies to Boss Nob.",
+          "upgradeGroup": "Boss Nob"
         }
       ]
     },

@@ -12,7 +12,7 @@
       ],
       "Advisor": [
         0,
-        3
+        null
       ],
       "Troop": [
         2,
@@ -35,14 +35,16 @@
         2
       ],
       "Ded. Transport": [
-        0
+        0,
+        null
       ],
       "Lord of War": [
         0,
         1
       ],
       "Fortification": [
-        0
+        0,
+        null
       ]
     },
     "subfactions": [

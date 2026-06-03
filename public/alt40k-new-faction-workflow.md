@@ -310,7 +310,10 @@ Storage and display:
 - Set `subfactionLabel` (e.g. `"Dynasty"`, `"Craft World"`, `"Chapter"`)
 - Write each subfaction's `rules[]` with `id`, `name`, `shortDesc`, `fullDesc`
 - The same rule ID can appear in multiple subfactions (each is scoped to its subfaction)
-- Set `slotLimits` — use `null` for unbounded upper limit
+- Set `slotLimits` — three slots are always `[0, null]` (dynamic, same for every faction):
+  `"Advisor"`, `"Ded. Transport"`, `"Fortification"`. The app computes their
+  max at runtime (3 per Troop / 1 per transportable unit / 1 per 1000 pts).
+  All other slots use a fixed `[min, max]` pair.
 
 ### 2. armyRules
 - Faction-specific rules only — rules already in `core-rules.json` go there by ID
