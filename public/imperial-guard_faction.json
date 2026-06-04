@@ -20,7 +20,6 @@
           {
             "id": "pdf-standard",
             "name": "Standard Issue",
-            "shortDesc": "No changes to datasheets.",
             "fullDesc": "This regiment uses the rules for models stated exactly as they are in this Codex."
           }
         ]
@@ -32,13 +31,11 @@
           {
             "id": "mechanized-infantry",
             "name": "Mechanized Infantry",
-            "shortDesc": "Infantry gain 5+ Cover Save the Turn they Disembark from a Transport (not Forced Disembark).",
             "fullDesc": "Infantry units gain a 5+ Cover Save the Turn they Disembark from a Transport. Forced Disembark does not provide this Save."
           },
           {
             "id": "hive-city-inhabitants-asl",
             "name": "Hive City Inhabitants",
-            "shortDesc": "All Infantry suffer –1 Cover Save unless from a Building or Fortified Terrain; Mechanized Infantry ignores this.",
             "fullDesc": "All Infantry suffer –1 Cover Save if it is not provided by a building, fortified terrain piece, or Mechanized Infantry."
           }
         ]
@@ -50,13 +47,11 @@
           {
             "id": "imperial-guards-finest",
             "name": "Imperial Guard's Finest",
-            "shortDesc": "All models may reroll 1s To Hit with ranged weapons.",
             "fullDesc": "All models may reroll 1s To Hit with ranged weapons."
           },
           {
             "id": "no-place-cadian",
             "name": "No Place to Call Home",
-            "shortDesc": "Each model counts as half a model for Contesting Objectives.",
             "fullDesc": "Each model only counts as half a model for the purpose of Contesting Objectives."
           }
         ]
@@ -68,25 +63,21 @@
           {
             "id": "carbines",
             "name": "Carbines",
-            "shortDesc": "All Lasguns and Hotshot Lasguns are R–6 (reduced range by 6\").",
             "fullDesc": "All Lasguns and Hotshot Lasguns are R–6."
           },
           {
             "id": "catachan-fangs",
             "name": "Catachan Fangs",
-            "shortDesc": "All Infantry and Monstrous Infantry gain a melee weapon: S+1, AP–, no rules.",
             "fullDesc": "All Infantry and Monstrous Infantry gain the following weapon: Catachan Fang, Range: Melee, S: +1, AP: –, Rules: None."
           },
           {
             "id": "flak-vests",
             "name": "Flak Vests",
-            "shortDesc": "All Infantry and Monstrous Infantry Sv+1 (1 worse), except unique characters.",
             "fullDesc": "All Infantry and Monstrous Infantry Datasheets are Sv+1, resulting in 1 worse Armour Save except unique characters."
           },
           {
             "id": "jungle-grit",
             "name": "Jungle Grit",
-            "shortDesc": "All T3 Infantry gain T+1.",
             "fullDesc": "All T3 Infantry gain T+1. Models with Bold already have this baked into their profile."
           }
         ]
@@ -98,19 +89,16 @@
           {
             "id": "trenching-tools",
             "name": "Trenching Tools",
-            "shortDesc": "All Infantry and Monstrous Infantry gain a melee weapon: User, AP–, Extra Attack 1.",
             "fullDesc": "All Infantry and Monstrous Infantry gain the following Weapon Profile: Range Melee, S User, AP –, Rules Extra Attack 1."
           },
           {
             "id": "command-dependent-dk",
             "name": "Command Dependent",
-            "shortDesc": "All models gain Stubborn but may only Move, Advance, or Charge when a HQ or Advisor Slot is within 12\".",
             "fullDesc": "All models gain Stubborn, but may only perform the following actions when a HQ or Advisor Slot is within 12\": Move, Advance, Charge."
           },
           {
             "id": "lucius-pattern",
             "name": "Lucius Pattern",
-            "shortDesc": "All Lasguns use profile: 24\", S4, AP–, Assault 1.",
             "fullDesc": "All Lasguns use the following Weapon Profile instead of the standard Lasgun profile: Range 24, S 4, AP –, Rules Assault 1."
           }
         ]
@@ -122,31 +110,26 @@
           {
             "id": "airbourne-specialists",
             "name": "Airbourne Specialists",
-            "shortDesc": "All non-Vehicle models gain Deepstrike; if already have it, reroll Deepstrike scatter dice.",
             "fullDesc": "All non-Vehicle models gain the Deepstrike rule. If the model already has Deepstrike, it may reroll Deepstrike scatter dice."
           },
           {
             "id": "paratrooper-loadout",
             "name": "Paratrooper Loadout",
-            "shortDesc": "Each model counts as half a model for contesting objectives.",
             "fullDesc": "Each model only counts as half a model for contesting objectives."
           },
           {
             "id": "skyborne-division",
             "name": "Skyborne Division",
-            "shortDesc": "Every model with Deepstrike or Outflank must start in Reserve.",
             "fullDesc": "Every model with Deepstrike or Outflank must be held in reserve during army deployment."
           },
           {
             "id": "air-superiority",
             "name": "Air Superiority",
-            "shortDesc": "Lose all Heavy Support slots; gain +1 Flyer slot. No non-High-Altitude Lords of War.",
             "fullDesc": "Lose all Heavy Support Slots and gain +1 Flyer Slot. They may not take any Lord of War that does not have High Altitude."
           },
           {
             "id": "accatran-lasgun",
             "name": "Accatran Pattern Lasgun",
-            "shortDesc": "All Lasguns replaced with: 12\", S3, AP–, Assault 2.",
             "fullDesc": "All Lasguns are replaced with the following Weapon Profile: Range 12, S 3, AP –, Rules Assault 2."
           }
         ]
@@ -158,25 +141,21 @@
           {
             "id": "hive-city-inhabitants-mig",
             "name": "Hive City Inhabitants",
-            "shortDesc": "All models suffer –1 Cover Save unless from a Building or Fortified Terrain.",
             "fullDesc": "All models suffer –1 Cover Save unless it is being provided by a Building or Fortified Terrain Piece."
           },
           {
             "id": "command-dependent-mig",
             "name": "Command Dependent",
-            "shortDesc": "All models gain Stubborn but may only Move, Advance, or Charge when a HQ or Advisor Slot is within 12\".",
             "fullDesc": "All models gain Stubborn, but may only perform the following actions when a HQ or Advisor Slot is within 12\": Move, Advance, Charge."
           },
           {
             "id": "crowd-control",
             "name": "Crowd Control",
-            "shortDesc": "All models Overwatch on 5+. Pistols Overwatch on 4+.",
             "fullDesc": "All models Overwatch on a 5+. Pistols Overwatch on a 4+. Other instances of Snap Shots are still performed on a 6+."
           },
           {
             "id": "triplex-lasgun",
             "name": "Triplex Pattern Lasgun",
-            "shortDesc": "All Lasguns gain additional profile: 12\", S5, AP–, Heavy 1, Gets Hot!",
             "fullDesc": "All Lasguns have the following option Weapon Profile in addition to the standard Lasgun profile: Range 12, S 5, AP –, Rules Heavy 1, Gets Hot!"
           }
         ]
@@ -188,13 +167,11 @@
           {
             "id": "tally-ho",
             "name": "Tally Ho!",
-            "shortDesc": "All models may reroll failed Charge rolls.",
             "fullDesc": "All models may reroll failed Charge rolls."
           },
           {
             "id": "command-dependent-prg",
             "name": "Command Dependent",
-            "shortDesc": "All models gain Stubborn but may only Move, Advance, or Charge when a HQ or Advisor Slot is within 12\".",
             "fullDesc": "All models gain Stubborn, but may only perform the following actions when a HQ or Advisor Slot is within 12\": Move, Advance, Charge."
           }
         ]
@@ -206,19 +183,16 @@
           {
             "id": "like-the-wind",
             "name": "Like the Wind",
-            "shortDesc": "All non-vehicle models gain Stealth; if already Stealth they gain Shroud.",
             "fullDesc": "All non-vehicle models gain Stealth. Models already with Stealth gain Shroud."
           },
           {
             "id": "desert-specialists",
             "name": "Desert Specialists",
-            "shortDesc": "All non-vehicle Sv stats become –.",
             "fullDesc": "All non-vehicle Sv Stats are Sv –."
           },
           {
             "id": "strike-and-fade",
             "name": "Strike and Fade",
-            "shortDesc": "All models automatically lose Combat Resolution.",
             "fullDesc": "All models automatically lose Combat Resolution."
           }
         ]
@@ -230,19 +204,16 @@
           {
             "id": "camo-cloaks",
             "name": "Camo Cloaks",
-            "shortDesc": "All Infantry models gain Stealth (not Monstrous Infantry).",
             "fullDesc": "All Infantry models gain Stealth. This does not affect Monstrous Infantry."
           },
           {
             "id": "stealth-armour",
             "name": "Stealth Armour",
-            "shortDesc": "All Infantry Sv+1 (1 worse). Does not affect Monstrous Infantry or unique characters.",
             "fullDesc": "All Infantry Datasheets are Sv+1, resulting in 1 worse Armour Save. This does not affect Monstrous Infantry or unique characters."
           },
           {
             "id": "no-place-tanith",
             "name": "No Place to Call Home",
-            "shortDesc": "Each model counts as half a model for contesting objectives.",
             "fullDesc": "Each model only counts as half a model for contesting objectives."
           }
         ]
@@ -254,19 +225,16 @@
           {
             "id": "command-dependent-val",
             "name": "Command Dependent",
-            "shortDesc": "All models gain Stubborn but may only Move, Advance, or Charge when a HQ or Advisor Slot is within 12\".",
             "fullDesc": "All models gain Stubborn, but may only perform the following actions when a HQ or Advisor Slot is within 12\": Move, Advance, Charge."
           },
           {
             "id": "poorly-equipped",
             "name": "Poorly Equipped",
-            "shortDesc": "All Infantry and Monstrous Infantry Sv stats are –. Does not affect unique characters.",
             "fullDesc": "All Infantry and Monstrous Infantry models Sv Stats are Sv –. This does not affect unique characters."
           },
           {
             "id": "acceptable-losses",
             "name": "Acceptable Losses",
-            "shortDesc": "Any unit may test Ld to shoot into close combat with friendly models. Natural 1s To Hit automatically hit a friendly unit.",
             "fullDesc": "Any unit may choose to test Ld to shoot into close combat with friendly models involved. If passed, they may place Flame and Blast templates over friendly models this turn. All natural rolls of a 1 to hit automatically hit a friendly unit at random involved in the melee. Templates Hit all models underneath them like normal."
           }
         ]
@@ -278,25 +246,21 @@
           {
             "id": "family-heirlooms",
             "name": "Family Heirlooms",
-            "shortDesc": "All Infantry Sv stats are Sv 4+.",
             "fullDesc": "All Infantry Sv Stats are Sv 4+."
           },
           {
             "id": "sins-of-forefathers",
             "name": "Sins of the Forefathers",
-            "shortDesc": "All models suffer –1 Ld.",
             "fullDesc": "All models suffer –1 Ld."
           },
           {
             "id": "kantrael-lasguns",
             "name": "Kantrael Pattern Lasguns",
-            "shortDesc": "Replace all Lasgun profiles with: 30\", S3, AP–, Heavy 2.",
             "fullDesc": "Replace all Lasguns profiles with the following Weapon Profile: Range 30, S 3, AP –, Rules Heavy 2."
           },
           {
             "id": "life-of-servitude",
             "name": "A Life of Servitude",
-            "shortDesc": "Each model counts as half a model for contesting objectives.",
             "fullDesc": "Each model only counts as half a model for contesting objectives."
           }
         ]
@@ -349,211 +313,176 @@
     {
       "id": "orders-system",
       "name": "Orders",
-      "shortDesc": "Officers issue Orders at start of Shooting Phase. Roll 2d6 vs. target unit's Ld; equal or under = order takes effect. Vox Casters allow rerolls.",
       "fullDesc": "Orders are issued as True Auras at the start of the Shooting Phase in its own subphase. Nominate one eligible unit type within 12\". Roll 2d6 and compare to the highest Ld model in each unit of that type in range; if equal or under, the unit receives the order. If Vox Casters are present in both the issuing unit and the target unit, reroll for units that failed. No unit may benefit from the same order more than once per phase. All Vehicles and Monsters in this Codex are considered equipped with Vox Casters."
     },
     {
       "id": "infantry-orders-1",
       "name": "Infantry Orders 1",
-      "shortDesc": "May issue 1 Infantry Order per Shooting Phase to Command Squads, Veterans, Guardsmen, Special Weapon, Heavy Weapon, Conscripts, or Stormtroopers within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue 1 Infantry Order to eligible units (Command Squads of all variants, Veterans, Guardsman Squads, Special Weapon Squads, Heavy Weapon Squads, Conscripts, or Stormtroopers) within 12\". See the Orders army rule for the roll mechanic. Available orders: 1) First Rank Fire! Second Rank Fire! — models gain 1 extra shot with their Lasgun or Hellgun (not counted as Rapid Fire). 2) Bring it Down! — reroll 1s To Wound or Penetrate this Shooting Phase. 3) Get Back in the Fight! — unit rallies if fleeing or removes Fear (not both). 4) Move! Move! Move! — unit gains Fleet for this Shooting Phase. 5) Incoming! — unit becomes Pinned at end of Shooting Phase with +1 to Cover Save. 6) Repel the Line! — unit may fire as if not engaged in melee, targeting only the unit engaged with, without overlapping templates on friendly units."
     },
     {
       "id": "infantry-orders-2",
       "name": "Infantry Orders 2",
-      "shortDesc": "May issue 2 Infantry Orders per Shooting Phase to eligible infantry units within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue up to 2 Infantry Orders to eligible units (Command Squads of all variants, Veterans, Guardsman Squads, Special Weapon Squads, Heavy Weapon Squads, Conscripts, or Stormtroopers) within 12\". The same order may be issued multiple times as long as each time the nominated unit type differs. See Infantry Orders 1 for the full order list and the Orders army rule for the roll mechanic."
     },
     {
       "id": "infantry-orders-3",
       "name": "Infantry Orders 3",
-      "shortDesc": "May issue 3 Infantry Orders per Shooting Phase to eligible infantry units within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue up to 3 Infantry Orders to eligible units (Command Squads of all variants, Veterans, Guardsman Squads, Special Weapon Squads, Heavy Weapon Squads, Conscripts, or Stormtroopers) within 12\". The same order may be issued multiple times as long as each time the nominated unit type differs. See Infantry Orders 1 for the full order list and the Orders army rule for the roll mechanic."
     },
     {
       "id": "infantry-orders-4",
       "name": "Infantry Orders 4",
-      "shortDesc": "May issue 4 Infantry Orders per Shooting Phase to eligible infantry units within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue up to 4 Infantry Orders to eligible units (Command Squads of all variants, Veterans, Guardsman Squads, Special Weapon Squads, Heavy Weapon Squads, Conscripts, or Stormtroopers) within 12\". The same order may be issued multiple times as long as each time the nominated unit type differs. See Infantry Orders 1 for the full order list and the Orders army rule for the roll mechanic."
     },
     {
       "id": "tank-orders-1",
       "name": "Tank Orders 1",
-      "shortDesc": "May issue 1 Tank Order per Shooting Phase to any vehicle with the Tank keyword within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue 1 Tank Order to any vehicle with the Tank keyword within 12\". See the Orders army rule for the roll mechanic. Available orders: 1) Bring it Down! — reroll 1s To Wound or Penetrate this Shooting Phase. 2) Get Back in the Fight! — unit rallies if fleeing or removes Fear (not both). 3) Shoot and Scoot! — unit may move d6\" at end of Shooting Phase. 4) Incoming! — unit becomes Pinned at end of Shooting Phase with +1 to Cover Save. 5) Grind them to Dust! — unit may reroll 1s To Hit in the upcoming Assault Phase this Round. 6) Scratch my Back! — unit may fire S5 or less weapons into a melee with a friendly Tank but no friendly Infantry or Monstrous Infantry; every roll of a 1 To Hit hits your own unit."
     },
     {
       "id": "tank-orders-2",
       "name": "Tank Orders 2",
-      "shortDesc": "May issue 2 Tank Orders per Shooting Phase to any vehicle with the Tank keyword within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue up to 2 Tank Orders to any vehicle with the Tank keyword within 12\". See Tank Orders 1 for the full order list and the Orders army rule for the roll mechanic."
     },
     {
       "id": "tank-orders-3",
       "name": "Tank Orders 3",
-      "shortDesc": "May issue 3 Tank Orders per Shooting Phase to any vehicle with the Tank keyword within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue up to 3 Tank Orders to any vehicle with the Tank keyword within 12\". See Tank Orders 1 for the full order list and the Orders army rule for the roll mechanic."
     },
     {
       "id": "wing-orders-1",
       "name": "Wing Orders 1",
-      "shortDesc": "May issue 1 Wing Order per Shooting Phase to any vehicle with the High Altitude rule within 12\".",
       "fullDesc": "At the start of the Shooting Phase, this model may issue 1 Wing Order to any vehicle with the High Altitude rule within 12\". See the Orders army rule for the roll mechanic. Available orders: 1) Bring it Down! — reroll 1s To Wound or Penetrate this Shooting Phase. 2) Strafing Run! — ignore AA rule on weapons and datasheet this Shooting Phase. 3) Scramble! — gain AA on all weapons; Blast weapons roll the same number of Snap Shot dice but hit on normal BS with the +1 from AA. 4) Barrel Roll! — gain a 5+ Invulnerability Save or reroll 1s on Invulnerability Saves until your next Command Phase. 5) Immelmann! — turn 180 degrees exactly; must reroll all 6s on Invulnerability Saves until your next Command Phase. 6) High Side Guns Pass! — may fire from the position before moving this turn."
     },
     {
       "id": "grinding-advance",
       "name": "Grinding Advance",
-      "shortDesc": "Does not count as moving when firing Ordnance weapons.",
       "fullDesc": "This model does not count as having moved when firing Ordnance weapons."
     },
     {
       "id": "aura-of-discipline",
       "name": "Aura of Discipline",
-      "shortDesc": "6\" Aura: target unit may use this model's Ld and gains Stubborn.",
       "fullDesc": "6\" Aura: this model and target unit may use this model's Ld and gains the Stubborn rule."
     },
     {
       "id": "summary-execution",
       "name": "Summary Execution",
-      "shortDesc": "Once per Round: when a friendly Infantry unit fails a Ld test within 6\", MUST remove the highest-Ld model. That unit automatically passes.",
       "fullDesc": "Once per Round, when a friendly Infantry unit fails a Ld test within 6\", you MUST remove the highest Ld model from that unit from the game. Ignore Commissars and Lord Commissars when determining the highest Ld model for this purpose. The unit automatically passes the Ld test. Order Tests do not trigger this rule."
     },
     {
       "id": "execution",
       "name": "Execution",
-      "shortDesc": "Once per Round: when a friendly Infantry unit fails a Ld test within 6\", MUST remove the highest-Ld model. That unit may reroll the test.",
       "fullDesc": "Once per Round, when a friendly Infantry unit fails a Ld test within 6\", you MUST remove the highest Ld model from that unit from the game. Ignore Commissars and Lord Commissars when determining the highest Ld model for this purpose. The unit may reroll the Ld test. Order Tests do not trigger this rule."
     },
     {
       "id": "zealot",
       "name": "Zealot",
-      "shortDesc": "Reroll To Hit rolls in Melee on the turn this model charged or was charged.",
       "fullDesc": "This model may reroll all To Hit rolls in Melee on the turn it charged or was charged."
     },
     {
       "id": "lord-solar",
       "name": "Lord Solar",
-      "shortDesc": "6\" Aura: this model and target unit may reroll 1s To Hit and To Wound.",
       "fullDesc": "6\" Aura: this model and target unit may reroll 1s To Hit and To Wound."
     },
     {
       "id": "infantry-tactics",
       "name": "Infantry Tactics",
-      "shortDesc": "During Deployment, may combine any number of Guardsman Squads from the same Platoon into one larger squad for the game.",
       "fullDesc": "During Deployment, you may combine any number of Guardsman Squads together from the same Platoon to form a larger Guardsman Squad. The effect lasts until the end of the game. Combined Squads may only benefit from the following friendly Auras and abilities: Infantry Orders, Execution, Summary Execution."
     },
     {
       "id": "shoot-sharp-and-scarper",
       "name": "Shoot Sharp and Scarper",
-      "shortDesc": "This model may move d6\" after Shooting.",
       "fullDesc": "This model may move d6\" after Shooting."
     },
     {
       "id": "imperial-navigator",
       "name": "Imperial Navigator",
-      "shortDesc": "This model and its unit gain Outflank and may reroll the Outflank result.",
       "fullDesc": "This model and its unit gain the Outflank rule and may reroll the Outflank result."
     },
     {
       "id": "fleet-intel",
       "name": "Fleet Intel",
-      "shortDesc": "Aura: target friendly unit arriving from Deepstrike may reroll their Scatter Dice.",
       "fullDesc": "Aura: Target friendly unit arriving from Deepstrike may reroll their Scatter Dice."
     },
     {
       "id": "fleet-interference",
       "name": "Fleet Interference",
-      "shortDesc": "Aura: target enemy unit arriving from Deepstrike must reroll their Scatter Dice.",
       "fullDesc": "Aura: Target enemy unit arriving from Deepstrike must reroll their Scatter Dice."
     },
     {
       "id": "ordnance-master",
       "name": "Ordnance Master",
-      "shortDesc": "6\" Aura: this model and target unit may reroll scatter dice for ranged weapons.",
       "fullDesc": "6\" Aura: this model and target unit may reroll scatter dice for Ranged weapons."
     },
     {
       "id": "lobotomized",
       "name": "Lobotomized",
-      "shortDesc": "This model has a 5+ Feel No Pain.",
       "fullDesc": "This model has a 5+ Feel No Pain."
     },
     {
       "id": "immobile-platform",
       "name": "Immobile Platform",
-      "shortDesc": "Cannot move or be moved by any means except to pivot. The last firing direction counts as Front.",
       "fullDesc": "This model cannot move or be moved by any means except to pivot. The last direction the weapon fired counts as the Front arc."
     },
     {
       "id": "stable-platform",
       "name": "Stable Platform",
-      "shortDesc": "This model may reroll the Scatter Dice.",
       "fullDesc": "This model may reroll the Scatter Dice."
     },
     {
       "id": "mobile-artillery",
       "name": "Mobile Artillery",
-      "shortDesc": "May only be moved by a friendly model with the Tow ability. Uses the full Transport capacity when being Towed.",
       "fullDesc": "This model may only be moved by a friendly model with the Tow ability. A unit being Towed uses all available Transport Capacity regardless of its actual number of models."
     },
     {
       "id": "tow",
       "name": "Tow",
-      "shortDesc": "This model may move Mobile Artillery. The towed unit uses the full Transport capacity.",
       "fullDesc": "This model may move Mobile Artillery units. The unit being Towed uses all available Transport Capacity regardless of its actual number of models."
     },
     {
       "id": "escort",
       "name": "Escort",
-      "shortDesc": "This model may join units like an Independent Character.",
       "fullDesc": "This model may join units like an Independent Character."
     },
     {
       "id": "ig-repair",
       "name": "Repair",
-      "shortDesc": "Target model in base contact Repairs 1 Wound; on a 5+ restore one Disabled result.",
       "fullDesc": "Target model in base contact Repairs 1 Wound. Roll a d6; on a 5+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed result."
     },
     {
       "id": "earthshock",
       "name": "Earthshock",
-      "shortDesc": "Units Hit by this weapon's template only Move, Advance, Charge, and Fall Back at half speed until your next Command Phase.",
       "fullDesc": "Any unit Hit by the Earthshock weapon's template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase."
     },
     {
       "id": "the-hour-is-nigh",
       "name": "The Hour is Nigh",
-      "shortDesc": "When fired, place a marker on the target. Next Command Phase the missile strikes, scattering normally.",
       "fullDesc": "When this weapon is fired, place a marker on the field at a valid target. In your next Command Phase, the missile strikes — scatter like normal following the blast radius rules."
     },
     {
       "id": "t-minus-5",
       "name": "T Minus 5",
-      "shortDesc": "May not fire on Turn 1. Cannot be destroyed or Disabled. If the carrier is destroyed the marker still fires.",
       "fullDesc": "This weapon may not be fired on Turn 1. The weapon cannot be destroyed or Disabled. If the weapon is marked on the field and the carrier is destroyed, the Deathstrike Missile still hits in your Command Phase."
     },
     {
       "id": "prayer-emperor-protects",
       "name": "The Emperor Protects",
-      "shortDesc": "6\" Aura: this model and target unit gain 5+ Invulnerability Save.",
       "fullDesc": "6\" Aura: this model and target unit gain a 5+ Invulnerability Save."
     },
     {
       "id": "prayer-emperors-strength",
       "name": "The Emperor's Strength",
-      "shortDesc": "6\" Aura: this model and target unit gain +1A and reroll 1s To Hit in combat.",
       "fullDesc": "6\" Aura: this model and target unit gain +1 Attack and may reroll 1s To Hit in combat."
     },
     {
       "id": "prayer-righteousness",
       "name": "The Righteousness of the Emperor",
-      "shortDesc": "6\" Aura: Rapid Fire # weapons become Assault # weapons with the same numerical value.",
       "fullDesc": "6\" Aura: this model and target unit change Rapid Fire # weapons to Assault # weapons with the same numerical value."
     },
     {
       "id": "vox-caster-rule",
       "name": "Vox Caster",
-      "shortDesc": "Allows rerolling failed Order Tests if both the issuing officer's unit and target unit each have a Vox Caster.",
       "fullDesc": "This model's unit may reroll failed Order Tests if the model issuing the Order has a Vox Caster in its unit and the target unit has one as well. All Vehicles and Monsters in this Codex are considered to be equipped with Vox Casters."
     },
     {
@@ -3933,7 +3862,9 @@
     "enclosed-crew-compartment": {
       "type": "toggle",
       "label": "Enclosed Crew Compartment",
-      "removesRules": ["open-topped"],
+      "removesRules": [
+        "open-topped"
+      ],
       "note": "This model loses Open Topped."
     },
     "dozerblade-upgrade": {
@@ -5612,7 +5543,6 @@
         {
           "id": "ccs-refractor-field",
           "name": "Refractor Field",
-          "shortDesc": "5+ Invulnerability Save.",
           "fullDesc": "This model has a 5+ Invulnerability Save."
         }
       ],
@@ -5836,7 +5766,6 @@
         {
           "id": "lc-refractor",
           "name": "Refractor Field",
-          "shortDesc": "5+ Invulnerability Save.",
           "fullDesc": "This model has a 5+ Invulnerability Save."
         }
       ],
@@ -6388,7 +6317,6 @@
             {
               "id": "cos-254th-reg",
               "name": "254th Varolian Regiment",
-              "shortDesc": "This model ignores all Regiment rules for your army.",
               "fullDesc": "This model ignores all Regiment rules for your army."
             }
           ]
@@ -6502,13 +6430,11 @@
             {
               "id": "cg-mech-infantry-tactics",
               "name": "Mechanized Infantry Tactics",
-              "shortDesc": "6\" Aura: this model and target unit gain 5+ Cover Save (or 4+ if already 5+) for 1 Turn when Disembarking from a Transport.",
               "fullDesc": "6\" Aura: this model and target unit gain a 5+ Cover Save for 1 Turn when Disembarking from a Transport. If they already got a 5+ Cover Save for doing so, they gain a 4+ instead."
             },
             {
               "id": "cg-refractor",
               "name": "Refractor Field",
-              "shortDesc": "5+ Invulnerability Save.",
               "fullDesc": "This model has a 5+ Invulnerability Save."
             }
           ]
@@ -6564,7 +6490,6 @@
             {
               "id": "vig-transport",
               "name": "Dedicated Transport",
-              "shortDesc": "Only Commissar Graves may embark. Access Rear. 1× 360° Fire Port.",
               "fullDesc": "Only Commissar Graves may embark on this model. Access Rear. 1× 360° Fire Port."
             }
           ]
@@ -6653,7 +6578,6 @@
             {
               "id": "lsl-helmet",
               "name": "Artificer Refractor Helmet",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -6701,31 +6625,26 @@
             {
               "id": "lsm-armour",
               "name": "Armour of the Warmasters",
-              "shortDesc": "4+ Invulnerability Save. Cannot be targeted by Spells; immune to Spells if unit is affected.",
               "fullDesc": "This model has a 4+ Invulnerability Save and cannot be targeted with Spells. If this model's unit is affected by a Spell, this model is immune."
             },
             {
               "id": "lsm-stave",
               "name": "Command Stave",
-              "shortDesc": "Always counts as equipped with a Vox Caster; Orders range extended to 18\".",
               "fullDesc": "This model is always considered to be equipped with a Vox Caster and has the range of its Orders extended up to 18\" instead of the usual 12\"."
             },
             {
               "id": "lsm-cloak",
               "name": "Crimson Cloak",
-              "shortDesc": "12\" True Aura: friendly units gain A+1 and may reroll failed Ld Tests.",
               "fullDesc": "12\" True Aura: this model and all friendly units gain A+1 and may reroll failed Ld Tests."
             },
             {
               "id": "lsm-helm",
               "name": "Helm of Macharius",
-              "shortDesc": "12\" True Aura: all friendly units may use this model's Ld and Stubborn rules.",
               "fullDesc": "12\" True Aura: all friendly units may use this model's Ld and Stubborn rules."
             },
             {
               "id": "lsm-strategist",
               "name": "Ferocious Strategist",
-              "shortDesc": "During Deployment, one friendly Slot held in Reserves cannot be Pinned when arriving by Deepstrike.",
               "fullDesc": "During Deployment, nominate one friendly Slot (not category) holding in Reserves. Units in this Slot cannot be Pinned when arriving by Deepstrike, even if they normally would be."
             }
           ]
@@ -6902,7 +6821,6 @@
             {
               "id": "eng-servo-arm",
               "name": "Servo Arm",
-              "shortDesc": "Each model with a Servo Arm may add +1 to a Repair roll.",
               "fullDesc": "Each model with a Servo Arm may add +1 to a Repair roll to restore a weapon or mobilize result."
             }
           ]
@@ -7077,7 +6995,6 @@
             {
               "id": "mp-rosarius",
               "name": "Rosarius",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -7112,7 +7029,6 @@
             {
               "id": "crus-stormshield",
               "name": "Stormshield",
-              "shortDesc": "4+ Invulnerability Save and Sv-1 (improves by 1).",
               "fullDesc": "4+ Invulnerability Save and Sv-1 (improves by 1)."
             }
           ]
@@ -7512,13 +7428,11 @@
             {
               "id": "kyr-rosarius",
               "name": "Rosarius",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             },
             {
               "id": "kyr-icon",
               "name": "Icon of Chiros",
-              "shortDesc": "6\" Aura: this model and target unit may roll one additional d6 for Ld tests and discard the highest d6.",
               "fullDesc": "6\" Aura: this model and target unit may roll one additional d6 for Ld tests and discard the highest d6."
             }
           ]
@@ -7613,7 +7527,6 @@
             {
               "id": "raine-lftf",
               "name": "Leading From the Front",
-              "shortDesc": "6\" Aura: when this model is in base contact with an enemy, target unit automatically passes all Ld Tests including Order Tests.",
               "fullDesc": "6\" Aura: when this model is locked in Base Contact with an enemy model, target unit automatically passes all Ld Tests including Order Tests."
             }
           ]
@@ -7654,7 +7567,6 @@
             {
               "id": "el-contracts",
               "name": "Navigator House Contracts",
-              "shortDesc": "6\" Aura: target unit loses Objective Secured, or counts as half its models for Contesting Objectives if none had it.",
               "fullDesc": "6\" Aura: target unit loses Objective Secured. If no models had Objective Secured, the unit counts as only half the total models for Contesting Objective Markers."
             }
           ]
@@ -7699,19 +7611,16 @@
             {
               "id": "gro-stormshield",
               "name": "Stormshield",
-              "shortDesc": "4+ Invulnerability Save and Sv-1 (improves by 1).",
               "fullDesc": "4+ Invulnerability Save and Sv-1 (improves by 1)."
             },
             {
               "id": "gro-hacking",
               "name": "Hacking Advance",
-              "shortDesc": "Each natural 6 To Hit in Melee generates one Auto Hit.",
               "fullDesc": "Each natural 6 Grotfret rolls To Hit in Melee generates one Auto Hit."
             },
             {
               "id": "gro-shield",
               "name": "Shield of Faith",
-              "shortDesc": "May attempt to Deny the Witch once per Round at Psychic Mastery 0.",
               "fullDesc": "Grotfret may attempt to Deny the Witch once per Round at Psychic Mastery 0."
             }
           ]
@@ -7802,25 +7711,21 @@
             {
               "id": "aret-konig",
               "name": "Konig 9th Heavy Tank Company",
-              "shortDesc": "This model ignores the Regimental rules for your army.",
               "fullDesc": "This model ignores the Regimental rules for your army."
             },
             {
               "id": "aret-hardened",
               "name": "Hardened Crew",
-              "shortDesc": "On a 4+, ignore Immobilize and Weapon Disabled results (roll for each instance).",
               "fullDesc": "This model ignores Immobilize and Weapon Disabled results on a 4+. Roll for each instance."
             },
             {
               "id": "aret-illfated",
               "name": "Ill Fated",
-              "shortDesc": "Must roll d6 when destroying non-Titanic Terrain while moving. On a 1, stuck for the rest of the game.",
               "fullDesc": "Arethusa still destroys non-Titanic Terrain when moving through Terrain like normal, but must roll a d6 each time it does so. On a 1, it is stuck for the rest of the game."
             },
             {
               "id": "aret-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -7916,19 +7821,16 @@
             {
               "id": "nork-nerves",
               "name": "Dead Nerves",
-              "shortDesc": "5+ Feel No Pain.",
               "fullDesc": "This model has a 5+ Feel No Pain."
             },
             {
               "id": "nork-loyal",
               "name": "Loyal to the End",
-              "shortDesc": "If a model uses Execution or Summary Execution on an IC in Nork's squad, Nork removes the executioner from play.",
               "fullDesc": "If a model uses Execution or Summary Execution to remove an Independent Character from Nork Deddog's Squad, Nork removes the executioner from the game."
             },
             {
               "id": "nork-sacrifice",
               "name": "Heroic Sacrifice",
-              "shortDesc": "If Nork is slain in Melee, inflict d6 S6 AP– Auto Hits on the unit that killed him.",
               "fullDesc": "If Nork Deddog is slain in Melee, inflict d6 S6 AP– Auto Hits on the unit that killed him."
             }
           ]
@@ -7975,7 +7877,6 @@
             {
               "id": "rein-twins",
               "name": "The Ratling Twins",
-              "shortDesc": "Rein may reroll To Hit and To Wound if Rauss can draw Line of Sight to the target.",
               "fullDesc": "Rein may reroll To Hit and To Wound if Rauss can draw Line of Sight to the target."
             }
           ]
@@ -8014,7 +7915,6 @@
             {
               "id": "rauss-grapple",
               "name": "Grappling Hook",
-              "shortDesc": "6\" Aura: this model and target Infantry Unit may ignore Terrain and Enemy Models when Moving.",
               "fullDesc": "6\" Aura: this model and target Infantry Unit may ignore Terrain and Enemy Models when Moving."
             }
           ]
@@ -8062,13 +7962,11 @@
             {
               "id": "tadd-rosarius",
               "name": "Rosarius",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             },
             {
               "id": "tadd-purifier",
               "name": "The Purifier",
-              "shortDesc": "6\" Aura: this model and target unit gain A+1.",
               "fullDesc": "6\" Aura: this model and target unit gain A+1."
             }
           ]
@@ -8191,7 +8089,6 @@
             {
               "id": "uriah-rosarius",
               "name": "Rosarius",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -10174,7 +10071,6 @@
             {
               "id": "cust-mercy",
               "name": "Mercy Execution",
-              "shortDesc": "When unit suffers Mortal Wounds from casting spells, remove d3 Wyrdvanes instead.",
               "fullDesc": "When the Unit suffers Mortal Wounds from casting spells, remove d3 Wyrdvanes instead of suffering the normal Mortal Wounds."
             }
           ]
@@ -10258,7 +10154,6 @@
             {
               "id": "bg-slab",
               "name": "Slab Shield",
-              "shortDesc": "Sv-1 (improves by 1).",
               "fullDesc": "Sv-1 (improves by 1)."
             }
           ],
@@ -10436,7 +10331,6 @@
             {
               "id": "atlas-repair",
               "name": "Heavy Repair Gear",
-              "shortDesc": "3\" range: target Vehicle or Titanic Vehicle recovers d3 Wounds. On 3+, restore one damaged result.",
               "fullDesc": "3\" range: target Vehicle or Titanic Vehicle recovers d3 Wounds. On a 3+, remove one Weapon Disabled, Crew Stun, Immobilize, or Weapon Destroyed Result."
             }
           ]
@@ -10716,7 +10610,9 @@
                 "flyer",
                 "deepstrike"
               ],
-              "removesRules": ["outflank"],
+              "removesRules": [
+                "outflank"
+              ],
               "note": "Gain Flying and Deepstrike. Lose Outflank."
             },
             {
@@ -10724,7 +10620,9 @@
               "type": "toggle",
               "label": "Genetically Engineered Steeds (+2 pts/model)",
               "pts": 2,
-              "removesRules": ["outflank"],
+              "removesRules": [
+                "outflank"
+              ],
               "note": "W+1. Lose Outflank."
             }
           ]
@@ -10907,7 +10805,9 @@
                 "flyer",
                 "deepstrike"
               ],
-              "removesRules": ["outflank"],
+              "removesRules": [
+                "outflank"
+              ],
               "note": "Gain Flying and Deepstrike. Lose Outflank."
             },
             {
@@ -10915,7 +10815,9 @@
               "type": "toggle",
               "label": "Genetically Engineered Steeds (+2 pts/model)",
               "pts": 2,
-              "removesRules": ["outflank"],
+              "removesRules": [
+                "outflank"
+              ],
               "note": "W+1. Lose Outflank."
             }
           ]
@@ -12037,7 +11939,6 @@
             {
               "id": "ah-fuel-tanks",
               "name": "Enlarged Fuel Tanks",
-              "shortDesc": "Reroll 1s to Wound with Flame weapons. Explodes on 4+ instead of 6+.",
               "fullDesc": "Reroll 1s to Wound with Flame weapons. The model explodes on a 4+ instead of 6+."
             }
           ]
@@ -12355,7 +12256,6 @@
             {
               "id": "sal-auspex",
               "name": "Auspex Array",
-              "shortDesc": "6\" Aura: this model and target unit inflict –1 to Cover Saves from their Shooting.",
               "fullDesc": "6\" Aura: this model and target unit inflict a –1 to Cover Saves taken from their Shooting."
             }
           ]
@@ -13340,7 +13240,6 @@
             {
               "id": "mal-crossers",
               "name": "Trench Crossers",
-              "shortDesc": "Does not take Immobilize Tests for moving through Terrain.",
               "fullDesc": "This model does not take Immobilize Tests for moving through Terrain."
             }
           ]
@@ -14890,7 +14789,6 @@
             {
               "id": "spg-behemoth",
               "name": "Behemoth Shells",
-              "shortDesc": "When Heavy Colossus Siege Mortar fires, must forgo Shooting next phase; cannot fire Turn 1. Suffers M-8.",
               "fullDesc": "When the Heavy Colossus Siege Mortar fires, it must forgo Shooting in its next Shooting Phase. The Heavy Colossus Siege Mortar may not fire on Turn 1. This model suffers M-8 while this weapon is loaded."
             }
           ]
@@ -15011,7 +14909,9 @@
           "type": "toggle",
           "label": "Enclosed Troop Compartment",
           "pts": 16,
-          "removesRules": ["open-topped"],
+          "removesRules": [
+            "open-topped"
+          ],
           "note": "This model loses Open Topped."
         },
         {
@@ -15550,13 +15450,11 @@
             {
               "id": "cyc-payload",
               "name": "Deadly Payload",
-              "shortDesc": "Explodes in base contact or on command (if Remote Control exists). On destruction, 4+ triggers the charge.",
               "fullDesc": "This model explodes if it ever comes into base contact with an enemy model, or if the owner wishes it to so long as at least one Guardsman has a Remote Control. If destroyed, on a 4+ the Cyclops Demolition Charge goes off. When used, center the template over the model and do not scatter."
             },
             {
               "id": "cyc-suicide",
               "name": "Suicide Mission",
-              "shortDesc": "Treated as individual unit but deployed with Guardsmen. Cannot claim or contest Objectives.",
               "fullDesc": "Each Cyclops is treated as an individual unit but is deployed with the Guardsman as if they were one. This model cannot Claim or Contest Objectives."
             }
           ]
@@ -15747,13 +15645,11 @@
             {
               "id": "aql-transport",
               "name": "Transport 7",
-              "shortDesc": "Transport capacity 7. Access Front.",
               "fullDesc": "This model may transport up to 7 models. Access: Front."
             },
             {
               "id": "aql-command",
               "name": "Command Ship",
-              "shortDesc": "Infantry Orders may be issued from Embarked units on this model with +12\" radius.",
               "fullDesc": "Infantry Orders may be issued from Embarked units on this model with a +12\" Radius."
             }
           ]
@@ -15813,7 +15709,6 @@
             {
               "id": "arv-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -16209,13 +16104,11 @@
             {
               "id": "val-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Sides and Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Sides and Rear."
             },
             {
               "id": "val-grav",
               "name": "Grav Chute Insertion",
-              "shortDesc": "Embarked units may deploy anywhere along the Movement Path taken this turn, each taking a Dangerous Terrain Test.",
               "fullDesc": "Embarked Units may deploy anywhere along the Movement Path the Valkyrie took this turn. If a unit chooses to Disembark this way, each model must take a Dangerous Terrain Test."
             }
           ]
@@ -16311,7 +16204,6 @@
             {
               "id": "vst-transport",
               "name": "Transport (Special)",
-              "shortDesc": "May Embark up to 2 Sentinel variants or 1 Tauros variant.",
               "fullDesc": "This model may Embark up to 2 Sentinel variants or 1 Tauros variant."
             }
           ]
@@ -16926,7 +16818,6 @@
             {
               "id": "hdb-assault",
               "name": "Subterranean Assault",
-              "shortDesc": "Up to 10 Infantry may be held in Reserve with this unit. Once it Deepstrikes, they may Deepstrike within 6\" without scattering.",
               "fullDesc": "You may place up to 10 Infantry models in Reserve with this unit during Deployment. Once this model Deepstrikes successfully, the unit may Deepstrike within 6\" without scattering."
             }
           ]
@@ -16982,7 +16873,6 @@
             {
               "id": "her-ammo",
               "name": "Ammunition Cache",
-              "shortDesc": "6\" Aura: target unit replenishes all One Use Only Wargear (not Deathstrike Missiles).",
               "fullDesc": "6\" Aura: this model and target unit replenishes all One Use Only Wargear. Deathstrike Missiles cannot be replenished by this ability."
             }
           ]
@@ -17248,7 +17138,6 @@
             {
               "id": "sam-ambulance",
               "name": "Medicae Ambulance",
-              "shortDesc": "6\" Aura: target unit gains 5+ Feel No Pain.",
               "fullDesc": "6\" Aura: target unit gains 5+ Feel No Pain."
             }
           ]
@@ -17385,7 +17274,6 @@
             {
               "id": "tau-terrain",
               "name": "All Terrain",
-              "shortDesc": "This model may reroll Dangerous Terrain Tests.",
               "fullDesc": "This model may reroll Dangerous Terrain Tests."
             }
           ]
@@ -17676,7 +17564,6 @@
             {
               "id": "trj-ammo",
               "name": "Ammunition Cache",
-              "shortDesc": "6\" Aura: target unit replenishes all One Use Only Wargear (not Deathstrike Missiles).",
               "fullDesc": "6\" Aura: this model and target unit replenishes all One Use Only Wargear. Deathstrike Missiles cannot be replenished by this ability."
             }
           ]
@@ -17868,7 +17755,6 @@
             {
               "id": "bb-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -18037,7 +17923,6 @@
             {
               "id": "bnh-transport",
               "name": "Transport 25",
-              "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.",
               "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear."
             }
           ]
@@ -18194,7 +18079,6 @@
             {
               "id": "bns-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -18350,7 +18234,6 @@
             {
               "id": "dmh-transport",
               "name": "Transport 25",
-              "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.",
               "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear."
             }
           ]
@@ -18510,7 +18393,6 @@
             {
               "id": "hh-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -18667,13 +18549,11 @@
             {
               "id": "ss-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             },
             {
               "id": "ss-sensors",
               "name": "Shadowsword Sensors",
-              "shortDesc": "May reroll all To Hit and Scatter dice when targeting Titanic units.",
               "fullDesc": "This model may Reroll all To Hit and Scatter dice when targeting Titanic units."
             }
           ]
@@ -18836,13 +18716,11 @@
             {
               "id": "sbl-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             },
             {
               "id": "sbl-sensors",
               "name": "Shadowsword Sensors",
-              "shortDesc": "May reroll To Hit and Scatter dice when targeting Titanic units.",
               "fullDesc": "This model may reroll To Hit and Scatter dice when targeting Titanic Units."
             }
           ]
@@ -19006,13 +18884,11 @@
             {
               "id": "sl-transport",
               "name": "Transport 25",
-              "shortDesc": "Transport capacity 25. Access Sides and Rear, 5 Fire Points on Front, Sides, and Rear.",
               "fullDesc": "This model may transport up to 25 models. Access: Sides and Rear. 5 Fire Points on Front, Sides, and Rear."
             },
             {
               "id": "sl-full-power",
               "name": "Full Power to the Weapon",
-              "shortDesc": "May fire the Vulcan Megabolter twice per Shooting Phase.",
               "fullDesc": "You may fire the Vulcan Megabolter twice per Shooting Phase."
             }
           ]
@@ -19185,7 +19061,6 @@
             {
               "id": "shl-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -19330,7 +19205,6 @@
             {
               "id": "sma-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -19494,7 +19368,6 @@
             {
               "id": "ssw-transport",
               "name": "Transport 12",
-              "shortDesc": "Transport capacity 12. Access Rear.",
               "fullDesc": "This model may transport up to 12 models. Access: Rear."
             }
           ]
@@ -20865,25 +20738,21 @@
             {
               "id": "ci-void-shields",
               "name": "Void Shields 6",
-              "shortDesc": "This model has 6 Void Shields.",
               "fullDesc": "This model has 6 Void Shields."
             },
             {
               "id": "ci-commanding",
               "name": "Commanding Presence",
-              "shortDesc": "Orders from this model have a 48\" radius. All units testing on Orders may use this model's Ld.",
               "fullDesc": "Orders from this model have a 48\" radius. All units testing on Orders cast from this model may use this model's Ld in place of their own."
             },
             {
               "id": "ci-shadow",
               "name": "In the Shadow of the Imperium",
-              "shortDesc": "24\" True Aura: all enemy models suffer Ld−2.",
               "fullDesc": "24\" True Aura: all enemy models suffer Ld–2."
             },
             {
               "id": "ci-path",
               "name": "Destructive Path",
-              "shortDesc": "Destroys all Terrain and Fortifications it moves over. May only pivot up to current M value.",
               "fullDesc": "All Terrain is destroyed by this model moving over it, including Titanic Terrain. Any Fortifications touched by this model are Destroyed. This model may only pivot up to its current M value when turning. This model displaces all models when it moves including Titanic ones."
             }
           ]
@@ -21040,25 +20909,21 @@
             {
               "id": "lev-void",
               "name": "Void Shields 4",
-              "shortDesc": "This model has 4 Void Shields.",
               "fullDesc": "This model has 4 Void Shields."
             },
             {
               "id": "lev-inspiring",
               "name": "Inspiring Presence",
-              "shortDesc": "Orders from this model have a 24\" radius. All units testing on Orders may use this model's Ld.",
               "fullDesc": "Orders from this model have a 24\" radius. All units testing on Orders cast from this model may use this model's Ld in place of their own."
             },
             {
               "id": "lev-panic",
               "name": "Create Panic",
-              "shortDesc": "Displaces all models when it moves. Immobile units prevent it from moving there.",
               "fullDesc": "This model displaces all models when it moves, place them up to 1\" away. Immobile units prevent this model from moving there."
             },
             {
               "id": "lev-bulk",
               "name": "Immense Bulk",
-              "shortDesc": "May only Pivot up to its current M value.",
               "fullDesc": "This model may only Pivot up to its current M value. It may still move as normal."
             }
           ]
@@ -21170,7 +21035,6 @@
             {
               "id": "slc-regiment",
               "name": "13th Penal Legion",
-              "shortDesc": "These models cannot grant or receive Auras or Orders to/from any other unit. Not affected by Regiment rules.",
               "fullDesc": "These models cannot grant or receive Auras or Orders to or from any other unit. They are not affected by any Regiment Rules."
             }
           ]
@@ -21208,7 +21072,6 @@
             {
               "id": "animal-savage",
               "name": "Savage",
-              "shortDesc": "May declare Charges after Advancing or Disembarking.",
               "fullDesc": "This model and his unit may declare Charges after Advancing or Disembarking."
             }
           ]
@@ -21245,7 +21108,6 @@
             {
               "id": "brains-jerry",
               "name": "Jerry Rigger",
-              "shortDesc": "Repair d3 Wounds; on 4+ restore a Disabled result.",
               "fullDesc": "Repair d3 Wounds, on a 4+ restore a Weapon Disabled, Crew Stun, Immobilize, or Weapon Destroyed Result."
             }
           ]
@@ -21283,7 +21145,6 @@
             {
               "id": "demo-expert",
               "name": "Demolition Expert",
-              "shortDesc": "Blast Templates never scatter and may reroll 1s To Wound.",
               "fullDesc": "This model and his unit's Blast Templates never Scatter and may reroll 1s To Wound."
             }
           ]
@@ -21321,7 +21182,6 @@
             {
               "id": "fingers-loader",
               "name": "Rocket Loader",
-              "shortDesc": "Rocket Girl may fire 1 additional time each time she is nominated to shoot.",
               "fullDesc": "Rocket Girl may fire 1 additional time each time she is nominated to shoot."
             }
           ]
@@ -21359,7 +21219,6 @@
             {
               "id": "grease-hijack",
               "name": "Hijacker",
-              "shortDesc": "When Assaulting a Vehicle with Transport 10+, on a 5+ take control of it and immediately Embark.",
               "fullDesc": "When Assaulting a Vehicle, roll a d6 before attacking. On a 5+, take control of the target Vehicle so long as it has Transport 10+ and immediately Embark regardless of Transport size. Use BS3+ for this Vehicle."
             }
           ]
@@ -21397,7 +21256,6 @@
             {
               "id": "hero-lastchance",
               "name": "Last Chance",
-              "shortDesc": "3+ Feel No Pain when taking Wounds on behalf of the Squad willingly.",
               "fullDesc": "This model gains a 3+ Feel No Pain when taking Wounds on behalf of the Squad willingly."
             }
           ]
@@ -21434,7 +21292,6 @@
             {
               "id": "ox-suppressive",
               "name": "Suppressive Fire",
-              "shortDesc": "Ranged attacks by Ox gain Grav.",
               "fullDesc": "Ranged attacks by Ox gain Grav."
             }
           ]
@@ -21471,7 +21328,6 @@
             {
               "id": "rg-tankbuster",
               "name": "Tank Buster",
-              "shortDesc": "Gains Armourbane when using a Missile Launcher.",
               "fullDesc": "This model gains Armourbane when using a Missile Launcher."
             }
           ]
@@ -21508,7 +21364,6 @@
             {
               "id": "scope-deadeye",
               "name": "Deadeye",
-              "shortDesc": "Models taking Pinning Tests from this model take it at Ld−3.",
               "fullDesc": "Models taking Pinning Tests inflicted by this model take the test at Ld–3."
             }
           ]
@@ -21546,7 +21401,6 @@
             {
               "id": "shiv-stealth",
               "name": "Stealth Attack",
-              "shortDesc": "This model and his unit gain Furious Charge and Shock Assault.",
               "fullDesc": "This model and his unit gain Furious Charge and Shock Assault."
             }
           ]
@@ -21585,7 +21439,6 @@
             {
               "id": "ww-warrior",
               "name": "Way of the Warrior",
-              "shortDesc": "May change Weapon # to Pistol # and Overwatch at BS#+. No model may fire more than 2 weapons as Pistols.",
               "fullDesc": "This model and her unit may change their Weapon # to Pistol # and Overwatch at their BS#+ instead of the usual Overwatch #+. No model may fire more than 2 weapons as Pistols each (and removes the normal Grenade restrictions)."
             }
           ]
@@ -21624,7 +21477,6 @@
             {
               "id": "gate-heavy-gate",
               "name": "Heavy Gate",
-              "shortDesc": "In your Command Phase, declare if the Gate is Open or Closed. Models may not move through a Closed Gate.",
               "fullDesc": "In your Command Phase you may declare if the Gate is Open or Closed. Models may not move through the Gate when it is Closed. The Gate cannot be Closed if models are Obstructing the Gate."
             }
           ]
@@ -21661,7 +21513,6 @@
             {
               "id": "gtower-transport",
               "name": "Transport 10",
-              "shortDesc": "Transport capacity 10. 4 Fire Ports Front, Sides, Rear. Access Rear.",
               "fullDesc": "Transport 10. 4 Fire Ports Front, Sides, Rear. Access Rear."
             }
           ]
@@ -21723,7 +21574,6 @@
             {
               "id": "ftower-transport",
               "name": "Transport 10",
-              "shortDesc": "Transport capacity 10. 4 Fire Ports Front, Sides, Rear. Access Rear.",
               "fullDesc": "Transport 10. 4 Fire Ports Front, Sides, Rear. Access Rear."
             }
           ]
@@ -21822,7 +21672,6 @@
             {
               "id": "awe-emplacement",
               "name": "Gun Emplacement",
-              "shortDesc": "Does not replace existing Terrain in Deployment Zone — placed alongside it instead.",
               "fullDesc": "This Fortification does not replace an existing piece of Terrain in your Deployment Zone like normal; it is placed with the Terrain instead."
             }
           ]
@@ -22262,7 +22111,6 @@
             {
               "id": "vsg-shield",
               "name": "Shield Generator",
-              "shortDesc": "6\" Aura: this model and any models on top of it, and target unit gain 5+ Invulnerability Save.",
               "fullDesc": "6\" Aura: this model (and any models on top of this Terrain Feature) and target unit gain 5+ Invulnerability Save."
             }
           ]

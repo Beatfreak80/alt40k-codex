@@ -190,343 +190,286 @@
     {
       "id": "canoptek",
       "name": "Canoptek",
-      "shortDesc": "This model is a Canoptek construct.",
       "fullDesc": "This model is a Canoptek construct and follows all Canoptek rules."
     },
     {
       "id": "hardwired-for-destruction",
       "name": "Hardwired for Destruction",
-      "shortDesc": "+1 To Hit in close combat.",
       "fullDesc": "This model gets +1 To Hit in close combat."
     },
     {
       "id": "living-metal",
       "name": "Living Metal",
-      "shortDesc": "Regenerate 1 Wound each Command Phase.",
       "fullDesc": "At the start of each Command Phase, this model recovers 1 lost Wound."
     },
     {
       "id": "quantum-shielding",
       "name": "Quantum Shielding",
-      "shortDesc": "Ignore glancing hits; 5+ to ignore penetrating hits.",
       "fullDesc": "This model ignores Glancing Hits. On a 5+, it also ignores Penetrating Hits."
     },
     {
       "id": "reanimation",
       "name": "Reanimation",
-      "shortDesc": "Roll to stand back up when slain on a 4+.",
       "fullDesc": "When this model is slain, roll a d6 at the end of the phase. On a 4+, it is restored to 1 Wound remaining."
     },
     {
       "id": "soulless-machines",
       "name": "Soulless Machines",
-      "shortDesc": "Immune to Fear, Pinning, and Morale effects.",
       "fullDesc": "This model is immune to Fear, Pinning, and all Morale tests."
     },
     {
       "id": "my-will-be-done",
       "name": "My Will Be Done",
-      "shortDesc": "6\" Aura: Necron Infantry gain +1 To Hit.",
       "fullDesc": "6\" Aura: Friendly Necron Infantry units gain +1 To Hit on all attacks."
     },
     {
       "id": "relentless-march",
       "name": "Relentless March",
-      "shortDesc": "May move and shoot Heavy weapons without penalty.",
       "fullDesc": "This model or unit may fire Heavy weapons even after moving without any penalty."
     },
     {
       "id": "improved-living-metal",
       "name": "Improved Living Metal",
-      "shortDesc": "Regenerate d3 Wounds each Command Phase.",
       "fullDesc": "At the start of each Command Phase, this model recovers d3 lost Wounds instead of 1."
     },
     {
       "id": "united-in-destruction",
       "name": "United in Destruction",
-      "shortDesc": "Within 6\" of another Necron unit, re-roll 1s to hit.",
       "fullDesc": "Friendly Necron units within 6\" of at least one other friendly Necron unit may re-roll rolls of 1 to hit."
     },
     {
       "id": "vanquish-the-living",
       "name": "Vanquish the Living",
-      "shortDesc": "Re-roll failed to wound rolls vs non-vehicle, non-monster targets.",
       "fullDesc": "This model may re-roll all failed to wound rolls against units that are neither Vehicles nor Monsters."
     },
     {
       "id": "their-number-is-legion",
       "name": "Their Number is Legion",
-      "shortDesc": "This unit may exceed its normal maximum squad size by 5 models.",
       "fullDesc": "This unit may purchase up to 5 additional models beyond its listed maximum."
     },
     {
       "id": "agents-of-the-silent-king",
       "name": "Agents of the Silent King",
-      "shortDesc": "Any Dynasty may take this unit.",
       "fullDesc": "This unit is not bound to any Dynasty and may be taken in any Necron army regardless of Dynasty choice."
     },
     {
       "id": "targeting-relay",
       "name": "Targeting Relay",
-      "shortDesc": "6\" Aura: friendly Necron units re-roll 1s to hit.",
       "fullDesc": "6\" Aura: Friendly Necron units within range may re-roll rolls of 1 on all To Hit rolls."
     },
     {
       "id": "war-construct",
       "name": "War Construct",
-      "shortDesc": "+1 Attack for each enemy model in base contact beyond the first.",
       "fullDesc": "This model gains +1 Attack in melee for each enemy model in base contact beyond the first."
     },
     {
       "id": "never-stop-firing",
       "name": "Never Stop Firing",
-      "shortDesc": "May fire all ranged weapons even after advancing or falling back.",
       "fullDesc": "This model may fire all of its ranged weapons in the Shooting Phase even if it Advanced or Fell Back this turn."
     },
     {
       "id": "clog-the-barrels",
       "name": "Clog the Barrels",
-      "shortDesc": "Each model in base contact with an enemy vehicle: that vehicle loses 1 BS.",
       "fullDesc": "For each model in this unit that is in base contact with an enemy vehicle, that vehicle suffers -1 to its BS."
     },
     {
       "id": "wrath-form",
       "name": "Wrath Form",
-      "shortDesc": "Re-roll charge distance; +1 Attack on the turn this model charges.",
       "fullDesc": "This model may re-roll its charge distance. In addition, it gains +1 Attack on any turn in which it successfully charges."
     },
     {
       "id": "phase-generator",
       "name": "Phase Generator",
-      "shortDesc": "3+ invulnerable save.",
       "fullDesc": "This model has a 3+ invulnerable save against all attacks."
     },
     {
       "id": "immune-to-natural-law",
       "name": "Immune to Natural Law",
-      "shortDesc": "Ignores all terrain movement penalties.",
       "fullDesc": "This model may move through all terrain without penalty and never takes Dangerous Terrain tests."
     },
     {
       "id": "massive-battery-unit",
       "name": "Massive Battery Unit",
-      "shortDesc": "All friendly Tesla weapons within 12\" re-roll hits of 1.",
       "fullDesc": "All friendly Tesla weapons within 12\" of this model may re-roll rolls of 1 to hit."
     },
     {
       "id": "particle-focus",
       "name": "Particle Focus",
-      "shortDesc": "All friendly Gauss weapons within 6\" gain +1 Strength.",
       "fullDesc": "All friendly Gauss weapons within 6\" of this model gain +1 Strength."
     },
     {
       "id": "eternity-portal",
       "name": "Eternity Portal",
-      "shortDesc": "Units may embark/disembark through Eternity Portal gates.",
       "fullDesc": "This model has an Eternity Portal that allows friendly Necron units to embark or disembark as if it were a transport, using the Monolith Vault rules."
     },
     {
       "id": "monster-escort",
       "name": "Monster Escort",
-      "shortDesc": "Must deploy within 6\" of a Cryptek or Overlord character.",
       "fullDesc": "This model must be deployed within 6\" of a friendly Cryptek or Overlord independent character. It may not move further than 12\" from them during play."
     },
     {
       "id": "reanimation-beam",
       "name": "Reanimation Beam",
-      "shortDesc": "6\" Aura: friendly Necron infantry auto-pass Reanimation rolls.",
       "fullDesc": "6\" Aura: Friendly Necron Infantry within range automatically pass their Reanimation Protocol rolls."
     },
     {
       "id": "repair-barge",
       "name": "Repair Barge",
-      "shortDesc": "6\" Aura: target unit gains +1 to Reanimation rolls (max 4+).",
       "fullDesc": "6\" Aura: Friendly units within range gain +1 to their Reanimation Protocol rolls. This cannot improve rolls beyond a 4+."
     },
     {
       "id": "nanoscarabs",
       "name": "Nanoscarabs",
-      "shortDesc": "Repair a vehicle or Heal a model within 3\".",
       "fullDesc": "In the Command Phase, this model may attempt to Repair a friendly Vehicle or Heal a friendly model within 3\", restoring d3 Wounds."
     },
     {
       "id": "harbringer-of-destruction",
       "name": "Harbringer of Destruction",
-      "shortDesc": "8\" Aura: Friendly Necron ranged attacks gain +1 To Hit.",
       "fullDesc": "8\" Aura: Friendly Necron units within range gain +1 To Hit on ranged attacks."
     },
     {
       "id": "living-lightning",
       "name": "Living Lightning",
-      "shortDesc": "On a 6 To Hit ranged, make one additional hit.",
       "fullDesc": "Each time this model rolls a 6 or more To Hit with a ranged attack, it immediately makes one additional hit against the same target."
     },
     {
       "id": "harbringer-of-doom",
       "name": "Harbringer of Doom",
-      "shortDesc": "12\" Aura: enemy units suffer -1 Leadership.",
       "fullDesc": "12\" Aura: Enemy units within range suffer -1 to their Leadership characteristic."
     },
     {
       "id": "psychokinesis",
       "name": "Psychokinesis",
-      "shortDesc": "Once per turn, move one enemy model d6\" in any direction.",
       "fullDesc": "Once per turn, before the enemy movement phase, nominate one enemy model within 18\". Move it d6\" in any direction, ignoring terrain."
     },
     {
       "id": "dread-aura",
       "name": "Dread",
-      "shortDesc": "12\" Aura: enemy units must pass Fear test or suffer -1 To Hit.",
       "fullDesc": "12\" Aura: Enemy units within range must pass a Fear test at the start of each phase. On a failure, they suffer -1 To Hit until the end of that phase."
     },
     {
       "id": "gaze-of-death",
       "name": "Gaze of Death",
-      "shortDesc": "Shooting attack: target must pass Ld test or suffer d3 mortal wounds.",
       "fullDesc": "Once per Shooting Phase, this model may make a Gaze of Death attack against a single enemy model within 12\". The target must pass a Leadership test or suffer d3 mortal wounds."
     },
     {
       "id": "matter-absorption",
       "name": "Matter Absorption",
-      "shortDesc": "When a Vehicle or Titanic Vehicle is destroyed within 18\", roll d6. On a 2+, Heal 1 Wound.",
       "fullDesc": "Each time a Vehicle or Titanic Vehicle is destroyed within 18\" of this model, roll a d6. On a 2+, this model Heals 1 Wound. This is an exception to the normal Heal rules."
     },
     {
       "id": "translocation-protocols",
       "name": "Translocation Protocols",
-      "shortDesc": "Once per game, teleport up to 18\" as if Deepstriking.",
       "fullDesc": "Once per game, in the Movement Phase, this model may remove itself from the battlefield and redeploy anywhere within 18\", following Deepstrike rules."
     },
     {
       "id": "resurrection-amplifier",
       "name": "Resurrection Amplifier",
-      "shortDesc": "6\" Aura: friendly Necron Reanimation rolls succeed on a 3+.",
       "fullDesc": "6\" Aura: Friendly Necron units within range may make their Reanimation Protocol rolls on a 3+ instead of the normal value."
     },
     {
       "id": "ziggurat-dock",
       "name": "Ziggurat Dock",
-      "shortDesc": "A Lord of War may enter the Ziggurat for repair and buffing.",
       "fullDesc": "A single friendly Lord of War may enter this Fortification. While inside it regenerates d6 Wounds each Command Phase and gains +1 to all To Hit rolls."
     },
     {
       "id": "monolith-vault",
       "name": "Monolith Vault",
-      "shortDesc": "May transport Lord of War units via Eternity Portal.",
       "fullDesc": "This model's Eternity Portal may be used by Lord of War units. Up to one Lord of War may embark in addition to normal infantry capacity."
     },
     {
       "id": "gates-of-the-tomb-world",
       "name": "Gates of the Tomb World",
-      "shortDesc": "Embarked units may disembark anywhere within 6\", even if this model moved.",
       "fullDesc": "Units embarking through this model's Eternity Portal may disembark anywhere within 6\" of this model, regardless of whether it moved this turn."
     },
     {
       "id": "doomsday-weapon",
       "name": "Doomsday Weapon",
-      "shortDesc": "Primary weapon is Ordnance; gains +2 Strength when not moving.",
       "fullDesc": "This model's primary weapon has the Ordnance rule. In any turn this model did not move, its primary weapon gains +2 Strength."
     },
     {
       "id": "invasion-beam",
       "name": "Invasion Beam",
-      "shortDesc": "Embarked units may disembark anywhere in the movement phase, counting as Deepstruck.",
       "fullDesc": "Units may disembark from this model at any point during the Movement Phase. They count as having arrived via Deepstrike and may not charge on that turn."
     },
     {
       "id": "grand-illusion",
       "name": "Grand Illusion",
-      "shortDesc": "Once per game, redeploy up to three friendly Necron units before the game.",
       "fullDesc": "Once per game, immediately before the first turn, this model may select up to three friendly Necron units and redeploy them anywhere in its own deployment zone."
     },
     {
       "id": "empyric-overcharge",
       "name": "Empyric Overcharge",
-      "shortDesc": "Enemy psykers within 12\" suffer -1 to all psychic rolls.",
       "fullDesc": "Enemy psykers within 12\" of this unit suffer -1 to all Psychic tests and Deny the Witch rolls."
     },
     {
       "id": "the-stars-are-right",
       "name": "The Stars Are Right",
-      "shortDesc": "This unit may re-roll reserve rolls.",
       "fullDesc": "This unit may re-roll any reserve rolls made to bring it onto the battlefield."
     },
     {
       "id": "surrogate-hosts",
       "name": "Surrogate Hosts",
-      "shortDesc": "Once per phase, ignore one wound on a 4+.",
       "fullDesc": "Once per phase, when this model suffers a wound, it may roll a d6. On a 4+, the wound is ignored."
     },
     {
       "id": "mechanical-augmentation",
       "name": "Mechanical Augmentation",
-      "shortDesc": "May purchase one additional equipment upgrade.",
       "fullDesc": "This model may take one additional Equipment upgrade from the named upgrade list beyond the normal allowance."
     },
     {
       "id": "lord-of-technology",
       "name": "Lord of Technology",
-      "shortDesc": "Repair: heal d3 Wounds on a target vehicle or model within 3\".",
       "fullDesc": "In the Command Phase, this model may Repair a friendly Vehicle or model within 3\", healing d3 Wounds."
     },
     {
       "id": "lord-of-the-pryhian-legions",
       "name": "Lord of the Pryhian Legions",
-      "shortDesc": "6\" Aura: friendly Necron Warriors gain +1 Attack.",
       "fullDesc": "6\" Aura: Friendly Necron Warrior units within range gain +1 Attack in close combat."
     },
     {
       "id": "mind-in-the-machine",
       "name": "Mind in the Machine",
-      "shortDesc": "Counts as Independent Character for Canoptek constructs.",
       "fullDesc": "This model provides Independent Character benefits to Canoptek units and may join them as normal."
     },
     {
       "id": "counter-tactics",
       "name": "Counter Tactics",
-      "shortDesc": "Once per game, interrupt enemy movement to shoot at them.",
       "fullDesc": "Once per game, when an enemy unit moves within 12\" of this model, this model may immediately make a Snap Shot at that unit as an interrupt action."
     },
     {
       "id": "adaptive-strategy",
       "name": "Adaptive Strategy",
-      "shortDesc": "Once per game, change this model's Warlord Trait.",
       "fullDesc": "Once per game, in the Command Phase, this model may swap its current Warlord Trait for any other trait on the table."
     },
     {
       "id": "ghostwalk-mantle",
       "name": "Ghostwalk Mantle",
-      "shortDesc": "4+ invulnerable save.",
       "fullDesc": "This model has a 4+ invulnerable save against all attacks."
     },
     {
       "id": "cleaving-counterblow",
       "name": "Cleaving Counterblow",
-      "shortDesc": "When reduced to 0 Wounds, make one free attack before removal.",
       "fullDesc": "When this model is reduced to 0 Wounds, it may make one additional attack at its full profile before being removed from play."
     },
     {
       "id": "writhing-bodies",
       "name": "Writhing Bodies",
-      "shortDesc": "May move through units and terrain freely.",
       "fullDesc": "This unit may move through friendly and enemy units, as well as all terrain features, without penalty or restriction during its movement phase."
     },
     {
       "id": "death-rule",
       "name": "Death",
-      "shortDesc": "Enemy units within 6\" suffer -1 Ld per casualty from that unit this turn.",
       "fullDesc": "Enemy units within 6\" of this model suffer -1 Leadership for each model removed as a casualty from that unit this turn."
     },
     {
       "id": "phase-shift-generator-aura",
       "name": "Phase Shift Generator",
-      "shortDesc": "6\" Aura: friendly Necron units gain a 4+ invulnerable save.",
       "fullDesc": "6\" Aura: Friendly Necron units within range gain a 4+ invulnerable save."
     },
     {
       "id": "prescient-strike",
       "name": "Prescient Strike",
-      "shortDesc": "Always acts first in Initiative order.",
       "fullDesc": "This model always strikes first in the Initiative order, regardless of its actual Initiative value or any modifiers."
     }
   ],
@@ -2060,6 +2003,16 @@
               "pts": 1
             }
           ]
+        },
+        {
+          "id": "secondary-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "command-barge"
+          ],
+          "label": "Take secondary weapon",
+          "weaponListId": "hq-secondary"
         }
       ]
     },
@@ -2130,6 +2083,16 @@
               "pts": 19
             }
           ]
+        },
+        {
+          "id": "secondary-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "lokhust-lord"
+          ],
+          "label": "Take secondary weapon",
+          "weaponListId": "hq-secondary"
         },
         {
           "id": "upgrades",
@@ -2706,54 +2669,64 @@
           ]
         },
         {
-          "id": "equip-upgrades",
+          "id": "chrono-countertemporal",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Equipment upgrades (one of each)",
-          "choices": [
-            {
-              "label": "Countertemporal Nanomines",
-              "pts": 10,
-              "grantsRules": [
-                "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Cryptogeometric Adjuster",
-              "pts": 30,
-              "grantsRules": [
-                "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Dimensional Sanctum",
-              "pts": 40,
-              "grantsRules": [
-                "Dimensional Sanctum — This model and its unit gain Deepstrike."
-              ]
-            },
-            {
-              "label": "Hyper Material Ablator",
-              "pts": 60,
-              "grantsRules": [
-                "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
-              ]
-            },
-            {
-              "label": "Photonic Transubjector",
-              "pts": 5,
-              "grantsRules": [
-                "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
-              ]
-            },
-            {
-              "label": "Prismatic Obfuscatron",
-              "pts": 10,
-              "grantsRules": [
-                "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
-              ]
-            }
-          ]
+          "pts": 10,
+          "label": "Countertemporal Nanomines",
+          "grantsRules": [
+            "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "chrono-equip"
+        },
+        {
+          "id": "chrono-cryptogeometric",
+          "type": "toggle",
+          "pts": 30,
+          "label": "Cryptogeometric Adjuster",
+          "grantsRules": [
+            "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "chrono-equip"
+        },
+        {
+          "id": "chrono-dimensional-sanctum",
+          "type": "toggle",
+          "pts": 40,
+          "label": "Dimensional Sanctum",
+          "grantsRules": [
+            "Dimensional Sanctum — This model and its unit gain Deepstrike."
+          ],
+          "exclusiveGroup": "chrono-equip"
+        },
+        {
+          "id": "chrono-hyper-material",
+          "type": "toggle",
+          "pts": 60,
+          "label": "Hyper Material Ablator",
+          "grantsRules": [
+            "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
+          ],
+          "exclusiveGroup": "chrono-equip"
+        },
+        {
+          "id": "chrono-photonic",
+          "type": "toggle",
+          "pts": 5,
+          "label": "Photonic Transubjector",
+          "grantsRules": [
+            "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
+          ],
+          "exclusiveGroup": "chrono-equip"
+        },
+        {
+          "id": "chrono-prismatic",
+          "type": "toggle",
+          "pts": 10,
+          "label": "Prismatic Obfuscatron",
+          "grantsRules": [
+            "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
+          ],
+          "exclusiveGroup": "chrono-equip"
         }
       ]
     },
@@ -2839,54 +2812,64 @@
       ],
       "options": [
         {
-          "id": "equip-upgrades",
+          "id": "plasmancer-countertemporal",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Equipment upgrades (one of each)",
-          "choices": [
-            {
-              "label": "Countertemporal Nanomines",
-              "pts": 10,
-              "grantsRules": [
-                "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Cryptogeometric Adjuster",
-              "pts": 30,
-              "grantsRules": [
-                "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Dimensional Sanctum",
-              "pts": 40,
-              "grantsRules": [
-                "Dimensional Sanctum — This model and its unit gain Deepstrike."
-              ]
-            },
-            {
-              "label": "Hyper Material Ablator",
-              "pts": 60,
-              "grantsRules": [
-                "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
-              ]
-            },
-            {
-              "label": "Photonic Transubjector",
-              "pts": 5,
-              "grantsRules": [
-                "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
-              ]
-            },
-            {
-              "label": "Prismatic Obfuscatron",
-              "pts": 10,
-              "grantsRules": [
-                "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
-              ]
-            }
-          ]
+          "pts": 10,
+          "label": "Countertemporal Nanomines",
+          "grantsRules": [
+            "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "plasmancer-equip"
+        },
+        {
+          "id": "plasmancer-cryptogeometric",
+          "type": "toggle",
+          "pts": 30,
+          "label": "Cryptogeometric Adjuster",
+          "grantsRules": [
+            "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "plasmancer-equip"
+        },
+        {
+          "id": "plasmancer-dimensional-sanctum",
+          "type": "toggle",
+          "pts": 40,
+          "label": "Dimensional Sanctum",
+          "grantsRules": [
+            "Dimensional Sanctum — This model and its unit gain Deepstrike."
+          ],
+          "exclusiveGroup": "plasmancer-equip"
+        },
+        {
+          "id": "plasmancer-hyper-material",
+          "type": "toggle",
+          "pts": 60,
+          "label": "Hyper Material Ablator",
+          "grantsRules": [
+            "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
+          ],
+          "exclusiveGroup": "plasmancer-equip"
+        },
+        {
+          "id": "plasmancer-photonic",
+          "type": "toggle",
+          "pts": 5,
+          "label": "Photonic Transubjector",
+          "grantsRules": [
+            "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
+          ],
+          "exclusiveGroup": "plasmancer-equip"
+        },
+        {
+          "id": "plasmancer-prismatic",
+          "type": "toggle",
+          "pts": 10,
+          "label": "Prismatic Obfuscatron",
+          "grantsRules": [
+            "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
+          ],
+          "exclusiveGroup": "plasmancer-equip"
         }
       ]
     },
@@ -2932,54 +2915,64 @@
       ],
       "options": [
         {
-          "id": "equip-upgrades",
+          "id": "psycho-countertemporal",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Equipment upgrades (one of each)",
-          "choices": [
-            {
-              "label": "Countertemporal Nanomines",
-              "pts": 10,
-              "grantsRules": [
-                "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Cryptogeometric Adjuster",
-              "pts": 30,
-              "grantsRules": [
-                "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Dimensional Sanctum",
-              "pts": 40,
-              "grantsRules": [
-                "Dimensional Sanctum — This model and its unit gain Deepstrike."
-              ]
-            },
-            {
-              "label": "Hyper Material Ablator",
-              "pts": 60,
-              "grantsRules": [
-                "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
-              ]
-            },
-            {
-              "label": "Photonic Transubjector",
-              "pts": 5,
-              "grantsRules": [
-                "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
-              ]
-            },
-            {
-              "label": "Prismatic Obfuscatron",
-              "pts": 10,
-              "grantsRules": [
-                "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
-              ]
-            }
-          ]
+          "pts": 10,
+          "label": "Countertemporal Nanomines",
+          "grantsRules": [
+            "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "psycho-equip"
+        },
+        {
+          "id": "psycho-cryptogeometric",
+          "type": "toggle",
+          "pts": 30,
+          "label": "Cryptogeometric Adjuster",
+          "grantsRules": [
+            "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "psycho-equip"
+        },
+        {
+          "id": "psycho-dimensional-sanctum",
+          "type": "toggle",
+          "pts": 40,
+          "label": "Dimensional Sanctum",
+          "grantsRules": [
+            "Dimensional Sanctum — This model and its unit gain Deepstrike."
+          ],
+          "exclusiveGroup": "psycho-equip"
+        },
+        {
+          "id": "psycho-hyper-material",
+          "type": "toggle",
+          "pts": 60,
+          "label": "Hyper Material Ablator",
+          "grantsRules": [
+            "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
+          ],
+          "exclusiveGroup": "psycho-equip"
+        },
+        {
+          "id": "psycho-photonic",
+          "type": "toggle",
+          "pts": 5,
+          "label": "Photonic Transubjector",
+          "grantsRules": [
+            "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
+          ],
+          "exclusiveGroup": "psycho-equip"
+        },
+        {
+          "id": "psycho-prismatic",
+          "type": "toggle",
+          "pts": 10,
+          "label": "Prismatic Obfuscatron",
+          "grantsRules": [
+            "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
+          ],
+          "exclusiveGroup": "psycho-equip"
         }
       ]
     },
@@ -3024,85 +3017,91 @@
       ],
       "options": [
         {
-          "id": "tech-upgrades",
+          "id": "techno-canoptek-cloak",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Technomancer tools (one of each)",
-          "choices": [
+          "pts": 18,
+          "label": "Canoptek Cloak",
+          "grantsRules": [
+            "Canoptek Cloak — M+6 and Fly.",
+            "flyer"
+          ],
+          "statModifiers": [
             {
-              "label": "Canoptek Cloak",
-              "pts": 18,
-              "grantsRules": [
-                "Canoptek Cloak — M+6 and Fly.",
-                "flyer"
-              ],
-              "statModifiers": [
-                {
-                  "modelId": "technomancer",
-                  "stat": "M",
-                  "op": "add",
-                  "value": 6
-                }
-              ]
-            },
-            {
-              "label": "Canoptek Control Node",
-              "pts": 20,
-              "grantsRules": [
-                "Canoptek Control Node — 6\" Aura, target Canoptek Unit gains +1 To Hit."
-              ]
+              "modelId": "technomancer",
+              "stat": "M",
+              "op": "add",
+              "value": 6
             }
           ]
         },
         {
-          "id": "equip-upgrades",
+          "id": "techno-canoptek-control-node",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Equipment upgrades (one of each)",
-          "choices": [
-            {
-              "label": "Countertemporal Nanomines",
-              "pts": 10,
-              "grantsRules": [
-                "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Cryptogeometric Adjuster",
-              "pts": 30,
-              "grantsRules": [
-                "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
-              ]
-            },
-            {
-              "label": "Dimensional Sanctum",
-              "pts": 40,
-              "grantsRules": [
-                "Dimensional Sanctum — This model and its unit gain Deepstrike."
-              ]
-            },
-            {
-              "label": "Hyper Material Ablator",
-              "pts": 60,
-              "grantsRules": [
-                "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
-              ]
-            },
-            {
-              "label": "Photonic Transubjector",
-              "pts": 5,
-              "grantsRules": [
-                "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
-              ]
-            },
-            {
-              "label": "Prismatic Obfuscatron",
-              "pts": 10,
-              "grantsRules": [
-                "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
-              ]
-            }
+          "pts": 20,
+          "label": "Canoptek Control Node",
+          "grantsRules": [
+            "Canoptek Control Node — 6\" Aura, target Canoptek Unit gains +1 To Hit."
           ]
+        },
+        {
+          "id": "techno-countertemporal",
+          "type": "toggle",
+          "pts": 10,
+          "label": "Countertemporal Nanomines",
+          "grantsRules": [
+            "Countertemporal Nanomines — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "techno-equip"
+        },
+        {
+          "id": "techno-cryptogeometric",
+          "type": "toggle",
+          "pts": 30,
+          "label": "Cryptogeometric Adjuster",
+          "grantsRules": [
+            "Cryptogeometric Adjuster — 18\" Aura, target unit only charges and advances at half speed."
+          ],
+          "exclusiveGroup": "techno-equip"
+        },
+        {
+          "id": "techno-dimensional-sanctum",
+          "type": "toggle",
+          "pts": 40,
+          "label": "Dimensional Sanctum",
+          "grantsRules": [
+            "Dimensional Sanctum — This model and its unit gain Deepstrike."
+          ],
+          "exclusiveGroup": "techno-equip"
+        },
+        {
+          "id": "techno-hyper-material",
+          "type": "toggle",
+          "pts": 60,
+          "label": "Hyper Material Ablator",
+          "grantsRules": [
+            "Hyper Material Ablator — 6\" Aura, target unit gains a 5+ Cover Save."
+          ],
+          "exclusiveGroup": "techno-equip"
+        },
+        {
+          "id": "techno-photonic",
+          "type": "toggle",
+          "pts": 5,
+          "label": "Photonic Transubjector",
+          "grantsRules": [
+            "Photonic Transubjector — This model ignores the First Wound Suffered per Phase."
+          ],
+          "exclusiveGroup": "techno-equip"
+        },
+        {
+          "id": "techno-prismatic",
+          "type": "toggle",
+          "pts": 10,
+          "label": "Prismatic Obfuscatron",
+          "grantsRules": [
+            "Prismatic Obfuscatron — 6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
+          ],
+          "exclusiveGroup": "techno-equip"
         }
       ]
     },
@@ -3386,7 +3385,6 @@
         {
           "id": "flayer-virus-aura",
           "name": "Flayer Virus",
-          "shortDesc": "12\" True Aura: all units suffer Ld-1; Necron units suffer Ld-2. Flayed Ones immune.",
           "fullDesc": "12\" True Aura, all units suffer Ld-1. Necron units suffer Ld-2 instead. Flayed Ones are Immune to this Aura."
         }
       ],
@@ -3752,40 +3750,30 @@
       ],
       "options": [
         {
-          "id": "heavy-upgrade",
+          "id": "cts-heavy-upgrade",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Take one Heavy weapon",
-          "choices": [
-            {
-              "label": "2 Sets of 5 Linked Gauss Flayers",
-              "pts": 25,
-              "grantsWeapons": [
-                "2-sets-5-linked-gauss-flayers"
-              ]
-            }
+          "pts": 25,
+          "label": "2 Sets of 5 Linked Gauss Flayers",
+          "grantsWargear": [
+            "2-sets-5-linked-gauss-flayers"
           ]
         },
         {
-          "id": "misc-upgrades",
+          "id": "cts-gloom-prison",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Optional upgrades",
-          "choices": [
-            {
-              "label": "Gloom Prison",
-              "pts": 2,
-              "grantsRules": [
-                "Gloom Prison — see Gloom Prism."
-              ]
-            },
-            {
-              "label": "Sepulchral Scarabs",
-              "pts": 2,
-              "grantsRules": [
-                "Sepulchral Scarabs — Each Command Phase roll d6; on a 5+, Heal one additional Wound."
-              ]
-            }
+          "pts": 2,
+          "label": "Gloom Prison",
+          "grantsRules": [
+            "Gloom Prison — see Gloom Prism."
+          ]
+        },
+        {
+          "id": "cts-sepulchral-scarabs",
+          "type": "toggle",
+          "pts": 2,
+          "label": "Sepulchral Scarabs",
+          "grantsRules": [
+            "Sepulchral Scarabs — Each Command Phase roll d6; on a 5+, Heal one additional Wound."
           ]
         }
       ]
@@ -4109,32 +4097,32 @@
           ]
         },
         {
-          "id": "unit-upgrades",
+          "id": "tb-nebuloscope",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Entire unit upgrades (one of each)",
-          "choices": [
-            {
-              "label": "Nebuloscope",
-              "pts": 2,
-              "grantsRules": [
-                "Nebuloscope — Ranged attacks from this model inflict a -1 Cover Save."
-              ]
-            },
-            {
-              "label": "Shadowloom",
-              "pts": 3,
-              "grantsRules": [
-                "Shadowloom — Shroud"
-              ]
-            },
-            {
-              "label": "Shield Vanes",
-              "pts": 2,
-              "grantsRules": [
-                "Shield Vanes — This model has Sv3+."
-              ]
-            }
+          "pts": 2,
+          "label": "Nebuloscope",
+          "grantsRules": [
+            "Nebuloscope — Ranged attacks from this model inflict a -1 Cover Save."
+          ],
+          "exclusiveGroup": "tb-shadow"
+        },
+        {
+          "id": "tb-shadowloom",
+          "type": "toggle",
+          "pts": 3,
+          "label": "Shadowloom",
+          "grantsRules": [
+            "Shadowloom — Shroud"
+          ],
+          "exclusiveGroup": "tb-shadow"
+        },
+        {
+          "id": "tb-shield-vanes",
+          "type": "toggle",
+          "pts": 2,
+          "label": "Shield Vanes",
+          "grantsRules": [
+            "Shield Vanes — This model has Sv3+."
           ]
         }
       ]
@@ -4312,25 +4300,21 @@
       ],
       "options": [
         {
-          "id": "misc-upgrades",
+          "id": "ctsen-gloom-prison",
           "type": "toggle",
-          "scope": "unit",
-          "label": "Optional upgrades",
-          "choices": [
-            {
-              "label": "Gloom Prison",
-              "pts": 2,
-              "grantsRules": [
-                "Gloom Prison — see Gloom Prism."
-              ]
-            },
-            {
-              "label": "Sepulchral Scarabs",
-              "pts": 2,
-              "grantsRules": [
-                "Sepulchral Scarabs — Each Command Phase roll d6; on a 5+, Heal one additional Wound."
-              ]
-            }
+          "pts": 2,
+          "label": "Gloom Prison",
+          "grantsRules": [
+            "Gloom Prison — see Gloom Prism."
+          ]
+        },
+        {
+          "id": "ctsen-sepulchral-scarabs",
+          "type": "toggle",
+          "pts": 2,
+          "label": "Sepulchral Scarabs",
+          "grantsRules": [
+            "Sepulchral Scarabs — Each Command Phase roll d6; on a 5+, Heal one additional Wound."
           ]
         }
       ]

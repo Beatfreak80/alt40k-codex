@@ -12,7 +12,6 @@
           {
             "id": "well-disciplined",
             "name": "Well Disciplined",
-            "shortDesc": "Models may reroll 1s To Hit; auras extend to 1s and 2s.",
             "fullDesc": "Models may reroll 1s To Hit. Auras that allow reroll 1s To Hit allow all failed To Hit rolls of 1 or 2 to be rerolled instead."
           }
         ]
@@ -24,13 +23,11 @@
           {
             "id": "justified",
             "name": "Justified",
-            "shortDesc": "All models gain Ld+1.",
             "fullDesc": "All models in your army gain Ld+1."
           },
           {
             "id": "righteous-zeal",
             "name": "Righteous Zeal",
-            "shortDesc": "Reroll 1s To Wound in melee on the turn you Charged.",
             "fullDesc": "All models in your army may reroll 1s To Wound in Melee on the phase they successfully Charged."
           }
         ]
@@ -42,19 +39,16 @@
           {
             "id": "black-rage",
             "name": "Black Rage",
-            "shortDesc": "On failed Ld test, gain WS+1, BS+1, A+1; must charge if able.",
             "fullDesc": "If a unit ever fails its Ld test, they suffer WS+1, BS+1 (One worse) and gain A+1 for the remainder of the game. Units suffering from the Black Rage must declare Charges if within Range, and cannot fire weapons or Advance if it would make declaring a Charge within range illegal. If a Charge cannot be declared, the unit must move towards the closest enemy unit and Advance if it still cannot Charge or Shoot them."
           },
           {
             "id": "quicksilver-blood",
             "name": "Quicksilver Blood",
-            "shortDesc": "All models gain I+1.",
             "fullDesc": "All models in your army gain I+1."
           },
           {
             "id": "unnatural-speed",
             "name": "Unnatural Speed",
-            "shortDesc": "All models gain Counterattack.",
             "fullDesc": "All models in your army gain Counterattack."
           }
         ]
@@ -66,13 +60,11 @@
           {
             "id": "relic-seekers",
             "name": "Relic Seekers",
-            "shortDesc": "Enemy objectives within 3\" of your scoring unit award you 0.5 VP too.",
             "fullDesc": "Any Objective Marker that scores Victory Points for the enemy while your army has a scoreable unit within 3\" awards you .5 Victory Points as well."
           },
           {
             "id": "unknown-origins",
             "name": "Unknown Origins",
-            "shortDesc": "All models suffer Ld-1.",
             "fullDesc": "All models in your army suffer Ld-1."
           }
         ]
@@ -84,13 +76,11 @@
           {
             "id": "hold-the-line",
             "name": "Hold the Line",
-            "shortDesc": "Reroll failed Sv rolls of 1.",
             "fullDesc": "All models in your army may reroll failed Sv rolls of 1."
           },
           {
             "id": "unwavering",
             "name": "Unwavering",
-            "shortDesc": "Reroll failed Ld Tests.",
             "fullDesc": "All models in your army may reroll failed Ld Tests."
           }
         ]
@@ -102,13 +92,11 @@
           {
             "id": "foreboding-knowledge",
             "name": "Foreboding Knowledge",
-            "shortDesc": "All Characters and Independent Characters suffer Ld-1.",
             "fullDesc": "All Characters and Independent Characters suffer Ld-1."
           },
           {
             "id": "watchers",
             "name": "Watchers",
-            "shortDesc": "Characters may take a Watcher Token to reroll one die per Phase.",
             "fullDesc": "Any Character or Independent Character may take a Watcher Token. Any unit the Independent Character is in (or themselves) may reroll any one die per Phase."
           }
         ]
@@ -120,13 +108,11 @@
           {
             "id": "extreme-trials",
             "name": "Extreme Trials",
-            "shortDesc": "Scouts, Bladeguard, Company Veterans, Sternguard, Vanguard Veterans count as Troop Slots.",
             "fullDesc": "You may treat Scouts, Bladeguard Veterans, Company Veterans, Sternguard Veterans, and Vanguard Veterans as Troop Slots."
           },
           {
             "id": "long-suffering",
             "name": "Long Suffering",
-            "shortDesc": "All models gain Ld+1.",
             "fullDesc": "All models in your army gain Ld+1."
           }
         ],
@@ -168,13 +154,11 @@
           {
             "id": "monster-hunters",
             "name": "Monster Hunters",
-            "shortDesc": "+1 To Wound Monstrous Infantry, Monsters, or Titanic in Melee.",
             "fullDesc": "All models in your army gain +1 To Wound Monstrous Infantry, Monsters, or Titanic Monsters in Melee."
           },
           {
             "id": "trophy-hunters",
             "name": "Trophy Hunters",
-            "shortDesc": "No models may claim Objective Markers.",
             "fullDesc": "No models in your army may claim Objective Markers."
           }
         ]
@@ -186,13 +170,11 @@
           {
             "id": "savages",
             "name": "Savages",
-            "shortDesc": "All models have Furious Charge.",
             "fullDesc": "All models in this army have Furious Charge."
           },
           {
             "id": "aggressive-tactics",
             "name": "Aggressive Tactics",
-            "shortDesc": "All models add +2\" to Charges.",
             "fullDesc": "All models in this army add +2\" to Charges."
           }
         ]
@@ -204,13 +186,11 @@
           {
             "id": "extensive-rituals",
             "name": "Extensive Rituals",
-            "shortDesc": "Always lose Initiative Rolls for Attacking/Defending.",
             "fullDesc": "This army will always lose Initiative Rolls for who decides Attacking and Defending Players."
           },
           {
             "id": "spiritual-resolve",
             "name": "Spiritual Resolve",
-            "shortDesc": "All units Deny the Witch at Mastery 1 or +1 if already a psyker.",
             "fullDesc": "All units in this army may Deny the Witch at Psychic Master Level 1, or +1 If they already have Psychic Mastery."
           }
         ]
@@ -222,13 +202,11 @@
           {
             "id": "rip-and-tear",
             "name": "Rip and Tear",
-            "shortDesc": "All Melee attacks are Rending; Rending triggers on 4+ if still successful.",
             "fullDesc": "All Melee attacks made by your army are considered Rending. Rending weapons trigger on a 4+ instead of 5+ If a 4+ would still be successful."
           },
           {
             "id": "eager-warmongers",
             "name": "Eager Warmongers",
-            "shortDesc": "Reroll failed Charges.",
             "fullDesc": "All units in your army may reroll failed Charges."
           }
         ]
@@ -240,13 +218,11 @@
           {
             "id": "if-bolter-drill",
             "name": "Imperial Fist Bolter Drill",
-            "shortDesc": "All models always count as stationary for Bolter Discipline.",
             "fullDesc": "All models are always considered as sitting still for purposes of Bolter Discipline."
           },
           {
             "id": "shore-up-the-defenses",
             "name": "Shore up the Defenses",
-            "shortDesc": "Buildings Embarked by Imperial Fists gain T+1.",
             "fullDesc": "Buildings Embarked by Imperial Fist units gain T+1 while they are inside."
           }
         ]
@@ -258,13 +234,11 @@
           {
             "id": "deadly-efficiency",
             "name": "Deadly Efficiency",
-            "shortDesc": "Devastators and standard Dreadnoughts count as Troops or their own slots.",
             "fullDesc": "You may treat Devastator Squads and Dreadnoughts (no variants or specialized versions) as Troop Slots or their respective Slots."
           },
           {
             "id": "heavy-fire-doctrines",
             "name": "Heavy Fire Doctrines",
-            "shortDesc": "Snapshot on 5+ with Heavy weapons including Overwatch.",
             "fullDesc": "All models Snapshot on a 5+ with Heavy weapons, including Overwatch, instead of the usual 6+."
           }
         ],
@@ -286,13 +260,11 @@
           {
             "id": "protect-civilians",
             "name": "Protect Civilians",
-            "shortDesc": "Only score VP from Objectives requiring held Objective Markers.",
             "fullDesc": "Your army may only score VP based on Objectives requiring Objective Markers to be held."
           },
           {
             "id": "protect-what-is-possessed",
             "name": "Protect What is Already Possessed",
-            "shortDesc": "+1 VP per completed Objective for Objectives 11-36, once per Turn.",
             "fullDesc": "Gain +1 VP per completed Objective for Objectives 11-36 once per Turn."
           }
         ]
@@ -304,13 +276,11 @@
           {
             "id": "the-martial-bond",
             "name": "The Martial Bond",
-            "shortDesc": "All Ranged and Melee Attacks have the Gauss Rule.",
             "fullDesc": "All Ranged and Melee Attacks from this army have the Gauss Rule."
           },
           {
             "id": "ultima-founding-st",
             "name": "Ultima Founding",
-            "shortDesc": "May only include models with the Stubborn rule.",
             "fullDesc": "This army may only include models with the Stubborn rule."
           }
         ]
@@ -322,7 +292,6 @@
           {
             "id": "strike-from-the-shadows",
             "name": "Strike from the Shadows",
-            "shortDesc": "All models gain Stealth; if already Stealth, swap for Shroud.",
             "fullDesc": "All models in your army gain Stealth. If they already had Stealth, they swap Stealth for Shroud instead."
           }
         ]
@@ -334,13 +303,11 @@
           {
             "id": "aggressive-nature",
             "name": "Aggressive Nature",
-            "shortDesc": "All models gain Furious Charge.",
             "fullDesc": "All models in your army gain Furious Charge."
           },
           {
             "id": "wolfen-fury",
             "name": "Wolfen Fury",
-            "shortDesc": "All models gain A+1 on the turn they Charge.",
             "fullDesc": "All models in your army gain A+1 on the turn they Charge."
           }
         ]
@@ -352,13 +319,11 @@
           {
             "id": "pursuit-of-knowledge",
             "name": "The Pursuit of Knowledge",
-            "shortDesc": "All models gain Ld+4 within 3\" of an Objective.",
             "fullDesc": "All models in your army gain Ld+4 when within 3\" of an Objective."
           },
           {
             "id": "knowledge-absolute",
             "name": "Knowledge Absolute",
-            "shortDesc": "Gain 2 VP for Kingslayer instead of D3.",
             "fullDesc": "Gain 2 VP for Kingslayer instead of D3."
           }
         ]
@@ -370,7 +335,6 @@
           {
             "id": "emperors-finest",
             "name": "Emperor's Finest",
-            "shortDesc": "Reroll one Objective during your Command Phase, even if already rerolled.",
             "fullDesc": "You may reroll one Objective during your Command Phase, even if it has already been rerolled."
           }
         ]
@@ -382,7 +346,6 @@
           {
             "id": "guardians-of-cadian-gate",
             "name": "Guardians of the Cadian Gate",
-            "shortDesc": "Infantry within 3\" of an Objective gain Objective Secured and Stubborn.",
             "fullDesc": "All infantry models in your army gain Objective Secured and Stubborn when within 3\" of an Objective Marker."
           }
         ]
@@ -394,13 +357,11 @@
           {
             "id": "speed-tactics",
             "name": "Speed Tactics",
-            "shortDesc": "All models gain Hit and Run.",
             "fullDesc": "All models in your army gain Hit and Run."
           },
           {
             "id": "rapid-deployment",
             "name": "Rapid Deployment",
-            "shortDesc": "All models gain Scout.",
             "fullDesc": "All models in your army gain Scout."
           }
         ]
@@ -412,13 +373,11 @@
           {
             "id": "bleeding-the-prey",
             "name": "Bleeding the Prey",
-            "shortDesc": "Auto-succeed Charge within 12\" if target is at half Wounds or less.",
             "fullDesc": "If the target of Charge is at half or less of the combined unit's total Wounds from Deployment, the Charge automatically succeeds if it is within 12\"."
           },
           {
             "id": "ultima-founding-ws",
             "name": "Ultima Founding",
-            "shortDesc": "May only include models with the Stubborn rule.",
             "fullDesc": "This army may only include models with the Stubborn rule."
           }
         ]
@@ -471,217 +430,181 @@
     {
       "id": "adjusted-tactics",
       "name": "Adjusted Tactics",
-      "shortDesc": "During Deployment, swap weapon(s) for legal options of equal or lesser cost after seeing opponent's roster.",
       "fullDesc": "During Deployment, after you have seen the Army Roster your opponent is bringing, this model may swap its current weapon(s) for legal weapon options equal to or less than the current point costs. For example, a Tactical Marine may swap its Plasma Gun for a Flamer because it costs less points."
     },
     {
       "id": "bolter-discipline",
       "name": "Bolter Discipline",
-      "shortDesc": "Always counts as half range when firing Rapid Fire Bolter weapons if it did not Move.",
       "fullDesc": "This model always counts as being in half range when firing Rapid Fire weapons that have Bolter as long as it did not Move or does not count as Moving during your Movement Phase."
     },
     {
       "id": "know-no-fear",
       "name": "Know No Fear",
-      "shortDesc": "Automatically passes Pinning, Rally, and Fear Tests.",
       "fullDesc": "This unit automatically passes Pinning Tests, Rally Tests, and Fear Tests. They still will fall back if they lose Combat Resolution."
     },
     {
       "id": "tactical-squads",
       "name": "Tactical Squads",
-      "shortDesc": "May split into sub-units of 2+ or merge back in Command Phase.",
       "fullDesc": "Each unit with this rule may declare they are forming their own units during your Command Phase. They may split up as low as two models per unit. Units must be placed within Unit Coherency during Deployment. They may instead merge back into bigger units but may not exceed maximum unit size or merge with units other than their own unit name. If they do so, all suffered Wounds stack onto the most wounded models in the form of Mortal Wounds. If there are more to stack then remaining Wounds on a model, nominate another model to suffer these remaining Mortal Wounds. Independent Characters can never pass on Wounds or take on Wounds for a unit in this fashion."
     },
     {
       "id": "transhuman-physiology",
       "name": "Transhuman Physiology",
-      "shortDesc": "This model has a 5+ Feel No Pain.",
       "fullDesc": "This model has a 5+ Feel No Pain."
     },
     {
       "id": "night-vision",
       "name": "Night Vision",
-      "shortDesc": "Ignores penalties from Night Fighting.",
       "fullDesc": "This model ignores all penalties from Night Fighting rules."
     },
     {
       "id": "battle-drills",
       "name": "Battle Drills",
-      "shortDesc": "6\" Aura: this model and target unit may Reroll 1s To Hit.",
       "fullDesc": "6\" Aura, this model and target unit may Reroll 1s To Hit."
     },
     {
       "id": "the-hour-is-nigh",
       "name": "The Hour is Nigh",
-      "shortDesc": "When fired, place marker on target; Orbital Strike lands next Command Phase.",
       "fullDesc": "When the weapon is fired, place a marker on field at a valid target. In your next Command Phase, the barrage strikes! Scatter like normal, following the 15\" Blast radius rules."
     },
     {
       "id": "t-minus-5",
       "name": "T Minus 5",
-      "shortDesc": "Cannot fire Turn 1; if carrier is destroyed, strike still lands next Command Phase.",
       "fullDesc": "The weapon may not be fired Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits in your Command Phase."
     },
     {
       "id": "canticle-of-hate",
       "name": "Canticle of Hate",
-      "shortDesc": "6\" Aura: this model and target unit treat Rapid Fire # as Assault #.",
       "fullDesc": "6\" Aura, this model and target unit treat Rapid Fire # weapons as Assault # weapons."
     },
     {
       "id": "zealot",
       "name": "Zealot",
-      "shortDesc": "Reroll all failed To Hit rolls on the phase it Charged or was Charged.",
       "fullDesc": "This model may reroll all failed To Hit rolls on the Phase it Charged or was Charged."
     },
     {
       "id": "tactical-authority",
       "name": "Tactical Authority",
-      "shortDesc": "18\" Aura: this model and target unit gain Counterattack.",
       "fullDesc": "18\" Aura, this model and target unit gains Counterattack."
     },
     {
       "id": "targeting-skulls",
       "name": "Targeting Skulls",
-      "shortDesc": "12\" Aura: Overwatch at full BS; templates use BS for number of dice.",
       "fullDesc": "12\" Aura, this model and target Unit may Overwatch at full BS instead of the usual Snapshots. Templates still perform Snapshots for number of dice but use BS To Hit."
     },
     {
       "id": "repair-servo-skulls",
       "name": "Repair Servo Skulls",
-      "shortDesc": "Repair 1 Wound on target Vehicle within 12\"; 5+ to also restore secondary result.",
       "fullDesc": "Repair 1 Wound on Target Vehicle within 12\". Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
     },
     {
       "id": "apothecary-aura",
       "name": "Apothecary",
-      "shortDesc": "6\" Aura: this model and target unit gain 5+ Feel No Pain.",
       "fullDesc": "6\" Aura, this model and target unit gain 5+ Feel No Pain."
     },
     {
       "id": "chief-apothecary-aura",
       "name": "Chief Apothecary",
-      "shortDesc": "6\" Aura: this model and target unit may reroll 1s for Feel No Pain.",
       "fullDesc": "6\" Aura – This model and target unit may reroll 1s for Feel No Pain."
     },
     {
       "id": "awaken-the-machine",
       "name": "Awaken the Machine",
-      "shortDesc": "6\" Aura: target Vehicle unit gains BS-1 (Improves by 1).",
       "fullDesc": "6\" Aura, target Vehicle unit gains BS-1 (Improves by 1)."
     },
     {
       "id": "sm-repair",
       "name": "Repair",
-      "shortDesc": "Repair 1 Wound on target Vehicle; 5+ to restore secondary result.",
       "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
     },
     {
       "id": "lobotomized",
       "name": "Lobotomized",
-      "shortDesc": "5+ Feel No Pain.",
       "fullDesc": "5+ Feel No Pain."
     },
     {
       "id": "glory-hunter",
       "name": "Glory Hunter",
-      "shortDesc": "May choose the target of its Challenge; the target may not deny.",
       "fullDesc": "This model may choose the target of its Challenge. The target may not deny the Challenge."
     },
     {
       "id": "blade-parry",
       "name": "Blade Parry",
-      "shortDesc": "4+ Invulnerability Save against Melee attacks.",
       "fullDesc": "This model has a 4+ Invulnerability Save against Melee attacks."
     },
     {
       "id": "chaplain-bodyguard",
       "name": "Chaplain Bodyguard",
-      "shortDesc": "6\" Aura: target unit suffers Slow.",
       "fullDesc": "6\" Aura, target unit suffers from Slow."
     },
     {
       "id": "hand-to-hand-drills",
       "name": "Hand to Hand Drills",
-      "shortDesc": "6\" Aura: this model and target unit may Reroll 1s To Wound.",
       "fullDesc": "6\" Aura, this model and target unit may Reroll 1s To Wound."
     },
     {
       "id": "drop-pod-rule",
       "name": "Drop Pod",
-      "shortDesc": "Acts like a Titanic unit when arriving by Deepstrike for displacing and auto-hits.",
       "fullDesc": "This model acts like a Titanic unit when arriving by Deepstrike for displacing models and causing Auto Hits."
     },
     {
       "id": "weapons-platform",
       "name": "Weapons Platform",
-      "shortDesc": "Counts as not moving for the purpose of Shooting.",
       "fullDesc": "This model counts as not moving for the purpose of Shooting."
     },
     {
       "id": "devastating-charge",
       "name": "Devastating Charge",
-      "shortDesc": "Gains A+1 on the phase it counts as Charging.",
       "fullDesc": "This model gains A+1 on the Phase it counts as Charging."
     },
     {
       "id": "terror-troops",
       "name": "Terror Troops",
-      "shortDesc": "6\" Aura: target unit suffers Ld-2 (cast per unit, not per model).",
       "fullDesc": "6\" Aura, target unit suffers Ld-2. This is cast as a Unit and not per model."
     },
     {
       "id": "blazing-weapons",
       "name": "Blazing Weapons",
-      "shortDesc": "May Shoot before or after Advancing; performs Overwatch at full BS.",
       "fullDesc": "This model may Shoot before or after Advancing and performs Overwatch on its BS instead of Snap Shots."
     },
     {
       "id": "mysterious-protection",
       "name": "Mysterious Protection",
-      "shortDesc": "4+ Invulnerability Save.",
       "fullDesc": "This model has a 4+ Invulnerability Save."
     },
     {
       "id": "advanced-scanners",
       "name": "Advanced Scanners",
-      "shortDesc": "Ignores Cover Saves when making Ranged Attacks.",
       "fullDesc": "This model ignores Cover Saves when making Ranged Attacks."
     },
     {
       "id": "grapnel-launcher-rule",
       "name": "Grapnel Launcher",
-      "shortDesc": "Ignores Models and Terrain when Moving, Advancing, Charging, or Falling Back.",
       "fullDesc": "This model ignores Models and Terrain when Moving, Advancing, Charging, and Falling Back."
     },
     {
       "id": "unyielding-specters",
       "name": "Unyielding Specters",
-      "shortDesc": "4+ Invulnerability Save.",
       "fullDesc": "This model has a 4+ Invulnerability Save."
     },
     {
       "id": "ceramite-bulk",
       "name": "Ceramite Bulk",
-      "shortDesc": "Cannot be transported by Transports.",
       "fullDesc": "This model may not be transported by Transports."
     },
     {
       "id": "fortification",
       "name": "Fortification",
-      "shortDesc": "This model may never be moved once placed on the table, except when destroyed.",
       "fullDesc": "This model may never be moved once placed on the Table, except when it is destroyed."
     },
     {
       "id": "chapter-ancient-aura",
       "name": "Chapter Ancient",
-      "shortDesc": "6\" Aura: when an enemy unit arrives from Reserves in range, this model and target unit may make an Immediate Free Shooting Phase against it.",
       "fullDesc": "6\" Aura, this model and target unit may make an Immediate Free Shooting Phase against any unit that just arrived from Reserves that is in range."
     },
     {
       "id": "chapter-champion-glory",
       "name": "Chapter Champion",
-      "shortDesc": "This model may reroll all failed To Hit and To Wound rolls.",
       "fullDesc": "This model may reroll all failed To Hit and To Wound rolls."
     }
   ],
@@ -1063,6 +986,7 @@
         },
         {
           "label": "Flame",
+          "templateType": "Flame",
           "strength": "5",
           "ap": "4+",
           "rules": "Assault 1, One Use Only"
@@ -3007,7 +2931,11 @@
     {
       "id": "stormshield-no-ranged",
       "name": "Stormshield",
-      "removesWargear": ["stormbolter", "mastercrafted-auto-bolt-rifle", "boltgun"],
+      "removesWargear": [
+        "stormbolter",
+        "mastercrafted-auto-bolt-rifle",
+        "boltgun"
+      ],
       "profiles": [
         {
           "strength": "-",
@@ -3019,7 +2947,9 @@
     {
       "id": "stormshield-no-pistol",
       "name": "Stormshield",
-      "removesWargear": ["bolt-pistol"],
+      "removesWargear": [
+        "bolt-pistol"
+      ],
       "profiles": [
         {
           "strength": "-",
@@ -4998,7 +4928,9 @@
           "value": 1
         }
       ],
-      "grantsRules": ["unique"],
+      "grantsRules": [
+        "unique"
+      ],
       "note": "W+1, A+1. Gain Psychic Mastery +1. May Deny the Witch twice per Psychic Phase. Gain Unique."
     },
     "chief-chaplain": {
@@ -5019,7 +4951,9 @@
           "value": 1
         }
       ],
-      "grantsRules": ["unique"],
+      "grantsRules": [
+        "unique"
+      ],
       "note": "W+1, A+1. May take one additional H option. Gain Unique."
     },
     "chief-apothecary": {
@@ -5040,7 +4974,10 @@
           "value": 1
         }
       ],
-      "grantsRules": ["chief-apothecary-aura", "unique"],
+      "grantsRules": [
+        "chief-apothecary-aura",
+        "unique"
+      ],
       "note": "W+1, A+1. 6\" Aura – This model and target unit may reroll 1s for Feel No Pain. Gain Unique."
     },
     "master-of-the-forge": {
@@ -5085,7 +5022,10 @@
           "value": 1
         }
       ],
-      "grantsRules": ["chapter-ancient-aura", "unique"],
+      "grantsRules": [
+        "chapter-ancient-aura",
+        "unique"
+      ],
       "note": "W+1, A+1. 6\" Aura – this model and target unit may make an Immediate Free Shooting Phase against any unit that just arrived from Reserves that is in range. Gain Unique."
     },
     "chapter-champion": {
@@ -5112,7 +5052,10 @@
           "value": 1
         }
       ],
-      "grantsRules": ["chapter-champion-glory", "unique"],
+      "grantsRules": [
+        "chapter-champion-glory",
+        "unique"
+      ],
       "note": "W+1, I+1, A+1. Reroll all failed To Hit and To Wound rolls. Gain Unique."
     },
     "primaris-terminator-armour": {
@@ -5796,31 +5739,26 @@
         {
           "id": "omen-of-potency",
           "name": "Omen of Potency",
-          "shortDesc": "This model gains A+3.",
           "fullDesc": "This model gains A+3."
         },
         {
           "id": "litany-of-intimidation",
           "name": "Litany of Intimidation",
-          "shortDesc": "6\" Aura: Ld Tests on 3d6 discard lowest.",
           "fullDesc": "6\" Aura, target unit takes Ld Tests on 3d6, discarding the lowest die."
         },
         {
           "id": "litany-of-faith",
           "name": "Litany of Faith",
-          "shortDesc": "6\" Aura: target unit gains 5+ Invulnerability Save.",
           "fullDesc": "6\" Aura, target Unit gain 5+ Invulnerability Save."
         },
         {
           "id": "true-sight",
           "name": "True Sight",
-          "shortDesc": "6\" Aura: this model and target unit gain BS-1 (improves by 1).",
           "fullDesc": "6\" Aura, this model and Target unit gain BS-1 (Improves by 1)."
         },
         {
           "id": "exhortation-of-rage",
           "name": "Exhortation of Rage",
-          "shortDesc": "6\" Aura: A+1 and reroll 1s To Wound in Melee.",
           "fullDesc": "6\" Aura, this model and target Unit gain A+1 and reroll 1s To Wound in Melee."
         }
       ],
@@ -6005,7 +5943,8 @@
           "id": "chap-chief-chaplain",
           "type": "namedUpgrade",
           "upgradeId": "chief-chaplain",
-          "pts": 17
+          "pts": 17,
+          "groupLimitExpansion": {"group": "chap-litany", "maxSelections": 2}
         },
         {
           "id": "chap-omen-of-potency",
@@ -6081,31 +6020,26 @@
         {
           "id": "omen-of-potency",
           "name": "Omen of Potency",
-          "shortDesc": "This model gains A+3.",
           "fullDesc": "This model gains A+3."
         },
         {
           "id": "litany-of-intimidation",
           "name": "Litany of Intimidation",
-          "shortDesc": "6\" Aura: Ld Tests on 3d6 discard lowest.",
           "fullDesc": "6\" Aura, target unit takes Ld Tests on 3d6, discarding the lowest die."
         },
         {
           "id": "litany-of-faith",
           "name": "Litany of Faith",
-          "shortDesc": "6\" Aura: target unit gains 5+ Invulnerability Save.",
           "fullDesc": "6\" Aura, target Unit gain 5+ Invulnerability Save."
         },
         {
           "id": "true-sight",
           "name": "True Sight",
-          "shortDesc": "6\" Aura: this model and target unit gain BS-1 (improves by 1).",
           "fullDesc": "6\" Aura, this model and Target unit gain BS-1 (Improves by 1)."
         },
         {
           "id": "exhortation-of-rage",
           "name": "Exhortation of Rage",
-          "shortDesc": "6\" Aura: A+1 and reroll 1s To Wound in Melee.",
           "fullDesc": "6\" Aura, this model and target Unit gain A+1 and reroll 1s To Wound in Melee."
         }
       ],
@@ -6275,7 +6209,8 @@
           "id": "cd-chief-chaplain",
           "type": "namedUpgrade",
           "upgradeId": "chief-chaplain",
-          "pts": 6
+          "pts": 6,
+          "groupLimitExpansion": {"group": "cd-litany", "maxSelections": 2}
         },
         {
           "id": "cd-omen-of-potency",
@@ -7090,37 +7025,31 @@
         {
           "id": "omen-of-potency",
           "name": "Omen of Potency",
-          "shortDesc": "This model gains A+3.",
           "fullDesc": "This model gains A+3."
         },
         {
           "id": "litany-of-intimidation",
           "name": "Litany of Intimidation",
-          "shortDesc": "6\" Aura: Ld Tests on 3d6 discard lowest.",
           "fullDesc": "6\" Aura, target unit takes Ld Tests on 3d6, discarding the lowest die."
         },
         {
           "id": "litany-of-faith",
           "name": "Litany of Faith",
-          "shortDesc": "6\" Aura: 5+ Invulnerability Save.",
           "fullDesc": "6\" Aura, target Unit gain 5+ Invulnerability Save."
         },
         {
           "id": "true-sight",
           "name": "True Sight",
-          "shortDesc": "6\" Aura: BS-1 (improves by 1).",
           "fullDesc": "6\" Aura, this model and Target unit gain BS-1 (Improves by 1)."
         },
         {
           "id": "exhortation-of-rage",
           "name": "Exhortation of Rage",
-          "shortDesc": "6\" Aura: A+1 and reroll 1s To Wound in Melee.",
           "fullDesc": "6\" Aura, this model and target Unit gain A+1 and reroll 1s To Wound in Melee."
         },
         {
           "id": "devastating-charge-bike",
           "name": "Devastating Charge",
-          "shortDesc": "Gains A+1 on the Phase it counts as Charging if equipped with Bike.",
           "fullDesc": "This model gains A+1 on the Phase it counts as Charging if equipped with Bike."
         }
       ],
@@ -7447,6 +7376,7 @@
           "type": "toggle",
           "label": "Camo Cloak",
           "pts": 8,
+          "exclusiveGroup": "plib-mount",
           "mutuallyExcludes": [
             "plib-terminator-armour"
           ],
@@ -7463,7 +7393,8 @@
           "id": "plib-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "primaris-terminator-armour",
-          "pts": 4
+          "pts": 4,
+          "exclusiveGroup": "plib-mount"
         },
         {
           "id": "plib-chief-librarian",
@@ -7542,13 +7473,15 @@
           "id": "apo-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 34
+          "pts": 34,
+          "exclusiveGroup": "apo-mount"
         },
         {
           "id": "apo-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
-          "pts": 23
+          "pts": 23,
+          "exclusiveGroup": "apo-mount"
         },
         {
           "id": "apo-chief-apothecary",
@@ -7764,13 +7697,15 @@
           "id": "ca-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 34
+          "pts": 34,
+          "exclusiveGroup": "ca-mount"
         },
         {
           "id": "ca-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
-          "pts": 10
+          "pts": 10,
+          "exclusiveGroup": "ca-mount"
         },
         {
           "id": "ca-chapter-ancient",
@@ -7952,7 +7887,6 @@
         {
           "id": "primaris-apothecary-aura",
           "name": "Apothecary",
-          "shortDesc": "This model and target unit gain +1 to Feel No Pain, no better than 4+.",
           "fullDesc": "This model and target unit gain +1 to their Feel No Pain no better than 4+."
         }
       ],
@@ -8435,7 +8369,6 @@
         {
           "id": "sm-repair-aura",
           "name": "Repair",
-          "shortDesc": "Repair 1 Wound on target Vehicle; 5+ to restore secondary result.",
           "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
         }
       ],
@@ -8579,7 +8512,6 @@
         {
           "id": "sm-repair-fb",
           "name": "Repair",
-          "shortDesc": "Repair 1 Wound on target Vehicle; 5+ to restore secondary result.",
           "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
         }
       ],
@@ -8734,7 +8666,6 @@
         {
           "id": "cypher-sword-rule",
           "name": "Cypher's Sword",
-          "shortDesc": "Cypher must always attempt to Hit and Run.",
           "fullDesc": "Cypher must always attempt to Hit and Run."
         }
       ],
@@ -8954,7 +8885,7 @@
             "deepstrike",
             "flyer"
           ],
-          "note": "M+6. Gain Deepstrike, Flying. +10 pts per model."
+          "note": "M+6. Gain Deepstrike, Flying."
         }
       ]
     },
@@ -9133,7 +9064,7 @@
             "frag-grenades",
             "krak-grenades"
           ],
-          "note": "+2 pts per model. Grenade 1, Haywire (2+), Nonblast."
+          "note": "Grenade 1, Haywire (2+), Nonblast."
         }
       ]
     },
@@ -9314,7 +9245,7 @@
           "grantsWargear": [
             "helix-gauntlet"
           ],
-          "note": "+2 pts per model. Ignore first Wound suffered each phase."
+          "note": "Ignore first Wound suffered each phase."
         }
       ]
     },
@@ -11094,7 +11025,6 @@
         {
           "id": "terror-troops-aura",
           "name": "Terror Troops",
-          "shortDesc": "6\" Aura: target unit suffers Ld-2 (per unit, not per model).",
           "fullDesc": "6\" Aura, target unit suffers Ld-2. This is cast as a Unit and not per model."
         }
       ],
@@ -11542,7 +11472,7 @@
           "grantsWargear": [
             "camo-cloaks"
           ],
-          "note": "+2 pts per model. Gain Stealth."
+          "note": "Gain Stealth."
         }
       ]
     },
@@ -12101,7 +12031,7 @@
           "grantsWargear": [
             "camo-cloaks"
           ],
-          "note": "+2 pts per model. Gain Stealth."
+          "note": "Gain Stealth."
         }
       ]
     },
@@ -12363,7 +12293,7 @@
             "deepstrike",
             "flyer"
           ],
-          "note": "M+6. Gain Deepstrike, Flying. +10 pts per model."
+          "note": "M+6. Gain Deepstrike, Flying."
         }
       ]
     },
@@ -12553,7 +12483,7 @@
             "deepstrike",
             "flyer"
           ],
-          "note": "M+6. Gain Deepstrike, Flying. +10 pts per model."
+          "note": "M+6. Gain Deepstrike, Flying."
         }
       ]
     },
@@ -12670,8 +12600,7 @@
           "ptsPerModel": 3,
           "grantsWargear": [
             "fragstorm-grenade-launcher"
-          ],
-          "note": "+3 pts per model."
+          ]
         }
       ]
     },
@@ -13863,7 +13792,7 @@
           "choices": [
             {
               "weaponId": "dreadnought-missile-launcher",
-              "label": "Keep DML",
+              "label": "Dreadnought Missile Launcher",
               "arcType": "Hull",
               "mountingTags": [
                 "Primary"
@@ -13946,6 +13875,8 @@
         {
           "id": "dr-extra-armour",
           "type": "toggle",
+          "exclusiveGroup": "dr-upgrades",
+          "applies": ["dreadnought"],
           "label": "Extra Armour",
           "pts": 5,
           "grantsWargear": [
@@ -13956,6 +13887,8 @@
         {
           "id": "dr-smoke",
           "type": "toggle",
+          "exclusiveGroup": "dr-upgrades",
+          "applies": ["dreadnought"],
           "label": "Smoke Launchers",
           "pts": 10,
           "grantsWargear": [
@@ -13966,6 +13899,8 @@
         {
           "id": "dr-blizzard-shield",
           "type": "toggle",
+          "exclusiveGroup": "dr-upgrades",
+          "applies": ["dreadnought"],
           "label": "Blizzard Shield (Space Wolves)",
           "pts": 24,
           "grantsWargear": [
@@ -13976,6 +13911,8 @@
         {
           "id": "dr-magna-grapple",
           "type": "toggle",
+          "exclusiveGroup": "dr-upgrades",
+          "applies": ["dreadnought"],
           "label": "Magna Grapple (Blood Angels only)",
           "pts": 2,
           "grantsRules": [
@@ -13997,7 +13934,6 @@
         {
           "id": "open-topped-vehicle",
           "name": "Open Topped",
-          "shortDesc": "Passengers may shoot from inside this vehicle.",
           "fullDesc": "Passengers may shoot from inside this vehicle as if they were Independent Characters."
         }
       ],
@@ -14197,7 +14133,7 @@
           "choices": [
             {
               "weaponId": "dreadnought-missile-launcher",
-              "label": "Keep DML",
+              "label": "Dreadnought Missile Launcher",
               "arcType": "Hull",
               "mountingTags": [
                 "Primary"
@@ -14597,7 +14533,7 @@
             "deepstrike",
             "flyer"
           ],
-          "note": "M+6. Gain Deepstrike, Flying. +10 pts per model."
+          "note": "M+6. Gain Deepstrike, Flying."
         }
       ]
     },
@@ -14963,7 +14899,6 @@
         {
           "id": "devastating-charge-outrider",
           "name": "Devastating Charge",
-          "shortDesc": "Gains A+1 on the phase it counts as Charging.",
           "fullDesc": "This model gains A+1 on the Phase it counts as Charging."
         }
       ],
@@ -15734,7 +15669,6 @@
         {
           "id": "open-topped-vehicle",
           "name": "Open Topped",
-          "shortDesc": "Passengers may shoot from inside this vehicle.",
           "fullDesc": "Passengers may shoot from inside this vehicle as if they were Independent Characters."
         }
       ],
@@ -15875,7 +15809,6 @@
         {
           "id": "open-topped-vehicle",
           "name": "Open Topped",
-          "shortDesc": "Passengers may shoot from inside this vehicle.",
           "fullDesc": "Passengers may shoot from inside this vehicle as if they were Independent Characters."
         }
       ],
@@ -16236,7 +16169,6 @@
         {
           "id": "open-topped-ss",
           "name": "Open Topped",
-          "shortDesc": "Passengers may shoot from inside this vehicle.",
           "fullDesc": "Passengers may shoot from inside this vehicle."
         }
       ]
@@ -16393,7 +16325,6 @@
         {
           "id": "open-topped-storm",
           "name": "Open Topped",
-          "shortDesc": "Passengers may shoot from inside this vehicle.",
           "fullDesc": "Passengers may shoot from inside this vehicle."
         }
       ]
@@ -16470,7 +16401,6 @@
         {
           "id": "firestrike-immobile",
           "name": "Immobile",
-          "shortDesc": "Cannot move.",
           "fullDesc": "This model cannot move."
         }
       ]
@@ -16610,7 +16540,6 @@
         {
           "id": "emergency-repair",
           "name": "Emergency Repair",
-          "shortDesc": "Target Monster, Titanic, Vehicle, or Titanic Vehicle regains 1 lost Wound.",
           "fullDesc": "Target Monster, Titanic Monster, Vehicle, or Titanic Vehicle regains 1 lost Wound."
         }
       ]
@@ -17711,7 +17640,6 @@
         {
           "id": "fire-and-fade",
           "name": "Fire and Fade",
-          "shortDesc": "May move 6\" after Shooting in the Shooting Phase.",
           "fullDesc": "This unit may move 6\" after Shooting in the Shooting Phase."
         }
       ]
@@ -18144,7 +18072,6 @@
         {
           "id": "revered-pattern",
           "name": "Revered Pattern",
-          "shortDesc": "6\" Aura: this model and target unit may reroll failed Ld tests.",
           "fullDesc": "6\" Aura, this model and target unit may reroll failed Ld tests."
         }
       ]
@@ -18307,7 +18234,6 @@
         {
           "id": "grinding-advance",
           "name": "Grinding Advance",
-          "shortDesc": "Do not count as moving when firing Ordnance Weapons.",
           "fullDesc": "Do not count as moving when firing Ordnance Weapons."
         }
       ]
@@ -18456,7 +18382,6 @@
         {
           "id": "stationary-rule",
           "name": "Stationary",
-          "shortDesc": "May not fire main weapon if moved during Movement Phase.",
           "fullDesc": "This model may not fire the main weapon if it moved during your Movement Phase."
         }
       ]
@@ -19853,7 +19778,6 @@
         {
           "id": "grinding-advance",
           "name": "Grinding Advance",
-          "shortDesc": "Do not count as moving when firing Ordnance Weapons.",
           "fullDesc": "Do not count as moving when firing Ordnance Weapons."
         }
       ],
@@ -20338,7 +20262,6 @@
         {
           "id": "stationary-rule",
           "name": "Stationary",
-          "shortDesc": "May not fire main weapon if it moved during Movement Phase.",
           "fullDesc": "This model may not fire the Whirlwind Hyperios Launcher, Scorpius Multilauncher, or Whirlwind Launcher if it moved during your Movement Phase."
         }
       ]
@@ -20653,7 +20576,6 @@
         {
           "id": "grav-chute-insertion",
           "name": "Grav Chute Insertion",
-          "shortDesc": "Models may disembark while flying; each takes a Dangerous Terrain test.",
           "fullDesc": "Models may Disembark from this model if it is not Hovering along any point it passed over. Dreadnoughts may not use Grav Chute Insertion."
         }
       ],
@@ -21062,13 +20984,11 @@
         {
           "id": "the-hour-is-nigh-impulsor",
           "name": "The Hour is Nigh",
-          "shortDesc": "Fire marker placed; missile strikes next Command Phase.",
           "fullDesc": "When fired, place a marker at a valid target. In your next Command Phase the missile strikes, scattering normally with 15\" Blast radius rules."
         },
         {
           "id": "t-minus-5-impulsor",
           "name": "T Minus 5",
-          "shortDesc": "Cannot be fired Turn 1; cannot be destroyed or Disabled.",
           "fullDesc": "The weapon may not be fired Turn 1. Cannot be destroyed or Disabled. If the carrier is destroyed the missile still hits."
         }
       ],
@@ -21110,7 +21030,6 @@
         {
           "id": "primaris-dp-rule",
           "name": "Drop Pod",
-          "shortDesc": "Acts like a Titanic unit when arriving by Deepstrike.",
           "fullDesc": "This model acts like a Titanic unit when arriving by Deepstrike for displacing models and causing Auto Hits."
         }
       ],
@@ -22939,7 +22858,6 @@
         {
           "id": "void-shields-2",
           "name": "Void Shields 2",
-          "shortDesc": "This model has 2 Void Shields.",
           "fullDesc": "This model has 2 Void Shields."
         }
       ]
@@ -23024,7 +22942,6 @@
         {
           "id": "void-shields-2",
           "name": "Void Shields 2",
-          "shortDesc": "This model has 2 Void Shields.",
           "fullDesc": "This model has 2 Void Shields."
         }
       ],
@@ -23153,7 +23070,6 @@
         {
           "id": "heavy-gate-rule",
           "name": "Heavy Gate",
-          "shortDesc": "Declare Open or Closed in Command Phase; models cannot move through when Closed.",
           "fullDesc": "In your Command Phase you may declare if the Gate is Open or Closed. Models may not move through the Gate when it is Closed. The Gate cannot be Closed if models are Obstructing the Gate."
         }
       ],
@@ -23277,7 +23193,6 @@
         {
           "id": "gun-emplacement",
           "name": "Gun Emplacement",
-          "shortDesc": "Does not replace existing terrain; placed alongside it.",
           "fullDesc": "This Fortification does not replace an existing piece of Terrain in your Deployment Zone like normal, it is placed with the Terrain instead."
         }
       ]
@@ -23348,13 +23263,11 @@
         {
           "id": "the-hour-is-nigh-fort",
           "name": "The Hour is Nigh",
-          "shortDesc": "Fire marker placed; missile strikes next Command Phase.",
           "fullDesc": "When fired, place a marker at a valid target. In your next Command Phase the missile strikes, scattering with 15\" Blast radius rules."
         },
         {
           "id": "t-minus-5-fort",
           "name": "T Minus 5",
-          "shortDesc": "Cannot be fired Turn 1; cannot be destroyed or Disabled.",
           "fullDesc": "The weapon may not be fired Turn 1 and cannot be destroyed or Disabled."
         }
       ],
@@ -23678,7 +23591,6 @@
         {
           "id": "shield-generator",
           "name": "Shield Generator",
-          "shortDesc": "6\" Aura: this model and target unit gain 5+ Invulnerability Save.",
           "fullDesc": "6\" Aura, this model (and any models on top of this Terrain Feature) and target unit gain 5+ Invulnerability Save."
         }
       ]

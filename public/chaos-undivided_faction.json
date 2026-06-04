@@ -13,19 +13,16 @@
           {
             "id": "deception-experts",
             "name": "Deception Experts",
-            "shortDesc": "All units gain Infiltrate; if they already had Infiltrate, they gain Scout instead.",
             "fullDesc": "All units in your army gain Infiltrate. If they already had Infiltrate, they gain Scout."
           },
           {
             "id": "no-i-am-alpharius",
             "name": "No, I am Alpharius",
-            "shortDesc": "All units must reroll successful Ld tests.",
             "fullDesc": "All units in your army must reroll successful Ld tests."
           },
           {
             "id": "al-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -37,7 +34,6 @@
           {
             "id": "average-rules",
             "name": "As Written",
-            "shortDesc": "No changes — use the rules as they appear in this Codex.",
             "fullDesc": "This army plays exactly as it is presented in the Codex."
           }
         ]
@@ -49,19 +45,16 @@
           {
             "id": "first-traitors",
             "name": "First Traitors",
-            "shortDesc": "All models gain Stubborn.",
             "fullDesc": "All models in your army gain Stubborn."
           },
           {
             "id": "pride-of-their-fall",
             "name": "Pride of their Fall",
-            "shortDesc": "All models suffer 1 Auto Wound per point they fail their Ld tests by.",
             "fullDesc": "All models in your army suffer 1 Auto Wound for each point they fail their Ld tests by."
           },
           {
             "id": "bl-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -73,19 +66,16 @@
           {
             "id": "the-haunting",
             "name": "The Haunting",
-            "shortDesc": "All models suffer –1 To Hit or +1 To Scatter for Blast Weapons unless their unit Hit an enemy last Turn.",
             "fullDesc": "All models in your army suffer –1 To Hit or +1 To Scatter for Blast Weapons unless their unit Hit an enemy unit in the previous Turn. This affects Turn 1."
           },
           {
             "id": "furious-insanity",
             "name": "Furious Insanity",
-            "shortDesc": "While suffering –1 To Hit from any source, that model gains A+1 and may reroll failed Charge rolls.",
             "fullDesc": "While any model is suffering from –1 To Hit from any source, that model gains A+1 and may reroll failed Charge rolls."
           },
           {
             "id": "cs-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -97,19 +87,16 @@
           {
             "id": "pride-of-the-breaker",
             "name": "Pride of the Breaker",
-            "shortDesc": "When targeting units in Terrain or Fortifications with at least W1, must target all weapons at the Terrain/Fortification first.",
             "fullDesc": "When targeting enemy units, if they are in a Terrain Feature or Fortification you must target all weapons against the Terrain or Fortification as long as it has at least W1 and is destructible."
           },
           {
             "id": "siege-breakers",
             "name": "Siege Breakers",
-            "shortDesc": "All models may reroll To Wound rolls against Terrain or Fortifications.",
             "fullDesc": "All models in your army may reroll To Wound rolls against Terrain or Fortifications."
           },
           {
             "id": "iw-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -121,19 +108,16 @@
           {
             "id": "raiders",
             "name": "Raiders",
-            "shortDesc": "All models automatically lose Combat Resolution and will always Fall Back.",
             "fullDesc": "All models in your army automatically lose Combat Resolution and will always Fall Back."
           },
           {
             "id": "terror-tactics",
             "name": "Terror Tactics",
-            "shortDesc": "All models gain Outflank.",
             "fullDesc": "All models in your army gain Outflank."
           },
           {
             "id": "nl-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -145,13 +129,11 @@
           {
             "id": "pirates",
             "name": "Pirates",
-            "shortDesc": "All models gain Outflank, but must be held in Reserve during Deployment.",
             "fullDesc": "All models in your army gain Outflank, but must be held in Reserve during Deployment."
           },
           {
             "id": "rc-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -163,19 +145,16 @@
           {
             "id": "foolish-rebellion",
             "name": "Foolish Rebellion",
-            "shortDesc": "All models can only receive Auras from models with Mark of Undivided or no Mark.",
             "fullDesc": "All models in your army can only receive Auras from models that have Mark of Undivided or no Mark of Chaos."
           },
           {
             "id": "treacherous-designs",
             "name": "Treacherous Designs",
-            "shortDesc": "All models gain Outflank.",
             "fullDesc": "All models in your army gain Outflank."
           },
           {
             "id": "tf-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -187,19 +166,16 @@
           {
             "id": "fanaticism",
             "name": "Fanaticism",
-            "shortDesc": "Opponents double the Wounds dealt when resolving Combat Resolution tests.",
             "fullDesc": "When taking Combat Resolution tests, opponents double the amount of Wounds they dealt for resolving Combat Resolution."
           },
           {
             "id": "zealotry",
             "name": "Zealotry",
-            "shortDesc": "All models may reroll To Hit rolls in Melee on a phase where they Charged or were Charged.",
             "fullDesc": "All models in your army may reroll To Hit rolls in Melee on a phase where they Charged or were Charged."
           },
           {
             "id": "wb-undivided",
             "name": "Undivided",
-            "shortDesc": "Your Warlord must have the Mark of Undivided.",
             "fullDesc": "Your Warlord must have the Mark of Undivided."
           }
         ]
@@ -210,31 +186,26 @@
         {
           "id": "khorne",
           "name": "Mark of Khorne",
-          "shortDesc": "A+1 and Furious Charge. Uses the Khorne spell list with the Sacrifice mechanic.",
           "fullDesc": "This model gains A+1 and Furious Charge. Psychic Mastery Level models may only use the Khorne spell list. Khorne spells use the Sacrifice mechanic instead of rolling to cast — spend Skulls equal to the Sacrifice requirement. A caster starts with Skulls equal to their Psychic Mastery Level, gains one per model slain, and may sacrifice friendly models within 6\" for one Skull each. Deny the Witch does not work on Sacrifice rituals."
         },
         {
           "id": "nurgle",
           "name": "Mark of Nurgle",
-          "shortDesc": "5+ Feel No Pain (works on Vehicles too).",
           "fullDesc": "This model gains a 5+ Feel No Pain. This is an exception to the rule that prevents Vehicles from gaining Feel No Pain."
         },
         {
           "id": "slaanesh",
           "name": "Mark of Slaanesh",
-          "shortDesc": "I+1 and Counterattack.",
           "fullDesc": "This model gains I+1 and Counterattack."
         },
         {
           "id": "tzeentch",
           "name": "Mark of Tzeentch",
-          "shortDesc": "Grants or improves Invulnerability Save by 1 (max 4+).",
           "fullDesc": "This model gains a 5+ Invulnerability Save, or improves their Invulnerability Save by –1 (Improves by 1) to a maximum of 4+. When interacting with situational Invulnerability Saves (Flare Launchers, Void Shields) this ability only applies to the situational benefit and does not apply normally. If a model already has a 4+ Invulnerability Save, it instead may reroll 1s for Invulnerability Saves."
         },
         {
           "id": "undivided",
           "name": "Mark of Undivided",
-          "shortDesc": "One unit in your army may take a Pure Blessing without requiring a full-army Mark.",
           "fullDesc": "One unit in your army may take a Pure Blessing, even if you do not have a full army of the correct Mark. Models with no Mark also cast from the Hereticus spell list."
         }
       ]
@@ -286,43 +257,36 @@
     {
       "id": "daemonic",
       "name": "Daemonic",
-      "shortDesc": "This model has a 5+ Invulnerability Save.",
       "fullDesc": "This model has a 5+ Invulnerability Save."
     },
     {
       "id": "daemonic-engine",
       "name": "Daemonic Engine",
-      "shortDesc": "5+ Invulnerability Save; immune to secondary effects of Weapon Disabled and Crew Stun. Still takes Wounds from the Penetration Charts.",
       "fullDesc": "This model has a 5+ Invulnerability Save and is immune to the secondary effects of Weapon Disabled and Crew Stun. It still takes the additional Wounds from the Penetration Charts."
     },
     {
       "id": "daemonic-thirst",
       "name": "Daemonic Thirst",
-      "shortDesc": "Inflicts a Mortal Wound on its bearer each Command Phase if no Wound was caused with this weapon last Turn. Does not trigger on Turn 1.",
       "fullDesc": "A weapon with this rule inflicts a Mortal Wound on its bearer in each of your Command Phases if you did not cause a Wound with the weapon during the last Turn. This does not trigger on Turn 1."
     },
     {
       "id": "malicious-volleys",
       "name": "Malicious Volleys",
-      "shortDesc": "If not Moving this Turn, may treat weapons with the Bolter rule as if they were in half range.",
       "fullDesc": "If this model does not count as Moving this Turn, it may treat weapons with the Bolter rule as if they were in half range."
     },
     {
       "id": "lord-of-chaos",
       "name": "Lord of Chaos",
-      "shortDesc": "6\" Aura: this model and target unit may reroll 1s To Hit.",
       "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Hit."
     },
     {
       "id": "dark-zealotry",
       "name": "Dark Zealotry",
-      "shortDesc": "6\" Aura: this model and target unit may reroll all failed To Hit rolls in Melee.",
       "fullDesc": "6\" Aura, this model and target unit may reroll all failed To Hit rolls in Melee."
     },
     {
       "id": "night-vision",
       "name": "Night Vision",
-      "shortDesc": "This model ignores penalties from Night Fighting and Stealth at all ranges.",
       "fullDesc": "This model ignores any to-hit penalties imposed by Night Fighting and Stealth at all ranges."
     }
   ],
@@ -4778,31 +4742,36 @@
           "id": "lord-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
-          "pts": 16
+          "pts": 16,
+          "exclusiveGroup": "lord-mount"
         },
         {
           "id": "lord-jump-pack",
           "type": "namedUpgrade",
           "upgradeId": "jump-pack",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "lord-mount"
         },
         {
           "id": "lord-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 24
+          "pts": 24,
+          "exclusiveGroup": "lord-mount"
         },
         {
           "id": "lord-palanquin",
           "type": "namedUpgrade",
           "upgradeId": "palanquin",
-          "pts": 31
+          "pts": 31,
+          "exclusiveGroup": "lord-mount"
         },
         {
           "id": "lord-juggernaut",
           "type": "namedUpgrade",
           "upgradeId": "juggernaut-steed",
-          "pts": 28
+          "pts": 28,
+          "exclusiveGroup": "lord-mount"
         },
         {
           "id": "lord-mark",
@@ -4991,25 +4960,29 @@
           "id": "sorc-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
-          "pts": 16
+          "pts": 16,
+          "exclusiveGroup": "sorc-mount"
         },
         {
           "id": "sorc-jump-pack",
           "type": "namedUpgrade",
           "upgradeId": "jump-pack",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "sorc-mount"
         },
         {
           "id": "sorc-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 24
+          "pts": 24,
+          "exclusiveGroup": "sorc-mount"
         },
         {
           "id": "sorc-palanquin",
           "type": "namedUpgrade",
           "upgradeId": "palanquin",
-          "pts": 31
+          "pts": 31,
+          "exclusiveGroup": "sorc-mount"
         },
         {
           "id": "sorc-mark",
@@ -5149,7 +5122,8 @@
           "pts": 10,
           "grantsWargear": [
             "infernal-cannon"
-          ]
+          ],
+          "exclusiveGroup": "prince-ranged-weapon"
         },
         {
           "id": "prince-daemon-flames",
@@ -5158,7 +5132,8 @@
           "pts": 11,
           "grantsWargear": [
             "daemonic-flames"
-          ]
+          ],
+          "exclusiveGroup": "prince-ranged-weapon"
         },
         {
           "id": "prince-wings",
@@ -5224,25 +5199,29 @@
           "pts": 5,
           "grantsWargear": [
             "collar-of-khorne"
-          ]
+          ],
+          "exclusiveGroup": "prince-d-option"
         },
         {
           "id": "prince-psychic-1",
           "type": "toggle",
           "label": "Psychic Mastery Level 1 (+10 pts)",
-          "pts": 10
+          "pts": 10,
+          "exclusiveGroup": "prince-d-option"
         },
         {
           "id": "prince-psychic-2",
           "type": "toggle",
           "label": "Psychic Mastery Level 2 (+25 pts)",
-          "pts": 25
+          "pts": 25,
+          "exclusiveGroup": "prince-d-option"
         },
         {
           "id": "prince-psychic-3",
           "type": "toggle",
           "label": "Psychic Mastery Level 3 (+75 pts)",
-          "pts": 75
+          "pts": 75,
+          "exclusiveGroup": "prince-d-option"
         },
         {
           "id": "prince-spell-1",
@@ -5398,25 +5377,29 @@
           "id": "apostle-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
-          "pts": 16
+          "pts": 16,
+          "exclusiveGroup": "apostle-mount"
         },
         {
           "id": "apostle-jump-pack",
           "type": "namedUpgrade",
           "upgradeId": "jump-pack",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "apostle-mount"
         },
         {
           "id": "apostle-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 24
+          "pts": 24,
+          "exclusiveGroup": "apostle-mount"
         },
         {
           "id": "apostle-palanquin",
           "type": "namedUpgrade",
           "upgradeId": "palanquin",
-          "pts": 31
+          "pts": 31,
+          "exclusiveGroup": "apostle-mount"
         },
         {
           "id": "apostle-mark",
@@ -5473,50 +5456,50 @@
           "id": "apostle-omen-potency",
           "type": "toggle",
           "label": "Omen of Potency (+18 pts)",
-          "pts": 18
+          "pts": 18,
+          "exclusiveGroup": "apostle-litany"
         },
         {
           "id": "apostle-litany-despair",
           "type": "toggle",
           "label": "Litany of Despair (+20 pts)",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "apostle-litany"
         },
         {
           "id": "apostle-warpsight-plea",
           "type": "toggle",
           "label": "Warpsight Plea (+80 pts)",
-          "pts": 80
+          "pts": 80,
+          "exclusiveGroup": "apostle-litany"
         },
         {
           "id": "apostle-illusory-supplication",
           "type": "toggle",
           "label": "Illusory Supplication (+120 pts)",
-          "pts": 120
+          "pts": 120,
+          "exclusiveGroup": "apostle-litany"
         }
       ],
       "inlineRules": [
         {
           "id": "omen-of-potency",
           "name": "Omen of Potency",
-          "shortDesc": "This model gains A+3.",
           "fullDesc": "This model gains A+3."
         },
         {
           "id": "litany-of-despair",
           "name": "Litany of Despair",
-          "shortDesc": "6\" Aura: target unit takes Ld tests by rolling 3d6 and discarding the lowest die.",
           "fullDesc": "6\" Aura, target unit takes Ld tests by rolling 3d6 and discarding the lowest die."
         },
         {
           "id": "warpsight-plea",
           "name": "Warpsight Plea",
-          "shortDesc": "6\" Aura: this model and target unit gain BS-1 (Improves by 1).",
           "fullDesc": "6\" Aura, this model and target unit gain BS-1 (Improves by 1)."
         },
         {
           "id": "illusory-supplication",
           "name": "Illusory Supplication",
-          "shortDesc": "6\" Aura: target unit gains a 5+ Invulnerability Save or improves existing by 1 (max 4+).",
           "fullDesc": "6\" Aura, target unit gains a 5+ Invulnerability Save or has their existing Invulnerability Save improved by 1 to a maximum of 4+."
         }
       ]
@@ -5913,31 +5896,26 @@
         {
           "id": "champion-of-chaos",
           "name": "Champion of Chaos",
-          "shortDesc": "Does not require Mark of Undivided; counts as all Marks for Pure Blessings.",
           "fullDesc": "This model does not require a Mark of Undivided to field in your army and is considered to be all Marks of Chaos for the purpose of Pure Blessings of Chaos."
         },
         {
           "id": "champion-of-undivided",
           "name": "Champion of Undivided",
-          "shortDesc": "12\" True Aura: this model and all friendly units may reroll 1s To Hit.",
           "fullDesc": "12\" True Aura, this model and all friendly units may reroll 1s To Hit."
         },
         {
           "id": "mark-of-chaos-ascended",
           "name": "Mark of Chaos Ascended",
-          "shortDesc": "6\" Aura: this model and target unit automatically pass Ld tests.",
           "fullDesc": "6\" Aura, this model and target unit automatically pass Ld tests."
         },
         {
           "id": "the-hour-is-nigh-abaddon",
           "name": "The Hour is Nigh",
-          "shortDesc": "Place a marker on field; barrage strikes next Command Phase (15\" Blast, scatter normally).",
           "fullDesc": "When the weapon is fired, place a marker on field at a valid target. In your next Command Phase, the barrage strikes! Scatter like normal, following the 15\" Blast radius rules."
         },
         {
           "id": "t-minus-5-abaddon",
           "name": "T Minus 5",
-          "shortDesc": "Cannot fire Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits.",
           "fullDesc": "The weapon may not be fired Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits in your Command Phase."
         }
       ]
@@ -5991,13 +5969,11 @@
         {
           "id": "lord-of-torment",
           "name": "Lord of Torment",
-          "shortDesc": "6\" Aura: target unit suffers Ld-1.",
           "fullDesc": "6\" Aura, target unit suffers Ld-1."
         },
         {
           "id": "shadow-form",
           "name": "Shadow Form",
-          "shortDesc": "This model may reroll failed Saves.",
           "fullDesc": "This model may reroll failed Saves."
         }
       ],
@@ -6007,7 +5983,9 @@
           "type": "toggle",
           "label": "Ascended (+111 pts)",
           "pts": 111,
-          "grantsRules": ["flyer"],
+          "grantsRules": [
+            "flyer"
+          ],
           "note": "M+4, S+1, T+1, W+8, I+1, Sv+1 (Worsens by 1), gain Flying."
         },
         {
@@ -6073,7 +6051,6 @@
         {
           "id": "herald-of-abaddon",
           "name": "Herald of Abaddon",
-          "shortDesc": "6\" Aura: target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run.",
           "fullDesc": "6\" Aura, target unit must take a Fear Test. Units engaged in Melee with this model cannot Fall Back or use Hit and Run."
         }
       ]
@@ -6128,7 +6105,6 @@
         {
           "id": "tyrant-of-badab",
           "name": "Tyrant of Badab",
-          "shortDesc": "6\" Aura: target unit suffers Ld-2.",
           "fullDesc": "6\" Aura, target unit suffers Ld-2."
         }
       ],
@@ -6200,7 +6176,6 @@
         {
           "id": "the-hunt-for-the-stone",
           "name": "The Hunt for the Stone",
-          "shortDesc": "6\" Aura: this model and target unit gains Objective Secured.",
           "fullDesc": "6\" Aura, this model and target unit gains Objective Secured."
         }
       ]
@@ -6254,13 +6229,11 @@
         {
           "id": "fortress-breaker",
           "name": "Fortress Breaker",
-          "shortDesc": "12\" True Aura: when an affected model destroys Terrain and enemy must Force Disembark, they suffer 1 Autowound each instead of Dangerous Terrain Tests.",
           "fullDesc": "12\" True Aura, when an affected model destroys a Terrain piece and the enemy within has to Force Disembark, they suffer 1 Autowound each instead of taking Dangerous Terrain Tests like normal."
         },
         {
           "id": "repair-morne",
           "name": "Repair",
-          "shortDesc": "Target model in base contact Repairs 1 Wound; roll d6, 5+ to restore service for Weapon Disabled/Crew Shaken/Immobilized/Weapon Destroyed.",
           "fullDesc": "Target model in base contact Repairs 1 Wound. Roll a d6, on a 5+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed."
         }
       ]
@@ -6312,13 +6285,11 @@
         {
           "id": "master-of-shadow-warfare",
           "name": "Master of Shadow Warfare",
-          "shortDesc": "This model and its unit may Infiltrate.",
           "fullDesc": "This model and unit it is part of may Infiltrate."
         },
         {
           "id": "sow-discontent",
           "name": "Sow Discontent",
-          "shortDesc": "During the first Turn, all enemy models suffer Ld-1.",
           "fullDesc": "During the first Turn, all enemy models suffer Ld-1."
         }
       ]
@@ -6369,19 +6340,16 @@
         {
           "id": "lord-of-terror",
           "name": "Lord of Terror",
-          "shortDesc": "6\" Aura: target unit must take a Fear Test.",
           "fullDesc": "6\" Aura, target unit must take a Fear Test."
         },
         {
           "id": "mind-in-the-machine",
           "name": "Mind in the Machine",
-          "shortDesc": "In the Shooting Phase, target a non-Titanic Vehicle within 24\" and shoot one weapon of your choice. May target models friendly to the Vehicle, but not itself.",
           "fullDesc": "In the shooting phase, target a non-Titanic Vehicle model within 24\" and shoot one weapon of your choice. You are allowed to target models friendly to the Vehicle, but not itself."
         },
         {
           "id": "unholy-mechanisms",
           "name": "Unholy Mechanisms",
-          "shortDesc": "6\" Aura: target Daemonic Engine unit gains +1 To Wound.",
           "fullDesc": "6\" Aura, target Daemonic Engine unit gains +1 To Wound."
         }
       ]
@@ -6575,7 +6543,6 @@
         {
           "id": "unholy-fire",
           "name": "Unholy Fire",
-          "shortDesc": "Non-Titanic units hit by this model's Balefire Pike cannot make Overwatch attacks until their next Command Phase.",
           "fullDesc": "Nontitanic units Hit by this model's Balefire Pike cannot make Overwatch attacks until their next Command Phase."
         }
       ],
@@ -6881,13 +6848,11 @@
         {
           "id": "gift-of-the-hellforge",
           "name": "Gift of the Hellforge",
-          "shortDesc": "6\" Aura: target Vehicle unit gains A+1.",
           "fullDesc": "6\" Aura, target Vehicle unit gains A+1."
         },
         {
           "id": "repair-hellwright",
           "name": "Repair",
-          "shortDesc": "Target model in base contact Repairs 1 Wound; 5+ to restore service.",
           "fullDesc": "Target model in base contact Repairs 1 Wound. Roll a d6, on a 5+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed."
         }
       ],
@@ -6996,7 +6961,6 @@
         {
           "id": "aura-of-discord",
           "name": "Aura of Discord",
-          "shortDesc": "6\" Aura: target non-Titanic Vehicle unit suffers –1 To Hit.",
           "fullDesc": "6\" Aura, target nonTitanic Vehicle unit suffers –1 To Hit."
         }
       ],
@@ -7292,13 +7256,11 @@
         {
           "id": "trophy-taker",
           "name": "Trophy Taker",
-          "shortDesc": "May reroll all failed To Hit and To Wound rolls when in a Challenge.",
           "fullDesc": "This model may reroll all failed To Hit and To Wound rolls when in a Challenge."
         },
         {
           "id": "warp-sighted-butcher",
           "name": "Warp Sighted Butcher",
-          "shortDesc": "This model may choose the target of its Challenge. The target may not deny.",
           "fullDesc": "This model may choose the target of its Challenge. The target may not deny the Challenge."
         }
       ],
@@ -7629,7 +7591,6 @@
         {
           "id": "repair-warpsmith",
           "name": "Repair",
-          "shortDesc": "Target model in base contact Repairs 1 Wound; 5+ to restore service.",
           "fullDesc": "Target model in base contact Repairs 1 Wound. Roll a d6, on a 5+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed."
         }
       ],
@@ -7728,7 +7689,6 @@
         {
           "id": "command-platform",
           "name": "Command Platform",
-          "shortDesc": "240\" Aura: target unit may reroll Scatter rolls for Blast Weapons.",
           "fullDesc": "240\" Aura, target unit may reroll Scatter rolls for Blast Weapons."
         }
       ]
@@ -7776,19 +7736,16 @@
         {
           "id": "enhanced-warriors",
           "name": "Enhanced Warriors",
-          "shortDesc": "6\" Aura: target unit gains S+1, T+1, or A+1 (randomized on d3) for the rest of the game. One-time effect per unit. Independent Characters are not affected.",
           "fullDesc": "6\" Aura, target unit gains one of the following randomized on a d3. S+1, T+1, or A+1. This lasts until the end of the game, but a unit cannot be affected by this more than once. Independent Characters are not affected by this."
         },
         {
           "id": "fallen-apothecary",
           "name": "Fallen Apothecary",
-          "shortDesc": "6\" Aura: this model and target unit gains a 4+ Feel No Pain.",
           "fullDesc": "6\" Aura, this model and target unit gains a 4+ Feel No Pain."
         },
         {
           "id": "the-chirugeon-rule",
           "name": "The Chirugeon",
-          "shortDesc": "This model Heals 1 Wound in each of your Command Phases.",
           "fullDesc": "This model Heals 1 Wound in each of your Command Phases."
         }
       ]
@@ -7839,7 +7796,6 @@
         {
           "id": "spy-network",
           "name": "Spy Network",
-          "shortDesc": "240\" Aura: target enemy unit arriving from Deepstrike or Outflank must reroll their arrival dice.",
           "fullDesc": "240\" Aura, target enemy unit arriving from Deepstrike or Outflank must reroll the dice for where they arrive."
         }
       ],
@@ -7912,7 +7868,6 @@
         {
           "id": "corpsemaster",
           "name": "Corpsemaster",
-          "shortDesc": "6\" Aura: this model and target unit gain a 4+ Feel No Pain.",
           "fullDesc": "6\" Aura, this model and target unit gain a 4+ Feel No Pain."
         }
       ]
@@ -7958,19 +7913,16 @@
         {
           "id": "executioner-of-the-pathetic",
           "name": "Executioner of the Pathetic",
-          "shortDesc": "If this model's unit fails a Ld Test, it suffers 1d3 Mortal Wounds and then automatically passes.",
           "fullDesc": "If this model's unit fails a Ld Test, it suffers 1d3 Mortal Wounds and then automatically passes the Test."
         },
         {
           "id": "trophy-taker-garrix",
           "name": "Trophy Taker",
-          "shortDesc": "May reroll all failed To Hit and To Wound rolls when in a Challenge.",
           "fullDesc": "This model may reroll all failed To Hit and To Wound rolls when in a Challenge."
         },
         {
           "id": "warp-sighted-butcher-garrix",
           "name": "Warp Sighted Butcher",
-          "shortDesc": "This model may choose the target of its Challenge. The target may not deny.",
           "fullDesc": "This model may choose the target of its Challenge. The target may not deny the Challenge."
         }
       ]
@@ -8041,13 +7993,11 @@
         {
           "id": "assassin-enforcer",
           "name": "Assassin",
-          "shortDesc": "This model may treat all of its weapons as Sniper (3+).",
           "fullDesc": "This model may treat all of its weapons as Sniper (3+)."
         },
         {
           "id": "animalistic",
           "name": "Animalistic",
-          "shortDesc": "This model cannot Claim or Contest Objective Markers.",
           "fullDesc": "This model cannot Claim or Contest Objective Markers."
         }
       ]
@@ -8098,13 +8048,11 @@
         {
           "id": "aspire-to-glory",
           "name": "Aspire to Glory",
-          "shortDesc": "6\" Aura: target unit may reroll all failed To Wound rolls.",
           "fullDesc": "6\" Aura, target unit may reroll all failed To Wound rolls."
         },
         {
           "id": "for-the-dark-gods",
           "name": "For the Dark Gods",
-          "shortDesc": "This model may reroll failed To Hit rolls against Independent Characters.",
           "fullDesc": "This model may reroll failed To Hit rolls against Independent Characters."
         }
       ]
@@ -11188,7 +11136,6 @@
         {
           "id": "warpflame-strike",
           "name": "Warpflame Strike",
-          "shortDesc": "6\" Aura: when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (worse) until next Command Phase. Cast as a unit.",
           "fullDesc": "6\" Aura, when this unit arrives from Deepstrike, target unit within 6\" suffers BS+1 (1 worse) until your next Command Phase. Cast as a unit."
         }
       ],
@@ -11292,7 +11239,6 @@
         {
           "id": "fearsome-presence-spawn",
           "name": "Fearsome Presence",
-          "shortDesc": "6\" Aura: target unit suffers Ld-1. Cast as a unit.",
           "fullDesc": "6\" Aura, target unit suffers Ld-1. Cast as a unit."
         }
       ],
@@ -12026,7 +11972,6 @@
         {
           "id": "wall-climber",
           "name": "Wall Climber",
-          "shortDesc": "This model ignores Terrain for Movement.",
           "fullDesc": "This model ignores Terrain for Movement."
         }
       ],
@@ -12316,13 +12261,11 @@
         {
           "id": "devourer-of-souls",
           "name": "Devourer of Souls",
-          "shortDesc": "If this unit slew one or more enemy models last Turn, this unit Repairs 1 Wound.",
           "fullDesc": "If this unit slew one or more enemy models last Turn, this unit Repairs 1 Wound."
         },
         {
           "id": "soulshredding-explosion",
           "name": "Soulshredding Explosion",
-          "shortDesc": "This model explodes on a 4+ inflicting d3 Mortal Wounds in a d6\" radius.",
           "fullDesc": "This model explodes on a 4+ instead and inflicts d3 Mortal Wounds in a d6\" Radius instead."
         }
       ],
@@ -12400,7 +12343,6 @@
         {
           "id": "fearsome-presence-giant",
           "name": "Fearsome Presence",
-          "shortDesc": "6\" Aura: target unit suffers Ld-1.",
           "fullDesc": "6\" Aura, target unit suffers Ld-1."
         }
       ],
@@ -12637,7 +12579,6 @@
         {
           "id": "revered-pattern",
           "name": "Revered Pattern",
-          "shortDesc": "6\" Aura: this model and target unit may reroll failed Ld tests.",
           "fullDesc": "6\" Aura, this model and target unit may reroll failed Ld tests."
         }
       ],
@@ -13160,7 +13101,6 @@
         {
           "id": "lr-assault-ramps",
           "name": "Transport 16 – Assault Ramps",
-          "shortDesc": "Transport capacity 16. Access Front. Has Assault Ramps.",
           "fullDesc": "Transport 16 – Access Front, Assault Ramps."
         }
       ],
@@ -14075,7 +14015,6 @@
         {
           "id": "stationary-whirlwind",
           "name": "Stationary",
-          "shortDesc": "This model may not fire its Whirlwind weapons if it moved during the Movement Phase.",
           "fullDesc": "This model may not fire the Whirlwind Hyperios Launcher, Scorpius Multilauncher, or Whirlwind Launcher if it moved during your Movement Phase."
         }
       ],
@@ -14657,13 +14596,11 @@
         {
           "id": "dreadclaw-drop-pod-rule",
           "name": "Drop Pod",
-          "shortDesc": "Acts like a Titanic unit when arriving by Deepstrike for displacing models and causing Auto Hits.",
           "fullDesc": "This model acts like a Titanic unit when arriving by Deepstrike for displacing models and causing Auto Hits."
         },
         {
           "id": "dreadclaw-dreadnought-module",
           "name": "Dreadnought Module",
-          "shortDesc": "May carry one Dreadnought with W13 or less instead of normal Transport capacity.",
           "fullDesc": "This model may carry one Dreadnought with W13 or less instead of its normal Transport capability."
         }
       ],
@@ -14750,13 +14687,11 @@
         {
           "id": "drop-pod-rule",
           "name": "Drop Pod",
-          "shortDesc": "Acts like a Titanic unit when arriving by Deepstrike for displacing models and causing Auto Hits.",
           "fullDesc": "This model acts like a Titanic unit when arriving by Deepstrike for displacing models and causing Auto Hits."
         },
         {
           "id": "drop-pod-dreadnought-module",
           "name": "Dreadnought Module",
-          "shortDesc": "May carry one Dreadnought with W13 or less instead of normal Transport capacity.",
           "fullDesc": "This model may carry one Dreadnought with W13 or less instead of its normal Transport capability."
         }
       ],
@@ -14838,7 +14773,6 @@
         {
           "id": "rhino-transport",
           "name": "Transport 12",
-          "shortDesc": "Transport 12. Access Sides, Rear. Two 360° Fire Ports.",
           "fullDesc": "Transport 12 – Access Sides, Rear. Two 360 Fire Ports."
         }
       ],
@@ -15246,7 +15180,6 @@
         {
           "id": "rhino-transport-sb",
           "name": "Rhino Transport",
-          "shortDesc": "May Transport up to 1 Rhino (or Rhino Chassis model). These do not benefit from Assault Ramps.",
           "fullDesc": "This model may Transport up to 1 Rhino (or model that uses the Rhino Chassis). These do not benefit from the Assault Ramps."
         }
       ],
@@ -15625,7 +15558,6 @@
         {
           "id": "tank-transport-tt",
           "name": "Tank Transport",
-          "shortDesc": "May transport up to 2 Rhinos or 1 Land Raider (chassis). These do not benefit from Assault Ramps.",
           "fullDesc": "This model may Transport up to 2 Rhinos (or model that uses the Rhino Chassis) or 1 Land Raider (or model that uses a Land Raider Chassis). These do not benefit from the Assault Ramps."
         }
       ],
@@ -16423,7 +16355,6 @@
         {
           "id": "khary-dreadnought-module",
           "name": "Dreadnought Module",
-          "shortDesc": "May carry one Dreadnought with W13 or less instead of 10 Transport capacity.",
           "fullDesc": "This model may carry one Dreadnought with W13 or less instead of 10 of its Transport capability."
         }
       ],
@@ -16516,13 +16447,11 @@
         {
           "id": "void-shields-2",
           "name": "Void Shields 2",
-          "shortDesc": "This model has 2 Void Shields.",
           "fullDesc": "Void Shields 2."
         },
         {
           "id": "mastodon-dreadnought-transport",
           "name": "Dreadnought Transport",
-          "shortDesc": "May transport up to 2 Dreadnoughts with 13 or fewer Wounds.",
           "fullDesc": "May transport up to 2 Dreadnoughts with 13 or less Wounds."
         }
       ],
@@ -16622,25 +16551,21 @@
         {
           "id": "void-shields-4",
           "name": "Void Shields 4",
-          "shortDesc": "This model has 4 Void Shields.",
           "fullDesc": "Void Shields 4."
         },
         {
           "id": "create-panic-reaver",
           "name": "Create Panic",
-          "shortDesc": "This model displaces all models when it moves (up to 1\" away). Immobile units prevent movement there.",
           "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there."
         },
         {
           "id": "nuclear-meltdown-reaver",
           "name": "Nuclear Meltdown",
-          "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 3d6\" radius.",
           "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 3d6\" Radius."
         },
         {
           "id": "titanic-god-engine",
           "name": "Titanic God Engine",
-          "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.",
           "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging."
         }
       ],
@@ -16885,31 +16810,26 @@
         {
           "id": "void-shields-6-nemesis",
           "name": "Void Shields 6",
-          "shortDesc": "This model has 6 Void Shields.",
           "fullDesc": "Void Shields 6."
         },
         {
           "id": "create-panic-nemesis",
           "name": "Create Panic",
-          "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.",
           "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there."
         },
         {
           "id": "nuclear-meltdown-nemesis",
           "name": "Nuclear Meltdown",
-          "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 4d6\" radius.",
           "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 4d6\" Radius."
         },
         {
           "id": "titanic-god-engine-nemesis",
           "name": "Titanic God Engine",
-          "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.",
           "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging."
         },
         {
           "id": "earthshock-nemesis",
           "name": "Earthshock",
-          "shortDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase.",
           "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase."
         }
       ],
@@ -17058,25 +16978,21 @@
         {
           "id": "void-shields-1",
           "name": "Void Shields 1",
-          "shortDesc": "This model has 1 Void Shield.",
           "fullDesc": "Void Shields 1."
         },
         {
           "id": "create-panic-warhound",
           "name": "Create Panic",
-          "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.",
           "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there."
         },
         {
           "id": "nuclear-meltdown-warhound",
           "name": "Nuclear Meltdown",
-          "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 2d6\" radius.",
           "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 2d6\" Radius."
         },
         {
           "id": "titanic-god-engine-warhound",
           "name": "Titanic God Engine",
-          "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.",
           "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging."
         }
       ],
@@ -17225,49 +17141,41 @@
         {
           "id": "void-shields-6-warlord",
           "name": "Void Shields 6",
-          "shortDesc": "This model has 6 Void Shields.",
           "fullDesc": "Void Shields 6."
         },
         {
           "id": "create-panic-warlord",
           "name": "Create Panic",
-          "shortDesc": "This model displaces all models when it moves, placing them up to 1\" away. Immobile units prevent this model from moving there.",
           "fullDesc": "This model displaces all models when it moves, place them up to 1\" Away. Immobile units prevent this model from moving there."
         },
         {
           "id": "nuclear-meltdown-warlord",
           "name": "Nuclear Meltdown",
-          "shortDesc": "Explodes on a 4+ with S Destroyer AP1+ in a 6d6\" radius.",
           "fullDesc": "This model explodes on a 4+ with S Destroyer AP1+ in a 6d6\" Radius."
         },
         {
           "id": "towering-god-engine",
           "name": "Towering God Engine",
-          "shortDesc": "This model may only be hit on a 5+ or worse in Melee.",
           "fullDesc": "This model may only be hit on a 5+ or worse in Melee."
         },
         {
           "id": "titanic-god-engine-warlord",
           "name": "Titanic God Engine",
-          "shortDesc": "May ignore all non-Titanic models and Terrain for Moving, Advancing, Falling Back, and Charging.",
           "fullDesc": "This model may ignore all Non Titanic models and Terrain for the purposes of Moving, Advancing, Falling Back, and Charging."
         },
         {
           "id": "uparmoured",
           "name": "Uparmoured",
-          "shortDesc": "Only Ardex Defensor weapons may be disabled on this model.",
           "fullDesc": "Only Ardex Defensor weapons may be disabled on this model."
         },
         {
           "id": "world-ending-hammer",
           "name": "World Ending Hammer",
-          "shortDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away (24\" for Titanic), scattering like a template and causing Auto Hits at S# AP- (AP2+ for Titanic). Roll for Explodes after Auto Hits are resolved.",
           "fullDesc": "Monster or Vehicle units slain by these attacks can be thrown up to 48\" away, scattering like a template and causing Auto Hits against each model underneath them at their S# with AP-. Titanic units can be thrown this way, but only up to 24\" Instead and inflict S# AP2+. Roll for Explodes after the slain unit comes to a rest and Auto Hits are resolved."
         },
         {
           "id": "earthshock-warlord",
           "name": "Earthshock",
-          "shortDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase.",
           "fullDesc": "Any unit Hit by this Template only Moves, Advances, Charges, and Falls Back at Half Speed until your next Command Phase."
         }
       ],
@@ -17412,19 +17320,16 @@
         {
           "id": "loathsome-insights",
           "name": "Loathsome Insights",
-          "shortDesc": "6\" Aura: target unit may reroll 1s To Cast.",
           "fullDesc": "6\" Aura, target unit may reroll 1s To Cast."
         },
         {
           "id": "malevolent-locus",
           "name": "Malevolent Locus",
-          "shortDesc": "6\" Aura: target unit must take a Fear Test.",
           "fullDesc": "6\" Aura, target unit must take a Fear Test."
         },
         {
           "id": "unstable-energies",
           "name": "Unstable Energies",
-          "shortDesc": "This model explodes on a 4+ at S7 AP– in a d6\" radius.",
           "fullDesc": "This model explodes on a 4+ at S7 AP- in a d6\" radius."
         }
       ],

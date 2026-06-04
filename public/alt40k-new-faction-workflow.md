@@ -156,7 +156,7 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
 | `type` | Purpose | Required fields |
 |---|---|---|
 | `"weaponSwap"` | Swap a weapon for one or more alternatives | `id`, `label`, `scope`, `applies[]`, `replaces`, `choices[]` or `weaponListId` |
-| `"toggle"` | Equipment/upgrade that can be switched on | `id`, `label`, `pts`; optionally `grantsWargear[]`, `grantsRules[]`, `note` |
+| `"toggle"` | Equipment/upgrade that can be switched on. Add `applies[]` + `exclusiveGroup` for per-model independent selection (see guide § Per-model toggle upgrades). | `id`, `label`, `pts`; optionally `grantsWargear[]`, `grantsRules[]`, `note`, `applies[]`, `exclusiveGroup` |
 | `"namedUpgrade"` | Reference a shared upgrade from `namedUpgrades` | `id`, `upgradeId`, `pts` |
 | `"squadSize"` | Add more models to a unit | `id`, `label`, `targetModelId`, `ptsEach`, `max` |
 | `"spellPick"` | Let the unit pick from a spell pool | `id`, `spellPoolId` |
@@ -200,12 +200,27 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
   "arcType": "Hull", "mountingTags": ["Primary"] }
 ```
 
-`toggle` example:
+`toggle` example (unit-wide):
 
 ```json
 { "id": "jk-deff-rolla", "type": "toggle", "label": "Deff Rolla (+28 pts)",
   "pts": 28, "grantsWargear": ["deff-rolla"] }
 ```
+
+`toggle` example (per-model — each model independently picks zero or one from the group):
+
+```json
+{ "id": "dr-extra-armour", "type": "toggle",
+  "exclusiveGroup": "dr-upgrades", "applies": ["dreadnought"],
+  "label": "Extra Armour", "pts": 5,
+  "grantsWargear": ["extra-armour"], "note": "Crew Stun becomes Weapon Disabled." },
+{ "id": "dr-smoke", "type": "toggle",
+  "exclusiveGroup": "dr-upgrades", "applies": ["dreadnought"],
+  "label": "Smoke Launchers", "pts": 10,
+  "grantsWargear": ["smoke-launchers"], "note": "One Use Only." }
+```
+
+The `applies` field on every option in the group is what triggers per-model rendering. Omit it and the group renders as a single unit-wide radio choice.
 
 `namedUpgrade` definitions in the `namedUpgrades` map must use:
 - `"type": "toggle"` (not `"statChange"` or anything else)
@@ -308,7 +323,7 @@ Storage and display:
 
 ### 1. Faction meta
 - Set `subfactionLabel` (e.g. `"Dynasty"`, `"Craft World"`, `"Chapter"`)
-- Write each subfaction's `rules[]` with `id`, `name`, `shortDesc`, `fullDesc`
+- Write each subfaction's `rules[]` with `id`, `name`, `fullDesc` (verbatim from codex)
 - The same rule ID can appear in multiple subfactions (each is scoped to its subfaction)
 - Set `slotLimits` — three slots are always `[0, null]` (dynamic, same for every faction):
   `"Advisor"`, `"Ded. Transport"`, `"Fortification"`. The app computes their
@@ -319,7 +334,7 @@ Storage and display:
 - Faction-specific rules only — rules already in `core-rules.json` go there by ID
 - Rules shared across 2+ units → `armyRules`
 - Rules unique to one unit → that unit's `inlineRules[]`
-- Each needs `id`, `name`, `shortDesc`, `fullDesc`
+- Each needs `id`, `name`, `fullDesc` (verbatim from codex)
 
 ### 3. commonWargear
 - Every distinct weapon defined **once**, referenced everywhere by ID
@@ -413,7 +428,7 @@ One entry in `rule-map.json` — all future factions benefit automatically.
 ### Adding to core-rules.json
 When a rule appears on units across multiple factions but doesn't exist in core rules yet:
 ```json
-{ "id": "new-rule", "name": "New Rule", "shortDesc": "...", "fullDesc": "..." }
+{ "id": "new-rule", "name": "New Rule", "fullDesc": "..." }
 ```
 Then reference it by ID in the faction files and add the mapping to `rule-map.json` if needed.
 
@@ -426,7 +441,8 @@ The app calculates unit cost at runtime using this formula:
 ```
 unitTotal = basePts
   + Σ squadSize.value × ptsEach
-  + Σ toggle.active         ? pts                              : 0
+  + Σ toggle.active (unit-wide, no applies)  ? pts                              : 0
+  + Σ_model toggle.active (per-model, has applies[]) ? pts                     : 0
   + Σ namedUpgrade.active   ? pts                              : 0
   + Σ markPick.chosen       ? ptsPerModel × totalModelCount    : 0
   + Σ pureBlessingPick.active ? pts (from matching mark choice) : 0
@@ -437,6 +453,8 @@ unitTotal = basePts
   + Σ_i perModelWeapon[i].selectedChoice.pts
   + Σ spellPick.selectedSpell.pts
 ```
+
+Per-model toggle cost: each model that selects an upgrade contributes that upgrade's `pts` individually. A unit of 3 Dreadnoughts where 2 take Smoke Launchers (+10 pts each) and 1 takes Extra Armour (+5 pts) costs +25 pts total from upgrades.
 
 `basePts` is the cost of the unit at minimum legal size with default wargear — all selectable costs sit on top.
 
@@ -455,4 +473,5 @@ The postprocessor covers most of these automatically, but keep them in mind whil
 - [ ] Unique characters have `isUnique: true` on the unit, not `"unique"` in `specialRules`
 - [ ] Vehicle weapons have `arcType`/`mountingTags` on unit references; infantry weapons use plain strings
 - [ ] `chapterRestriction` values match a subfaction `id`
+- [ ] Per-model toggle groups (`exclusiveGroup` + `applies`): `applies` is present on **every** option in the group and all reference the same model id
 - [ ] Faction registered in `public/factions.json`

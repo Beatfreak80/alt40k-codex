@@ -18,7 +18,8 @@
       "Bash(node postprocess.cjs public/orks_faction.json --dry-run)",
       "Bash(Remove-Item \"c:\\\\Users\\\\garyk\\\\Documents\\\\alt40k-codex\\\\public\\\\alt40k-faction-schema-v1.3.md\")",
       "PowerShell(Remove-Item \"c:\\\\Users\\\\garyk\\\\Documents\\\\alt40k-codex\\\\public\\\\alt40k-faction-schema-v1.3.md\" -Confirm:$false)",
-      "Read(//c/Users/garyk/.claude/**)"
+      "Read(//c/Users/garyk/.claude/**)",
+      "Read(//c/temp/**)"
     ],
     "additionalDirectories": [
       "C:\\Users\\garyk\\.claude"

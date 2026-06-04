@@ -25,7 +25,6 @@
           {
             "id": "no-changes",
             "name": "No Changes",
-            "shortDesc": "No modifications to datasheets.",
             "fullDesc": "No changes to datasheets in this Codex."
           }
         ]
@@ -37,13 +36,11 @@
           {
             "id": "posh-lifestyle",
             "name": "Posh Lifestyle",
-            "shortDesc": "Models may not claim Objective Markers in the enemy deployment zone.",
             "fullDesc": "Models in your army may not claim Objective Markers in the enemy deployment zone."
           },
           {
             "id": "wealthiest-gitz",
             "name": "Wealthiest Gitz",
-            "shortDesc": "Models trigger Dakka on a 5+ instead of a 6+ To Hit.",
             "fullDesc": "Models in your army trigger Dakka on a 5+ instead of a 6+ To Hit."
           }
         ]
@@ -55,13 +52,11 @@
           {
             "id": "sneaky-gitz",
             "name": "Sneaky Gitz",
-            "shortDesc": "All models gain Stealth and Outflank; if already Stealth they gain Shroud instead.",
             "fullDesc": "Models in your army gain Stealth and Outflank. If they already have Stealth they gain Shroud."
           },
           {
             "id": "survivors-big-party",
             "name": "Survivors of Da Big Party",
-            "shortDesc": "All models must reroll successful Ld tests.",
             "fullDesc": "Models in your army must reroll successful Ld tests."
           }
         ]
@@ -73,13 +68,11 @@
           {
             "id": "grot-warmachines",
             "name": "Grot Warmachines",
-            "shortDesc": "All Ork-keyword Vehicles and Monsters suffer W-2 but gain BS-1 (Improves).",
             "fullDesc": "All Vehicle, Titanic Vehicle, Monsters, and Titanic Monsters with the Ork keyword suffer W-2 but gain BS-1 (Improves by 1)."
           },
           {
             "id": "only-grots",
             "name": "Only Grots",
-            "shortDesc": "Army may not include Ork keyword units that are not Vehicles or Monsters.",
             "fullDesc": "This army may not include any Ork keyword units that are not Vehicle, Titanic Vehicle, Monsters, or Titanic Monsters."
           }
         ]
@@ -91,13 +84,11 @@
           {
             "id": "hurry-up-and-loot",
             "name": "Hurry Up and Loot",
-            "shortDesc": "Must declare Charges if able; may not fire Heavy Weapons or Advance if it would prevent a legal Charge.",
             "fullDesc": "All models in your army must declare Charges if they can legally do so, and may not do anything such as fire Heavy Weapons or Advance if it would compromise a legal Charge that is in range."
           },
           {
             "id": "scavenging-gitz",
             "name": "Scavenging Gitz",
-            "shortDesc": "Each unit gains one Looted Die per W# of each model it slays; use to reroll To Hit (no rerolling rerolls).",
             "fullDesc": "Each unit in your army gains one Looted Die for each W# of each model it slays. Looted Dice may be used to reroll any To Hit die in relation to this unit, but you cannot reroll a reroll."
           }
         ]
@@ -109,13 +100,11 @@
           {
             "id": "hyper-adhd-gitz",
             "name": "Hyper ADHD Gitz",
-            "shortDesc": "Infantry models count as half a model for contesting Objective Markers.",
             "fullDesc": "Infantry models in your army only count as half a model for purposes of contesting an Objective Marker."
           },
           {
             "id": "speed-freeks",
             "name": "Speed Freeks",
-            "shortDesc": "All Vehicles gain M+2; Aircraft may turn 90° after firing in the Shooting Phase.",
             "fullDesc": "All Vehicles gain M+2. Aircraft may turn 90 degrees after firing in the Shooting Phase as well as before moving in the Movement Phase."
           }
         ]
@@ -127,13 +116,11 @@
           {
             "id": "pirate-gitz",
             "name": "Pirate Gitz",
-            "shortDesc": "All Infantry models gain Objective Secured.",
             "fullDesc": "All Infantry models in your army gain Objective Secured."
           },
           {
             "id": "lurking-pirates",
             "name": "Lurking Pirates",
-            "shortDesc": "Entire army must deploy in Reserves, even if normally prohibited.",
             "fullDesc": "Your entire army must deploy in Reserves, even if it is normally not allowed to do so."
           }
         ]
@@ -145,13 +132,11 @@
           {
             "id": "goff-is-da-best",
             "name": "Goff is Da Best",
-            "shortDesc": "All models may reroll 1s To Hit in Melee.",
             "fullDesc": "All models in your army may reroll 1s To Hit in Melee."
           },
           {
             "id": "obnoxious-gitz",
             "name": "Obnoxious Gitz",
-            "shortDesc": "Infantry models count as half a model for contesting Objective Markers.",
             "fullDesc": "Infantry models in your army only count as half a model for purposes of contesting an Objective Marker."
           }
         ]
@@ -163,19 +148,16 @@
           {
             "id": "feral-gitz",
             "name": "Feral Gitz",
-            "shortDesc": "No Vehicle models allowed; all models gain M+2.",
             "fullDesc": "This army may not field any Vehicle models, but all models gain M+2."
           },
           {
             "id": "tough-squiggitz",
             "name": "Tough Squiggitz",
-            "shortDesc": "Infantry, Monstrous Infantry, Monsters, and Titanic Monsters inflict -2 To Wound on Poisoned weapons rolling against them.",
             "fullDesc": "Infantry, Monstrous Infantry, Monsters, and Titanic Monsters inflict a -2 To Wound on Poisoned (#+) weapons rolling To Wound them."
           },
           {
             "id": "poisonous-fauna",
             "name": "Poisonous Fauna",
-            "shortDesc": "All Squig keyword models gain Poisoned (3+) on Melee weapons.",
             "fullDesc": "All Squig keyword models in your army gains Poisoned (3+) on its Melee weapons."
           }
         ]
@@ -228,151 +210,126 @@
     {
       "id": "dakka",
       "name": "Dakka",
-      "shortDesc": "Each unmodified roll of a 6 To Hit causes one additional Auto Hit.",
       "fullDesc": "Each unmodified roll of a 6 To Hit causes one additional Auto Hit."
     },
     {
       "id": "ere-we-go",
       "name": "'Ere We Go!",
-      "shortDesc": "This model may reroll failed Charge rolls.",
       "fullDesc": "This model may reroll failed Charge rolls."
     },
     {
       "id": "mob-rule",
       "name": "Mob Rule",
-      "shortDesc": "12\" True Aura: friendly units may treat their Ld equal to the number of models in this unit.",
       "fullDesc": "12\" True Aura, friendly units may treat their Ld equal to the number of models in this unit."
     },
     {
       "id": "poor-maintenance",
       "name": "Poor Maintenance",
-      "shortDesc": "Each Command Phase, roll d6. On a 1, choose to Move or Shoot this turn — doing one prevents the other.",
       "fullDesc": "In each of your Command Phases, roll a d6 for each unit with this rule in your army. On a 1, the unit must decide if it will Move or Shoot this turn. If elected to Move, it may Advance and Fall Back this turn but cannot Shoot or Charge. If elected to Shoot, it may Shoot in the Shooting Phase, but cannot Move, Advance, Charge, or Fall Back. High Altitude models MUST always move, and can never opt to Shoot instead of Move because of Poor Maintenance."
     },
     {
       "id": "breakin-eads",
       "name": "Breakin' 'Eads!",
-      "shortDesc": "6\" Aura: the first time each phase a friendly Ork unit fails a Ld test, inflict d3 Mortal Wounds and it automatically passes.",
       "fullDesc": "6\" Aura, the first time each phase a friendly Ork unit fails a Ld test, this model inflicts d3 Mortal Wounds to that unit and it automatically passes that test."
     },
     {
       "id": "waaagh-aura",
       "name": "Waaagh!",
-      "shortDesc": "6\" Aura: this model and target unit score one Auto Hit on an unmodified roll of a 6 To Hit in Melee.",
       "fullDesc": "6\" Aura, this model and target unit score one Auto Hit on a unmodified roll of a 6 To Hit in Melee."
     },
     {
       "id": "ork-repair",
       "name": "Repair",
-      "shortDesc": "Target model in base contact Repairs 1 Wound; on a d6 roll of 5+ restore service for one Disabled result.",
       "fullDesc": "Target model in base contact Repairs 1 Wound. Roll a d6, on a 5+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed."
     },
     {
       "id": "saw-bones",
       "name": "Saw Bones",
-      "shortDesc": "6\" Aura: target a non-Vehicle model, roll d6. On a 2+ it Heals 1 Wound.",
       "fullDesc": "6\" Aura, target a non-Vehicle model and roll d6. On a 2+, it Heals 1 Wound."
     },
     {
       "id": "doks-toolz",
       "name": "Dok's Toolz",
-      "shortDesc": "6\" Aura: this model and target unit gain 5+ Feel No Pain.",
       "fullDesc": "6\" Aura, this model and target unit gain 5+ Feel No Pain."
     },
     {
       "id": "jam",
       "name": "Jam!",
-      "shortDesc": "Any double for the number of shots made by the Rattler Kannon causes the weapon to be removed from the game.",
       "fullDesc": "Any double for the number of shots made by the Rattler Kannon causes the weapon to be removed from the game. The shots rolled are made before the weapon is removed."
     },
     {
       "id": "junka-forcefield",
       "name": "Junka Forcefield",
-      "shortDesc": "6\" Aura: this model and target unit gain a 5+ Invulnerability Save against Ranged Attacks.",
       "fullDesc": "6\" Aura, This model and target unit gain a 5+ Invulnerability Save against Ranged Attacks."
     },
     {
       "id": "meal-wagon",
       "name": "Meal Wagon",
-      "shortDesc": "6\" Aura: this model and target unit may reroll failed Ld tests.",
       "fullDesc": "6\" Aura, this model and target unit may reroll failed Ld tests."
     },
     {
       "id": "chained-rokkitz",
       "name": "Chained Rokkitz",
-      "shortDesc": "After determining Hits, roll Scatter Dice again from the strike point (no BS reduction). On Direct Hit, cancelled. Up to 3 times total.",
       "fullDesc": "Once the number of Hits this weapon caused has been determined, roll the Scatter Dice again, using the weapon's strike point as the point of origin. Do not reduce the Scatter Distance with the user's BS value. If you roll a Direct Hit the effect is cancelled. This effect can happen up to a total of 3 times maximum."
     },
     {
       "id": "pulsa",
       "name": "Pulsa",
-      "shortDesc": "After resolving the final strike, roll 1d6: on 5+ double the Hits; on 6+ triple instead. Then roll again for each step.",
       "fullDesc": "After resolving the final striking place of this weapon, roll a 1d6. On a 5+, double the Hits inflicted and roll another 1d6. On a 6+ triple the Hits instead!"
     },
     {
       "id": "the-hour-is-nigh",
       "name": "The Hour is Nigh",
-      "shortDesc": "When fired, place a marker at a valid target. In your next Command Phase, the missile strikes.",
       "fullDesc": "When the weapon is fired, place a marker on field at a valid target. In your next Command Phase, the missile strikes! Scatter like normal, following the 15\" Blast radius rules."
     },
     {
       "id": "t-minus-5",
       "name": "T Minus 5",
-      "shortDesc": "Cannot fire Turn 1. Cannot be destroyed or Disabled. If the carrier dies the missile still fires.",
       "fullDesc": "The weapon may not be fired Turn 1. The weapon cannot be destroyed or Disabled. If the weapon is marked on the field and the carrier is destroyed, the Deathstrike Missile still hits in your Command Phase."
     },
     {
       "id": "enraged-demise",
       "name": "Enraged Demise",
-      "shortDesc": "If this model is destroyed, each model onboard suffers a hit equal to this model's S#.",
       "fullDesc": "If this model is destroyed, each model onboard suffers a hit equal to this models S#."
     },
     {
       "id": "packed-like-squigs",
       "name": "Packed Like Squigs",
-      "shortDesc": "This model counts as half a model for Transport Capacity.",
       "fullDesc": "This model counts as half a model for Transport Capacity."
     },
     {
       "id": "unruly-mob",
       "name": "Unruly Mob",
-      "shortDesc": "This unit may only have 1 Independent Character per 5 models instead of 1 per 2.",
       "fullDesc": "This unit may only have Independent Characters at one for every five models instead of one for every two."
     },
     {
       "id": "void-shields-2",
       "name": "Void Shields 2",
-      "shortDesc": "This model has 2 Void Shields.",
       "fullDesc": "This model has 2 Void Shields."
     },
     {
       "id": "create-panic",
       "name": "Create Panic",
-      "shortDesc": "Displaces non-Titanic models 1\" away from underneath it when it finishes moving.",
       "fullDesc": "This model displaces non-Titanic models 1\" away from underneath it when it finishes moving. If the models cannot be displaced, this model cannot be placed there."
     },
     {
       "id": "reactor-meltdown",
       "name": "Reactor Meltdown",
-      "shortDesc": "Explodes on a 4+ in a 4d6\" Radius with S Destroyer and AP 1+ when destroyed.",
       "fullDesc": "This model Explodes on a 4+ in a 4d6\" Radius with S Destroyer and AP 1+ when it is destroyed."
     },
     {
       "id": "towering-god-engine",
       "name": "Towering God Engine",
-      "shortDesc": "This model may only be Hit in Melee on a natural 5+ or worse, regardless of modifiers.",
       "fullDesc": "This model may only be Hit in Melee on a natural 5+ or worse, regardless of modifiers or abilities."
     },
     {
       "id": "shoutin-pole",
       "name": "Shoutin' Pole",
-      "shortDesc": "Embarked models with the Waaagh! Aura may cast their Aura up to 24\" away.",
       "fullDesc": "Embarked models with the Waaagh! Aura may cast their Aura up to 24\" away."
     },
     {
       "id": "fortification-rule",
       "name": "Fortification",
-      "shortDesc": "This model may never be moved once placed on the Table, except when destroyed.",
       "fullDesc": "This model may never be moved once placed on the Table, except when it is destroyed."
     }
   ],
@@ -2008,7 +1965,9 @@
           "value": 1
         }
       ],
-      "grantsRules": ["unique"],
+      "grantsRules": [
+        "unique"
+      ],
       "note": "S+1, W+1, A+1, gains Da Big Boss rule. Unique."
     },
     "mega-armour": {
@@ -2313,7 +2272,6 @@
             {
               "id": "dw-forcefield",
               "name": "Forcefield",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -2381,7 +2339,6 @@
             {
               "id": "wb-forcefield",
               "name": "Forcefield",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -2440,19 +2397,22 @@
           "id": "wb-mega-armour",
           "type": "namedUpgrade",
           "upgradeId": "mega-armour",
-          "pts": 18
+          "pts": 18,
+          "exclusiveGroup": "wb-mount"
         },
         {
           "id": "wb-drill-boss",
           "type": "namedUpgrade",
           "upgradeId": "drill-boss",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "wb-mount"
         },
         {
           "id": "wb-warbike",
           "type": "namedUpgrade",
           "upgradeId": "warbike",
-          "pts": 29
+          "pts": 29,
+          "exclusiveGroup": "wb-mount"
         },
         {
           "id": "wb-da-big-boss",
@@ -2512,7 +2472,6 @@
             {
               "id": "sq-forcefield",
               "name": "Forcefield",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -2592,7 +2551,6 @@
             {
               "id": "breakin-ittle-eads",
               "name": "Breakin' 'Ittle 'Eads!",
-              "shortDesc": "6\" Aura: first time each round a friendly Grot unit fails a Ld test, inflict d3 Mortal Wounds and it passes this and all other Ld tests for the Turn.",
               "fullDesc": "6\" Aura, the first time each round a friendly Grot unit fails a Ld Test, inflict d3 Mortal Wounds and it automatically passes this Ld test and all other Ld tests for the rest of the Turn."
             }
           ]
@@ -2891,7 +2849,6 @@
             {
               "id": "waaagh-banner-aura",
               "name": "Waaagh! Banner",
-              "shortDesc": "6\" Aura: this model and target unit gain A+1.",
               "fullDesc": "6\" Aura, this model and target unit gain A+1."
             }
           ]
@@ -3020,25 +2977,21 @@
             {
               "id": "kunin-infiltrator",
               "name": "Kunin' Infiltrator",
-              "shortDesc": "This model and its unit gain Infiltrate. If the unit has Infiltrator they also gain Scout.",
               "fullDesc": "This model and its unit gains Infiltrate. If the unit this model is deployed with has Infiltrator, they also gain Scout."
             },
             {
               "id": "red-skull-kommandoz",
               "name": "Red Skull Kommandoz",
-              "shortDesc": "6\" Aura: this model and target unit may reroll 1s To Hit.",
               "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Hit."
             },
             {
               "id": "terrifyin-killa",
               "name": "Terrifyin' Killa",
-              "shortDesc": "6\" Aura: target unit suffers Ld-1.",
               "fullDesc": "6\" Aura, target unit suffers Ld-1."
             },
             {
               "id": "snikrot-forcefield",
               "name": "Forcefield",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -3090,25 +3043,21 @@
             {
               "id": "cybork-body",
               "name": "Cybork Body",
-              "shortDesc": "This model has a 5+ Feel No Pain.",
               "fullDesc": "This model has a 5+ Feel No Pain."
             },
             {
               "id": "full-throttle",
               "name": "Full Throttle",
-              "shortDesc": "6\" Aura: this model and target unit with Flying may charge the same turn they Advance.",
               "fullDesc": "6\" Aura, this model and target unit with Flying may charge the same turn they Advance."
             },
             {
               "id": "goff-drill-boss",
               "name": "Goff Drill Boss",
-              "shortDesc": "6\" Aura: this model and target unit automatically pass Ld tests.",
               "fullDesc": "6\" Aura, this model and target unit automatically pass Ld tests."
             },
             {
               "id": "zagstruk-forcefield",
               "name": "Forcefield",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -3156,7 +3105,6 @@
             {
               "id": "one-scalpel-short",
               "name": "One Scalpel Short of a Med Pack",
-              "shortDesc": "6\" Aura: this model and target unit gain 4+ Feel No Pain. Each roll of 1 on a FNP causes 1 Mortal Wound to that unit.",
               "fullDesc": "6\" Aura, this model and target unit gains a 4+ Feel No Pain. For each roll of a 1 on a Feel No Pain, the target unit or model suffers 1 Mortal Wound."
             }
           ]
@@ -3204,7 +3152,6 @@
             {
               "id": "tougher-than-rok-squig",
               "name": "Tougher Than a Rok Squig",
-              "shortDesc": "This model has a 4+ Feel No Pain.",
               "fullDesc": "This model has a 4+ Feel No Pain."
             }
           ]
@@ -3251,13 +3198,11 @@
             {
               "id": "grot-kommandoz",
               "name": "Grot Kommandoz",
-              "shortDesc": "6\" Aura: this model and target Grot Infantry unit gain T+1 and Mob Rule.",
               "fullDesc": "6\" Aura, this model and target Grot Infantry unit gain T+1 and Mob Rule."
             },
             {
               "id": "zodgrod-forcefield",
               "name": "Forcefield",
-              "shortDesc": "4+ Invulnerability Save.",
               "fullDesc": "This model has a 4+ Invulnerability Save."
             }
           ]
@@ -4028,7 +3973,6 @@
             {
               "id": "im-sad-kick-snotling",
               "name": "I'm Sad, I'll Kick a Snotling",
-              "shortDesc": "6\" Aura: target friendly unit making Ranged Attacks may inflict 1 Mortal Wound per model in this unit; per Mortal Wound inflicted they may reroll 1 To Hit roll.",
               "fullDesc": "6\" Aura, target friendly unit making Ranged Attacks may inflict 1 Mortal Wound per model in that unit against this unit. If they do so, they may reroll 1 To Hit roll per Mortal Wound inflicted."
             }
           ]
@@ -5618,7 +5562,6 @@
             {
               "id": "flame-kart",
               "name": "Flame Kart",
-              "shortDesc": "This model may reroll 1s To Wound with Flame weapons.",
               "fullDesc": "This model may reroll 1s To Wound with Flame weapons."
             }
           ]
@@ -7075,7 +7018,6 @@
             {
               "id": "gorkanaut-forcefield",
               "name": "Kustom Forcefield",
-              "shortDesc": "5+ Invulnerability Save.",
               "fullDesc": "This model has a 5+ Invulnerability Save."
             }
           ]
@@ -7462,7 +7404,6 @@
             {
               "id": "morkanaut-forcefield",
               "name": "Kustom Forcefield",
-              "shortDesc": "5+ Invulnerability Save.",
               "fullDesc": "This model has a 5+ Invulnerability Save."
             }
           ]
@@ -7928,6 +7869,7 @@
           "type": "toggle",
           "label": "Grabbin Klaw (+7 pts)",
           "pts": 7,
+          "exclusiveGroup": "bt-aux",
           "grantsWargear": [
             "grabbin-klaw"
           ]
@@ -7937,6 +7879,7 @@
           "type": "toggle",
           "label": "Wrecking Ball (+7 pts)",
           "pts": 7,
+          "exclusiveGroup": "bt-aux",
           "grantsWargear": [
             "wrecking-ball"
           ]
@@ -8399,6 +8342,7 @@
           "type": "toggle",
           "label": "Grabbin Klaw (+7 pts)",
           "pts": 7,
+          "exclusiveGroup": "gtr-aux",
           "grantsWargear": [
             "grabbin-klaw"
           ]
@@ -8408,6 +8352,7 @@
           "type": "toggle",
           "label": "Wrecking Ball (+7 pts)",
           "pts": 7,
+          "exclusiveGroup": "gtr-aux",
           "grantsWargear": [
             "wrecking-ball"
           ]
@@ -9644,6 +9589,7 @@
           "type": "toggle",
           "label": "Grabbin Klaw (+7 pts)",
           "pts": 7,
+          "exclusiveGroup": "dbf-aux",
           "grantsWargear": [
             "grabbin-klaw"
           ]
@@ -9653,6 +9599,7 @@
           "type": "toggle",
           "label": "Wrecking Ball (+7 pts)",
           "pts": 7,
+          "exclusiveGroup": "dbf-aux",
           "grantsWargear": [
             "wrecking-ball"
           ]
@@ -10009,7 +9956,6 @@
             {
               "id": "workshop-repair",
               "name": "Repair",
-              "shortDesc": "Target model in base contact Repairs d3 Wounds; on a d6 roll of 3+ restore service for one Disabled result.",
               "fullDesc": "Target model in base contact Repairs d3 Wounds. Roll a d6, on a 3+ restore service for one Weapon Disabled, Crew Shaken, Immobilized, or Weapon Destroyed."
             }
           ]

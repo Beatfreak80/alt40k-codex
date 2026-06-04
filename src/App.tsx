@@ -18,9 +18,6 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .codex-nav .nav-label { font-size: 9pt; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 4px; white-space: nowrap; }
 .nav-btn { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; border: 1px solid #444; background: transparent; color: #c9a84c; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
 .nav-btn:hover, .nav-btn.active { background: #2a2008; border-color: #c9a84c; }
-.nav-print-toggle { display: flex; align-items: center; gap: 8px; padding-left: 4px; }
-.nav-print-label { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #888; cursor: pointer; white-space: nowrap; }
-.nav-print-label:hover { color: #c9a84c; }
 .nav-mobile-select { font-family: 'Rajdhani', sans-serif; font-size: 11pt; font-weight: 600; letter-spacing: 0.04em; padding: 5px 10px; border-radius: 3px; border: 1px solid #c9a84c; background: #2a2008; color: #c9a84c; cursor: pointer; display: none; }
 .nav-search-wrap { position: relative; }
 .nav-search-input { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 500; padding: 4px 10px; border-radius: 3px; border: 1px solid #555; background: #111; color: #e8e0d0; outline: none; width: 150px; transition: border-color 0.15s; }
@@ -145,30 +142,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 @media (min-width: 769px) {
   .nav-mobile-select { display: none; }
 }
-.detail-mode .two-col { columns: 1; }
-@media (min-width: 769px) {
-  .detail-mode .two-col { columns: 2; }
-}
 
-/* Popover — hover + tap */
-.popover-wrap { position: relative; display: inline-block; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
-.popover-box {
-  display: none; position: fixed;
-  background: #1a1a1a; color: #e8e0d0; font-size: 8pt; font-weight: 500;
-  padding: 8px 12px; border-radius: 4px; white-space: normal; z-index: 500;
-  line-height: 1.5; width: 260px;
-  pointer-events: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-.popover-wrap.open .popover-box { display: block; }
-.popover-box strong { display: block; font-size: 9pt; color: #c9a84c; margin-bottom: 3px; }
-.popover-box .pop-meta { font-size: 7.5pt; color: #999; margin-bottom: 4px; font-style: italic; display: block; }
-.pop-wep-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
-.pop-wep-table th { font-size: 7pt; color: #888; text-transform: uppercase; letter-spacing: 0.06em; padding: 1px 4px; text-align: center; border-bottom: 1px solid #333; }
-.pop-wep-table th:first-child { text-align: left; }
-.pop-wep-table td { font-size: 8pt; color: #ddd; padding: 2px 4px; text-align: center; border-bottom: 1px solid #2a2a2a; }
-.pop-wep-table td:first-child { text-align: left; color: #fff; }
-.pop-wep-table tr:last-child td { border-bottom: none; }
-.pop-wep-table.multi-profile td { border-bottom: none; }
 
 .unit-divider { margin: 28px 0; border: none; border-top: 1px solid #ddd; }
 
@@ -182,6 +156,8 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .rules-list li { padding: 2.5px 0; border-bottom: 1px solid #f0f0f0; font-size: 9pt; font-weight: 500; line-height: 1.4; }
 .rules-list li:last-child { border-bottom: none; }
 .rule-name { font-weight: 700; font-size: 9pt; color: #1a1a1a; }
+.rule-name-clickable { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; }
+.rule-name-clickable:hover { color: #7a5800; }
 .rules-detail-li { font-size: 9pt; }
 @media (max-width: 768px) {
   .rule-name { font-size: 12pt; }
@@ -243,11 +219,16 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-icon-btn { background:none; border:1px solid transparent; border-radius:3px; cursor:pointer; padding:2px 7px; font-size:10pt; color:#888; }
 .lb-icon-btn:hover { background:#f0f0f0; color:#333; border-color:#ddd; }
 .lb-icon-btn.danger:hover { background:#fff0f0; color:#c04040; border-color:#e8a0a0; }
+.lb-entry-confirm { border-color:#e8a0a0 !important; background:#fff8f8 !important; }
+.lb-del-confirm { font-family:'Rajdhani',sans-serif; font-size:8.5pt; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:2px 10px; border-radius:3px; border:1px solid #c04040; background:#fff0f0; color:#c04040; cursor:pointer; white-space:nowrap; }
+.lb-del-confirm:hover { background:#ffe0e0; border-color:#a02020; color:#a02020; }
 .lb-modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.62); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; }
-.lb-modal { background:#fff; border-radius:6px; max-width:640px; width:100%; max-height:88vh; overflow-y:auto; padding:24px; position:relative; }
+.lb-modal { background:#fff; border-radius:6px; max-width:640px; width:100%; max-height:88vh; overflow-y:auto; padding:0 24px 24px; position:relative; }
+.lb-modal-sticky { position:sticky; top:0; background:#fff; z-index:2; padding:24px 0 0; margin-bottom:0; }
+.lb-modal-sticky-inner { padding-bottom:12px; border-bottom:1px solid #e8e4da; margin-bottom:4px; }
 .lb-modal-head { font-size:16pt; font-weight:700; color:#1a1a1a; display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .lb-modal-pts { font-size:10pt; color:#7a5800; font-weight:700; margin-left:10px; }
-.lb-modal-sub { font-size:9.5pt; color:#888; margin:2px 0 16px; }
+.lb-modal-sub { font-size:9.5pt; color:#888; margin:2px 0 0; }
 .lb-opt-section { margin:10px 0 0; }
 .lb-opt-section-head { font-size:8.5pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#7a5800; padding-bottom:2px; border-bottom:1px solid #e8d48a; margin-bottom:5px; }
 .lb-exclusive-group { margin:6px 0 2px; padding:6px 8px 2px; background:#f9f7f2; border:1px solid #e0d4aa; border-radius:4px; }
@@ -284,6 +265,8 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-collapse-head { cursor:pointer; display:flex; align-items:center; gap:6px; }
 .lb-collapse-head:hover { opacity:0.7; }
 .lb-collapse-icon { font-size:9pt; color:#888; font-weight:400; letter-spacing:0; text-transform:none; }
+.rules-names-only-btn { font-family:inherit; font-size:7.5pt; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#7a5800; background:none; border:1px solid #e8d48a; border-radius:3px; padding:1px 7px; cursor:pointer; line-height:1.5; flex-shrink:0; }
+.rules-names-only-btn:hover { background:#fffdf5; }
 .lb-permodel-tbl { width:100%; border-collapse:collapse; font-size:9pt; margin:4px 0 8px; }
 .lb-permodel-tbl td { padding:2px 6px; border-bottom:1px solid #f0f0f0; }
 .lb-permodel-tbl td:first-child { font-weight:600; color:#555; width:30%; }
@@ -298,7 +281,8 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-foc-slot-err:hover { background:#ffe4e4; border-color:#c04040; }
 .lb-foc-slot-count { font-weight:500; font-size:8pt; letter-spacing:0; text-transform:none; opacity:0.75; }
 @media (max-width:768px) {
-  .lb-modal { padding:16px; }
+  .lb-modal { padding:0 16px 16px; }
+  .lb-modal-sticky { padding:16px 0 0; }
   .lb-list-name { font-size:12pt; }
   .lb-entry-name { font-size:10pt; }
   .lb-pick-filter { gap:4px; }
@@ -324,12 +308,11 @@ function fmtRange(p) {
 // ── Persistence ──────────────────────────────────────────────────────────────
 const stateKey = (file) => `alt40k-${file}`;
 
-function saveState(file, hiddenUnits, selectedSubfaction, detailMode, activePage, scrollY) {
+function saveState(file, hiddenUnits, selectedSubfaction, activePage, scrollY) {
   try {
     localStorage.setItem(stateKey(file), JSON.stringify({
       hidden: [...hiddenUnits],
       subfaction: selectedSubfaction,
-      detail: detailMode,
       page: activePage,
       scrollY: Math.round(scrollY),
     }));
@@ -344,8 +327,7 @@ function readState(file) {
     return {
       hiddenUnits:        new Set(Array.isArray(s.hidden) ? s.hidden : []),
       selectedSubfaction: s.subfaction ?? '',
-      detailMode:         !!s.detail,
-      activePage:         s.page ?? 'army-rules',
+      activePage:         typeof s.page === 'string' && s.page ? s.page : 'army-rules',
       scrollY:            s.scrollY ?? 0,
     };
   } catch(_) { return null; }
@@ -496,7 +478,9 @@ function defaultPerModel(unit: any): Record<string, Record<string, string>> {
     if (o.type !== "perModelWeapon") continue;
     const ch = o.choices || []; if (!ch[0]) continue;
     const model = (unit.models || []).find((m: any) => (o.applies || []).includes(m.id));
-    const count = model?.minCount ?? 1;
+    const modelCount = model?.minCount ?? 1;
+    const weaponCount = (model?.baseWargear || []).filter((r: any) => (typeof r === 'string' ? r : r.weaponId) === o.replaces).length || 1;
+    const count = modelCount * weaponCount;
     out[o.id] = {};
     for (let i = 0; i < count; i++) out[o.id][String(i)] = ch[0].weaponId;
   }
@@ -516,7 +500,7 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
   for (const o of (unit.options || [])) {
     const v = entry.options?.[o.id];
     if (o.type === "squadSize" && v != null) c += (v as number) * o.ptsEach;
-    else if ((o.type === "toggle" || o.type === "namedUpgrade") && v) c += o.pts || 0;
+    else if ((o.type === "toggle" || o.type === "namedUpgrade") && v) c += o.ptsPerModel ? o.ptsPerModel * totalUnitModels(unit, entry.options || {}) : (o.pts || 0);
     else if (o.type === "markPick" && v) {
       const ch = (o.choices||[]).find((x: any) => x.markId === v);
       if (ch) c += (ch.ptsPerModel || 0) * totalUnitModels(unit, entry.options || {});
@@ -565,6 +549,19 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
       const wid = entry.perModelOptions[o.id][idx];
       const ch = (o.choices || []).find((x: any) => x.weaponId === wid);
       if (ch) c += ch.pts || 0;
+    }
+  }
+  const seenExcGroups = new Set<string>();
+  for (const o of (unit.options || [])) {
+    if ((o.type !== "toggle" && o.type !== "namedUpgrade") || !o.applies || !o.exclusiveGroup) continue;
+    if (seenExcGroups.has(o.exclusiveGroup)) continue;
+    seenExcGroups.add(o.exclusiveGroup);
+    const groupOpts = (unit.options || []).filter((x: any) => x.exclusiveGroup === o.exclusiveGroup);
+    const modelSelections: Record<string,string> = entry.perModelOptions?.[o.exclusiveGroup] || {};
+    for (const selectedId of Object.values(modelSelections)) {
+      if (!selectedId) continue;
+      const selOpt = groupOpts.find((x: any) => x.id === selectedId);
+      if (selOpt) c += selOpt.pts || 0;
     }
   }
   return c;
@@ -624,172 +621,10 @@ function buildDisplayNames(entries: any[], units: any[]): Map<string, string> {
   return m;
 }
 
-// ── Popover (hover + tap, viewport-aware positioning) ────────────────────────
-function Popover({ trigger, content }) {
-  const [open, setOpen] = useState(false);
-  const [pos, setPos] = useState({ top: -9999, left: -9999 });
-  const wrapRef = useRef(null);
-  const boxRef = useRef(null);
-
-  useEffect(() => {
-    if (!open) return;
-    function handler(e) {
-      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
-    }
-    document.addEventListener("pointerdown", handler);
-    return () => document.removeEventListener("pointerdown", handler);
-  }, [open]);
-
-  // After box renders, measure its actual height and reposition
-  useEffect(() => {
-    if (!open || !boxRef.current || !wrapRef.current) return;
-    const trigRect = wrapRef.current.getBoundingClientRect();
-    const boxH = boxRef.current.offsetHeight;
-    const boxW = 260;
-    const vw = window.innerWidth;
-
-    // Prefer above; fall back to below if not enough room
-    let top = trigRect.top - boxH - 6;
-    if (top < 8) top = trigRect.bottom + 6;
-
-    // Centre horizontally, clamp to viewport
-    let left = trigRect.left + trigRect.width / 2 - boxW / 2;
-    left = Math.max(8, Math.min(left, vw - boxW - 8));
-
-    setPos({ top, left });
-  }, [open]);
-
-  function handleOpen() {
-    // Position off-screen first so box can render and be measured
-    setPos({ top: -9999, left: -9999 });
-    setOpen(true);
-  }
-
-  return (
-    <span ref={wrapRef} className={`popover-wrap${open ? " open" : ""}`}
-      onPointerEnter={e => { if (e.pointerType !== 'touch') handleOpen(); }}
-      onPointerLeave={e => { if (e.pointerType !== 'touch') setOpen(false); }}
-      onClick={e => { e.stopPropagation(); e.preventDefault(); if (open) setOpen(false); else handleOpen(); }}>
-      {trigger}
-      <span ref={boxRef} className="popover-box" style={{ top: pos.top, left: pos.left }}>
-        {content}
-      </span>
-    </span>
-  );
-}
-
-function WeaponPopoverContent({ weapon, coreRules, armyRules }) {
-  if (!weapon) return null;
-  return (
-    <>
-      <strong>{weapon.name}</strong>
-      <table className={`pop-wep-table${weapon.profiles.length>1?" multi-profile":""}`}>
-        <thead><tr>
-          <th>Rng</th><th>S</th><th>AP</th><th style={{textAlign:"left"}}>Rules</th>
-        </tr></thead>
-        <tbody>
-          {weapon.profiles.map((p,i) => (
-            <tr key={i}>
-              <td>{fmtRange(p)}</td><td>{p.strength}</td><td>{p.ap}</td>
-              <td style={{textAlign:"left",fontSize:"7.5pt"}}>{resolveRuleNames(p.rules, coreRules, armyRules)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </>
-  );
-}
-
-function ruleDesc(rule: {shortDesc?:string, fullDesc?:string, text?:string}, compact = false): string|undefined {
-  const full = rule.fullDesc || rule.text;
-  const short = rule.shortDesc;
-  if (compact && full && short && short.length < full.length * 0.6) return short;
-  return full || short;
-}
-
-function RulePopoverContent({ rule, compact = false }) {
-  if (!rule) return null;
-  return <><strong>{rule.name}</strong>{ruleDesc(rule, compact)}</>;
-}
-
-function SpellPopoverContent({ spell }) {
-  if (!spell) return null;
-  return (
-    <>
-      <strong>{spell.name}</strong>
-      <span className="pop-meta">Cast {spell.castValue}+ · {spell.pts} pts · Range {spell.range}"</span>
-      {spell.description}
-    </>
-  );
-}
-
-function WargearPill({ weaponId, label, cost, weapons, coreRules, armyRules }) {
-  const w = wepById(weaponId, weapons);
-  const rulesText = !isRealWeapon(w) && w?.profiles?.map(p => p.rules).filter(Boolean).join("; ");
-  const trigger = (
-    <span className={`pill${(isRealWeapon(w) || rulesText) ? " clickable" : ""}`}>
-      <span className="pill-name">{label||w?.name||weaponId}</span>
-      {cost ? <span className="pill-cost">+{cost} pts</span> : null}
-    </span>
-  );
-  if (!w) return trigger;
-  if (!isRealWeapon(w)) {
-    if (!rulesText) return trigger;
-    return <Popover trigger={trigger} content={<><strong>{w.name}</strong>{rulesText}</>}/>;
-  }
-  return <Popover trigger={trigger} content={<WeaponPopoverContent weapon={w} coreRules={coreRules} armyRules={armyRules}/>}/>;
-}
-
-function RulePill({ ruleId, label, armyRules, coreRules, inlineRules }) {
-  const rule = ruleById(ruleId, armyRules, coreRules, inlineRules);
-  const displayName = label || rule?.name || idToLabel(ruleId);
-  const trigger = <span className="rule-pill">{displayName}</span>;
-  const content = rule
-    ? <RulePopoverContent rule={rule}/>
-    : <><strong>{displayName}</strong><span style={{color:"#888",fontStyle:"italic",fontWeight:400}}> — Keyword only</span></>;
-  return <Popover trigger={trigger} content={content}/>;
-}
 
 function isRealWeapon(w) {
   return w?.profiles?.some(p => p.strength !== "-");
 }
-
-function UpgradePill({ label, cost, note, grantsWargear, grantsRules, weapons, coreRules, armyRules }) {
-  const grantedWeapons = (grantsWargear || []).map(ref => {
-    const id = typeof ref === "string" ? ref : ref.weaponId;
-    const w = id ? wepById(id, weapons || []) : null;
-    return isRealWeapon(w) ? w : null;
-  }).filter(Boolean);
-
-  const grantedRules = (grantsRules || []).map(id =>
-    ruleById(id, armyRules, coreRules, [])
-  ).filter(Boolean);
-
-  const hasContent = note || grantedWeapons.length > 0 || grantedRules.length > 0;
-  const trigger = (
-    <span className={`pill${hasContent ? " clickable" : ""}`}>
-      <span className="pill-name">{label}</span>
-      {cost ? <span className="pill-cost">+{cost} pts</span> : null}
-    </span>
-  );
-  if (!hasContent) return trigger;
-
-  const hasBody = grantedRules.length > 0 || grantedWeapons.length > 0;
-  const content = (
-    <>
-      {note && (
-        <>
-          <strong>{label}</strong>
-          <span style={{display:"block", marginBottom: hasBody ? 6 : 0, fontStyle:"italic", color:"#aaa"}}>{note}</span>
-        </>
-      )}
-      {grantedRules.map(r => <RulePopoverContent key={r.id} rule={r} compact={grantedRules.length > 1}/>)}
-      {grantedWeapons.map(w => <WeaponPopoverContent key={w.id} weapon={w} coreRules={coreRules} armyRules={armyRules}/>)}
-    </>
-  );
-  return <Popover trigger={trigger} content={content}/>;
-}
-
 
 function StatTable({ models, statDeltas = null, invSaves = null }: any) {
   const types = models.map(m => m.statline?.type);
@@ -871,281 +706,24 @@ function buildSyntheticRules(unit, coreRules, armyRules) {
   return synthetic;
 }
 
-function SpecialRulesSection({ unit, models, armyRules, coreRules, inlineRules, collapsed = false, onToggle = null }: any) {
-  const synthetic = buildSyntheticRules(unit, coreRules, armyRules);
-  const allInline = [...(inlineRules||[]), ...synthetic];
-
-  const allSets = models.map(m => new Set(m.specialRules || []));
-  const shared = models.length ? [...allSets[0]].filter(r => allSets.every(s => s.has(r))) : [];
-  const specific = models.map(m => ({
-    name: m.name,
-    rules: (m.specialRules||[]).filter(r => !shared.includes(r)),
-  })).filter(m => m.rules.length);
-
-  function sortRules(ids) {
-    return [...ids].sort((a,b) => {
-      const na = (ruleById(a, armyRules, coreRules, allInline)?.name || a).toLowerCase();
-      const nb = (ruleById(b, armyRules, coreRules, allInline)?.name || b).toLowerCase();
-      return na.localeCompare(nb);
-    });
-  }
-
-  // Add synthetic rule IDs to shared rules
-  const sharedWithSynthetic = [
-    ...sortRules(shared),
-    ...synthetic.map(s => s.id),
-  ];
-
-  const rows = [
-    { label:"All models", rules: sharedWithSynthetic, isAll: true },
-    ...specific.map(m => ({ label:`${m.name} only`, rules: sortRules(m.rules), isAll: false })),
-  ].filter(r => r.rules.length);
-
-  if (!rows.length) return null;
-
-  const onlyOneRow = rows.length === 1;
-
-  return (
-    <>
-      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
-        {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
-        Special Rules
-      </div>
-      {!collapsed && (onlyOneRow ? (
-        <div className="rules-pills" style={{paddingLeft:0}}>
-          {rows[0].rules.map(id => (
-            <RulePill key={id} ruleId={id} armyRules={armyRules} coreRules={coreRules} inlineRules={allInline}/>
-          ))}
-        </div>
-      ) : (
-        <table className="rules-tbl">
-          <tbody>
-            {rows.map((row,i) => (
-              <tr key={i}>
-                <td className="rules-model-label">{row.label}</td>
-                <td>
-                  <div className="rules-pills">
-                    {row.rules.map(id => (
-                      <RulePill key={id} ruleId={id} armyRules={armyRules} coreRules={coreRules} inlineRules={allInline}/>
-                    ))}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ))}
-    </>
-  );
-}
-
-function OptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, coreRules, armyRules, collapsed = false, onToggle = null }: any) {
-  const opts = unit.options || [];
-  const hasBaseWargear = unit.models.some(m => (m.baseWargear||[]).length > 0);
-  if (!opts.length && !hasBaseWargear) return null;
-
-  function resolveChoices(opt) {
-    if (opt.weaponListId && weaponLists[opt.weaponListId]) {
-      const base = weaponLists[opt.weaponListId];
-      const ov = opt.ptsOverrides || {};
-      return base.map(c => ({ ...c, pts: ov[c.weaponId] ?? c.pts }));
-    }
-    return opt.choices || [];
-  }
-
-  const squadSizeOpts = opts.filter(o => o.type === "squadSize");
-  const upgradeOpts   = opts.filter(o => o.type === "toggle" || o.type === "namedUpgrade");
-  const swapOpts      = opts.filter(o => o.type === "weaponSwap");
-  const perModelOpts  = opts.filter(o => o.type === "perModelWeapon");
-  const spellOpts     = opts.filter(o => o.type === "spellPick");
-
-  function getWargearGroups() {
-    const seen = new Map();
-    for (const m of unit.models) {
-      const key = (m.baseWargear||[]).map(r => typeof r==="string"?r:r.weaponId).join(",");
-      if (!seen.has(key)) seen.set(key, { refs: m.baseWargear||[], names:[m.name] });
-      else seen.get(key).names.push(m.name);
-    }
-    return [...seen.values()].filter(g=>g.refs.length>0);
-  }
-  const wargearGroups = getWargearGroups();
-  const multiGroup = wargearGroups.length > 1;
-
-  // Partition options into ungrouped and grouped (by upgradeGroup)
-  const ungroupedUpgrades = upgradeOpts.filter(o => !o.upgradeGroup);
-  const ungroupedSwaps    = swapOpts.filter(o => !o.upgradeGroup);
-  const ungroupedPerModel = perModelOpts.filter(o => !o.upgradeGroup);
-  const upgradeGroupMap = new Map<string, any[]>();
-  for (const o of opts) {
-    if (o.upgradeGroup) {
-      if (!upgradeGroupMap.has(o.upgradeGroup)) upgradeGroupMap.set(o.upgradeGroup, []);
-      upgradeGroupMap.get(o.upgradeGroup)!.push(o);
-    }
-  }
-
-  function stripGroupPrefix(label: string, groupName: string): string {
-    const p1 = groupName + ": ";
-    const p2 = groupName + " — ";
-    if (label.startsWith(p1)) return label.slice(p1.length);
-    if (label.startsWith(p2)) return label.slice(p2.length);
-    return label;
-  }
-
-  function renderSwapBlock(o: any, groupName?: string) {
-    const choices = resolveChoices(o).filter(c => c.pts);
-    if (!choices.length) return null;
-    const headLabel = groupName ? stripGroupPrefix(o.label, groupName) : o.label;
-    return (
-      <div key={o.id} className="col-block">
-        <div className="group-head">{headLabel}</div>
-        <div className="pills">
-          {choices.map(c => (
-            <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  function renderPerModelBlock(o: any, groupName?: string) {
-    const choices = (o.choices||[]).filter(c => c.pts);
-    if (!choices.length) return null;
-    const headLabel = groupName ? stripGroupPrefix(o.label, groupName) : o.label;
-    return (
-      <div key={o.id} className="col-block">
-        <div className="group-head">{headLabel} <span style={{fontWeight:400,fontSize:"8.5pt",color:"#888"}}>(per model)</span></div>
-        <div className="pills">
-          {choices.map(c => (
-            <WargearPill key={c.weaponId||c.label} weaponId={c.weaponId} label={c.label} cost={c.pts} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <>
-      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
-        {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
-        Wargear &amp; Options
-      </div>
-      {!collapsed && <div className="two-col">
-
-        {squadSizeOpts.map(o => (
-          <div key={o.id} className="col-block">
-            <div className="group-head">Squad size</div>
-            <ul className="option-list">
-              <li>{o.label} <span className="option-cost">+{o.ptsEach} pts each</span></li>
-            </ul>
-          </div>
-        ))}
-
-        {wargearGroups.map((g,i) => (
-          <div key={i} className="col-block">
-            <div className="group-head">Base wargear{multiGroup?` — ${g.names.join(" & ")}`:""}</div>
-            <div className="pills">
-              {g.refs.map((ref,j) => {
-                const r = resolveRef(ref);
-                return <WargearPill key={j} weaponId={r.weaponId} label={undefined} cost={undefined} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
-              })}
-            </div>
-          </div>
-        ))}
-
-        {ungroupedUpgrades.length > 0 && (
-          <div className="col-block">
-            <div className="group-head">Upgrades</div>
-            <div className="pills">
-              {ungroupedUpgrades.map(o => {
-                const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
-                const grantsWargear = o.grantsWargear || named?.grantsWargear;
-                const grantsRules = o.grantsRules || named?.grantsRules;
-                return <UpgradePill key={o.id} label={named?.label||o.label} cost={o.pts} note={named?.note||o.note} grantsWargear={grantsWargear} grantsRules={grantsRules} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
-              })}
-            </div>
-          </div>
-        )}
-
-        {ungroupedSwaps.map(o => renderSwapBlock(o))}
-        {ungroupedPerModel.map(o => renderPerModelBlock(o))}
-
-        {[...upgradeGroupMap.entries()].map(([groupName, groupOpts]) => {
-          const gUpgrades   = groupOpts.filter(o => o.type==="toggle" || o.type==="namedUpgrade");
-          const gSwaps      = groupOpts.filter(o => o.type==="weaponSwap");
-          const gPerModel   = groupOpts.filter(o => o.type==="perModelWeapon");
-          return (
-            <Fragment key={groupName}>
-              <div className="upgrade-group-head">{groupName}</div>
-              {gUpgrades.length > 0 && (
-                <div className="col-block">
-                  <div className="group-head">{groupName} Upgrades</div>
-                  <div className="pills">
-                    {gUpgrades.map(o => {
-                      const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
-                      const grantsWargear = o.grantsWargear || named?.grantsWargear;
-                      const grantsRules = o.grantsRules || named?.grantsRules;
-                      return <UpgradePill key={o.id} label={named?.label||o.label} cost={o.pts} note={named?.note||o.note} grantsWargear={grantsWargear} grantsRules={grantsRules} weapons={weapons} coreRules={coreRules} armyRules={armyRules}/>;
-                    })}
-                  </div>
-                </div>
-              )}
-              {gSwaps.map(o => renderSwapBlock(o, groupName))}
-              {gPerModel.map(o => renderPerModelBlock(o, groupName))}
-            </Fragment>
-          );
-        })}
-
-        {unit.psychic && spellOpts.length > 0 && (() => {
-          const pool = spellPools?.[unit.psychic.spellPoolId] || [];
-          return (
-            <div className="col-block">
-              <div className="group-head">
-                Psychic — Mastery {unit.psychic.masteryLevel}
-                {unit.psychic.denyBonusPerPhase ? ` · +${unit.psychic.denyBonusPerPhase} Deny` : ""}
-              </div>
-              <div className="pills">
-                {pool.map(spell => (
-                  <Popover key={spell.id}
-                    trigger={
-                      <span className="pill clickable">
-                        <span className="pill-name">{spell.name}</span>
-                        <span className="pill-cost">+{spell.pts} pts</span>
-                      </span>
-                    }
-                    content={<SpellPopoverContent spell={spell}/>}
-                  />
-                ))}
-              </div>
-            </div>
-          );
-        })()}
-
-        {unit.transport && (
-          <div className="col-block">
-            <div className="group-head">Transport</div>
-            <ul className="option-list">
-              <li>Capacity: {unit.transport.capacity} models</li>
-              {(unit.transport.firePorts||[]).length > 0 && (
-                <li>Fire Ports: {unit.transport.firePorts.join(", ")}</li>
-              )}
-              {(unit.transport.accessPoints||[]).length > 0 && (
-                <li>Access Points: {unit.transport.accessPoints.join(", ")}</li>
-              )}
-            </ul>
-          </div>
-        )}
-
-      </div>}
-    </>
-  );
-}
-
 function compStr(models) {
   return models.map(m => m.minCount===m.maxCount ? `${m.minCount} ${m.name}` : `${m.minCount}–${m.maxCount} ${m.name}`).join(" + ");
 }
 
 // ── Print mode: special rules as definition list ─────────────────────────────
 function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, collapsed = false, onToggle = null }: any) {
+  const [namesOnly, setNamesOnly] = useState(() => {
+    try { return localStorage.getItem("alt40k-rules-names-only") === "1"; } catch { return false; }
+  });
+  const [ruleDialog, setRuleDialog] = useState<{ name: string; desc: string } | null>(null);
+  function toggleNamesOnly(e: React.MouseEvent) {
+    e.stopPropagation();
+    setNamesOnly(v => {
+      const next = !v;
+      try { localStorage.setItem("alt40k-rules-names-only", next ? "1" : "0"); } catch {}
+      return next;
+    });
+  }
   const synthetic = buildSyntheticRules(unit, coreRules, armyRules);
   const allInline = [...(inlineRules||[]), ...synthetic];
 
@@ -1173,9 +751,18 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, c
 
   return (
     <>
-      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`} onClick={onToggle || undefined}>
-        {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
-        Special Rules
+      <div className={`section-head${onToggle ? " lb-collapse-head" : ""}`}
+           style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}
+           onClick={onToggle || undefined}>
+        <span style={{display:"flex",alignItems:"center",gap:6}}>
+          {onToggle && <span className="lb-collapse-icon">{collapsed ? "▶" : "▼"}</span>}
+          Special Rules
+        </span>
+        {!collapsed && (
+          <button className="rules-names-only-btn" onClick={toggleNamesOnly}>
+            {namesOnly ? "Show full rules" : "Names only"}
+          </button>
+        )}
       </div>
       {!collapsed && (
         <div className="two-col" style={{marginTop:0}}>
@@ -1184,19 +771,38 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, c
             const modelNote = specific.find(r => r.id === id)?.label;
             const isInline = allInline.some(r => r.id === id);
             const desc = isInline ? rule?.fullDesc : (rule?.fullDesc || rule?.shortDesc);
+            const ruleName = rule?.name || idToLabel(id);
             return (
               <div key={id} className="col-block-tight">
                 <li className="rules-detail-li" style={{listStyle:"none", padding:"1px 0", lineHeight:1.4}}>
-                  <span className="rule-name">{rule?.name || idToLabel(id)}</span>
+                  {namesOnly && desc
+                    ? <span className="rule-name rule-name-clickable" onClick={() => setRuleDialog({ name: ruleName, desc })}>{ruleName}</span>
+                    : <span className="rule-name">{ruleName}</span>
+                  }
                   {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
-                  {rule
+                  {!namesOnly && (rule
                     ? desc && <span> — {desc}</span>
                     : <span style={{color:"#888",fontStyle:"italic"}}> — Keyword only</span>
-                  }
+                  )}
                 </li>
               </div>
             );
           })}
+        </div>
+      )}
+      {ruleDialog && (
+        <div className="lb-modal-overlay" onPointerDown={e => { if (e.target === e.currentTarget) setRuleDialog(null); }}>
+          <div className="lb-modal" style={{maxWidth:400}}>
+            <div className="lb-modal-sticky">
+              <div className="lb-modal-sticky-inner">
+                <div className="lb-modal-head">
+                  <span>{ruleDialog.name}</span>
+                  <button className="lb-icon-btn" onClick={() => setRuleDialog(null)}>✕</button>
+                </div>
+              </div>
+            </div>
+            <p style={{fontSize:"10pt",lineHeight:1.5,color:"#333",margin:"12px 0 0"}}>{ruleDialog.desc}</p>
+          </div>
         </div>
       )}
     </>
@@ -1230,8 +836,9 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
 
   function WepProfileTable({ refs, showArc }) {
     const resolved = refs.map(r => ({ ...resolveRef(r), weapon: wepById(resolveRef(r).weaponId, weapons) }));
-    const rows = resolved.filter(r => isRealWeapon(r.weapon));
-    const wargearOnly = resolved.filter(r => r.weapon && !isRealWeapon(r.weapon));
+    const seenR = new Set<string>(); const seenP = new Set<string>();
+    const rows = resolved.filter(r => { if (!isRealWeapon(r.weapon) || seenR.has(r.weaponId)) return false; seenR.add(r.weaponId); return true; });
+    const wargearOnly = resolved.filter(r => { if (!r.weapon || isRealWeapon(r.weapon) || seenP.has(r.weaponId)) return false; seenP.add(r.weaponId); return true; });
     if (!rows.length && !wargearOnly.length) return null;
     return (
       <>
@@ -1340,7 +947,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
             <col style={{width:"7%"}}/>
             <col style={{width:"7%"}}/>
             <col/>
-            <col style={{width:"9%"}}/>
+            <col style={{width:"12%"}}/>
           </colgroup>
           <thead><tr><th>Weapon</th><th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th><th>Cost</th></tr></thead>
           <tbody>
@@ -1388,7 +995,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
             <col style={{width:"7%"}}/>
             <col style={{width:"7%"}}/>
             <col/>
-            <col style={{width:"9%"}}/>
+            <col style={{width:"12%"}}/>
           </colgroup>
           <thead><tr><th>Weapon</th><th>Range</th><th>S</th><th>AP</th><th className="rules-col">Rules</th><th>Cost</th></tr></thead>
           <tbody>
@@ -1445,7 +1052,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                 const note = upgradeDesc(o, named);
                 return (
                   <li key={o.id}>{named?.label||o.label}
-                    <span className="option-cost"> +{o.pts} pts</span>
+                    <span className="option-cost">{o.ptsPerModel > 0 ? ` +${o.ptsPerModel} pts per model` : ` +${o.pts} pts`}</span>
                     {note && <span className="upgrade-note">{note}</span>}
                   </li>
                 );
@@ -1473,7 +1080,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                       const note = upgradeDesc(o, named);
                       return (
                         <li key={o.id}>{named?.label||o.label}
-                          <span className="option-cost"> +{o.pts} pts</span>
+                          <span className="option-cost">{o.ptsPerModel > 0 ? ` +${o.ptsPerModel} pts per model` : ` +${o.pts} pts`}</span>
                           {note && <span className="upgrade-note">{note}</span>}
                         </li>
                       );
@@ -1582,7 +1189,7 @@ function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
   );
 }
 
-function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, detailMode, collapsedSections, toggleSection }: any) {
+function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, collapsedSections, toggleSection }: any) {
   const rulesCollapsed = collapsedSections?.has("specialRules") ?? false;
   const squadCount = (pu.minSquads != null || pu.maxSquads != null)
     ? (pu.minSquads === pu.maxSquads ? `${pu.minSquads} per platoon` : `${pu.minSquads ?? 0}–${pu.maxSquads ?? "∞"} per platoon`)
@@ -1605,24 +1212,16 @@ function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, 
           </div>
         </div>
         <StatTable models={pu.models}/>
-        {detailMode
-          ? <DetailSpecialRules unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
-              collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
-          : <SpecialRulesSection unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
-              collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
-        }
-        {detailMode
-          ? <DetailOptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
-              collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
-          : <OptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}
-              collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
-        }
+        <DetailSpecialRules unit={pu} models={pu.models} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
+            collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
+        <DetailOptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
+            collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
       </div>
     </div>
   );
 }
 
-function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, detailMode, collapsedSections, toggleSection }: any) {
+function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, collapsedSections, toggleSection }: any) {
   const [platoonOpen, setPlatoonOpen] = useState(false);
   const rulesCollapsed = collapsedSections?.has("specialRules") ?? false;
   if (hidden) return null;
@@ -1646,7 +1245,7 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
             {(unit.platoonUnits || []).map(pu => (
               <PlatoonUnitBlock key={pu.id} pu={pu} weapons={weapons} weaponLists={weaponLists}
                 namedUpgrades={namedUpgrades} armyRules={armyRules} coreRules={coreRules}
-                spellPools={spellPools} detailMode={detailMode}
+                spellPools={spellPools}
                 collapsedSections={collapsedSections} toggleSection={toggleSection}/>
             ))}
           </div>
@@ -1674,18 +1273,10 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
         </div>
       )}
       <StatTable models={unit.models}/>
-      {detailMode
-        ? <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
-            collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
-        : <SpecialRulesSection unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
-            collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
-      }
-      {detailMode
-        ? <DetailOptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
-            collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
-        : <OptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}
-            collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
-      }
+      <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+          collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
+      <DetailOptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+          collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
     </div>
   );
 }
@@ -1693,6 +1284,12 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
 // ── List Builder Components ───────────────────────────────────────────────────
 
 function LBModal({ children, onClose }: { children: any; onClose: () => void }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
   return (
     <div className="lb-modal-overlay" onPointerDown={e => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="lb-modal">{children}</div>
@@ -1733,7 +1330,7 @@ function resolveChampionModelIds(opt: any, unit: any): string[] {
   return singles.map((m: any) => m.id);
 }
 
-function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode, collapsedWargear = false, onToggleWargear = null }: any) {
+function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, collapsedWargear = false, onToggleWargear = null }: any) {
   const wL = weaponLists || {};
 
   function wName(id: string) {
@@ -1748,7 +1345,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
   }
   for (const o of (unit.options || [])) {
     if (o.type !== "weaponSwap") continue;
-    if (o.scope === "limitedSlot") continue; // only affects one model instance; handled via chosenWeaponIds
+    if (o.scope === "limitedSlot") continue; // only affects one model instance; merged into modelWargear below
     const v = entry.options?.[o.id];
     if (!v || typeof v !== "string") continue; // skip multi-model count objects
     const choices = resolveChoicesForOpt(o, wL);
@@ -1812,6 +1409,44 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     modelWargear.set(mid, weps.filter(wid => !dominated.has(wid)));
   }
 
+  // Merge chosen weapons into the appropriate model type's wargear so they appear
+  // inline in that model's weapon table instead of a separate "Selected Weapons" block.
+  for (const o of (unit.options || [])) {
+    if (o.type === "weaponSwap") {
+      const v = entry.options?.[o.id];
+      if (v && typeof v === "object") {
+        const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
+        for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
+          if ((cnt as number) > 0) {
+            for (const mid of applyTo) {
+              const weps = modelWargear.get(mid) || [];
+              if (!weps.includes(wid)) modelWargear.set(mid, [...weps, wid]);
+            }
+          }
+        }
+      } else if (v && typeof v === "string" && o.scope === "limitedSlot") {
+        const choices = resolveChoicesForOpt(o, wL);
+        if (choices[0]?.weaponId !== v) {
+          const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
+          for (const mid of applyTo) {
+            const weps = modelWargear.get(mid) || [];
+            if (!weps.includes(v)) modelWargear.set(mid, [...weps, v]);
+          }
+        }
+      }
+    } else if (o.type === "perModelWeapon") {
+      const modelOpts = entry.perModelOptions?.[o.id] || {};
+      const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
+      for (const wid of Object.values(modelOpts) as string[]) {
+        if (!wid) continue;
+        for (const mid of applyTo) {
+          const weps = modelWargear.get(mid) || [];
+          if (!weps.includes(wid)) modelWargear.set(mid, [...weps, wid]);
+        }
+      }
+    }
+  }
+
   const isV = (unit.models||[]).some((m: any) => m.statline?.type === "vehicle");
 
   // Group models by resolved wargear
@@ -1869,19 +1504,41 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
       }
     }
   }
+  const seenExclGroups = new Set<string>();
+  for (const o of (unit.options||[])) {
+    if ((o.type !== "toggle" && o.type !== "namedUpgrade") || !o.applies || !o.exclusiveGroup) continue;
+    if (seenExclGroups.has(o.exclusiveGroup)) continue;
+    seenExclGroups.add(o.exclusiveGroup);
+    const groupOpts = (unit.options||[]).filter((x: any) => x.exclusiveGroup === o.exclusiveGroup);
+    const modelSelections: Record<string,string> = entry.perModelOptions?.[o.exclusiveGroup] || {};
+    for (const [idx, selectedId] of Object.entries(modelSelections)) {
+      if (!selectedId) continue;
+      const selOpt = groupOpts.find((x: any) => x.id === selectedId);
+      if (selOpt) chosenLines.push(`Model ${Number(idx)+1}: ${selOpt.label}${selOpt.pts ? ` +${selOpt.pts} pts` : ""}`);
+    }
+  }
 
-  // Per-model weapon rows (perModelWeapon type)
-  const perModelSections: any[] = [];
+  // Per-model weapon swaps → Chosen Options pills
   for (const o of (unit.options||[])) {
     if (o.type !== "perModelWeapon") continue;
     const modelOpts = entry.perModelOptions?.[o.id] || {};
     const choices = o.choices || [];
+    const pmModel = (unit.models||[]).find((m: any) => (o.applies||[]).includes(m.id));
+    const pmModelCount = pmModel ? modelTypeCount(unit, pmModel.id, entry.options || {}) : 1;
+    const pmWeaponCount = (pmModel?.baseWargear || []).filter((r: any) => (typeof r === 'string' ? r : r.weaponId) === o.replaces).length || 1;
     const rows = Object.keys(modelOpts).map(idx => {
       const wid = modelOpts[idx];
       const ch = choices.find((c: any) => c.weaponId === wid);
-      return { idx: Number(idx), label: ch?.label || wName(wid) };
+      const i = Number(idx);
+      const modelIdx = Math.floor(i / pmWeaponCount);
+      const wepIdx = i % pmWeaponCount;
+      let rowLabel: string;
+      if (pmModelCount === 1) rowLabel = pmWeaponCount > 1 ? `Wpn ${wepIdx + 1}` : "";
+      else if (pmWeaponCount === 1) rowLabel = `Model ${modelIdx + 1}`;
+      else rowLabel = `Model ${modelIdx + 1} Wpn ${wepIdx + 1}`;
+      return { idx: i, rowLabel, label: ch?.label || wName(wid) };
     }).sort((a, b) => a.idx - b.idx);
-    if (rows.length) perModelSections.push({ label: o.label, rows });
+    for (const row of rows) chosenLines.push(row.rowLabel ? `${row.rowLabel}: ${row.label}` : row.label);
   }
 
   // Chosen spells
@@ -1895,45 +1552,20 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     }
   }
 
-  // Collect weapon IDs for the "Selected Weapons" profile table:
-  // object-value swaps (multi-model perModelType, limitedSlot slots>1),
-  // string-value limitedSlot swaps (1 model; not in modelWargear), and perModelWeapon.
-  const chosenWeaponIds: string[] = [];
-  const seenChosenWep = new Set<string>();
-  function addChosenWep(wid: string) {
-    if (!seenChosenWep.has(wid)) { seenChosenWep.add(wid); chosenWeaponIds.push(wid); }
-  }
-  for (const o of (unit.options||[])) {
-    if (o.type === "weaponSwap") {
-      const v = entry.options?.[o.id];
-      if (v && typeof v === "object") {
-        for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
-          if ((cnt as number) > 0) addChosenWep(wid);
-        }
-      } else if (v && typeof v === "string" && o.scope === "limitedSlot") {
-        const choices = resolveChoicesForOpt(o, wL);
-        if (choices[0]?.weaponId !== v) addChosenWep(v); // skip if default (none chosen)
-      }
-    } else if (o.type === "perModelWeapon") {
-      const modelOpts = entry.perModelOptions?.[o.id] || {};
-      for (const wid of Object.values(modelOpts) as string[]) addChosenWep(wid);
-    }
-  }
-
   function renderWeaponTable(refs: string[]) {
-    if (!detailMode) return (
-      <div className="pills">
-        {refs.map((wid: string) => <WargearPill key={wid} weaponId={wid} label={undefined} cost={undefined} weapons={weapons||[]} armyRules={armyRules||[]} coreRules={coreRules||[]}/>)}
-      </div>
-    );
-    // In detail mode: wargear with rules profiles go in the table; purely decorative wargear stays as pills.
+    // Wargear with rules profiles go in the table; purely decorative wargear stays as pills.
+    const seenT = new Set<string>(); const seenPill = new Set<string>();
     const tableRefs = refs.filter(wid => {
+      if (seenT.has(wid)) return false;
       const w = (weapons||[]).find((x: any) => x.id === wid);
-      return w && (isRealWeapon(w) || w.profiles?.some((p: any) => p.rules));
+      if (w && (isRealWeapon(w) || w.profiles?.some((p: any) => p.rules))) { seenT.add(wid); return true; }
+      return false;
     });
     const pillRefs = refs.filter(wid => {
+      if (seenPill.has(wid)) return false;
       const w = (weapons||[]).find((x: any) => x.id === wid);
-      return w && !isRealWeapon(w) && !w.profiles?.some((p: any) => p.rules);
+      if (w && !isRealWeapon(w) && !w.profiles?.some((p: any) => p.rules)) { seenPill.add(wid); return true; }
+      return false;
     });
     return (
       <>
@@ -2002,22 +1634,6 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
         </div>
       ))}
 
-      {perModelSections.map((sec: any, si: number) => (
-        <div key={si} style={{marginBottom:8}}>
-          <div className="group-head">{sec.label}</div>
-          <table className="lb-permodel-tbl"><tbody>
-            {sec.rows.map((row: any) => <tr key={row.idx}><td>Model {row.idx+1}</td><td>{row.label}</td></tr>)}
-          </tbody></table>
-        </div>
-      ))}
-
-      {chosenWeaponIds.length > 0 && (
-        <div style={{marginBottom:8}}>
-          <div className="group-head">Selected Weapons</div>
-          {renderWeaponTable(chosenWeaponIds)}
-        </div>
-      )}
-
       {chosenLines.length > 0 && (
         <div style={{marginBottom:8}}>
           <div className="group-head">Chosen Options</div>
@@ -2040,7 +1656,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
   );
 }
 
-function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, detailMode, entryCost, collapsedSections, toggleSection }: any) {
+function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, entryCost, collapsedSections, toggleSection }: any) {
   const rulesCollapsed = collapsedSections?.has("specialRules") ?? false;
   const wargearCollapsed = collapsedSections?.has("wargear") ?? false;
 
@@ -2131,7 +1747,7 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
 
   return (
     <div className="unit-block">
-      <div className="unit-header">
+      <div className="unit-header" style={{top:"var(--nav-height, 44px)"}}>
         <div>
           {unit.isUnique && <span style={{fontSize:"8pt",fontWeight:700,color:"#7a5800",marginLeft:6}}>UNIQUE</span>}
           <div className="unit-name">{displayName}</div>
@@ -2143,16 +1759,12 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
         </div>
       </div>
       <StatTable models={unit.models} statDeltas={statDeltas} invSaves={modelInvSaves}/>
-      {detailMode
-        ? <DetailSpecialRules unit={unit} models={effectiveModels} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
-            collapsed={rulesCollapsed} onToggle={toggleSection ? () => toggleSection("specialRules") : null}/>
-        : <SpecialRulesSection unit={unit} models={effectiveModels} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
-            collapsed={rulesCollapsed} onToggle={toggleSection ? () => toggleSection("specialRules") : null}/>
-      }
+      <DetailSpecialRules unit={unit} models={effectiveModels} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+          collapsed={rulesCollapsed} onToggle={toggleSection ? () => toggleSection("specialRules") : null}/>
       <ResolvedWargearSection
         entry={entry} unit={unit} weapons={weapons} weaponLists={weaponLists}
         namedUpgrades={namedUpgrades} spellPools={spellPools}
-        armyRules={armyRules} coreRules={coreRules} detailMode={detailMode}
+        armyRules={armyRules} coreRules={coreRules}
         collapsedWargear={wargearCollapsed}
         onToggleWargear={toggleSection ? () => toggleSection("wargear") : null}
       />
@@ -2165,9 +1777,19 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
   const nU = factionData.namedUpgrades || {};
   const sP = factionData.spellPools || {};
   const opts = unit.options || [];
+  const allInline = [...(factionData.inlineRules||[]), ...(unit.inlineRules||[])];
 
   if (opts.length === 0) {
     return <div style={{color:"#888",fontSize:"9.5pt",fontStyle:"italic",padding:"8px 0"}}>No configurable options for this unit.</div>;
+  }
+
+  function upgradeDesc(o: any, named: any): string | undefined {
+    const granted: string[] = o.grantsRules || named?.grantsRules || [];
+    if (granted.length === 1) {
+      const rule = allInline.find((r: any) => r.id === granted[0]);
+      if (rule?.fullDesc) return rule.fullDesc;
+    }
+    return named?.note || o.note;
   }
 
   function wepName(weaponId: string, choice?: any): string {
@@ -2296,13 +1918,19 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
           if (!topts.length) return null;
 
           // Build ordered blocks preserving JSON order; exclusive-group members collapse into one block
-          const blocks: Array<{kind:"single",opt:any}|{kind:"exclusive",group:string,opts:any[]}> = [];
+          const blocks: Array<{kind:"single",opt:any}|{kind:"exclusive",group:string,opts:any[]}|{kind:"perModelExclusive",group:string,opts:any[],applies:string[]}> = [];
           const seenGroups = new Set<string>();
           for (const o of topts) {
             if (o.exclusiveGroup) {
               if (!seenGroups.has(o.exclusiveGroup)) {
                 seenGroups.add(o.exclusiveGroup);
-                blocks.push({kind:"exclusive", group:o.exclusiveGroup, opts: topts.filter((x:any) => x.exclusiveGroup === o.exclusiveGroup)});
+                const groupOpts = topts.filter((x:any) => x.exclusiveGroup === o.exclusiveGroup);
+                const applies = groupOpts.find((x: any) => x.applies?.length)?.applies;
+                if (applies?.length) {
+                  blocks.push({kind:"perModelExclusive", group:o.exclusiveGroup, opts: groupOpts, applies});
+                } else {
+                  blocks.push({kind:"exclusive", group:o.exclusiveGroup, opts: groupOpts});
+                }
               }
             } else {
               blocks.push({kind:"single", opt:o});
@@ -2317,47 +1945,128 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   const o = block.opt;
                   const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
                   const label = named?.label || o.label || o.upgradeId;
-                  const note = named?.note || o.note;
+                  const note = upgradeDesc(o, named);
+                  const glExp = o.groupLimitExpansion;
                   return (
                     <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
                       <span className="lb-opt-label">
                         <input type="checkbox" checked={!!options[o.id]}
-                          onChange={e => setOptions((p:any) => ({...p, [o.id]: e.target.checked}))}
+                          onChange={e => {
+                            const checked = e.target.checked;
+                            setOptions((p: any) => {
+                              const next = {...p, [o.id]: checked};
+                              if (!checked && glExp) {
+                                const grp = (topts as any[]).filter(x => x.exclusiveGroup === glExp.group);
+                                const sel = grp.filter(x => next[x.id]);
+                                sel.slice(1).forEach(x => { next[x.id] = false; });
+                              }
+                              return next;
+                            });
+                          }}
                           style={{marginRight:8}}/>
                         {label}
-                        {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
+                        {o.ptsPerModel > 0 ? <span className="lb-opt-pts"> +{o.ptsPerModel} pts per model</span> : o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
                         {note && <span className="lb-opt-note">{note}</span>}
                       </span>
                     </label>
                   );
                 }
-                // Exclusive group — rendered as radio buttons in a framed sub-section
+                if (block.kind === "perModelExclusive") {
+                  const {group, opts: pmGrpOpts, applies} = block as {kind:"perModelExclusive",group:string,opts:any[],applies:string[]};
+                  const pmModelCount = modelTypeCount(unit, applies[0], options);
+                  return (
+                    <Fragment key={group}>
+                      {Array.from({length: pmModelCount}, (_, modelIdx) => {
+                        const selectedId: string = perModelOptions?.[group]?.[String(modelIdx)] || "";
+                        return (
+                          <div key={modelIdx} className="lb-exclusive-group">
+                            <div className="lb-exclusive-label">Model {modelIdx + 1} — may take one:</div>
+                            {pmGrpOpts.map((o: any) => {
+                              const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
+                              const label = named?.label || o.label || o.upgradeId;
+                              const note = upgradeDesc(o, named);
+                              const isSelected = selectedId === o.id;
+                              return (
+                                <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+                                  <span className="lb-opt-label">
+                                    <input type="radio" checked={isSelected}
+                                      onClick={() => setPerModelOptions((p: any) => ({
+                                        ...p,
+                                        [group]: { ...(p[group]||{}), [String(modelIdx)]: isSelected ? "" : o.id }
+                                      }))}
+                                      onChange={() => {}}
+                                      style={{marginRight:8}}/>
+                                    {label}
+                                    {o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
+                                    {note && <span className="lb-opt-note">{note}</span>}
+                                  </span>
+                                </label>
+                              );
+                            })}
+                          </div>
+                        );
+                      })}
+                    </Fragment>
+                  );
+                }
+                // Exclusive group — radio buttons (1 pick) or checkboxes (N picks) depending on active expansions
                 const {opts: groupOpts} = block as {kind:"exclusive",group:string,opts:any[]};
-                const selectedId = groupOpts.find((o:any) => !!options[o.id])?.id ?? null;
+                const maxSel = (topts as any[])
+                  .filter(x => x.groupLimitExpansion?.group === block.group && !!options[x.id])
+                  .reduce((m: number, x: any) => Math.max(m, x.groupLimitExpansion.maxSelections), 1);
+                const selectedCount = groupOpts.filter((o: any) => !!options[o.id]).length;
+                if (maxSel === 1) {
+                  const selectedId = groupOpts.find((o:any) => !!options[o.id])?.id ?? null;
+                  return (
+                    <div key={block.group} className="lb-exclusive-group">
+                      <div className="lb-exclusive-label">May take one:</div>
+                      {groupOpts.map((o:any) => {
+                        const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
+                        const label = named?.label || o.label || o.upgradeId;
+                        const note = upgradeDesc(o, named);
+                        const isSelected = selectedId === o.id;
+                        return (
+                          <label key={o.id} className="lb-opt-row"
+                            style={{cursor: "pointer", display:"flex"}}>
+                            <span className="lb-opt-label">
+                              <input type="radio" checked={isSelected}
+                                onClick={() => setOptions((p:any) => {
+                                  const next = {...p};
+                                  for (const s of groupOpts) next[s.id] = false;
+                                  if (!isSelected) next[o.id] = true;
+                                  return next;
+                                })}
+                                onChange={() => {}}
+                                style={{marginRight:8}}/>
+                              {label}
+                              {o.ptsPerModel > 0 ? <span className="lb-opt-pts"> +{o.ptsPerModel} pts per model</span> : o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
+                              {note && <span className="lb-opt-note">{note}</span>}
+                            </span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  );
+                }
                 return (
                   <div key={block.group} className="lb-exclusive-group">
-                    <div className="lb-exclusive-label">May take one:</div>
+                    <div className="lb-exclusive-label">May take up to {maxSel}:</div>
                     {groupOpts.map((o:any) => {
                       const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
                       const label = named?.label || o.label || o.upgradeId;
-                      const note = named?.note || o.note;
-                      const isSelected = selectedId === o.id;
-                      const isDisabled = selectedId !== null && !isSelected;
+                      const note = upgradeDesc(o, named);
+                      const isSelected = !!options[o.id];
+                      const isDisabled = !isSelected && selectedCount >= maxSel;
                       return (
-                        <label key={o.id} className={"lb-opt-row" + (isDisabled ? " lb-opt-row-exclusive" : "")}
-                          style={{cursor: isDisabled ? "default" : "pointer", display:"flex"}}>
+                        <label key={o.id} className="lb-opt-row"
+                          style={{cursor: isDisabled ? "not-allowed" : "pointer", display:"flex", opacity: isDisabled ? 0.45 : 1}}>
                           <span className="lb-opt-label">
-                            <input type="radio" checked={isSelected}
-                              onClick={() => setOptions((p:any) => {
-                                const next = {...p};
-                                for (const s of groupOpts) next[s.id] = false;
-                                if (!isSelected) next[o.id] = true;
-                                return next;
-                              })}
-                              onChange={() => {}}
+                            <input type="checkbox" checked={isSelected}
+                              disabled={isDisabled}
+                              onChange={() => setOptions((p:any) => ({...p, [o.id]: !p[o.id]}))}
                               style={{marginRight:8}}/>
                             {label}
-                            {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
+                            {o.ptsPerModel > 0 ? <span className="lb-opt-pts"> +{o.ptsPerModel} pts per model</span> : o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
                             {note && <span className="lb-opt-note">{note}</span>}
                           </span>
                         </label>
@@ -2468,7 +2177,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                     style={{opacity:canTake?1:0.45}}
                     onChange={e => setOptions((p: any) => ({...p,[o.id]:e.target.value||null}))}>
                     <option value="">None{!canTake?" (pool exhausted)":""}</option>
-                    {choices.map((c: any) => (
+                    {choices.filter((c: any) => c.label !== "None").map((c: any) => (
                       <option key={c.weaponId} value={c.weaponId}>
                         {wepName(c.weaponId, c)}{c.pts?` (+${c.pts} pts)`:""}
                       </option>
@@ -2484,24 +2193,34 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         function renderPmOpt(o: any) {
           const choices = o.choices || [];
           const model = (unit.models||[]).find((m: any) => (o.applies||[]).includes(m.id));
-          const count = model?.minCount ?? 1;
+          const modelCount = model ? modelTypeCount(unit, model.id, options) : 1;
+          const weaponCount = (model?.baseWargear || []).filter((r: any) => (typeof r === 'string' ? r : r.weaponId) === o.replaces).length || 1;
+          const count = modelCount * weaponCount;
           return (
             <div key={o.id} className="lb-opt-section">
               <div className="lb-opt-section-head">{o.label} — per model</div>
-              {Array.from({length: count}, (_, i) => (
-                <div key={i} className="lb-opt-row">
-                  <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>Model {i+1}</span>
-                  <select className="lb-select"
-                    value={perModelOptions[o.id]?.[String(i)] || choices[0]?.weaponId || ""}
-                    onChange={e => setPerModelOptions((p: any) => ({...p,[o.id]:{...(p[o.id]||{}),[String(i)]:e.target.value}}))}>
-                    {choices.map((c: any) => (
-                      <option key={c.weaponId} value={c.weaponId}>
-                        {wepName(c.weaponId, c)}{c.pts?` (+${c.pts} pts)`:""}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              ))}
+              {Array.from({length: count}, (_, i) => {
+                const modelIdx = Math.floor(i / weaponCount);
+                const wepIdx = i % weaponCount;
+                let rowLabel: string;
+                if (modelCount === 1) rowLabel = weaponCount > 1 ? `Wpn ${wepIdx + 1}` : `Model 1`;
+                else if (weaponCount === 1) rowLabel = `Model ${modelIdx + 1}`;
+                else rowLabel = `Model ${modelIdx + 1} Wpn ${wepIdx + 1}`;
+                return (
+                  <div key={i} className="lb-opt-row">
+                    <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>{rowLabel}</span>
+                    <select className="lb-select"
+                      value={perModelOptions[o.id]?.[String(i)] || choices[0]?.weaponId || ""}
+                      onChange={e => setPerModelOptions((p: any) => ({...p,[o.id]:{...(p[o.id]||{}),[String(i)]:e.target.value}}))}>
+                      {choices.map((c: any) => (
+                        <option key={c.weaponId} value={c.weaponId}>
+                          {wepName(c.weaponId, c)}{c.pts?` (+${c.pts} pts)`:""}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                );
+              })}
             </div>
           );
         }
@@ -2613,19 +2332,23 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onSave, onCancel 
 
   return (
     <LBModal onClose={onCancel}>
-      <div className="lb-modal-head">
-        <span>{unit.name}<span className="lb-modal-pts">{cost} pts</span></span>
-        <span style={{display:"flex",gap:"9px",flexShrink:0}}>
-          <button className="lb-btn" onClick={onCancel}>Cancel</button>
-          <button className="lb-btn lb-btn-primary" onClick={() => onSave({ options, perModelOptions })}>
-            {existingEntry ? "Save Changes" : "Add to List"}
-          </button>
-        </span>
+      <div className="lb-modal-sticky">
+        <div className="lb-modal-sticky-inner">
+          <div className="lb-modal-head">
+            <span>{unit.name}<span className="lb-modal-pts">{cost} pts</span></span>
+            <span style={{display:"flex",gap:"9px",flexShrink:0}}>
+              <button className="lb-btn" onClick={onCancel}>Cancel</button>
+              <button className="lb-btn lb-btn-primary" onClick={() => onSave({ options, perModelOptions })}>
+                {existingEntry ? "Save Changes" : "Add to List"}
+              </button>
+            </span>
+          </div>
+          {unit.platoon
+            ? <div className="lb-modal-sub">{unit.platoonComposition}</div>
+            : <div className="lb-modal-sub">Base: {unit.basePts} pts · {compStr(unit.models)}</div>
+          }
+        </div>
       </div>
-      {unit.platoon
-        ? <div className="lb-modal-sub">{unit.platoonComposition}</div>
-        : <div className="lb-modal-sub">Base: {unit.basePts} pts · {compStr(unit.models)}</div>
-      }
       {unit.platoon
         ? <PlatoonSquadConfig unit={unit} options={options} setOptions={setOptions}/>
         : <EntryOptionConfig
@@ -2697,7 +2420,7 @@ function CoreRulesOverlay({ coreRules, onClose }: any) {
   );
 }
 
-function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, faction, selectedSubfaction, setSelectedSubfaction, detailMode, collapsedSections, toggleSection }: any) {
+function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, faction, selectedSubfaction, setSelectedSubfaction, collapsedSections, toggleSection }: any) {
   const subfactions = faction.subfactions || [];
   const sfLabel = faction.subfactionLabel || "Chapter";
   const lastPtsKey = "alt40k-last-pts";
@@ -2713,6 +2436,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
   const [pendingUnit, setPendingUnit] = useState<any|null>(null);
   const [editEntryId, setEditEntryId] = useState<string|null>(null);
   const [editSquad, setEditSquad] = useState<{entryId:string,squadId:string}|null>(null);
+  const [pendingDelete, setPendingDelete] = useState<string|null>(null);
   const [expandedBattleId, setExpandedBattleId] = useState<string|null>(null);
   const [renamingListId, setRenamingListId] = useState<string|null>(null);
 
@@ -2970,7 +2694,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
                         weapons={weapons} weaponLists={weaponLists}
                         namedUpgrades={namedUpgrades} spellPools={spellPools}
                         armyRules={armyRules} coreRules={coreRules}
-                        detailMode={detailMode} entryCost={cost}
+                        entryCost={cost}
                         collapsedSections={collapsedSections}
                         toggleSection={toggleSection}
                       />
@@ -3016,11 +2740,22 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
               if (unit.platoon) {
                 return (
                   <div key={e.entryId}>
-                    <div className="lb-entry" onClick={() => setEditEntryId(e.entryId)} style={{cursor:"pointer"}}>
+                    <div className={`lb-entry${pendingDelete === e.entryId ? " lb-entry-confirm" : ""}`}
+                      onClick={() => { if (pendingDelete === e.entryId) { setPendingDelete(null); return; } setEditEntryId(e.entryId); }} style={{cursor:"pointer"}}>
                       <span className="lb-entry-name">{dn}</span>
-                      <span className="lb-entry-pts">{cost} pts</span>
-                      <button className="lb-icon-btn danger" title="Remove"
-                        onClick={ev => { ev.stopPropagation(); if (confirm(`Remove ${dn}?`)) deleteEntry(e.entryId); }}>✕</button>
+                      {pendingDelete === e.entryId ? (
+                        <>
+                          <span style={{fontSize:"8.5pt",color:"#c04040",fontWeight:600,whiteSpace:"nowrap"}}>Remove?</span>
+                          <button className="lb-del-confirm" onClick={ev => { ev.stopPropagation(); deleteEntry(e.entryId); setPendingDelete(null); }}>Confirm</button>
+                          <button className="lb-icon-btn" onClick={ev => { ev.stopPropagation(); setPendingDelete(null); }}>✕</button>
+                        </>
+                      ) : (
+                        <>
+                          <span className="lb-entry-pts">{cost} pts</span>
+                          <button className="lb-icon-btn danger" title="Remove"
+                            onClick={ev => { ev.stopPropagation(); setPendingDelete(e.entryId); }}>✕</button>
+                        </>
+                      )}
                     </div>
                     <div className="lb-platoon-squads">
                       {(e.squads || []).map((squad: any) => {
@@ -3043,11 +2778,22 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
                 );
               }
               return (
-                <div key={e.entryId} className="lb-entry" onClick={() => setEditEntryId(e.entryId)} style={{cursor:"pointer"}}>
+                <div key={e.entryId} className={`lb-entry${pendingDelete === e.entryId ? " lb-entry-confirm" : ""}`}
+                  onClick={() => { if (pendingDelete === e.entryId) { setPendingDelete(null); return; } setEditEntryId(e.entryId); }} style={{cursor:"pointer"}}>
                   <span className="lb-entry-name">{dn}</span>
-                  <span className="lb-entry-pts">{cost} pts</span>
-                  <button className="lb-icon-btn danger" title="Remove"
-                    onClick={ev => { ev.stopPropagation(); if (confirm(`Remove ${dn}?`)) deleteEntry(e.entryId); }}>✕</button>
+                  {pendingDelete === e.entryId ? (
+                    <>
+                      <span style={{fontSize:"8.5pt",color:"#c04040",fontWeight:600,whiteSpace:"nowrap"}}>Remove?</span>
+                      <button className="lb-del-confirm" onClick={ev => { ev.stopPropagation(); deleteEntry(e.entryId); setPendingDelete(null); }}>Confirm</button>
+                      <button className="lb-icon-btn" onClick={ev => { ev.stopPropagation(); setPendingDelete(null); }}>✕</button>
+                    </>
+                  ) : (
+                    <>
+                      <span className="lb-entry-pts">{cost} pts</span>
+                      <button className="lb-icon-btn danger" title="Remove"
+                        onClick={ev => { ev.stopPropagation(); setPendingDelete(e.entryId); }}>✕</button>
+                    </>
+                  )}
                 </div>
               );
             })}
@@ -3162,7 +2908,7 @@ function ArmyRulesPage({ faction, armyRules, selectedSubfaction }) {
   );
 }
 
-function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, selectedSubfaction, setSelectedSubfaction, detailMode, setDetailMode }) {
+function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, selectedSubfaction, setSelectedSubfaction }) {
   const subfactionLabel = faction.subfactionLabel || "Chapter";
   const subfactions = faction.subfactions || [];
 
@@ -3227,7 +2973,6 @@ export default function App() {
   const [navHeight, setNavHeight] = useState(44);
   const [hiddenUnits, setHiddenUnits] = useState(new Set());
   const [selectedSubfaction, setSelectedSubfaction] = useState("");
-  const [detailMode, setDetailMode] = useState(false);
   const [collapsedSections, setCollapsedSections] = useState<Set<string>>(() => {
     try { const s = localStorage.getItem("alt40k-collapsed-sections"); return new Set(s ? JSON.parse(s) : ["specialRules", "wargear"]); }
     catch { return new Set(["specialRules", "wargear"]); }
@@ -3269,7 +3014,6 @@ export default function App() {
         setHiddenUnits(saved?.hiddenUnits       ?? new Set());
         setSelectedSubfaction(saved?.selectedSubfaction ?? "");
         setActivePage(saved?.activePage         ?? "army-rules");
-        setDetailMode(saved?.detailMode         ?? false);
         setPendingScrollY(saved?.scrollY        ?? 0);
       })
       .catch(e => setError("Failed to load faction: " + e.message))
@@ -3293,11 +3037,11 @@ export default function App() {
   // Keep ref in sync so the scroll listener can read current activePage
   useEffect(() => { activePageRef.current = activePage; }, [activePage]);
 
-  // Save state on significant changes (page nav, options, subfaction, detail mode)
+  // Save state on significant changes (page nav, options, subfaction)
   useEffect(() => {
     if (!currentFile) return;
-    saveState(currentFile, hiddenUnits, selectedSubfaction, detailMode, activePage, window.scrollY);
-  }, [currentFile, hiddenUnits, selectedSubfaction, detailMode, activePage]);
+    saveState(currentFile, hiddenUnits, selectedSubfaction, activePage, window.scrollY);
+  }, [currentFile, hiddenUnits, selectedSubfaction, activePage]);
 
   // Debounced scroll save
   useEffect(() => {
@@ -3305,12 +3049,12 @@ export default function App() {
     function onScroll() {
       if (scrollSaveTimer.current) clearTimeout(scrollSaveTimer.current);
       scrollSaveTimer.current = setTimeout(() => {
-        saveState(currentFile, hiddenUnits, selectedSubfaction, detailMode, activePageRef.current, window.scrollY);
+        saveState(currentFile, hiddenUnits, selectedSubfaction, activePageRef.current, window.scrollY);
       }, 200);
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => { window.removeEventListener("scroll", onScroll); };
-  }, [currentFile, hiddenUnits, selectedSubfaction, detailMode]);
+  }, [currentFile, hiddenUnits, selectedSubfaction]);
 
   // Restore scroll position after faction loads and renders
   useEffect(() => {
@@ -3323,7 +3067,7 @@ export default function App() {
 
   // If the current slot page becomes fully hidden or doesn't exist, redirect to army-rules
   useEffect(() => {
-    if (!activePage.startsWith("slot-")) return;
+    if (typeof activePage !== 'string' || !activePage.startsWith("slot-")) return;
     const slot = activePage.replace("slot-", "");
     if (!unitsBySlot[slot] || unitsBySlot[slot].every(u => hiddenUnits.has(u.id))) {
       setActivePage("army-rules");
@@ -3416,7 +3160,7 @@ body { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 500; c
 .unit-pts { font-size: 18pt; font-weight: 700; color: #7a5800; line-height: 1; }
 .unit-pts-label { font-size: 8pt; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; text-align: right; }
 .section-head { font-weight: 700; font-size: 12pt; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5800; margin: 14px 0 0; border-bottom: 2px solid #e8d48a; padding-bottom: 2px; }
-.group-head { font-weight: 700; font-size: 9pt; letter-spacing: 0.10em; text-transform: uppercase; color: #333; margin: 8px 0 4px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+.group-head { font-weight: 700; font-size: 9.5pt; letter-spacing: 0.10em; text-transform: uppercase; color: #333; margin: 8px 0 4px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
 .two-col { columns: 2; column-gap: 16px; column-fill: balance; margin-top: -8px; }
 .col-block { break-inside: avoid; padding-top: 8px; }
 .col-block-tight { break-inside: avoid; padding-top: 2px; }
@@ -3430,13 +3174,13 @@ tr:last-child td { border-bottom: none; }
 .stripe-b td { background: #fafafa; }
 .mp-first td, .mp-cont td { border-bottom: none; }
 .mp-last td { border-bottom: 1px solid #f0f0f0; }
-.rules-col { text-align: left !important; font-size: 8pt; color: #444; }
-.rule-name { font-weight: 700; font-size: 9pt; }
+.rules-col { text-align: left !important; font-size: 8.5pt; color: #444; }
+.rule-name { font-weight: 700; font-size: 9pt; color: #1a1a1a; }
 .option-list { list-style: none; }
-.option-list li { font-size: 9pt; padding: 2px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.4; }
+.option-list li { font-size: 9pt; font-weight: 500; padding: 2.5px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.4; }
 .option-list li:last-child { border-bottom: none; }
 .option-cost { color: #7a5800; font-weight: 600; margin-left: 4px; }
-.upgrade-note { font-size: 8pt; color: #666; font-style: italic; display: block; line-height: 1.4; }
+.upgrade-note { font-size: 8.5pt; font-weight: 400; color: #666; font-style: italic; display: block; line-height: 1.4; margin-top: 1px; }
 @media print { body { padding: 10mm 12mm; } .col-block { break-inside: avoid; } }`;
 
     const js = `const d=window.__D__;
@@ -3552,23 +3296,6 @@ document.body.innerHTML+=body;`;
           </button>
           <UnitSearch allUnits={factionData.units||[]} hiddenUnits={hiddenUnits} onSelect={handleUnitSelect}/>
           <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
-          <span className="nav-print-toggle">
-            <Popover
-              trigger={
-                <span className="nav-print-label" onClick={()=>setDetailMode(m=>!m)}>
-                  Print View
-                </span>
-              }
-              content={<>
-                <strong>Print View</strong>
-                Replaces interactive pills with full weapon profiles and written-out special rule descriptions — ideal for printing or use without a screen.
-              </>}
-            />
-            <label className="toggle-switch" style={{flexShrink:0}}>
-              <input type="checkbox" checked={detailMode} onChange={e=>setDetailMode(e.target.checked)}/>
-              <span className="toggle-slider"/>
-            </label>
-          </span>
           <button className="nav-btn" onClick={openPrintTab} style={{color:"#888",borderColor:"#333"}}>
             ⎙ Print
           </button>
@@ -3576,7 +3303,7 @@ document.body.innerHTML+=body;`;
       </div>
 
       <div className="codex-outer">
-        <div className={`codex-page${detailMode?" detail-mode":""}`}>
+        <div className="codex-page">
           <div className="faction-header">
             <div>
               <div className="faction-name">{faction.name||"Unknown Faction"}</div>
@@ -3603,7 +3330,6 @@ document.body.innerHTML+=body;`;
                     namedUpgrades={namedUpgrades} armyRules={armyRules}
                     coreRules={coreRules} spellPools={spellPools}
                     hidden={hiddenUnits.has(unit.id)}
-                    detailMode={detailMode}
                     collapsedSections={collapsedSections} toggleSection={toggleSection}
                   />
                 </div>
@@ -3619,7 +3345,6 @@ document.body.innerHTML+=body;`;
               armyRules={armyRules} coreRules={coreRules}
               faction={faction}
               selectedSubfaction={selectedSubfaction} setSelectedSubfaction={setSelectedSubfaction}
-              detailMode={detailMode}
               collapsedSections={collapsedSections} toggleSection={toggleSection}
             />
           )}
@@ -3629,7 +3354,6 @@ document.body.innerHTML+=body;`;
               faction={faction} unitsBySlot={unitsBySlot}
               hiddenUnits={hiddenUnits} setHiddenUnits={setHiddenUnits}
               selectedSubfaction={selectedSubfaction} setSelectedSubfaction={setSelectedSubfaction}
-              detailMode={detailMode} setDetailMode={setDetailMode}
             />
           )}
 

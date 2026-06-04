@@ -81,8 +81,7 @@ Contains rules that are **unique to this faction** and not in
 
 - `id` — kebab-case, unique within the file
 - `name` — display name
-- `shortDesc` — one sentence, shown in tooltips
-- `fullDesc` — complete rule text as written in the codex
+- `fullDesc` — complete rule text, copied verbatim from the codex
 
 **Decision rule:**
 - Is the rule in the core rulebook's Terminology section?
@@ -278,8 +277,8 @@ Each unit contains:
 **`options[]`** — list of available upgrades. Types:
 - `squadSize` — number spinner for extra models
 - `weaponSwap` — replace a weapon; uses inline `choices[]` or `weaponListId`. **Always requires `scope`** — see the Weapon Swap Scopes section below.
-- `perModelWeapon` — independent weapon choice per model instance
-- `toggle` — checkbox for a unit-specific upgrade
+- `perModelWeapon` — independent weapon choice per model instance (dropdowns)
+- `toggle` — checkbox for a unit-specific upgrade. Add `"applies": ["modelId"]` to make it **per-model** — see Per-model toggle upgrades below.
 - `namedUpgrade` — checkbox for a shared upgrade (from `namedUpgrades`)
 - `spellPick` — spell slot selector
 - `markPick` — Mark of Chaos selector (Chaos only). Requires `choices[]` where each choice has `markId` and `ptsPerModel`.
@@ -358,6 +357,36 @@ All `limitedSlot` options that share the same `applies` model type and `replaces
     { "weaponId": "heavy-stubber",    "label": "Heavy Stubber",    "pts": 10 }
   ] }
 ```
+
+---
+
+## Per-model toggle upgrades
+
+Some vehicles and walkers allow each model in a multi-model unit to independently take one upgrade from a list — e.g. "Any Dreadnought may take one of: Extra Armour, Smoke Launchers, Blizzard Shield, Magna Grapple."
+
+**When to use:** the source codex text says "Any [model name] may take" or "Each [model name] may be equipped with" and the unit can contain more than one model.
+
+**How to mark it in JSON:** add `"applies": ["modelId"]` to **every** toggle in the exclusive group. This is the same `applies` field used by `perModelWeapon` and `weaponSwap` — it signals "resolved independently per model of this type."
+
+```jsonc
+// Each Dreadnought in a 1–3 unit picks zero or one upgrade
+{ "id": "dr-extra-armour", "type": "toggle",
+  "exclusiveGroup": "dr-upgrades", "applies": ["dreadnought"],
+  "label": "Extra Armour", "pts": 5,
+  "grantsWargear": ["extra-armour"], "note": "Crew Stun becomes Weapon Disabled." },
+{ "id": "dr-smoke", "type": "toggle",
+  "exclusiveGroup": "dr-upgrades", "applies": ["dreadnought"],
+  "label": "Smoke Launchers", "pts": 10,
+  "grantsWargear": ["smoke-launchers"], "note": "One Use Only." }
+```
+
+**List builder behaviour:** renders one "Model N — may take one:" radio group per model in the unit. The count updates live as squad size changes. Default is nothing selected; clicking a selected radio deselects it (returning the model to no upgrade).
+
+**Cost:** each model's selection adds its `pts` to the unit total independently. Three Dreadnoughts each taking Smoke Launchers costs +30 pts.
+
+**Without `applies`:** an `exclusiveGroup` of toggles without `applies` remains unit-wide — one radio group for the whole unit, regardless of squad size.
+
+**Do not confuse with `perModelWeapon`:** `perModelWeapon` handles weapon slot swaps rendered as dropdowns. `toggle` + `applies` + `exclusiveGroup` handles equipment/upgrade choices rendered as per-model radio groups.
 
 ---
 
@@ -488,3 +517,5 @@ file opened in an older app won't lose data.
 | Using kebab-case ids like `"rending"`, `"monsterbane"` in weapon profile rules | Weapon profile `rules` uses display strings only: `"Rending"`, `"Monsterbane"` |
 | Writing `null`, `[]`, or `false` fields on weapons or units | Omit them entirely; the app treats missing fields as their default |
 | Omitting `schemaVersion` | Always include `"schemaVersion": "1.3"` |
+| Marking a vehicle upgrade group as per-model by adding `applies` to only some options in the `exclusiveGroup` | Add `"applies": ["modelId"]` to **every** option in the group — the app reads it from the first matching option, but consistency is required |
+| Using a unit-wide `exclusiveGroup` toggle for a rule that says "Any [model name] may take" | Add `"applies": ["modelId"]` to make it per-model; without it the group renders as a single unit-wide choice |
