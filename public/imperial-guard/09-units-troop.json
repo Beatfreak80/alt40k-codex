@@ -698,6 +698,7 @@
           "id": "vet-sgt-pistol",
           "type": "weaponSwap",
           "scope": "perModelType",
+          "upgradeGroup": "Veteran Sergeant",
           "applies": [
             "veteran-sergeant"
           ],
@@ -709,6 +710,7 @@
           "id": "vet-sgt-melee",
           "type": "weaponSwap",
           "scope": "perModelType",
+          "upgradeGroup": "Veteran Sergeant",
           "applies": [
             "veteran-sergeant"
           ],
@@ -720,6 +722,7 @@
           "id": "vet-rifle",
           "type": "weaponSwap",
           "scope": "unit",
+          "upgradeGroup": "Veterans",
           "applies": [
             "veteran-guardsman",
             "veteran-hwt"
@@ -743,6 +746,7 @@
           "id": "vet-hf",
           "type": "weaponSwap",
           "scope": "limitedSlot",
+          "upgradeGroup": "Veterans",
           "slots": 1,
           "applies": [
             "veteran-guardsman"
@@ -761,6 +765,7 @@
           "id": "vet-special",
           "type": "weaponSwap",
           "scope": "limitedSlot",
+          "upgradeGroup": "Veterans",
           "slots": 3,
           "applies": [
             "veteran-guardsman"
@@ -772,6 +777,7 @@
         {
           "id": "vet-demochg",
           "type": "toggle",
+          "upgradeGroup": "Veterans",
           "label": "Demolition Charge (one Veteran)",
           "pts": 7,
           "grantsWargear": [
@@ -782,6 +788,7 @@
           "id": "vet-hwt-swap",
           "type": "weaponSwap",
           "scope": "perModelType",
+          "upgradeGroup": "Veterans",
           "applies": [
             "veteran-hwt"
           ],
@@ -792,6 +799,7 @@
         {
           "id": "vet-pistol-add",
           "type": "toggle",
+          "upgradeGroup": "Veterans",
           "label": "Add Laspistol (any model, +1 pt)",
           "pts": 1,
           "grantsWargear": [
@@ -801,6 +809,7 @@
         {
           "id": "vet-krak",
           "type": "toggle",
+          "upgradeGroup": "Veterans",
           "label": "Krak Grenades (squad)",
           "pts": 10,
           "grantsWargear": [
@@ -810,12 +819,14 @@
         {
           "id": "vet-vox",
           "type": "namedUpgrade",
+          "upgradeGroup": "Veterans",
           "upgradeId": "vox-caster-upgrade",
           "pts": 5
         },
         {
           "id": "vet-doc-mastiff",
           "type": "toggle",
+          "upgradeGroup": "Veterans",
           "label": "Doctrine: Cyber Mastiff",
           "pts": 10,
           "note": "Unit gains Ld+1. Sergeant gains Melta Bombs."
@@ -823,6 +834,7 @@
         {
           "id": "vet-doc-demo",
           "type": "toggle",
+          "upgradeGroup": "Veterans",
           "label": "Doctrine: Demolitions",
           "pts": 14,
           "grantsWargear": [
@@ -834,12 +846,14 @@
         {
           "id": "vet-doc-grenadier",
           "type": "namedUpgrade",
+          "upgradeGroup": "Veterans",
           "upgradeId": "grenadier-doctrine",
           "pts": 10
         },
         {
           "id": "vet-doc-recon",
           "type": "toggle",
+          "upgradeGroup": "Veterans",
           "label": "Doctrine: Remote Surveillance",
           "pts": 10,
           "note": "Target friendly unit may reroll Scatter dice for Blast weapons against a target this unit can draw Line of Sight to."
@@ -847,12 +861,14 @@
         {
           "id": "vet-doc-sentries",
           "type": "namedUpgrade",
+          "upgradeGroup": "Veterans",
           "upgradeId": "snare-mines",
           "pts": 40
         },
         {
           "id": "vet-doc-assault",
           "type": "namedUpgrade",
+          "upgradeGroup": "Veterans",
           "upgradeId": "assault-troopers-doctrine",
           "pts": 90
         }

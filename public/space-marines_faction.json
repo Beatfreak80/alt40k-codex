@@ -2987,6 +2987,30 @@
       ]
     },
     {
+      "id": "stormshield-no-ranged",
+      "name": "Stormshield",
+      "removesWargear": ["stormbolter", "mastercrafted-auto-bolt-rifle", "boltgun"],
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "Sv-1 (Improves by 1), 4+ Invulnerability Save"
+        }
+      ]
+    },
+    {
+      "id": "stormshield-no-pistol",
+      "name": "Stormshield",
+      "removesWargear": ["bolt-pistol"],
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "Sv-1 (Improves by 1), 4+ Invulnerability Save"
+        }
+      ]
+    },
+    {
       "id": "refractor-field",
       "name": "Refractor Field",
       "profiles": [
@@ -4830,46 +4854,8 @@
       "grantsRules": [
         "monstrous-infantry",
         "deepstrike",
-        "steady"
-      ],
-      "removesRules": [
-        "infantry",
-        "objective-secured"
-      ],
-      "grantsWargear": [
-        "stormbolter"
-      ],
-      "removesWargear": [
-        "frag-grenades",
-        "krak-grenades"
-      ],
-      "mutuallyExcludes": [
-        "jump-pack",
-        "bike"
-      ],
-      "note": "M-2, W+1. Gain Monstrous Infantry, Deepstrike, Steady. Lose Infantry, Objective Secured, Grenades. Gain a Stormbolter."
-    },
-    "terminator-armour-invuln": {
-      "type": "toggle",
-      "label": "Terminator Armour",
-      "statModifiers": [
-        {
-          "modelId": "__sergeant__",
-          "stat": "M",
-          "op": "add",
-          "value": -2
-        },
-        {
-          "modelId": "__sergeant__",
-          "stat": "W",
-          "op": "add",
-          "value": 1
-        }
-      ],
-      "grantsRules": [
-        "monstrous-infantry",
-        "deepstrike",
-        "steady"
+        "steady",
+        "very-bulky"
       ],
       "removesRules": [
         "infantry",
@@ -4880,6 +4866,8 @@
         "terminator-honours"
       ],
       "removesWargear": [
+        "boltgun",
+        "bolt-pistol",
         "frag-grenades",
         "krak-grenades"
       ],
@@ -4887,7 +4875,7 @@
         "jump-pack",
         "bike"
       ],
-      "note": "M-2, W+1, 5+ Invulnerability Save. Gain Monstrous Infantry, Deepstrike, Steady. Lose Infantry, Objective Secured, Grenades. Gain Stormbolter."
+      "note": "M-2, W+1, 5+ Invulnerability Save. Gain: Monstrous Infantry, Very Bulky, Deepstrike, Steady. Lose: Infantry, Objective Secured, Grenades, Bolt gun, Bolt pistol. Gain Stormbolter."
     },
     "jump-pack": {
       "type": "toggle",
@@ -4907,7 +4895,6 @@
       "mutuallyExcludes": [
         "terminator-armour",
         "bike",
-        "terminator-armour-invuln",
         "primaris-terminator-armour"
       ],
       "note": "M+6. Gain Deepstrike, Flying."
@@ -4943,8 +4930,7 @@
       ],
       "mutuallyExcludes": [
         "terminator-armour",
-        "jump-pack",
-        "terminator-armour-invuln"
+        "jump-pack"
       ],
       "note": "M+6, T+1, W+1. Gain Steed. Gain a Stormbolter."
     },
@@ -5743,7 +5729,7 @@
           "label": "Stormshield",
           "pts": 12,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-ranged"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
@@ -7509,7 +7495,7 @@
         {
           "id": "apo-terminator-armour",
           "type": "namedUpgrade",
-          "upgradeId": "terminator-armour-invuln",
+          "upgradeId": "terminator-armour",
           "pts": 23
         },
         {
@@ -7731,7 +7717,7 @@
         {
           "id": "ca-terminator-armour",
           "type": "namedUpgrade",
-          "upgradeId": "terminator-armour-invuln",
+          "upgradeId": "terminator-armour",
           "pts": 10
         },
         {
@@ -8369,7 +8355,7 @@
           "label": "Stormshield",
           "pts": 15,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-ranged"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
@@ -9785,7 +9771,7 @@
           "label": "Sergeant: Stormshield",
           "pts": 10,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-ranged"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save.",
           "upgradeGroup": "Sergeant"
@@ -9793,7 +9779,7 @@
         {
           "id": "tac-sgt-terminator-armour",
           "type": "namedUpgrade",
-          "upgradeId": "terminator-armour-invuln",
+          "upgradeId": "terminator-armour",
           "pts": 6,
           "upgradeGroup": "Sergeant"
         }
@@ -10480,7 +10466,7 @@
           "label": "Stormshield",
           "pts": 10,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-ranged"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
@@ -10813,7 +10799,7 @@
           "label": "Stormshield",
           "pts": 12,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-ranged"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save."
         }
@@ -12312,7 +12298,7 @@
           "label": "Stormshield",
           "pts": 11,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-pistol"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
@@ -12502,7 +12488,7 @@
           "label": "Stormshield",
           "pts": 11,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-pistol"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
@@ -14451,7 +14437,7 @@
               "pts": 24
             },
             {
-              "weaponId": "stormshield",
+              "weaponId": "stormshield-no-pistol",
               "label": "Stormshield",
               "pts": 11
             }
@@ -17002,7 +16988,7 @@
           "label": "Sergeant: Stormshield",
           "pts": 10,
           "grantsWargear": [
-            "stormshield"
+            "stormshield-no-ranged"
           ],
           "note": "Sv-1 (improves), 4+ Invulnerability Save.",
           "upgradeGroup": "Sergeant"
@@ -17010,7 +16996,7 @@
         {
           "id": "dv-terminator-armour",
           "type": "namedUpgrade",
-          "upgradeId": "terminator-armour-invuln",
+          "upgradeId": "terminator-armour",
           "pts": 6,
           "upgradeGroup": "Sergeant"
         }
