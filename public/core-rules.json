@@ -577,6 +577,12 @@
       "name": "Two-Handed",
       "shortDesc": "Cannot be used alongside another weapon.",
       "fullDesc": "A model armed with this weapon cannot use any other melee weapon in the same Fight phase."
+    },
+    {
+      "id": "unique",
+      "name": "Unique",
+      "shortDesc": "This unit may only appear once in your army.",
+      "fullDesc": "This unit may only appear once in your army."
     }
   ]
 }

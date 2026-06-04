@@ -250,6 +250,9 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-modal-sub { font-size:9.5pt; color:#888; margin:2px 0 16px; }
 .lb-opt-section { margin:10px 0 0; }
 .lb-opt-section-head { font-size:8.5pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#7a5800; padding-bottom:2px; border-bottom:1px solid #e8d48a; margin-bottom:5px; }
+.lb-exclusive-group { margin:6px 0 2px; padding:6px 8px 2px; background:#f9f7f2; border:1px solid #e0d4aa; border-radius:4px; }
+.lb-exclusive-label { font-size:7.5pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#9a7000; margin-bottom:4px; }
+.lb-opt-row-exclusive { opacity:0.38; pointer-events:none; }
 .lb-opt-group-head { font-size:9.5pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#7a5800; margin:16px 0 4px; padding:3px 0 2px; border-top:1px solid #e8d48a; border-bottom:1px solid #e8d48a; background:#fffdf5; }
 .lb-opt-row { display:flex; align-items:flex-start; justify-content:space-between; padding:5px 0; border-bottom:1px solid #f6f6f6; gap:10px; }
 .lb-opt-row:last-child { border-bottom:none; }
@@ -812,13 +815,13 @@ function StatTable({ models, statDeltas = null, invSaves = null }: any) {
               const delta: number = statDeltas?.get(m.id)?.[c] ?? 0;
               const inv: number | null = c === "Sv" ? (invSaves?.get(m.id) ?? null) : null;
               if ((delta !== 0 && typeof base === "number") || inv !== null) {
-                const sign = delta > 0 ? "+" : "";
+                const arrow = delta > 0 ? "▲" : "▼";
                 return (
                   <td key={c} style={{whiteSpace:"nowrap"}}>
                     {delta !== 0 && typeof base === "number" ? fmtStat(base + delta, c) : fmtStat(base, c)}
                     {delta !== 0 && typeof base === "number" && (
                       <span style={{fontSize:"7pt",color:delta>0?"#2a7a2a":"#b00",marginLeft:2,fontWeight:700}}>
-                        {sign}{delta}
+                        {arrow}{Math.abs(delta)}
                       </span>
                     )}
                     {inv !== null && (
@@ -1179,13 +1182,15 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, c
           {deduped.map(id => {
             const rule = ruleById(id, armyRules, coreRules, allInline);
             const modelNote = specific.find(r => r.id === id)?.label;
+            const isInline = allInline.some(r => r.id === id);
+            const desc = isInline ? rule?.fullDesc : (rule?.fullDesc || rule?.shortDesc);
             return (
               <div key={id} className="col-block-tight">
                 <li className="rules-detail-li" style={{listStyle:"none", padding:"1px 0", lineHeight:1.4}}>
                   <span className="rule-name">{rule?.name || idToLabel(id)}</span>
                   {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
                   {rule
-                    ? (rule.fullDesc || rule.shortDesc) && <span> — {rule.fullDesc || rule.shortDesc}</span>
+                    ? desc && <span> — {desc}</span>
                     : <span style={{color:"#888",fontStyle:"italic"}}> — Keyword only</span>
                   }
                 </li>
@@ -1199,10 +1204,20 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, c
 }
 
 // ── Print mode: options with full weapon profiles ─────────────────────────────
-function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, collapsed = false, onToggle = null }: any) {
+function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, inlineRules, collapsed = false, onToggle = null }: any) {
   const opts = unit.options || [];
   const hasBaseWargear = unit.models.some(m => (m.baseWargear||[]).length > 0);
   if (!opts.length && !hasBaseWargear) return null;
+
+  const allInline = [...(inlineRules||[]), ...(unit.inlineRules||[])];
+  function upgradeDesc(o: any, named: any): string | undefined {
+    const granted = (o.grantsRules || named?.grantsRules || []);
+    if (granted.length === 1) {
+      const rule = allInline.find(r => r.id === granted[0]);
+      if (rule?.fullDesc) return rule.fullDesc;
+    }
+    return named?.note || o.note;
+  }
 
   function resolveChoices(opt) {
     if (opt.weaponListId && weaponLists[opt.weaponListId]) {
@@ -1427,7 +1442,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
             <ul className="option-list">
               {ungroupedUpgrades2.map(o => {
                 const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
-                const note = named?.note || o.note;
+                const note = upgradeDesc(o, named);
                 return (
                   <li key={o.id}>{named?.label||o.label}
                     <span className="option-cost"> +{o.pts} pts</span>
@@ -1455,7 +1470,7 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
                   <ul className="option-list">
                     {gUpgrades.map(o => {
                       const named = o.type==="namedUpgrade" ? namedUpgrades?.[o.upgradeId] : null;
-                      const note = named?.note || o.note;
+                      const note = upgradeDesc(o, named);
                       return (
                         <li key={o.id}>{named?.label||o.label}
                           <span className="option-cost"> +{o.pts} pts</span>
@@ -1597,7 +1612,7 @@ function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, 
               collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
         }
         {detailMode
-          ? <DetailOptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}
+          ? <DetailOptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules} inlineRules={pu.inlineRules}
               collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
           : <OptionsSection unit={pu} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}
               collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
@@ -1666,7 +1681,7 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
             collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
       }
       {detailMode
-        ? <DetailOptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules}
+        ? <DetailOptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
             collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
         : <OptionsSection unit={unit} weapons={weapons} weaponLists={weaponLists} namedUpgrades={namedUpgrades} spellPools={spellPools} coreRules={coreRules} armyRules={armyRules}
             collapsed={collapsedSections?.has("wargear")} onToggle={() => toggleSection("wargear")}/>
@@ -2279,24 +2294,76 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
 
         function renderUpgradeBlock(topts: any[], sectionLabel: string) {
           if (!topts.length) return null;
+
+          // Build ordered blocks preserving JSON order; exclusive-group members collapse into one block
+          const blocks: Array<{kind:"single",opt:any}|{kind:"exclusive",group:string,opts:any[]}> = [];
+          const seenGroups = new Set<string>();
+          for (const o of topts) {
+            if (o.exclusiveGroup) {
+              if (!seenGroups.has(o.exclusiveGroup)) {
+                seenGroups.add(o.exclusiveGroup);
+                blocks.push({kind:"exclusive", group:o.exclusiveGroup, opts: topts.filter((x:any) => x.exclusiveGroup === o.exclusiveGroup)});
+              }
+            } else {
+              blocks.push({kind:"single", opt:o});
+            }
+          }
+
           return (
             <div className="lb-opt-section">
               <div className="lb-opt-section-head">{sectionLabel}</div>
-              {topts.map((o: any) => {
-                const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
-                const label = named?.label || o.label || o.upgradeId;
-                const note = named?.note || o.note;
+              {blocks.map((block) => {
+                if (block.kind === "single") {
+                  const o = block.opt;
+                  const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
+                  const label = named?.label || o.label || o.upgradeId;
+                  const note = named?.note || o.note;
+                  return (
+                    <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+                      <span className="lb-opt-label">
+                        <input type="checkbox" checked={!!options[o.id]}
+                          onChange={e => setOptions((p:any) => ({...p, [o.id]: e.target.checked}))}
+                          style={{marginRight:8}}/>
+                        {label}
+                        {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
+                        {note && <span className="lb-opt-note">{note}</span>}
+                      </span>
+                    </label>
+                  );
+                }
+                // Exclusive group — rendered as radio buttons in a framed sub-section
+                const {opts: groupOpts} = block as {kind:"exclusive",group:string,opts:any[]};
+                const selectedId = groupOpts.find((o:any) => !!options[o.id])?.id ?? null;
                 return (
-                  <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
-                    <span className="lb-opt-label">
-                      <input type="checkbox" checked={!!options[o.id]}
-                        onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
-                        style={{marginRight:8}}/>
-                      {label}
-                      {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
-                      {note && <span className="lb-opt-note">{note}</span>}
-                    </span>
-                  </label>
+                  <div key={block.group} className="lb-exclusive-group">
+                    <div className="lb-exclusive-label">May take one:</div>
+                    {groupOpts.map((o:any) => {
+                      const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
+                      const label = named?.label || o.label || o.upgradeId;
+                      const note = named?.note || o.note;
+                      const isSelected = selectedId === o.id;
+                      const isDisabled = selectedId !== null && !isSelected;
+                      return (
+                        <label key={o.id} className={"lb-opt-row" + (isDisabled ? " lb-opt-row-exclusive" : "")}
+                          style={{cursor: isDisabled ? "default" : "pointer", display:"flex"}}>
+                          <span className="lb-opt-label">
+                            <input type="radio" checked={isSelected}
+                              onClick={() => setOptions((p:any) => {
+                                const next = {...p};
+                                for (const s of groupOpts) next[s.id] = false;
+                                if (!isSelected) next[o.id] = true;
+                                return next;
+                              })}
+                              onChange={() => {}}
+                              style={{marginRight:8}}/>
+                            {label}
+                            {o.pts > 0 && <span className="lb-opt-pts"> +{o.pts} pts</span>}
+                            {note && <span className="lb-opt-note">{note}</span>}
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
                 );
               })}
             </div>
@@ -3162,8 +3229,8 @@ export default function App() {
   const [selectedSubfaction, setSelectedSubfaction] = useState("");
   const [detailMode, setDetailMode] = useState(false);
   const [collapsedSections, setCollapsedSections] = useState<Set<string>>(() => {
-    try { const s = localStorage.getItem("alt40k-collapsed-sections"); return new Set(s ? JSON.parse(s) : []); }
-    catch { return new Set(); }
+    try { const s = localStorage.getItem("alt40k-collapsed-sections"); return new Set(s ? JSON.parse(s) : ["specialRules", "wargear"]); }
+    catch { return new Set(["specialRules", "wargear"]); }
   });
   function toggleSection(id: string) {
     setCollapsedSections(prev => {
@@ -3408,7 +3475,7 @@ function renderUnit(unit){
   const allR=[...[...shared,...sy.map(s=>s.id)].sort((a,b)=>{const na=(rB(a,inl)?.name||a).toLowerCase(),nb=(rB(b,inl)?.name||b).toLowerCase();return na.localeCompare(nb);}), ...spec.map(r=>r.id)];
   const seen=new Set();const ded=allR.filter(id=>{if(seen.has(id))return false;seen.add(id);return true;});
   let rules='<div class="section-head">Special Rules</div><div class="two-col">';
-  ded.forEach(id=>{const rule=rB(id,inl);const mn=spec.find(r=>r.id===id)?.label;rules+='<div class="col-block-tight"><li style="list-style:none;padding:3px 0;font-size:9pt;line-height:1.4"><span class="rule-name">'+(rule?.name||id)+'</span>'+(mn?'<span style="font-size:8pt;color:#888;margin-left:4px">('+mn+')</span>':'')+((rule?.fullDesc||rule?.shortDesc)?' — '+(rule.fullDesc||rule.shortDesc):'')+'</li></div>';});
+  ded.forEach(id=>{const rule=rB(id,inl);const mn=spec.find(r=>r.id===id)?.label;const isInl=inl.some(r=>r.id===id);const desc=isInl?rule?.fullDesc:(rule?.fullDesc||rule?.shortDesc);rules+='<div class="col-block-tight"><li style="list-style:none;padding:3px 0;font-size:9pt;line-height:1.4"><span class="rule-name">'+(rule?.name||id)+'</span>'+(mn?'<span style="font-size:8pt;color:#888;margin-left:4px">('+mn+')</span>':'')+(desc?' — '+desc:'')+'</li></div>';});
   rules+='</div>';
   const opts=unit.options||[];
   function rCh(o){if(o.weaponListId&&d.weaponLists[o.weaponListId]){const b=d.weaponLists[o.weaponListId],ov=o.ptsOverrides||{};return b.map(c=>({...c,pts:ov[c.weaponId]??c.pts}));}return o.choices||[];}

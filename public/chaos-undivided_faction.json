@@ -6007,6 +6007,7 @@
           "type": "toggle",
           "label": "Ascended (+111 pts)",
           "pts": 111,
+          "grantsRules": ["flyer"],
           "note": "M+4, S+1, T+1, W+8, I+1, Sv+1 (Worsens by 1), gain Flying."
         },
         {

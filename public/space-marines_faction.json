@@ -559,6 +559,12 @@
       "fullDesc": "6\" Aura, this model and target unit gain 5+ Feel No Pain."
     },
     {
+      "id": "chief-apothecary-aura",
+      "name": "Chief Apothecary",
+      "shortDesc": "6\" Aura: this model and target unit may reroll 1s for Feel No Pain.",
+      "fullDesc": "6\" Aura – This model and target unit may reroll 1s for Feel No Pain."
+    },
+    {
       "id": "awaken-the-machine",
       "name": "Awaken the Machine",
       "shortDesc": "6\" Aura: target Vehicle unit gains BS-1 (Improves by 1).",
@@ -665,6 +671,18 @@
       "name": "Fortification",
       "shortDesc": "This model may never be moved once placed on the table, except when destroyed.",
       "fullDesc": "This model may never be moved once placed on the Table, except when it is destroyed."
+    },
+    {
+      "id": "chapter-ancient-aura",
+      "name": "Chapter Ancient",
+      "shortDesc": "6\" Aura: when an enemy unit arrives from Reserves in range, this model and target unit may make an Immediate Free Shooting Phase against it.",
+      "fullDesc": "6\" Aura, this model and target unit may make an Immediate Free Shooting Phase against any unit that just arrived from Reserves that is in range."
+    },
+    {
+      "id": "chapter-champion-glory",
+      "name": "Chapter Champion",
+      "shortDesc": "This model may reroll all failed To Hit and To Wound rolls.",
+      "fullDesc": "This model may reroll all failed To Hit and To Wound rolls."
     }
   ],
   "commonWargear": [
@@ -4954,7 +4972,8 @@
       ],
       "grantsRules": [
         "the-hour-is-nigh",
-        "t-minus-5"
+        "t-minus-5",
+        "unique"
       ],
       "grantsWargear": [
         "orbital-strike"
@@ -4979,6 +4998,7 @@
           "value": 1
         }
       ],
+      "grantsRules": ["unique"],
       "note": "W+1, A+1. Gain Psychic Mastery +1. May Deny the Witch twice per Psychic Phase. Gain Unique."
     },
     "chief-chaplain": {
@@ -4999,6 +5019,7 @@
           "value": 1
         }
       ],
+      "grantsRules": ["unique"],
       "note": "W+1, A+1. May take one additional H option. Gain Unique."
     },
     "chief-apothecary": {
@@ -5019,6 +5040,7 @@
           "value": 1
         }
       ],
+      "grantsRules": ["chief-apothecary-aura", "unique"],
       "note": "W+1, A+1. 6\" Aura – This model and target unit may reroll 1s for Feel No Pain. Gain Unique."
     },
     "master-of-the-forge": {
@@ -5040,7 +5062,8 @@
         }
       ],
       "grantsRules": [
-        "sm-repair"
+        "sm-repair",
+        "unique"
       ],
       "note": "W+1, A+1. Gain Repair D3 Wounds. May use both versions of Repair on the same target. Gain Unique."
     },
@@ -5062,6 +5085,7 @@
           "value": 1
         }
       ],
+      "grantsRules": ["chapter-ancient-aura", "unique"],
       "note": "W+1, A+1. 6\" Aura – this model and target unit may make an Immediate Free Shooting Phase against any unit that just arrived from Reserves that is in range. Gain Unique."
     },
     "chapter-champion": {
@@ -5088,6 +5112,7 @@
           "value": 1
         }
       ],
+      "grantsRules": ["chapter-champion-glory", "unique"],
       "note": "W+1, I+1, A+1. Reroll all failed To Hit and To Wound rolls. Gain Unique."
     },
     "primaris-terminator-armour": {
@@ -5737,19 +5762,22 @@
           "id": "cap-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
-          "pts": 10
+          "pts": 10,
+          "exclusiveGroup": "cap-mount"
         },
         {
           "id": "cap-jump-pack",
           "type": "namedUpgrade",
           "upgradeId": "jump-pack",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "cap-mount"
         },
         {
           "id": "cap-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 34
+          "pts": 34,
+          "exclusiveGroup": "cap-mount"
         },
         {
           "id": "cap-chapter-master",
@@ -5956,19 +5984,22 @@
           "id": "chap-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
-          "pts": 10
+          "pts": 10,
+          "exclusiveGroup": "chap-mount"
         },
         {
           "id": "chap-jump-pack",
           "type": "namedUpgrade",
           "upgradeId": "jump-pack",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "chap-mount"
         },
         {
           "id": "chap-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 34
+          "pts": 34,
+          "exclusiveGroup": "chap-mount"
         },
         {
           "id": "chap-chief-chaplain",
@@ -5981,6 +6012,7 @@
           "type": "toggle",
           "label": "Omen of Potency",
           "pts": 18,
+          "exclusiveGroup": "chap-litany",
           "statModifiers": [
             {
               "modelId": "chaplain",
@@ -5999,6 +6031,7 @@
           "type": "toggle",
           "label": "Litany of Intimidation",
           "pts": 20,
+          "exclusiveGroup": "chap-litany",
           "grantsRules": [
             "litany-of-intimidation"
           ],
@@ -6009,6 +6042,7 @@
           "type": "toggle",
           "label": "Litany of Faith",
           "pts": 40,
+          "exclusiveGroup": "chap-litany",
           "grantsRules": [
             "litany-of-faith"
           ],
@@ -6019,6 +6053,7 @@
           "type": "toggle",
           "label": "True Sight",
           "pts": 50,
+          "exclusiveGroup": "chap-litany",
           "grantsRules": [
             "true-sight"
           ],
@@ -6029,6 +6064,7 @@
           "type": "toggle",
           "label": "Exhortation of Rage",
           "pts": 60,
+          "exclusiveGroup": "chap-litany",
           "grantsRules": [
             "exhortation-of-rage"
           ],
@@ -6246,6 +6282,7 @@
           "type": "toggle",
           "label": "Omen of Potency",
           "pts": 18,
+          "exclusiveGroup": "cd-litany",
           "statModifiers": [
             {
               "modelId": "chaplain-dreadnought",
@@ -6264,6 +6301,7 @@
           "type": "toggle",
           "label": "Litany of Intimidation",
           "pts": 20,
+          "exclusiveGroup": "cd-litany",
           "grantsRules": [
             "litany-of-intimidation"
           ],
@@ -6274,6 +6312,7 @@
           "type": "toggle",
           "label": "Litany of Faith",
           "pts": 40,
+          "exclusiveGroup": "cd-litany",
           "grantsRules": [
             "litany-of-faith"
           ],
@@ -6284,6 +6323,7 @@
           "type": "toggle",
           "label": "True Sight",
           "pts": 50,
+          "exclusiveGroup": "cd-litany",
           "grantsRules": [
             "true-sight"
           ],
@@ -6294,6 +6334,7 @@
           "type": "toggle",
           "label": "Exhortation of Rage",
           "pts": 60,
+          "exclusiveGroup": "cd-litany",
           "grantsRules": [
             "exhortation-of-rage"
           ],
@@ -6887,6 +6928,7 @@
           "type": "toggle",
           "label": "Camo Cloak",
           "pts": 8,
+          "exclusiveGroup": "pcap-mount",
           "mutuallyExcludes": [
             "pcap-terminator-armour",
             "pcap-jump-pack"
@@ -7021,13 +7063,15 @@
           "id": "pcap-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "primaris-terminator-armour",
-          "pts": 9
+          "pts": 9,
+          "exclusiveGroup": "pcap-mount"
         },
         {
           "id": "pcap-jump-pack",
           "type": "namedUpgrade",
           "upgradeId": "jump-pack",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "pcap-mount"
         },
         {
           "id": "pcap-chapter-master",
@@ -7197,19 +7241,22 @@
           "id": "pchap-terminator-armour",
           "type": "namedUpgrade",
           "upgradeId": "primaris-terminator-armour",
-          "pts": 14
+          "pts": 14,
+          "exclusiveGroup": "pchap-mount"
         },
         {
           "id": "pchap-jump-pack",
           "type": "namedUpgrade",
           "upgradeId": "jump-pack",
-          "pts": 20
+          "pts": 20,
+          "exclusiveGroup": "pchap-mount"
         },
         {
           "id": "pchap-bike",
           "type": "namedUpgrade",
           "upgradeId": "bike",
-          "pts": 41
+          "pts": 41,
+          "exclusiveGroup": "pchap-mount"
         },
         {
           "id": "pchap-chief-chaplain",
@@ -7222,6 +7269,7 @@
           "type": "toggle",
           "label": "Omen of Potency",
           "pts": 18,
+          "exclusiveGroup": "pchap-litany",
           "statModifiers": [
             {
               "modelId": "primaris-chaplain",
@@ -7240,6 +7288,7 @@
           "type": "toggle",
           "label": "Litany of Intimidation",
           "pts": 20,
+          "exclusiveGroup": "pchap-litany",
           "grantsRules": [
             "litany-of-intimidation"
           ],
@@ -7250,6 +7299,7 @@
           "type": "toggle",
           "label": "Litany of Faith",
           "pts": 40,
+          "exclusiveGroup": "pchap-litany",
           "grantsRules": [
             "litany-of-faith"
           ],
@@ -7260,6 +7310,7 @@
           "type": "toggle",
           "label": "True Sight",
           "pts": 50,
+          "exclusiveGroup": "pchap-litany",
           "grantsRules": [
             "true-sight"
           ],
@@ -7269,6 +7320,7 @@
           "id": "pchap-exhortation",
           "type": "toggle",
           "label": "Exhortation of Rage",
+          "exclusiveGroup": "pchap-litany",
           "pts": 60,
           "grantsRules": [
             "exhortation-of-rage"

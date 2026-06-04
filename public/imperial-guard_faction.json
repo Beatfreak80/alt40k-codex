@@ -3811,7 +3811,7 @@
       ],
       "grantsRules": [
         "bulky",
-        "fly"
+        "flyer"
       ],
       "note": "M+6, gains Bulky and Fly."
     },
@@ -3893,7 +3893,7 @@
       "grantsRules": [
         "steed",
         "deepstrike",
-        "fly",
+        "flyer",
         "very-bulky"
       ],
       "note": "M+6, T+1, W+1, gains Steed, Deepstrike, Fly, and Very Bulky."
@@ -3933,6 +3933,7 @@
     "enclosed-crew-compartment": {
       "type": "toggle",
       "label": "Enclosed Crew Compartment",
+      "removesRules": ["open-topped"],
       "note": "This model loses Open Topped."
     },
     "dozerblade-upgrade": {
@@ -4048,7 +4049,7 @@
       "grantsRules": [
         "bulky",
         "deepstrike",
-        "fly"
+        "flyer"
       ],
       "note": "M+6, gains Bulky, Deepstrike, Fly."
     }
@@ -10712,9 +10713,10 @@
               "label": "Jet Bikes (+2 pts/model)",
               "pts": 2,
               "grantsRules": [
-                "fly",
+                "flyer",
                 "deepstrike"
               ],
+              "removesRules": ["outflank"],
               "note": "Gain Flying and Deepstrike. Lose Outflank."
             },
             {
@@ -10722,6 +10724,7 @@
               "type": "toggle",
               "label": "Genetically Engineered Steeds (+2 pts/model)",
               "pts": 2,
+              "removesRules": ["outflank"],
               "note": "W+1. Lose Outflank."
             }
           ]
@@ -10901,9 +10904,10 @@
               "label": "Jet Bikes (+2 pts/model)",
               "pts": 2,
               "grantsRules": [
-                "fly",
+                "flyer",
                 "deepstrike"
               ],
+              "removesRules": ["outflank"],
               "note": "Gain Flying and Deepstrike. Lose Outflank."
             },
             {
@@ -10911,6 +10915,7 @@
               "type": "toggle",
               "label": "Genetically Engineered Steeds (+2 pts/model)",
               "pts": 2,
+              "removesRules": ["outflank"],
               "note": "W+1. Lose Outflank."
             }
           ]
@@ -15006,6 +15011,7 @@
           "type": "toggle",
           "label": "Enclosed Troop Compartment",
           "pts": 16,
+          "removesRules": ["open-topped"],
           "note": "This model loses Open Topped."
         },
         {

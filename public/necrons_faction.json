@@ -3033,7 +3033,16 @@
               "label": "Canoptek Cloak",
               "pts": 18,
               "grantsRules": [
-                "Canoptek Cloak — M+6 and Fly."
+                "Canoptek Cloak — M+6 and Fly.",
+                "flyer"
+              ],
+              "statModifiers": [
+                {
+                  "modelId": "technomancer",
+                  "stat": "M",
+                  "op": "add",
+                  "value": 6
+                }
               ]
             },
             {
