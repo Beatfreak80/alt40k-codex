@@ -353,6 +353,11 @@
       "fullDesc": "This model gains +1 to Cover Saves. If the model is in the open, it is always considered to have a 6+ Cover Save. If a unit Goes to Ground or is Pinned, they gain an additional +1 to a maximum of a 3+ Cover Save."
     },
     {
+      "id": "simultaneous-use",
+      "name": "Simultaneous Use",
+      "fullDesc": "Each profile of a multi-profile weapon with this special rule may be used simultaneously in the same phase."
+    },
+    {
       "id": "slow",
       "name": "Slow",
       "fullDesc": "This weapon is considered to be Initiative 0 regardless of the bearer's Initiative value, even if it is considered to have Charged this phase. Other weapons used by this model fight at their normal Initiative speed."

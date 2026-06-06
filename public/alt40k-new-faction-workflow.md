@@ -126,13 +126,7 @@ Weapon profile `rules` is a **single comma-separated string** — no arrays, no 
 "rules": "heavy, monsterbane"                 // wrong — bare IDs
 ```
 
-Shot counts and target numbers **must** come from the codex — they differ per weapon:
-- Shot-count rules: `"Assault 2"`, `"Heavy 1"`, `"Pistol 1"`, `"Rapid Fire 1"`, `"Grenade 1"`
-- Target-number rules: `"Poisoned (3+)"`, `"Sniper (3+)"`, `"Haywire (3+)"`
-- Extra attacks: `"Extra Attack 1"`, `"Extra Attack 2"`
-- Linked variants: `"Assault 3 x2"`, `"Heavy 1 x4"`
-- Other rules: `"Rending"`, `"Monsterbane"`, `"Melta"`, `"Lance"`, `"Armourbane"`, `"Slow"`, `"Gets Hot!"`, `"Tesla"`, `"Gauss"`, `"AA"`, `"Ordnance"`, `"Accurate"`, `"Counterattack"` etc.
-- Blast sizes and bespoke effects: `"3\" Blast"`, `"5\" Blast"`, `"(Monsterbane)"`, `"5+ Invulnerability Save against Ranged Attacks"`
+Shot counts and target numbers **must** come from the codex — they differ per weapon. See the guide's `commonWargear` section for the complete list of valid rule strings.
 
 The `rule-map.json` and postprocessor normalise display strings in **unit** `specialRules[]` (e.g. `"Rending"` → `"rending"` for tooltip lookups) but weapon profile rules are intentionally kept as display strings.
 
@@ -165,11 +159,11 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
 
 **`weaponSwap` scopes** — `scope` is required on every weaponSwap:
 
-| `scope` | Meaning | `slots` | `slotsPerN` | List builder UI |
-|---|---|---|---|---|
-| `"unit"` | One choice for the whole unit | — | — | Single dropdown |
-| `"perModelType"` | Each model of the type independently | — | — | Dropdown (single model) or count spinners (multi-model) |
-| `"limitedSlot"` | Up to N models in the unit may take it | required | optional | Dropdown with None (slots 1) or count spinners (slots > 1) |
+| `scope` | Meaning | `slots` | `slotsPerN` | `ptsPerModel` | List builder UI |
+|---|---|---|---|---|---|
+| `"unit"` | One choice for the whole unit | — | — | optional — cost scales per model still carrying the replaced weapon | Single dropdown |
+| `"perModelType"` | Each model of the type independently | — | — | — | Dropdown (single model) or count spinners (multi-model) |
+| `"limitedSlot"` | Up to N models in the unit may take it | required | optional | — | Dropdown with None (slots 1) or count spinners (slots > 1) |
 
 `slotsPerN` scales available slots with squad size: `slots × floor(totalModels / slotsPerN)`. Use for rules like "Per 10 models, up to 3 may swap…"
 
@@ -177,25 +171,11 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
 
 **Every option must have a unique `id` field** — the app uses it to track state.
 
-`weaponSwap` examples:
+For `weaponSwap` scope patterns and inline-choices/weaponList examples, see the guide's Weapon Swap Scopes section.
+
+**Vehicle weapon choices** carry arc on the choice entry, not the weapon definition:
 
 ```json
-// Choices inline — one option, many alternatives
-{ "id": "wb-ranged", "type": "weaponSwap", "applies": ["model-id"],
-  "label": "Swap Slugga for", "replaces": "slugga",
-  "choices": [
-    { "weaponId": "shoota", "label": "Shoota", "pts": 2 },
-    { "weaponId": "meltagun", "label": "Meltagun", "pts": 24 }
-  ]
-}
-
-// Using a weapon list (costs come from the list definition)
-{ "id": "wb-melee", "type": "weaponSwap", "applies": ["model-id"],
-  "label": "Swap Choppa for", "replaces": "choppa",
-  "weaponListId": "boyz-melee"
-}
-
-// Vehicle weapon with arc — arc goes on the choice, not the weapon definition
 { "weaponId": "big-shoota", "label": "Big Shoota", "pts": 1,
   "arcType": "Hull", "mountingTags": ["Primary"] }
 ```
@@ -207,20 +187,7 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
   "pts": 28, "grantsWargear": ["deff-rolla"] }
 ```
 
-`toggle` example (per-model — each model independently picks zero or one from the group):
-
-```json
-{ "id": "dr-extra-armour", "type": "toggle",
-  "exclusiveGroup": "dr-upgrades", "applies": ["dreadnought"],
-  "label": "Extra Armour", "pts": 5,
-  "grantsWargear": ["extra-armour"], "note": "Crew Stun becomes Weapon Disabled." },
-{ "id": "dr-smoke", "type": "toggle",
-  "exclusiveGroup": "dr-upgrades", "applies": ["dreadnought"],
-  "label": "Smoke Launchers", "pts": 10,
-  "grantsWargear": ["smoke-launchers"], "note": "One Use Only." }
-```
-
-The `applies` field on every option in the group is what triggers per-model rendering. Omit it and the group renders as a single unit-wide radio choice.
+For per-model toggle groups (`exclusiveGroup` + `applies`), see the guide's Per-model toggle upgrades section.
 
 `namedUpgrade` definitions in the `namedUpgrades` map must use:
 - `"type": "toggle"` (not `"statChange"` or anything else)
@@ -240,9 +207,7 @@ The `applies` field on every option in the group is what triggers per-model rend
 }
 ```
 
-**`modelId` placeholders in `statModifiers`:**
-- `"__sergeant__"` — the leader model only (resolved to the model with `upgradeGroup: "Sergeant"`, or the single model with minCount===maxCount===1). Use for HQ upgrades where only the character is affected.
-- `"__all__"` — every model in the unit. Use for unit-wide upgrades like jump packs where every model's stat row should update.
+For `modelId` placeholders in `statModifiers` (`__sergeant__`, `__all__`), see the guide's namedUpgrades section.
 
 **What went wrong with the Ork codex first pass:** custom types (`"weapon"`, `"equipment"`, `"addModel"`) were invented without reading an existing faction JSON. This made all weapon options invisible in the app. Always open `space-marines_faction.json` or `necrons_faction.json` and read a unit's `options` block before writing any options.
 
@@ -344,6 +309,7 @@ Storage and display:
 - Every distinct weapon defined **once**, referenced everywhere by ID
 - Same weapon, different mounting = same entry; arc goes on the unit reference
 - Multi-profile weapons need a `label` on each profile
+- **AND vs OR between profiles:** If the source codex separates two weapon modes with **AND** (e.g. "Rapid Fire 2 AND Assault 1"), both profiles can fire simultaneously — add `"Simultaneous Fire"` to each profile's `rules` string in addition to its existing rules. If separated by **OR**, only one may be chosen per turn — no extra rule needed.
 - Equipment items (invuln saves, special gear) also go here with `strength: "-"`
 - Strip `castValue` unless it's a psychic attack weapon (non-null integer)
 - Strip `templateType` unless `"Flame"` or `"Hellstorm"`
@@ -452,7 +418,9 @@ unitTotal = basePts
   + Σ namedUpgrade.active   ? (ptsPerModel × totalModelCount | pts) : 0
   + Σ markPick.chosen       ? ptsPerModel × totalModelCount    : 0
   + Σ pureBlessingPick.active ? pts (from matching mark choice) : 0
-  + Σ weaponSwap (scope "unit" or perModelType single-model)   → selectedChoice.pts
+  + Σ weaponSwap (scope "unit", no ptsPerModel)                → selectedChoice.pts
+  + Σ weaponSwap (scope "unit", ptsPerModel: true)             → selectedChoice.pts × (appliesCount − poolUsed)
+  + Σ weaponSwap (scope "perModelType" single-model)           → selectedChoice.pts
   + Σ weaponSwap (scope "perModelType" multi-model)            → Σ_choice count[choice] × choice.pts
   + Σ weaponSwap (scope "limitedSlot", slots 1)                → selectedChoice.pts if taken, else 0
   + Σ weaponSwap (scope "limitedSlot", slots > 1)              → Σ_choice count[choice] × choice.pts
@@ -481,4 +449,5 @@ The postprocessor covers most of these automatically, but keep them in mind whil
 - [ ] Vehicle weapons have `arcType`/`mountingTags` on unit references; infantry weapons use plain strings
 - [ ] `chapterRestriction` values match a subfaction `id`
 - [ ] Per-model toggle groups (`exclusiveGroup` + `applies`): `applies` is present on **every** option in the group and all reference the same model id
+- [ ] `mutuallyExcludes` arrays are symmetric — if A excludes B, B must also exclude A
 - [ ] Faction registered in `public/factions.json`

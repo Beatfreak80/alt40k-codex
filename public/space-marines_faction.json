@@ -982,14 +982,14 @@
           "label": "Melee",
           "strength": "+2",
           "ap": "4+",
-          "rules": "Concussion"
+          "rules": "Concussion, Simultaneous Use"
         },
         {
           "label": "Flame",
           "templateType": "Flame",
           "strength": "5",
           "ap": "4+",
-          "rules": "Assault 1, One Use Only"
+          "rules": "Assault 1, One Use Only, Simultaneous Use"
         }
       ]
     },
@@ -1122,14 +1122,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "2+",
-          "rules": "Slow, Monsterbane"
+          "rules": "Slow, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Stormbolter",
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
-          "rules": "Rapid Fire 2, Bolter"
+          "rules": "Rapid Fire 2, Bolter, Simultaneous Use"
         }
       ],
       "keywords": [
@@ -1144,7 +1144,7 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "2+",
-          "rules": "Slow, Monsterbane"
+          "rules": "Slow, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Heavy Flamer",
@@ -1162,14 +1162,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "2+",
-          "rules": "Slow, Monsterbane"
+          "rules": "Slow, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Meltagun",
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
-          "rules": "Assault 1, Melta, (Monsterbane)"
+          "rules": "Assault 1, Melta, (Monsterbane), Simultaneous Use"
         }
       ]
     },
@@ -1188,7 +1188,7 @@
           "maxRange": 18,
           "strength": "*",
           "ap": "-",
-          "rules": "Assault 2, Grav"
+          "rules": "Assault 2, Grav, Simultaneous Use"
         }
       ]
     },
@@ -1200,14 +1200,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "1+",
-          "rules": "Slow, Armourbane, Monsterbane"
+          "rules": "Slow, Armourbane, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Stormbolter",
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
-          "rules": "Rapid Fire 2, Bolter"
+          "rules": "Rapid Fire 2, Bolter, Simultaneous Use"
         }
       ],
       "keywords": [
@@ -1222,13 +1222,13 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "1+",
-          "rules": "Slow, Armourbane, Monsterbane"
+          "rules": "Slow, Armourbane, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Heavy Flamer",
           "strength": "5",
           "ap": "4+",
-          "rules": "Assault 1"
+          "rules": "Assault 1, Simultaneous Use"
         }
       ]
     },
@@ -1259,14 +1259,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "1+",
-          "rules": "Slow, Armourbane, Monsterbane"
+          "rules": "Slow, Armourbane, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Meltagun",
           "maxRange": 12,
           "strength": "8",
           "ap": "1+",
-          "rules": "Assault 1, Melta, (Monsterbane)"
+          "rules": "Assault 1, Melta, (Monsterbane), Simultaneous Use"
         }
       ]
     },
@@ -1278,14 +1278,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "1+",
-          "rules": "Slow, Monsterbane, Reroll 1s To Hit"
+          "rules": "Slow, Monsterbane, Reroll 1s To Hit, Simultaneous Use"
         },
         {
           "label": "Stormbolter",
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
-          "rules": "Rapid Fire 2, Bolter"
+          "rules": "Rapid Fire 2, Bolter, Simultaneous Use"
         }
       ],
       "keywords": [
@@ -1300,13 +1300,13 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "1+",
-          "rules": "Slow, Monsterbane, Reroll 1s To Hit"
+          "rules": "Slow, Monsterbane, Reroll 1s To Hit, Simultaneous Use"
         },
         {
           "label": "Heavy Flamer",
           "strength": "5",
           "ap": "4+",
-          "rules": "Assault 1"
+          "rules": "Assault 1, Simultaneous Use"
         }
       ]
     },
@@ -1318,7 +1318,7 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "1+",
-          "rules": "Slow, Monsterbane, Reroll 1s To Hit"
+          "rules": "Slow, Monsterbane, Reroll 1s To Hit, Simultaneous Use"
         },
         {
           "label": "Meltagun",
@@ -1987,14 +1987,14 @@
           "maxRange": 36,
           "strength": "4",
           "ap": "6+",
-          "rules": "Heavy 2, 3\" Blast"
+          "rules": "Heavy 2, 3\" Blast, Simultaneous Use"
         },
         {
           "label": "Stormbolter",
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
-          "rules": "Rapid Fire 2, Bolter"
+          "rules": "Rapid Fire 2, Bolter, Simultaneous Use"
         }
       ],
       "keywords": [
@@ -2018,26 +2018,9 @@
       "name": "Orbital Strike",
       "profiles": [
         {
-          "label": "D",
           "minRange": 12,
           "maxRange": 240,
-          "strength": "D",
-          "ap": "1+",
-          "rules": "Heavy 1, 15\" Blast, Destroyer, Ordnance, Monsterbane, Indirect Fire, Ignores Cover, The Hour is Nigh, T Minus 5, One Use Only"
-        },
-        {
-          "label": "10",
-          "minRange": 12,
-          "maxRange": 240,
-          "strength": "10",
-          "ap": "1+",
-          "rules": "Heavy 1, 15\" Blast, Destroyer, Ordnance, Monsterbane, Indirect Fire, Ignores Cover, The Hour is Nigh, T Minus 5, One Use Only"
-        },
-        {
-          "label": "8",
-          "minRange": 12,
-          "maxRange": 240,
-          "strength": "8",
+          "strength": "D/10/8",
           "ap": "1+",
           "rules": "Heavy 1, 15\" Blast, Destroyer, Ordnance, Monsterbane, Indirect Fire, Ignores Cover, The Hour is Nigh, T Minus 5, One Use Only"
         }
@@ -2524,14 +2507,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "2+",
-          "rules": "Slow, Monsterbane"
+          "rules": "Slow, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Gatling",
           "maxRange": 24,
           "strength": "4",
           "ap": "-",
-          "rules": "Heavy 10"
+          "rules": "Heavy 10, Simultaneous Use"
         }
       ]
     },
@@ -2543,14 +2526,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "2+",
-          "rules": "Slow, Monsterbane"
+          "rules": "Slow, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Bolt Rifles",
           "maxRange": 30,
           "strength": "4",
           "ap": "4+",
-          "rules": "Rapid Fire 1 x2, Bolter"
+          "rules": "Rapid Fire 1 x2, Bolter, Simultaneous Use"
         }
       ],
       "keywords": [
@@ -2565,14 +2548,14 @@
           "label": "Melee",
           "strength": "X2",
           "ap": "2+",
-          "rules": "Slow, Monsterbane"
+          "rules": "Slow, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Fragstorm",
           "maxRange": 18,
           "strength": "4",
           "ap": "-",
-          "rules": "Assault 1, 3\" Blast"
+          "rules": "Assault 1, 3\" Blast, Simultaneous Use"
         }
       ]
     },
@@ -2772,14 +2755,14 @@
           "label": "Siege Drill",
           "strength": "D",
           "ap": "1+",
-          "rules": "Destroyer, Monsterbane, Auxiliary"
+          "rules": "Destroyer, Monsterbane, Auxiliary, Simultaneous Use"
         },
         {
           "label": "Meltagun",
           "maxRange": 12,
           "strength": "1+",
           "ap": "1+",
-          "rules": "Assault 1, Melta, (Monsterbane)"
+          "rules": "Assault 1, Melta, (Monsterbane), Simultaneous Use"
         }
       ]
     },
@@ -2791,7 +2774,7 @@
           "label": "Siege Claw",
           "strength": "X2",
           "ap": "2+",
-          "rules": "Slow, Monsterbane"
+          "rules": "Slow, Monsterbane, Simultaneous Use"
         },
         {
           "label": "Meltagun",
@@ -2811,14 +2794,14 @@
           "maxRange": 12,
           "strength": "7",
           "ap": "2+",
-          "rules": "Pistol 2"
+          "rules": "Pistol 2, Simultaneous Use"
         },
         {
           "label": "Bolt",
           "maxRange": 12,
           "strength": "4",
           "ap": "5+",
-          "rules": "Pistol 2"
+          "rules": "Pistol 2, Simultaneous Use"
         }
       ]
     },
@@ -3890,14 +3873,14 @@
           "maxRange": 48,
           "strength": "8",
           "ap": "3+",
-          "rules": "Heavy 1, Beam, Monsterbane, Co-axial"
+          "rules": "Heavy 1, Beam, Monsterbane, Co-axial, Simultaneous Use"
         },
         {
           "label": "Autocannon",
           "maxRange": 48,
           "strength": "7",
           "ap": "4+",
-          "rules": "Heavy 2, Monsterbane, Co-axial"
+          "rules": "Heavy 2, Monsterbane, Co-axial, Simultaneous Use"
         }
       ]
     },
@@ -3910,7 +3893,7 @@
           "maxRange": 36,
           "strength": "8",
           "ap": "1+",
-          "rules": "Heavy 1, 5\" Blast, Melta, (Monsterbane), Co-axial"
+          "rules": "Heavy 1, 5\" Blast, Melta, (Monsterbane), Co-axial, Simultaneous Use"
         },
         {
           "label": "Autocannon",
@@ -3930,7 +3913,7 @@
           "maxRange": 72,
           "strength": "9",
           "ap": "2+",
-          "rules": "Heavy 1, 5\" Blast, Ordnance, Monsterbane, Co-axial"
+          "rules": "Heavy 1, 5\" Blast, Ordnance, Monsterbane, Co-axial, Simultaneous Use"
         },
         {
           "label": "Autocannon",
@@ -4236,14 +4219,14 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
-          "rules": "Heavy 2, Melta, (Monsterbane)"
+          "rules": "Heavy 2, Melta, (Monsterbane), Simultaneous Use"
         },
         {
           "label": "Plasma Gun",
           "maxRange": 24,
           "strength": "7",
           "ap": "2+",
-          "rules": "Rapid Fire 1, Gets Hot!"
+          "rules": "Rapid Fire 1, Gets Hot!, Simultaneous Use"
         }
       ]
     },
@@ -4558,14 +4541,14 @@
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
-          "rules": "Heavy 1, 5\" Blast, Melta, (Monsterbane)"
+          "rules": "Heavy 1, 5\" Blast, Melta, (Monsterbane), Simultaneous Use"
         },
         {
           "label": "Secondary",
           "maxRange": 24,
           "strength": "8",
           "ap": "1+",
-          "rules": "Heavy 1 x2, 3\" Blast, Melta, (Monsterbane)"
+          "rules": "Heavy 1 x2, 3\" Blast, Melta, (Monsterbane), Simultaneous Use"
         }
       ]
     },
@@ -10212,23 +10195,6 @@
               "weaponId": "combi-melta",
               "label": "Combi-Melta",
               "pts": 23
-            }
-          ]
-        },
-        {
-          "id": "cv-special",
-          "type": "weaponSwap",
-          "scope": "limitedSlot",
-          "applies": [
-            "cv-sgt",
-            "cv-veteran"
-          ],
-          "label": "Any model: swap Boltgun for special weapon",
-          "replaces": "boltgun",
-          "choices": [
-            {
-              "weaponId": "boltgun",
-              "label": "None"
             },
             {
               "weaponId": "flamer",
@@ -10249,9 +10215,13 @@
               "weaponId": "meltagun",
               "label": "Meltagun",
               "pts": 21
+            },
+            {
+              "weaponId": "stormshield-no-ranged",
+              "label": "Stormshield",
+              "pts": 10
             }
-          ],
-          "slots": 10
+          ]
         },
         {
           "id": "cv-heavy",
@@ -10409,6 +10379,7 @@
           ],
           "label": "Any model: swap Boltgun+Combat Knife for Dual Lightning Claws",
           "replaces": "boltgun",
+          "alsoReplaces": ["combat-knife"],
           "choices": [
             {
               "weaponId": "boltgun",
@@ -10419,16 +10390,6 @@
               "label": "Dual Lightning Claws"
             }
           ]
-        },
-        {
-          "id": "cv-stormshield",
-          "type": "toggle",
-          "label": "Stormshield",
-          "pts": 10,
-          "grantsWargear": [
-            "stormshield-no-ranged"
-          ],
-          "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
         {
           "id": "cv-bikes",
@@ -10584,7 +10545,43 @@
           ],
           "label": "Sergeant: swap Boltgun for",
           "replaces": "boltgun",
-          "weaponListId": "sergeant-ranged-standard",
+          "choices": [
+            {
+              "weaponId": "boltgun",
+              "label": "Keep Boltgun",
+              "pts": 0
+            },
+            {
+              "weaponId": "stormbolter",
+              "label": "Stormbolter",
+              "pts": 2
+            },
+            {
+              "weaponId": "combi-flamer",
+              "label": "Combi-Flamer",
+              "pts": 6
+            },
+            {
+              "weaponId": "combi-grav",
+              "label": "Combi-Grav",
+              "pts": 8
+            },
+            {
+              "weaponId": "combi-plasma",
+              "label": "Combi-Plasma",
+              "pts": 8
+            },
+            {
+              "weaponId": "combi-melta",
+              "label": "Combi-Melta",
+              "pts": 23
+            },
+            {
+              "weaponId": "stormshield-no-ranged",
+              "label": "Stormshield",
+              "pts": 12
+            }
+          ],
           "upgradeGroup": "Sergeant"
         },
         {
@@ -10752,16 +10749,6 @@
           ],
           "slots": 1,
           "upgradeGroup": "Marine"
-        },
-        {
-          "id": "dl-stormshield",
-          "type": "toggle",
-          "label": "Stormshield",
-          "pts": 12,
-          "grantsWargear": [
-            "stormshield-no-ranged"
-          ],
-          "note": "Sv-1 (improves), 4+ Invulnerability Save."
         }
       ]
     },
@@ -10884,7 +10871,7 @@
             },
             {
               "weaponId": "special-issue-boltgun",
-              "label": "Special Issue Boltgun"
+              "label": "Special Issue Bolt Rifle"
             },
             {
               "weaponId": "special-issue-stormbolter",

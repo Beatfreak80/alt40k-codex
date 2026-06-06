@@ -418,7 +418,7 @@ function poolUsed(unit: any, applies: string[], replacesId: string, options: any
   for (const o of (unit.options||[])) {
     if (o.type !== "weaponSwap") continue;
     if (!(o.applies||[]).some((mid: string) => applies.includes(mid))) continue;
-    if (o.replaces !== replacesId) continue;
+    if (o.replaces !== replacesId && !(o.alsoReplaces||[]).includes(replacesId)) continue;
     const v = options[o.id];
     if (o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
       if (typeof v === "number") used += v;
@@ -1486,8 +1486,9 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
           }
         }
         if (o.replaces && totalModels > 0 && totalAssigned >= totalModels) {
+          const toRemove = new Set([o.replaces, ...(o.alsoReplaces || [])]);
           for (const mid of applyTo)
-            modelWargear.set(mid, (modelWargear.get(mid) || []).filter((w: string) => w !== o.replaces));
+            modelWargear.set(mid, (modelWargear.get(mid) || []).filter((w: string) => !toRemove.has(w)));
         }
       } else if (v && typeof v === "string" && o.scope === "limitedSlot") {
         const choices = resolveChoicesForOpt(o, wL);
@@ -1514,13 +1515,87 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
 
   const isV = (unit.models||[]).some((m: any) => m.statline?.type === "vehicle");
 
+  // Build per-weapon model counts for each model type (for "(xN)" display)
+  const weaponCountByMid = new Map<string, Map<string, number>>();
+  for (const m of (unit.models || [])) {
+    const mid = m.id;
+    const total = modelTypeCount(unit, mid, entry.options || {});
+    if (total === 0) continue;
+    const counts = new Map<string, number>();
+    for (const r of (m.baseWargear || [])) {
+      const wid = typeof r === "string" ? r : r.weaponId;
+      counts.set(wid, total);
+    }
+    weaponCountByMid.set(mid, counts);
+  }
+  for (const o of (unit.options || [])) {
+    if (o.type !== "weaponSwap" || o.scope !== "perModelType" || !isMultiModelSwap(o, unit)) continue;
+    const v = entry.options?.[o.id];
+    if (!v || typeof v !== "object") continue;
+    const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
+    for (const mid of applyTo) {
+      const counts = weaponCountByMid.get(mid);
+      if (!counts) continue;
+      const total = modelTypeCount(unit, mid, entry.options || {});
+      let swapped = 0;
+      for (const [wid, cnt] of Object.entries(v as Record<string, number>)) {
+        if ((cnt as number) <= 0 || wid === o.replaces) continue;
+        swapped += cnt as number;
+        counts.set(wid, cnt as number);
+      }
+      if (o.replaces) counts.set(o.replaces, Math.max(0, total - swapped));
+    }
+  }
+  for (const o of (unit.options || [])) {
+    if (o.type !== "weaponSwap" || o.scope !== "limitedSlot") continue;
+    const v = entry.options?.[o.id];
+    if (!v) continue;
+    const choices = resolveChoicesForOpt(o, wL);
+    const defaultWid = choices[0]?.weaponId;
+    const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
+    if (typeof v === "string" && v !== defaultWid) {
+      for (const mid of applyTo) {
+        const counts = weaponCountByMid.get(mid);
+        if (!counts) continue;
+        counts.set(v, (counts.get(v) ?? 0) + 1);
+        if (o.replaces && counts.has(o.replaces))
+          counts.set(o.replaces, Math.max(0, (counts.get(o.replaces) ?? 0) - 1));
+      }
+    } else if (typeof v === "object") {
+      for (const [wid, cnt] of Object.entries(v as Record<string, number>)) {
+        if ((cnt as number) <= 0 || wid === defaultWid) continue;
+        for (const mid of applyTo) {
+          const counts = weaponCountByMid.get(mid);
+          if (!counts) continue;
+          counts.set(wid, (counts.get(wid) ?? 0) + (cnt as number));
+          if (o.replaces && counts.has(o.replaces))
+            counts.set(o.replaces, Math.max(0, (counts.get(o.replaces) ?? 0) - (cnt as number)));
+        }
+      }
+    }
+  }
+  for (const o of (unit.options || [])) {
+    if (!entry.options?.[o.id]) continue;
+    const wargearList: string[] = o.type === "toggle" ? (o.grantsWargear || [])
+      : o.type === "namedUpgrade" ? (namedUpgrades?.[o.upgradeId]?.grantsWargear || [])
+      : [];
+    if (!wargearList.length) continue;
+    const targetMids = new Set(resolveChampionModelIds(o, unit));
+    for (const [mid, counts] of weaponCountByMid) {
+      if (!targetMids.has(mid)) continue;
+      const total = modelTypeCount(unit, mid, entry.options || {});
+      for (const wid of wargearList) if (!counts.has(wid)) counts.set(wid, total);
+    }
+  }
+
   // Group models by resolved wargear, skipping optional models with 0 count
-  const groups: Map<string, { refs: string[]; names: string[] }> = new Map();
+  const groups: Map<string, { refs: string[]; names: string[]; mids: string[] }> = new Map();
   for (const m of (unit.models||[])) {
     if (modelTypeCount(unit, m.id, entry.options || {}) === 0) continue;
     const key = (modelWargear.get(m.id)||[]).join(",");
-    if (!groups.has(key)) groups.set(key, { refs: modelWargear.get(m.id)||[], names: [] });
+    if (!groups.has(key)) groups.set(key, { refs: modelWargear.get(m.id)||[], names: [], mids: [] });
     groups.get(key)!.names.push(m.name);
+    groups.get(key)!.mids.push(m.id);
   }
   const wgGroups = [...groups.values()].filter(g => g.refs.length > 0);
   const multiGroup = wgGroups.length > 1;
@@ -1630,7 +1705,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     }
   }
 
-  function renderWeaponTable(refs: string[]) {
+  function renderWeaponTable(refs: string[], weaponCounts?: Map<string, number>, totalCount?: number) {
     // Wargear with rules profiles go in the table; purely decorative wargear stays as pills.
     const seenT = new Set<string>(); const seenPill = new Set<string>();
     const tableRefs = refs.filter(wid => {
@@ -1645,6 +1720,11 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
       if (w && !isRealWeapon(w) && !w.profiles?.some((p: any) => p.rules)) { seenPill.add(wid); return true; }
       return false;
     });
+    function wepLabel(wid: string, name: string): string {
+      if (!weaponCounts || !totalCount || totalCount <= 1) return name;
+      const cnt = weaponCounts.get(wid);
+      return (cnt !== undefined && cnt < totalCount) ? `${name} (x${cnt})` : name;
+    }
     return (
       <>
         {tableRefs.length > 0 && (
@@ -1667,20 +1747,20 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
                   const rulesText = w.profiles?.map((p: any) => p.rules).filter(Boolean).join("; ") || "—";
                   return (
                     <tr key={wid} className={wi%2===0?"stripe-a":"stripe-b"}>
-                      <td>{w.name}</td>{isV&&<td/>}<td>—</td><td>—</td><td>—</td>
+                      <td>{wepLabel(wid, w.name)}</td>{isV&&<td/>}<td>—</td><td>—</td><td>—</td>
                       <td className="rules-col">{rulesText}</td>
                     </tr>
                   );
                 }
                 return w.profiles.length === 1 ? (
                   <tr key={wid} className={wi%2===0?"stripe-a":"stripe-b"}>
-                    <td>{w.name}</td>{isV&&<td/>}<td>{fmtRange(w.profiles[0])}</td>
+                    <td>{wepLabel(wid, w.name)}</td>{isV&&<td/>}<td>{fmtRange(w.profiles[0])}</td>
                     <td>{w.profiles[0].strength}</td><td>{w.profiles[0].ap}</td>
                     <td className="rules-col">{resolveRuleNames(w.profiles[0].rules, coreRules||[], armyRules||[])}</td>
                   </tr>
                 ) : w.profiles.map((p: any, pi: number) => (
                   <tr key={`${wid}-${pi}`} className={pi===0?"mp-first":(pi===w.profiles.length-1?"mp-last":"mp-cont")}>
-                    <td>{pi===0?w.name:""}</td>{isV&&<td/>}<td>{fmtRange(p)}</td>
+                    <td>{pi===0?wepLabel(wid, w.name):""}</td>{isV&&<td/>}<td>{fmtRange(p)}</td>
                     <td>{p.strength}</td><td>{p.ap}</td>
                     <td className="rules-col">{resolveRuleNames(p.rules, coreRules||[], armyRules||[])}</td>
                   </tr>
@@ -1691,7 +1771,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
         )}
         {pillRefs.length > 0 && (
           <div className="pills">
-            {pillRefs.map(wid => { const w = (weapons||[]).find((x: any) => x.id === wid); return <span key={wid} className="pill"><span className="pill-name">{w?.name||wid}</span></span>; })}
+            {pillRefs.map(wid => { const w = (weapons||[]).find((x: any) => x.id === wid); return <span key={wid} className="pill"><span className="pill-name">{wepLabel(wid, w?.name||wid)}</span></span>; })}
           </div>
         )}
       </>
@@ -1705,12 +1785,24 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
         Wargear
       </div>
       {!collapsedWargear && (<>
-      {wgGroups.map((g, gi) => (
-        <div key={gi} style={{marginBottom:8}}>
-          {multiGroup && <div className="group-head">{g.names.join(" & ")}</div>}
-          {renderWeaponTable(g.refs)}
-        </div>
-      ))}
+      {wgGroups.map((g, gi) => {
+        const totalCount = g.mids.reduce((s: number, mid: string) => s + modelTypeCount(unit, mid, entry.options || {}), 0);
+        let mergedCounts: Map<string, number> | undefined;
+        if (totalCount > 1) {
+          mergedCounts = new Map<string, number>();
+          for (const mid of g.mids) {
+            const counts = weaponCountByMid.get(mid);
+            if (!counts) continue;
+            for (const [wid, cnt] of counts) mergedCounts.set(wid, (mergedCounts.get(wid) ?? 0) + cnt);
+          }
+        }
+        return (
+          <div key={gi} style={{marginBottom:8}}>
+            {multiGroup && <div className="group-head">{g.names.join(" & ")}{totalCount > 1 ? <span style={{textTransform:"none"}}>{` (x${totalCount})`}</span> : ""}</div>}
+            {renderWeaponTable(g.refs, mergedCounts, totalCount)}
+          </div>
+        );
+      })}
 
       {chosenLines.length > 0 && (
         <div style={{marginBottom:8}}>

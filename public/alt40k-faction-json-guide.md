@@ -370,10 +370,25 @@ Every `weaponSwap` option must have a `scope` field. The scope controls both **h
 
 One selection applies to every model in the unit. Renders as a single dropdown. Use when all models must carry the same weapon variant.
 
+Add `"ptsPerModel": true` when the cost scales with the number of models that still carry the replaced weapon. The engine automatically deducts any models that have already swapped that same weapon away via a `limitedSlot` or `perModelType` option — so those models are not charged for the squad-wide upgrade.
+
 ```jsonc
+// Fixed cost — one vehicle, one choice
 { "id": "leman-russ-main", "type": "weaponSwap", "scope": "unit",
   "applies": ["leman-russ"], "label": "Main battle cannon",
   "replaces": "battle-cannon", "weaponListId": "leman-russ-mains" }
+
+// Per-model cost — squad upgrades their rifles, but marines who already
+// swapped to a Heavy Bolter (via a limitedSlot option) are excluded
+{ "id": "hi-squad-rifle", "type": "weaponSwap", "scope": "unit",
+  "applies": ["heavy-int-sgt", "heavy-int-marine"],
+  "label": "Squad: swap Heavy Bolt Rifles for",
+  "replaces": "heavy-bolt-rifle", "ptsPerModel": true,
+  "choices": [
+    { "weaponId": "heavy-bolt-rifle",    "label": "Keep Heavy Bolt Rifle" },
+    { "weaponId": "executor-bolt-rifle", "label": "Executor Bolt Rifle", "pts": 1 },
+    { "weaponId": "hellstorm-bolt-rifle","label": "Hellstorm Bolt Rifle", "pts": 2 }
+  ] }
 ```
 
 ### `scope: "perModelType"` — each model independently
@@ -543,35 +558,9 @@ file opened in an older app won't lose data.
 
 ---
 
-## Step-by-step: how to write a new faction file
+## Where to go next
 
-1. **Read the codex PDF** — extract army abilities, subfaction rules,
-   common wargear section, then all unit entries.
-
-2. **Write `faction` and `armyRules`** — faction identity, subfactions
-   with their rules, slot limits.
-
-3. **Inventory the weapons** — list every distinct weapon profile. Group
-   multi-profile weapons (Missile Launcher, combi-weapons). Identify
-   weapons that are the same weapon mounted differently — those are one
-   entry. Write `commonWargear`.
-
-4. **Identify repeated upgrades** — scan all unit option lists for toggles
-   that appear 3+ times identically. Write `namedUpgrades`.
-
-5. **Identify repeated weapon lists** — scan for `choices[]` arrays that
-   appear 3+ times. Write `weaponLists`.
-
-6. **Write spell pools** — if the faction has psykers, write `spellPools`.
-
-7. **Write units** — for each unit in slot order (HQ → Advisor → Troop → ...):
-   - Write `id`, `name`, `slot`, `basePts`, `inlineRules`
-   - Write `models[]` with statlines and base wargear
-   - Write `transport` and `psychic` if applicable
-   - Write `options[]` — use `namedUpgrade` and `weaponListId` wherever possible
-
-8. **Validate** — run the validation checklist. Every referenced id must
-   exist. No duplicate ids. Symmetric `mutuallyExcludes`.
+See `alt40k-new-faction-workflow.md` for the step-by-step authoring process, batch file structure, post-processing instructions, and the full validation checklist.
 
 ---
 
