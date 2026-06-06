@@ -7320,6 +7320,7 @@
           "type": "toggle",
           "label": "Upgrade to Psychic Mastery 2",
           "pts": 15,
+          "grantsMasteryLevel": 2,
           "note": "Gains additional spell pick."
         },
         {

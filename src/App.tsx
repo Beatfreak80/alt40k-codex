@@ -68,7 +68,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .wep-table tr:last-child td, .ref-table tr:last-child td { border-bottom: none; }
 .stripe-a td { background: #fff !important; }
 .stripe-b td { background: #fafafa !important; }
-.rules-col { text-align: left !important; font-size: 8.5pt; color: #444; }
+.rules-col { text-align: left !important; font-size: 8.5pt; color: #444; white-space: pre-line; }
 .arc-col { font-size: 8pt; color: #888; }
 .mp-first td, .mp-cont td { border-bottom: none; }
 .mp-last td { border-bottom: 1px solid #f0f0f0; }
@@ -409,7 +409,7 @@ function modelTypeCount(unit: any, modelId: string, options: any): number {
   const model = (unit.models||[]).find((m: any) => m.id === modelId);
   if (!model) return 1;
   const sq = (unit.options||[]).find((o: any) => o.type === "squadSize" && o.targetModelId === modelId);
-  return model.minCount + (sq ? (options[sq.id] || 0) : 0);
+  return (model.minCount ?? 0) + (sq ? (options[sq.id] || 0) : 0);
 }
 
 // how many models sharing applies+replaces have already consumed slots
@@ -497,6 +497,32 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
   }
   let c = unit.basePts;
   const wL = fd.weaponLists || {}, sP = fd.spellPools || {};
+
+  // Mirror the UI's isSwapHidden logic: build removed-weapon sets from active toggles/namedUpgrades
+  const _grw = new Map<string | null, Set<string>>();
+  const _nU = fd.namedUpgrades || {};
+  for (const o of (unit.options || [])) {
+    if (!entry.options?.[o.id]) continue;
+    const removesW: any[] = o.type === "namedUpgrade"
+      ? (_nU[o.upgradeId]?.removesWargear || [])
+      : o.type === "toggle" ? [
+          ...(o.removesWargear || []),
+          ...((o.grantsWargear || []).flatMap((wid: string) => {
+            const item = (fd.commonWargear || []).find((x: any) => x.id === wid);
+            return item?.removesWargear || [];
+          }))
+        ] : [];
+    if (!removesW.length) continue;
+    const grp: string | null = o.upgradeGroup ?? null;
+    if (!_grw.has(grp)) _grw.set(grp, new Set());
+    for (const w of removesW) _grw.get(grp)!.add(typeof w === "string" ? w : w.weaponId);
+  }
+  const _swapHidden = (o: any) => {
+    if (!o.replaces) return false;
+    const grp: string | null = o.upgradeGroup ?? null;
+    return !!(_grw.get(null)?.has(o.replaces) || (grp !== null && _grw.get(grp)?.has(o.replaces)));
+  };
+
   for (const o of (unit.options || [])) {
     const v = entry.options?.[o.id];
     if (o.type === "squadSize" && v != null) c += (v as number) * o.ptsEach;
@@ -512,6 +538,7 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
       if (ch) c += ch.pts || 0;
     }
     else if (o.type === "weaponSwap") {
+      if (_swapHidden(o)) continue;
       if (o.scope === "limitedSlot") {
         const choices = resolveChoicesForOpt(o, wL);
         if ((o.slots||1) > 1 && v && typeof v === "object") {
@@ -535,11 +562,20 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
         }
       } else if (v != null) {
         const ch = resolveChoicesForOpt(o, wL).find((x: any) => x.weaponId === v);
-        if (ch) c += ch.pts || 0;
+        if (ch) {
+          const applyCount = o.ptsPerModel
+            ? totalAppliesCount(unit, o, entry.options || {}) - poolUsed(unit, o.applies || [], o.replaces, entry.options || {})
+            : 1;
+          c += (ch.pts || 0) * applyCount;
+        }
       }
     }
     else if (o.type === "spellPick" && Array.isArray(v)) {
-      const pool = sP[unit.psychic?.spellPoolId] || [];
+      const rawPoolId = o.spellPoolId || unit.psychic?.spellPoolId || "";
+      const resolvedId = rawPoolId === "$mark"
+        ? (() => { const mOpt = (unit.options||[]).find((x: any) => x.type === "markPick"); return mOpt ? (entry.options?.[mOpt.id] || "") : ""; })()
+        : rawPoolId;
+      const pool = sP[resolvedId] || [];
       for (const sid of v as string[]) { const s = pool.find((x: any) => x.id === sid); if (s) c += s.pts || 0; }
     }
   }
@@ -677,7 +713,7 @@ function StatTable({ models, statDeltas = null, invSaves = null }: any) {
 }
 
 // Build synthetic rules for transport and psychic from unit-level data
-function buildSyntheticRules(unit, coreRules, armyRules) {
+function buildSyntheticRules(unit, coreRules, armyRules, entryOptions?: any) {
   const synthetic = [];
 
   if (unit.transport) {
@@ -685,21 +721,33 @@ function buildSyntheticRules(unit, coreRules, armyRules) {
     const parts = [`Capacity ${t.capacity}`];
     if (t.firePorts?.length) parts.push(`Fire Ports: ${t.firePorts.join(", ")}`);
     if (t.accessPoints?.length) parts.push(`Access: ${t.accessPoints.join(", ")}`);
+    const unitDetails = parts.join(" · ");
+    const coreRule = (coreRules||[]).find(r => r.id === "transport");
+    const coreDesc = coreRule?.fullDesc || coreRule?.shortDesc || "";
     synthetic.push({
       id: "__transport__",
       name: `Transport ${t.capacity}`,
-      shortDesc: parts.join(" · "),
+      shortDesc: unitDetails,
+      fullDesc: [unitDetails, coreDesc].filter(Boolean).join(". "),
     });
   }
 
   if (unit.psychic) {
     const p = unit.psychic;
-    const parts = [`Mastery Level ${p.masteryLevel}`];
+    const masteryUpgradeOpt = (unit.options||[]).find((o: any) => o.grantsMasteryLevel != null);
+    const effectiveML: number = (entryOptions && masteryUpgradeOpt && entryOptions[masteryUpgradeOpt.id])
+      ? masteryUpgradeOpt.grantsMasteryLevel
+      : (p.masteryLevel ?? 0);
+    const parts = [`Mastery Level ${effectiveML}`];
     if (p.denyBonusPerPhase) parts.push(`+${p.denyBonusPerPhase} Deny per phase`);
+    const unitDetails = parts.join(" · ");
+    const coreRule = (coreRules||[]).find((r: any) => r.id === "psychic-mastery");
+    const coreDesc = coreRule?.fullDesc || coreRule?.shortDesc || "";
     synthetic.push({
       id: "__psychic__",
-      name: `Psychic Mastery ${p.masteryLevel}`,
-      shortDesc: parts.join(" · "),
+      name: `Psychic Mastery ${effectiveML}`,
+      shortDesc: unitDetails,
+      fullDesc: [unitDetails, coreDesc].filter(Boolean).join(". "),
     });
   }
 
@@ -707,11 +755,11 @@ function buildSyntheticRules(unit, coreRules, armyRules) {
 }
 
 function compStr(models) {
-  return models.map(m => m.minCount===m.maxCount ? `${m.minCount} ${m.name}` : `${m.minCount}–${m.maxCount} ${m.name}`).join(" + ");
+  return models.map(m => { const mn = m.minCount ?? 0; return mn===m.maxCount ? `${mn} ${m.name}` : `${mn}–${m.maxCount} ${m.name}`; }).join(" + ");
 }
 
 // ── Print mode: special rules as definition list ─────────────────────────────
-function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, collapsed = false, onToggle = null }: any) {
+function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, entryOptions = null, collapsed = false, onToggle = null }: any) {
   const [namesOnly, setNamesOnly] = useState(() => {
     try { return localStorage.getItem("alt40k-rules-names-only") === "1"; } catch { return false; }
   });
@@ -724,7 +772,7 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, c
       return next;
     });
   }
-  const synthetic = buildSyntheticRules(unit, coreRules, armyRules);
+  const synthetic = buildSyntheticRules(unit, coreRules, armyRules, entryOptions);
   const allInline = [...(inlineRules||[]), ...synthetic];
 
   const allSets = models.map(m => new Set(m.specialRules || []));
@@ -837,8 +885,8 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
   function WepProfileTable({ refs, showArc }) {
     const resolved = refs.map(r => ({ ...resolveRef(r), weapon: wepById(resolveRef(r).weaponId, weapons) }));
     const seenR = new Set<string>(); const seenP = new Set<string>();
-    const rows = resolved.filter(r => { if (!isRealWeapon(r.weapon) || seenR.has(r.weaponId)) return false; seenR.add(r.weaponId); return true; });
-    const wargearOnly = resolved.filter(r => { if (!r.weapon || isRealWeapon(r.weapon) || seenP.has(r.weaponId)) return false; seenP.add(r.weaponId); return true; });
+    const rows = resolved.filter(r => { if (!r.weapon || seenR.has(r.weaponId) || (!isRealWeapon(r.weapon) && !r.weapon.profiles?.some((p: any) => p.rules))) return false; seenR.add(r.weaponId); return true; });
+    const wargearOnly = resolved.filter(r => { if (!r.weapon || seenP.has(r.weaponId) || isRealWeapon(r.weapon) || r.weapon.profiles?.some((p: any) => p.rules)) return false; seenP.add(r.weaponId); return true; });
     if (!rows.length && !wargearOnly.length) return null;
     return (
       <>
@@ -864,6 +912,17 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
               {rows.map((r, ri) => {
                 const w = r.weapon;
                 const sc = ri%2===0 ? "stripe-a" : "stripe-b";
+                if (!isRealWeapon(w)) {
+                  const rulesText = w.profiles?.map((p: any) => p.rules).filter(Boolean).join("; ") || "—";
+                  return (
+                    <tr key={ri} className={sc}>
+                      <td>{w.name}</td>
+                      {showArc && <td className="arc-col">{r.arcType||""}</td>}
+                      <td>—</td><td>—</td><td>—</td>
+                      <td className="rules-col">{rulesText}</td>
+                    </tr>
+                  );
+                }
                 if (w.profiles.length === 1) {
                   const p = w.profiles[0];
                   return (
@@ -1416,6 +1475,8 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
       const v = entry.options?.[o.id];
       if (v && typeof v === "object") {
         const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
+        const totalAssigned = Object.values(v as Record<string,number>).reduce((s: number, n: any) => s + (n as number), 0);
+        const totalModels = totalAppliesCount(unit, o, entry.options || {});
         for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
           if ((cnt as number) > 0) {
             for (const mid of applyTo) {
@@ -1423,6 +1484,10 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
               if (!weps.includes(wid)) modelWargear.set(mid, [...weps, wid]);
             }
           }
+        }
+        if (o.replaces && totalModels > 0 && totalAssigned >= totalModels) {
+          for (const mid of applyTo)
+            modelWargear.set(mid, (modelWargear.get(mid) || []).filter((w: string) => w !== o.replaces));
         }
       } else if (v && typeof v === "string" && o.scope === "limitedSlot") {
         const choices = resolveChoicesForOpt(o, wL);
@@ -1449,9 +1514,10 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
 
   const isV = (unit.models||[]).some((m: any) => m.statline?.type === "vehicle");
 
-  // Group models by resolved wargear
+  // Group models by resolved wargear, skipping optional models with 0 count
   const groups: Map<string, { refs: string[]; names: string[] }> = new Map();
   for (const m of (unit.models||[])) {
+    if (modelTypeCount(unit, m.id, entry.options || {}) === 0) continue;
     const key = (modelWargear.get(m.id)||[]).join(",");
     if (!groups.has(key)) groups.set(key, { refs: modelWargear.get(m.id)||[], names: [] });
     groups.get(key)!.names.push(m.name);
@@ -1485,7 +1551,15 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     }
     else if (o.type === "weaponSwap" && o.scope === "limitedSlot") {
       const v = entry.options?.[o.id];
-      if (v) {
+      if ((o.slots||1) > 1 && v && typeof v === "object") {
+        const choices = resolveChoicesForOpt(o, wL);
+        for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
+          if ((cnt as number) > 0) {
+            const ch = choices.find((c: any) => c.weaponId === wid);
+            chosenLines.push(`${cnt}× ${ch?.label || wName(wid)} (${o.label})`);
+          }
+        }
+      } else if (v && typeof v === "string") {
         const choices = resolveChoicesForOpt(o, wL);
         const ch = choices.find((c: any) => c.weaponId === v);
         chosenLines.push(`${ch?.label || wName(v)} (${o.label})`);
@@ -1545,7 +1619,11 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
   const chosenSpells: any[] = [];
   for (const o of (unit.options||[])) {
     if (o.type !== "spellPick") continue;
-    const pool = spellPools?.[unit.psychic?.spellPoolId] || [];
+    const rawPoolId = o.spellPoolId || unit.psychic?.spellPoolId || "";
+    const resolvedPoolId = rawPoolId === "$mark"
+      ? (() => { const mOpt = (unit.options||[]).find((x: any) => x.type === "markPick"); return mOpt ? (entry.options?.[mOpt.id] || "") : ""; })()
+      : rawPoolId;
+    const pool = spellPools?.[resolvedPoolId] || [];
     for (const sid of (entry.options?.[o.id] || []) as string[]) {
       const s = pool.find((x: any) => x.id === sid);
       if (s) chosenSpells.push(s);
@@ -1667,6 +1745,9 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
   const modelRemovedRules = new Map<string, Set<string>>();
 
   function resolveModifierModelIds(modelId: string): string[] {
+    if (modelId === "__all__") {
+      return (unit.models || []).map((m: any) => m.id);
+    }
     if (modelId === "__sergeant__") {
       for (const o of (unit.options || []))
         if (o.upgradeGroup === "Sergeant" && o.applies?.length) return o.applies;
@@ -1760,6 +1841,7 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
       </div>
       <StatTable models={unit.models} statDeltas={statDeltas} invSaves={modelInvSaves}/>
       <DetailSpecialRules unit={unit} models={effectiveModels} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
+          entryOptions={entry.options}
           collapsed={rulesCollapsed} onToggle={toggleSection ? () => toggleSection("specialRules") : null}/>
       <ResolvedWargearSection
         entry={entry} unit={unit} weapons={weapons} weaponLists={weaponLists}
@@ -1960,6 +2042,19 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                                 const sel = grp.filter(x => next[x.id]);
                                 sel.slice(1).forEach(x => { next[x.id] = false; });
                               }
+                              if (!checked && o.grantsMasteryLevel != null) {
+                                const baseML: number = unit.psychic?.masteryLevel ?? 0;
+                                const spellPicks = opts.filter((x: any) => x.type === "spellPick");
+                                if (spellPicks.length > 1) {
+                                  spellPicks.forEach((sp: any, i: number) => {
+                                    if (i >= baseML) next[sp.id] = [];
+                                  });
+                                } else if (spellPicks.length === 1) {
+                                  const sp = spellPicks[0];
+                                  const cur = (next[sp.id] || []) as string[];
+                                  if (cur.length > baseML) next[sp.id] = cur.slice(0, baseML);
+                                }
+                              }
                               return next;
                             });
                           }}
@@ -2090,7 +2185,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                     onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value}))}>
                     {choices.map((c: any) => (
                       <option key={c.weaponId} value={c.weaponId}>
-                        {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
+                        {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts${o.ptsPerModel ? " each" : ""})` : ""}
                       </option>
                     ))}
                   </select>
@@ -2109,7 +2204,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   <span>{o.label}</span>
                   <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",color:remaining===0?"#4a9a4a":"#888"}}>{used}/{modelCount} assigned</span>
                 </div>
-                {choices.map((c: any) => {
+                {choices.filter((c: any) => c.weaponId !== o.replaces).map((c: any) => {
                   const cur = curCounts[c.weaponId] || 0;
                   return (
                     <div key={c.weaponId} className="lb-opt-row">
@@ -2142,7 +2237,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   <span>{o.label}</span>
                   <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",color:ownUsed===slotBudget?"#4a9a4a":"#888"}}>{ownUsed}/{slotBudget} slots used</span>
                 </div>
-                {choices.map((c: any) => {
+                {choices.filter((c: any) => c.weaponId !== o.replaces).map((c: any) => {
                   const cur = ownCounts[c.weaponId] || 0;
                   return (
                     <div key={c.weaponId} className="lb-opt-row">
@@ -2248,28 +2343,70 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
       })()}
 
       {/* Psychic spells */}
-      {opts.filter((o: any) => o.type === "spellPick").map((o: any) => {
-        const pool = sP[unit.psychic?.spellPoolId] || [];
-        const chosen = (options[o.id] || []) as string[];
-        if (!pool.length) return null;
+      {(() => {
+        const spellOptsList = opts.filter((o: any) => o.type === "spellPick");
+        if (!spellOptsList.length || !unit.psychic) return null;
+
+        const masteryUpgradeOpt = opts.find((o: any) => o.grantsMasteryLevel != null);
+        const effectiveML: number = (masteryUpgradeOpt && options[masteryUpgradeOpt.id])
+          ? masteryUpgradeOpt.grantsMasteryLevel
+          : (unit.psychic.masteryLevel ?? 0);
+
+        const multiSlot = spellOptsList.length > 1;
+
+        function resolvePool(o: any): any[] {
+          const rawId: string = o.spellPoolId || unit.psychic?.spellPoolId || "";
+          if (rawId === "$mark") {
+            const markOpt = opts.find((x: any) => x.type === "markPick");
+            const mark = markOpt ? options[markOpt.id] : null;
+            return mark ? (sP[mark] || []) : [];
+          }
+          return sP[rawId] || [];
+        }
+
+        const singleChosen: string[] = !multiSlot ? ((options[spellOptsList[0].id] || []) as string[]) : [];
+
         return (
-          <div key={o.id} className="lb-opt-section">
-            <div className="lb-opt-section-head">Psychic Spells — Mastery {unit.psychic?.masteryLevel}</div>
-            {pool.map((s: any) => (
-              <label key={s.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
-                <span className="lb-opt-label">
-                  <input type="checkbox" checked={chosen.includes(s.id)}
-                    onChange={e => { const nx = e.target.checked ? [...chosen, s.id] : chosen.filter((x: string) => x !== s.id); setOptions((p: any) => ({...p, [o.id]: nx})); }}
-                    style={{marginRight:8}}/>
-                  {s.name}
-                  <span className="lb-opt-pts"> +{s.pts} pts</span>
-                  <span className="lb-opt-note">Cast {s.castValue}+: {s.description}</span>
-                </span>
-              </label>
-            ))}
-          </div>
+          <>
+            {spellOptsList.map((o: any, oi: number) => {
+              if (multiSlot && oi >= effectiveML) return null;
+              const pool = resolvePool(o);
+              const chosen = (options[o.id] || []) as string[];
+              if (!pool.length) return null;
+              const slotLabel = multiSlot
+                ? `Psychic Spell ${oi + 1} — Mastery ${effectiveML}`
+                : `Psychic Spells — Mastery ${effectiveML} (${singleChosen.length}/${effectiveML})`;
+              return (
+                <div key={o.id} className="lb-opt-section">
+                  <div className="lb-opt-section-head">{slotLabel}</div>
+                  {pool.map((s: any) => {
+                    const isChosen = chosen.includes(s.id);
+                    const atLimit = multiSlot
+                      ? chosen.length >= 1 && !isChosen
+                      : singleChosen.length >= effectiveML && !isChosen;
+                    return (
+                      <label key={s.id} className="lb-opt-row"
+                        style={{cursor: atLimit ? "not-allowed" : "pointer", display:"flex", opacity: atLimit ? 0.45 : 1}}>
+                        <span className="lb-opt-label">
+                          <input type="checkbox" checked={isChosen} disabled={atLimit}
+                            onChange={e => {
+                              const nx = e.target.checked ? [...chosen, s.id] : chosen.filter((x: string) => x !== s.id);
+                              setOptions((p: any) => ({...p, [o.id]: nx}));
+                            }}
+                            style={{marginRight:8}}/>
+                          {s.name}
+                          <span className="lb-opt-pts"> +{s.pts} pts</span>
+                          <span className="lb-opt-note">Cast {s.castValue}+: {s.description}</span>
+                        </span>
+                      </label>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </>
         );
-      })}
+      })()}
 
     </div>
   );
@@ -2439,6 +2576,18 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
   const [pendingDelete, setPendingDelete] = useState<string|null>(null);
   const [expandedBattleId, setExpandedBattleId] = useState<string|null>(null);
   const [renamingListId, setRenamingListId] = useState<string|null>(null);
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const tag = (e.target as HTMLElement).tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (e.target as HTMLElement).isContentEditable) return;
+      if (e.key === "b" || e.key === "B") {
+        setBattleMode(prev => { if (prev) return false; setExpandedBattleId(null); return true; });
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   function setLists(next: any[]) { setListsRaw(next); saveLists(currentFile, next); }
 
@@ -3174,7 +3323,7 @@ tr:last-child td { border-bottom: none; }
 .stripe-b td { background: #fafafa; }
 .mp-first td, .mp-cont td { border-bottom: none; }
 .mp-last td { border-bottom: 1px solid #f0f0f0; }
-.rules-col { text-align: left !important; font-size: 8.5pt; color: #444; }
+.rules-col { text-align: left !important; font-size: 8.5pt; color: #444; white-space: pre-line; }
 .rule-name { font-weight: 700; font-size: 9pt; color: #1a1a1a; }
 .option-list { list-style: none; }
 .option-list li { font-size: 9pt; font-weight: 500; padding: 2.5px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.4; }

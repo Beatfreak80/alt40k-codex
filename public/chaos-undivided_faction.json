@@ -424,6 +424,17 @@
       ]
     },
     {
+      "id": "goring-horn",
+      "name": "Goring Horn",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "5+",
+          "rules": "Rending, Auxiliary"
+        }
+      ]
+    },
+    {
       "id": "servo-arm",
       "name": "Servo Arm",
       "profiles": [
@@ -3907,14 +3918,6 @@
       ],
       "note": "M+2, T+1, W+2, gain Steed. Grants Goring Horn."
     },
-    "goring-horn": {
-      "type": "toggle",
-      "label": "Goring Horn",
-      "grantsWargear": [
-        {}
-      ],
-      "note": "Melee +1 5+ Rending Auxiliary weapon."
-    },
     "monstrous-stature": {
       "type": "toggle",
       "label": "Monstrous Stature",
@@ -5036,6 +5039,13 @@
           ]
         },
         {
+          "id": "sorc-mastery4",
+          "type": "toggle",
+          "label": "Upgrade to Psychic Mastery 4",
+          "pts": 75,
+          "grantsMasteryLevel": 4
+        },
+        {
           "id": "sorc-spell-1",
           "type": "spellPick",
           "spellPoolId": "$mark"
@@ -5047,6 +5057,11 @@
         },
         {
           "id": "sorc-spell-3",
+          "type": "spellPick",
+          "spellPoolId": "$mark"
+        },
+        {
+          "id": "sorc-spell-4",
           "type": "spellPick",
           "spellPoolId": "$mark"
         }
@@ -7489,7 +7504,19 @@
           ]
         },
         {
+          "id": "rp-mastery2",
+          "type": "toggle",
+          "label": "Upgrade to Psychic Mastery 2",
+          "pts": 15,
+          "grantsMasteryLevel": 2
+        },
+        {
           "id": "rp-spell-1",
+          "type": "spellPick",
+          "spellPoolId": "$mark"
+        },
+        {
+          "id": "rp-spell-2",
           "type": "spellPick",
           "spellPoolId": "$mark"
         },

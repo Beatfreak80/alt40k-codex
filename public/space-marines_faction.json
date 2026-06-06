@@ -513,9 +513,9 @@
       "fullDesc": "6\" Aura, target Vehicle unit gains BS-1 (Improves by 1)."
     },
     {
-      "id": "sm-repair",
-      "name": "Repair",
-      "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
+      "id": "servo-arm-rule",
+      "name": "Servo Arm",
+      "fullDesc": "Gain +1 To Repair rolls."
     },
     {
       "id": "lobotomized",
@@ -3009,7 +3009,7 @@
         {
           "strength": "-",
           "ap": "-",
-          "rules": "6\" Aura: reroll failed Ld Tests, 6\" Aura: A+1"
+          "rules": "6” Aura, this model and target unit may reroll failed Ld Tests.\n6” Aura, this model and target unit gain A+1."
         }
       ]
     },
@@ -4830,7 +4830,7 @@
       "label": "Jump Pack",
       "statModifiers": [
         {
-          "modelId": "__sergeant__",
+          "modelId": "__all__",
           "stat": "M",
           "op": "add",
           "value": 6
@@ -4999,7 +4999,7 @@
         }
       ],
       "grantsRules": [
-        "sm-repair",
+        "repair",
         "unique"
       ],
       "note": "W+1, A+1. Gain Repair D3 Wounds. May use both versions of Repair on the same target. Gain Unique."
@@ -6177,6 +6177,7 @@
           "type": "toggle",
           "label": "Extra Armour",
           "pts": 5,
+          "exclusiveGroup": "cd-vehicle-upgrade",
           "grantsWargear": [
             "extra-armour"
           ],
@@ -6187,6 +6188,7 @@
           "type": "toggle",
           "label": "Smoke Launchers",
           "pts": 10,
+          "exclusiveGroup": "cd-vehicle-upgrade",
           "grantsWargear": [
             "smoke-launchers"
           ],
@@ -6197,6 +6199,7 @@
           "type": "toggle",
           "label": "Magna Grapple (Blood Angels only)",
           "pts": 2,
+          "exclusiveGroup": "cd-vehicle-upgrade",
           "grantsRules": [
             "grapnel-launcher-rule"
           ],
@@ -6647,7 +6650,8 @@
           "id": "lib-chief-librarian",
           "type": "namedUpgrade",
           "upgradeId": "chief-librarian",
-          "pts": 72
+          "pts": 72,
+          "grantsMasteryLevel": 3
         }
       ]
     },
@@ -7103,12 +7107,16 @@
           "applies": [
             "primaris-chaplain"
           ],
-          "label": "Add Power Sword or Power Fist",
-          "replaces": "crozium-arcanum",
+          "label": "Add Stormbolter, Power Sword or Power Fist",
           "choices": [
             {
-              "weaponId": "crozium-arcanum",
-              "label": "Keep Crozium Arcanum only"
+              "weaponId": null,
+              "label": "None"
+            },
+            {
+              "weaponId": "stormbolter",
+              "label": "+ Stormbolter",
+              "pts": 5
             },
             {
               "weaponId": "power-sword",
@@ -7121,16 +7129,6 @@
               "pts": 16
             }
           ]
-        },
-        {
-          "id": "pchap-stormbolter",
-          "type": "toggle",
-          "label": "Stormbolter",
-          "pts": 5,
-          "grantsWargear": [
-            "stormbolter"
-          ],
-          "note": "Additional ranged weapon."
         },
         {
           "id": "pchap-stormshield",
@@ -7400,7 +7398,8 @@
           "id": "plib-chief-librarian",
           "type": "namedUpgrade",
           "upgradeId": "chief-librarian",
-          "pts": 71
+          "pts": 71,
+          "grantsMasteryLevel": 3
         }
       ]
     },
@@ -8149,18 +8148,13 @@
               "weaponId": "mastercraft-bolt-rifle",
               "label": "Mastercraft Bolt Rifle",
               "pts": 9
+            },
+            {
+              "weaponId": "mastercraft-heavy-bolter",
+              "label": "Mastercraft Heavy Bolter",
+              "pts": 16
             }
           ]
-        },
-        {
-          "id": "pcc-mastercraft-hb",
-          "type": "toggle",
-          "label": "Mastercraft Heavy Bolter",
-          "pts": 16,
-          "grantsWargear": [
-            "mastercraft-heavy-bolter"
-          ],
-          "note": "Add Mastercraft Heavy Bolter."
         },
         {
           "id": "pcc-chapter-champion",
@@ -8259,6 +8253,11 @@
               "weaponId": "bolt-rifle-combi-melta",
               "label": "Bolt Rifle Combi-Melta",
               "pts": 21
+            },
+            {
+              "weaponId": "stormshield-no-ranged",
+              "label": "Stormshield",
+              "pts": 15
             }
           ]
         },
@@ -8336,16 +8335,6 @@
           "weaponListId": "grenade-upgrades"
         },
         {
-          "id": "plt-stormshield",
-          "type": "toggle",
-          "label": "Stormshield",
-          "pts": 15,
-          "grantsWargear": [
-            "stormshield-no-ranged"
-          ],
-          "note": "Sv-1 (improves), 4+ Invulnerability Save."
-        },
-        {
           "id": "plt-reiver-armour",
           "type": "toggle",
           "label": "Reiver Armour",
@@ -8365,13 +8354,6 @@
       "name": "Primaris Techmarine",
       "slot": "Advisor",
       "basePts": 149,
-      "inlineRules": [
-        {
-          "id": "sm-repair-aura",
-          "name": "Repair",
-          "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
-        }
-      ],
       "models": [
         {
           "id": "primaris-techmarine",
@@ -8407,7 +8389,8 @@
             "shock-assault",
             "stubborn",
             "awaken-the-machine",
-            "sm-repair-aura"
+            "repair",
+            "servo-arm-rule"
           ]
         },
         {
@@ -8473,10 +8456,6 @@
           "replaces": "servo-arm",
           "choices": [
             {
-              "weaponId": "servo-arm",
-              "label": "Keep Servo Arm"
-            },
-            {
               "weaponId": "heavy-bolter",
               "label": "Heavy Bolter",
               "pts": 8
@@ -8508,13 +8487,6 @@
       "name": "Techmarine",
       "slot": "Advisor",
       "basePts": 144,
-      "inlineRules": [
-        {
-          "id": "sm-repair-fb",
-          "name": "Repair",
-          "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
-        }
-      ],
       "models": [
         {
           "id": "techmarine",
@@ -8553,7 +8525,8 @@
             "objective-secured",
             "shock-assault",
             "awaken-the-machine",
-            "sm-repair-fb"
+            "repair",
+            "servo-arm-rule"
           ]
         },
         {
@@ -8618,10 +8591,6 @@
           "label": "Any Servitor: swap Servo Arm for",
           "replaces": "servo-arm",
           "choices": [
-            {
-              "weaponId": "servo-arm",
-              "label": "Keep Servo Arm"
-            },
             {
               "weaponId": "heavy-bolter",
               "label": "Heavy Bolter",
@@ -8707,6 +8676,20 @@
             "mysterious-protection",
             "cypher-sword-rule"
           ]
+        }
+      ],
+      "options": [
+        {
+          "id": "cypher-bike",
+          "type": "namedUpgrade",
+          "upgradeId": "bike",
+          "pts": 34
+        },
+        {
+          "id": "cypher-master-of-the-forge",
+          "type": "namedUpgrade",
+          "upgradeId": "master-of-the-forge",
+          "pts": 34
         }
       ]
     },
@@ -8878,14 +8861,10 @@
         },
         {
           "id": "ai-jump-packs",
-          "type": "toggle",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
           "label": "Jump Packs (entire unit)",
-          "ptsPerModel": 10,
-          "grantsRules": [
-            "deepstrike",
-            "flyer"
-          ],
-          "note": "M+6. Gain Deepstrike, Flying."
+          "ptsPerModel": 10
         }
       ]
     },
@@ -9433,6 +9412,7 @@
           "id": "int-squad-rifle",
           "type": "weaponSwap",
           "scope": "unit",
+          "ptsPerModel": true,
           "applies": [
             "intercessor-sgt",
             "intercessor-marine"
@@ -9465,10 +9445,6 @@
           "label": "Up to 2 Marines: add Auxiliary Grenade Launcher",
           "replaces": "bolt-rifle",
           "choices": [
-            {
-              "weaponId": "bolt-rifle",
-              "label": "No upgrade"
-            },
             {
               "weaponId": "auxiliary-grenade-launcher",
               "label": "Auxiliary Grenade Launcher",
@@ -9968,6 +9944,7 @@
           ],
           "label": "Squad: swap Heavy Bolt Rifles for",
           "replaces": "heavy-bolt-rifle",
+          "ptsPerModel": true,
           "choices": [
             {
               "weaponId": "heavy-bolt-rifle",
@@ -12286,14 +12263,10 @@
         },
         {
           "id": "pvv-jump-packs",
-          "type": "toggle",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
           "label": "Jump Packs (entire unit)",
-          "ptsPerModel": 10,
-          "grantsRules": [
-            "deepstrike",
-            "flyer"
-          ],
-          "note": "M+6. Gain Deepstrike, Flying."
+          "ptsPerModel": 10
         }
       ]
     },
@@ -12476,14 +12449,10 @@
         },
         {
           "id": "vv-jump-packs",
-          "type": "toggle",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
           "label": "Jump Packs (entire unit)",
-          "ptsPerModel": 10,
-          "grantsRules": [
-            "deepstrike",
-            "flyer"
-          ],
-          "note": "M+6. Gain Deepstrike, Flying."
+          "ptsPerModel": 10
         }
       ]
     },
@@ -14526,14 +14495,10 @@
         },
         {
           "id": "as-jump-packs",
-          "type": "toggle",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
           "label": "Jump Packs (entire unit)",
-          "ptsPerModel": 10,
-          "grantsRules": [
-            "deepstrike",
-            "flyer"
-          ],
-          "note": "M+6. Gain Deepstrike, Flying."
+          "ptsPerModel": 10
         }
       ]
     },

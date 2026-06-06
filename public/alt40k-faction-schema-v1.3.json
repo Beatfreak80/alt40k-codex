@@ -306,6 +306,12 @@
             "Hellstorm",
             "Bomb"
           ]
+        },
+        "removesWargear": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1011,6 +1017,10 @@
             "maxSelections": { "type": "integer", "minimum": 2 }
           },
           "required": ["group", "maxSelections"]
+        },
+        "grantsMasteryLevel": {
+          "type": "integer",
+          "minimum": 1
         }
       },
       "allOf": [

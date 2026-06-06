@@ -156,10 +156,10 @@ The app only recognises these `type` values. **Do not invent your own.**  Verify
 | `type` | Purpose | Required fields |
 |---|---|---|
 | `"weaponSwap"` | Swap a weapon for one or more alternatives | `id`, `label`, `scope`, `applies[]`, `replaces`, `choices[]` or `weaponListId` |
-| `"toggle"` | Equipment/upgrade that can be switched on. Add `applies[]` + `exclusiveGroup` for per-model independent selection (see guide § Per-model toggle upgrades). | `id`, `label`, `pts`; optionally `grantsWargear[]`, `grantsRules[]`, `note`, `applies[]`, `exclusiveGroup` |
-| `"namedUpgrade"` | Reference a shared upgrade from `namedUpgrades` | `id`, `upgradeId`, `pts` |
+| `"toggle"` | Equipment/upgrade that can be switched on. Add `applies[]` + `exclusiveGroup` for per-model independent selection. Add `grantsMasteryLevel: N` to upgrade a psyker's effective mastery level (see guide § Psychic Mastery upgrades). | `id`, `label`, `pts`; optionally `grantsWargear[]`, `grantsRules[]`, `note`, `applies[]`, `exclusiveGroup`, `grantsMasteryLevel` |
+| `"namedUpgrade"` | Reference a shared upgrade from `namedUpgrades` | `id`, `upgradeId`, `pts` or `ptsPerModel` (use `ptsPerModel` when cost scales with squad size) |
 | `"squadSize"` | Add more models to a unit | `id`, `label`, `targetModelId`, `ptsEach`, `max` |
-| `"spellPick"` | Let the unit pick from a spell pool | `id`, `spellPoolId` |
+| `"spellPick"` | One spell slot — unit picks one spell from the pool. Add one per mastery level. Use `"spellPoolId": "$mark"` for Chaos mark-based pools. | `id`, `spellPoolId` |
 | `"markPick"` | Mark of Chaos selector (Chaos only) | `id`, `label`, `choices[]` — each choice: `markId`, `name`, `ptsPerModel` |
 | `"pureBlessingPick"` | Pure Blessing checkbox (Chaos only, conditional on mark) | `id`, `label`, `requiresOptionId` (id of the `markPick` option), `choices[]` — each choice: `markId`, `pts` |
 
@@ -239,6 +239,10 @@ The `applies` field on every option in the group is what triggers per-model rend
   "note": "S+1, W+1, A+1, gains Bulky."
 }
 ```
+
+**`modelId` placeholders in `statModifiers`:**
+- `"__sergeant__"` — the leader model only (resolved to the model with `upgradeGroup: "Sergeant"`, or the single model with minCount===maxCount===1). Use for HQ upgrades where only the character is affected.
+- `"__all__"` — every model in the unit. Use for unit-wide upgrades like jump packs where every model's stat row should update.
 
 **What went wrong with the Ork codex first pass:** custom types (`"weapon"`, `"equipment"`, `"addModel"`) were invented without reading an existing faction JSON. This made all weapon options invisible in the app. Always open `space-marines_faction.json` or `necrons_faction.json` and read a unit's `options` block before writing any options.
 
@@ -344,6 +348,7 @@ Storage and display:
 - Strip `castValue` unless it's a psychic attack weapon (non-null integer)
 - Strip `templateType` unless `"Flame"` or `"Hellstorm"`
 - Strip `keywords` unless non-empty
+- Add `removesWargear: [id, ...]` only when equipping this item should automatically remove another piece of wargear (e.g. a Stormshield variant that displaces a bolter)
 
 ### 4. namedUpgrades
 - Toggles that appear on 3+ units with identical effects but different costs
@@ -359,6 +364,7 @@ Storage and display:
 - Only if the faction has psykers
 - One pool per distinct spell list; army-wide pool + unique pools if needed
 - Each spell: `id`, `name`, `castMechanic`, `castValue`, `pts`, `range`, `description`, `isAttack`
+- Chaos: pools are named by mark (`khorne`, `nurgle`, `slaanesh`, `tzeentch`); units with variable marks use `"spellPoolId": "$mark"` on their `spellPick` options
 
 ### 7. Units (slot by slot)
 Write in slot order: HQ → Advisor → Troop → Elite → Fast Attack → Heavy Support → Flyer → Ded. Transport → Lord of War → Fortification.
@@ -443,7 +449,7 @@ unitTotal = basePts
   + Σ squadSize.value × ptsEach
   + Σ toggle.active (unit-wide, no applies)  ? pts                              : 0
   + Σ_model toggle.active (per-model, has applies[]) ? pts                     : 0
-  + Σ namedUpgrade.active   ? pts                              : 0
+  + Σ namedUpgrade.active   ? (ptsPerModel × totalModelCount | pts) : 0
   + Σ markPick.chosen       ? ptsPerModel × totalModelCount    : 0
   + Σ pureBlessingPick.active ? pts (from matching mark choice) : 0
   + Σ weaponSwap (scope "unit" or perModelType single-model)   → selectedChoice.pts
@@ -466,7 +472,8 @@ The postprocessor covers most of these automatically, but keep them in mind whil
 
 - [ ] Every `weaponId` in `baseWargear`, `choices[]`, `weaponLists` exists in `commonWargear`
 - [ ] Every rule ID in `specialRules` exists in `core-rules.json`, `armyRules`, or the unit's `inlineRules`
-- [ ] Every `spellPoolId` exists in `spellPools`
+- [ ] Every `spellPoolId` exists in `spellPools` (or is the literal `"$mark"` for Chaos)
+- [ ] Psyker units: number of `spellPick` options equals the maximum possible mastery level (base or upgraded); a `toggle` with `grantsMasteryLevel` is present if the unit can upgrade mastery
 - [ ] Every `upgradeId` exists in `namedUpgrades`
 - [ ] Every `weaponListId` exists in `weaponLists`
 - [ ] No two weapons share an `id`; no two units share an `id`

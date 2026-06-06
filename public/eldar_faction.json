@@ -3238,7 +3238,19 @@
       },
       "options": [
         {
-          "id": "spells",
+          "id": "bs-mastery2",
+          "type": "toggle",
+          "label": "Upgrade to Psychic Mastery 2",
+          "pts": 15,
+          "grantsMasteryLevel": 2
+        },
+        {
+          "id": "bs-spells-1",
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
+        },
+        {
+          "id": "bs-spells-2",
           "type": "spellPick",
           "spellPoolId": "runes-of-fate"
         },
@@ -3418,7 +3430,19 @@
           ]
         },
         {
-          "id": "spells",
+          "id": "wl-mastery2",
+          "type": "toggle",
+          "label": "Upgrade to Psychic Mastery 2",
+          "pts": 15,
+          "grantsMasteryLevel": 2
+        },
+        {
+          "id": "wl-spells-1",
+          "type": "spellPick",
+          "spellPoolId": "runes-of-fate"
+        },
+        {
+          "id": "wl-spells-2",
           "type": "spellPick",
           "spellPoolId": "runes-of-fate"
         },

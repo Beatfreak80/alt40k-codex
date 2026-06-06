@@ -128,6 +128,7 @@ Each weapon has:
     Omit entirely for normal weapons.
 - `keywords[]` — include only when non-empty (e.g. `["Bolter"]`). Omit otherwise.
 - `templateType` — include only when `"Flame"` or `"Hellstorm"`. Omit otherwise.
+- `removesWargear[]` — optional. List of wargear IDs to automatically strip from the model when this item is granted. Use when equipping this weapon is mutually exclusive with another piece of wargear (e.g. a Stormshield variant that removes the model's bolter). Omit unless needed.
 
 **Omit all profile fields that are null** (`label`, `minRange`) and all
 weapon-level fields that are empty/null (`castValue`, `keywords`,
@@ -168,24 +169,35 @@ identical mechanical effects but different point costs.
 `bike`, `chapter-master`, `chief-librarian`, `chief-chaplain`,
 `chief-apothecary`, `master-of-the-forge`
 
-Each definition contains everything **except** `pts`, which is set per-unit
-when the upgrade is referenced:
+Each definition contains everything **except** the point cost, which is set
+per-unit when the upgrade is referenced. Use `pts` for a flat cost, or
+`ptsPerModel` when the cost scales with the number of models in the unit
+(e.g. jump packs on a squad):
 
 ```jsonc
 // In namedUpgrades:
-"terminator-armour": {
-  "type": "toggle", "label": "Terminator Armour",
+"jump-pack": {
+  "type": "toggle", "label": "Jump Pack",
   "statModifiers": [...], "grantsRules": [...], ...
 }
 
-// In a unit's options[]:
-{ "id": "terminator-armour", "type": "namedUpgrade",
-  "upgradeId": "terminator-armour", "pts": 10 }
+// In a unit's options[] — flat cost (HQ):
+{ "id": "cap-jump-pack", "type": "namedUpgrade",
+  "upgradeId": "jump-pack", "pts": 20 }
+
+// In a unit's options[] — per-model cost (squad):
+{ "id": "ai-jump-packs", "type": "namedUpgrade",
+  "upgradeId": "jump-pack", "label": "Jump Packs (entire unit)",
+  "ptsPerModel": 10 }
 ```
 
-The `modelId` `"__sergeant__"` in `statModifiers` is a placeholder meaning
-"the Character / leader model in this unit". The app resolves it to the
-actual model id.
+**`modelId` placeholders in `statModifiers`:**
+- `"__sergeant__"` — the Character / leader model (resolved via the option
+  with `upgradeGroup: "Sergeant"`, or the model with minCount===maxCount===1).
+  Use this for HQ-only upgrades (Terminator Armour, Bike etc.) where only
+  the single character model gains the stat change.
+- `"__all__"` — every model in the unit. Use this for unit-wide upgrades
+  like jump packs, where every model's stat row should be updated.
 
 ---
 
@@ -274,15 +286,79 @@ Each unit contains:
 **`psychic`** — omit if not a psyker; otherwise:
 `{ masteryLevel, spellPoolId, denyBonusPerPhase, masteryUpgrade }`
 
+`masteryUpgrade` (optional) records the codex upgrade path: `{ toLevel, pts }`. It is **informational only** — the list builder enforces mastery level through `grantsMasteryLevel` on a `toggle` option (see below).
+
 **`options[]`** — list of available upgrades. Types:
 - `squadSize` — number spinner for extra models
 - `weaponSwap` — replace a weapon; uses inline `choices[]` or `weaponListId`. **Always requires `scope`** — see the Weapon Swap Scopes section below.
 - `perModelWeapon` — independent weapon choice per model instance (dropdowns)
-- `toggle` — checkbox for a unit-specific upgrade. Add `"applies": ["modelId"]` to make it **per-model** — see Per-model toggle upgrades below.
-- `namedUpgrade` — checkbox for a shared upgrade (from `namedUpgrades`)
-- `spellPick` — spell slot selector
+- `toggle` — checkbox for a unit-specific upgrade. Add `"applies": ["modelId"]` to make it **per-model** — see Per-model toggle upgrades below. Add `"grantsMasteryLevel": N` to make this toggle upgrade the unit's effective Psychic Mastery level — see Psychic Mastery upgrades below.
+- `namedUpgrade` — checkbox for a shared upgrade (from `namedUpgrades`). Use `pts` for a flat cost or `ptsPerModel` when the cost scales with squad size.
+- `spellPick` — one spell slot. The unit may pick one spell from the pool for this slot. Add one `spellPick` option per mastery level (i.e. a Mastery 3 unit has three `spellPick` options). The list builder shows only as many slots as the effective mastery level and caps each slot to one selection.
 - `markPick` — Mark of Chaos selector (Chaos only). Requires `choices[]` where each choice has `markId` and `ptsPerModel`.
 - `pureBlessingPick` — Pure Blessing selector (Chaos only). Requires `requiresOptionId` (id of the markPick option it depends on) and `choices[]` where each choice has `markId` and `pts`. Only rendered when the matching mark is selected.
+
+---
+
+## Psychic Mastery upgrades
+
+Some psykers can pay points to increase their Psychic Mastery level, gaining an extra spell slot. The list builder enforces the mastery level as a hard cap on spell selections — a Mastery 1 psyker may only pick 1 spell; upgrading to Mastery 2 unlocks the second slot.
+
+### Pattern
+
+1. Give the unit one `spellPick` option per potential spell slot (i.e. `masteryUpgrade.toLevel` options total).
+2. Add a `toggle` option with `"grantsMasteryLevel": N` where N is the upgraded level. Place it **before** the `spellPick` options in the array.
+
+```jsonc
+// Warlock — base ML 1, can upgrade to ML 2
+"psychic": { "masteryLevel": 1, "spellPoolId": "runes-of-fate",
+             "masteryUpgrade": { "toLevel": 2, "pts": 15 } },
+"options": [
+  {
+    "id": "wl-mastery2", "type": "toggle",
+    "label": "Upgrade to Psychic Mastery 2", "pts": 15,
+    "grantsMasteryLevel": 2
+  },
+  { "id": "wl-spells-1", "type": "spellPick", "spellPoolId": "runes-of-fate" },
+  { "id": "wl-spells-2", "type": "spellPick", "spellPoolId": "runes-of-fate" }
+]
+```
+
+- At base ML 1: only slot 1 (`wl-spells-1`) is shown; slot 2 is hidden.
+- After taking the toggle: both slots are shown.
+- If the toggle is later unchecked, any spell in slot 2 is automatically cleared.
+
+### Units with no mastery upgrade
+
+If the unit's mastery level is fixed, just add the right number of `spellPick` options and no toggle:
+
+```jsonc
+// Be'lakor — fixed ML 3
+"psychic": { "masteryLevel": 3, "spellPoolId": "hereticus" },
+"options": [
+  { "id": "bl-spell-1", "type": "spellPick", "spellPoolId": "hereticus" },
+  { "id": "bl-spell-2", "type": "spellPick", "spellPoolId": "hereticus" },
+  { "id": "bl-spell-3", "type": "spellPick", "spellPoolId": "hereticus" }
+]
+```
+
+### Single-pool Eldar / Space Marines pattern
+
+Eldar and Space Marine psykers pick multiple spells from one pool rather than having discrete slots. Model this with **one** `spellPick` option — the list builder automatically limits total selections to the unit's effective mastery level:
+
+```jsonc
+// Farseer — ML 3, picks up to 3 spells from one pool
+"psychic": { "masteryLevel": 3, "spellPoolId": "runes-of-fate" },
+"options": [
+  { "id": "spells", "type": "spellPick", "spellPoolId": "runes-of-fate" }
+]
+```
+
+The header shows `Psychic Spells — Mastery 3 (0/3)` and greys out uncheckable spells once the limit is reached.
+
+### Chaos `$mark` pools
+
+Chaos psykers draw from the pool that matches their active Mark. Set `"spellPoolId": "$mark"` on the `spellPick` options — the list builder resolves it to the correct pool at runtime using the unit's `markPick` selection.
 
 ---
 
