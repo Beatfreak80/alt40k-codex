@@ -256,6 +256,7 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-squad-entry { display:flex; align-items:center; gap:8px; padding:5px 10px; border:1px solid #eeeeee; border-radius:3px; background:#fafafa; cursor:pointer; transition:border-color .12s, background .12s; }
 .lb-squad-entry:hover { border-color:#c9a84c; background:#fdf9f0; }
 .lb-squad-name { font-size:9.5pt; font-weight:600; color:#333; flex:1; }
+.lb-joined-ic-inline { font-size:9pt; font-weight:400; color:#7a5800; cursor:pointer; text-decoration:underline; }
 .lb-pick-row { display:flex; align-items:center; gap:10px; padding:5px 9px; border:1px solid #e8e8e8; border-radius:3px; cursor:pointer; margin-bottom:3px; }
 .lb-pick-row:hover { background:#fdf3d7; border-color:#c9a84c; }
 .lb-pick-name { font-size:10pt; font-weight:700; flex:1; color:#1a1a1a; }
@@ -434,6 +435,29 @@ function poolUsed(unit: any, applies: string[], replacesId: string, options: any
     }
   }
   return used;
+}
+
+// minimum additional squad size allowed given currently assigned options
+function minSquadSizeAdditional(unit: any, sqOpt: any, options: any): number {
+  const model = (unit.models||[]).find((m: any) => m.id === sqOpt.targetModelId);
+  const minCount = model?.minCount ?? 0;
+  let minAdditional = 0;
+  const seenPools = new Set<string>();
+  for (const swap of (unit.options||[])) {
+    if (swap.type !== "weaponSwap") continue;
+    if (!(swap.applies||[]).includes(sqOpt.targetModelId)) continue;
+    const poolKey = `${[...(swap.applies||[])].sort().join(',')}|${swap.replaces}`;
+    if (seenPools.has(poolKey)) continue;
+    seenPools.add(poolKey);
+    const used = poolUsed(unit, swap.applies||[], swap.replaces, options);
+    if (used <= 0) continue;
+    const otherCount = (swap.applies||[])
+      .filter((mid: string) => mid !== sqOpt.targetModelId)
+      .reduce((s: number, mid: string) => s + modelTypeCount(unit, mid, options), 0);
+    const requiredFromThis = Math.max(0, used - otherCount);
+    minAdditional = Math.max(minAdditional, Math.max(0, requiredFromThis - minCount));
+  }
+  return minAdditional;
 }
 
 // total model count across all model types
@@ -661,6 +685,22 @@ function buildDisplayNames(entries: any[], units: any[]): Map<string, string> {
   return m;
 }
 
+
+function unitHasRule(unit: any, rule: string): boolean {
+  return (unit.models || []).some((m: any) => (m.specialRules || []).includes(rule));
+}
+function isICInfantry(unit: any): boolean {
+  return unitHasRule(unit, 'independent-character') && unitHasRule(unit, 'infantry');
+}
+function isDedicatedTransport(unit: any): boolean {
+  return unit.slot === 'Ded. Transport';
+}
+function canJoinUnit(unit: any): boolean {
+  return isICInfantry(unit) || isDedicatedTransport(unit);
+}
+function isJoinableUnit(unit: any): boolean {
+  return unitHasRule(unit, 'infantry') || unitHasRule(unit, 'monstrous-infantry');
+}
 
 function isRealWeapon(w) {
   return w?.profiles?.some(p => p.strength !== "-");
@@ -1706,28 +1746,29 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
   const multiGroup = wgGroups.length > 1;
 
   // Build "chosen options" lines for multi-model perModelType + limitedSlot + mark + blessing + squads
-  const chosenLines: string[] = [];
+  const chosenLines: Array<{text: string, modelIdx: number | null}> = [];
+  const cl = (text: string, modelIdx: number | null = null) => chosenLines.push({text, modelIdx});
 
   for (const o of (unit.options||[])) {
     if (o.type === "squadSize") {
       const extra = entry.options?.[o.id] as number;
-      if (extra > 0) { const m2 = (unit.models||[]).find((x: any) => x.id === o.targetModelId); chosenLines.push(`+${extra} ${m2?.name||"models"}`); }
+      if (extra > 0) { const m2 = (unit.models||[]).find((x: any) => x.id === o.targetModelId); cl(`+${extra} ${m2?.name||"models"}`); }
     }
     else if (o.type === "markPick" && entry.options?.[o.id]) {
       const mk = entry.options[o.id] as string;
-      chosenLines.push(`Mark of ${mk.charAt(0).toUpperCase()+mk.slice(1)}`);
+      cl(`Mark of ${mk.charAt(0).toUpperCase()+mk.slice(1)}`);
     }
     else if (o.type === "pureBlessingPick" && entry.options?.[o.id]) {
       const reqOpt = (unit.options||[]).find((x: any) => x.id === o.requiresOptionId);
       const mk = reqOpt ? entry.options?.[reqOpt.id] : null;
-      if (mk) chosenLines.push(`${mk.charAt(0).toUpperCase()+mk.slice(1)} Pure Blessing`);
+      if (mk) cl(`${mk.charAt(0).toUpperCase()+mk.slice(1)} Pure Blessing`);
     }
     else if (o.type === "namedUpgrade" && entry.options?.[o.id]) {
       const named = namedUpgrades?.[o.upgradeId];
-      chosenLines.push(named?.label || o.label || o.upgradeId);
+      cl(named?.label || o.label || o.upgradeId);
     }
     else if (o.type === "toggle" && entry.options?.[o.id] && !o.grantsWargear) {
-      chosenLines.push(o.label || o.id);
+      cl(o.label || o.id);
     }
     else if (o.type === "weaponSwap" && o.scope === "limitedSlot") {
       const v = entry.options?.[o.id];
@@ -1736,13 +1777,13 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
         for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
           if ((cnt as number) > 0) {
             const ch = choices.find((c: any) => c.weaponId === wid);
-            chosenLines.push(`${cnt}× ${ch?.label || wName(wid)} (${o.label})`);
+            cl(`${cnt}× ${ch?.label || wName(wid)} (${o.label})`);
           }
         }
       } else if (v && typeof v === "string") {
         const choices = resolveChoicesForOpt(o, wL);
         const ch = choices.find((c: any) => c.weaponId === v);
-        chosenLines.push(`${ch?.label || wName(v)} (${o.label})`);
+        cl(`${ch?.label || wName(v)} (${o.label})`);
       }
     }
     else if (o.type === "weaponSwap" && o.scope === "perModelType" && isMultiModelSwap(o, unit)) {
@@ -1752,7 +1793,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
         for (const [wid, cnt] of Object.entries(v as Record<string,number>)) {
           if (cnt > 0) {
             const ch = choices.find((c: any) => c.weaponId === wid);
-            chosenLines.push(`${cnt}× ${ch?.label || wName(wid)}`);
+            cl(`${cnt}× ${ch?.label || wName(wid)}`);
           }
         }
       }
@@ -1768,7 +1809,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     for (const [idx, selectedId] of Object.entries(modelSelections)) {
       if (!selectedId) continue;
       const selOpt = groupOpts.find((x: any) => x.id === selectedId);
-      if (selOpt) chosenLines.push(`Model ${Number(idx)+1}: ${selOpt.label}${selOpt.pts ? ` +${selOpt.pts} pts` : ""}`);
+      if (selOpt) cl(`Model ${Number(idx)+1}: ${selOpt.label}${selOpt.pts ? ` +${selOpt.pts} pts` : ""}`, Number(idx));
     }
   }
 
@@ -1790,9 +1831,9 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
       if (pmModelCount === 1) rowLabel = pmWeaponCount > 1 ? `Wpn ${wepIdx + 1}` : "";
       else if (pmWeaponCount === 1) rowLabel = `Model ${modelIdx + 1}`;
       else rowLabel = `Model ${modelIdx + 1} Wpn ${wepIdx + 1}`;
-      return { idx: i, rowLabel, label: ch?.label || wName(wid) };
+      return { idx: i, modelIdx, rowLabel, label: ch?.label || wName(wid) };
     }).sort((a, b) => a.idx - b.idx);
-    for (const row of rows) chosenLines.push(row.rowLabel ? `${row.rowLabel}: ${row.label}` : row.label);
+    for (const row of rows) cl(row.rowLabel ? `${row.rowLabel}: ${row.label}` : row.label, pmModelCount > 1 ? row.modelIdx : null);
   }
 
   // Chosen spells
@@ -1913,7 +1954,9 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
         <div style={{marginBottom:8}}>
           <div className="group-head">Chosen Options</div>
           <div className="pills">
-            {chosenLines.map((l, i) => <span key={i} className="pill"><span className="pill-name">{l}</span></span>)}
+            {[...chosenLines.filter(l => l.modelIdx === null),
+              ...[...new Set(chosenLines.filter(l => l.modelIdx !== null).map(l => l.modelIdx))].sort((a,b)=>(a??0)-(b??0)).flatMap(mi => chosenLines.filter(l => l.modelIdx === mi))
+            ].map((l, i) => <span key={i} className="pill"><span className="pill-name">{l.text}</span></span>)}
           </div>
         </div>
       )}
@@ -2057,6 +2100,8 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
   const sP = factionData.spellPools || {};
   const opts = unit.options || [];
   const allInline = [...(factionData.inlineRules||[]), ...(unit.inlineRules||[])];
+  const [squadSizeError, setSquadSizeError] = useState<string|null>(null);
+  const squadSizeErrorTimer = useRef<any>(null);
 
   if (opts.length === 0) {
     return <div style={{color:"#888",fontSize:"9.5pt",fontStyle:"italic",padding:"8px 0"}}>No configurable options for this unit.</div>;
@@ -2087,13 +2132,31 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         const totalCount = minCount + additional;
         const totalMax = minCount + o.max;
         const modelNamePlural = o.label.replace(/^Additional\s+/i, '');
+        const minAdditional = minSquadSizeAdditional(unit, o, options);
+        const isBlocked = additional <= minAdditional;
         return (
           <div key={o.id} className="lb-opt-section">
             <div className="lb-opt-section-head">Squad Size</div>
             <div className="lb-opt-row">
               <span className="lb-opt-label">{minCount}–{totalMax} {modelNamePlural}</span>
               <div className="lb-num-ctrl">
-                <button className="lb-num-btn" onClick={() => setOptions((p: any) => ({...p, [o.id]: Math.max(0, (p[o.id]||0)-1)}))}>−</button>
+                <div style={{position:'relative',display:'inline-flex'}}>
+                  <button className="lb-num-btn" style={isBlocked ? {opacity:0.4,cursor:'not-allowed'} : undefined}
+                    onClick={() => {
+                      if (isBlocked) {
+                        setSquadSizeError(o.id);
+                        clearTimeout(squadSizeErrorTimer.current);
+                        squadSizeErrorTimer.current = setTimeout(() => setSquadSizeError(null), 2000);
+                      } else {
+                        setOptions((p: any) => ({...p, [o.id]: Math.max(minSquadSizeAdditional(unit, o, p), (p[o.id]||0)-1)}));
+                      }
+                    }}>−</button>
+                  {squadSizeError === o.id && (
+                    <div style={{position:'absolute',bottom:'calc(100% + 5px)',left:'50%',transform:'translateX(-50%)',background:'#222',color:'#fff',fontSize:'8pt',padding:'4px 8px',borderRadius:'4px',whiteSpace:'nowrap',pointerEvents:'none',zIndex:200}}>
+                      Too many options assigned.
+                    </div>
+                  )}
+                </div>
                 <span className="lb-num-val">{totalCount}</span>
                 <button className="lb-num-btn" onClick={() => setOptions((p: any) => ({...p, [o.id]: Math.min(o.max, (p[o.id]||0)+1)}))}>+</button>
                 <span className="lb-opt-pts">+{o.ptsEach} pts each</span>
@@ -2494,14 +2557,21 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
               {Array.from({length: count}, (_, i) => {
                 const modelIdx = Math.floor(i / weaponCount);
                 const wepIdx = i % weaponCount;
+                const isFirstWepOfModel = wepIdx === 0;
+                const isLastWepOfModel = wepIdx === weaponCount - 1;
                 let rowLabel: string;
-                if (modelCount === 1) rowLabel = weaponCount > 1 ? `Wpn ${wepIdx + 1}` : `Model 1`;
+                if (modelCount === 1) rowLabel = "";
                 else if (weaponCount === 1) rowLabel = `Model ${modelIdx + 1}`;
-                else rowLabel = `Model ${modelIdx + 1} Wpn ${wepIdx + 1}`;
+                else rowLabel = isFirstWepOfModel ? `Model ${modelIdx + 1}` : "";
+                const borderBottom = (modelCount > 1 && weaponCount > 1)
+                  ? (isLastWepOfModel ? "1px solid #f6f6f6" : "none")
+                  : undefined;
                 return (
-                  <div key={i} className="lb-opt-row">
-                    <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>{rowLabel}</span>
-                    <select className="lb-select"
+                  <div key={i} className="lb-opt-row" style={borderBottom !== undefined ? {borderBottom} : undefined}>
+                    {(rowLabel || (modelCount > 1 && weaponCount > 1))
+                      ? <span className="lb-opt-label" style={{fontSize:"9.5pt", visibility: rowLabel ? undefined : "hidden"}}>{rowLabel || " "}</span>
+                      : null}
+                    <select className="lb-select" style={(!rowLabel && !(modelCount > 1 && weaponCount > 1)) ? {flex:1} : undefined}
                       value={perModelOptions[o.id]?.[String(i)] || choices[0]?.weaponId || ""}
                       onChange={e => setPerModelOptions((p: any) => ({...p,[o.id]:{...(p[o.id]||{}),[String(i)]:e.target.value}}))}>
                       {choices.map((c: any) => (
@@ -2649,7 +2719,7 @@ function PlatoonSquadConfig({ unit, options, setOptions }: any) {
   );
 }
 
-function AddEditEntryModal({ unit, existingEntry, factionData, onSave, onCancel }: any) {
+function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose, allEntries, displayNames, onJoinChange }: any) {
   const [options, setOptions] = useState(() => {
     if (existingEntry && unit.platoon) {
       return (unit.platoonUnits || []).reduce((acc: any, pu: any) => {
@@ -2663,19 +2733,20 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onSave, onCancel 
     existingEntry ? { ...existingEntry.perModelOptions } : defaultPerModel(unit)
   );
   const cost = calcEntryCost({ options, perModelOptions }, unit, factionData);
+  const isFirst = useRef(true);
+
+  useEffect(() => {
+    if (isFirst.current) { isFirst.current = false; return; }
+    onChange({ options, perModelOptions });
+  }, [options, perModelOptions]);
 
   return (
-    <LBModal onClose={onCancel}>
+    <LBModal onClose={onClose}>
       <div className="lb-modal-sticky">
         <div className="lb-modal-sticky-inner">
           <div className="lb-modal-head">
             <span>{unit.name}<span className="lb-modal-pts">{cost} pts</span></span>
-            <span style={{display:"flex",gap:"9px",flexShrink:0}}>
-              <button className="lb-btn" onClick={onCancel}>Cancel</button>
-              <button className="lb-btn lb-btn-primary" onClick={() => onSave({ options, perModelOptions })}>
-                {existingEntry ? "Save Changes" : "Add to List"}
-              </button>
-            </span>
+            <button className="lb-btn" onClick={onClose}>Done</button>
           </div>
           {unit.platoon
             ? <div className="lb-modal-sub">{unit.platoonComposition}</div>
@@ -2691,6 +2762,30 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onSave, onCancel 
             perModelOptions={perModelOptions} setPerModelOptions={setPerModelOptions}
           />
       }
+      {onJoinChange && allEntries && canJoinUnit(unit) && (() => {
+        const eligible = (allEntries as any[]).filter((e: any) => {
+          if (e.entryId === existingEntry?.entryId) return false;
+          const tu = (factionData.units || []).find((u: any) => u.id === e.unitId);
+          return tu && isJoinableUnit(tu) && !canJoinUnit(tu);
+        });
+        const currentJoin = existingEntry?.joinedToEntryId || '';
+        return (
+          <div className="lb-opt-section">
+            <div className="lb-opt-section-head">Joined Unit</div>
+            <div className="lb-opt-row">
+              <select className="lb-select" style={{flex:1}} value={currentJoin}
+                onChange={ev => onJoinChange(ev.target.value || null)}>
+                <option value="">— None (Independent) —</option>
+                {eligible.map((e: any) => (
+                  <option key={e.entryId} value={e.entryId}>
+                    {displayNames?.get(e.entryId) || (factionData.units||[]).find((u: any) => u.id === e.unitId)?.name || e.unitId}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        );
+      })()}
     </LBModal>
   );
 }
@@ -2767,7 +2862,6 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
   const [showCoreRules, setShowCoreRules] = useState(false);
   const [showUnitPicker, setShowUnitPicker] = useState(false);
   const [pickerInitialSlot, setPickerInitialSlot] = useState<string|null>(null);
-  const [pendingUnit, setPendingUnit] = useState<any|null>(null);
   const [editEntryId, setEditEntryId] = useState<string|null>(null);
   const [editSquad, setEditSquad] = useState<{entryId:string,squadId:string}|null>(null);
   const [pendingDelete, setPendingDelete] = useState<string|null>(null);
@@ -2836,15 +2930,17 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
     return squads;
   }
 
-  function addEntry(unit: any, options: any, perModelOptions: any) {
-    if (!activeList) return;
+  function addEntry(unit: any, options: any, perModelOptions: any): string {
+    if (!activeList) return '';
+    const entryId = genId();
     const slot = effectiveSlot(unit.id, unit.slot, activeSubfaction);
     if (unit.platoon) {
       const squads = makePlatoonSquads(unit, options);
-      updateList(activeList.listId, l => ({ ...l, entries: [...l.entries, { entryId: genId(), unitId: unit.id, slot, squads }] }));
-      return;
+      updateList(activeList.listId, l => ({ ...l, entries: [...l.entries, { entryId, unitId: unit.id, slot, squads }] }));
+      return entryId;
     }
-    updateList(activeList.listId, l => ({ ...l, entries: [...l.entries, { entryId: genId(), unitId: unit.id, slot, options, perModelOptions }] }));
+    updateList(activeList.listId, l => ({ ...l, entries: [...l.entries, { entryId, unitId: unit.id, slot, options, perModelOptions }] }));
+    return entryId;
   }
 
   function updateEntry(entryId: string, unit: any, options: any, perModelOptions: any) {
@@ -2871,6 +2967,15 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
           s.squadId === squadId ? { ...s, options, perModelOptions } : s
         )};
       })
+    }));
+  }
+
+  function updateEntryJoin(entryId: string, joinedToEntryId: string | null) {
+    if (!activeList) return;
+    updateList(activeList.listId, l => ({
+      ...l, entries: l.entries.map((e: any) =>
+        e.entryId === entryId ? { ...e, joinedToEntryId: joinedToEntryId || undefined } : e
+      )
     }));
   }
 
@@ -3008,8 +3113,21 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
 
   // ── Battle mode ──────────────────────────────────────────────────────────
   if (battleMode) {
+    const bmJoinedByTarget = new Map<string, any[]>();
+    const bmJoinedIds = new Set<string>();
+    for (const e of activeList.entries) {
+      if (e.joinedToEntryId && activeList.entries.some((t: any) => t.entryId === e.joinedToEntryId)) {
+        if (!bmJoinedByTarget.has(e.joinedToEntryId)) bmJoinedByTarget.set(e.joinedToEntryId, []);
+        bmJoinedByTarget.get(e.joinedToEntryId)!.push(e);
+        bmJoinedIds.add(e.entryId);
+      }
+    }
     const bySlot: Record<string, any[]> = {};
-    for (const e of activeList.entries) { if (!bySlot[e.slot]) bySlot[e.slot]=[]; bySlot[e.slot].push(e); }
+    for (const e of activeList.entries) {
+      if (bmJoinedIds.has(e.entryId)) continue;
+      if (!bySlot[e.slot]) bySlot[e.slot] = [];
+      bySlot[e.slot].push(e);
+    }
     return (
       <div>
         {listHeader}
@@ -3025,12 +3143,17 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
               const dn = displayNames.get(e.entryId) || unit.name;
               const cost = calcEntryCost(e, unit, factionData);
               const expanded = expandedBattleId === e.entryId;
+              const bmJoinedICs = bmJoinedByTarget.get(e.entryId) || [];
+              const bmTotalCost = cost + bmJoinedICs.reduce((sum: number, ic: any) => {
+                const icUnit = (factionData.units||[]).find((u: any) => u.id === ic.unitId);
+                return sum + (icUnit ? calcEntryCost(ic, icUnit, factionData) : 0);
+              }, 0);
               return (
                 <div key={e.entryId}>
                   <div className={`lb-battle-entry${expanded?" lb-active":""}`}
                     onClick={() => setExpandedBattleId(expanded ? null : e.entryId)}>
                     <span className="lb-battle-name">{dn}</span>
-                    <span className="lb-battle-pts">{cost} pts</span>
+                    <span className="lb-battle-pts">{bmTotalCost} pts</span>
                     <span style={{color:"#aaa",fontSize:"9pt"}}>{expanded?"▲":"▼"}</span>
                   </div>
                   {expanded && (
@@ -3044,6 +3167,23 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
                         collapsedSections={collapsedSections}
                         toggleSection={toggleSection}
                       />
+                      {bmJoinedICs.map((ic: any) => {
+                        const icUnit = (factionData.units||[]).find((u: any) => u.id === ic.unitId);
+                        if (!icUnit) return null;
+                        const icCost = calcEntryCost(ic, icUnit, factionData);
+                        const icDn = displayNames.get(ic.entryId) || icUnit.name;
+                        return (
+                          <BattleUnitBlock key={ic.entryId}
+                            entry={ic} displayName={`+ ${icDn}`} unit={icUnit}
+                            weapons={weapons} weaponLists={weaponLists}
+                            namedUpgrades={namedUpgrades} spellPools={spellPools}
+                            armyRules={armyRules} coreRules={coreRules}
+                            entryCost={icCost}
+                            collapsedSections={collapsedSections}
+                            toggleSection={toggleSection}
+                          />
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -3056,8 +3196,22 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
   }
 
   // ── Build mode ───────────────────────────────────────────────────────────
+  const joinedICsByTarget = new Map<string, any[]>();
+  const joinedEntryIds = new Set<string>();
+  for (const e of activeList.entries) {
+    if (e.joinedToEntryId && activeList.entries.some((t: any) => t.entryId === e.joinedToEntryId)) {
+      if (!joinedICsByTarget.has(e.joinedToEntryId)) joinedICsByTarget.set(e.joinedToEntryId, []);
+      joinedICsByTarget.get(e.joinedToEntryId)!.push(e);
+      joinedEntryIds.add(e.entryId);
+    }
+  }
+
   const bySlot2: Record<string, any[]> = {};
-  for (const e of activeList.entries) { if (!bySlot2[e.slot]) bySlot2[e.slot]=[]; bySlot2[e.slot].push(e); }
+  for (const e of activeList.entries) {
+    if (joinedEntryIds.has(e.entryId)) continue;
+    if (!bySlot2[e.slot]) bySlot2[e.slot] = [];
+    bySlot2[e.slot].push(e);
+  }
   const focOk = foc.every(f => f.ok);
 
   return (
@@ -3123,10 +3277,31 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
                   </div>
                 );
               }
+              const joinedICs = joinedICsByTarget.get(e.entryId) || [];
+              const totalCost = cost + joinedICs.reduce((sum: number, ic: any) => {
+                const icUnit = (factionData.units||[]).find((u: any) => u.id === ic.unitId);
+                return sum + (icUnit ? calcEntryCost(ic, icUnit, factionData) : 0);
+              }, 0);
               return (
                 <div key={e.entryId} className={`lb-entry${pendingDelete === e.entryId ? " lb-entry-confirm" : ""}`}
                   onClick={() => { if (pendingDelete === e.entryId) { setPendingDelete(null); return; } setEditEntryId(e.entryId); }} style={{cursor:"pointer"}}>
-                  <span className="lb-entry-name">{dn}</span>
+                  <span className="lb-entry-name">
+                    {dn}
+                    {joinedICs.map((ic: any) => {
+                      const icUnit = (factionData.units||[]).find((u: any) => u.id === ic.unitId);
+                      if (!icUnit) return null;
+                      const icCost = calcEntryCost(ic, icUnit, factionData);
+                      return (
+                        <span key={ic.entryId}>
+                          <span style={{margin:'0 5px'}}>+</span>
+                          <span className="lb-joined-ic-inline"
+                            onClick={ev => { ev.stopPropagation(); setEditEntryId(ic.entryId); }}>
+                            {displayNames.get(ic.entryId) || icUnit.name} ({icCost}pts)
+                          </span>
+                        </span>
+                      );
+                    })}
+                  </span>
                   {pendingDelete === e.entryId ? (
                     <>
                       <span style={{fontSize:"8.5pt",color:"#c04040",fontWeight:600,whiteSpace:"nowrap"}}>Remove?</span>
@@ -3135,7 +3310,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
                     </>
                   ) : (
                     <>
-                      <span className="lb-entry-pts">{cost} pts</span>
+                      <span className="lb-entry-pts">{totalCost} pts</span>
                       <button className="lb-icon-btn danger" title="Remove"
                         onClick={ev => { ev.stopPropagation(); setPendingDelete(e.entryId); }}>✕</button>
                     </>
@@ -3147,17 +3322,15 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
         ))
       )}
 
-      {showUnitPicker && !pendingUnit && (
+      {showUnitPicker && (
         <UnitPickerModal factionData={factionData} initialSlot={pickerInitialSlot}
-          onSelect={u => { setShowUnitPicker(false); setPendingUnit(u); }}
+          onSelect={u => {
+            setShowUnitPicker(false);
+            setPickerInitialSlot(null);
+            const newId = addEntry(u, defaultOpts(u, factionData.weaponLists || {}), defaultPerModel(u));
+            setEditEntryId(newId);
+          }}
           onCancel={() => { setShowUnitPicker(false); setPickerInitialSlot(null); }}
-        />
-      )}
-
-      {pendingUnit && (
-        <AddEditEntryModal unit={pendingUnit} existingEntry={null} factionData={factionData}
-          onSave={({ options, perModelOptions }) => { addEntry(pendingUnit, options, perModelOptions); setPendingUnit(null); }}
-          onCancel={() => setPendingUnit(null)}
         />
       )}
 
@@ -3165,10 +3338,14 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
         const e = activeList.entries.find((x: any) => x.entryId === editEntryId);
         const unit = e ? (factionData.units||[]).find((u: any) => u.id === e.unitId) : null;
         if (!e || !unit) return null;
+        const icUnit = canJoinUnit(unit);
         return (
           <AddEditEntryModal unit={unit} existingEntry={e} factionData={factionData}
-            onSave={({ options, perModelOptions }) => { updateEntry(editEntryId, unit, options, perModelOptions); setEditEntryId(null); }}
-            onCancel={() => setEditEntryId(null)}
+            onChange={({ options, perModelOptions }) => updateEntry(editEntryId, unit, options, perModelOptions)}
+            onClose={() => setEditEntryId(null)}
+            allEntries={icUnit ? activeList.entries : undefined}
+            displayNames={icUnit ? displayNames : undefined}
+            onJoinChange={icUnit ? (targetId: string | null) => updateEntryJoin(editEntryId, targetId) : undefined}
           />
         );
       })()}
@@ -3181,8 +3358,8 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
         if (!squad || !pu) return null;
         return (
           <AddEditEntryModal unit={pu} existingEntry={squad} factionData={factionData}
-            onSave={({ options, perModelOptions }) => { updateSquadOptions(editSquad.entryId, editSquad.squadId, options, perModelOptions); setEditSquad(null); }}
-            onCancel={() => setEditSquad(null)}
+            onChange={({ options, perModelOptions }) => updateSquadOptions(editSquad.entryId, editSquad.squadId, options, perModelOptions)}
+            onClose={() => setEditSquad(null)}
           />
         );
       })()}

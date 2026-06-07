@@ -2037,14 +2037,14 @@
           "maxRange": 36,
           "strength": "4",
           "ap": "6+",
-          "rules": "Heavy 2, 3\" Blast, Simultaneous Use"
+          "rules": "Heavy 2, 3\" Blast"
         },
         {
           "label": "Stormbolter",
           "maxRange": 24,
           "strength": "4",
           "ap": "5+",
-          "rules": "Rapid Fire 2, Bolter, Simultaneous Use"
+          "rules": "Rapid Fire 2, Bolter, Simultaneous Use (with one of above)"
         }
       ],
       "keywords": [
@@ -13134,12 +13134,12 @@
             },
             {
               "weaponId": "lightning-claw-and-storm-shield",
-              "label": "LC + Storm Shield",
+              "label": "Lightning Claw + Storm Shield",
               "pts": 20
             },
             {
               "weaponId": "thunderhammer-and-storm-shield",
-              "label": "TH + Storm Shield",
+              "label": "Thunderhammer + Storm Shield",
               "pts": 43
             }
           ]
@@ -13631,7 +13631,7 @@
           "choices": [
             {
               "weaponId": "hellfire-plasma-carronade",
-              "label": "Keep Hellfire PC",
+              "label": "Keep Hellfire Plasma Carronade",
               "arcType": "Hull",
               "mountingTags": [
                 "Primary"
@@ -13697,7 +13697,8 @@
           "grantsWargear": [
             "bores-air-defense-missiles"
           ],
-          "note": "AA Hull weapon."
+          "note": "AA Hull weapon.",
+          "exclusiveGroup": "der-missiles"
         },
         {
           "id": "der-aiolos",
@@ -13707,7 +13708,8 @@
           "grantsWargear": [
             "aiolos-missile-launcher"
           ],
-          "note": "Hull weapon."
+          "note": "Hull weapon.",
+          "exclusiveGroup": "der-missiles"
         },
         {
           "id": "der-extra-armour",
@@ -14256,6 +14258,8 @@
         {
           "id": "ic-hunter-killer",
           "type": "toggle",
+          "exclusiveGroup": "ic-upgrades",
+          "applies": ["ironclad"],
           "label": "Hunter Killer Missile",
           "pts": 5,
           "grantsWargear": [
@@ -14266,6 +14270,8 @@
         {
           "id": "ic-extra-armour",
           "type": "toggle",
+          "exclusiveGroup": "ic-upgrades",
+          "applies": ["ironclad"],
           "label": "Extra Armour",
           "pts": 5,
           "grantsWargear": [
@@ -14276,6 +14282,8 @@
         {
           "id": "ic-smoke",
           "type": "toggle",
+          "exclusiveGroup": "ic-upgrades",
+          "applies": ["ironclad"],
           "label": "Smoke Launchers",
           "pts": 10,
           "grantsWargear": [
@@ -14286,6 +14294,8 @@
         {
           "id": "ic-blizzard-shield",
           "type": "toggle",
+          "exclusiveGroup": "ic-upgrades",
+          "applies": ["ironclad"],
           "label": "Blizzard Shield (Space Wolves)",
           "pts": 24,
           "grantsWargear": [
@@ -14296,6 +14306,8 @@
         {
           "id": "ic-magna-grapple",
           "type": "toggle",
+          "exclusiveGroup": "ic-upgrades",
+          "applies": ["ironclad"],
           "label": "Magna Grapple (Blood Angels only)",
           "pts": 2,
           "grantsRules": [
