@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect, Fragment } from "react";
+import { useState, useMemo, useRef, useEffect, useLayoutEffect, Fragment } from "react";
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
@@ -20,7 +20,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .nav-btn:hover, .nav-btn.active { background: #2a2008; border-color: #c9a84c; }
 .nav-mobile-select { font-family: 'Rajdhani', sans-serif; font-size: 11pt; font-weight: 600; letter-spacing: 0.04em; padding: 5px 10px; border-radius: 3px; border: 1px solid #c9a84c; background: #2a2008; color: #c9a84c; cursor: pointer; display: none; }
 .nav-search-wrap { position: relative; }
-.nav-search-input { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 500; padding: 4px 10px; border-radius: 3px; border: 1px solid #555; background: #111; color: #e8e0d0; outline: none; width: 150px; transition: border-color 0.15s; }
+.nav-search-input { font-family: 'Rajdhani', sans-serif; font-size: 10pt; font-weight: 500; padding: 4px 10px; border-radius: 3px; border: 1px solid #555; background: #111; color: #e8e0d0; outline: none; width: 110px; transition: border-color 0.15s; }
 .nav-search-input::placeholder { color: #666; }
 .nav-search-input:focus { border-color: #c9a84c; background: #141414; }
 .nav-search-dropdown { position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: #1a1a1a; border: 1px solid #555; border-radius: 4px; z-index: 200; box-shadow: 0 6px 20px rgba(0,0,0,0.6); overflow-y: auto; max-height: 300px; }
@@ -30,6 +30,10 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .nav-search-name { font-size: 10pt; font-weight: 600; color: #e8e0d0; }
 .nav-search-slot { font-size: 8pt; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1px; }
 .nav-search-none { padding: 10px 12px; color: #666; font-size: 9.5pt; font-style: italic; }
+.rules-search-dropdown { min-width: 360px; }
+.rules-search-item { cursor: default; }
+.rules-search-item:hover { background: inherit; }
+.rules-search-desc { font-size: 8.5pt; color: #999; margin-top: 3px; line-height: 1.4; }
 
 .section-head { font-weight: 700; font-size: 11pt; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5800; margin: 16px 0 8px; border-bottom: 2px solid #e8d48a; padding-bottom: 2px; }
 .group-head { font-weight: 700; font-size: 9.5pt; letter-spacing: 0.10em; text-transform: uppercase; color: #333; margin: 0 0 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
@@ -134,7 +138,7 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
   .platoon-composition { font-size: 11pt; }
   .platoon-toggle { font-size: 11pt; }
   .popover-box { font-size: 10pt; width: 240px; }
-  .nav-search-input { width: 120px; font-size: 11pt; }
+  .nav-search-input { width: 90px; font-size: 11pt; }
   .nav-search-name { font-size: 11pt; }
   .nav-page-btn { display: none !important; }
   .nav-mobile-select { display: block; }
@@ -327,7 +331,7 @@ function readState(file) {
     return {
       hiddenUnits:        new Set(Array.isArray(s.hidden) ? s.hidden : []),
       selectedSubfaction: s.subfaction ?? '',
-      activePage:         typeof s.page === 'string' && s.page ? s.page : 'army-rules',
+      activePage:         typeof s.page === 'string' && s.page ? s.page : 'list-builder',
       scrollY:            s.scrollY ?? 0,
     };
   } catch(_) { return null; }
@@ -1194,6 +1198,8 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
 function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
   const [query, setQuery] = useState("");
   const wrapRef = useRef(null);
+  const dropRef = useRef<HTMLDivElement>(null);
+  const [alignRight, setAlignRight] = useState(false);
 
   const results = useMemo(() => {
     if (!query.trim()) return [];
@@ -1204,6 +1210,13 @@ function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
   }, [query, allUnits]);
 
   const open = query.trim().length > 0;
+
+  useLayoutEffect(() => {
+    if (!open) { setAlignRight(false); return; }
+    if (alignRight || !dropRef.current) return;
+    const rect = dropRef.current.getBoundingClientRect();
+    if (rect.right > window.innerWidth - 8) setAlignRight(true);
+  }, [open, results, alignRight]);
 
   useEffect(() => {
     if (!open) return;
@@ -1225,7 +1238,7 @@ function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
         onKeyDown={e => e.key === "Escape" && setQuery("")}
       />
       {open && (
-        <div className="nav-search-dropdown">
+        <div ref={dropRef} className="nav-search-dropdown" style={alignRight ? {left:'auto',right:0} : undefined}>
           {results.length === 0
             ? <div className="nav-search-none">No units found</div>
             : results.map(u => {
@@ -1245,6 +1258,81 @@ function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
                   </div>
                 );
               })
+          }
+        </div>
+      )}
+    </div>
+  );
+}
+
+function nameToId(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function RulesSearch({ coreRules, armyRules, commonWargearRef }) {
+  const [query, setQuery] = useState("");
+  const wrapRef = useRef(null);
+  const dropRef = useRef<HTMLDivElement>(null);
+  const [alignRight, setAlignRight] = useState(false);
+
+  const allItems = useMemo(() => [
+    ...(coreRules || []).map((r: any) => ({ id: `core-${r.id}`, name: r.name, desc: r.fullDesc || r.shortDesc || '' })),
+    ...(armyRules || []).map((r: any) => ({ id: `army-${r.id}`, name: r.name, desc: r.fullDesc || r.shortDesc || '' })),
+    ...(commonWargearRef || []).map((w: any) => ({ id: `wargear-${nameToId(w.name)}`, name: w.name, desc: w.desc || '' })),
+  ], [coreRules, armyRules, commonWargearRef]);
+
+  const results = useMemo(() => {
+    if (!query.trim()) return [];
+    const q = query.toLowerCase();
+    return allItems
+      .filter(item => item.name.toLowerCase().includes(q))
+      .sort((a, b) => {
+        const aStarts = a.name.toLowerCase().startsWith(q);
+        const bStarts = b.name.toLowerCase().startsWith(q);
+        if (aStarts !== bStarts) return aStarts ? -1 : 1;
+        return a.name.localeCompare(b.name);
+      })
+      .slice(0, 8);
+  }, [query, allItems]);
+
+  const open = query.trim().length > 0;
+
+  useLayoutEffect(() => {
+    if (!open) { setAlignRight(false); return; }
+    if (alignRight || !dropRef.current) return;
+    const rect = dropRef.current.getBoundingClientRect();
+    if (rect.right > window.innerWidth - 8) setAlignRight(true);
+  }, [open, results, alignRight]);
+
+  useEffect(() => {
+    if (!open) return;
+    function handler(e) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setQuery("");
+    }
+    document.addEventListener("pointerdown", handler);
+    return () => document.removeEventListener("pointerdown", handler);
+  }, [open]);
+
+  return (
+    <div ref={wrapRef} className="nav-search-wrap">
+      <input
+        className="nav-search-input"
+        type="text"
+        placeholder="Find rule…"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+        onKeyDown={e => e.key === "Escape" && setQuery("")}
+      />
+      {open && (
+        <div ref={dropRef} className="nav-search-dropdown rules-search-dropdown" style={alignRight ? {left:'auto',right:0} : undefined}>
+          {results.length === 0
+            ? <div className="nav-search-none">No rules found</div>
+            : results.map(item => (
+              <div key={item.id} className="nav-search-item rules-search-item">
+                <div className="nav-search-name">{item.name}</div>
+                <div className="rules-search-desc">{item.desc}</div>
+              </div>
+            ))
           }
         </div>
       )}
@@ -3102,80 +3190,6 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
   );
 }
 
-function ArmyRulesPage({ faction, armyRules, selectedSubfaction }) {
-  const subfactionLabel = faction.subfactionLabel || "Chapter";
-  const allSubfactions = faction.subfactions || [];
-  const visibleSubfactions = selectedSubfaction
-    ? allSubfactions.filter(sf => sf.id === selectedSubfaction)
-    : allSubfactions;
-
-  // Collapse "Name N" rules that have multiple numbered variants into a single "Name X" entry
-  const baseCounts = new Map();
-  for (const r of armyRules) {
-    const m = r.name.match(/^(.+) (\d+)$/);
-    if (m) baseCounts.set(m[1], (baseCounts.get(m[1]) || 0) + 1);
-  }
-  const seenBases = new Set();
-  const displayRules = [];
-  for (const r of armyRules) {
-    const m = r.name.match(/^(.+) (\d+)$/);
-    if (m && baseCounts.get(m[1]) > 1) {
-      const base = m[1];
-      if (seenBases.has(base)) continue;
-      seenBases.add(base);
-      const rx = (s: string|undefined) => s?.replace(/\b\d+\b/, 'X');
-      displayRules.push({ ...r, name: `${base} X`, shortDesc: rx(r.shortDesc), fullDesc: rx(r.fullDesc) });
-    } else {
-      displayRules.push(r);
-    }
-  }
-
-  return (
-    <div>
-      <div className="section-head">Army Special Rules</div>
-      <div className="two-col">
-        {displayRules.map(r => (
-          <div key={r.id} className="col-block rule-entry">
-            <div className="rule-entry-name">{r.name}</div>
-            <div className="rule-entry-desc">{r.fullDesc||r.shortDesc}</div>
-          </div>
-        ))}
-      </div>
-      {(faction.commonWargearRef||[]).length > 0 && <>
-        <div className="section-head" style={{marginTop:20}}>Common Wargear</div>
-        <div className="two-col">
-          {(faction.commonWargearRef||[]).map((item: any) => (
-            <div key={item.name} className="col-block rule-entry">
-              <div className="rule-entry-name">{item.name}</div>
-              <div className="rule-entry-desc">{item.desc}</div>
-            </div>
-          ))}
-        </div>
-      </>}
-      {visibleSubfactions.length > 0 && <>
-        <div className="section-head" style={{marginTop:20}}>{subfactionLabel} Rules</div>
-        {visibleSubfactions.map(sf => (
-          <div key={sf.id} style={{marginBottom:14}}>
-            <div className="subfaction-head">{sf.name}</div>
-            <div className="two-col">
-              {(sf.rules||[]).map(r => (
-                <div key={r.id} className="col-block rule-entry">
-                  <div className="rule-entry-name">{r.name||"—"}</div>
-                  <div className="rule-entry-desc">{r.fullDesc||r.shortDesc||""}</div>
-                </div>
-              ))}
-            </div>
-            {(sf.slotReclassifications||[]).length > 0 && (
-              <div style={{fontSize:"8.5pt",color:"#666",fontStyle:"italic",marginTop:4}}>
-                Slot changes: {sf.slotReclassifications.map(s=>`${s.unitId} → ${s.toSlot||s.newSlot}`).join("; ")}
-              </div>
-            )}
-          </div>
-        ))}
-      </>}
-    </div>
-  );
-}
 
 function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, selectedSubfaction, setSelectedSubfaction }) {
   const subfactionLabel = faction.subfactionLabel || "Chapter";
@@ -3192,7 +3206,7 @@ function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, select
   return (
     <div>
       <div className="options-intro">
-        <strong>Customise your codex view.</strong> Use the toggles below to hide units you don't own or don't use — they'll be removed from all unit listings. Select your {subfactionLabel.toLowerCase()} to highlight relevant rules on the Army Rules page. All units are shown by default.
+        <strong>Customise your codex view.</strong> Use the toggles below to hide units you don't own or don't use — they'll be removed from all unit listings. All units are shown by default.
       </div>
 
       <div className="options-controls">
@@ -3208,6 +3222,23 @@ function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, select
           Show all units
         </button>
       </div>
+
+      {selectedSubfaction && (() => {
+        const sf = subfactions.find((s: any) => s.id === selectedSubfaction);
+        const rules = sf?.rules || [];
+        if (!sf || rules.length === 0) return null;
+        return (
+          <div style={{marginBottom:20}}>
+            <div className="section-head">{sf.name} Rules</div>
+            {rules.map((r: any) => (
+              <div key={r.id} className="rule-entry" style={{padding:"8px 0"}}>
+                <div className="rule-entry-name">{r.name}</div>
+                <div className="rule-entry-desc">{r.fullDesc||r.shortDesc||""}</div>
+              </div>
+            ))}
+          </div>
+        );
+      })()}
 
       {/* Print mode toggle */}
       {SLOT_ORDER.filter(s=>unitsBySlot[s]).map(slot => (
@@ -3238,7 +3269,7 @@ export default function App() {
   const [currentFile, setCurrentFile] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [activePage, setActivePage] = useState("army-rules");
+  const [activePage, setActivePage] = useState("list-builder");
   const [navHeight, setNavHeight] = useState(44);
   const [hiddenUnits, setHiddenUnits] = useState(new Set());
   const [selectedSubfaction, setSelectedSubfaction] = useState("");
@@ -3282,7 +3313,7 @@ export default function App() {
         setCurrentFile(file);
         setHiddenUnits(saved?.hiddenUnits       ?? new Set());
         setSelectedSubfaction(saved?.selectedSubfaction ?? "");
-        setActivePage(saved?.activePage         ?? "army-rules");
+        setActivePage(saved?.activePage         ?? "list-builder");
         setPendingScrollY(saved?.scrollY        ?? 0);
       })
       .catch(e => setError("Failed to load faction: " + e.message))
@@ -3336,10 +3367,11 @@ export default function App() {
 
   // If the current slot page becomes fully hidden or doesn't exist, redirect to army-rules
   useEffect(() => {
+    if (activePage === "core-rules" || activePage === "army-rules") { setActivePage("list-builder"); return; }
     if (typeof activePage !== 'string' || !activePage.startsWith("slot-")) return;
     const slot = activePage.replace("slot-", "");
     if (!unitsBySlot[slot] || unitsBySlot[slot].every(u => hiddenUnits.has(u.id))) {
-      setActivePage("army-rules");
+      setActivePage("list-builder");
     }
   }, [hiddenUnits, activePage, unitsBySlot]);
 
@@ -3361,6 +3393,7 @@ export default function App() {
     setActivePage(`slot-${unit.slot}`);
     setPendingScroll(unit.id);
   }
+
 
   if (!factionData) {
     return (
@@ -3402,7 +3435,6 @@ export default function App() {
   const slotLimits   = faction.slotLimits || {};
 
   const navPages = [
-    { id:"army-rules", label:"Army Rules" },
     ...SLOT_ORDER.filter(s => unitsBySlot[s] && unitsBySlot[s].some(u => !hiddenUnits.has(u.id))).map(s=>({ id:`slot-${s}`, label:s })),
     { id:"list-builder", label:"List Builder" },
     { id:"options", label:"Options" },
@@ -3557,13 +3589,8 @@ document.body.innerHTML+=body;`;
             onClick={()=>setActivePage("options")}>
             Options
           </button>
-          <button
-            className={`nav-btn${activePage==="core-rules"?" active":""}`}
-            style={activePage==="core-rules"?undefined:{color:"#888",borderColor:"#333"}}
-            onClick={()=>setActivePage("core-rules")}>
-            Core Rules
-          </button>
           <UnitSearch allUnits={factionData.units||[]} hiddenUnits={hiddenUnits} onSelect={handleUnitSelect}/>
+          <RulesSearch coreRules={coreRules} armyRules={armyRules} commonWargearRef={faction.commonWargearRef||[]}/>
           <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
           <button className="nav-btn" onClick={openPrintTab} style={{color:"#888",borderColor:"#333"}}>
             ⎙ Print
@@ -3581,7 +3608,6 @@ document.body.innerHTML+=body;`;
             <div className="faction-version">v{faction.version||"1.0"}</div>
           </div>
 
-          {activePage==="army-rules" && <ArmyRulesPage faction={faction} armyRules={armyRules} selectedSubfaction={selectedSubfaction}/>}
 
           {SLOT_ORDER.filter(s=>unitsBySlot[s]).map(slot => activePage===`slot-${slot}` && (
             <div key={slot}>
@@ -3626,9 +3652,6 @@ document.body.innerHTML+=body;`;
             />
           )}
 
-          {activePage==="core-rules" && (
-            <CoreRulesOverlay coreRules={coreRules} onClose={()=>setActivePage("army-rules")}/>
-          )}
         </div>
       </div>
     </div>
