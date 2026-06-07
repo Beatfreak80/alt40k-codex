@@ -15268,32 +15268,12 @@
             "sb-sgt",
             "sb-scout"
           ],
-          "label": "Any Scout: swap Stormbolter for special weapon",
+          "label": "Any model: swap Stormbolter for Scout Grenade Launcher",
           "replaces": "stormbolter",
           "choices": [
             {
               "weaponId": "stormbolter",
               "label": "Keep Stormbolter"
-            },
-            {
-              "weaponId": "flamer",
-              "label": "Flamer",
-              "pts": 6
-            },
-            {
-              "weaponId": "grav-gun",
-              "label": "Grav Gun",
-              "pts": 8
-            },
-            {
-              "weaponId": "plasma-gun",
-              "label": "Plasma Gun",
-              "pts": 8
-            },
-            {
-              "weaponId": "meltagun",
-              "label": "Meltagun",
-              "pts": 23
             },
             {
               "weaponId": "scout-grenade-launcher",
@@ -15538,6 +15518,8 @@
           ],
           "specialRules": [
             "vehicle",
+            "tank",
+            "immobile",
             "adjusted-tactics",
             "know-no-fear",
             "deepstrike",
@@ -15644,7 +15626,7 @@
           "choices": [
             {
               "weaponId": "onslaught-gatling-cannon",
-              "label": "Keep OGC",
+              "label": "Keep Onslaught Gatling Cannon",
               "arcType": "Turret",
               "mountingTags": [
                 "Primary"
@@ -15662,9 +15644,11 @@
         },
         {
           "id": "atv-extra-armour",
-          "type": "toggle",
+          "type": "perModelToggle",
+          "applies": ["atv"],
           "label": "Extra Armour",
-          "pts": 5,
+          "maxCount": 1,
+          "ptsEach": 5,
           "grantsWargear": [
             "extra-armour"
           ],
@@ -15792,9 +15776,11 @@
         },
         {
           "id": "jav-hunter-killer",
-          "type": "toggle",
+          "type": "perModelToggle",
+          "applies": ["javelin"],
           "label": "Hunter Killer Missile",
-          "pts": 5,
+          "maxCount": 2,
+          "ptsEach": 5,
           "grantsWargear": [
             "hunter-killer-missile"
           ],
@@ -15802,9 +15788,11 @@
         },
         {
           "id": "jav-extra-armour",
-          "type": "toggle",
+          "type": "perModelToggle",
+          "applies": ["javelin"],
           "label": "Extra Armour",
-          "pts": 5,
+          "maxCount": 1,
+          "ptsEach": 5,
           "grantsWargear": [
             "extra-armour"
           ],
@@ -15888,6 +15876,7 @@
           ],
           "label": "Swap Turret Heavy Flamer for",
           "replaces": "heavy-flamer",
+          "replacesArcType": "Turret",
           "choices": [
             {
               "weaponId": "heavy-flamer",
@@ -15943,6 +15932,7 @@
           ],
           "label": "Swap Hull Heavy Flamer for",
           "replaces": "heavy-flamer",
+          "replacesArcType": "Hull",
           "choices": [
             {
               "weaponId": "heavy-flamer",
@@ -15974,6 +15964,8 @@
           "type": "toggle",
           "label": "Data Link",
           "pts": 5,
+          "applies": ["land-speeder"],
+          "exclusiveGroup": "ls-upgrades",
           "grantsWargear": [
             "data-link"
           ],
@@ -15984,6 +15976,8 @@
           "type": "toggle",
           "label": "Extra Armour",
           "pts": 5,
+          "applies": ["land-speeder"],
+          "exclusiveGroup": "ls-upgrades",
           "grantsWargear": [
             "extra-armour"
           ],
@@ -16053,9 +16047,11 @@
         },
         {
           "id": "lst-extra-armour",
-          "type": "toggle",
+          "type": "perModelToggle",
+          "applies": ["tempest"],
           "label": "Extra Armour",
-          "pts": 5,
+          "maxCount": 1,
+          "ptsEach": 5,
           "grantsWargear": [
             "extra-armour"
           ],
@@ -16105,6 +16101,7 @@
           ],
           "specialRules": [
             "vehicle",
+            "tank",
             "adjusted-tactics",
             "bolter-discipline",
             "know-no-fear",
@@ -16127,38 +16124,39 @@
           "max": 2
         },
         {
-          "id": "ss-rifles",
-          "type": "weaponSwap",
-          "scope": "perModelType",
-          "applies": [
-            "scout-speeder"
-          ],
-          "label": "Add sponson rifle (up to 4)",
-          "replaces": "fragstorm-grenade-launcher",
-          "choices": [
-            {
-              "weaponId": "shotgun",
-              "label": "Shotgun",
-              "pts": 1,
-              "arcType": "Sponson"
-            },
-            {
-              "weaponId": "boltgun",
-              "label": "Boltgun",
-              "pts": 3,
-              "arcType": "Sponson"
-            },
-            {
-              "weaponId": "sniper-rifle",
-              "label": "Sniper Rifle",
-              "pts": 6,
-              "arcType": "Sponson"
-            }
-          ]
+          "id": "ss-shotgun",
+          "type": "toggle",
+          "applies": ["scout-speeder"],
+          "upgradeGroup": "Sponson Rifles",
+          "label": "Shotgun",
+          "pts": 1,
+          "grantsWargear": ["shotgun"],
+          "note": "Sponson."
+        },
+        {
+          "id": "ss-boltgun",
+          "type": "toggle",
+          "applies": ["scout-speeder"],
+          "upgradeGroup": "Sponson Rifles",
+          "label": "Boltgun",
+          "pts": 3,
+          "grantsWargear": ["boltgun"],
+          "note": "Sponson. Bolter."
+        },
+        {
+          "id": "ss-sniper-rifle",
+          "type": "toggle",
+          "applies": ["scout-speeder"],
+          "upgradeGroup": "Sponson Rifles",
+          "label": "Sniper Rifle",
+          "pts": 6,
+          "grantsWargear": ["sniper-rifle"],
+          "note": "Sponson. Sniper (3+)."
         },
         {
           "id": "ss-data-link",
           "type": "toggle",
+          "applies": ["scout-speeder"],
           "label": "Data Link",
           "pts": 5,
           "grantsWargear": [
@@ -16169,6 +16167,7 @@
         {
           "id": "ss-extra-armour",
           "type": "toggle",
+          "applies": ["scout-speeder"],
           "label": "Extra Armour",
           "pts": 5,
           "grantsWargear": [
@@ -16260,7 +16259,7 @@
             },
             {
               "weaponId": "2-linked-hammerstrike-missile-launchers",
-              "label": "2 Linked Hammerstrike MLs",
+              "label": "2 Linked Hammerstrike Missile Launchers",
               "pts": 20,
               "arcType": "Turret",
               "mountingTags": [
@@ -16289,7 +16288,7 @@
           "choices": [
             {
               "weaponId": "onslaught-gatling-cannon",
-              "label": "Keep OGC",
+              "label": "Keep Onslaught Gatling Cannon",
               "arcType": "Hull"
             },
             {
@@ -16399,7 +16398,7 @@
           "choices": [
             {
               "weaponId": "2-linked-accelerator-autocannons",
-              "label": "Keep 2 Linked Accelerator ACs"
+              "label": "Keep 2 Linked Accelerator Accelerator Autocannons"
             },
             {
               "weaponId": "2-linked-las-talons",
