@@ -424,7 +424,57 @@
         0,
         null
       ]
-    }
+    },
+    "commonWargearRef": [
+      {
+        "name": "Augar Array",
+        "desc": "6\" Aura, target unit does not scatter when Deepstriking. This Aura is cast when the first model is placed prior to scattering."
+      },
+      {
+        "name": "Chaff Launchers",
+        "desc": "This model has a 5+ Invulnerability Save against Ranged Attacks."
+      },
+      {
+        "name": "Dozerblade",
+        "desc": "Reroll Dangerous Terrain Tests and failed Moved through Cover."
+      },
+      {
+        "name": "Extra Armour",
+        "desc": "You may treat all Crew Stun Results as Weapon Disabled."
+      },
+      {
+        "name": "Iron Halo",
+        "desc": "This model has a 4+ Invulnerability Save."
+      },
+      {
+        "name": "Recovery Gear",
+        "desc": "Roll a D6, on 5+ repair Immobilized or Crew Stun result."
+      },
+      {
+        "name": "Refractor Field",
+        "desc": "This model has a 5+ Invulnerability Save."
+      },
+      {
+        "name": "Rosarius",
+        "desc": "This model has a 4+ Invulnerability Save."
+      },
+      {
+        "name": "Smoke Launchers",
+        "desc": "6\" range, place a 5\" Smoke Cloud that causes -1 To Hit and scatters to move an extra +1\" until your Command Phase. One Use Only. Use in your Shooting Phase only."
+      },
+      {
+        "name": "Standard",
+        "desc": "This inspiring battle flag grants the following auras: 6\" Aura — this model and target unit may reroll failed Ld Tests; 6\" Aura — this model and target unit gain A+1."
+      },
+      {
+        "name": "Storm Shield",
+        "desc": "This model gains Sv-1 (improves by 1) and a 4+ Invulnerability Save."
+      },
+      {
+        "name": "Terminator Honours",
+        "desc": "This model gains a 5+ Invulnerability Save."
+      }
+    ]
   },
   "armyRules": [
     {
@@ -2902,7 +2952,7 @@
     },
     {
       "id": "stormshield",
-      "name": "Stormshield",
+      "name": "Storm Shield",
       "profiles": [
         {
           "strength": "-",
@@ -2913,7 +2963,7 @@
     },
     {
       "id": "stormshield-no-ranged",
-      "name": "Stormshield",
+      "name": "Storm Shield",
       "removesWargear": [
         "stormbolter",
         "mastercrafted-auto-bolt-rifle",
@@ -2929,7 +2979,7 @@
     },
     {
       "id": "stormshield-no-pistol",
-      "name": "Stormshield",
+      "name": "Storm Shield",
       "removesWargear": [
         "bolt-pistol"
       ],
@@ -5677,7 +5727,7 @@
         {
           "id": "cap-stormshield",
           "type": "toggle",
-          "label": "Stormshield",
+          "label": "Storm Shield",
           "pts": 12,
           "grantsWargear": [
             "stormshield-no-ranged"
@@ -6838,7 +6888,7 @@
         {
           "id": "pcap-stormshield",
           "type": "toggle",
-          "label": "Stormshield",
+          "label": "Storm Shield",
           "pts": 12,
           "grantsWargear": [
             "stormshield"
@@ -7116,7 +7166,7 @@
         {
           "id": "pchap-stormshield",
           "type": "toggle",
-          "label": "Stormshield",
+          "label": "Storm Shield",
           "pts": 12,
           "grantsWargear": [
             "stormshield"
@@ -8239,7 +8289,7 @@
             },
             {
               "weaponId": "stormshield-no-ranged",
-              "label": "Stormshield",
+              "label": "Storm Shield",
               "pts": 15
             }
           ]
@@ -9710,7 +9760,7 @@
         {
           "id": "tac-sgt-stormshield",
           "type": "toggle",
-          "label": "Sergeant: Stormshield",
+          "label": "Sergeant: Storm Shield",
           "pts": 10,
           "grantsWargear": [
             "stormshield-no-ranged"
@@ -10218,7 +10268,7 @@
             },
             {
               "weaponId": "stormshield-no-ranged",
-              "label": "Stormshield",
+              "label": "Storm Shield",
               "pts": 10
             }
           ]
@@ -10578,7 +10628,7 @@
             },
             {
               "weaponId": "stormshield-no-ranged",
-              "label": "Stormshield",
+              "label": "Storm Shield",
               "pts": 12
             }
           ],
@@ -11555,11 +11605,11 @@
           "choices": [
             {
               "weaponId": "special-issue-boltgun",
-              "label": "Keep SI Boltgun"
+              "label": "Keep Special Issue Boltgun"
             },
             {
               "weaponId": "special-issue-stormbolter",
-              "label": "SI Stormbolter",
+              "label": "Special Issue Stormbolter",
               "pts": 2
             },
             {
@@ -11612,7 +11662,7 @@
             "sv-sgt",
             "sv-veteran"
           ],
-          "label": "Up to 2 models: swap SI Boltgun for heavy weapon",
+          "label": "Up to 2 models: swap Special Issue Boltgun for heavy weapon",
           "replaces": "special-issue-boltgun",
           "choices": [
             {
@@ -12150,7 +12200,7 @@
             "pvv-sgt",
             "pvv-veteran"
           ],
-          "label": "Any model: swap Bolt Pistol for pistol or assault weapon",
+          "label": "Any model: swap Bolt Pistol for",
           "replaces": "bolt-pistol",
           "choices": [
             {
@@ -12166,6 +12216,11 @@
               "weaponId": "grav-pistol",
               "label": "Grav Pistol",
               "pts": 8
+            },
+            {
+              "weaponId": "stormshield-no-pistol",
+              "label": "Storm Shield",
+              "pts": 11
             }
           ]
         },
@@ -12224,7 +12279,7 @@
             "pvv-sgt",
             "pvv-veteran"
           ],
-          "label": "Any model: swap Bolt Pistol+Chainsword for Dual Lightning Claws",
+          "label": "Any model: swap Bolt Pistol+Chainsword for",
           "replaces": "bolt-pistol",
           "choices": [
             {
@@ -12237,16 +12292,6 @@
               "pts": 4
             }
           ]
-        },
-        {
-          "id": "pvv-stormshield",
-          "type": "toggle",
-          "label": "Stormshield",
-          "pts": 11,
-          "grantsWargear": [
-            "stormshield-no-pistol"
-          ],
-          "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
         {
           "id": "pvv-jump-packs",
@@ -12387,6 +12432,11 @@
               "weaponId": "inferno-pistol",
               "label": "Inferno Pistol",
               "pts": 24
+            },
+            {
+              "weaponId": "stormshield-no-pistol",
+              "label": "Storm Shield",
+              "pts": 11
             }
           ]
         },
@@ -12410,7 +12460,7 @@
             "vv-sgt",
             "vv-veteran"
           ],
-          "label": "Any model: swap Bolt Pistol+Combat Knife for Dual Lightning Claws",
+          "label": "Any model: swap Bolt Pistol+Chainsword for",
           "replaces": "bolt-pistol",
           "choices": [
             {
@@ -12423,16 +12473,6 @@
               "pts": 4
             }
           ]
-        },
-        {
-          "id": "vv-stormshield",
-          "type": "toggle",
-          "label": "Stormshield",
-          "pts": 11,
-          "grantsWargear": [
-            "stormshield-no-pistol"
-          ],
-          "note": "Sv-1 (improves), 4+ Invulnerability Save."
         },
         {
           "id": "vv-jump-packs",
@@ -12551,11 +12591,19 @@
         },
         {
           "id": "ag-fragstorm",
-          "type": "toggle",
-          "label": "Any model: add Fragstorm Grenade Launcher",
-          "ptsPerModel": 3,
-          "grantsWargear": [
-            "fragstorm-grenade-launcher"
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "agg-sgt",
+            "agg-aggressor"
+          ],
+          "label": "Any model: May take Fragstorm Grenade Launcher",
+          "choices": [
+            {
+              "weaponId": "fragstorm-grenade-launcher",
+              "label": "Fragstorm Grenade Launcher",
+              "pts": 3
+            }
           ]
         }
       ]
@@ -12665,12 +12713,12 @@
             },
             {
               "weaponId": "lightning-claw-and-storm-shield",
-              "label": "LC + Storm Shield",
+              "label": "Lightning Claw + Storm Shield",
               "pts": 20
             },
             {
               "weaponId": "thunderhammer-and-storm-shield",
-              "label": "TH + Storm Shield",
+              "label": "Thunder Hammer + Storm Shield",
               "pts": 43
             }
           ]
@@ -14382,7 +14430,7 @@
             },
             {
               "weaponId": "stormshield-no-pistol",
-              "label": "Stormshield",
+              "label": "Storm Shield",
               "pts": 11
             }
           ],
@@ -15122,7 +15170,7 @@
             },
             {
               "weaponId": "stormshield",
-              "label": "Stormshield",
+              "label": "Storm Shield",
               "pts": 11
             }
           ],
@@ -16918,7 +16966,7 @@
         {
           "id": "dv-stormshield",
           "type": "toggle",
-          "label": "Sergeant: Stormshield",
+          "label": "Sergeant: Storm Shield",
           "pts": 10,
           "grantsWargear": [
             "stormshield-no-ranged"

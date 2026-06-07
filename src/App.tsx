@@ -758,6 +758,10 @@ function compStr(models) {
   return models.map(m => { const mn = m.minCount ?? 0; return mn===m.maxCount ? `${mn} ${m.name}` : `${mn}–${m.maxCount} ${m.name}`; }).join(" + ");
 }
 
+function resolvedCompStr(unit: any, options: any) {
+  return (unit.models || []).map((m: any) => `${modelTypeCount(unit, m.id, options)} ${m.name}`).join(" + ");
+}
+
 // ── Print mode: special rules as definition list ─────────────────────────────
 function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, entryOptions = null, collapsed = false, onToggle = null }: any) {
   const [namesOnly, setNamesOnly] = useState(() => {
@@ -1533,17 +1537,30 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     const v = entry.options?.[o.id];
     if (!v || typeof v !== "object") continue;
     const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
-    for (const mid of applyTo) {
-      const counts = weaponCountByMid.get(mid);
-      if (!counts) continue;
-      const total = modelTypeCount(unit, mid, entry.options || {});
-      let swapped = 0;
-      for (const [wid, cnt] of Object.entries(v as Record<string, number>)) {
-        if ((cnt as number) <= 0 || wid === o.replaces) continue;
-        swapped += cnt as number;
-        counts.set(wid, cnt as number);
+    // v stores TOTAL counts across all applies model types combined. Distribute
+    // proportionally so that mergedCounts (which sums per-type counts) yields the
+    // correct totals rather than multiplying by the number of model types.
+    const validMids = applyTo.filter((mid: string) => weaponCountByMid.has(mid));
+    const totalApplies = validMids.reduce((s: number, mid: string) => s + modelTypeCount(unit, mid, entry.options || {}), 0);
+    if (totalApplies === 0) continue;
+    const swapEntries = Object.entries(v as Record<string, number>).filter(([wid, cnt]) => (cnt as number) > 0 && wid !== o.replaces);
+    const soFar: Record<string, number> = {};
+    for (const [wid] of swapEntries) soFar[wid] = 0;
+    for (let i = 0; i < validMids.length; i++) {
+      const mid = validMids[i];
+      const counts = weaponCountByMid.get(mid)!;
+      const thisTotal = modelTypeCount(unit, mid, entry.options || {});
+      const isLast = i === validMids.length - 1;
+      let swappedHere = 0;
+      for (const [wid, cnt] of swapEntries) {
+        const typeCnt = isLast
+          ? (cnt as number) - soFar[wid]
+          : Math.floor((cnt as number) * thisTotal / totalApplies);
+        soFar[wid] += typeCnt;
+        swappedHere += typeCnt;
+        if (typeCnt > 0) counts.set(wid, typeCnt);
       }
-      if (o.replaces) counts.set(o.replaces, Math.max(0, total - swapped));
+      if (o.replaces) counts.set(o.replaces, Math.max(0, thisTotal - swappedHere));
     }
   }
   for (const o of (unit.options || [])) {
@@ -1924,7 +1941,7 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
         <div>
           {unit.isUnique && <span style={{fontSize:"8pt",fontWeight:700,color:"#7a5800",marginLeft:6}}>UNIQUE</span>}
           <div className="unit-name">{displayName}</div>
-          <div className="unit-comp">Composition: {compStr(unit.models)}</div>
+          <div className="unit-comp">Composition: {resolvedCompStr(unit, entry.options || {})}</div>
         </div>
         <div className="unit-pts-block">
           <div className="unit-pts-label">Army cost</div>
@@ -3124,6 +3141,17 @@ function ArmyRulesPage({ faction, armyRules, selectedSubfaction }) {
           </div>
         ))}
       </div>
+      {(faction.commonWargearRef||[]).length > 0 && <>
+        <div className="section-head" style={{marginTop:20}}>Common Wargear</div>
+        <div className="two-col">
+          {(faction.commonWargearRef||[]).map((item: any) => (
+            <div key={item.name} className="col-block rule-entry">
+              <div className="rule-entry-name">{item.name}</div>
+              <div className="rule-entry-desc">{item.desc}</div>
+            </div>
+          ))}
+        </div>
+      </>}
       {visibleSubfactions.length > 0 && <>
         <div className="section-head" style={{marginTop:20}}>{subfactionLabel} Rules</div>
         {visibleSubfactions.map(sf => (

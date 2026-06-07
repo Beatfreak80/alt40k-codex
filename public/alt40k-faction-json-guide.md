@@ -584,3 +584,4 @@ See `alt40k-new-faction-workflow.md` for the step-by-step authoring process, bat
 | Omitting `schemaVersion` | Always include `"schemaVersion": "1.3"` |
 | Marking a vehicle upgrade group as per-model by adding `applies` to only some options in the `exclusiveGroup` | Add `"applies": ["modelId"]` to **every** option in the group — the app reads it from the first matching option, but consistency is required |
 | Using a unit-wide `exclusiveGroup` toggle for a rule that says "Any [model name] may take" | Add `"applies": ["modelId"]` to make it per-model; without it the group renders as a single unit-wide choice |
+| Abbreviating or paraphrasing names from the source codex (e.g. "SI Stormbolter" for "Special Issue Stormbolter") | Copy names and text verbatim from the source — never abbreviate, shorten, or rephrase. Correcting obvious OCR typos is the only permitted exception |

@@ -349,6 +349,8 @@ For each unit:
 
 Codex documents (especially markdown conversions) contain frequent formatting artefacts:
 
+**Copy names and text verbatim — never abbreviate or interpret.** Use exactly the words from the source. If the codex says "Special Issue Stormbolter", that is the weapon name — do not shorten it to "SI Stormbolter" or any other abbreviation. The only permitted exception is correcting an obvious OCR/formatting typo (e.g. a missing space or transposed letter) where the intended text is unambiguous.
+
 | Source pattern | What to do |
 |---|---|
 | Merged table cells split across rows | Reconstruct the full profile by reading preceding rows for context |
@@ -359,6 +361,7 @@ Codex documents (especially markdown conversions) contain frequent formatting ar
 | Rules with parameters like "Sniper (3+)", "Haywire (2+)" | Copy the full display string including the value: `"Sniper (3+)"`, `"Haywire (2+)"` |
 | Weapon type + shots like "Assault 3", "Heavy 2 x4" | Copy the full display string: `"Assault 3"`, `"Heavy 2 x4"` — shot count is part of the rule |
 | Vehicle weapons with "Hull, Primary" in the rules column | Strip from rules; add `arcType: "Hull"` and `mountingTags: ["Primary"]` to the unit WeaponReference |
+| Abbreviated weapon or rule names (e.g. "SI Stormbolter") | Expand to the full source name ("Special Issue Stormbolter") — never use the abbreviation |
 
 ---
 
