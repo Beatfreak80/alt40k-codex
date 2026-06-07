@@ -2956,7 +2956,7 @@ function UnitPickerModal({ factionData, onSelect, onCancel, initialSlot }: any) 
 
   return (
     <LBModal onClose={onCancel}>
-      <div className="lb-modal-head">Add {initialSlot || "Unit"}</div>
+      <div className="lb-modal-head" style={{marginTop:16}}>Add {initialSlot || "Unit"}</div>
       <div className="lb-modal-sub">Select a unit to add to your list</div>
       {SLOT_ORDER.filter(s => grouped[s]).map(s => (
         <div key={s}>
