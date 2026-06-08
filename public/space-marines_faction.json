@@ -5708,8 +5708,9 @@
             },
             {
               "weaponId": "frost-axe",
-              "label": "Frost Axe (Space Wolves)",
-              "pts": 8
+              "label": "Frost Axe",
+              "pts": 8,
+              "subfaction": "space_wolves"
             }
           ]
         },
@@ -6230,7 +6231,8 @@
         {
           "id": "cd-magna-grapple",
           "type": "toggle",
-          "label": "Magna Grapple (Blood Angels only)",
+          "subfaction": "blood_angels",
+          "label": "Magna Grapple",
           "pts": 2,
           "exclusiveGroup": "cd-vehicle-upgrade",
           "grantsRules": [
@@ -6818,7 +6820,8 @@
         {
           "id": "ld-magna-grapple",
           "type": "toggle",
-          "label": "Magna Grapple (Blood Angels only)",
+          "subfaction": "blood_angels",
+          "label": "Magna Grapple",
           "pts": 2,
           "grantsRules": [
             "grapnel-launcher-rule"
@@ -7710,18 +7713,21 @@
             },
             {
               "weaponId": "xenophase-blade",
-              "label": "Xenophase Blade (DW only)",
-              "pts": 7
+              "label": "Xenophase Blade",
+              "pts": 7,
+              "subfaction": "death_watch"
             },
             {
               "weaponId": "guardian-spear",
-              "label": "Guardian Spear (DW only)",
-              "pts": 16
+              "label": "Guardian Spear",
+              "pts": 16,
+              "subfaction": "death_watch"
             },
             {
               "weaponId": "frost-axe",
-              "label": "Frost Axe (Space Wolves)",
-              "pts": 8
+              "label": "Frost Axe",
+              "pts": 8,
+              "subfaction": "space_wolves"
             }
           ]
         },
@@ -13869,12 +13875,13 @@
             },
             {
               "weaponId": "helfrost-cannon",
-              "label": "Helfrost Cannon (Space Wolves)",
+              "label": "Helfrost Cannon",
               "pts": 16,
               "arcType": "Hull",
               "mountingTags": [
                 "Primary"
-              ]
+              ],
+              "subfaction": "space_wolves"
             }
           ]
         },
@@ -13905,9 +13912,10 @@
         {
           "id": "dr-blizzard-shield",
           "type": "toggle",
+          "subfaction": "space_wolves",
           "exclusiveGroup": "dr-upgrades",
           "applies": ["dreadnought"],
-          "label": "Blizzard Shield (Space Wolves)",
+          "label": "Blizzard Shield",
           "pts": 24,
           "grantsWargear": [
             "blizzard-shield"
@@ -13917,9 +13925,10 @@
         {
           "id": "dr-magna-grapple",
           "type": "toggle",
+          "subfaction": "blood_angels",
           "exclusiveGroup": "dr-upgrades",
           "applies": ["dreadnought"],
-          "label": "Magna Grapple (Blood Angels only)",
+          "label": "Magna Grapple",
           "pts": 2,
           "grantsRules": [
             "grapnel-launcher-rule"
@@ -14237,21 +14246,23 @@
             },
             {
               "weaponId": "frag-cannon",
-              "label": "Frag Cannon (Blood Angels only)",
+              "label": "Frag Cannon",
               "pts": 3,
               "arcType": "Hull",
               "mountingTags": [
                 "Primary"
-              ]
+              ],
+              "subfaction": "blood_angels"
             },
             {
               "weaponId": "helfrost-cannon",
-              "label": "Helfrost Cannon (Space Wolves)",
+              "label": "Helfrost Cannon",
               "pts": 16,
               "arcType": "Hull",
               "mountingTags": [
                 "Primary"
-              ]
+              ],
+              "subfaction": "space_wolves"
             }
           ]
         },
@@ -14294,9 +14305,10 @@
         {
           "id": "ic-blizzard-shield",
           "type": "toggle",
+          "subfaction": "space_wolves",
           "exclusiveGroup": "ic-upgrades",
           "applies": ["ironclad"],
-          "label": "Blizzard Shield (Space Wolves)",
+          "label": "Blizzard Shield",
           "pts": 24,
           "grantsWargear": [
             "blizzard-shield"
@@ -14306,9 +14318,10 @@
         {
           "id": "ic-magna-grapple",
           "type": "toggle",
+          "subfaction": "blood_angels",
           "exclusiveGroup": "ic-upgrades",
           "applies": ["ironclad"],
-          "label": "Magna Grapple (Blood Angels only)",
+          "label": "Magna Grapple",
           "pts": 2,
           "grantsRules": [
             "grapnel-launcher-rule"
@@ -14519,7 +14532,7 @@
           "applies": [
             "as-marine"
           ],
-          "label": "Up to 2 Marines: swap Chainsword for Flamer or Plasma Pistol",
+          "label": "Up to 2 Marines: swap Chainsword for special weapon",
           "replaces": "chainsword",
           "choices": [
             {
@@ -14535,6 +14548,23 @@
               "weaponId": "plasma-pistol",
               "label": "Plasma Pistol (swap bolt pistol)",
               "pts": 7
+            }
+          ],
+          "subfactionChoices": [
+            {
+              "subfaction": "blood_angels",
+              "choices": [
+                {
+                  "weaponId": "plasma-gun",
+                  "label": "Plasma Gun",
+                  "pts": 6
+                },
+                {
+                  "weaponId": "meltagun",
+                  "label": "Meltagun",
+                  "pts": 21
+                }
+              ]
             }
           ],
           "slots": 2,
@@ -16847,7 +16877,43 @@
           ],
           "label": "Sergeant: swap Boltgun for",
           "replaces": "boltgun",
-          "weaponListId": "sergeant-ranged-standard",
+          "choices": [
+            {
+              "weaponId": "boltgun",
+              "label": "Keep Boltgun",
+              "pts": 0
+            },
+            {
+              "weaponId": "stormbolter",
+              "label": "Stormbolter",
+              "pts": 2
+            },
+            {
+              "weaponId": "combi-flamer",
+              "label": "Combi-Flamer",
+              "pts": 6
+            },
+            {
+              "weaponId": "combi-grav",
+              "label": "Combi-Grav",
+              "pts": 8
+            },
+            {
+              "weaponId": "combi-plasma",
+              "label": "Combi-Plasma",
+              "pts": 8
+            },
+            {
+              "weaponId": "combi-melta",
+              "label": "Combi-Melta",
+              "pts": 23
+            },
+            {
+              "weaponId": "stormshield-no-ranged",
+              "label": "Storm Shield",
+              "pts": 10
+            }
+          ],
           "upgradeGroup": "Sergeant"
         },
         {
@@ -16973,17 +17039,6 @@
           ],
           "slots": 4,
           "upgradeGroup": "Marine"
-        },
-        {
-          "id": "dv-stormshield",
-          "type": "toggle",
-          "label": "Sergeant: Storm Shield",
-          "pts": 10,
-          "grantsWargear": [
-            "stormshield-no-ranged"
-          ],
-          "note": "Sv-1 (improves), 4+ Invulnerability Save.",
-          "upgradeGroup": "Sergeant"
         },
         {
           "id": "dv-terminator-armour",

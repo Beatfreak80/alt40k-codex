@@ -300,6 +300,135 @@ Each unit contains:
 
 ---
 
+## Subfaction-specific options
+
+Some upgrades and weapon choices are only legal for a specific chapter or subfaction.
+Use the `subfaction` field to gate them — the list builder hides them unless the
+matching subfaction is active.
+
+### Rule of thumb
+
+| What you're gating | Where to put `subfaction` |
+|---|---|
+| An entire new option (e.g. Terminator Armour for Space Wolves sergeant) | On the option object itself |
+| One choice inside an existing swap list (inline `choices[]`) | On the individual choice entry |
+| Extra choices for a weapon list referenced via `weaponListId` | In `subfactionChoices[]` on the option |
+
+---
+
+### 1. Gating an entire option
+
+Add `"subfaction": "<subfaction-id>"` to the option. The whole option is hidden
+unless the active list's subfaction matches.
+
+```jsonc
+{
+  "id": "dev-sgt-terminator",
+  "type": "namedUpgrade",
+  "upgradeId": "terminator-armour",
+  "pts": 26,
+  "subfaction": "space_wolves",
+  "upgradeGroup": "Sergeant"
+}
+```
+
+Use this for completely new options that have no equivalent in the base unit —
+extra weapons, unique wargear, or per-subfaction stat upgrades.
+
+---
+
+### 2. Adding a choice to an inline `choices[]` list
+
+Add `"subfaction": "<subfaction-id>"` on the individual choice object.
+The choice is shown only when that subfaction is active; otherwise the option
+appears as normal but without that entry in the dropdown/counter.
+
+```jsonc
+{
+  "id": "ic-arm",
+  "type": "perModelWeapon",
+  "choices": [
+    { "weaponId": "dreadnought-missile-launcher", "label": "Dreadnought Missile Launcher" },
+    { "weaponId": "multimelta",                   "label": "Multimelta",     "pts": 2,  "arcType": "Hull", "mountingTags": ["Primary"] },
+    { "weaponId": "frag-cannon",                  "label": "Frag Cannon",    "pts": 3,  "arcType": "Hull", "mountingTags": ["Primary"], "subfaction": "blood_angels" },
+    { "weaponId": "helfrost-cannon",              "label": "Helfrost Cannon","pts": 16, "arcType": "Hull", "mountingTags": ["Primary"], "subfaction": "space_wolves" }
+  ]
+}
+```
+
+Do **not** annotate the label with `"(Blood Angels only)"` — the `subfaction` field
+carries that information and the label is shown as-is when visible.
+
+---
+
+### 3. Adding extra choices to a `weaponListId` reference
+
+When an option references a shared weapon list (`weaponListId`), you cannot add
+subfaction choices to the shared list without affecting every unit that uses it.
+Use `subfactionChoices[]` on the option instead — these are appended to the
+resolved list when the matching subfaction is active.
+
+```jsonc
+{
+  "id": "as-special",
+  "type": "weaponSwap",
+  "scope": "limitedSlot",
+  "applies": ["as-marine"],
+  "label": "Up to 2 Marines: swap Chainsword for special weapon",
+  "replaces": "chainsword",
+  "choices": [
+    { "weaponId": "chainsword",    "label": "None" },
+    { "weaponId": "flamer",        "label": "Flamer",        "pts": 8 },
+    { "weaponId": "plasma-pistol", "label": "Plasma Pistol", "pts": 7 }
+  ],
+  "subfactionChoices": [
+    {
+      "subfaction": "blood_angels",
+      "choices": [
+        { "weaponId": "plasma-gun", "label": "Plasma Gun", "pts": 6 },
+        { "weaponId": "meltagun",   "label": "Meltagun",   "pts": 21 }
+      ]
+    }
+  ],
+  "slots": 2
+}
+```
+
+`subfactionChoices` is an array so you can add entries for multiple subfactions
+on the same option:
+
+```jsonc
+"subfactionChoices": [
+  { "subfaction": "blood_angels", "choices": [...] },
+  { "subfaction": "space_wolves", "choices": [...] }
+]
+```
+
+---
+
+### Subfaction ID reference (Space Marines)
+
+| Subfaction | `id` |
+|---|---|
+| Blood Angels | `blood_angels` |
+| Space Wolves | `space_wolves` |
+| Dark Angels  | `dark_angels`  |
+| Death Watch  | `death_watch`  |
+| Black Templars | `black_templar` |
+
+Other factions follow the same pattern — match the `id` fields in
+`faction.subfactions[]`.
+
+---
+
+### postprocess.cjs validation
+
+The postprocessor validates all `subfaction` values (on options and choices) against
+`faction.subfactions[].id` and reports unknowns as warnings. Weapon IDs inside
+`subfactionChoices` are validated as errors, the same as regular choice entries.
+
+---
+
 ## Psychic Mastery upgrades
 
 Some psykers can pay points to increase their Psychic Mastery level, gaining an extra spell slot. The list builder enforces the mastery level as a hard cap on spell selections — a Mastery 1 psyker may only pick 1 spell; upgrading to Mastery 2 unlocks the second slot.

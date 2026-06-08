@@ -427,6 +427,10 @@
           "items": {
             "type": "string"
           }
+        },
+        "subfaction": {
+          "type": "string",
+          "description": "Subfaction id — choice only shown when this subfaction is active"
         }
       }
     },
@@ -1021,6 +1025,26 @@
         "grantsMasteryLevel": {
           "type": "integer",
           "minimum": 1
+        },
+        "subfaction": {
+          "type": "string",
+          "description": "Subfaction id — entire option only shown when this subfaction is active"
+        },
+        "subfactionChoices": {
+          "type": "array",
+          "description": "Extra choices injected into this option's list when the named subfaction is active",
+          "items": {
+            "type": "object",
+            "required": ["subfaction", "choices"],
+            "additionalProperties": false,
+            "properties": {
+              "subfaction": { "type": "string" },
+              "choices": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/WeaponListEntry" }
+              }
+            }
+          }
         }
       },
       "allOf": [

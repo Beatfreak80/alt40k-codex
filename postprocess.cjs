@@ -141,6 +141,8 @@ function validate(d, coreIds) {
     wepSeen[w.id] = true;
   }
 
+  const sfIds = new Set((d.faction.subfactions || []).map(s => s.id));
+
   for (const u of (d.units || [])) {
     // Duplicate unit IDs
     if (unitIds.has(u.id)) errors.push(`Duplicate unit id: "${u.id}"`);
@@ -172,9 +174,21 @@ function validate(d, coreIds) {
         errors.push(`${u.name} option "${o.id}" → unknown namedUpgrade "${o.upgradeId}"`);
       if (o.weaponListId && !listIds.has(o.weaponListId))
         errors.push(`${u.name} option "${o.id}" → unknown weaponList "${o.weaponListId}"`);
+      if (o.subfaction && sfIds.size > 0 && !sfIds.has(o.subfaction))
+        warnings.push(`${u.name} option "${o.id}" subfaction "${o.subfaction}" has no matching subfaction`);
       for (const c of (o.choices || [])) {
         if (c.weaponId && !wepIds.has(c.weaponId))
           errors.push(`${u.name} option "${o.id}" choice → unknown weapon "${c.weaponId}"`);
+        if (c.subfaction && sfIds.size > 0 && !sfIds.has(c.subfaction))
+          warnings.push(`${u.name} option "${o.id}" choice subfaction "${c.subfaction}" has no matching subfaction`);
+      }
+      for (const sc of (o.subfactionChoices || [])) {
+        if (sfIds.size > 0 && !sfIds.has(sc.subfaction))
+          warnings.push(`${u.name} option "${o.id}" subfactionChoices entry "${sc.subfaction}" has no matching subfaction`);
+        for (const c of (sc.choices || [])) {
+          if (c.weaponId && !wepIds.has(c.weaponId))
+            errors.push(`${u.name} option "${o.id}" subfactionChoices["${sc.subfaction}"] → unknown weapon "${c.weaponId}"`);
+        }
       }
     }
 
@@ -183,11 +197,8 @@ function validate(d, coreIds) {
       errors.push(`${u.name} psychic.spellPoolId → unknown pool "${u.psychic.spellPoolId}"`);
 
     // chapterRestriction must match a subfaction id
-    if (u.chapterRestriction) {
-      const sfIds = new Set((d.faction.subfactions || []).map(s => s.id));
-      if (!sfIds.has(u.chapterRestriction))
-        warnings.push(`${u.name} chapterRestriction "${u.chapterRestriction}" has no matching subfaction`);
-    }
+    if (u.chapterRestriction && !sfIds.has(u.chapterRestriction))
+      warnings.push(`${u.name} chapterRestriction "${u.chapterRestriction}" has no matching subfaction`);
 
     // Platoon sub-units — validate weapon and rule refs the same way as top-level units
     for (const pu of (u.platoonUnits || [])) {

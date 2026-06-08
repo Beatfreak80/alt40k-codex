@@ -396,6 +396,19 @@ function resolveChoicesForOpt(o: any, wL: any): any[] {
   return o.choices || [];
 }
 
+// Like resolveChoicesForOpt but filters/extends by active subfaction for UI rendering.
+// Cost calculation still uses resolveChoicesForOpt (full list) so stale selections
+// don't break pricing if the user later switches subfactions.
+function resolveChoicesForDisplay(o: any, wL: any, subfactionId?: string): any[] {
+  let choices = resolveChoicesForOpt(o, wL);
+  choices = choices.filter((c: any) => !c.subfaction || c.subfaction === subfactionId);
+  if (subfactionId) {
+    const extra = (o.subfactionChoices || []).find((sc: any) => sc.subfaction === subfactionId);
+    if (extra?.choices?.length) choices = [...choices, ...extra.choices];
+  }
+  return choices;
+}
+
 // returns true if this weaponSwap option targets a model type with maxCount > 1
 function isMultiModelSwap(o: any, unit: any): boolean {
   return (o.applies||[]).some((mid: string) => {
@@ -2173,11 +2186,11 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
   );
 }
 
-function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOptions, setPerModelOptions }: any) {
+function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOptions, setPerModelOptions, subfactionId }: any) {
   const wL = factionData.weaponLists || {};
   const nU = factionData.namedUpgrades || {};
   const sP = factionData.spellPools || {};
-  const opts = unit.options || [];
+  const opts = (unit.options || []).filter((o: any) => !o.subfaction || o.subfaction === subfactionId);
   const allInline = [...(factionData.inlineRules||[]), ...(unit.inlineRules||[])];
   const [squadSizeError, setSquadSizeError] = useState<string|null>(null);
   const squadSizeErrorTimer = useRef<any>(null);
@@ -2516,7 +2529,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         }
 
         function renderSwapOpt(o: any) {
-          const choices = resolveChoicesForOpt(o, wL);
+          const choices = resolveChoicesForDisplay(o, wL, subfactionId);
           if (o.scope === "unit" || !isMultiModelSwap(o, unit)) {
             return (
               <div key={o.id} className="lb-opt-section">
@@ -2862,7 +2875,7 @@ function PlatoonSquadConfig({ unit, options, setOptions }: any) {
   );
 }
 
-function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose, allEntries, displayNames, onJoinChange, lists, activeListId, onConfirm }: any) {
+function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose, allEntries, displayNames, onJoinChange, lists, activeListId, onConfirm, subfactionId: subfactionIdProp }: any) {
   const [options, setOptions] = useState(() => {
     if (existingEntry && unit.platoon) {
       return (unit.platoonUnits || []).reduce((acc: any, pu: any) => {
@@ -2881,6 +2894,9 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose
       : (lists?.[0]?.listId || "")
   );
   const cost = calcEntryCost({ options, perModelOptions }, unit, factionData);
+  const subfactionId: string = lists
+    ? (lists.find((l: any) => l.listId === selectedListId)?.subfactionId || '')
+    : (subfactionIdProp || '');
   const isFirst = useRef(true);
 
   useEffect(() => {
@@ -2918,6 +2934,7 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose
             unit={unit} factionData={factionData}
             options={options} setOptions={setOptions}
             perModelOptions={perModelOptions} setPerModelOptions={setPerModelOptions}
+            subfactionId={subfactionId}
           />
       }
       {onJoinChange && allEntries && canJoinUnit(unit) && (() => {
@@ -3500,6 +3517,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
 
       {pendingNewUnit && (
         <AddEditEntryModal unit={pendingNewUnit} factionData={factionData}
+          subfactionId={activeList?.subfactionId || ''}
           onConfirm={(_listId: string, options: any, perModelOptions: any) => {
             addEntry(pendingNewUnit, options, perModelOptions);
           }}
@@ -3514,6 +3532,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
         const icUnit = canJoinUnit(unit);
         return (
           <AddEditEntryModal unit={unit} existingEntry={e} factionData={factionData}
+            subfactionId={activeList?.subfactionId || ''}
             onChange={({ options, perModelOptions }) => updateEntry(editEntryId, unit, options, perModelOptions)}
             onClose={() => setEditEntryId(null)}
             allEntries={icUnit ? activeList.entries : undefined}
@@ -3531,6 +3550,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
         if (!squad || !pu) return null;
         return (
           <AddEditEntryModal unit={pu} existingEntry={squad} factionData={factionData}
+            subfactionId={activeList?.subfactionId || ''}
             onChange={({ options, perModelOptions }) => updateSquadOptions(editSquad.entryId, editSquad.squadId, options, perModelOptions)}
             onClose={() => setEditSquad(null)}
           />
