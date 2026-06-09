@@ -190,6 +190,11 @@ function validate(d, coreIds) {
             errors.push(`${u.name} option "${o.id}" subfactionChoices["${sc.subfaction}"] → unknown weapon "${c.weaponId}"`);
         }
       }
+      if (o.grantsExtraModelOf) {
+        const modelIds = new Set((u.models || []).map(m => m.id));
+        if (!modelIds.has(o.grantsExtraModelOf))
+          errors.push(`${u.name} option "${o.id}" grantsExtraModelOf "${o.grantsExtraModelOf}" not found in unit models`);
+      }
     }
 
     // Psychic spell pool ref

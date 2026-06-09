@@ -7178,16 +7178,24 @@
         },
         {
           "id": "pchap-pyre-pistol",
-          "type": "toggle",
-          "label": "Pyre Pistol (Black Templars only)",
-          "pts": 3,
-          "grantsWargear": [
-            "pyre-pistol"
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-chaplain"
           ],
-          "removesWargear": [
-            "absolver-bolt-pistol"
-          ],
-          "note": "Black Templars: swap Absolver Bolt Pistol for Pyre Pistol."
+          "label": "Swap Absolver Bolt Pistol for",
+          "replaces": "absolver-bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "absolver-bolt-pistol",
+              "label": "Keep Absolver Bolt Pistol"
+            },
+            {
+              "weaponId": "pyre-pistol",
+              "label": "Pyre Pistol",
+              "pts": 3
+            }
+          ]
         },
         {
           "id": "pchap-grenades",
@@ -9779,6 +9787,16 @@
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
           "pts": 6,
+          "subfaction": "space_wolves",
+          "upgradeGroup": "Sergeant"
+        },
+        {
+          "id": "tac-second-sergeant",
+          "type": "toggle",
+          "label": "Upgrade a Marine to Sergeant",
+          "pts": 4,
+          "subfaction": "space_wolves",
+          "grantsExtraModelOf": "tactical-sgt",
           "upgradeGroup": "Sergeant"
         }
       ]
@@ -13882,6 +13900,16 @@
                 "Primary"
               ],
               "subfaction": "space_wolves"
+            },
+            {
+              "weaponId": "blizzard-shield",
+              "label": "Blizzard Shield",
+              "pts": 24,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ],
+              "subfaction": "space_wolves"
             }
           ]
         },
@@ -13908,19 +13936,6 @@
             "smoke-launchers"
           ],
           "note": "One Use Only."
-        },
-        {
-          "id": "dr-blizzard-shield",
-          "type": "toggle",
-          "subfaction": "space_wolves",
-          "exclusiveGroup": "dr-upgrades",
-          "applies": ["dreadnought"],
-          "label": "Blizzard Shield",
-          "pts": 24,
-          "grantsWargear": [
-            "blizzard-shield"
-          ],
-          "note": "4+ Invulnerability Save."
         },
         {
           "id": "dr-magna-grapple",
@@ -14263,6 +14278,16 @@
                 "Primary"
               ],
               "subfaction": "space_wolves"
+            },
+            {
+              "weaponId": "blizzard-shield",
+              "label": "Blizzard Shield",
+              "pts": 24,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ],
+              "subfaction": "space_wolves"
             }
           ]
         },
@@ -14301,19 +14326,6 @@
             "smoke-launchers"
           ],
           "note": "One Use Only."
-        },
-        {
-          "id": "ic-blizzard-shield",
-          "type": "toggle",
-          "subfaction": "space_wolves",
-          "exclusiveGroup": "ic-upgrades",
-          "applies": ["ironclad"],
-          "label": "Blizzard Shield",
-          "pts": 24,
-          "grantsWargear": [
-            "blizzard-shield"
-          ],
-          "note": "4+ Invulnerability Save."
         },
         {
           "id": "ic-magna-grapple",
@@ -14523,6 +14535,23 @@
           "label": "Sergeant: swap Krak Grenades for",
           "replaces": "krak-grenades",
           "weaponListId": "grenade-upgrades",
+          "upgradeGroup": "Sergeant"
+        },
+        {
+          "id": "as-sgt-terminator-armour",
+          "type": "namedUpgrade",
+          "upgradeId": "terminator-armour",
+          "pts": 6,
+          "subfaction": "space_wolves",
+          "upgradeGroup": "Sergeant"
+        },
+        {
+          "id": "as-second-sergeant",
+          "type": "toggle",
+          "label": "Upgrade a Marine to Sergeant",
+          "pts": 4,
+          "subfaction": "space_wolves",
+          "grantsExtraModelOf": "as-sgt",
           "upgradeGroup": "Sergeant"
         },
         {
@@ -17045,6 +17074,16 @@
           "type": "namedUpgrade",
           "upgradeId": "terminator-armour",
           "pts": 6,
+          "subfaction": "space_wolves",
+          "upgradeGroup": "Sergeant"
+        },
+        {
+          "id": "dv-second-sergeant",
+          "type": "toggle",
+          "label": "Upgrade a Marine to Sergeant",
+          "pts": 4,
+          "subfaction": "space_wolves",
+          "grantsExtraModelOf": "dev-sgt",
           "upgradeGroup": "Sergeant"
         }
       ]
@@ -19440,8 +19479,9 @@
             },
             {
               "weaponId": "2-linked-inferno-cannons",
-              "label": "2 Linked Inferno Cannons (BA only)",
+              "label": "2 Linked Inferno Cannons",
               "pts": 24,
+              "subfaction": "blood_angels",
               "arcType": "Turret",
               "mountingTags": [
                 "Primary"
@@ -19449,8 +19489,9 @@
             },
             {
               "weaponId": "2-linked-assault-cannons",
-              "label": "2 Linked Assault Cannons (BA only)",
+              "label": "2 Linked Assault Cannons",
               "pts": 58,
+              "subfaction": "blood_angels",
               "arcType": "Turret",
               "mountingTags": [
                 "Primary"
@@ -19466,7 +19507,6 @@
             "predator"
           ],
           "label": "Add Sponsons",
-          "replaces": "predator-autocannon",
           "choices": [
             {
               "weaponId": "2-heavy-bolters-sponson",
@@ -19482,8 +19522,9 @@
             },
             {
               "weaponId": "2-heavy-flamers-sponson",
-              "label": "2 Heavy Flamers (BA only)",
+              "label": "2 Heavy Flamers",
               "pts": 16,
+              "subfaction": "blood_angels",
               "arcType": "Sponson"
             }
           ]
@@ -19491,6 +19532,8 @@
         {
           "id": "pr-dozerblade",
           "type": "toggle",
+          "exclusiveGroup": "pr-upgrades",
+          "applies": ["predator"],
           "label": "Dozerblade",
           "pts": 9,
           "grantsWargear": [
@@ -19500,6 +19543,8 @@
         {
           "id": "pr-hunter-killer",
           "type": "toggle",
+          "exclusiveGroup": "pr-upgrades",
+          "applies": ["predator"],
           "label": "Hunter Killer Missile",
           "pts": 5,
           "grantsWargear": [
@@ -19510,6 +19555,8 @@
         {
           "id": "pr-stormbolter",
           "type": "toggle",
+          "exclusiveGroup": "pr-upgrades",
+          "applies": ["predator"],
           "label": "Stormbolter (Pintle)",
           "pts": 7,
           "grantsWargear": [
@@ -19519,6 +19566,8 @@
         {
           "id": "pr-recovery",
           "type": "toggle",
+          "exclusiveGroup": "pr-upgrades",
+          "applies": ["predator"],
           "label": "Recovery Gear",
           "pts": 2,
           "grantsWargear": [
@@ -19528,6 +19577,8 @@
         {
           "id": "pr-extra-armour",
           "type": "toggle",
+          "exclusiveGroup": "pr-upgrades",
+          "applies": ["predator"],
           "label": "Extra Armour",
           "pts": 5,
           "grantsWargear": [
@@ -19537,6 +19588,8 @@
         {
           "id": "pr-smoke",
           "type": "toggle",
+          "exclusiveGroup": "pr-upgrades",
+          "applies": ["predator"],
           "label": "Smoke Launchers",
           "pts": 10,
           "grantsWargear": [
@@ -20103,6 +20156,8 @@
         {
           "id": "vin-siege-shield",
           "type": "toggle",
+          "exclusiveGroup": "vin-upgrades",
+          "applies": ["vindicator"],
           "label": "Siege Shield",
           "pts": 25,
           "grantsWargear": [
@@ -20121,6 +20176,8 @@
         {
           "id": "vin-dozerblade",
           "type": "toggle",
+          "exclusiveGroup": "vin-upgrades",
+          "applies": ["vindicator"],
           "label": "Dozerblade",
           "pts": 9,
           "grantsWargear": [
@@ -20130,6 +20187,8 @@
         {
           "id": "vin-hunter-killer",
           "type": "toggle",
+          "exclusiveGroup": "vin-upgrades",
+          "applies": ["vindicator"],
           "label": "Hunter Killer Missile",
           "pts": 5,
           "grantsWargear": [
@@ -20140,6 +20199,8 @@
         {
           "id": "vin-stormbolter",
           "type": "toggle",
+          "exclusiveGroup": "vin-upgrades",
+          "applies": ["vindicator"],
           "label": "Stormbolter (Pintle)",
           "pts": 7,
           "grantsWargear": [
@@ -20149,6 +20210,8 @@
         {
           "id": "vin-recovery",
           "type": "toggle",
+          "exclusiveGroup": "vin-upgrades",
+          "applies": ["vindicator"],
           "label": "Recovery Gear",
           "pts": 2,
           "grantsWargear": [
@@ -20158,6 +20221,8 @@
         {
           "id": "vin-extra-armour",
           "type": "toggle",
+          "exclusiveGroup": "vin-upgrades",
+          "applies": ["vindicator"],
           "label": "Extra Armour",
           "pts": 5,
           "grantsWargear": [
@@ -20167,6 +20232,8 @@
         {
           "id": "vin-smoke",
           "type": "toggle",
+          "exclusiveGroup": "vin-upgrades",
+          "applies": ["vindicator"],
           "label": "Smoke Launchers",
           "pts": 10,
           "grantsWargear": [
@@ -20271,6 +20338,8 @@
         {
           "id": "ww-dozerblade",
           "type": "toggle",
+          "exclusiveGroup": "ww-upgrades",
+          "applies": ["whirlwind"],
           "label": "Dozerblade",
           "pts": 9,
           "grantsWargear": [
@@ -20280,6 +20349,8 @@
         {
           "id": "ww-hunter-killer",
           "type": "toggle",
+          "exclusiveGroup": "ww-upgrades",
+          "applies": ["whirlwind"],
           "label": "Hunter Killer Missile",
           "pts": 5,
           "grantsWargear": [
@@ -20290,6 +20361,8 @@
         {
           "id": "ww-stormbolter",
           "type": "toggle",
+          "exclusiveGroup": "ww-upgrades",
+          "applies": ["whirlwind"],
           "label": "Stormbolter (Pintle)",
           "pts": 7,
           "grantsWargear": [
@@ -20299,6 +20372,8 @@
         {
           "id": "ww-recovery",
           "type": "toggle",
+          "exclusiveGroup": "ww-upgrades",
+          "applies": ["whirlwind"],
           "label": "Recovery Gear",
           "pts": 2,
           "grantsWargear": [
@@ -20308,6 +20383,8 @@
         {
           "id": "ww-extra-armour",
           "type": "toggle",
+          "exclusiveGroup": "ww-upgrades",
+          "applies": ["whirlwind"],
           "label": "Extra Armour",
           "pts": 5,
           "grantsWargear": [
@@ -20317,6 +20394,8 @@
         {
           "id": "ww-smoke",
           "type": "toggle",
+          "exclusiveGroup": "ww-upgrades",
+          "applies": ["whirlwind"],
           "label": "Smoke Launchers",
           "pts": 10,
           "grantsWargear": [
@@ -21191,8 +21270,9 @@
             },
             {
               "weaponId": "2-linked-heavy-flamers-sponson-rb",
-              "label": "2 Linked Heavy Flamers (BA only)",
+              "label": "2 Linked Heavy Flamers",
               "pts": -4,
+              "subfaction": "blood_angels",
               "arcType": "Turret",
               "mountingTags": [
                 "Primary"
@@ -21200,8 +21280,9 @@
             },
             {
               "weaponId": "2-linked-assault-cannons",
-              "label": "2 Linked Assault Cannons (BA only)",
+              "label": "2 Linked Assault Cannons",
               "pts": 64,
+              "subfaction": "blood_angels",
               "arcType": "Turret",
               "mountingTags": [
                 "Primary"

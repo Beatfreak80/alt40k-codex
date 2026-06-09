@@ -1045,6 +1045,10 @@
               }
             }
           }
+        },
+        "grantsExtraModelOf": {
+          "type": "string",
+          "description": "Model id — when this toggle is active, adds a virtual second instance of that model with the same upgradeGroup options"
         }
       },
       "allOf": [

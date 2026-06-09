@@ -406,6 +406,42 @@ on the same option:
 
 ---
 
+### 4. Adding a second model instance for a subfaction
+
+Some subfactions allow a unit to upgrade a regular model into a second copy of
+a specialist model (e.g., Space Wolves may upgrade a Marine to a second Sergeant).
+Use `grantsExtraModelOf` on a toggle option to enable this.
+
+When the toggle is active:
+- A **"2nd Sergeant"** section appears in the list builder with the same upgrade
+  options as the base model (all options in the same `upgradeGroup` that apply to
+  that model).
+- The second sergeant's choices are stored independently from the first sergeant's.
+- The toggle's `pts` covers the model upgrade cost (+4 pts); the second sergeant's
+  own upgrades (weapon swaps, Terminator Armour, etc.) add on top.
+
+```jsonc
+// Tactical Squad — Space Wolves can add a second Sergeant
+{
+  "id": "tac-second-sergeant",
+  "type": "toggle",
+  "label": "Upgrade a Marine to Sergeant",
+  "pts": 4,
+  "subfaction": "space_wolves",
+  "grantsExtraModelOf": "tactical-sgt",   // must match a model id in unit.models[]
+  "upgradeGroup": "Sergeant"              // determines which options appear for the 2nd sergeant
+}
+```
+
+Place this option at the **end** of the group it belongs to (so it appears after all
+the regular sergeant options). The `upgradeGroup` must match the group used by the
+model's existing weapon swaps and upgrades.
+
+The postprocessor validates that `grantsExtraModelOf` references a real model ID
+within the unit's `models[]` array.
+
+---
+
 ### Subfaction ID reference (Space Marines)
 
 | Subfaction | `id` |

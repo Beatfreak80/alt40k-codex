@@ -658,6 +658,27 @@ function calcEntryCost(entry: any, unit: any, fd: any): number {
       if (selOpt) c += selOpt.pts || 0;
     }
   }
+  // Extra model costs — grantsExtraModelOf toggle adds a second instance of a model with its own option choices
+  for (const o of (unit.options || [])) {
+    if (o.type !== "toggle" || !o.grantsExtraModelOf) continue;
+    if (!entry.options?.[o.id]) continue;
+    const prefix = `__sg2_${o.id}_`;
+    const sgGroup: string | null = o.upgradeGroup ?? null;
+    const groupOpts = sgGroup
+      ? (unit.options || []).filter((x: any) => x.upgradeGroup === sgGroup && x.id !== o.id)
+      : [];
+    for (const so of groupOpts) {
+      const v = entry.options?.[prefix + so.id];
+      if (so.type === "toggle" && v) c += so.pts || 0;
+      else if (so.type === "namedUpgrade" && v) c += so.pts || 0;
+      else if (so.type === "weaponSwap") {
+        if (v == null) continue;
+        const choices = resolveChoicesForOpt(so, wL);
+        const ch = choices.find((x: any) => x.weaponId === v);
+        if (ch) c += ch.pts || 0;
+      }
+    }
+  }
   return c;
 }
 
@@ -1579,6 +1600,22 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     return (weapons||[]).find((x: any) => x.id === id)?.name || id;
   }
 
+  // Count adjustments from active grantsExtraModelOf toggles.
+  // Each active toggle adds +1 to the target model and -1 to the most numerous other model (the "donor").
+  const extraCountAdj = new Map<string, number>();
+  for (const o of (unit.options || [])) {
+    if (o.type !== "toggle" || !o.grantsExtraModelOf || !entry.options?.[o.id]) continue;
+    const targetId = o.grantsExtraModelOf as string;
+    extraCountAdj.set(targetId, (extraCountAdj.get(targetId) ?? 0) + 1);
+    const donor = (unit.models || [])
+      .filter((m: any) => m.id !== targetId)
+      .sort((a: any, b: any) => (b.minCount ?? 0) - (a.minCount ?? 0))[0];
+    if (donor) extraCountAdj.set(donor.id, (extraCountAdj.get(donor.id) ?? 0) - 1);
+  }
+  function adjModelCount(modelId: string): number {
+    return modelTypeCount(unit, modelId, entry.options || {}) + (extraCountAdj.get(modelId) ?? 0);
+  }
+
   // Apply swaps that have a single string value (scope:unit or single-model perModelType).
   // limitedSlot is excluded: it applies to only one model instance, so modelWargear (per type) stays unchanged.
   const modelWargear: Map<string, string[]> = new Map();
@@ -1697,12 +1734,17 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     } else if (o.type === "perModelWeapon") {
       const modelOpts = entry.perModelOptions?.[o.id] || {};
       const applyTo: string[] = o.applies ?? (unit.models||[]).map((m: any) => m.id);
-      for (const wid of Object.values(modelOpts) as string[]) {
+      const selectedWids = Object.values(modelOpts) as string[];
+      for (const wid of selectedWids) {
         if (!wid) continue;
         for (const mid of applyTo) {
           const weps = modelWargear.get(mid) || [];
           if (!weps.includes(wid)) modelWargear.set(mid, [...weps, wid]);
         }
+      }
+      if (o.replaces && selectedWids.length > 0 && !selectedWids.includes(o.replaces)) {
+        for (const mid of applyTo)
+          modelWargear.set(mid, (modelWargear.get(mid) || []).filter((w: string) => w !== o.replaces));
       }
     }
   }
@@ -1713,7 +1755,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
   const weaponCountByMid = new Map<string, Map<string, number>>();
   for (const m of (unit.models || [])) {
     const mid = m.id;
-    const total = modelTypeCount(unit, mid, entry.options || {});
+    const total = adjModelCount(mid);
     if (total === 0) continue;
     const counts = new Map<string, number>();
     for (const r of (m.baseWargear || [])) {
@@ -1731,7 +1773,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     // proportionally so that mergedCounts (which sums per-type counts) yields the
     // correct totals rather than multiplying by the number of model types.
     const validMids = applyTo.filter((mid: string) => weaponCountByMid.has(mid));
-    const totalApplies = validMids.reduce((s: number, mid: string) => s + modelTypeCount(unit, mid, entry.options || {}), 0);
+    const totalApplies = validMids.reduce((s: number, mid: string) => s + adjModelCount(mid), 0);
     if (totalApplies === 0) continue;
     const swapEntries = Object.entries(v as Record<string, number>).filter(([wid, cnt]) => (cnt as number) > 0 && wid !== o.replaces);
     const soFar: Record<string, number> = {};
@@ -1739,7 +1781,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     for (let i = 0; i < validMids.length; i++) {
       const mid = validMids[i];
       const counts = weaponCountByMid.get(mid)!;
-      const thisTotal = modelTypeCount(unit, mid, entry.options || {});
+      const thisTotal = adjModelCount(mid);
       const isLast = i === validMids.length - 1;
       let swappedHere = 0;
       for (const [wid, cnt] of swapEntries) {
@@ -1790,7 +1832,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     const targetMids = new Set(resolveChampionModelIds(o, unit));
     for (const [mid, counts] of weaponCountByMid) {
       if (!targetMids.has(mid)) continue;
-      const total = modelTypeCount(unit, mid, entry.options || {});
+      const total = adjModelCount(mid);
       for (const wid of wargearList) if (!counts.has(wid)) counts.set(wid, total);
     }
   }
@@ -1798,7 +1840,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
   // Group models by resolved wargear, skipping optional models with 0 count
   const groups: Map<string, { refs: string[]; names: string[]; mids: string[] }> = new Map();
   for (const m of (unit.models||[])) {
-    if (modelTypeCount(unit, m.id, entry.options || {}) === 0) continue;
+    if (adjModelCount(m.id) === 0) continue;
     const key = (modelWargear.get(m.id)||[]).join(",");
     if (!groups.has(key)) groups.set(key, { refs: modelWargear.get(m.id)||[], names: [], mids: [] });
     groups.get(key)!.names.push(m.name);
@@ -1871,7 +1913,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
     for (const [idx, selectedId] of Object.entries(modelSelections)) {
       if (!selectedId) continue;
       const selOpt = groupOpts.find((x: any) => x.id === selectedId);
-      if (selOpt) cl(`Model ${Number(idx)+1}: ${selOpt.label}${selOpt.pts ? ` +${selOpt.pts} pts` : ""}`, Number(idx));
+      if (selOpt) cl(`Model ${Number(idx)+1}: ${selOpt.label}${selOpt.pts ? ` ${selOpt.pts > 0 ? '+' : ''}${selOpt.pts} pts` : ""}`, Number(idx));
     }
   }
 
@@ -2024,7 +2066,7 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
       </div>
       {!collapsedWargear && (<>
       {wgGroups.map((g, gi) => {
-        const totalCount = g.mids.reduce((s: number, mid: string) => s + modelTypeCount(unit, mid, entry.options || {}), 0);
+        const totalCount = g.mids.reduce((s: number, mid: string) => s + adjModelCount(mid), 0);
         let mergedCounts: Map<string, number> | undefined;
         if (totalCount > 1) {
           mergedCounts = new Map<string, number>();
@@ -2296,7 +2338,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.checked}))}
                   style={{marginRight:8}}/>
                 {label} Blessing
-                <span className="lb-opt-pts"> +{ch.pts} pts</span>
+                <span className="lb-opt-pts"> {ch.pts > 0 ? '+' : ''}{ch.pts} pts</span>
               </span>
             </label>
           </div>
@@ -2413,7 +2455,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                             });
                           }}
                           style={{marginRight:8}}/>
-                        {label}
+                        {label}{o.subfaction ? ' *' : ''}
                         {o.ptsPerModel > 0 ? <span className="lb-opt-pts"> +{o.ptsPerModel} pts per model</span> : o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
                         {note && <span className="lb-opt-note">{note}</span>}
                       </span>
@@ -2487,7 +2529,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                                 })}
                                 onChange={() => {}}
                                 style={{marginRight:8}}/>
-                              {label}
+                              {label}{o.subfaction ? ' *' : ''}
                               {o.ptsPerModel > 0 ? <span className="lb-opt-pts"> +{o.ptsPerModel} pts per model</span> : o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
                               {note && <span className="lb-opt-note">{note}</span>}
                             </span>
@@ -2514,7 +2556,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                               disabled={isDisabled}
                               onChange={() => setOptions((p:any) => ({...p, [o.id]: !p[o.id]}))}
                               style={{marginRight:8}}/>
-                            {label}
+                            {label}{o.subfaction ? ' *' : ''}
                             {o.ptsPerModel > 0 ? <span className="lb-opt-pts"> +{o.ptsPerModel} pts per model</span> : o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
                             {note && <span className="lb-opt-note">{note}</span>}
                           </span>
@@ -2533,13 +2575,13 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
           if (o.scope === "unit" || !isMultiModelSwap(o, unit)) {
             return (
               <div key={o.id} className="lb-opt-section">
-                <div className="lb-opt-section-head">{o.label}</div>
+                <div className="lb-opt-section-head">{o.label}{o.subfaction ? ' *' : ''}</div>
                 <div className="lb-opt-row">
                   <select className="lb-select" style={{flex:1}} value={options[o.id]||""}
                     onChange={e => setOptions((p: any) => ({...p, [o.id]: e.target.value}))}>
                     {choices.map((c: any) => (
                       <option key={c.weaponId} value={c.weaponId}>
-                        {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts${o.ptsPerModel ? " each" : ""})` : ""}
+                        {wepName(c.weaponId, c)}{c.subfaction ? ' *' : ''}{c.pts ? ` (${c.pts > 0 ? '+' : ''}${c.pts} pts${o.ptsPerModel ? " each" : ""})` : ""}
                       </option>
                     ))}
                   </select>
@@ -2555,7 +2597,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
             return (
               <div key={o.id} className="lb-opt-section">
                 <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                  <span>{o.label}</span>
+                  <span>{o.label}{o.subfaction ? ' *' : ''}</span>
                   <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",color:remaining===0?"#4a9a4a":"#888"}}>{used}/{modelCount} assigned</span>
                 </div>
                 {choices.filter((c: any) => c.weaponId !== o.replaces).map((c: any) => {
@@ -2563,7 +2605,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   return (
                     <div key={c.weaponId} className="lb-opt-row">
                       <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
-                        {wepName(c.weaponId, c)}
+                        {wepName(c.weaponId, c)}{c.subfaction ? ' *' : ''}
                         {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
                       </span>
                       <div className="lb-num-ctrl">
@@ -2588,7 +2630,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
             return (
               <div key={o.id} className="lb-opt-section">
                 <div className="lb-opt-section-head" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                  <span>{o.label}</span>
+                  <span>{o.label}{o.subfaction ? ' *' : ''}</span>
                   <span style={{fontWeight:400,textTransform:"none",fontSize:"8pt",color:ownUsed===slotBudget?"#4a9a4a":"#888"}}>{ownUsed}/{slotBudget} slots used</span>
                 </div>
                 {choices.filter((c: any) => c.weaponId !== o.replaces).map((c: any) => {
@@ -2596,7 +2638,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   return (
                     <div key={c.weaponId} className="lb-opt-row">
                       <span className="lb-opt-label" style={{fontSize:"9.5pt"}}>
-                        {wepName(c.weaponId, c)}
+                        {wepName(c.weaponId, c)}{c.subfaction ? ' *' : ''}
                         {c.pts > 0 && <span className="lb-opt-pts"> +{c.pts} pts each</span>}
                       </span>
                       <div className="lb-num-ctrl">
@@ -2620,7 +2662,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
             const canTake = isTaken || remaining > 0;
             return (
               <div key={o.id} className="lb-opt-section">
-                <div className="lb-opt-section-head">{o.label}</div>
+                <div className="lb-opt-section-head">{o.label}{o.subfaction ? ' *' : ''}</div>
                 <div className="lb-opt-row">
                   <select className="lb-select" value={options[o.id]||""} disabled={!canTake}
                     style={{opacity:canTake?1:0.45}}
@@ -2628,7 +2670,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                     <option value="">None{!canTake?" (pool exhausted)":""}</option>
                     {choices.filter((c: any) => c.label !== "None").map((c: any) => (
                       <option key={c.weaponId} value={c.weaponId}>
-                        {wepName(c.weaponId, c)}{c.pts?` (+${c.pts} pts)`:""}
+                        {wepName(c.weaponId, c)}{c.subfaction ? ' *' : ''}{c.pts?` (${c.pts > 0 ? '+' : ''}${c.pts} pts)`:""}
                       </option>
                     ))}
                   </select>
@@ -2659,7 +2701,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
           }
           return (
             <div key={o.id} className="lb-opt-section">
-              <div className="lb-opt-section-head">{o.label} — per model</div>
+              <div className="lb-opt-section-head">{o.label}{o.subfaction ? ' *' : ''} — per model</div>
               {pmSlots.map(({ i, mNum, wepIdx, wc }) => {
                 const isFirstWepOfModel = wepIdx === 0;
                 const isLastWepOfModel = wepIdx === wc - 1;
@@ -2680,7 +2722,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                       onChange={e => setPerModelOptions((p: any) => ({...p,[o.id]:{...(p[o.id]||{}),[String(i)]:e.target.value}}))}>
                       {choices.map((c: any) => (
                         <option key={c.weaponId} value={c.weaponId}>
-                          {wepName(c.weaponId, c)}{c.pts?` (+${c.pts} pts)`:""}
+                          {wepName(c.weaponId, c)}{c.subfaction ? ' *' : ''}{c.pts?` (${c.pts > 0 ? '+' : ''}${c.pts} pts)`:""}
                         </option>
                       ))}
                     </select>
@@ -2703,7 +2745,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
           }
           return (
             <div key={o.id} className="lb-opt-section">
-              <div className="lb-opt-section-head">{o.label} — per model</div>
+              <div className="lb-opt-section-head">{o.label}{o.subfaction ? ' *' : ''} — per model</div>
               {pmSlots.map(({ i, mNum }) => {
                 const cur = parseInt(perModelOptions[o.id]?.[String(i)] || "0") || 0;
                 const rowLabel = totalModels > 1 ? `Model ${mNum + 1}` : "";
@@ -2751,6 +2793,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
               const gSwaps    = groupOpts.filter((o: any) => o.type==="weaponSwap" && !isSwapHidden(o));
               const gPmToggle = groupOpts.filter((o: any) => o.type==="perModelToggle");
               const gPm       = groupOpts.filter((o: any) => o.type==="perModelWeapon");
+              const extraModelTog = groupOpts.find((o: any) => o.grantsExtraModelOf && options[o.id]);
               return (
                 <Fragment key={groupName}>
                   <div className="lb-opt-group-head">{groupName}</div>
@@ -2758,6 +2801,60 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   {gSwaps.map(renderSwapOpt)}
                   {gPmToggle.map(renderPmToggle)}
                   {gPm.map(renderPmOpt)}
+                  {extraModelTog && (() => {
+                    const prefix = `__sg2_${extraModelTog.id}_`;
+                    const extraOpts = groupOpts.filter((o: any) => !o.grantsExtraModelOf);
+                    const exUpgrades = extraOpts.filter((o: any) => (o.type==="toggle"||o.type==="namedUpgrade") && (!o.subfaction || o.subfaction === subfactionId));
+                    const exSwaps    = extraOpts.filter((o: any) => o.type==="weaponSwap");
+                    return (
+                      <Fragment>
+                        <div className="lb-opt-group-head" style={{borderTop:"2px dashed #e8d48a",marginTop:4}}>2nd Sergeant</div>
+                        {exUpgrades.length > 0 && (
+                          <div className="lb-opt-section">
+                            <div className="lb-opt-section-head">2nd Sergeant Upgrades</div>
+                            {exUpgrades.map((o: any) => {
+                              const named = o.type === "namedUpgrade" ? (nU[o.upgradeId]||null) : null;
+                              const label = named?.label || o.label;
+                              const note = upgradeDesc(o, named);
+                              const isActive = !!(options[prefix + o.id]);
+                              return (
+                                <label key={o.id} className="lb-opt-row" style={{cursor:"pointer",display:"flex"}}>
+                                  <span className="lb-opt-label">
+                                    <input type="checkbox" checked={isActive}
+                                      onChange={e => setOptions((p: any) => ({...p, [prefix + o.id]: e.target.checked}))}
+                                      style={{marginRight:8}}/>
+                                    {label}
+                                    {o.pts > 0 ? <span className="lb-opt-pts"> +{o.pts} pts</span> : null}
+                                    {note && <span className="lb-opt-note">{note}</span>}
+                                  </span>
+                                </label>
+                              );
+                            })}
+                          </div>
+                        )}
+                        {exSwaps.map((o: any) => {
+                          const choices = resolveChoicesForDisplay(o, wL, subfactionId);
+                          const value = (options[prefix + o.id] as string) || choices[0]?.weaponId || "";
+                          const swapLabel = o.label.replace(/^Sergeant:/i, '2nd Sergeant:');
+                          return (
+                            <div key={o.id} className="lb-opt-section">
+                              <div className="lb-opt-section-head">{swapLabel}</div>
+                              <div className="lb-opt-row">
+                                <select className="lb-select" style={{flex:1}} value={value}
+                                  onChange={e => setOptions((p: any) => ({...p, [prefix + o.id]: e.target.value}))}>
+                                  {choices.map((c: any) => (
+                                    <option key={c.weaponId} value={c.weaponId}>
+                                      {wepName(c.weaponId, c)}{c.pts ? ` (+${c.pts} pts)` : ""}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </Fragment>
+                    );
+                  })()}
                 </Fragment>
               );
             })}
@@ -2965,11 +3062,17 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose
   );
 }
 
-function UnitPickerModal({ factionData, onSelect, onCancel, initialSlot }: any) {
+function UnitPickerModal({ factionData, onSelect, onCancel, initialSlot, activeSubfaction }: any) {
   const units = factionData.units || [];
-  const filtered = initialSlot ? units.filter((u: any) => u.slot === initialSlot) : units;
+  const filtered = initialSlot
+    ? units.filter((u: any) => effectiveSlot(u.id, u.slot, activeSubfaction) === initialSlot)
+    : units;
   const grouped: Record<string, any[]> = {};
-  for (const u of filtered) { if (!grouped[u.slot]) grouped[u.slot] = []; grouped[u.slot].push(u); }
+  for (const u of filtered) {
+    const slot = effectiveSlot(u.id, u.slot, activeSubfaction);
+    if (!grouped[slot]) grouped[slot] = [];
+    grouped[slot].push(u);
+  }
 
   return (
     <LBModal onClose={onCancel}>
@@ -3042,6 +3145,9 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
   const [pendingDelete, setPendingDelete] = useState<string|null>(null);
   const [expandedBattleId, setExpandedBattleId] = useState<string|null>(null);
   const [renamingListId, setRenamingListId] = useState<string|null>(null);
+  const [showNewListModal, setShowNewListModal] = useState(false);
+  const [modalSfId, setModalSfId] = useState<string>("");
+  const [sfRulesExpanded, setSfRulesExpanded] = useState(false);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -3065,12 +3171,13 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
     setLists(lists.map(l => l.listId === listId ? updater(l) : l));
   }
 
-  function createList() {
+  function createList(subfactionId: string = "") {
     const pts = getLastPts();
-    const newList = { listId: genId(), name: "New List", subfactionId: selectedSubfaction||"", pointsTarget: pts, entries: [] };
+    const newList = { listId: genId(), name: "New List", subfactionId, pointsTarget: pts, entries: [] };
     setLists([...lists, newList]);
     setActiveListId(newList.listId);
     setBattleMode(false);
+    if (subfactionId) setSelectedSubfaction(subfactionId);
   }
 
   function loadList(listId: string) {
@@ -3199,8 +3306,52 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
         <div className="lb-header">
           <div style={{fontSize:"18pt",fontWeight:700,flex:1,color:"#1a1a1a"}}>Army Lists</div>
           <button className="lb-btn" onClick={importList}>↑ Import</button>
-          <button className="lb-btn lb-btn-primary" onClick={createList}>+ New List</button>
+          <button className="lb-btn lb-btn-primary" onClick={() => { setModalSfId(subfactions[0]?.id || ""); setShowNewListModal(true); }}>+ New List</button>
         </div>
+
+        {showNewListModal && (() => {
+          const modalSf = subfactions.find((s: any) => s.id === modalSfId) || null;
+          return (
+            <div className="lb-modal-overlay" onPointerDown={e => { if (e.target === e.currentTarget) setShowNewListModal(false); }}>
+              <div className="lb-modal" style={{maxWidth:480}}>
+                <div className="lb-modal-sticky">
+                  <div className="lb-modal-sticky-inner">
+                    <div className="lb-modal-head">
+                      <span>New Army List</span>
+                      <button className="lb-btn" onClick={() => setShowNewListModal(false)}>✕</button>
+                    </div>
+                  </div>
+                </div>
+                <div style={{marginTop:16}}>
+                  <label style={{display:"block",fontSize:"9.5pt",fontWeight:600,color:"#666",letterSpacing:".06em",textTransform:"uppercase",marginBottom:6}}>
+                    {sfLabel}
+                  </label>
+                  <select className="lb-select" style={{width:"100%"}} value={modalSfId} onChange={e => setModalSfId(e.target.value)}>
+                    {subfactions.length === 0
+                      ? <option value="">— No {sfLabel.toLowerCase()}s available —</option>
+                      : subfactions.map((s: any) => <option key={s.id} value={s.id}>{s.name}</option>)
+                    }
+                  </select>
+                  {modalSf && (modalSf.rules || []).length > 0 && (
+                    <div style={{marginTop:14,background:"#faf8f3",border:"1px solid #e8e4da",borderRadius:5,padding:"10px 14px"}}>
+                      {(modalSf.rules as any[]).map((r: any) => (
+                        <div key={r.id} style={{marginBottom:8}}>
+                          <div style={{fontWeight:700,fontSize:"10pt",color:"#1a1a1a"}}>{r.name}</div>
+                          <div style={{fontSize:"9.5pt",color:"#444",marginTop:2,lineHeight:1.5}}>{r.fullDesc}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="lb-modal-actions">
+                  <button className="lb-btn lb-btn-primary" onClick={() => { setShowNewListModal(false); createList(modalSfId); }}>
+                    Add List
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
         {lists.length === 0 ? (
           <div style={{color:"#888",fontSize:"10pt",fontStyle:"italic",padding:"20px 0"}}>No lists yet. Click "New List" to get started.</div>
         ) : (
@@ -3222,6 +3373,10 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
                       {sf ? sf.name : `No ${sfLabel.toLowerCase()}`} · {l.entries.length} unit{l.entries.length!==1?"s":""}
                     </div>
                   </div>
+                  <button className="lb-btn" style={{flexShrink:0}}
+                    onClick={e => { e.stopPropagation(); const copy = { ...l, listId: genId(), name: `${l.name} (Copy)` }; setLists([...lists, copy]); }}>
+                    Duplicate
+                  </button>
                   <button className="lb-btn lb-btn-danger" style={{flexShrink:0}}
                     onClick={e => { e.stopPropagation(); if (confirm(`Delete "${l.name}"?`)) deleteList(l.listId); }}>
                     Delete
@@ -3245,10 +3400,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
 
   const listHeader = (
     <div className="lb-header">
-      {battleMode
-        ? <button className="lb-btn" onClick={() => setShowCoreRules(true)}>Core Rules</button>
-        : <button className="lb-btn" onClick={() => setActiveListId(null)}>← Lists</button>
-      }
+      <button className="lb-btn" onClick={() => setActiveListId(null)}>← Lists</button>
 
       {renamingListId === activeList.listId
         ? <input autoFocus className="lb-name-input"
@@ -3260,12 +3412,6 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
             {activeList.name}
           </div>
       }
-
-      <select className="lb-select" value={activeList.subfactionId}
-        onChange={e => { updateList(activeList.listId, l => ({...l, subfactionId: e.target.value})); setSelectedSubfaction(e.target.value); }}>
-        <option value="">— {sfLabel} —</option>
-        {subfactions.map((s: any) => <option key={s.id} value={s.id}>{s.name}</option>)}
-      </select>
 
       <div style={{display:"flex",alignItems:"center",gap:5}}>
         <span style={{fontSize:"18pt",fontWeight:700,color:over?"#c04040":"#7a5800"}}>{ptsUsed}</span>
@@ -3399,14 +3545,41 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
   return (
     <div>
       {listHeader}
+      {activeSubfaction && (activeSubfaction.rules || []).length > 0 && (
+        <div style={{background:"#faf8f3",border:"1px solid #e8e4da",borderRadius:5,marginBottom:12,overflow:"hidden"}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",cursor:"pointer",userSelect:"none"}}
+            onClick={() => setSfRulesExpanded(x => !x)}>
+            <div style={{fontSize:"8.5pt",fontWeight:700,color:"#7a5800",letterSpacing:".08em",textTransform:"uppercase"}}>
+              {activeSubfaction.name} Rules
+            </div>
+            <span style={{fontSize:"9pt",color:"#7a5800"}}>{sfRulesExpanded ? "▲" : "▼"}</span>
+          </div>
+          {sfRulesExpanded && (
+            <div style={{padding:"0 14px 10px",borderTop:"1px solid #e8e4da"}}>
+              {(activeSubfaction.rules as any[]).map((r: any) => (
+                <div key={r.id} className="rule-entry" style={{marginTop:8}}>
+                  <div className="rule-entry-name">{r.name}</div>
+                  <div className="rule-entry-desc">{r.fullDesc}</div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
       {foc.length > 0 && (
         <FOCSlotPanel foc={foc} onAddUnit={slot => { setPickerInitialSlot(slot); setShowUnitPicker(true); }}/>
       )}
-      {!focOk && (
-        <div style={{fontSize:"9pt",color:"#c04040",marginBottom:10,fontStyle:"italic"}}>
-          ⚠ FOC requirements not met — check slot counts above.
-        </div>
-      )}
+      {!focOk && (() => {
+        const underMin = foc.filter((f: any) => f.count < f.min);
+        const overMax = foc.filter((f: any) => f.max !== null && f.count > f.max);
+        return (
+          <div style={{fontSize:"9pt",color:"#c04040",marginBottom:10,fontStyle:"italic"}}>
+            ⚠ Force Organisation requirements not met.
+            {underMin.length > 0 && ` You need at least: ${underMin.map((f: any) => `${f.min} ${f.slot}`).join(', ')}.`}
+            {overMax.length > 0 && ` Too many: ${overMax.map((f: any) => `${f.slot} (max ${f.max})`).join(', ')}.`}
+          </div>
+        );
+      })()}
 
       {activeList.entries.length === 0 ? (
         <div style={{color:"#888",fontSize:"10pt",fontStyle:"italic",padding:"10px 0"}}>No units yet — click a slot above to start building.</div>
@@ -3504,8 +3677,12 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
         ))
       )}
 
+      {activeSubfaction && (
+        <div style={{color:"#888",fontSize:"8pt",marginTop:16,fontStyle:"italic"}}>* This symbol indicates faction-specific wargear, units or upgrades.</div>
+      )}
+
       {showUnitPicker && (
-        <UnitPickerModal factionData={factionData} initialSlot={pickerInitialSlot}
+        <UnitPickerModal factionData={factionData} initialSlot={pickerInitialSlot} activeSubfaction={activeSubfaction}
           onSelect={u => {
             setShowUnitPicker(false);
             setPickerInitialSlot(null);
@@ -3720,10 +3897,15 @@ export default function App() {
 
   const unitsBySlot = useMemo(() => {
     if (!factionData) return {};
-    const g = {};
-    for (const u of factionData.units||[]) { if(!g[u.slot]) g[u.slot]=[]; g[u.slot].push(u); }
+    const activeSf = (factionData.faction?.subfactions || []).find((s: any) => s.id === selectedSubfaction) || null;
+    const g: Record<string, any[]> = {};
+    for (const u of factionData.units||[]) {
+      const slot = effectiveSlot(u.id, u.slot, activeSf);
+      if (!g[slot]) g[slot] = [];
+      g[slot].push(u);
+    }
     return g;
-  }, [factionData]);
+  }, [factionData, selectedSubfaction]);
 
   // Keep ref in sync so the scroll listener can read current activePage
   useEffect(() => { activePageRef.current = activePage; }, [activePage]);
@@ -3994,7 +4176,12 @@ document.body.innerHTML+=body;`;
         <div className="codex-page">
           <div className="faction-header">
             <div>
-              <div className="faction-name">{faction.name||"Unknown Faction"}</div>
+              <div className="faction-name">{faction.name||"Unknown Faction"}{(() => {
+                if (activePage !== "list-builder" || !activeListId) return null;
+                const al = lists.find((l: any) => l.listId === activeListId);
+                const sf = al?.subfactionId ? (faction.subfactions||[]).find((s: any) => s.id === al.subfactionId) : null;
+                return sf ? ` - ${sf.name}` : null;
+              })()}</div>
               <div className="faction-subtitle">Alternate 40k Rules · Unofficial Codex</div>
             </div>
             <div className="faction-version">v{faction.version||"1.0"}</div>
