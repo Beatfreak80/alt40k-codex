@@ -3,13 +3,23 @@
  * postprocess.cjs — Alternate 40k faction JSON post-processor
  *
  * Usage:
- *   node postprocess.cjs public/eldar_faction.json
- *   node postprocess.cjs public/eldar_faction.json --dry-run
+ *   node postprocess.cjs public/eldar/eldar_faction.json
+ *   node postprocess.cjs public/eldar/eldar_faction.json --dry-run
+ *
+ *   # Validate a supplement file against its parent faction:
+ *   node postprocess.cjs public/space-marines/imperial-fist.json --supplement public/space-marines/space-marines_faction.json
  *
  * Does three things, all locally and for free:
  *   1. CLEAN  — strips null/empty fields per schema §12
  *   2. NORM   — normalises weapon rule strings to core-rule IDs via rule-map.json
  *   3. VALID  — validates all cross-references and reports anything needing manual attention
+ *
+ * Supplement mode (--supplement <parent>):
+ *   Treats the target file as a supplement JSON { schemaVersion, subfaction, units[], commonWargear[] }.
+ *   Structure is validated against alt40k-supplement-schema-v1.0.json, which imports Unit and Weapon
+ *   definitions from the main faction schema by $ref — no duplication.
+ *   Weapon and rule IDs from the supplement are validated against the parent faction's commonWargear
+ *   and armyRules in addition to the supplement's own commonWargear.
  */
 
 const fs   = require('fs');
@@ -20,7 +30,8 @@ const Ajv  = require('ajv');
 const ROOT        = __dirname;
 const CORE_PATH   = path.join(ROOT, 'public/core-rules.json');
 const MAP_PATH    = path.join(ROOT, 'rule-map.json');
-const SCHEMA_PATH = path.join(ROOT, 'public/alt40k-faction-schema-v1.3.json');
+const SCHEMA_PATH      = path.join(ROOT, 'public/alt40k-faction-schema-v1.3.json');
+const SUPP_SCHEMA_PATH = path.join(ROOT, 'public/alt40k-supplement-schema-v1.0.json');
 
 // Weapon rule patterns handled procedurally (any numeric suffix)
 const RULE_PATTERNS = [
@@ -56,9 +67,30 @@ function validateSchema(data) {
   return { ok: false, errors };
 }
 
+// ── 0b. SCHEMA — validate supplement structure with AJV ──────────────────────
+function validateSupplementSchema(data) {
+  let suppSchema, mainSchema;
+  try { suppSchema = JSON.parse(fs.readFileSync(SUPP_SCHEMA_PATH, 'utf8')); }
+  catch (e) { return { ok: false, errors: [`Cannot load supplement schema: ${e.message}`] }; }
+  try { mainSchema = JSON.parse(fs.readFileSync(SCHEMA_PATH, 'utf8')); }
+  catch (e) { return { ok: false, errors: [`Cannot load main schema for $ref resolution: ${e.message}`] }; }
+
+  const ajv = new Ajv({ allErrors: true, jsonPointers: true });
+  ajv.addSchema(mainSchema); // registers definitions under "$id": "alt40k-faction-schema-v1.3.json"
+  const validate = ajv.compile(suppSchema);
+  if (validate(data)) return { ok: true, errors: [] };
+
+  const errors = (validate.errors || []).map(err => {
+    const loc = err.dataPath || '(root)';
+    return `${loc}: ${err.message}`;
+  });
+  return { ok: false, errors };
+}
+
 // ── 1. CLEAN — strip null/empty fields ───────────────────────────────────────
 function stripNulls(obj) {
-  if (Array.isArray(obj)) return obj.map(stripNulls).filter(v => v !== null && v !== undefined);
+  // Preserve null inside arrays — some schema fields use [min, null] for "no upper limit"
+  if (Array.isArray(obj)) return obj.map(stripNulls);
   if (obj === null || obj === undefined) return undefined;
   if (typeof obj !== 'object') return obj;
   const out = {};
@@ -80,8 +112,9 @@ function stripNulls(obj) {
 }
 
 function countNulls(obj) {
-  if (obj === null || obj === undefined || obj === false) return 1;
+  // Only count null/false in object properties (not inside arrays — arrays may use null as a sentinel)
   if (Array.isArray(obj)) return obj.reduce((n, v) => n + countNulls(v), 0);
+  if (obj === null || obj === undefined) return 0; // top-level null/undef: not counted here
   if (typeof obj !== 'object') return 0;
   let n = 0;
   for (const [k, v] of Object.entries(obj)) {
@@ -237,13 +270,17 @@ function validate(d, coreIds) {
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
-const args    = process.argv.slice(2).filter(a => !a.startsWith('--'));
-const flags   = process.argv.slice(2).filter(a => a.startsWith('--'));
-const dryRun  = flags.includes('--dry-run');
+const argv    = process.argv.slice(2);
+const dryRun  = argv.includes('--dry-run');
+const suppIdx = argv.indexOf('--supplement');
+const suppParentPath = suppIdx !== -1 ? argv[suppIdx + 1] : null;
+const isSupplementMode = suppParentPath !== null;
+const args    = argv.filter(a => !a.startsWith('--') && a !== suppParentPath);
 const filePath = args[0];
 
-if (!filePath) die('Usage: node postprocess.cjs <faction-file.json> [--dry-run]');
+if (!filePath) die('Usage: node postprocess.cjs <faction-file.json> [--dry-run]\n       node postprocess.cjs <supplement.json> --supplement <parent-faction.json> [--dry-run]');
 if (!fs.existsSync(filePath)) die(`File not found: ${filePath}`);
+if (isSupplementMode && !fs.existsSync(suppParentPath)) die(`Parent faction file not found: ${suppParentPath}`);
 
 const coreData  = load(CORE_PATH);
 const ruleMap   = load(MAP_PATH);
@@ -261,14 +298,28 @@ console.log(` POSTPROCESSOR — ${label}`);
 console.log(`${'═'.repeat(60)}\n`);
 
 // ── Phase 0: Schema ────────────────────────────────────────────────────────
-const { ok: schemaOk, errors: schemaErrors } = validateSchema(faction);
-if (schemaOk) {
-  console.log('[SCHEMA] Structure valid ✓');
+let schemaOk = true;
+if (isSupplementMode) {
+  const { ok, errors: schemaErrors } = validateSupplementSchema(faction);
+  schemaOk = ok;
+  if (ok) {
+    console.log('[SCHEMA] Supplement structure valid ✓');
+  } else {
+    console.log(`[SCHEMA] ${schemaErrors.length} STRUCTURAL ERROR(S):`);
+    schemaErrors.forEach(e => console.log(`          ✗ ${e}`));
+  }
+  console.log('');
 } else {
-  console.log(`[SCHEMA] ${schemaErrors.length} STRUCTURAL ERROR(S):`);
-  schemaErrors.forEach(e => console.log(`          ✗ ${e}`));
+  const { ok, errors: schemaErrors } = validateSchema(faction);
+  schemaOk = ok;
+  if (ok) {
+    console.log('[SCHEMA] Structure valid ✓');
+  } else {
+    console.log(`[SCHEMA] ${schemaErrors.length} STRUCTURAL ERROR(S):`);
+    schemaErrors.forEach(e => console.log(`          ✗ ${e}`));
+  }
+  console.log('');
 }
-console.log('');
 
 // ── Phase 1: Clean ─────────────────────────────────────────────────────────
 const nullsBefore = countNulls(faction);
@@ -297,7 +348,20 @@ if (unmappedCount > 0) {
 }
 
 // ── Phase 3: Validate ──────────────────────────────────────────────────────
-const { errors, warnings } = validate(cleaned, coreIds);
+// In supplement mode, merge parent faction's wargear and rules for ID resolution
+let validateData = cleaned;
+if (isSupplementMode) {
+  const parent = load(suppParentPath);
+  const parentCleaned = stripNulls(parent);
+  // Build a synthetic full-faction object combining parent + supplement
+  validateData = {
+    ...parentCleaned,
+    commonWargear: [...(parentCleaned.commonWargear || []), ...(cleaned.commonWargear || [])],
+    units: cleaned.units || [],
+  };
+  console.log(`[SUPPL] Resolving IDs against parent: ${path.basename(suppParentPath)}`);
+}
+const { errors, warnings } = validate(validateData, coreIds);
 
 if (errors.length === 0 && warnings.length === 0) {
   console.log('[VALID] All references OK ✓');
@@ -316,7 +380,7 @@ if (errors.length === 0 && warnings.length === 0) {
 console.log('');
 console.log(`  Units:    ${fmt((cleaned.units||[]).length)}`);
 console.log(`  Weapons:  ${fmt((cleaned.commonWargear||[]).length)}`);
-console.log(`  ArmyRules:${fmt((cleaned.armyRules||[]).length)}`);
+if (!isSupplementMode) console.log(`  ArmyRules:${fmt((cleaned.armyRules||[]).length)}`);
 console.log('');
 
 const hasErrors = !schemaOk || errors.length > 0;

@@ -58,6 +58,11 @@
       "fullDesc": "Select a target model (owning player still determines which models are hit) and roll To Hit as normal. For each model in between the Beam weapon and the target in a 1\" wide path, roll a d6. On each 5+, that model is Hit just like with a template."
     },
     {
+      "id": "bike",
+      "name": "Bike",
+      "fullDesc": "A model with Bike treats Difficult Terrain as Open Terrain when moving, and gains +1 Toughness and a 4+ Cover Save against shooting attacks. Bike models may not Go to Ground or choose to Disembark from Transports."
+    },
+    {
       "id": "bodyguard",
       "name": "Bodyguard",
       "fullDesc": "A model with Bodyguard may attempt to stop a Wound, Glance, or Penetration that gets through a Character or Independent Character's Saves and Feel No Pains. For each Wound the Character or Independent Character would have suffered, the Bodyguard suffers that many Mortal Wounds on a roll of a 2+. On a 1, the Character or Independent Character suffers the Wounds like normal."

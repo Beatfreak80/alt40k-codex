@@ -1,0 +1,148 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "mantis_warriors",
+  "commonWargear": [
+    {
+      "id": "talisman-of-sundered-souls",
+      "name": "Talisman of Sundered Souls",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "This model may reroll one Cast roll per Turn."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "ahazra-redth",
+      "name": "Ahazra Redth",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 261,
+      "inlineRules": [
+        {
+          "id": "chapter-tactics-mw",
+          "name": "Chapter Tactics",
+          "fullDesc": "This model and its unit gain Infiltrate."
+        },
+        {
+          "id": "chief-librarian-ahazra",
+          "name": "Chief Librarian",
+          "fullDesc": "This model may Deny the Witch twice per Psychic Phase."
+        },
+        {
+          "id": "whispers-on-the-wind",
+          "name": "Whispers on the Wind",
+          "fullDesc": "Target player suffers -1 for the Initiative Roll during game setup."
+        },
+        {
+          "id": "mirage-spell",
+          "name": "Mirage",
+          "fullDesc": "Cast 6+. Target unit gains Shroud until your next Psychic Phase."
+        }
+      ],
+      "psychic": {
+        "masteryLevel": 2,
+        "spellPoolId": "librarius"
+      },
+      "models": [
+        {
+          "id": "ahazra",
+          "name": "Ahazra",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "force-sword",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo",
+            "psychic-hood",
+            "talisman-of-sundered-souls"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "chapter-tactics-mw",
+            "chief-librarian-ahazra",
+            "whispers-on-the-wind",
+            "mirage-spell"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "ahazra-spells",
+          "type": "spellPick",
+          "spellPoolId": "librarius"
+        },
+        {
+          "id": "ahazra-terminator",
+          "type": "toggle",
+          "label": "Terminator Armour",
+          "pts": 10,
+          "statModifiers": [
+            {
+              "modelId": "ahazra",
+              "stat": "M",
+              "op": "add",
+              "value": -2
+            },
+            {
+              "modelId": "ahazra",
+              "stat": "W",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "deepstrike",
+            "steady"
+          ],
+          "note": "M-2, W+1. Gain Monstrous Infantry, Steady, Deepstrike. Lose Infantry, Objective Secured, Grenades."
+        },
+        {
+          "id": "ahazra-chief-librarian",
+          "type": "toggle",
+          "label": "Chief Librarian",
+          "pts": 72,
+          "grantsMasteryLevel": 3,
+          "statModifiers": [
+            {
+              "modelId": "ahazra",
+              "stat": "W",
+              "op": "add",
+              "value": 1
+            },
+            {
+              "modelId": "ahazra",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "note": "W+1, A+1. Gain Psychic Mastery +1. May Deny the Witch twice per Psychic Phase. Gain Unique."
+        }
+      ]
+    }
+  ]
+}

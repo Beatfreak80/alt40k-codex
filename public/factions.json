@@ -1,26 +1,52 @@
 [
   {
     "name": "Necrons",
-    "file": "necrons_faction.json"
+    "file": "necrons/necrons_faction.json",
+    "subfactionSupplements": {
+      "maynarkh":  "necrons/maynarkh-dynasty.json",
+      "sautekh":   "necrons/sautekh-dynasty.json",
+      "szarekhan": "necrons/szarekhan-dynasty.json"
+    }
   },
   {
     "name": "Space Marines",
-    "file": "space-marines_faction.json"
+    "file": "space-marines/space-marines_faction.json",
+    "subfactionSupplements": {
+      "imperial_fists":  "space-marines/imperial-fist.json",
+      "space_wolves":    "space-marines/space-wolves.json",
+      "black_templar":   "space-marines/black-templar.json",
+      "blood_angels":    "space-marines/blood-angels.json",
+      "blood_ravens":    "space-marines/blood-ravens.json",
+      "carcharodons":    "space-marines/carcharodons.json",
+      "crimson_fists":   "space-marines/crimson-fists.json",
+      "dark_angels":     "space-marines/dark-angels.json",
+      "death_watch":     "space-marines/death-watch.json",
+      "drake_slayers":   "space-marines/drakeslayers.json",
+      "executioners":    "space-marines/executioners.json",
+      "exorcists":       "space-marines/exorcists.json",
+      "flesh_tearers":   "space-marines/flesh-tearers.json",
+      "iron_hands":      "space-marines/iron-hands.json",
+      "mantis_warriors": "space-marines/mantis-warriors.json",
+      "minotaurs":       "space-marines/minotaurs.json",
+      "raven_guard":     "space-marines/raven-guard.json",
+      "salamanders":     "space-marines/salamanders.json",
+      "sons_of_medusa":  "space-marines/sons-of-medusa.json"
+    }
   },
   {
     "name": "Eldar",
-    "file": "eldar_faction.json"
+    "file": "eldar/eldar_faction.json"
   },
   {
     "name": "Orks",
-    "file": "orks_faction.json"
+    "file": "orks/orks_faction.json"
   },
   {
     "name": "Imperial Guard",
-    "file": "imperial-guard_faction.json"
+    "file": "imperial-guard/imperial-guard_faction.json"
   },
   {
     "name": "Chaos Undivided",
-    "file": "chaos-undivided_faction.json"
+    "file": "chaos-undivided/chaos-undivided_faction.json"
   }
 ]

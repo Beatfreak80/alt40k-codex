@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "iron_hands",
+  "commonWargear": [
+    {
+      "id": "axiom",
+      "name": "Axiom",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "3+",
+          "rules": "Concussion"
+        }
+      ]
+    },
+    {
+      "id": "gorgons-wrath",
+      "name": "Gorgon's Wrath",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "6",
+          "ap": "4+",
+          "rules": "Heavy 3, Pinning"
+        }
+      ]
+    },
+    {
+      "id": "harrowhand",
+      "name": "Harrowhand",
+      "profiles": [
+        {
+          "strength": "+4",
+          "ap": "4+",
+          "rules": "Monsterbane"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "caanok-var",
+      "name": "Caanok Var",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 256,
+      "inlineRules": [
+        {
+          "id": "more-machine-than-man",
+          "name": "More Machine Than Man",
+          "fullDesc": "Caanok's Feel No Pain is improved to 4+ and cannot improve further by any means."
+        },
+        {
+          "id": "cerebrex",
+          "name": "Cerebrex",
+          "fullDesc": "6\" Aura, this model and target unit gain I+3 and Counterattack."
+        }
+      ],
+      "models": [
+        {
+          "id": "caanok",
+          "name": "Caanok",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 7,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "axiom",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "transhuman-physiology",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "more-machine-than-man",
+            "cerebrex"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iron-father-feirros",
+      "name": "Iron Father Feirros",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 224,
+      "inlineRules": [
+        {
+          "id": "defiant-of-pure-logic",
+          "name": "Defiant of Pure Logic",
+          "fullDesc": "6\" Aura, this model and target unit automatically gains Fearless and does not suffer Autowounds from failed Combat Resolution."
+        },
+        {
+          "id": "feirros-master-of-the-forge",
+          "name": "Master of the Forge",
+          "fullDesc": "Repair d3 Wounds on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result. This model may repair the same Vehicle twice in one turn."
+        },
+        {
+          "id": "feirros-repair",
+          "name": "Repair",
+          "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
+        }
+      ],
+      "models": [
+        {
+          "id": "feirros",
+          "name": "Feirros",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 5,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "gorgons-wrath",
+            "harrowhand",
+            "servo-arm"
+          ],
+          "specialRules": [
+            "independent-character",
+            "transhuman-physiology",
+            "know-no-fear",
+            "bulky",
+            "night-vision",
+            "shock-assault",
+            "stubborn",
+            "awaken-the-machine",
+            "servo-arm-rule",
+            "defiant-of-pure-logic",
+            "feirros-master-of-the-forge",
+            "feirros-repair"
+          ]
+        },
+        {
+          "id": "feirros-servitor",
+          "name": "Servitor",
+          "minCount": 0,
+          "maxCount": 9,
+          "ptsEach": 24,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 4,
+            "BS": 4,
+            "S": 3,
+            "T": 4,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 8,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "servo-arm"
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "know-no-fear",
+            "night-vision",
+            "steady",
+            "lobotomized",
+            "servo-arm-rule"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "feirros-add-servitors",
+          "type": "squadSize",
+          "label": "Add Servitors",
+          "targetModelId": "feirros-servitor",
+          "ptsEach": 24,
+          "max": 9
+        },
+        {
+          "id": "feirros-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "feirros"
+          ],
+          "label": "Feirros: swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "feirros-servitor-heavy",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "feirros-servitor"
+          ],
+          "label": "Any Servitor: swap Servo Arm for",
+          "replaces": "servo-arm",
+          "choices": [
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 8
+            },
+            {
+              "weaponId": "plasma-cannon",
+              "label": "Plasma Cannon",
+              "pts": 13
+            },
+            {
+              "weaponId": "multimelta",
+              "label": "Multimelta",
+              "pts": 26
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

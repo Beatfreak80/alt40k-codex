@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "szarekhan",
+  "commonWargear": [
+    {
+      "id": "scepter-of-eternal-glory",
+      "name": "Scepter of Eternal Glory",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 24,
+          "strength": "8",
+          "ap": "2+",
+          "rules": "Assault 3, Monsterbane"
+        },
+        {
+          "label": "Melee",
+          "strength": "+4",
+          "ap": "2+"
+        }
+      ]
+    },
+    {
+      "id": "scythe-of-dust",
+      "name": "Scythe of Dust",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "4+",
+          "rules": "Extra Attack 2"
+        }
+      ]
+    },
+    {
+      "id": "staff-of-stars",
+      "name": "Staff of Stars",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "3+",
+          "rules": "Assault 9"
+        }
+      ]
+    },
+    {
+      "id": "annihilator-beam",
+      "name": "Annihilator Beam",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 1"
+        }
+      ]
+    },
+    {
+      "id": "transtemporal-forcefield",
+      "name": "Transtemporal Forcefield",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "silent-king",
+      "name": "Silent King",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 698,
+      "inlineRules": [
+        {
+          "id": "silent-king-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        },
+        {
+          "id": "silent-king-phaeron",
+          "name": "Phaeron",
+          "fullDesc": "May use My Will Be Done a second time each turn."
+        },
+        {
+          "id": "silent-king-phaeron-of-the-blades",
+          "name": "Phaeron of the Blades",
+          "fullDesc": "6\" Aura, this model and target unit may reroll all To Wound or Penetrate rolls."
+        },
+        {
+          "id": "silent-king-rm",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        },
+        {
+          "id": "silent-king-noctilth-beams",
+          "name": "Noctilth Beams",
+          "fullDesc": "May deny the Witch once up to 24\" away at Mastery Level 0."
+        },
+        {
+          "id": "silent-king-obeisance-generators",
+          "name": "Obeisance Generators",
+          "fullDesc": "6\" Aura, target unit has I1."
+        },
+        {
+          "id": "triarchal-menhir-kings-guard",
+          "name": "Kings Guard",
+          "fullDesc": "This model may use the Bodyguard rule to protect the Silent King."
+        }
+      ],
+      "models": [
+        {
+          "id": "silent-king-body",
+          "name": "Silent King",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "FA": 13,
+            "SA": 13,
+            "RA": 13,
+            "W": 16,
+            "I": 2,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "scepter-of-eternal-glory",
+            "scythe-of-dust",
+            "staff-of-stars",
+            "transtemporal-forcefield"
+          ],
+          "specialRules": [
+            "independent-character",
+            "vehicle",
+            "tank",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "open-topped",
+            "silent-king-mwbd",
+            "silent-king-phaeron",
+            "silent-king-phaeron-of-the-blades",
+            "silent-king-rm",
+            "silent-king-noctilth-beams",
+            "silent-king-obeisance-generators"
+          ]
+        },
+        {
+          "id": "triarchal-menhir",
+          "name": "Triarchal Menhir",
+          "minCount": 2,
+          "maxCount": 2,
+          "statline": {
+            "type": "vehicle",
+            "M": 8,
+            "WS": 5,
+            "BS": 2,
+            "S": 5,
+            "FA": 13,
+            "SA": 13,
+            "RA": 13,
+            "W": 5,
+            "I": 1,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "annihilator-beam",
+            "transtemporal-forcefield"
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "triarchal-menhir-kings-guard"
+          ]
+        }
+      ]
+    }
+  ]
+}

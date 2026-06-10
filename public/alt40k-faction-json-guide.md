@@ -51,10 +51,9 @@ Contains:
 - `name` — display name
 - `version` — semver of this data file, bump when data changes
 - `subfactions[]` — Chapters / Warbands / Hive Fleets / Regiments etc.
-  Each has its own `rules[]` (army-wide effects), `slotOverrides[]`
-  (e.g. Elysians losing Heavy Support), `slotReclassifications[]`
-  (e.g. Death Watch treating Scouts as Troops), and `weaponOverrides[]`
-  (e.g. Catachan shortening Lasguns).
+  Each has its own `rules[]` (army-wide effects), `slotReclassifications[]`
+  (e.g. Death Watch treating Scouts as Troops), and `listBuildingFilters[]`
+  (e.g. Wolfspears only allowing Stubborn units — see the List-Building Filters section).
 - `markSystem` — **Chaos only**. Defines Marks and Pure Blessings.
   Omit entirely for non-Chaos factions.
 - `slotLimits` — the army org chart as `[min, max]` pairs.
@@ -289,7 +288,7 @@ Each unit contains:
 `masteryUpgrade` (optional) records the codex upgrade path: `{ toLevel, pts }`. It is **informational only** — the list builder enforces mastery level through `grantsMasteryLevel` on a `toggle` option (see below).
 
 **`options[]`** — list of available upgrades. Types:
-- `squadSize` — number spinner for extra models
+- `squadSize` — number spinner for extra models. **Required for every model where `maxCount > minCount`.** Without it the list builder cannot change the model count and the squad is frozen at `minCount`. See Squad Size Options below.
 - `weaponSwap` — replace a weapon; uses inline `choices[]` or `weaponListId`. **Always requires `scope`** — see the Weapon Swap Scopes section below.
 - `perModelWeapon` — independent weapon choice per model instance (dropdowns)
 - `toggle` — checkbox for a unit-specific upgrade. Add `"applies": ["modelId"]` to make it **per-model** — see Per-model toggle upgrades below. Add `"grantsMasteryLevel": N` to make this toggle upgrade the unit's effective Psychic Mastery level — see Psychic Mastery upgrades below.
@@ -442,6 +441,129 @@ within the unit's `models[]` array.
 
 ---
 
+---
+
+## Subfaction list-building filters
+
+Some subfactions **restrict which units may be included** in an army. These restrictions are encoded as `listBuildingFilters` on the subfaction object — the app uses them to hide unavailable units from the unit picker and codex options page.
+
+**Key rule:** `rules[]` is for natural-language display only. `listBuildingFilters` is what the app enforces. A subfaction with a list-building restriction must have both: the rule text in `rules[]` (so players can read it) and the corresponding filter in `listBuildingFilters` (so the app enforces it).
+
+### When to write `listBuildingFilters`
+
+A subfaction needs `listBuildingFilters` when its rules say things like:
+- "This army may only include models with the X rule"
+- "This army may not field any Y models"
+- "This army may not include any units that are not Z or W"
+
+Rules that modify in-game stats, objective scoring, charge behaviour, etc. do **not** need filters — they describe gameplay effects, not list composition. When in doubt: does the rule prevent a unit from being taken at all? If yes, write a filter.
+
+### Filter types
+
+#### `requireRule` — all models must have a special rule
+
+Unit is available only if **every model** in the unit has the specified rule id in its `specialRules[]`.
+
+```jsonc
+// Subfaction rule text: "This army may only include models with the Stubborn rule."
+"listBuildingFilters": [
+  { "type": "requireRule", "rule": "stubborn" }
+]
+```
+
+**Real examples:** Wolfspears, Silver Templars (Space Marines) — only Primaris units (which have `stubborn`) are available.
+
+The `rule` value is a **kebab-case special rule id** — the same strings used in unit `specialRules[]` (e.g. `"stubborn"`, `"fleet"`, `"infiltrate"`).
+
+#### `excludeType` — no models of this statline type
+
+Unit is hidden if **any model** has the specified `statline.type`.
+
+```jsonc
+// Subfaction rule text: "This army may not field any Vehicle models."
+"listBuildingFilters": [
+  { "type": "excludeType", "modelType": "vehicle" }
+]
+```
+
+**Real example:** Snakebite (Orks) — all vehicle units are hidden from the unit picker.
+
+#### `requireTypes` — only units whose models are all within an allowed type set
+
+Unit is available only if **every model** has a `statline.type` that appears in `modelTypes`. Use this only when the restriction applies to all units regardless of faction keyword.
+
+```jsonc
+"listBuildingFilters": [
+  { "type": "requireTypes", "modelTypes": ["vehicle", "monster"] }
+]
+```
+
+#### `requireTypesForRule` — units with a specific keyword must be within an allowed type set
+
+Unit is excluded if **any model** has the specified special rule AND is **not** one of the allowed types. Models without that rule are unaffected. Use when a faction rule reads "units with keyword X must be type Y" — non-keyword units can still be included freely.
+
+```jsonc
+// Subfaction rule text: "This army may not include any Ork keyword units
+// that are not Vehicle, Titanic Vehicle, Monsters, or Titanic Monsters."
+"listBuildingFilters": [
+  { "type": "requireTypesForRule", "rule": "ork", "allowedModelTypes": ["vehicle", "monster"] }
+]
+```
+
+**Real example:** Da Red Revolution (Orks) — Ork-keyword infantry/monstrous-infantry (Boyz, Nobz, Warboss, etc.) are excluded, but non-Ork-keyword units (Grots, Snotlings, Grot Tanks, Warbuggiez, fortifications) remain available. Note: the data uses `"vehicle"` and `"monster"` for all vehicle and monster types respectively (there is no separate `"titanic-vehicle"` type in the data).
+
+### Multiple filters
+
+Multiple entries in `listBuildingFilters` are applied as AND conditions — a unit must pass all filters.
+
+### Complete subfaction example
+
+```jsonc
+{
+  "id": "wolfspears",
+  "name": "Wolfspears",
+  "rules": [
+    {
+      "id": "bleeding-the-prey",
+      "name": "Bleeding the Prey",
+      "fullDesc": "If the target of Charge is at half or less of the combined unit's total Wounds from Deployment, the Charge automatically succeeds if it is within 12\"."
+    },
+    {
+      "id": "ultima-founding-ws",
+      "name": "Ultima Founding",
+      "fullDesc": "This army may only include models with the Stubborn rule."
+    }
+  ],
+  "listBuildingFilters": [
+    { "type": "requireRule", "rule": "stubborn" }
+  ]
+}
+```
+
+### Statline types used in filters
+
+Valid values for `modelType` / `modelTypes`:
+
+| Value | Meaning |
+|---|---|
+| `"infantry"` | Standard infantry, cavalry, bikes, jump infantry |
+| `"vehicle"` | All vehicle types (walkers, tanks, superheavies, aircraft) |
+| `"monstrous-infantry"` | Monstrous infantry (e.g. Ogryns, Meganobz) |
+| `"monster"` | Monsters, titanic monsters, monstrous creatures (e.g. Carnifex, Gorkanaut) |
+| `"swarm"` | Swarm bases |
+| `"artillery"` | Artillery pieces |
+| `"fortification"` | Fortifications |
+
+Note: there is no separate `"titanic-vehicle"` or `"titanic-monster"` type in the data — these are represented by the `titanic` special rule on a `vehicle` or `monster` statline type.
+
+### What `listBuildingFilters` does NOT cover
+
+- **Slot reclassifications** (e.g. "Steed units may be taken as Troops") → use `slotReclassifications[]` instead
+- **In-game stat changes** (stat modifiers, objective scoring, deployment rules) → rule text in `rules[]` only; no filter needed
+- **FOC slot-count changes** (e.g. "lose Heavy Support, gain extra Flyer") → not currently supported by `listBuildingFilters`; note in the rule text only
+
+---
+
 ### Subfaction ID reference (Space Marines)
 
 | Subfaction | `id` |
@@ -524,6 +646,46 @@ The header shows `Psychic Spells — Mastery 3 (0/3)` and greys out uncheckable 
 ### Chaos `$mark` pools
 
 Chaos psykers draw from the pool that matches their active Mark. Set `"spellPoolId": "$mark"` on the `spellPick` options — the list builder resolves it to the correct pool at runtime using the unit's `markPick` selection.
+
+---
+
+## Squad Size Options
+
+**Every model in `models[]` where `maxCount > minCount` must have a corresponding `squadSize` option.** Without it the list builder shows no +/− controls and the squad is permanently locked at `minCount`. This applies to rank-and-file troops, optional weapons-platform models, vehicle squadron members, and any other variable-count model type.
+
+### Format
+
+```json
+{
+  "id": "dire-avengers-dire-avenger-sq",
+  "type": "squadSize",
+  "label": "Additional Dire Avenger",
+  "targetModelId": "dire-avenger",
+  "ptsEach": 24,
+  "max": 5
+}
+```
+
+| Field | Value |
+|---|---|
+| `id` | Unique string — convention: `<unit-id>-<model-id>-sq` |
+| `type` | `"squadSize"` |
+| `label` | `"Additional <ModelName>"` — the word "Additional" is stripped in some display contexts |
+| `targetModelId` | Must match a `model.id` in this unit's `models[]` |
+| `ptsEach` | Must match `model.ptsEach` on the target model |
+| `max` | `model.maxCount − model.minCount` — the maximum number of additional models |
+
+### Placement
+
+Put `squadSize` options **first** in the `options[]` array, before weapon swaps and toggles. The list builder renders them at the top of the unit panel.
+
+### Models with `minCount: 0`
+
+A model starting at 0 count (like an optional weapons platform) also needs a `squadSize` option — the `max` is just `model.maxCount`. The label `"Additional Platform"` still works; the UI will show "0–1 Platform".
+
+### One option per variable-count model type
+
+A unit with two variable-count model types needs two separate `squadSize` options — one per `targetModelId`. Each is independent.
 
 ---
 
@@ -750,3 +912,5 @@ See `alt40k-new-faction-workflow.md` for the step-by-step authoring process, bat
 | Marking a vehicle upgrade group as per-model by adding `applies` to only some options in the `exclusiveGroup` | Add `"applies": ["modelId"]` to **every** option in the group — the app reads it from the first matching option, but consistency is required |
 | Using a unit-wide `exclusiveGroup` toggle for a rule that says "Any [model name] may take" | Add `"applies": ["modelId"]` to make it per-model; without it the group renders as a single unit-wide choice |
 | Abbreviating or paraphrasing names from the source codex (e.g. "SI Stormbolter" for "Special Issue Stormbolter") | Copy names and text verbatim from the source — never abbreviate, shorten, or rephrase. Correcting obvious OCR typos is the only permitted exception |
+| Describing a list-building restriction only in `rules[].fullDesc` and expecting the app to enforce it | Also add a `listBuildingFilters` entry on the subfaction — rule text is display-only; filters are what the app enforces |
+| Writing a `listBuildingFilters` filter for in-game effects (stat changes, objective scoring, charge requirements) | `listBuildingFilters` is for unit inclusion only — in-game effects belong in `rules[]` text |

@@ -1,0 +1,1996 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "dark_angels",
+  "commonWargear": [
+    {
+      "id": "lions-wrath",
+      "name": "Lion's Wrath",
+      "profiles": [
+        {
+          "label": "Plasma",
+          "maxRange": 24,
+          "strength": "7",
+          "ap": "2+",
+          "rules": "Rapid Fire 1, Simultaneous Fire"
+        },
+        {
+          "label": "Bolter",
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Rapid Fire 1, Bolter, Simultaneous Fire"
+        }
+      ]
+    },
+    {
+      "id": "sword-of-secrets",
+      "name": "Sword of Secrets",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "sword-of-silence",
+      "name": "Sword of Silence",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "3+",
+          "rules": "Poisoned (3+)"
+        }
+      ]
+    },
+    {
+      "id": "blades-of-reason",
+      "name": "Blades of Reason",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "2+",
+          "rules": "Poisoned (2+)"
+        }
+      ]
+    },
+    {
+      "id": "traitors-bane",
+      "name": "Traitor's Bane",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "2+",
+          "rules": "Psychic Bane"
+        }
+      ]
+    },
+    {
+      "id": "enmitys-edge",
+      "name": "Enmity's Edge",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "2+",
+          "rules": "Sniper (3+)"
+        }
+      ]
+    },
+    {
+      "id": "mastercraft-bolt-pistol",
+      "name": "Mastercraft Bolt Pistol",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Pistol 1"
+        }
+      ]
+    },
+    {
+      "id": "arma-luminis",
+      "name": "Arma Luminis",
+      "profiles": [
+        {
+          "label": "Plasma",
+          "maxRange": 12,
+          "strength": "8",
+          "ap": "2+",
+          "rules": "Pistol 1, Simultaneous Fire"
+        },
+        {
+          "label": "Bolter",
+          "maxRange": 12,
+          "strength": "4",
+          "ap": "4+",
+          "rules": "Pistol 2, Simultaneous Fire"
+        }
+      ]
+    },
+    {
+      "id": "fealty",
+      "name": "Fealty",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Extra Attack 2"
+        }
+      ]
+    },
+    {
+      "id": "the-emperors-shield",
+      "name": "The Emperor's Shield",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "Sv-1 (Improves by 1), 4+ Invulnerability Save, 4+ Feel No Pain"
+        }
+      ]
+    },
+    {
+      "id": "spiritshield-helm",
+      "name": "Spiritshield Helm",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "This model cannot be targeted by Psychic Powers."
+        }
+      ]
+    },
+    {
+      "id": "raven-sword-corvex",
+      "name": "Raven Sword",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "2+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "raven-sword-sableclaw",
+      "name": "Raven Sword",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "2+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "flail-of-the-unforgiven",
+      "name": "Flail of the Unforgiven",
+      "profiles": [
+        {
+          "strength": "+3",
+          "ap": "3+",
+          "rules": "Concussion, Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "calibanite-greatsword",
+      "name": "Calibanite Greatsword",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "da-censer",
+      "name": "Censer",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, target unit is treated as if being hit by a Psychic Disruption weapon."
+        }
+      ]
+    },
+    {
+      "id": "plasma-talon",
+      "name": "Plasma Talon",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "7",
+          "ap": "2+",
+          "rules": "Rapid Fire 1 x2, Gets Hot!"
+        }
+      ]
+    },
+    {
+      "id": "corvus-hammer",
+      "name": "Corvus Hammer",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "-",
+          "rules": "Rending"
+        }
+      ]
+    },
+    {
+      "id": "ravenwing-grenade-launcher",
+      "name": "Ravenwing Grenade Launcher",
+      "profiles": [
+        {
+          "label": "Explosive",
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "-",
+          "rules": "Rapid Fire 1"
+        },
+        {
+          "label": "Plasma",
+          "maxRange": 24,
+          "strength": "3",
+          "ap": "-",
+          "rules": "Rapid Fire 1, 3\" Blast, Poisoned (3+)"
+        }
+      ]
+    },
+    {
+      "id": "icon-of-old-caliban",
+      "name": "Icon of Old Caliban",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, this model and target unit inflict -1 To Hit when targeted by Shooting."
+        }
+      ]
+    },
+    {
+      "id": "2-sets-2-linked-heavy-flamers-sponson",
+      "name": "2 Sets of 2 Linked Heavy Flamers",
+      "profiles": [
+        {
+          "templateType": "Flame",
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Assault 1 x2 (x2)"
+        }
+      ]
+    },
+    {
+      "id": "rift-cannon",
+      "name": "Rift Cannon",
+      "profiles": [
+        {
+          "maxRange": 18,
+          "strength": "D",
+          "ap": "2+",
+          "rules": "Heavy 1, 3\" Blast, Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "stasis-bomb-dt",
+      "name": "Stasis Bomb",
+      "profiles": [
+        {
+          "templateType": "Bomb",
+          "strength": "D",
+          "ap": "2+",
+          "rules": "Heavy 1, 5\" Blast, Destroyer, Monsterbane, One Use Only"
+        }
+      ]
+    },
+    {
+      "id": "avenger-bolt-cannon",
+      "name": "Avenger Bolt Cannon",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "6",
+          "ap": "3+",
+          "rules": "Heavy 12"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-blacksword-missile-racks",
+      "name": "2 Linked Blacksword Missile Racks",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "9",
+          "ap": "2+",
+          "rules": "Heavy 1 x2, Ordnance, Monsterbane, AA"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-heavy-plasma-cannons",
+      "name": "2 Linked Heavy Plasma Cannons",
+      "profiles": [
+        {
+          "maxRange": 48,
+          "strength": "8",
+          "ap": "2+",
+          "rules": "Heavy 1 x2, 5\" Blast, Monsterbane"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "asmodai",
+      "name": "Asmodai",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 244,
+      "inlineRules": [
+        {
+          "id": "litany-of-intimidation",
+          "name": "Litany of Intimidation",
+          "fullDesc": "6\" Aura, target unit takes Ld Tests on 3d6, discarding the lowest die."
+        },
+        {
+          "id": "master-of-repentance",
+          "name": "Master of Repentance",
+          "fullDesc": "If this model slays its opponent in a Challenge, you automatically win Combat Resolution by at least 1."
+        }
+      ],
+      "models": [
+        {
+          "id": "asmodai-model",
+          "name": "Asmodai",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "crozium-arcanum",
+            "blades-of-reason",
+            "bolt-pistol",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "canticle-of-hate",
+            "glory-hunter",
+            "zealot",
+            "litany-of-intimidation",
+            "master-of-repentance"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "asmodai-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 18,
+          "statModifiers": [
+            {
+              "modelId": "asmodai-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "azrael",
+      "name": "Azrael",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 435,
+      "inlineRules": [
+        {
+          "id": "master-tactician",
+          "name": "Master Tactician",
+          "fullDesc": "After both sides Deploy, but before Infiltrators are placed, you may redeploy d3 of your units."
+        },
+        {
+          "id": "quiet-endurance",
+          "name": "Quiet Endurance",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        },
+        {
+          "id": "lions-helm",
+          "name": "Lion's Helm",
+          "fullDesc": "6\" Aura, target unit gains 5+ Invulnerability Save."
+        }
+      ],
+      "models": [
+        {
+          "id": "azrael-model",
+          "name": "Azrael",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 7,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "lions-wrath",
+            "bolt-pistol",
+            "sword-of-secrets",
+            "orbital-strike",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "master-tactician",
+            "quiet-endurance",
+            "lions-helm"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "azrael-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 20,
+          "statModifiers": [
+            {
+              "modelId": "azrael-model",
+              "stat": "W",
+              "op": "add",
+              "value": 1
+            },
+            {
+              "modelId": "azrael-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology"
+          ],
+          "note": "W+1, A+1. Gain 4+ Feel No Pain. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "belial",
+      "name": "Belial",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 229,
+      "inlineRules": [
+        {
+          "id": "marked-for-retribution",
+          "name": "Marked for Retribution",
+          "fullDesc": "This model may reroll all failed To Hit and To Wound rolls when in a Challenge."
+        },
+        {
+          "id": "tactical-precision",
+          "name": "Tactical Precision",
+          "fullDesc": "This model and the unit it is with do not Scatter when arriving from Deepstrike."
+        }
+      ],
+      "models": [
+        {
+          "id": "belial-model",
+          "name": "Belial",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "sword-of-silence",
+            "thunderhammer",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "stubborn",
+            "very-bulky",
+            "glory-hunter",
+            "marked-for-retribution",
+            "tactical-precision"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "belial-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 25,
+          "statModifiers": [
+            {
+              "modelId": "belial-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn."
+        }
+      ]
+    },
+    {
+      "id": "ezekiel",
+      "name": "Ezekiel",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 295,
+      "inlineRules": [
+        {
+          "id": "book-of-salvation",
+          "name": "Book of Salvation",
+          "fullDesc": "6\" Aura, target unit gains Bodyguard."
+        },
+        {
+          "id": "chief-librarian-ezek",
+          "name": "Chief Librarian",
+          "fullDesc": "This model may Deny the Witch twice per Psychic Phase."
+        }
+      ],
+      "psychic": {
+        "masteryLevel": 3,
+        "spellPoolId": "librarius"
+      },
+      "models": [
+        {
+          "id": "ezekiel-model",
+          "name": "Ezekiel",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 7,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "mastercraft-bolt-pistol",
+            "traitors-bane",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo",
+            "psychic-hood"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "book-of-salvation",
+            "chief-librarian-ezek"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "ezek-spells",
+          "type": "spellPick",
+          "spellPoolId": "librarius"
+        },
+        {
+          "id": "ezek-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 16,
+          "statModifiers": [
+            {
+              "modelId": "ezekiel-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "bulky",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Bulky, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "master-lazarus",
+      "name": "Master Lazarus",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 210,
+      "inlineRules": [
+        {
+          "id": "psychic-hunter",
+          "name": "Psychic Hunter",
+          "fullDesc": "This model's attacks have Psychic Bane."
+        }
+      ],
+      "models": [
+        {
+          "id": "lazarus-model",
+          "name": "Lazarus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "enmitys-edge",
+            "iron-halo",
+            "spiritshield-helm"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "psychic-hunter"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "lazarus-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "lazarus-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "bulky"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Bulky. Lose Objective Secured."
+        }
+      ]
+    },
+    {
+      "id": "lion-el-jonson",
+      "name": "Lion El'Jonson",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 538,
+      "inlineRules": [
+        {
+          "id": "mysterious-ways",
+          "name": "Mysterious Ways",
+          "fullDesc": "6\" Aura, this model and target unit gain Shroud and Infiltrate."
+        },
+        {
+          "id": "primarch-of-the-first-legion",
+          "name": "Primarch of the First Legion",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Hit."
+        }
+      ],
+      "models": [
+        {
+          "id": "lion",
+          "name": "Lion El'Jonson",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 6,
+            "W": 9,
+            "I": 8,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "arma-luminis",
+            "fealty",
+            "orbital-strike",
+            "the-emperors-shield"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "counterattack",
+            "deepstrike",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "mysterious-ways",
+            "primarch-of-the-first-legion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sammael-corvex",
+      "name": "Sammael (Corvex)",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 286,
+      "models": [
+        {
+          "id": "corvex",
+          "name": "Corvex",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 16,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 5,
+            "W": 7,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "2-linked-stormbolters",
+            "plasma-cannon",
+            "bolt-pistol",
+            "raven-sword-corvex",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "deepstrike",
+            "flyer",
+            "hit-and-run",
+            "night-vision",
+            "objective-secured",
+            "scout",
+            "shock-assault",
+            "stubborn",
+            "steed",
+            "battle-drills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sammael-sableclaw",
+      "name": "Sammael (Sableclaw)",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 273,
+      "models": [
+        {
+          "id": "sableclaw",
+          "name": "Sableclaw",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 16,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "FA": 12,
+            "SA": 12,
+            "RA": 10,
+            "W": 8,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-assault-cannons",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Sponson"
+            },
+            "raven-sword-sableclaw",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "tank",
+            "know-no-fear",
+            "deepstrike",
+            "flyer",
+            "hit-and-run",
+            "night-vision",
+            "open-topped",
+            "scout",
+            "shock-assault",
+            "stubborn",
+            "battle-drills"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sableclaw-extra-armour",
+          "type": "toggle",
+          "label": "Extra Armour",
+          "pts": 5,
+          "grantsWargear": [
+            "extra-armour"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deathwing-terminators",
+      "name": "Deathwing Terminators",
+      "slot": "Elite",
+      "basePts": 643,
+      "models": [
+        {
+          "id": "dw-sergeant",
+          "name": "Sergeant",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 3,
+            "I": 4,
+            "A": 4,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "power-sword",
+            "terminator-honours"
+          ],
+          "specialRules": [
+            "character",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "tactical-squads",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "very-bulky"
+          ]
+        },
+        {
+          "id": "dw-terminator",
+          "name": "Terminator",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 127,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 3,
+            "I": 4,
+            "A": 3,
+            "Ld": 8,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "power-sword",
+            "terminator-honours"
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "tactical-squads",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "very-bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "dtw-add-terminators",
+          "type": "squadSize",
+          "label": "Add Terminators",
+          "targetModelId": "dw-terminator",
+          "ptsEach": 127,
+          "max": 5
+        },
+        {
+          "id": "dtw-sgt-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "dw-sergeant"
+          ],
+          "label": "Sergeant: swap Power Sword for",
+          "replaces": "power-sword",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "flail-of-the-unforgiven",
+              "label": "Flail of the Unforgiven",
+              "pts": 11
+            },
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 0
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "chain-fist",
+              "label": "Chain Fist",
+              "pts": 15
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 23
+            }
+          ]
+        },
+        {
+          "id": "dtw-any-ranged",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "dw-sergeant",
+            "dw-terminator"
+          ],
+          "label": "Any model: swap Stormbolter for",
+          "replaces": "stormbolter",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 6
+            },
+            {
+              "weaponId": "plasma-cannon",
+              "label": "Plasma Cannon",
+              "pts": 11
+            },
+            {
+              "weaponId": "cyclone-missile-launcher-and-stormbolter",
+              "label": "Cyclone Missile Launcher and Stormbolter",
+              "pts": 25
+            },
+            {
+              "weaponId": "assault-cannon",
+              "label": "Assault Cannon",
+              "pts": 39
+            }
+          ]
+        },
+        {
+          "id": "dtw-any-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "dw-sergeant",
+            "dw-terminator"
+          ],
+          "label": "Any model: swap Power Sword for",
+          "replaces": "power-sword",
+          "choices": [
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 0
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "chain-fist",
+              "label": "Chain Fist",
+              "pts": 15
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 23
+            }
+          ]
+        },
+        {
+          "id": "dtw-stormshield",
+          "type": "toggle",
+          "label": "Storm Shield",
+          "pts": 17,
+          "applies": [
+            "dw-sergeant",
+            "dw-terminator"
+          ],
+          "exclusiveGroup": "dtw-shield",
+          "grantsWargear": [
+            "stormshield"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inner-circle-companions",
+      "name": "Inner Circle Companions",
+      "slot": "Elite",
+      "basePts": 201,
+      "models": [
+        {
+          "id": "inner-circle",
+          "name": "Inner Circle",
+          "minCount": 3,
+          "maxCount": 3,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 3,
+            "I": 4,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-bolt-pistol",
+            "calibanite-greatsword"
+          ],
+          "specialRules": [
+            "character",
+            "know-no-fear",
+            "transhuman-physiology",
+            "bodyguard",
+            "night-vision",
+            "shock-assault",
+            "stubborn",
+            "bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "icc-censer",
+          "type": "toggle",
+          "label": "Censer",
+          "pts": 10,
+          "applies": [
+            "inner-circle"
+          ],
+          "exclusiveGroup": "icc-upgrade",
+          "grantsWargear": [
+            "da-censer"
+          ]
+        },
+        {
+          "id": "icc-standard",
+          "type": "toggle",
+          "label": "Standard",
+          "pts": 40,
+          "applies": [
+            "inner-circle"
+          ],
+          "exclusiveGroup": "icc-upgrade",
+          "grantsWargear": [
+            "company-standard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "primaris-deathwing-terminators",
+      "name": "Primaris Deathwing Terminators",
+      "slot": "Elite",
+      "basePts": 753,
+      "models": [
+        {
+          "id": "pdw-sergeant",
+          "name": "Sergeant",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 4,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "power-sword",
+            "terminator-honours"
+          ],
+          "specialRules": [
+            "character",
+            "bolter-discipline",
+            "know-no-fear",
+            "transhuman-physiology",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "stubborn",
+            "very-bulky"
+          ]
+        },
+        {
+          "id": "pdw-terminator",
+          "name": "Terminator",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 149,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 8,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "power-sword",
+            "terminator-honours"
+          ],
+          "specialRules": [
+            "bolter-discipline",
+            "know-no-fear",
+            "transhuman-physiology",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "stubborn",
+            "very-bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "pdtw-add-terminators",
+          "type": "squadSize",
+          "label": "Add Terminators",
+          "targetModelId": "pdw-terminator",
+          "ptsEach": 149,
+          "max": 5
+        },
+        {
+          "id": "pdtw-sgt-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "pdw-sergeant"
+          ],
+          "label": "Sergeant: swap Power Sword for",
+          "replaces": "power-sword",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "flail-of-the-unforgiven",
+              "label": "Flail of the Unforgiven",
+              "pts": 11
+            },
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 0
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "chain-fist",
+              "label": "Chain Fist",
+              "pts": 15
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 23
+            }
+          ]
+        },
+        {
+          "id": "pdtw-any-ranged",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "pdw-sergeant",
+            "pdw-terminator"
+          ],
+          "label": "Any model: swap Stormbolter for",
+          "replaces": "stormbolter",
+          "choices": [
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 6
+            },
+            {
+              "weaponId": "plasma-cannon",
+              "label": "Plasma Cannon",
+              "pts": 11
+            },
+            {
+              "weaponId": "cyclone-missile-launcher-and-stormbolter",
+              "label": "Cyclone Missile Launcher and Stormbolter",
+              "pts": 25
+            },
+            {
+              "weaponId": "assault-cannon",
+              "label": "Assault Cannon",
+              "pts": 39
+            }
+          ]
+        },
+        {
+          "id": "pdtw-any-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "pdw-sergeant",
+            "pdw-terminator"
+          ],
+          "label": "Any model: swap Power Sword for",
+          "replaces": "power-sword",
+          "choices": [
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 0
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "chain-fist",
+              "label": "Chain Fist",
+              "pts": 15
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 23
+            }
+          ]
+        },
+        {
+          "id": "pdtw-stormshield",
+          "type": "toggle",
+          "label": "Storm Shield",
+          "pts": 17,
+          "applies": [
+            "pdw-sergeant",
+            "pdw-terminator"
+          ],
+          "exclusiveGroup": "pdtw-shield",
+          "grantsWargear": [
+            "stormshield"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ravenwing-black-knights",
+      "name": "Ravenwing Black Knights",
+      "slot": "Fast Attack",
+      "basePts": 373,
+      "models": [
+        {
+          "id": "rw-sergeant",
+          "name": "Sergeant",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 5,
+            "W": 3,
+            "I": 4,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "plasma-talon",
+            "bolt-pistol",
+            "corvus-hammer",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "tactical-squads",
+            "hit-and-run",
+            "night-vision",
+            "objective-secured",
+            "scout",
+            "shock-assault",
+            "steed"
+          ]
+        },
+        {
+          "id": "rw-veteran",
+          "name": "Veteran",
+          "minCount": 2,
+          "maxCount": 9,
+          "ptsEach": 72,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 5,
+            "W": 3,
+            "I": 4,
+            "A": 2,
+            "Ld": 8,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "tactical-squads",
+            "hit-and-run",
+            "night-vision",
+            "objective-secured",
+            "scout",
+            "shock-assault",
+            "steed"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "rwbk-add-veterans",
+          "type": "squadSize",
+          "label": "Add Veterans",
+          "targetModelId": "rw-veteran",
+          "ptsEach": 72,
+          "max": 7
+        },
+        {
+          "id": "rwbk-sgt-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "rw-sergeant"
+          ],
+          "label": "Sergeant: swap Corvus Hammer for",
+          "replaces": "corvus-hammer",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 4
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 18
+            }
+          ]
+        },
+        {
+          "id": "rwbk-sgt-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "rw-sergeant"
+          ],
+          "label": "Sergeant: swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "rwbk-vet-stormbolter",
+          "type": "weaponSwap",
+          "scope": "limitedSlot",
+          "slots": 3,
+          "applies": [
+            "rw-veteran"
+          ],
+          "label": "Up to 3 Veterans: swap Stormbolter for",
+          "replaces": "stormbolter",
+          "choices": [
+            {
+              "weaponId": "ravenwing-grenade-launcher",
+              "label": "Ravenwing Grenade Launcher",
+              "pts": 2
+            },
+            {
+              "weaponId": "plasma-talon",
+              "label": "Plasma Talon",
+              "pts": 6
+            }
+          ]
+        },
+        {
+          "id": "rwbk-apothecary",
+          "type": "toggle",
+          "label": "Apothecary",
+          "pts": 68,
+          "applies": [
+            "rw-veteran"
+          ],
+          "exclusiveGroup": "rwbk-special",
+          "statModifiers": [
+            {
+              "modelId": "rw-veteran",
+              "stat": "W",
+              "op": "add",
+              "value": 2
+            }
+          ],
+          "grantsRules": [
+            "apothecary-aura"
+          ]
+        },
+        {
+          "id": "rwbk-standard",
+          "type": "toggle",
+          "label": "Standard Bearer",
+          "pts": 40,
+          "applies": [
+            "rw-veteran"
+          ],
+          "exclusiveGroup": "rwbk-special",
+          "grantsWargear": [
+            "company-standard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ravenwing-land-speeder",
+      "name": "Ravenwing Land Speeder",
+      "slot": "Fast Attack",
+      "basePts": 126,
+      "models": [
+        {
+          "id": "rw-land-speeder",
+          "name": "Land Speeder",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 16,
+            "WS": 5,
+            "BS": 3,
+            "S": 5,
+            "FA": 12,
+            "SA": 12,
+            "RA": 10,
+            "W": 9,
+            "I": 1,
+            "A": 2,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "icon-of-old-caliban",
+            {
+              "weaponId": "heavy-bolter",
+              "arcType": "Sponson",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "tank",
+            "adjusted-tactics",
+            "know-no-fear",
+            "deepstrike",
+            "flyer",
+            "night-vision",
+            "open-topped",
+            "shock-assault"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "rwls-turret-swap",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "rw-land-speeder"
+          ],
+          "label": "Swap Icon of Old Caliban for 2 Linked Heavy Plasma Cannons",
+          "replaces": "icon-of-old-caliban",
+          "choices": [
+            {
+              "weaponId": "2-linked-heavy-plasma-cannons",
+              "label": "2 Linked Heavy Plasma Cannons",
+              "pts": 106,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rwls-sponson-swap",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "rw-land-speeder"
+          ],
+          "label": "Swap Heavy Bolter for Assault Cannon",
+          "replaces": "heavy-bolter",
+          "choices": [
+            {
+              "weaponId": "assault-cannon",
+              "label": "Assault Cannon",
+              "pts": 27,
+              "arcType": "Sponson"
+            }
+          ]
+        },
+        {
+          "id": "rwls-extra-armour",
+          "type": "toggle",
+          "label": "Extra Armour",
+          "pts": 5,
+          "grantsWargear": [
+            "extra-armour"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "land-raider-ares",
+      "name": "Land Raider Ares",
+      "slot": "Heavy Support",
+      "basePts": 305,
+      "models": [
+        {
+          "id": "ares",
+          "name": "Land Raider Ares",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 5,
+            "BS": 3,
+            "S": 8,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 16,
+            "I": 1,
+            "A": 6,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "demolisher-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-sets-2-linked-heavy-flamers-sponson",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "siege-shield"
+            }
+          ],
+          "specialRules": [
+            "tank",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "shock-assault"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "ares-hkm",
+          "type": "toggle",
+          "label": "Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "ares-stormbolter",
+          "type": "toggle",
+          "label": "Stormbolter",
+          "pts": 7,
+          "grantsWargear": [
+            "stormbolter"
+          ]
+        },
+        {
+          "id": "ares-recovery-gear",
+          "type": "toggle",
+          "label": "Recovery Gear",
+          "pts": 2,
+          "grantsWargear": [
+            "recovery-gear"
+          ]
+        },
+        {
+          "id": "ares-extra-armour",
+          "type": "toggle",
+          "label": "Extra Armour",
+          "pts": 5,
+          "grantsWargear": [
+            "extra-armour"
+          ]
+        },
+        {
+          "id": "ares-smoke-launchers",
+          "type": "toggle",
+          "label": "Smoke Launchers",
+          "pts": 10,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-talon",
+      "name": "Dark Talon",
+      "slot": "Flyer",
+      "basePts": 223,
+      "models": [
+        {
+          "id": "dark-talon-model",
+          "name": "Dark Talon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 12,
+            "SA": 11,
+            "RA": 11,
+            "W": 8,
+            "I": 1,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "rift-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-hurricane-bolters",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "stasis-bomb-dt",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "deepstrike",
+            "high-altitude",
+            "hover",
+            "night-vision",
+            "shock-assault"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "dt-flare-launchers",
+          "type": "toggle",
+          "label": "Flare Launchers",
+          "pts": 9,
+          "grantsWargear": [
+            "flare-launchers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nephilim-jetfighter",
+      "name": "Nephilim Jetfighter",
+      "slot": "Flyer",
+      "basePts": 206,
+      "models": [
+        {
+          "id": "nephilim-model",
+          "name": "Nephilim Jetfighter",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 12,
+            "SA": 11,
+            "RA": 11,
+            "W": 8,
+            "I": 1,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "avenger-bolt-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-blacksword-missile-racks",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "know-no-fear",
+            "deepstrike",
+            "high-altitude",
+            "night-vision",
+            "shock-assault"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "neph-main-swap",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "nephilim-model"
+          ],
+          "label": "Swap Avenger Bolt Cannon for",
+          "replaces": "avenger-bolt-cannon",
+          "choices": [
+            {
+              "weaponId": "2-linked-lascannons",
+              "label": "2 Linked Lascannons",
+              "pts": 2,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "neph-flare-launchers",
+          "type": "toggle",
+          "label": "Flare Launchers",
+          "pts": 9,
+          "grantsWargear": [
+            "flare-launchers"
+          ]
+        }
+      ]
+    }
+  ]
+}

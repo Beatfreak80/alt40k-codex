@@ -1,0 +1,6654 @@
+{
+  "schemaVersion": "1.3",
+  "faction": {
+    "id": "necrons",
+    "name": "Necrons",
+    "version": "1.0.0",
+    "subfactionLabel": "Dynasty",
+    "subfactions": [
+      {
+        "id": "average",
+        "name": "Average"
+      },
+      {
+        "id": "maynarkh",
+        "name": "Maynarkh",
+        "rules": [
+          {
+            "id": "maynarkh-conquerors",
+            "name": "Conquerors",
+            "fullDesc": "All Infantry models in this army gain Objective Secured."
+          },
+          {
+            "id": "maynarkh-flayer-virus",
+            "name": "Flayer Virus",
+            "fullDesc": "All models in this army suffer Ld-2."
+          }
+        ]
+      },
+      {
+        "id": "mephrit",
+        "name": "Mephrit",
+        "rules": [
+          {
+            "id": "mephrit-leaderless",
+            "name": "Leaderless",
+            "fullDesc": "Each model only counts as half a model for the purposes of Contesting and Claiming Objective Markers."
+          },
+          {
+            "id": "mephrit-infighting",
+            "name": "Infighting",
+            "fullDesc": "No unit can ever have more than one Character or Independent Character joined at any given time, or any Aura from more than one Necron Character or Independent Character affecting them at any given time."
+          },
+          {
+            "id": "mephrit-power-of-the-stars",
+            "name": "The Power of the Stars",
+            "fullDesc": "All weapons that are not Tesla have the Rending special rule. If a model already had Rending, it may trigger on a 4+ instead of a 5+. This does not affect Auto Wounds or any other Wound that does not have a Roll To Wound. Necron Vehicles explode on a 4+ from this Dynasty."
+          }
+        ]
+      },
+      {
+        "id": "nephrekh",
+        "name": "Nephrekh",
+        "rules": [
+          {
+            "id": "nephrekh-abundant-precious-metals",
+            "name": "Abundant Precious Metals",
+            "fullDesc": "Models in this army may reroll 1s on Armour Saves."
+          },
+          {
+            "id": "nephrekh-yearn-for-pure-light-forms",
+            "name": "Yearn for Pure Light Forms",
+            "fullDesc": "All models gain Fleet but cannot Claim or Contest Objective Markers."
+          }
+        ]
+      },
+      {
+        "id": "nihilakh",
+        "name": "Nihilakh",
+        "rules": [
+          {
+            "id": "nihilakh-treasure-horde",
+            "name": "Treasure Horde",
+            "fullDesc": "All models in your army have Objective Secured for Objective Markers within your Deployment Zone."
+          },
+          {
+            "id": "nihilakh-isolationists",
+            "name": "Isolationists",
+            "fullDesc": "Your models cannot Claim or Contest Objective Markers inside the Enemy Deployment Zone."
+          }
+        ]
+      },
+      {
+        "id": "novokh",
+        "name": "Novokh",
+        "rules": [
+          {
+            "id": "novokh-ferrics-blight",
+            "name": "Ferric's Blight",
+            "fullDesc": "All models from this Dynasty suffer Sv+1, resulting in 1 worse Armour Save. This does not affect Unique Characters."
+          },
+          {
+            "id": "novokh-blood-crazed",
+            "name": "Blood Crazed",
+            "fullDesc": "All models in your army gain Shock Assault and Furious Charge. This does not affect Unique Characters."
+          }
+        ]
+      },
+      {
+        "id": "szarekhan",
+        "name": "Szarekhan",
+        "rules": [
+          {
+            "id": "szarekhan-dark-origins",
+            "name": "Dark Origins",
+            "fullDesc": "All models have I1, regardless of their Datasheet. Unique Characters are not affected by this."
+          },
+          {
+            "id": "szarekhan-blackstone-experts",
+            "name": "Blackstone Experts",
+            "fullDesc": "Each unit of Infantry may attempt to Deny the Witch once per Round."
+          },
+          {
+            "id": "szarekhan-kings-chosen",
+            "name": "King's Chosen",
+            "fullDesc": "Every Infantry and Monstrous Infantry model has Bodyguard."
+          }
+        ]
+      },
+      {
+        "id": "sautekh",
+        "name": "Sautekh",
+        "rules": [
+          {
+            "id": "sautekh-aggressive-territory-grab",
+            "name": "Aggressive Territory Grab",
+            "fullDesc": "Models count as 2 models for the purposes of Contesting and Claiming Objective Markers that are not in an enemy Deployment Zone. Units eligible to declare charges must do so. They may still nominate to fire their weapons or advance, even if this invalidates the chance to Declare a Charge."
+          },
+          {
+            "id": "sautekh-slavers",
+            "name": "Slavers",
+            "fullDesc": "Characters and Independent Characters must accept all Challenges issued. If more than one eligible model is available, you may nominate which one accepts the Challenge."
+          }
+        ]
+      }
+    ],
+    "slotLimits": {
+      "HQ": [
+        1,
+        2
+      ],
+      "Advisor": [
+        0,
+        null
+      ],
+      "Troop": [
+        2,
+        6
+      ],
+      "Elite": [
+        0,
+        3
+      ],
+      "Fast Attack": [
+        0,
+        3
+      ],
+      "Heavy Support": [
+        0,
+        3
+      ],
+      "Flyer": [
+        0,
+        2
+      ],
+      "Ded. Transport": [
+        0,
+        null
+      ],
+      "Lord of War": [
+        0,
+        1
+      ],
+      "Fortification": [
+        0,
+        null
+      ]
+    }
+  },
+  "armyRules": [
+    {
+      "id": "canoptek",
+      "name": "Canoptek",
+      "fullDesc": "This model does not suffer the Autowounds from losing Combat Resolution as a Fearless model. If this model is part of a unit that does not have the Canoptek keyword, the unit still takes the Autowounds (ignoring this model if any bleed over)."
+    },
+    {
+      "id": "hardwired-for-destruction",
+      "name": "Hardwired for Destruction",
+      "fullDesc": "This model may reroll 1's To Hit."
+    },
+    {
+      "id": "living-metal",
+      "name": "Living Metal",
+      "fullDesc": "Models with Living Metal Heal 1 Wound up to their Starting Wounds on their profile during each of your Command Phases. A model cannot Heal more than once per Turn unless a special rule says otherwise."
+    },
+    {
+      "id": "quantum-shield",
+      "name": "Quantum Shielding",
+      "fullDesc": "Units with Quantum Shield treat all Armour Facings as 13 instead of the Datasheet value until the first Penetration. Resolve all Hits from the unit that penetrates this Shield simultaneously. After this, the Datasheet FA, SA, and RA are used for the remainder of the game."
+    },
+    {
+      "id": "reanimation",
+      "name": "Reanimation",
+      "fullDesc": "If a model with Reanimation is slain, do not remove the model from the table. At the end of each Phase, regardless of whose turn it is, roll a d6 for each model Slain. On a 5+, the model gets back up and resumes fighting. In the case of multi-Wound models, roll a d3 for each. The net total of the unit heals this many Wounds in restored models, but the d3 total each cannot exceed the maximum Starting Wounds of the model being Reanimated."
+    },
+    {
+      "id": "soulless-machine",
+      "name": "Soulless Machine",
+      "fullDesc": "Models with this rule may not willingly Go To Ground. One of the few exceptions would be if a unit with this is forced to Go To Ground after being forced to Disembark of a multi-level Terrain Piece from a level above the ground, or from a wrecked Transport that does not use Teleporters."
+    },
+    {
+      "id": "my-will-be-done",
+      "name": "My Will Be Done",
+      "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+    },
+    {
+      "id": "relentless-march",
+      "name": "Relentless March",
+      "fullDesc": "6\" Aura, this model and target unit gain M+2."
+    },
+    {
+      "id": "their-number-is-legion",
+      "name": "Their Number is Legion",
+      "fullDesc": "This model may reroll 1's To Reanimate."
+    },
+    {
+      "id": "empyric-overcharge",
+      "name": "Empyric Overcharge",
+      "fullDesc": "12\" Aura, target Psyker suffers Perils of the Warp on all Doubles as if they were both 1's. This does not modify the To Cast value or prevent Casting in any way. This Aura is cast before the Cast Rolls happen. Natural Double 1s also apply Perils of the Warp like normal."
+    },
+    {
+      "id": "immune-to-natural-law",
+      "name": "Immune to Natural Law",
+      "fullDesc": "Ignores models and Terrain for moving. May not fire Overwatch with C'Tan Powers. This model ignores the extra Wound it suffers from Monsterbane."
+    },
+    {
+      "id": "eternity-portal",
+      "name": "Eternity Portal",
+      "fullDesc": "Teleporter. This model has a Transport Capacity of 20, but instead of carrying the models it keeps them in Reserve. Any model with a Teleporter rule may bring up to its Transport capacity to the field each Turn. Access Front."
+    },
+    {
+      "id": "war-construct",
+      "name": "War Construct",
+      "fullDesc": "This model does not count as a Monster for Poisoned weapons."
+    },
+    {
+      "id": "particle-focus",
+      "name": "Particle Focus",
+      "fullDesc": "Any number of Monoliths within range and firing arcs of their Particle Whips to this model may forgo their shooting with their Particle Whips. For each shot given up, this model's primary weapon may fire an additional time."
+    },
+    {
+      "id": "repair-barge",
+      "name": "Repair Barge",
+      "fullDesc": "6\" Aura, target unit gains +1 to Reanimation Rolls. This can never surpass 4+ by any means."
+    },
+    {
+      "id": "broadside",
+      "name": "Broadside",
+      "fullDesc": "Each set of Linked Gauss Flayers may only fire out one side each as if they were Hull Mounted on a Vehicle."
+    }
+  ],
+  "commonWargear": [
+    {
+      "id": "void-blade",
+      "name": "Void Blade",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "4+",
+          "rules": "Rending, Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "hyperphase-sword",
+      "name": "Hyperphase Sword",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "3+"
+        }
+      ]
+    },
+    {
+      "id": "staff-of-light",
+      "name": "Staff of Light",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Assault 3, Gauss"
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "3+"
+        }
+      ]
+    },
+    {
+      "id": "staff-of-light-technomancer",
+      "name": "Staff of Light",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 18,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Assault 3, Gauss"
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "3+"
+        }
+      ]
+    },
+    {
+      "id": "war-glaive",
+      "name": "War Glaive",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Counterattack"
+        }
+      ]
+    },
+    {
+      "id": "war-scythe",
+      "name": "War Scythe",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Counterattack"
+        }
+      ]
+    },
+    {
+      "id": "warscythe",
+      "name": "Warscythe",
+      "profiles": [
+        {
+          "strength": "X2",
+          "ap": "2+",
+          "rules": "Slow, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "tesla-carbine",
+      "name": "Tesla Carbine",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "-",
+          "rules": "Assault 2, Tesla"
+        }
+      ]
+    },
+    {
+      "id": "gauss-cannon",
+      "name": "Gauss Cannon",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Rapid Fire 2, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "gauntlet-of-fire",
+      "name": "Gauntlet of Fire",
+      "profiles": [
+        {
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Assault 1"
+        }
+      ],
+      "templateType": "Flame"
+    },
+    {
+      "id": "tachyon-arrow",
+      "name": "Tachyon Arrow",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Assault 1, Destroyer, Monsterbane, One Use Only"
+        }
+      ]
+    },
+    {
+      "id": "hyperphase-harvester",
+      "name": "Hyperphase Harvester",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "1+"
+        }
+      ]
+    },
+    {
+      "id": "enmitic-annihilator",
+      "name": "Enmitic Annihilator",
+      "profiles": [
+        {
+          "maxRange": 18,
+          "strength": "6",
+          "ap": "4+",
+          "rules": "Assault 1, 3\" Blast"
+        }
+      ]
+    },
+    {
+      "id": "eldritch-lance",
+      "name": "Eldritch Lance",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 36,
+          "strength": "8",
+          "ap": "2+",
+          "rules": "Assault 1, Lance"
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "1+"
+        }
+      ]
+    },
+    {
+      "id": "aeon-staff",
+      "name": "Aeon Staff",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 18,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Assault 1, 3\" Blast, No Invulnerability Saves"
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "3+",
+          "rules": "No Invulnerability Saves"
+        }
+      ]
+    },
+    {
+      "id": "entropic-lance",
+      "name": "Entropic Lance",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 18,
+          "strength": "8",
+          "ap": "2+",
+          "rules": "Assault 1"
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "2+"
+        }
+      ]
+    },
+    {
+      "id": "chronotendrils",
+      "name": "Chronotendrils",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "-",
+          "rules": "Extra Attack 2"
+        }
+      ]
+    },
+    {
+      "id": "scouring-eye",
+      "name": "Scouring Eye",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Pistol 2"
+        }
+      ]
+    },
+    {
+      "id": "scything-limbs",
+      "name": "Scything Limbs",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "5+"
+        }
+      ]
+    },
+    {
+      "id": "plasmic-lance",
+      "name": "Plasmic Lance",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 18,
+          "strength": "7",
+          "ap": "2+",
+          "rules": "Assault 3, Lance"
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "2+"
+        }
+      ]
+    },
+    {
+      "id": "relic-gauss-blaster",
+      "name": "Relic Gauss Blaster",
+      "profiles": [
+        {
+          "maxRange": 30,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Rapid Fire 2, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "emphatic-obliterator",
+      "name": "Emphatic Obliterator",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "3+",
+          "rules": "Psionic Shockwave"
+        }
+      ]
+    },
+    {
+      "id": "staff-of-tomorrow",
+      "name": "Staff of Tomorrow",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "2+",
+          "rules": "No Invulnerability Saves"
+        }
+      ]
+    },
+    {
+      "id": "synaptic-disintegrator",
+      "name": "Synaptic Disintegrator",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Heavy 2, Sniper"
+        }
+      ]
+    },
+    {
+      "id": "flayer-claw",
+      "name": "Flayer Claw",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "5+",
+          "rules": "Rending, Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "particle-caster",
+      "name": "Particle Caster",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Pistol 1"
+        }
+      ]
+    },
+    {
+      "id": "gauss-blaster",
+      "name": "Gauss Blaster",
+      "profiles": [
+        {
+          "maxRange": 30,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Rapid Fire 1, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "gauss-flayer",
+      "name": "Gauss Flayer",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Rapid Fire 1, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "gauss-reaper",
+      "name": "Gauss Reaper",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Assault 2, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "hyperphase-threshers",
+      "name": "Hyperphase Threshers",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "3+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "hyperphase-reap-blade",
+      "name": "Hyperphase Reap-Blade",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "1+"
+        }
+      ]
+    },
+    {
+      "id": "hyperphase-sword-and-dispersion-shield",
+      "name": "Hyperphase Sword and Dispersion Shield",
+      "profiles": [
+        {
+          "label": "Hyperphase Sword",
+          "strength": "+1",
+          "ap": "3+"
+        },
+        {
+          "label": "Dispersion Shield",
+          "strength": "-",
+          "ap": "-",
+          "rules": "Sv-1 (improves by 1), 4+ Invulnerability Save"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-atomizer-beams",
+      "name": "2 Linked Atomizer Beams",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "6",
+          "ap": "4+",
+          "rules": "Assault 3 x2"
+        }
+      ]
+    },
+    {
+      "id": "reanimator-claws",
+      "name": "Reanimator Claws",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "4+"
+        }
+      ]
+    },
+    {
+      "id": "automation-claws",
+      "name": "Automation Claws",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "3+"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-particle-beamers",
+      "name": "2 Linked Particle Beamers",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "5+",
+          "rules": "Heavy 1 x2, 3\" Blasts"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-gauss-flayers",
+      "name": "2 Linked Gauss Flayers",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Rapid Fire 1 x2, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "tomb-sentinel-claws",
+      "name": "Tomb Sentinel Claws",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "3+"
+        }
+      ]
+    },
+    {
+      "id": "2-sets-5-linked-gauss-flayers",
+      "name": "2 Sets of 5 Linked Gauss Flayers",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Rapid Fire 1 x5 (x2), Gauss, Broadside"
+        }
+      ]
+    },
+    {
+      "id": "6-linked-enmitic-disintegrators",
+      "name": "6 Linked Enmitic Disintegrators",
+      "profiles": [
+        {
+          "maxRange": 18,
+          "strength": "5",
+          "ap": "5+",
+          "rules": "Pistol 1 x6"
+        }
+      ]
+    },
+    {
+      "id": "enmitic-disintegrator-melee",
+      "name": "Enmitic Disintegrator",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "5+",
+          "rules": "Extra Attack 2"
+        }
+      ]
+    },
+    {
+      "id": "particle-shredder",
+      "name": "Particle Shredder",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "7",
+          "ap": "4+",
+          "rules": "Heavy 1, 5\" Blast"
+        }
+      ]
+    },
+    {
+      "id": "heat-ray",
+      "name": "Heat Ray",
+      "profiles": [
+        {
+          "label": "Focused",
+          "maxRange": 24,
+          "strength": "8",
+          "ap": "1+",
+          "rules": "Heavy 2, Melta, (Monsterbane)"
+        },
+        {
+          "label": "Sweeping",
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Assault 1"
+        }
+      ],
+      "templateType": "Flame"
+    },
+    {
+      "id": "2-linked-heavy-gauss-cannons",
+      "name": "2 Linked Heavy Gauss Cannons",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "9",
+          "ap": "2+",
+          "rules": "Heavy 1 x2, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "stalker-forelimbs",
+      "name": "Stalker Forelimbs",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "3+"
+        }
+      ]
+    },
+    {
+      "id": "particle-beamer",
+      "name": "Particle Beamer",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "5+",
+          "rules": "Heavy 1, 3\" Blast"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-tesla-carbines",
+      "name": "2 Linked Tesla Carbines",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "-",
+          "rules": "Assault 2 x2, Tesla"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-gauss-blasters",
+      "name": "2 Linked Gauss Blasters",
+      "profiles": [
+        {
+          "maxRange": 30,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Rapid Fire 1 x2, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "particle-caster-and-void-blade",
+      "name": "Particle Caster and Void Blade",
+      "profiles": [
+        {
+          "label": "Particle Caster",
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Pistol 1"
+        },
+        {
+          "label": "Void Blade",
+          "strength": "User",
+          "ap": "4+",
+          "rules": "Rending, Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "rod-of-covenant",
+      "name": "Rod of Covenant",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 12,
+          "strength": "5",
+          "ap": "2+",
+          "rules": "Assault 2"
+        },
+        {
+          "label": "Melee",
+          "strength": "User",
+          "ap": "2+"
+        }
+      ]
+    },
+    {
+      "id": "feeder-mandibles",
+      "name": "Feeder Mandibles",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "-",
+          "rules": "Gauss"
+        }
+      ]
+    },
+    {
+      "id": "exile-cannon",
+      "name": "Exile Cannon",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 1, 3\" Blast, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "cutting-beam",
+      "name": "Cutting Beam",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "6",
+          "ap": "2+",
+          "rules": "Assault 1, Melta, (Monsterbane)"
+        }
+      ]
+    },
+    {
+      "id": "vicious-blades",
+      "name": "Vicious Blades",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "4+"
+        }
+      ]
+    },
+    {
+      "id": "whip-coils",
+      "name": "Whip Coils",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "-",
+          "rules": "Extra Attack 1, +3 Initiative"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-tesla-destroyers",
+      "name": "2 Linked Tesla Destroyers",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "-",
+          "rules": "Assault 3 x2, Tesla"
+        }
+      ]
+    },
+    {
+      "id": "doomsday-blaster-ark",
+      "name": "Doomsday Blaster",
+      "profiles": [
+        {
+          "maxRange": 72,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Heavy 1, 3\" Blast, Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "doomsday-blaster-doomstalker",
+      "name": "Doomsday Blaster",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "8",
+          "ap": "2+",
+          "rules": "Heavy 1, 5\" Blast, Lance, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "5-linked-gauss-flayers",
+      "name": "5 Linked Gauss Flayers",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Rapid Fire 1 x5, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "tesseract-singularity-chamber",
+      "name": "Tesseract Singularity Chamber",
+      "profiles": [
+        {
+          "label": "Flame",
+          "strength": "6",
+          "ap": "3+",
+          "rules": "Assault 1"
+        },
+        {
+          "label": "Beam",
+          "maxRange": 24,
+          "strength": "8",
+          "ap": "1+",
+          "rules": "Heavy 2, Melta, (Monsterbane)"
+        }
+      ],
+      "templateType": "Flame"
+    },
+    {
+      "id": "2-linked-gauss-cannons",
+      "name": "2 Linked Gauss Cannons",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Rapid Fire 2 x2, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "gauss-destructor",
+      "name": "Gauss Destructor",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 1, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "enmitic-exterminator",
+      "name": "Enmitic Exterminator",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "7",
+          "ap": "4+",
+          "rules": "Heavy 1, 5\" Blast"
+        }
+      ]
+    },
+    {
+      "id": "focused-death-ray",
+      "name": "Focused Death Ray",
+      "profiles": [
+        {
+          "maxRange": 48,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 1, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "gauss-exterminator",
+      "name": "Gauss Exterminator",
+      "profiles": [
+        {
+          "maxRange": 120,
+          "strength": "9",
+          "ap": "2+",
+          "rules": "Heavy 2, Gauss, Monsterbane, AA"
+        }
+      ]
+    },
+    {
+      "id": "heat-cannon",
+      "name": "Heat Cannon",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 2, 3\" Blast, Melta, (Monsterbane)"
+        }
+      ]
+    },
+    {
+      "id": "death-ray",
+      "name": "Death Ray",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 1, 3\" Blast, Lance, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "death-sphere",
+      "name": "Death Sphere",
+      "profiles": [
+        {
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 1, 5\" Blast, Pinning, Monsterbane"
+        }
+      ],
+      "templateType": "Bomb"
+    },
+    {
+      "id": "golden-fists",
+      "name": "Golden Fists",
+      "profiles": [
+        {
+          "strength": "+3",
+          "ap": "3+",
+          "rules": "Sniper (2+)"
+        }
+      ]
+    },
+    {
+      "id": "cosmic-fire",
+      "name": "Cosmic Fire",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "4+",
+          "rules": "Assault 1, 5\" Blast, Ignores Cover"
+        }
+      ]
+    },
+    {
+      "id": "times-arrow",
+      "name": "Time's Arrow",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "2+",
+          "rules": "Assault 2, Sniper (3+)"
+        }
+      ]
+    },
+    {
+      "id": "transdimensional-thunderbolt",
+      "name": "Transdimensional Thunderbolt",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "9",
+          "ap": "1+",
+          "rules": "Assault 1, Tesla, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "seismic-assault",
+      "name": "Seismic Assault",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "4+",
+          "rules": "Assault 10"
+        }
+      ]
+    },
+    {
+      "id": "antimatter-meteor",
+      "name": "Antimatter Meteor",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "8",
+          "ap": "3+",
+          "rules": "Assault 1, 5\" Blast, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "sky-of-falling-stars",
+      "name": "Sky of Falling Stars",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "7",
+          "ap": "4+",
+          "rules": "Assault 3, 3\" Blast, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "scythe-of-the-nightbringer",
+      "name": "Scythe of the Nightbringer",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "2+",
+          "rules": "Poisoned (2+), Monsterbane, No Invulnerability Save"
+        }
+      ]
+    },
+    {
+      "id": "spear-of-the-void-dragon",
+      "name": "Spear of the Void Dragon",
+      "profiles": [
+        {
+          "label": "Shooting",
+          "maxRange": 24,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Assault 2, Lance, Monsterbane"
+        },
+        {
+          "label": "Melee",
+          "strength": "+3",
+          "ap": "1+",
+          "rules": "Armourbane"
+        }
+      ]
+    },
+    {
+      "id": "canoptek-tail-blades",
+      "name": "Canoptek Tail Blades",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "4+",
+          "rules": "Extra Attack 1, Auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "crackling-tendrils",
+      "name": "Crackling Tendrils",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "1+"
+        }
+      ]
+    },
+    {
+      "id": "gauss-annihilator",
+      "name": "Gauss Annihilator",
+      "profiles": [
+        {
+          "label": "Anti-Air",
+          "maxRange": 120,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Heavy 2, Destroyer, Monsterbane, AA"
+        },
+        {
+          "label": "Ground",
+          "maxRange": 120,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Heavy 1, 5\" Blast, Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "titanic-forelimbs",
+      "name": "Titanic Forelimbs",
+      "profiles": [
+        {
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-singularity-generators",
+      "name": "2 Linked Singularity Generators",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "8",
+          "ap": "2+",
+          "rules": "Heavy 1, 5\" Blast, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-synaptic-obliterators-transdim-projectors",
+      "name": "2 Linked Synaptic Obliterators and Transdimensional Projectors",
+      "profiles": [
+        {
+          "label": "Synaptic Obliterators",
+          "maxRange": 72,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Heavy 1 x2, Monsterbane, Simultaneous Fire"
+        },
+        {
+          "label": "Transdimensional Projectors",
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "3+",
+          "rules": "Heavy 1 x2, 3\" Blast, Simultaneous Fire"
+        }
+      ]
+    },
+    {
+      "id": "particle-whip",
+      "name": "Particle Whip",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "8",
+          "ap": "3+",
+          "rules": "Heavy 1, 5\" Blast, Ordnance, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "4-gauss-arc-fluxes",
+      "name": "4 Gauss Arc Fluxes",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Rapid Fire 5 x4, Gauss"
+        }
+      ]
+    },
+    {
+      "id": "4-death-rays",
+      "name": "4 Death Rays",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Heavy 1 x4, 3\" Blast, Lance, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "gauss-obliterator",
+      "name": "Gauss Obliterator",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Heavy 1, 5\" Blast, Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "gauss-eradicator",
+      "name": "Gauss Eradicator",
+      "profiles": [
+        {
+          "maxRange": 72,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Heavy 1, 10\" Blast, Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "4-tesla-spheres",
+      "name": "4 Tesla Spheres",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "-",
+          "rules": "Assault 5, Tesla"
+        }
+      ]
+    },
+    {
+      "id": "charged-times-arrow",
+      "name": "Charged Time's Arrow",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "5",
+          "ap": "2+",
+          "rules": "Assault 2, Sniper (2+), Ignore Invulnerability Saves"
+        }
+      ]
+    },
+    {
+      "id": "charged-cosmic-fire",
+      "name": "Charged Cosmic Fire",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "8",
+          "ap": "3+",
+          "rules": "Assault 1, 5\" Blast, Monsterbane, Ignores Cover"
+        }
+      ]
+    },
+    {
+      "id": "charged-transdimensional-thunderbolt",
+      "name": "Charged Transdimensional Thunderbolt",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Assault 2, Armourbane, Tesla, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "charged-seismic-assault",
+      "name": "Charged Seismic Assault",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "6",
+          "ap": "4+",
+          "rules": "Assault 20"
+        }
+      ]
+    },
+    {
+      "id": "charged-sky-of-falling-star",
+      "name": "Charged Sky of Falling Star",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "7",
+          "ap": "4+",
+          "rules": "Assault 3, 5\" Blast"
+        }
+      ]
+    },
+    {
+      "id": "charged-antimatter-meteor",
+      "name": "Charged Antimatter Meteor",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "8",
+          "ap": "3+",
+          "rules": "Assault 1, 10\" Blast, Ordnance, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "canoptek-plasmacyte",
+      "name": "Canoptek Plasmacyte",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, target unit with Hardwired for Destruction gains S+1, A+1. Roll a d6. On a 1, one model with this rule is removed from the game. It cannot reanimate or return in any form."
+        }
+      ]
+    },
+    {
+      "id": "chronometron",
+      "name": "Chronometron",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, this model and target unit gain a 5+ Invulnerability Save."
+        }
+      ]
+    },
+    {
+      "id": "phase-shifter",
+      "name": "Phase Shifter",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save."
+        }
+      ]
+    },
+    {
+      "id": "timesplinter-mantle",
+      "name": "Timesplinter Mantle",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save."
+        }
+      ]
+    },
+    {
+      "id": "necrodermis",
+      "name": "Necrodermis",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save. Explodes on a 4+: S6 AP1+ in a d6\" Radius."
+        }
+      ]
+    },
+    {
+      "id": "star-god-forcefield",
+      "name": "Star God Forcefield",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "5+ Invulnerability Save. This model explodes on a 4+."
+        }
+      ]
+    },
+    {
+      "id": "containment-field",
+      "name": "Containment Field",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "5+ Invulnerability Save."
+        }
+      ]
+    },
+    {
+      "id": "defense-field",
+      "name": "Defense Field",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, this model and target unit gain a 5+ Invulnerability Save."
+        }
+      ]
+    },
+    {
+      "id": "sepulchral-scarabs",
+      "name": "Sepulchral Scarabs",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "Each of your Command Phases roll d6. On a 5+, Heal one additional Wound. This ignores the normal Heal rules."
+        }
+      ]
+    },
+    {
+      "id": "grav-pulse",
+      "name": "Grav Pulse",
+      "profiles": [
+        {
+          "strength": "10",
+          "ap": "2+",
+          "rules": "12\" True Aura, Auto Hit, Monsterbane. Only used during your Shooting Phase against all Flying and High Altitude models in range except this model. Does not work if this model is reduced to M0."
+        }
+      ]
+    },
+    {
+      "id": "flensing-claw",
+      "name": "Flensing Claw",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "5+",
+          "rules": "Extra Attack 2"
+        }
+      ]
+    },
+    {
+      "id": "mindshackle-scarabs",
+      "name": "Mindshackle Scarabs",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, target non-Titanic model in a Challenge with this model suffers -1 To Hit."
+        }
+      ]
+    },
+    {
+      "id": "resurrection-orb",
+      "name": "Resurrection Orb",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, this model and one unit within 6\" may roll Reanimation twice in your Command Phase. One Use Only."
+        }
+      ]
+    }
+  ],
+  "namedUpgrades": {
+    "sempiternal-weave": {
+      "type": "toggle",
+      "label": "Sempiternal Weave",
+      "statModifiers": [
+        {
+          "modelId": "__sergeant__",
+          "stat": "W",
+          "op": "add",
+          "value": 1
+        }
+      ],
+      "note": "W+1."
+    },
+    "phase-shifter-upgrade": {
+      "type": "toggle",
+      "label": "Phase Shifter",
+      "grantsWargear": [
+        "phase-shifter"
+      ],
+      "note": "4+ Invulnerability Save."
+    },
+    "mindshackle-scarabs-upgrade": {
+      "type": "toggle",
+      "label": "Mindshackle Scarabs",
+      "grantsWargear": [
+        "mindshackle-scarabs"
+      ],
+      "note": "6\" Aura, target non-Titanic model in a Challenge with this model suffers -1 To Hit."
+    },
+    "resurrection-orb-upgrade": {
+      "type": "toggle",
+      "label": "Resurrection Orb",
+      "grantsWargear": [
+        "resurrection-orb"
+      ],
+      "note": "6\" Aura, this model and one unit within 6\" may roll Reanimation twice in your Command Phase. One Use Only."
+    },
+    "countertemporal-nanomines": {
+      "type": "toggle",
+      "label": "Countertemporal Nanomines",
+      "note": "18\" Aura, target unit only charges and advances at half speed."
+    },
+    "cryptogeometric-adjuster": {
+      "type": "toggle",
+      "label": "Cryptogeometric Adjuster",
+      "note": "18\" Aura, target unit only charges and advances at half speed."
+    },
+    "dimensional-sanctum": {
+      "type": "toggle",
+      "label": "Dimensional Sanctum",
+      "grantsRules": [
+        "deepstrike"
+      ],
+      "note": "This model and its unit gain Deepstrike."
+    },
+    "hyper-material-ablator": {
+      "type": "toggle",
+      "label": "Hyper Material Ablator",
+      "note": "6\" Aura, target unit gains a 5+ Cover Save."
+    },
+    "photon-transubjector": {
+      "type": "toggle",
+      "label": "Photon Transubjector",
+      "note": "This model ignores the First Wound Suffered per Phase."
+    },
+    "prismatic-obfuscatron": {
+      "type": "toggle",
+      "label": "Prismatic Obfuscatron",
+      "note": "6\" Aura, this model and target unit may only be targeted if they are the closest unit to the attacker."
+    },
+    "gloom-prison": {
+      "type": "toggle",
+      "label": "Gloom Prison",
+      "grantsRules": [
+        "repair-barge"
+      ],
+      "note": "6\" Aura, target unit gains +1 to Reanimation Rolls. Maximum 4+."
+    },
+    "canoptek-plasmacyte-upgrade": {
+      "type": "toggle",
+      "label": "Canoptek Plasmacyte",
+      "grantsWargear": [
+        "canoptek-plasmacyte"
+      ],
+      "note": "6\" Aura, target unit with Hardwired for Destruction gains S+1, A+1. On a 1, one model is removed from the game."
+    }
+  },
+  "weaponLists": {
+    "hq-melee-swap": [
+      {
+        "weaponId": "void-blade",
+        "label": "Void Blade",
+        "pts": 0
+      },
+      {
+        "weaponId": "hyperphase-sword",
+        "label": "Hyperphase Sword",
+        "pts": 1
+      },
+      {
+        "weaponId": "staff-of-light",
+        "label": "Staff of Light",
+        "pts": 9
+      },
+      {
+        "weaponId": "warscythe",
+        "label": "Warscythe",
+        "pts": 10
+      },
+      {
+        "weaponId": "war-glaive",
+        "label": "War Glaive",
+        "pts": 10
+      }
+    ],
+    "ctan-powers": [
+      {
+        "label": "Random power each turn (+27 pts)",
+        "pts": 27
+      },
+      {
+        "weaponId": "cosmic-fire",
+        "label": "Cosmic Fire",
+        "pts": 16
+      },
+      {
+        "weaponId": "times-arrow",
+        "label": "Time's Arrow",
+        "pts": 17
+      },
+      {
+        "weaponId": "transdimensional-thunderbolt",
+        "label": "Transdimensional Thunderbolt",
+        "pts": 18
+      },
+      {
+        "weaponId": "seismic-assault",
+        "label": "Seismic Assault",
+        "pts": 29
+      },
+      {
+        "weaponId": "antimatter-meteor",
+        "label": "Antimatter Meteor",
+        "pts": 40
+      },
+      {
+        "weaponId": "sky-of-falling-stars",
+        "label": "Sky of Falling Stars",
+        "pts": 44
+      }
+    ]
+  },
+  "units": [
+    {
+      "id": "command-barge",
+      "name": "Command Barge",
+      "slot": "HQ",
+      "basePts": 187,
+      "inlineRules": [
+        {
+          "id": "command-barge-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        },
+        {
+          "id": "command-barge-rm",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        }
+      ],
+      "models": [
+        {
+          "id": "command-barge",
+          "name": "Command Barge",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 8,
+            "I": 2,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "void-blade",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "tesla-carbine",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "independent-character",
+            "vehicle",
+            "tank",
+            "living-metal",
+            "quantum-shield",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "open-topped",
+            "steady",
+            "command-barge-mwbd",
+            "command-barge-rm"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "cb-melee",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "command-barge"
+          ],
+          "label": "Swap Void Blade for",
+          "replaces": "void-blade",
+          "choices": [
+            {
+              "weaponId": "void-blade",
+              "label": "Void Blade",
+              "pts": 0,
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "hyperphase-sword",
+              "label": "Hyperphase Sword",
+              "pts": 1,
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "staff-of-light",
+              "label": "Staff of Light",
+              "pts": 11,
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "war-glaive",
+              "label": "War Glaive",
+              "pts": 13,
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "warscythe",
+              "label": "Warscythe",
+              "pts": 15,
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cb-ranged",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "command-barge"
+          ],
+          "label": "Swap Tesla Carbine for",
+          "replaces": "tesla-carbine",
+          "choices": [
+            {
+              "weaponId": "tesla-carbine",
+              "label": "Tesla Carbine",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "gauss-cannon",
+              "label": "Gauss Cannon",
+              "pts": 3,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "cb-gauntlet",
+          "type": "toggle",
+          "exclusiveGroup": "cb-special",
+          "label": "Gauntlet of Fire (+8 pts)",
+          "pts": 8,
+          "grantsWargear": [
+            {
+              "weaponId": "gauntlet-of-fire",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cb-tachyon",
+          "type": "toggle",
+          "exclusiveGroup": "cb-special",
+          "label": "Tachyon Arrow (+19 pts)",
+          "pts": 19,
+          "grantsWargear": [
+            {
+              "weaponId": "tachyon-arrow",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cb-mindshackle",
+          "type": "namedUpgrade",
+          "upgradeId": "mindshackle-scarabs-upgrade",
+          "pts": 10
+        },
+        {
+          "id": "cb-phase-shifter",
+          "type": "namedUpgrade",
+          "upgradeId": "phase-shifter-upgrade",
+          "pts": 24
+        },
+        {
+          "id": "cb-resurrection-orb",
+          "type": "namedUpgrade",
+          "upgradeId": "resurrection-orb-upgrade",
+          "pts": 30
+        }
+      ]
+    },
+    {
+      "id": "lokhust-lord",
+      "name": "Lokhust Lord",
+      "slot": "HQ",
+      "basePts": 187,
+      "inlineRules": [
+        {
+          "id": "lokhust-lord-improved-living-metal",
+          "name": "Improved Living Metal",
+          "fullDesc": "This model Heals +1 Wound in your Command Phase. This overrides the base Living Metal Rule."
+        }
+      ],
+      "models": [
+        {
+          "id": "lokhust-lord",
+          "name": "Lokhust Lord",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 8,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "T": 6,
+            "W": 6,
+            "I": 2,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "void-blade"
+          ],
+          "specialRules": [
+            "independent-character",
+            "monstrous-infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "steady",
+            "very-bulky",
+            "lokhust-lord-improved-living-metal"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "ll-melee",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "lokhust-lord"
+          ],
+          "label": "Swap Void Blade for",
+          "replaces": "void-blade",
+          "weaponListId": "hq-melee-swap"
+        },
+        {
+          "id": "ll-gauntlet",
+          "type": "toggle",
+          "exclusiveGroup": "ll-special",
+          "label": "Gauntlet of Fire (+8 pts)",
+          "pts": 8,
+          "grantsWargear": [
+            "gauntlet-of-fire"
+          ]
+        },
+        {
+          "id": "ll-tachyon",
+          "type": "toggle",
+          "exclusiveGroup": "ll-special",
+          "label": "Tachyon Arrow (+19 pts)",
+          "pts": 19,
+          "grantsWargear": [
+            "tachyon-arrow"
+          ]
+        },
+        {
+          "id": "ll-mindshackle",
+          "type": "namedUpgrade",
+          "upgradeId": "mindshackle-scarabs-upgrade",
+          "pts": 10
+        },
+        {
+          "id": "ll-phase-shifter",
+          "type": "namedUpgrade",
+          "upgradeId": "phase-shifter-upgrade",
+          "pts": 24
+        },
+        {
+          "id": "ll-resurrection-orb",
+          "type": "namedUpgrade",
+          "upgradeId": "resurrection-orb-upgrade",
+          "pts": 30
+        },
+        {
+          "id": "ll-sempiternal-weave",
+          "type": "namedUpgrade",
+          "upgradeId": "sempiternal-weave",
+          "pts": 10
+        }
+      ]
+    },
+    {
+      "id": "lord",
+      "name": "Lord",
+      "slot": "HQ",
+      "basePts": 100,
+      "inlineRules": [
+        {
+          "id": "lord-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        }
+      ],
+      "models": [
+        {
+          "id": "lord",
+          "name": "Lord",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 5,
+            "T": 5,
+            "W": 5,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "void-blade"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "lord-mwbd"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "lord-melee",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "lord"
+          ],
+          "label": "Swap Void Blade for",
+          "replaces": "void-blade",
+          "weaponListId": "hq-melee-swap"
+        },
+        {
+          "id": "lord-gauntlet",
+          "type": "toggle",
+          "exclusiveGroup": "lord-special",
+          "label": "Gauntlet of Fire (+8 pts)",
+          "pts": 8,
+          "grantsWargear": [
+            "gauntlet-of-fire"
+          ]
+        },
+        {
+          "id": "lord-tachyon",
+          "type": "toggle",
+          "exclusiveGroup": "lord-special",
+          "label": "Tachyon Arrow (+19 pts)",
+          "pts": 19,
+          "grantsWargear": [
+            "tachyon-arrow"
+          ]
+        },
+        {
+          "id": "lord-mindshackle",
+          "type": "namedUpgrade",
+          "upgradeId": "mindshackle-scarabs-upgrade",
+          "pts": 10
+        },
+        {
+          "id": "lord-phase-shifter",
+          "type": "namedUpgrade",
+          "upgradeId": "phase-shifter-upgrade",
+          "pts": 24
+        },
+        {
+          "id": "lord-resurrection-orb",
+          "type": "namedUpgrade",
+          "upgradeId": "resurrection-orb-upgrade",
+          "pts": 30
+        },
+        {
+          "id": "lord-sempiternal-weave",
+          "type": "namedUpgrade",
+          "upgradeId": "sempiternal-weave",
+          "pts": 11
+        }
+      ]
+    },
+    {
+      "id": "skorpekh-lord",
+      "name": "Skorpekh Lord",
+      "slot": "HQ",
+      "basePts": 208,
+      "inlineRules": [
+        {
+          "id": "skorpekh-lord-united",
+          "name": "United in Destruction",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Wound."
+        }
+      ],
+      "models": [
+        {
+          "id": "skorpekh-lord",
+          "name": "Skorpekh Lord",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 8,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 6,
+            "W": 6,
+            "I": 2,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "enmitic-annihilator",
+            "flensing-claw",
+            "hyperphase-harvester"
+          ],
+          "specialRules": [
+            "independent-character",
+            "monstrous-infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "very-bulky",
+            "skorpekh-lord-united"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sl-mindshackle",
+          "type": "namedUpgrade",
+          "upgradeId": "mindshackle-scarabs-upgrade",
+          "pts": 10
+        },
+        {
+          "id": "sl-phase-shifter",
+          "type": "namedUpgrade",
+          "upgradeId": "phase-shifter-upgrade",
+          "pts": 24
+        },
+        {
+          "id": "sl-resurrection-orb",
+          "type": "namedUpgrade",
+          "upgradeId": "resurrection-orb-upgrade",
+          "pts": 30
+        },
+        {
+          "id": "sl-sempiternal-weave",
+          "type": "namedUpgrade",
+          "upgradeId": "sempiternal-weave",
+          "pts": 10
+        }
+      ]
+    },
+    {
+      "id": "anrakyr-the-traveler",
+      "name": "Anrakyr the Traveler",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 309,
+      "inlineRules": [
+        {
+          "id": "anrakyr-rm",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        },
+        {
+          "id": "anrakyr-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        },
+        {
+          "id": "anrakyr-lord-pryhian",
+          "name": "Lord of the Pryhian Legions",
+          "fullDesc": "6\" Aura, this model and target Immortal, Lychguard, or Pariah unit gains A+1."
+        },
+        {
+          "id": "anrakyr-mind-in-machine",
+          "name": "Mind in the Machine",
+          "fullDesc": "In the shooting phase, target a non-Titanic Vehicle model within 24\" and shoot one weapon of your choice. You are allowed to target models friendly to the Vehicle, but not itself."
+        }
+      ],
+      "models": [
+        {
+          "id": "anrakyr",
+          "name": "Anrakyr the Traveler",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 5,
+            "W": 7,
+            "I": 2,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "warscythe",
+            "tachyon-arrow",
+            "phase-shifter"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "anrakyr-rm",
+            "anrakyr-mwbd",
+            "anrakyr-lord-pryhian",
+            "anrakyr-mind-in-machine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "illuminor-szeras",
+      "name": "Illuminor Szeras",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 305,
+      "inlineRules": [
+        {
+          "id": "szeras-mechanical-augmentation",
+          "name": "Mechanical Augmentation",
+          "fullDesc": "6\" Aura, target unit gains 1 randomized result. The same unit may benefit from this ability multiple times, but each result may only apply to the same target unit once each. Duplicate results have no effect. D3: 1 S+1, 2 A+1, 3 BS-1 (Improves by 1)."
+        },
+        {
+          "id": "szeras-lord-of-technology",
+          "name": "Lord of Technology",
+          "fullDesc": "6\" Aura, target unit gains +1 to Reanimation Rolls. This can never become better than a +1, but rerolls may still apply."
+        }
+      ],
+      "models": [
+        {
+          "id": "szeras",
+          "name": "Illuminor Szeras",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 8,
+            "WS": 3,
+            "BS": 3,
+            "S": 6,
+            "T": 6,
+            "W": 7,
+            "I": 2,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "eldritch-lance"
+          ],
+          "specialRules": [
+            "independent-character",
+            "monstrous-infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "very-bulky",
+            "empyric-overcharge",
+            "szeras-mechanical-augmentation",
+            "szeras-lord-of-technology"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nemesor-zahndrekh",
+      "name": "Nemesor Zahndrekh",
+      "slot": "HQ",
+      "isUnique": true,
+      "chapterRestriction": "sautekh",
+      "basePts": 328,
+      "inlineRules": [
+        {
+          "id": "zahndrekh-rm",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        },
+        {
+          "id": "zahndrekh-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        },
+        {
+          "id": "zahndrekh-counter-tactics",
+          "name": "Counter Tactics",
+          "fullDesc": "6\" Aura, this model and target unit gain all of the Special Rules from target unit within 24\", excluding Wargear."
+        },
+        {
+          "id": "zahndrekh-adaptive-strategy",
+          "name": "Adaptive Strategy",
+          "fullDesc": "6\" Aura, this model and friendly target unit may swap Rapid Fire # for Assault #."
+        }
+      ],
+      "models": [
+        {
+          "id": "zahndrekh",
+          "name": "Nemesor Zahndrekh",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "T": 5,
+            "W": 7,
+            "I": 2,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "staff-of-light",
+            "phase-shifter"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "zahndrekh-rm",
+            "zahndrekh-mwbd",
+            "zahndrekh-counter-tactics",
+            "zahndrekh-adaptive-strategy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orikan-the-diviner",
+      "name": "Orikan the Diviner",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 230,
+      "inlineRules": [
+        {
+          "id": "orikan-prescient-strike",
+          "name": "Prescient Strike",
+          "fullDesc": "6\" Aura, this model and target unit have I10."
+        },
+        {
+          "id": "orikan-stars-are-right",
+          "name": "The Stars are Right",
+          "fullDesc": "In each of your Command Phases, roll a die. If the result is equal to or less than the current turn number, Orikan uses the Stars are Right Stat Line (M8, WS2+, BS5+, S7, T7, W5, I2, A4, Ld10, Sv3+) instead of the normal Stat Line. Orikan fully heals when he transforms."
+        }
+      ],
+      "models": [
+        {
+          "id": "orikan",
+          "name": "Orikan the Diviner",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 8,
+            "WS": 3,
+            "BS": 5,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "staff-of-tomorrow",
+            "timesplinter-mantle",
+            "chronometron"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "canoptek",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "orikan-prescient-strike",
+            "orikan-stars-are-right"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overlord",
+      "name": "Overlord",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 185,
+      "inlineRules": [
+        {
+          "id": "overlord-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        },
+        {
+          "id": "overlord-rm",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        },
+        {
+          "id": "translocation-shroud",
+          "name": "Translocation Shroud",
+          "fullDesc": "This model and its unit, at the end of any of your Movement Phases, may go into Reserve and immediately Deepstrike. This cannot take place if this model or its unit is Locked in Melee. This special Deepstrike does not grant the usual 4+ Cover Save."
+        }
+      ],
+      "models": [
+        {
+          "id": "overlord",
+          "name": "Overlord",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "T": 5,
+            "W": 6,
+            "I": 2,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "void-blade"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "overlord-mwbd",
+            "overlord-rm"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "overlord-melee",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "overlord"
+          ],
+          "label": "Swap Void Blade for",
+          "replaces": "void-blade",
+          "weaponListId": "hq-melee-swap"
+        },
+        {
+          "id": "overlord-gauntlet",
+          "type": "toggle",
+          "exclusiveGroup": "overlord-special",
+          "label": "Gauntlet of Fire (+8 pts)",
+          "pts": 8,
+          "grantsWargear": [
+            "gauntlet-of-fire"
+          ]
+        },
+        {
+          "id": "overlord-tachyon",
+          "type": "toggle",
+          "exclusiveGroup": "overlord-special",
+          "label": "Tachyon Arrow (+19 pts)",
+          "pts": 19,
+          "grantsWargear": [
+            "tachyon-arrow"
+          ]
+        },
+        {
+          "id": "overlord-mindshackle",
+          "type": "namedUpgrade",
+          "upgradeId": "mindshackle-scarabs-upgrade",
+          "pts": 10
+        },
+        {
+          "id": "overlord-phase-shifter",
+          "type": "namedUpgrade",
+          "upgradeId": "phase-shifter-upgrade",
+          "pts": 24
+        },
+        {
+          "id": "overlord-resurrection-orb",
+          "type": "namedUpgrade",
+          "upgradeId": "resurrection-orb-upgrade",
+          "pts": 30
+        },
+        {
+          "id": "overlord-sempiternal-weave",
+          "type": "namedUpgrade",
+          "upgradeId": "sempiternal-weave",
+          "pts": 11
+        },
+        {
+          "id": "overlord-translocation-shroud",
+          "type": "toggle",
+          "label": "Translocation Shroud (+20 pts)",
+          "pts": 20,
+          "grantsRules": [
+            "translocation-shroud"
+          ],
+          "note": "This model and its unit may Deepstrike at the end of any Movement Phase."
+        }
+      ]
+    },
+    {
+      "id": "trazyn-the-infinite",
+      "name": "Trazyn the Infinite",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 348,
+      "inlineRules": [
+        {
+          "id": "trazyn-rm",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        },
+        {
+          "id": "trazyn-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        },
+        {
+          "id": "trazyn-surrogate-hosts",
+          "name": "Surrogate Hosts",
+          "fullDesc": "When this model is destroyed, on a 2+ swap it with a friendly Infantry model within 6\" instead, with d3 Wounds restored. This replaces Reanimation."
+        },
+        {
+          "id": "trazyn-psionic-shockwave",
+          "name": "Psionic Shockwave",
+          "fullDesc": "All Characters and Independent Characters slain by this model explode in a S4 AP- in a 6\" Radius. This does not affect friendly models."
+        }
+      ],
+      "models": [
+        {
+          "id": "trazyn",
+          "name": "Trazyn the Infinite",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 5,
+            "S": 5,
+            "T": 5,
+            "W": 7,
+            "I": 2,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "emphatic-obliterator",
+            "phase-shifter"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "trazyn-rm",
+            "trazyn-mwbd",
+            "trazyn-surrogate-hosts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chronomancer",
+      "name": "Chronomancer",
+      "slot": "Advisor",
+      "basePts": 169,
+      "models": [
+        {
+          "id": "chronomancer",
+          "name": "Chronomancer",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 8,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "aeon-staff",
+            "chronotendrils",
+            "chronometron",
+            "timesplinter-mantle"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "canoptek",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "chron-melee",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "chronomancer"
+          ],
+          "label": "Swap Aeon Staff for",
+          "replaces": "aeon-staff",
+          "choices": [
+            {
+              "weaponId": "aeon-staff",
+              "label": "Aeon Staff",
+              "pts": 0
+            },
+            {
+              "weaponId": "entropic-lance",
+              "label": "Entropic Lance",
+              "pts": 4
+            }
+          ]
+        },
+        {
+          "id": "chron-nanomines",
+          "type": "namedUpgrade",
+          "upgradeId": "countertemporal-nanomines",
+          "pts": 10
+        },
+        {
+          "id": "chron-adjuster",
+          "type": "namedUpgrade",
+          "upgradeId": "cryptogeometric-adjuster",
+          "pts": 30
+        },
+        {
+          "id": "chron-sanctum",
+          "type": "namedUpgrade",
+          "upgradeId": "dimensional-sanctum",
+          "pts": 40
+        },
+        {
+          "id": "chron-ablator",
+          "type": "namedUpgrade",
+          "upgradeId": "hyper-material-ablator",
+          "pts": 60
+        },
+        {
+          "id": "chron-photon",
+          "type": "namedUpgrade",
+          "upgradeId": "photon-transubjector",
+          "pts": 5
+        },
+        {
+          "id": "chron-prism",
+          "type": "namedUpgrade",
+          "upgradeId": "prismatic-obfuscatron",
+          "pts": 10
+        }
+      ]
+    },
+    {
+      "id": "cryptothrall",
+      "name": "Cryptothrall",
+      "slot": "Advisor",
+      "basePts": 75,
+      "models": [
+        {
+          "id": "cryptothrall",
+          "name": "Cryptothrall",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "T": 5,
+            "W": 4,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "scouring-eye",
+            "scything-limbs"
+          ],
+          "specialRules": [
+            "infantry",
+            "canoptek",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "bodyguard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plasmancer",
+      "name": "Plasmancer",
+      "slot": "Advisor",
+      "basePts": 96,
+      "inlineRules": [
+        {
+          "id": "plasmancer-harbringer-destruction",
+          "name": "Harbringer of Destruction",
+          "fullDesc": "Vehicles Glanced by this model suffer a Penetration instead."
+        },
+        {
+          "id": "plasmancer-living-lightning",
+          "name": "Living Lightning",
+          "fullDesc": "Each time this model suffers a Wound after Saves and Feel No Pains in melee, inflict 1 Mortal Wound on the unit that inflicted it."
+        }
+      ],
+      "models": [
+        {
+          "id": "plasmancer",
+          "name": "Plasmancer",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "plasmic-lance"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "canoptek",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "plasmancer-harbringer-destruction",
+            "plasmancer-living-lightning"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "plasm-nanomines",
+          "type": "namedUpgrade",
+          "upgradeId": "countertemporal-nanomines",
+          "pts": 10
+        },
+        {
+          "id": "plasm-adjuster",
+          "type": "namedUpgrade",
+          "upgradeId": "cryptogeometric-adjuster",
+          "pts": 30
+        },
+        {
+          "id": "plasm-sanctum",
+          "type": "namedUpgrade",
+          "upgradeId": "dimensional-sanctum",
+          "pts": 40
+        },
+        {
+          "id": "plasm-ablator",
+          "type": "namedUpgrade",
+          "upgradeId": "hyper-material-ablator",
+          "pts": 60
+        },
+        {
+          "id": "plasm-photon",
+          "type": "namedUpgrade",
+          "upgradeId": "photon-transubjector",
+          "pts": 5
+        },
+        {
+          "id": "plasm-prism",
+          "type": "namedUpgrade",
+          "upgradeId": "prismatic-obfuscatron",
+          "pts": 10
+        }
+      ]
+    },
+    {
+      "id": "psychomancer",
+      "name": "Psychomancer",
+      "slot": "Advisor",
+      "basePts": 82,
+      "inlineRules": [
+        {
+          "id": "psychomancer-harbringer-doom",
+          "name": "Harbringer of Doom",
+          "fullDesc": "6\" Aura, target unit suffers Ld-1."
+        },
+        {
+          "id": "psychomancer-psychokinesis",
+          "name": "Psychokinesis",
+          "fullDesc": "This model may Deny the Witch as if it were Psychic Mastery Level 2."
+        }
+      ],
+      "models": [
+        {
+          "id": "psychomancer",
+          "name": "Psychomancer",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "staff-of-light"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "canoptek",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "psychomancer-harbringer-doom",
+            "psychomancer-psychokinesis"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "psych-nanomines",
+          "type": "namedUpgrade",
+          "upgradeId": "countertemporal-nanomines",
+          "pts": 10
+        },
+        {
+          "id": "psych-adjuster",
+          "type": "namedUpgrade",
+          "upgradeId": "cryptogeometric-adjuster",
+          "pts": 30
+        },
+        {
+          "id": "psych-sanctum",
+          "type": "namedUpgrade",
+          "upgradeId": "dimensional-sanctum",
+          "pts": 40
+        },
+        {
+          "id": "psych-ablator",
+          "type": "namedUpgrade",
+          "upgradeId": "hyper-material-ablator",
+          "pts": 60
+        },
+        {
+          "id": "psych-photon",
+          "type": "namedUpgrade",
+          "upgradeId": "photon-transubjector",
+          "pts": 5
+        },
+        {
+          "id": "psych-prism",
+          "type": "namedUpgrade",
+          "upgradeId": "prismatic-obfuscatron",
+          "pts": 10
+        }
+      ]
+    },
+    {
+      "id": "technomancer",
+      "name": "Technomancer",
+      "slot": "Advisor",
+      "basePts": 56,
+      "inlineRules": [
+        {
+          "id": "technomancer-nanoscarabs",
+          "name": "Nanoscarabs",
+          "fullDesc": "Repair 1 Wound on target unit within 3\". On a 5+, repair one Disabled Weapon, Crew Stun, Immobilize, or Weapon Destroyed result."
+        }
+      ],
+      "models": [
+        {
+          "id": "technomancer",
+          "name": "Technomancer",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "staff-of-light-technomancer"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "canoptek",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "technomancer-nanoscarabs"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "tech-canoptek-cloak",
+          "type": "toggle",
+          "label": "Canoptek Cloak (+18 pts)",
+          "pts": 18,
+          "statModifiers": [
+            {
+              "modelId": "technomancer",
+              "stat": "M",
+              "op": "add",
+              "value": 6
+            }
+          ],
+          "grantsRules": [
+            "flyer"
+          ],
+          "note": "M+6 and Fly."
+        },
+        {
+          "id": "tech-control-node",
+          "type": "toggle",
+          "label": "Canoptek Control Node (+20 pts)",
+          "pts": 20,
+          "note": "6\" Aura, target Canoptek Unit gains +1 To Hit."
+        },
+        {
+          "id": "tech-nanomines",
+          "type": "namedUpgrade",
+          "upgradeId": "countertemporal-nanomines",
+          "pts": 10
+        },
+        {
+          "id": "tech-adjuster",
+          "type": "namedUpgrade",
+          "upgradeId": "cryptogeometric-adjuster",
+          "pts": 30
+        },
+        {
+          "id": "tech-sanctum",
+          "type": "namedUpgrade",
+          "upgradeId": "dimensional-sanctum",
+          "pts": 40
+        },
+        {
+          "id": "tech-ablator",
+          "type": "namedUpgrade",
+          "upgradeId": "hyper-material-ablator",
+          "pts": 60
+        },
+        {
+          "id": "tech-photon",
+          "type": "namedUpgrade",
+          "upgradeId": "photon-transubjector",
+          "pts": 5
+        },
+        {
+          "id": "tech-prism",
+          "type": "namedUpgrade",
+          "upgradeId": "prismatic-obfuscatron",
+          "pts": 10
+        }
+      ]
+    },
+    {
+      "id": "royal-warden",
+      "name": "Royal Warden",
+      "slot": "Advisor",
+      "basePts": 104,
+      "inlineRules": [
+        {
+          "id": "royal-warden-vanquish-living",
+          "name": "Vanquish the Living",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Wound."
+        }
+      ],
+      "models": [
+        {
+          "id": "royal-warden",
+          "name": "Royal Warden",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 5,
+            "T": 5,
+            "W": 4,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "relic-gauss-blaster"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "royal-warden-vanquish-living"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vargard-obyron",
+      "name": "Vargard Obyron",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 158,
+      "inlineRules": [
+        {
+          "id": "obyron-cleaving-counterblow",
+          "name": "Cleaving Counterblow",
+          "fullDesc": "Each Melee attack made against Obyron in a Challenge that misses grants Obyron one additional attack at Initiative Step Slow."
+        },
+        {
+          "id": "obyron-ghostwalk-mantle",
+          "name": "Ghostwalk Mantle",
+          "fullDesc": "At the end of your Movement Phase you may remove Vargard Obyron and the unit he is joined to and Deepstrike them back onto the Table. If Deepstriking within 12\" of Nemesor Zahndrekh do not scatter. One Use Only."
+        }
+      ],
+      "models": [
+        {
+          "id": "obyron",
+          "name": "Vargard Obyron",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 5,
+            "S": 5,
+            "T": 5,
+            "W": 4,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 2
+          },
+          "baseWargear": [
+            "war-scythe"
+          ],
+          "specialRules": [
+            "independent-character",
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "bodyguard",
+            "obyron-cleaving-counterblow",
+            "obyron-ghostwalk-mantle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "immortals",
+      "name": "Immortals",
+      "slot": "Troop",
+      "basePts": 150,
+      "models": [
+        {
+          "id": "immortal",
+          "name": "Immortal",
+          "minCount": 5,
+          "maxCount": 10,
+          "ptsEach": 30,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 5,
+            "W": 1,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "tesla-carbine"
+          ],
+          "specialRules": [
+            "infantry",
+            "reanimation",
+            "fearless",
+            "soulless-machine"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "immortals__immortal-sq",
+          "type": "squadSize",
+          "label": "Additional Immortal",
+          "targetModelId": "immortal",
+          "ptsEach": 30,
+          "max": 5
+        },
+        {
+          "id": "immortal-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "immortal"
+          ],
+          "label": "Swap all Tesla Carbines for",
+          "replaces": "tesla-carbine",
+          "choices": [
+            {
+              "weaponId": "tesla-carbine",
+              "label": "Tesla Carbine (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "gauss-blaster",
+              "label": "Gauss Blaster (+1 pt per model)",
+              "pts": 1
+            }
+          ],
+          "ptsPerModel": true
+        }
+      ]
+    },
+    {
+      "id": "warriors",
+      "name": "Warriors",
+      "slot": "Troop",
+      "basePts": 200,
+      "models": [
+        {
+          "id": "warrior",
+          "name": "Warrior",
+          "minCount": 10,
+          "maxCount": 20,
+          "ptsEach": 20,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 1,
+            "I": 1,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "gauss-flayer"
+          ],
+          "specialRules": [
+            "infantry",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "their-number-is-legion"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "warriors__warrior-sq",
+          "type": "squadSize",
+          "label": "Additional Warrior",
+          "targetModelId": "warrior",
+          "ptsEach": 20,
+          "max": 10
+        },
+        {
+          "id": "warrior-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "warrior"
+          ],
+          "label": "Swap all Gauss Flayers for",
+          "replaces": "gauss-flayer",
+          "choices": [
+            {
+              "weaponId": "gauss-flayer",
+              "label": "Gauss Flayer (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "gauss-reaper",
+              "label": "Gauss Reaper (+3 pts per model)",
+              "pts": 3
+            }
+          ],
+          "ptsPerModel": true
+        }
+      ]
+    },
+    {
+      "id": "deathmarks",
+      "name": "Deathmarks",
+      "slot": "Elite",
+      "basePts": 195,
+      "models": [
+        {
+          "id": "deathmark",
+          "name": "Deathmark",
+          "minCount": 5,
+          "maxCount": 10,
+          "ptsEach": 39,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 5,
+            "W": 1,
+            "I": 1,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "synaptic-disintegrator"
+          ],
+          "specialRules": [
+            "infantry",
+            "reanimation",
+            "fearless",
+            "soulless-machine"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "deathmarks__deathmark-sq",
+          "type": "squadSize",
+          "label": "Additional Deathmark",
+          "targetModelId": "deathmark",
+          "ptsEach": 39,
+          "max": 5
+        }
+      ]
+    },
+    {
+      "id": "flayed-ones",
+      "name": "Flayed Ones",
+      "slot": "Elite",
+      "basePts": 75,
+      "inlineRules": [
+        {
+          "id": "flayed-ones-flayer-virus",
+          "name": "Flayer Virus",
+          "fullDesc": "12\" True Aura, all units suffer Ld-1. Necron units suffer Ld-2 instead. Flayed Ones are Immune to this Aura."
+        }
+      ],
+      "models": [
+        {
+          "id": "flayed-one",
+          "name": "Flayed One",
+          "minCount": 5,
+          "maxCount": 20,
+          "ptsEach": 15,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 5,
+            "S": 4,
+            "T": 4,
+            "W": 1,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "flayer-claw"
+          ],
+          "specialRules": [
+            "infantry",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "their-number-is-legion",
+            "flayed-ones-flayer-virus"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "flayed_ones__flayed_one-sq",
+          "type": "squadSize",
+          "label": "Additional Flayed One",
+          "targetModelId": "flayed-one",
+          "ptsEach": 15,
+          "max": 15
+        }
+      ]
+    },
+    {
+      "id": "lychguard",
+      "name": "Lychguard",
+      "slot": "Elite",
+      "basePts": 245,
+      "models": [
+        {
+          "id": "lychguard",
+          "name": "Lychguard",
+          "minCount": 5,
+          "maxCount": 10,
+          "ptsEach": 49,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 5,
+            "S": 5,
+            "T": 5,
+            "W": 2,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "warscythe"
+          ],
+          "specialRules": [
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "bodyguard"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "lychguard__lychguard-sq",
+          "type": "squadSize",
+          "label": "Additional Lychguard",
+          "targetModelId": "lychguard",
+          "ptsEach": 49,
+          "max": 5
+        },
+        {
+          "id": "lychguard-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "lychguard"
+          ],
+          "label": "Swap all Warscythes for",
+          "replaces": "warscythe",
+          "choices": [
+            {
+              "weaponId": "warscythe",
+              "label": "Warscythe (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "hyperphase-sword-and-dispersion-shield",
+              "label": "Hyperphase Sword and Dispersion Shield (+8 pts per model)",
+              "pts": 8
+            }
+          ],
+          "ptsPerModel": true
+        }
+      ]
+    },
+    {
+      "id": "pariahs",
+      "name": "Pariahs",
+      "slot": "Elite",
+      "basePts": 265,
+      "models": [
+        {
+          "id": "pariah",
+          "name": "Pariah",
+          "minCount": 5,
+          "maxCount": 10,
+          "ptsEach": 53,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 5,
+            "T": 5,
+            "W": 2,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "staff-of-light"
+          ],
+          "specialRules": [
+            "infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "empyric-overcharge"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "pariahs__pariah-sq",
+          "type": "squadSize",
+          "label": "Additional Pariah",
+          "targetModelId": "pariah",
+          "ptsEach": 53,
+          "max": 5
+        }
+      ]
+    },
+    {
+      "id": "canoptek-reanimator",
+      "name": "Canoptek Reanimator",
+      "slot": "Elite",
+      "basePts": 195,
+      "inlineRules": [
+        {
+          "id": "reanimator-monster-escort",
+          "name": "Monster Escort",
+          "fullDesc": "This model may join Monster or Monstrous Infantry units as if it were an Independent Character."
+        },
+        {
+          "id": "reanimator-reanimation-beam",
+          "name": "Reanimation Beam",
+          "fullDesc": "6\" Aura, target Infantry or Monstrous Infantry unit gains 5+ Feel No Pain."
+        }
+      ],
+      "models": [
+        {
+          "id": "canoptek-reanimator",
+          "name": "Canoptek Reanimator",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 8,
+            "WS": 4,
+            "BS": 4,
+            "S": 5,
+            "T": 6,
+            "W": 6,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "2-linked-atomizer-beams",
+            "reanimator-claws"
+          ],
+          "specialRules": [
+            "monster",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "reanimator-monster-escort",
+            "reanimator-reanimation-beam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canoptek-spyders",
+      "name": "Canoptek Spyders",
+      "slot": "Elite",
+      "basePts": 105,
+      "inlineRules": [
+        {
+          "id": "spyder-repair-drones",
+          "name": "Repair Drones",
+          "fullDesc": "Repair 1 Wound on target unit within 3\". On a 5+, repair one Disabled Weapon, Crew Stun, Immobilize, or Weapon Destroyed result."
+        },
+        {
+          "id": "spyder-fabricator-array",
+          "name": "Fabricator Array",
+          "fullDesc": "Repair d3 Wounds to target Vehicle within 3\"."
+        },
+        {
+          "id": "spyder-scarab-hive",
+          "name": "Scarab Hive",
+          "fullDesc": "In your Command Phase, you may add one Scarab Swarm to an existing Scarab unit within 6\". This may not exceed the maximum size of the unit. The same unit may not benefit from this more than once per Turn."
+        }
+      ],
+      "models": [
+        {
+          "id": "canoptek-spyder",
+          "name": "Canoptek Spyder",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 105,
+          "statline": {
+            "type": "monster",
+            "M": 10,
+            "WS": 4,
+            "BS": 4,
+            "S": 4,
+            "T": 6,
+            "W": 6,
+            "I": 1,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "automation-claws"
+          ],
+          "specialRules": [
+            "monster",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "steady"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "canoptek_spy__canoptek_spy-sq",
+          "type": "squadSize",
+          "label": "Additional Canoptek Spyder",
+          "targetModelId": "canoptek-spyder",
+          "ptsEach": 105,
+          "max": 2
+        },
+        {
+          "id": "spyder-particle-beamers",
+          "type": "toggle",
+          "exclusiveGroup": "spyder-model-upgrades",
+          "applies": [
+            "canoptek-spyder"
+          ],
+          "label": "2 Linked Particle Beamers (+20 pts)",
+          "pts": 20,
+          "grantsWargear": [
+            "2-linked-particle-beamers"
+          ]
+        },
+        {
+          "id": "spyder-repair-drones-upgrade",
+          "type": "toggle",
+          "exclusiveGroup": "spyder-e-upgrades",
+          "applies": [
+            "canoptek-spyder"
+          ],
+          "label": "Repair Drones (+6 pts)",
+          "pts": 6,
+          "grantsRules": [
+            "spyder-repair-drones"
+          ]
+        },
+        {
+          "id": "spyder-fabricator-array-upgrade",
+          "type": "toggle",
+          "exclusiveGroup": "spyder-e-upgrades",
+          "applies": [
+            "canoptek-spyder"
+          ],
+          "label": "Fabricator Array (+6 pts)",
+          "pts": 6,
+          "grantsRules": [
+            "spyder-fabricator-array"
+          ]
+        },
+        {
+          "id": "spyder-repair-barge-upgrade",
+          "type": "toggle",
+          "exclusiveGroup": "spyder-e-upgrades",
+          "applies": [
+            "canoptek-spyder"
+          ],
+          "label": "Repair Barge (+30 pts)",
+          "pts": 30,
+          "grantsRules": [
+            "repair-barge"
+          ]
+        },
+        {
+          "id": "spyder-scarab-hive-upgrade",
+          "type": "toggle",
+          "exclusiveGroup": "spyder-e-upgrades",
+          "applies": [
+            "canoptek-spyder"
+          ],
+          "label": "Scarab Hive (+99 pts)",
+          "pts": 99,
+          "grantsRules": [
+            "spyder-scarab-hive"
+          ]
+        },
+        {
+          "id": "spyder-gloom-prison",
+          "type": "namedUpgrade",
+          "upgradeId": "gloom-prison",
+          "pts": 2
+        }
+      ]
+    },
+    {
+      "id": "canoptek-tomb-stalker",
+      "name": "Canoptek Tomb Stalker",
+      "slot": "Elite",
+      "basePts": 197,
+      "models": [
+        {
+          "id": "canoptek-tomb-stalker",
+          "name": "Canoptek Tomb Stalker",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 10,
+            "WS": 4,
+            "BS": 4,
+            "S": 6,
+            "T": 7,
+            "W": 9,
+            "I": 2,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "2-linked-gauss-flayers",
+            "tomb-sentinel-claws"
+          ],
+          "specialRules": [
+            "monster",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "fleet",
+            "hit-and-run",
+            "outflank",
+            "steady",
+            "war-construct",
+            "rampage"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "stalker-heavy-gauss",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "canoptek-tomb-stalker"
+          ],
+          "label": "Upgrade 2 Linked Gauss Flayers to",
+          "replaces": "2-linked-gauss-flayers",
+          "choices": [
+            {
+              "weaponId": "2-linked-gauss-flayers",
+              "label": "2 Linked Gauss Flayers (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "2-sets-5-linked-gauss-flayers",
+              "label": "2 Sets of 5 Linked Gauss Flayers",
+              "pts": 25
+            }
+          ]
+        },
+        {
+          "id": "stalker-gloom-prison",
+          "type": "namedUpgrade",
+          "upgradeId": "gloom-prison",
+          "pts": 2
+        },
+        {
+          "id": "stalker-sepulchral-scarabs",
+          "type": "toggle",
+          "label": "Sepulchral Scarabs (+2 pts)",
+          "pts": 2,
+          "grantsWargear": [
+            "sepulchral-scarabs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hexmark-destroyers",
+      "name": "Hexmark Destroyers",
+      "slot": "Elite",
+      "basePts": 95,
+      "inlineRules": [
+        {
+          "id": "hexmark-never-stop-firing",
+          "name": "Never Stop Firing",
+          "fullDesc": "This model may fire into Melee. All misses automatically hit friendly units involved in the Melee, selected at random if there is more than one."
+        }
+      ],
+      "models": [
+        {
+          "id": "hexmark-destroyer",
+          "name": "Hexmark Destroyer",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 95,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 8,
+            "WS": 3,
+            "BS": 5,
+            "S": 5,
+            "T": 5,
+            "W": 3,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "6-linked-enmitic-disintegrators",
+            "enmitic-disintegrator-melee"
+          ],
+          "specialRules": [
+            "monstrous-infantry",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "very-bulky",
+            "hexmark-never-stop-firing"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "hexmark_dest__hexmark_dest-sq",
+          "type": "squadSize",
+          "label": "Additional Hexmark Destroyer",
+          "targetModelId": "hexmark-destroyer",
+          "ptsEach": 95,
+          "max": 2
+        },
+        {
+          "id": "hexmark-plasmacyte",
+          "type": "namedUpgrade",
+          "upgradeId": "canoptek-plasmacyte-upgrade",
+          "pts": 30
+        }
+      ]
+    },
+    {
+      "id": "skorpekh-destroyers",
+      "name": "Skorpekh Destroyers",
+      "slot": "Elite",
+      "basePts": 165,
+      "models": [
+        {
+          "id": "skorpekh-destroyer",
+          "name": "Skorpekh Destroyer",
+          "minCount": 3,
+          "maxCount": 6,
+          "ptsEach": 55,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 8,
+            "WS": 3,
+            "BS": 5,
+            "S": 5,
+            "T": 5,
+            "W": 3,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "hyperphase-threshers"
+          ],
+          "specialRules": [
+            "monstrous-infantry",
+            "hardwired-for-destruction",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "very-bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "skorpekh_des__skorpekh_des-sq",
+          "type": "squadSize",
+          "label": "Additional Skorpekh Destroyer",
+          "targetModelId": "skorpekh-destroyer",
+          "ptsEach": 55,
+          "max": 3
+        },
+        {
+          "id": "skorpekh-weapon",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "skorpekh-destroyer"
+          ],
+          "label": "Any model: swap Hyperphase Threshers for",
+          "replaces": "hyperphase-threshers",
+          "choices": [
+            {
+              "weaponId": "hyperphase-threshers",
+              "label": "Hyperphase Threshers (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "hyperphase-reap-blade",
+              "label": "Hyperphase Reap-Blade",
+              "pts": 9
+            }
+          ]
+        },
+        {
+          "id": "skorpekh-plasmacyte",
+          "type": "namedUpgrade",
+          "upgradeId": "canoptek-plasmacyte-upgrade",
+          "pts": 30
+        }
+      ]
+    },
+    {
+      "id": "triarch-stalkers",
+      "name": "Triarch Stalkers",
+      "slot": "Elite",
+      "basePts": 157,
+      "inlineRules": [
+        {
+          "id": "triarch-stalker-targeting-relay",
+          "name": "Targeting Relay",
+          "fullDesc": "6\" Aura, this unit and target unit may reroll 1's To Hit."
+        }
+      ],
+      "models": [
+        {
+          "id": "triarch-stalker",
+          "name": "Triarch Stalker",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 157,
+          "statline": {
+            "type": "vehicle",
+            "M": 10,
+            "WS": 3,
+            "BS": 3,
+            "S": 7,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 12,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "particle-shredder",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "stalker-forelimbs",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "combat-walker",
+            "living-metal",
+            "quantum-shield",
+            "fearless",
+            "soulless-machine",
+            "open-topped",
+            "steady",
+            "triarch-stalker-targeting-relay"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "triarch_stal__triarch_stal-sq",
+          "type": "squadSize",
+          "label": "Additional Triarch Stalker",
+          "targetModelId": "triarch-stalker",
+          "ptsEach": 157,
+          "max": 2
+        },
+        {
+          "id": "triarch-stalker-weapon",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "triarch-stalker"
+          ],
+          "label": "Any model: swap Particle Shredder for",
+          "replaces": "particle-shredder",
+          "choices": [
+            {
+              "weaponId": "particle-shredder",
+              "label": "Particle Shredder (keep)",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heat-ray",
+              "label": "Heat Ray",
+              "pts": 3,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-heavy-gauss-cannons",
+              "label": "2 Linked Heavy Gauss Cannons",
+              "pts": 7,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tomb-blades",
+      "name": "Tomb Blades",
+      "slot": "Fast Attack",
+      "basePts": 126,
+      "models": [
+        {
+          "id": "tomb-blade",
+          "name": "Tomb Blade",
+          "minCount": 3,
+          "maxCount": 9,
+          "ptsEach": 42,
+          "statline": {
+            "type": "infantry",
+            "M": 14,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 5,
+            "W": 2,
+            "I": 1,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "particle-beamer"
+          ],
+          "specialRules": [
+            "infantry",
+            "bike",
+            "living-metal",
+            "reanimation",
+            "soulless-machine",
+            "deepstrike",
+            "fearless",
+            "flyer",
+            "very-bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "tomb_blades__tomb_blade-sq",
+          "type": "squadSize",
+          "label": "Additional Tomb Blade",
+          "targetModelId": "tomb-blade",
+          "ptsEach": 42,
+          "max": 6
+        },
+        {
+          "id": "tomb-blade-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "tomb-blade"
+          ],
+          "label": "Swap all Particle Beamers for",
+          "replaces": "particle-beamer",
+          "choices": [
+            {
+              "weaponId": "particle-beamer",
+              "label": "Particle Beamer (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "2-linked-tesla-carbines",
+              "label": "2 Linked Tesla Carbines (+6 pts/model)",
+              "pts": 6
+            },
+            {
+              "weaponId": "2-linked-gauss-blasters",
+              "label": "2 Linked Gauss Blasters (+8 pts/model)",
+              "pts": 8
+            }
+          ],
+          "ptsPerModel": true
+        },
+        {
+          "id": "tomb-blade-nebuloscope",
+          "type": "toggle",
+          "exclusiveGroup": "tomb-blade-s",
+          "applies": [
+            "tomb-blade"
+          ],
+          "label": "Nebuloscope (+2 pts/model)",
+          "pts": 2,
+          "note": "Ranged attacks from this model inflict a -1 Cover Save."
+        },
+        {
+          "id": "tomb-blade-shadowloom",
+          "type": "toggle",
+          "exclusiveGroup": "tomb-blade-s",
+          "applies": [
+            "tomb-blade"
+          ],
+          "label": "Shadowloom (+3 pts/model)",
+          "pts": 3,
+          "grantsRules": [
+            "shroud"
+          ],
+          "note": "Shroud."
+        },
+        {
+          "id": "tomb-blade-shield-vanes",
+          "type": "toggle",
+          "applies": [
+            "tomb-blade"
+          ],
+          "label": "Shield Vanes (+2 pts/model)",
+          "pts": 2,
+          "note": "This model has Sv3+."
+        }
+      ]
+    },
+    {
+      "id": "triarch-praetorians",
+      "name": "Triarch Praetorians",
+      "slot": "Fast Attack",
+      "basePts": 295,
+      "inlineRules": [
+        {
+          "id": "triarch-praetorian-agents",
+          "name": "Agents of the Silent King",
+          "fullDesc": "This model does not suffer the Autowounds from losing Combat Resolution as a Fearless model. If a friendly Necron unit within 6\" fails Combat Resolution and does not pass their Ld Test, instead of suffering Autowounds remove one model from the game (no Reanimation) and the unit is considered to have passed the test. Canoptek units are immune to this rule."
+        }
+      ],
+      "models": [
+        {
+          "id": "triarch-praetorian",
+          "name": "Triarch Praetorian",
+          "minCount": 5,
+          "maxCount": 10,
+          "ptsEach": 59,
+          "statline": {
+            "type": "infantry",
+            "M": 10,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 5,
+            "W": 2,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "particle-caster-and-void-blade"
+          ],
+          "specialRules": [
+            "infantry",
+            "reanimation",
+            "soulless-machine",
+            "bulky",
+            "deepstrike",
+            "fearless",
+            "flyer",
+            "triarch-praetorian-agents"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "triarch_prae__triarch_prae-sq",
+          "type": "squadSize",
+          "label": "Additional Triarch Praetorian",
+          "targetModelId": "triarch-praetorian",
+          "ptsEach": 59,
+          "max": 5
+        },
+        {
+          "id": "praetorian-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "triarch-praetorian"
+          ],
+          "label": "Swap all weapons for",
+          "replaces": "particle-caster-and-void-blade",
+          "choices": [
+            {
+              "weaponId": "particle-caster-and-void-blade",
+              "label": "Particle Caster and Void Blade (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "rod-of-covenant",
+              "label": "Rod of Covenant (+2 pts/model)",
+              "pts": 2
+            }
+          ],
+          "ptsPerModel": true
+        }
+      ]
+    },
+    {
+      "id": "canoptek-scarab-swarms",
+      "name": "Canoptek Scarab Swarms",
+      "slot": "Fast Attack",
+      "basePts": 120,
+      "inlineRules": [
+        {
+          "id": "scarab-clog-the-barrels",
+          "name": "Clog the Barrels",
+          "fullDesc": "Any enemy non-Titanic Monster, Vehicle, or Monstrous Infantry may not fire weapons at any other target except this one while they are engaged in Melee to it. Flame weapons ignore this."
+        }
+      ],
+      "models": [
+        {
+          "id": "scarab-swarm",
+          "name": "Scarab Swarm",
+          "minCount": 3,
+          "maxCount": 10,
+          "ptsEach": 40,
+          "statline": {
+            "type": "swarm",
+            "M": 10,
+            "WS": 4,
+            "BS": 5,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 2,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 6
+          },
+          "baseWargear": [
+            "feeder-mandibles"
+          ],
+          "specialRules": [
+            "swarm",
+            "canoptek",
+            "reanimation",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "deepstrike",
+            "scarab-clog-the-barrels"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "canoptek_sca__scarab_swarm-sq",
+          "type": "squadSize",
+          "label": "Additional Scarab Swarm",
+          "targetModelId": "scarab-swarm",
+          "ptsEach": 40,
+          "max": 7
+        }
+      ]
+    },
+    {
+      "id": "canoptek-tomb-sentinel",
+      "name": "Canoptek Tomb Sentinel",
+      "slot": "Fast Attack",
+      "basePts": 232,
+      "models": [
+        {
+          "id": "canoptek-tomb-sentinel",
+          "name": "Canoptek Tomb Sentinel",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 10,
+            "WS": 4,
+            "BS": 4,
+            "S": 6,
+            "T": 7,
+            "W": 9,
+            "I": 2,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "exile-cannon",
+            "tomb-sentinel-claws"
+          ],
+          "specialRules": [
+            "monster",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "fleet",
+            "hit-and-run",
+            "outflank",
+            "steady",
+            "war-construct",
+            "rampage"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sentinel-gloom-prison",
+          "type": "namedUpgrade",
+          "upgradeId": "gloom-prison",
+          "pts": 2
+        },
+        {
+          "id": "sentinel-sepulchral-scarabs",
+          "type": "toggle",
+          "label": "Sepulchral Scarabs (+2 pts)",
+          "pts": 2,
+          "grantsWargear": [
+            "sepulchral-scarabs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canoptek-acanthrites",
+      "name": "Canoptek Acanthrites",
+      "slot": "Fast Attack",
+      "basePts": 273,
+      "models": [
+        {
+          "id": "canoptek-acanthrite",
+          "name": "Canoptek Acanthrite",
+          "minCount": 3,
+          "maxCount": 6,
+          "ptsEach": 91,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 4,
+            "T": 5,
+            "W": 3,
+            "I": 2,
+            "A": 2,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "cutting-beam",
+            "void-blade"
+          ],
+          "specialRules": [
+            "monstrous-infantry",
+            "canoptek",
+            "reanimation",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "deepstrike",
+            "stealth",
+            "very-bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "canoptek_aca__canoptek_aca-sq",
+          "type": "squadSize",
+          "label": "Additional Canoptek Acanthrite",
+          "targetModelId": "canoptek-acanthrite",
+          "ptsEach": 91,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "id": "canoptek-wraiths",
+      "name": "Canoptek Wraiths",
+      "slot": "Fast Attack",
+      "basePts": 300,
+      "inlineRules": [
+        {
+          "id": "wraith-wrath-form",
+          "name": "Wrath Form",
+          "fullDesc": "This model has a 4+ Invulnerability Save."
+        },
+        {
+          "id": "wraith-phase-generator",
+          "name": "Phase Generator",
+          "fullDesc": "This model ignores Terrain and models when moving. It may not end its movement in a place it cannot occupy or end up in Melee unless it did so by Charging successfully."
+        }
+      ],
+      "models": [
+        {
+          "id": "canoptek-wraith",
+          "name": "Canoptek Wraith",
+          "minCount": 3,
+          "maxCount": 6,
+          "ptsEach": 100,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 12,
+            "WS": 4,
+            "BS": 4,
+            "S": 4,
+            "T": 5,
+            "W": 3,
+            "I": 2,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "vicious-blades"
+          ],
+          "specialRules": [
+            "monstrous-infantry",
+            "canoptek",
+            "reanimation",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "very-bulky",
+            "wraith-wrath-form",
+            "wraith-phase-generator"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "canoptek_wra__canoptek_wra-sq",
+          "type": "squadSize",
+          "label": "Additional Canoptek Wraith",
+          "targetModelId": "canoptek-wraith",
+          "ptsEach": 100,
+          "max": 3
+        },
+        {
+          "id": "wraith-particle-caster",
+          "type": "toggle",
+          "label": "Particle Caster",
+          "pts": 7,
+          "applies": [
+            "canoptek-wraith"
+          ],
+          "exclusiveGroup": "wraith-special",
+          "grantsWargear": [
+            "particle-caster"
+          ]
+        },
+        {
+          "id": "wraith-whip-coils",
+          "type": "toggle",
+          "label": "Whip Coils",
+          "pts": 12,
+          "applies": [
+            "canoptek-wraith"
+          ],
+          "exclusiveGroup": "wraith-special",
+          "grantsWargear": [
+            "whip-coils"
+          ]
+        },
+        {
+          "id": "wraith-cutting-beam",
+          "type": "toggle",
+          "label": "Cutting Beam",
+          "pts": 16,
+          "applies": [
+            "canoptek-wraith"
+          ],
+          "exclusiveGroup": "wraith-special",
+          "grantsWargear": [
+            "cutting-beam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ophydian-destroyers",
+      "name": "Ophydian Destroyers",
+      "slot": "Fast Attack",
+      "basePts": 168,
+      "inlineRules": [
+        {
+          "id": "ophydian-writhing-bodies",
+          "name": "Writhing Bodies",
+          "fullDesc": "This model is considered to be equipped with Grenades for the purposes of Charging units in Cover."
+        }
+      ],
+      "models": [
+        {
+          "id": "ophydian-destroyer",
+          "name": "Ophydian Destroyer",
+          "minCount": 3,
+          "maxCount": 6,
+          "ptsEach": 56,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 10,
+            "WS": 3,
+            "BS": 5,
+            "S": 4,
+            "T": 4,
+            "W": 3,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "hyperphase-threshers"
+          ],
+          "specialRules": [
+            "monstrous-infantry",
+            "hardwired-for-destruction",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "infiltrate",
+            "stealth",
+            "very-bulky",
+            "ophydian-writhing-bodies"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "ophydian_des__ophydian_des-sq",
+          "type": "squadSize",
+          "label": "Additional Ophydian Destroyer",
+          "targetModelId": "ophydian-destroyer",
+          "ptsEach": 56,
+          "max": 3
+        },
+        {
+          "id": "ophydian-weapon",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "ophydian-destroyer"
+          ],
+          "label": "Any model: swap Hyperphase Threshers for",
+          "replaces": "hyperphase-threshers",
+          "choices": [
+            {
+              "weaponId": "hyperphase-threshers",
+              "label": "Hyperphase Threshers (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "hyperphase-reap-blade",
+              "label": "Hyperphase Reap-Blade",
+              "pts": 9
+            }
+          ]
+        },
+        {
+          "id": "ophydian-plasmacyte",
+          "type": "namedUpgrade",
+          "upgradeId": "canoptek-plasmacyte-upgrade",
+          "pts": 30
+        }
+      ]
+    },
+    {
+      "id": "canoptek-doomstalkers",
+      "name": "Canoptek Doomstalkers",
+      "slot": "Heavy Support",
+      "basePts": 231,
+      "models": [
+        {
+          "id": "canoptek-doomstalker",
+          "name": "Canoptek Doomstalker",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 231,
+          "statline": {
+            "type": "monster",
+            "M": 10,
+            "WS": 4,
+            "BS": 4,
+            "S": 6,
+            "T": 7,
+            "W": 8,
+            "I": 2,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "doomsday-blaster-doomstalker",
+            "2-linked-gauss-flayers",
+            "containment-field"
+          ],
+          "specialRules": [
+            "monster",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "canoptek_doo__canoptek_doo-sq",
+          "type": "squadSize",
+          "label": "Additional Canoptek Doomstalker",
+          "targetModelId": "canoptek-doomstalker",
+          "ptsEach": 231,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "id": "lokhust-destroyers",
+      "name": "Lokhust Destroyers",
+      "slot": "Heavy Support",
+      "basePts": 222,
+      "models": [
+        {
+          "id": "lokhust-destroyer",
+          "name": "Lokhust Destroyer",
+          "minCount": 3,
+          "maxCount": 6,
+          "ptsEach": 74,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 8,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 5,
+            "W": 3,
+            "I": 2,
+            "A": 2,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "gauss-cannon"
+          ],
+          "specialRules": [
+            "monstrous-infantry",
+            "hardwired-for-destruction",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "steady"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "lokhust_dest__lokhust_dest-sq",
+          "type": "squadSize",
+          "label": "Additional Lokhust Destroyer",
+          "targetModelId": "lokhust-destroyer",
+          "ptsEach": 74,
+          "max": 3
+        },
+        {
+          "id": "lokhust-plasmacyte",
+          "type": "namedUpgrade",
+          "upgradeId": "canoptek-plasmacyte-upgrade",
+          "pts": 30
+        }
+      ]
+    },
+    {
+      "id": "heavy-lokhust-destroyers",
+      "name": "Heavy Lokhust Destroyers",
+      "slot": "Heavy Support",
+      "basePts": 98,
+      "models": [
+        {
+          "id": "heavy-lokhust-destroyer",
+          "name": "Heavy Lokhust Destroyer",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 98,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 8,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 5,
+            "W": 4,
+            "I": 2,
+            "A": 2,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "gauss-destructor"
+          ],
+          "specialRules": [
+            "monstrous-infantry",
+            "hardwired-for-destruction",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "steady"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "heavy_lokhus__heavy_lokhus-sq",
+          "type": "squadSize",
+          "label": "Additional Heavy Lokhust Destroyer",
+          "targetModelId": "heavy-lokhust-destroyer",
+          "ptsEach": 98,
+          "max": 2
+        },
+        {
+          "id": "heavy-lokhust-weapon",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "heavy-lokhust-destroyer"
+          ],
+          "label": "Any model: swap Gauss Destructor for",
+          "replaces": "gauss-destructor",
+          "choices": [
+            {
+              "weaponId": "gauss-destructor",
+              "label": "Gauss Destructor (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "enmitic-exterminator",
+              "label": "Enmitic Exterminator",
+              "pts": 9
+            }
+          ]
+        },
+        {
+          "id": "heavy-lokhust-plasmacyte",
+          "type": "namedUpgrade",
+          "upgradeId": "canoptek-plasmacyte-upgrade",
+          "pts": 30
+        }
+      ]
+    },
+    {
+      "id": "annihilation-barges",
+      "name": "Annihilation Barges",
+      "slot": "Heavy Support",
+      "basePts": 113,
+      "models": [
+        {
+          "id": "annihilation-barge",
+          "name": "Annihilation Barge",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 113,
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 3,
+            "S": 5,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 8,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-tesla-destroyers",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "tesla-carbine",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "living-metal",
+            "quantum-shield",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "open-topped"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "annihilation__annihilation-sq",
+          "type": "squadSize",
+          "label": "Additional Annihilation Barge",
+          "targetModelId": "annihilation-barge",
+          "ptsEach": 113,
+          "max": 2
+        },
+        {
+          "id": "annihilation-barge-weapon",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "annihilation-barge"
+          ],
+          "label": "Any model: swap Tesla Carbine for",
+          "replaces": "tesla-carbine",
+          "choices": [
+            {
+              "weaponId": "tesla-carbine",
+              "label": "Tesla Carbine (keep)",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "gauss-cannon",
+              "label": "Gauss Cannon (+1 pt)",
+              "pts": 1,
+              "arcType": "Hull"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doomsday-ark",
+      "name": "Doomsday Ark",
+      "slot": "Heavy Support",
+      "basePts": 149,
+      "models": [
+        {
+          "id": "doomsday-ark",
+          "name": "Doomsday Ark",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "doomsday-blaster-ark",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "5-linked-gauss-flayers",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "5-linked-gauss-flayers",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "living-metal",
+            "quantum-shield",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "open-topped"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tesseract-ark",
+      "name": "Tesseract Ark",
+      "slot": "Heavy Support",
+      "basePts": 112,
+      "models": [
+        {
+          "id": "tesseract-ark",
+          "name": "Tesseract Ark",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 3,
+            "S": 5,
+            "FA": 12,
+            "SA": 12,
+            "RA": 12,
+            "W": 10,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "tesseract-singularity-chamber",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-tesla-carbines",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "living-metal",
+            "quantum-shield",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "open-topped"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "tesseract-ark-side-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "tesseract-ark"
+          ],
+          "label": "Swap 2 Linked Tesla Carbines for",
+          "replaces": "2-linked-tesla-carbines",
+          "choices": [
+            {
+              "weaponId": "2-linked-tesla-carbines",
+              "label": "2 Linked Tesla Carbines (keep)",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-particle-beamers",
+              "label": "2 Linked Particle Beamers",
+              "pts": 0,
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-gauss-cannons",
+              "label": "2 Linked Gauss Cannons (+2 pts)",
+              "pts": 2,
+              "arcType": "Hull"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sentry-pylons",
+      "name": "Sentry Pylons",
+      "slot": "Heavy Support",
+      "basePts": 81,
+      "models": [
+        {
+          "id": "sentry-pylon",
+          "name": "Sentry Pylon",
+          "minCount": 1,
+          "maxCount": 3,
+          "ptsEach": 81,
+          "isImmobile": true,
+          "statline": {
+            "type": "monster",
+            "BS": 3,
+            "T": 7,
+            "W": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "focused-death-ray",
+            "sepulchral-scarabs"
+          ],
+          "specialRules": [
+            "monster",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "deepstrike"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sentry_pylon__sentry_pylon-sq",
+          "type": "squadSize",
+          "label": "Additional Sentry Pylon",
+          "targetModelId": "sentry-pylon",
+          "ptsEach": 81,
+          "max": 2
+        },
+        {
+          "id": "sentry-pylon-weapon",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sentry-pylon"
+          ],
+          "label": "Any model: swap Focused Death Ray for",
+          "replaces": "focused-death-ray",
+          "choices": [
+            {
+              "weaponId": "focused-death-ray",
+              "label": "Focused Death Ray (keep)",
+              "pts": 0
+            },
+            {
+              "weaponId": "gauss-exterminator",
+              "label": "Gauss Exterminator (+7 pts)",
+              "pts": 7
+            },
+            {
+              "weaponId": "heat-cannon",
+              "label": "Heat Cannon (+56 pts)",
+              "pts": 56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doom-scythe",
+      "name": "Doom Scythe",
+      "slot": "Flyer",
+      "basePts": 194,
+      "models": [
+        {
+          "id": "doom-scythe",
+          "name": "Doom Scythe",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 12,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-tesla-destroyers",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "death-ray",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "living-metal",
+            "fearless",
+            "high-altitude"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "night-scythe",
+      "name": "Night Scythe",
+      "slot": "Flyer",
+      "basePts": 157,
+      "inlineRules": [
+        {
+          "id": "night-scythe-invasion-beam",
+          "name": "Invasion Beam",
+          "fullDesc": "Teleporter. This model has a Transport Capacity of 20, but instead of carrying the models it keeps them in Reserve. Any model with a Teleporter rule may bring up to its Transport capacity to the field each Turn. The Invasion Beam may Deepstrike the models anywhere along the flight path it moved this turn without Scattering. Each model deployed this way must take a Dangerous Terrain test."
+        }
+      ],
+      "models": [
+        {
+          "id": "night-scythe",
+          "name": "Night Scythe",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 12,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-tesla-destroyers",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "living-metal",
+            "fearless",
+            "high-altitude",
+            "night-scythe-invasion-beam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "night-shroud-bomber",
+      "name": "Night Shroud Bomber",
+      "slot": "Flyer",
+      "basePts": 221,
+      "models": [
+        {
+          "id": "night-shroud-bomber",
+          "name": "Night Shroud Bomber",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 12,
+            "SA": 12,
+            "RA": 12,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-tesla-destroyers",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "death-sphere",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "living-metal",
+            "fearless",
+            "high-altitude"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghost-ark",
+      "name": "Ghost Ark",
+      "slot": "Ded. Transport",
+      "basePts": 185,
+      "models": [
+        {
+          "id": "ghost-ark",
+          "name": "Ghost Ark",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 11,
+            "SA": 11,
+            "RA": 11,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "5-linked-gauss-flayers",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "5-linked-gauss-flayers",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "tank",
+            "living-metal",
+            "quantum-shield",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "open-topped",
+            "repair-barge"
+          ]
+        }
+      ],
+      "transport": {
+        "capacity": 10,
+        "accessPoints": [
+          "Front",
+          "Sides"
+        ]
+      }
+    },
+    {
+      "id": "ctan-shard-of-the-deceiver",
+      "name": "C'Tan Shard of the Deceiver",
+      "slot": "Lord of War",
+      "isUnique": true,
+      "basePts": 374,
+      "inlineRules": [
+        {
+          "id": "deceiver-dread",
+          "name": "Dread",
+          "fullDesc": "12\" Aura, target unit must make a Fear Test."
+        },
+        {
+          "id": "deceiver-grand-illusion",
+          "name": "Grand Illusion",
+          "fullDesc": "After Deployment, but before Infiltrators are placed, redeploy d3 of your units."
+        }
+      ],
+      "models": [
+        {
+          "id": "deceiver",
+          "name": "C'Tan Shard of the Deceiver",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 8,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 8,
+            "W": 12,
+            "I": 4,
+            "A": 6,
+            "Ld": 10,
+            "Sv": "-"
+          },
+          "baseWargear": [
+            "golden-fists",
+            "necrodermis"
+          ],
+          "specialRules": [
+            "monster",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "hit-and-run",
+            "immune-to-natural-law",
+            "deceiver-dread",
+            "deceiver-grand-illusion"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "deceiver-random",
+          "type": "toggle",
+          "exclusiveGroup": "deceiver-power",
+          "label": "Random C'Tan Power (each turn)",
+          "pts": 27
+        },
+        {
+          "id": "deceiver-cosmic-fire",
+          "type": "toggle",
+          "exclusiveGroup": "deceiver-power",
+          "label": "Cosmic Fire",
+          "pts": 16,
+          "grantsWargear": [
+            "cosmic-fire"
+          ]
+        },
+        {
+          "id": "deceiver-times-arrow",
+          "type": "toggle",
+          "exclusiveGroup": "deceiver-power",
+          "label": "Time's Arrow",
+          "pts": 17,
+          "grantsWargear": [
+            "times-arrow"
+          ]
+        },
+        {
+          "id": "deceiver-thunderbolt",
+          "type": "toggle",
+          "exclusiveGroup": "deceiver-power",
+          "label": "Transdimensional Thunderbolt",
+          "pts": 18,
+          "grantsWargear": [
+            "transdimensional-thunderbolt"
+          ]
+        },
+        {
+          "id": "deceiver-seismic",
+          "type": "toggle",
+          "exclusiveGroup": "deceiver-power",
+          "label": "Seismic Assault",
+          "pts": 29,
+          "grantsWargear": [
+            "seismic-assault"
+          ]
+        },
+        {
+          "id": "deceiver-antimatter",
+          "type": "toggle",
+          "exclusiveGroup": "deceiver-power",
+          "label": "Antimatter Meteor",
+          "pts": 40,
+          "grantsWargear": [
+            "antimatter-meteor"
+          ]
+        },
+        {
+          "id": "deceiver-sky",
+          "type": "toggle",
+          "exclusiveGroup": "deceiver-power",
+          "label": "Sky of Falling Stars",
+          "pts": 44,
+          "grantsWargear": [
+            "sky-of-falling-stars"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ctan-shard-of-the-nightbringer",
+      "name": "C'Tan Shard of the Nightbringer",
+      "slot": "Lord of War",
+      "isUnique": true,
+      "basePts": 338,
+      "inlineRules": [
+        {
+          "id": "nightbringer-death",
+          "name": "Death",
+          "fullDesc": "Each time this model is nominated to fight in Melee, it inflicts an Autowound with AP2+ on each model in base contact, friend or foe."
+        },
+        {
+          "id": "nightbringer-gaze-of-death",
+          "name": "Gaze of Death",
+          "fullDesc": "In the Shooting Phase, you may target a unit within 12\". The unit takes a Ld test on 3d6, dropping the lowest die. For each point the Ld test failed by, the unit suffers an Autowound with AP2+. This overrides the normal AP- of Autowounds. If this does any Wounds to the target, the Nightbringer Heals 1 Wound as an exception to the normal Heal rules."
+        }
+      ],
+      "models": [
+        {
+          "id": "nightbringer",
+          "name": "C'Tan Shard of the Nightbringer",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 8,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 8,
+            "W": 12,
+            "I": 4,
+            "A": 6,
+            "Ld": 10,
+            "Sv": "-"
+          },
+          "baseWargear": [
+            "scythe-of-the-nightbringer",
+            "necrodermis"
+          ],
+          "specialRules": [
+            "monster",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "immune-to-natural-law",
+            "nightbringer-death",
+            "nightbringer-gaze-of-death"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "nightbringer-random",
+          "type": "toggle",
+          "exclusiveGroup": "nightbringer-power",
+          "label": "Random C'Tan Power (each turn)",
+          "pts": 27
+        },
+        {
+          "id": "nightbringer-cosmic-fire",
+          "type": "toggle",
+          "exclusiveGroup": "nightbringer-power",
+          "label": "Cosmic Fire",
+          "pts": 16,
+          "grantsWargear": [
+            "cosmic-fire"
+          ]
+        },
+        {
+          "id": "nightbringer-times-arrow",
+          "type": "toggle",
+          "exclusiveGroup": "nightbringer-power",
+          "label": "Time's Arrow",
+          "pts": 17,
+          "grantsWargear": [
+            "times-arrow"
+          ]
+        },
+        {
+          "id": "nightbringer-thunderbolt",
+          "type": "toggle",
+          "exclusiveGroup": "nightbringer-power",
+          "label": "Transdimensional Thunderbolt",
+          "pts": 18,
+          "grantsWargear": [
+            "transdimensional-thunderbolt"
+          ]
+        },
+        {
+          "id": "nightbringer-seismic",
+          "type": "toggle",
+          "exclusiveGroup": "nightbringer-power",
+          "label": "Seismic Assault",
+          "pts": 29,
+          "grantsWargear": [
+            "seismic-assault"
+          ]
+        },
+        {
+          "id": "nightbringer-antimatter",
+          "type": "toggle",
+          "exclusiveGroup": "nightbringer-power",
+          "label": "Antimatter Meteor",
+          "pts": 40,
+          "grantsWargear": [
+            "antimatter-meteor"
+          ]
+        },
+        {
+          "id": "nightbringer-sky",
+          "type": "toggle",
+          "exclusiveGroup": "nightbringer-power",
+          "label": "Sky of Falling Stars",
+          "pts": 44,
+          "grantsWargear": [
+            "sky-of-falling-stars"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ctan-shard-of-the-void-dragon",
+      "name": "C'Tan Shard of the Void Dragon",
+      "slot": "Lord of War",
+      "isUnique": true,
+      "basePts": 382,
+      "inlineRules": [
+        {
+          "id": "void-dragon-matter-absorption",
+          "name": "Matter Absorption",
+          "fullDesc": "Each time a Vehicle or Titanic Vehicle is destroyed within 18\" of this unit roll a d6. On a 2+, heal 1 Wound. This is an exception to the normal Heal rules."
+        }
+      ],
+      "models": [
+        {
+          "id": "void-dragon",
+          "name": "C'Tan Shard of the Void Dragon",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 8,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 8,
+            "W": 12,
+            "I": 4,
+            "A": 6,
+            "Ld": 10,
+            "Sv": "-"
+          },
+          "baseWargear": [
+            "spear-of-the-void-dragon",
+            "canoptek-tail-blades",
+            "necrodermis"
+          ],
+          "specialRules": [
+            "monster",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "immune-to-natural-law",
+            "void-dragon-matter-absorption"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "void-dragon-random",
+          "type": "toggle",
+          "exclusiveGroup": "void-dragon-power",
+          "label": "Random C'Tan Power (each turn)",
+          "pts": 27
+        },
+        {
+          "id": "void-dragon-cosmic-fire",
+          "type": "toggle",
+          "exclusiveGroup": "void-dragon-power",
+          "label": "Cosmic Fire",
+          "pts": 16,
+          "grantsWargear": [
+            "cosmic-fire"
+          ]
+        },
+        {
+          "id": "void-dragon-times-arrow",
+          "type": "toggle",
+          "exclusiveGroup": "void-dragon-power",
+          "label": "Time's Arrow",
+          "pts": 17,
+          "grantsWargear": [
+            "times-arrow"
+          ]
+        },
+        {
+          "id": "void-dragon-thunderbolt",
+          "type": "toggle",
+          "exclusiveGroup": "void-dragon-power",
+          "label": "Transdimensional Thunderbolt",
+          "pts": 18,
+          "grantsWargear": [
+            "transdimensional-thunderbolt"
+          ]
+        },
+        {
+          "id": "void-dragon-seismic",
+          "type": "toggle",
+          "exclusiveGroup": "void-dragon-power",
+          "label": "Seismic Assault",
+          "pts": 29,
+          "grantsWargear": [
+            "seismic-assault"
+          ]
+        },
+        {
+          "id": "void-dragon-antimatter",
+          "type": "toggle",
+          "exclusiveGroup": "void-dragon-power",
+          "label": "Antimatter Meteor",
+          "pts": 40,
+          "grantsWargear": [
+            "antimatter-meteor"
+          ]
+        },
+        {
+          "id": "void-dragon-sky",
+          "type": "toggle",
+          "exclusiveGroup": "void-dragon-power",
+          "label": "Sky of Falling Stars",
+          "pts": 44,
+          "grantsWargear": [
+            "sky-of-falling-stars"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ctan-shard-transcendent",
+      "name": "C'Tan Shard Transcendent",
+      "slot": "Lord of War",
+      "basePts": 275,
+      "models": [
+        {
+          "id": "transcendent",
+          "name": "C'Tan Shard Transcendent",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 8,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 8,
+            "W": 12,
+            "I": 4,
+            "A": 6,
+            "Ld": 10,
+            "Sv": "-"
+          },
+          "baseWargear": [
+            "crackling-tendrils",
+            "necrodermis"
+          ],
+          "specialRules": [
+            "monster",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "immune-to-natural-law"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "transcendent-random-1",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-1",
+          "label": "Power Slot 1: Random (each turn)",
+          "pts": 27
+        },
+        {
+          "id": "transcendent-cosmic-fire-1",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-1",
+          "label": "Power Slot 1: Cosmic Fire",
+          "pts": 16,
+          "grantsWargear": [
+            "cosmic-fire"
+          ]
+        },
+        {
+          "id": "transcendent-times-arrow-1",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-1",
+          "label": "Power Slot 1: Time's Arrow",
+          "pts": 17,
+          "grantsWargear": [
+            "times-arrow"
+          ]
+        },
+        {
+          "id": "transcendent-thunderbolt-1",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-1",
+          "label": "Power Slot 1: Transdimensional Thunderbolt",
+          "pts": 18,
+          "grantsWargear": [
+            "transdimensional-thunderbolt"
+          ]
+        },
+        {
+          "id": "transcendent-seismic-1",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-1",
+          "label": "Power Slot 1: Seismic Assault",
+          "pts": 29,
+          "grantsWargear": [
+            "seismic-assault"
+          ]
+        },
+        {
+          "id": "transcendent-antimatter-1",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-1",
+          "label": "Power Slot 1: Antimatter Meteor",
+          "pts": 40,
+          "grantsWargear": [
+            "antimatter-meteor"
+          ]
+        },
+        {
+          "id": "transcendent-sky-1",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-1",
+          "label": "Power Slot 1: Sky of Falling Stars",
+          "pts": 44,
+          "grantsWargear": [
+            "sky-of-falling-stars"
+          ]
+        },
+        {
+          "id": "transcendent-random-2",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-2",
+          "label": "Power Slot 2: Random (each turn)",
+          "pts": 27
+        },
+        {
+          "id": "transcendent-cosmic-fire-2",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-2",
+          "label": "Power Slot 2: Cosmic Fire",
+          "pts": 16,
+          "grantsWargear": [
+            "cosmic-fire"
+          ]
+        },
+        {
+          "id": "transcendent-times-arrow-2",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-2",
+          "label": "Power Slot 2: Time's Arrow",
+          "pts": 17,
+          "grantsWargear": [
+            "times-arrow"
+          ]
+        },
+        {
+          "id": "transcendent-thunderbolt-2",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-2",
+          "label": "Power Slot 2: Transdimensional Thunderbolt",
+          "pts": 18,
+          "grantsWargear": [
+            "transdimensional-thunderbolt"
+          ]
+        },
+        {
+          "id": "transcendent-seismic-2",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-2",
+          "label": "Power Slot 2: Seismic Assault",
+          "pts": 29,
+          "grantsWargear": [
+            "seismic-assault"
+          ]
+        },
+        {
+          "id": "transcendent-antimatter-2",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-2",
+          "label": "Power Slot 2: Antimatter Meteor",
+          "pts": 40,
+          "grantsWargear": [
+            "antimatter-meteor"
+          ]
+        },
+        {
+          "id": "transcendent-sky-2",
+          "type": "toggle",
+          "exclusiveGroup": "transcendent-power-2",
+          "label": "Power Slot 2: Sky of Falling Stars",
+          "pts": 44,
+          "grantsWargear": [
+            "sky-of-falling-stars"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gauss-pylon",
+      "name": "Gauss Pylon",
+      "slot": "Lord of War",
+      "basePts": 462,
+      "inlineRules": [
+        {
+          "id": "gauss-pylon-doomsday-weapon",
+          "name": "Doomsday Weapon",
+          "fullDesc": "This weapon cannot be Disabled."
+        },
+        {
+          "id": "gauss-pylon-phase-shift",
+          "name": "Phase Shift Generator",
+          "fullDesc": "6\" Aura, this model and target unit gain 5+ Invulnerability Save."
+        }
+      ],
+      "models": [
+        {
+          "id": "gauss-pylon",
+          "name": "Gauss Pylon",
+          "minCount": 1,
+          "maxCount": 1,
+          "isImmobile": true,
+          "statline": {
+            "type": "vehicle",
+            "BS": 3,
+            "FA": 13,
+            "SA": 13,
+            "RA": 13,
+            "W": 18,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "gauss-annihilator",
+              "arcType": "Turret",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "titanic",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "gauss-pylon-doomsday-weapon",
+            "gauss-pylon-phase-shift"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seraptek-heavy-construct",
+      "name": "Seraptek Heavy Construct",
+      "slot": "Lord of War",
+      "basePts": 749,
+      "models": [
+        {
+          "id": "seraptek",
+          "name": "Seraptek Heavy Construct",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 12,
+            "WS": 3,
+            "BS": 3,
+            "S": 8,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 28,
+            "I": 2,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "titanic-forelimbs",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-singularity-generators",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            "containment-field"
+          ],
+          "specialRules": [
+            "vehicle",
+            "titanic",
+            "combat-walker",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "steady"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "seraptek-weapon",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "seraptek"
+          ],
+          "label": "Swap 2 Linked Singularity Generators for",
+          "replaces": "2-linked-singularity-generators",
+          "choices": [
+            {
+              "weaponId": "2-linked-singularity-generators",
+              "label": "2 Linked Singularity Generators (keep)",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-synaptic-obliterators-transdim-projectors",
+              "label": "2 Linked Synaptic Obliterators and Transdimensional Projectors",
+              "pts": 0,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "obelisk",
+      "name": "Obelisk",
+      "slot": "Lord of War",
+      "basePts": 621,
+      "inlineRules": [
+        {
+          "id": "obelisk-massive-battery-unit",
+          "name": "Massive Battery Unit",
+          "fullDesc": "This model explodes on a 4+ when destroyed. If this model does not use its Grav Pulse this Shooting Phase (still triggers if eligible models enter the True Aura), you may fire each Tesla Sphere twice this Shooting Phase."
+        }
+      ],
+      "models": [
+        {
+          "id": "obelisk",
+          "name": "Obelisk",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 4,
+            "WS": 5,
+            "BS": 3,
+            "S": 8,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 28,
+            "I": 1,
+            "A": 9,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "4-tesla-spheres",
+              "arcType": "Sponson"
+            },
+            "grav-pulse"
+          ],
+          "specialRules": [
+            "vehicle",
+            "titanic",
+            "tank",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "deepstrike",
+            "obelisk-massive-battery-unit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tesseract-vault",
+      "name": "Tesseract Vault",
+      "slot": "Lord of War",
+      "basePts": 461,
+      "models": [
+        {
+          "id": "tesseract-vault",
+          "name": "Tesseract Vault",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 4,
+            "WS": 5,
+            "BS": 2,
+            "S": 8,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 28,
+            "I": 1,
+            "A": 9,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "4-tesla-spheres",
+              "arcType": "Sponson"
+            },
+            "star-god-forcefield"
+          ],
+          "specialRules": [
+            "vehicle",
+            "titanic",
+            "tank",
+            "canoptek",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "flyer",
+            "deepstrike",
+            "open-topped"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "vault-random-1",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-1",
+          "label": "Power Slot 1: Random (+93 pts)",
+          "pts": 93
+        },
+        {
+          "id": "vault-c-times-arrow-1",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-1",
+          "label": "Power Slot 1: Charged Time's Arrow",
+          "pts": 51,
+          "grantsWargear": [
+            "charged-times-arrow"
+          ]
+        },
+        {
+          "id": "vault-c-cosmic-fire-1",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-1",
+          "label": "Power Slot 1: Charged Cosmic Fire",
+          "pts": 68,
+          "grantsWargear": [
+            "charged-cosmic-fire"
+          ]
+        },
+        {
+          "id": "vault-c-thunderbolt-1",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-1",
+          "label": "Power Slot 1: Charged Transdimensional Thunderbolt",
+          "pts": 69,
+          "grantsWargear": [
+            "charged-transdimensional-thunderbolt"
+          ]
+        },
+        {
+          "id": "vault-c-seismic-1",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-1",
+          "label": "Power Slot 1: Charged Seismic Assault",
+          "pts": 70,
+          "grantsWargear": [
+            "charged-seismic-assault"
+          ]
+        },
+        {
+          "id": "vault-c-sky-1",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-1",
+          "label": "Power Slot 1: Charged Sky of Falling Star",
+          "pts": 148,
+          "grantsWargear": [
+            "charged-sky-of-falling-star"
+          ]
+        },
+        {
+          "id": "vault-c-antimatter-1",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-1",
+          "label": "Power Slot 1: Charged Antimatter Meteor",
+          "pts": 152,
+          "grantsWargear": [
+            "charged-antimatter-meteor"
+          ]
+        },
+        {
+          "id": "vault-random-2",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-2",
+          "label": "Power Slot 2: Random (+93 pts)",
+          "pts": 93
+        },
+        {
+          "id": "vault-c-times-arrow-2",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-2",
+          "label": "Power Slot 2: Charged Time's Arrow",
+          "pts": 51,
+          "grantsWargear": [
+            "charged-times-arrow"
+          ]
+        },
+        {
+          "id": "vault-c-cosmic-fire-2",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-2",
+          "label": "Power Slot 2: Charged Cosmic Fire",
+          "pts": 68,
+          "grantsWargear": [
+            "charged-cosmic-fire"
+          ]
+        },
+        {
+          "id": "vault-c-thunderbolt-2",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-2",
+          "label": "Power Slot 2: Charged Transdimensional Thunderbolt",
+          "pts": 69,
+          "grantsWargear": [
+            "charged-transdimensional-thunderbolt"
+          ]
+        },
+        {
+          "id": "vault-c-seismic-2",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-2",
+          "label": "Power Slot 2: Charged Seismic Assault",
+          "pts": 70,
+          "grantsWargear": [
+            "charged-seismic-assault"
+          ]
+        },
+        {
+          "id": "vault-c-sky-2",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-2",
+          "label": "Power Slot 2: Charged Sky of Falling Star",
+          "pts": 148,
+          "grantsWargear": [
+            "charged-sky-of-falling-star"
+          ]
+        },
+        {
+          "id": "vault-c-antimatter-2",
+          "type": "toggle",
+          "exclusiveGroup": "vault-power-2",
+          "label": "Power Slot 2: Charged Antimatter Meteor",
+          "pts": 152,
+          "grantsWargear": [
+            "charged-antimatter-meteor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monolith",
+      "name": "Monolith",
+      "slot": "Lord of War",
+      "basePts": 557,
+      "models": [
+        {
+          "id": "monolith",
+          "name": "Monolith",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 4,
+            "WS": 5,
+            "BS": 3,
+            "S": 8,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 24,
+            "I": 1,
+            "A": 9,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "particle-whip",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "arcType": "Sponson"
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "titanic",
+            "tank",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "eternity-portal"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "monolith-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "monolith"
+          ],
+          "label": "Swap 4 Gauss Arc Fluxes for",
+          "replaces": "4-gauss-arc-fluxes",
+          "choices": [
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "label": "4 Gauss Arc Fluxes (keep)",
+              "pts": 0,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "4-death-rays",
+              "label": "4 Death Rays",
+              "pts": 88,
+              "arcType": "Sponson"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doomsday-monolith",
+      "name": "Doomsday Monolith",
+      "slot": "Lord of War",
+      "basePts": 668,
+      "models": [
+        {
+          "id": "doomsday-monolith",
+          "name": "Doomsday Monolith",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 4,
+            "WS": 5,
+            "BS": 3,
+            "S": 8,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 36,
+            "I": 1,
+            "A": 9,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "gauss-obliterator",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "arcType": "Sponson"
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "titanic",
+            "tank",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "eternity-portal",
+            "particle-focus"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "doomsday-monolith-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "doomsday-monolith"
+          ],
+          "label": "Swap 4 Gauss Arc Fluxes for",
+          "replaces": "4-gauss-arc-fluxes",
+          "choices": [
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "label": "4 Gauss Arc Fluxes (keep)",
+              "pts": 0,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "4-death-rays",
+              "label": "4 Death Rays",
+              "pts": 88,
+              "arcType": "Sponson"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "megalith",
+      "name": "Megalith",
+      "slot": "Lord of War",
+      "basePts": 1622,
+      "inlineRules": [
+        {
+          "id": "megalith-monolith-vault",
+          "name": "Monolith Vault",
+          "fullDesc": "This model may carry up to 3 Monoliths as a Transport. They may deploy up to 12\" away."
+        },
+        {
+          "id": "megalith-gates-of-tomb-world",
+          "name": "Gates of the Tomb World",
+          "fullDesc": "This model may use the Eternity Portal up to two more times each turn by using its Access Points on each side."
+        }
+      ],
+      "models": [
+        {
+          "id": "megalith",
+          "name": "Megalith",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 4,
+            "WS": 5,
+            "BS": 3,
+            "S": 10,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 80,
+            "I": 1,
+            "A": 15,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "gauss-eradicator",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "arcType": "Sponson"
+            }
+          ],
+          "specialRules": [
+            "vehicle",
+            "titanic",
+            "tank",
+            "living-metal",
+            "fearless",
+            "soulless-machine",
+            "deepstrike",
+            "eternity-portal",
+            "particle-focus",
+            "megalith-monolith-vault",
+            "megalith-gates-of-tomb-world"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "megalith-sponson",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "megalith"
+          ],
+          "label": "Swap any set of 4 Gauss Arc Fluxes for",
+          "replaces": "4-gauss-arc-fluxes",
+          "choices": [
+            {
+              "weaponId": "4-gauss-arc-fluxes",
+              "label": "4 Gauss Arc Fluxes (keep)",
+              "pts": 0,
+              "arcType": "Sponson"
+            },
+            {
+              "weaponId": "4-death-rays",
+              "label": "4 Death Rays",
+              "pts": 88,
+              "arcType": "Sponson"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "convergence-of-dominion",
+      "name": "Convergence of Dominion",
+      "slot": "Fortification",
+      "basePts": 175,
+      "inlineRules": [
+        {
+          "id": "convergence-translocation-protocols",
+          "name": "Translocation Protocols",
+          "fullDesc": "6\" Aura, target unit does not Scatter when Deepstriking."
+        },
+        {
+          "id": "convergence-relentless-march",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        }
+      ],
+      "models": [
+        {
+          "id": "convergence-of-dominion",
+          "name": "Convergence of Dominion",
+          "minCount": 1,
+          "maxCount": 1,
+          "isImmobile": true,
+          "statline": {
+            "type": "fortification",
+            "BS": 4,
+            "T": 7,
+            "W": 15,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-tesla-destroyers",
+              "arcType": "Hull"
+            },
+            {
+              "weaponId": "2-linked-tesla-destroyers",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "living-metal",
+            "deepstrike",
+            "convergence-translocation-protocols",
+            "convergence-relentless-march"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "power-crucible",
+      "name": "Power Crucible",
+      "slot": "Fortification",
+      "basePts": 255,
+      "models": [
+        {
+          "id": "power-crucible",
+          "name": "Power Crucible",
+          "minCount": 1,
+          "maxCount": 1,
+          "isImmobile": true,
+          "statline": {
+            "type": "fortification",
+            "T": 8,
+            "W": 20,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "defense-field"
+          ],
+          "specialRules": [
+            "living-metal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tomb-ziggurat",
+      "name": "Tomb Ziggurat",
+      "slot": "Fortification",
+      "basePts": 334,
+      "inlineRules": [
+        {
+          "id": "ziggurat-dock",
+          "name": "Ziggurat Dock",
+          "fullDesc": "A Monolith may Dock to the top of the Tomb Ziggurat. Particle Whips that are docked gain S+1, but the Monolith may no longer use its Eternity Gate."
+        },
+        {
+          "id": "ziggurat-resurrection-amplifier",
+          "name": "Resurrection Amplifier",
+          "fullDesc": "6\" Aura, target unit gains +1 to Reanimation Rolls. This can never be improved by more than +1."
+        }
+      ],
+      "models": [
+        {
+          "id": "tomb-ziggurat",
+          "name": "Tomb Ziggurat",
+          "minCount": 1,
+          "maxCount": 1,
+          "isImmobile": true,
+          "statline": {
+            "type": "fortification",
+            "T": 8,
+            "W": 30,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "defense-field"
+          ],
+          "specialRules": [
+            "living-metal",
+            "eternity-portal",
+            "ziggurat-dock",
+            "ziggurat-resurrection-amplifier"
+          ]
+        }
+      ]
+    }
+  ]
+}

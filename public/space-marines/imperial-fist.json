@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "imperial_fists",
+  "commonWargear": [
+    {
+      "id": "fist-of-dorn",
+      "name": "Fist of Dorn",
+      "profiles": [
+        {
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Slow, Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "spartean",
+      "name": "Spartean",
+      "profiles": [
+        {
+          "maxRange": 18,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Pistol 1"
+        }
+      ]
+    },
+    {
+      "id": "hand-of-defiance",
+      "name": "Hand of Defiance",
+      "profiles": [
+        {
+          "strength": "X2",
+          "ap": "1+",
+          "rules": "Slow, Armourbane, Monsterbane"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "captain-lysander",
+      "name": "Captain Lysander",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 305,
+      "inlineRules": [
+        {
+          "id": "icon-of-obstinacy",
+          "name": "Icon of Obstinacy",
+          "fullDesc": "6\" Aura, this model and target unit may reroll failed Ld tests."
+        },
+        {
+          "id": "iron-will",
+          "name": "Iron Will",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        },
+        {
+          "id": "scout-bolter-drills",
+          "name": "Scout Bolter Drills",
+          "fullDesc": "6\" Aura, this model and target unit gain +1 shot with weapons that have the Bolter keyword."
+        }
+      ],
+      "models": [
+        {
+          "id": "lysander",
+          "name": "Lysander",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 5,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "fist-of-dorn",
+            "stormshield"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "battle-drills",
+            "icon-of-obstinacy",
+            "iron-will",
+            "scout-bolter-drills"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "lys-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 56,
+          "statModifiers": [
+            {
+              "modelId": "__sergeant__",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn."
+        }
+      ]
+    },
+    {
+      "id": "tor-garadon",
+      "name": "Tor Garadon",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 249,
+      "inlineRules": [
+        {
+          "id": "defy-orders",
+          "name": "Defy Orders",
+          "fullDesc": "You may reroll one Order in your Command Phase, even if you have already rerolled it."
+        }
+      ],
+      "models": [
+        {
+          "id": "tor",
+          "name": "Tor",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 5,
+            "W": 6,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "grav-gun",
+            "spartean",
+            "hand-of-defiance",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "battle-drills",
+            "defy-orders"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "tor-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 25,
+          "statModifiers": [
+            {
+              "modelId": "__sergeant__",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "drake_slayers",
+  "commonWargear": [
+    {
+      "id": "wyrmclaw",
+      "name": "Wyrmclaw",
+      "profiles": [
+        {
+          "strength": "X2",
+          "ap": "2+",
+          "rules": "Slow, Monsterbane, Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "wolf-amulet",
+      "name": "Wolf Amulet",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "krom-dragongaze",
+      "name": "Krom Dragongaze",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 345,
+      "inlineRules": [
+        {
+          "id": "reckless-assault-krom",
+          "name": "Reckless Assault",
+          "fullDesc": "This model and the unit it is with must declare Charges if they can legally do so."
+        },
+        {
+          "id": "the-fierce-eye",
+          "name": "The Fierce Eye",
+          "fullDesc": "This model may reroll all failed To Wound rolls."
+        }
+      ],
+      "models": [
+        {
+          "id": "krom",
+          "name": "Krom",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 5,
+            "W": 7,
+            "I": 5,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "wyrmclaw",
+            "frag-grenades",
+            "krak-grenades",
+            "orbital-strike",
+            "wolf-amulet"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "reckless-assault-krom",
+            "the-fierce-eye"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egil-redfist",
+      "name": "Egil Redfist",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 149,
+      "inlineRules": [
+        {
+          "id": "aggressive-egil",
+          "name": "Aggressive",
+          "fullDesc": "6\" Aura, this model and target unit may reroll all To Hit and all To Wound rolls in any Melee Phase they are considered Charging."
+        }
+      ],
+      "models": [
+        {
+          "id": "egil",
+          "name": "Egil",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "power-fist",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "counterattack",
+            "objective-secured",
+            "shock-assault",
+            "aggressive-egil"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hengist-ironaxe",
+      "name": "Hengist Ironaxe",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 169,
+      "inlineRules": [
+        {
+          "id": "suppressive-fire",
+          "name": "Suppressive Fire",
+          "fullDesc": "6\" Aura, this model and target unit's ranged weapons all gain the Grav rule."
+        }
+      ],
+      "models": [
+        {
+          "id": "hengist",
+          "name": "Hengist",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "power-axe",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "counterattack",
+            "objective-secured",
+            "shock-assault",
+            "suppressive-fire"
+          ]
+        }
+      ]
+    }
+  ]
+}

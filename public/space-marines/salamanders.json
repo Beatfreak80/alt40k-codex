@@ -1,0 +1,387 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "salamanders",
+  "commonWargear": [
+    {
+      "id": "drakkis",
+      "name": "Drakkis",
+      "profiles": [
+        {
+          "templateType": "Flame",
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Pistol 1"
+        }
+      ]
+    },
+    {
+      "id": "malleus-noctum",
+      "name": "Malleus Noctum",
+      "profiles": [
+        {
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Slow, Armourbane, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "arridian-drakehide-cloak",
+      "name": "Arridian Drakehide Cloak",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save. Flame and Melta weapons suffer -1 To Wound this model."
+        }
+      ]
+    },
+    {
+      "id": "dreadnought-ccw-dreadfire",
+      "name": "Dreadnought Combat Weapon and Dreadfire",
+      "profiles": [
+        {
+          "label": "Melee",
+          "strength": "X2",
+          "ap": "2+",
+          "rules": "Slow, Monsterbane, Simultaneous Fire"
+        },
+        {
+          "label": "Dreadfire (Flame)",
+          "templateType": "Flame",
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Assault 1, Simultaneous Fire"
+        },
+        {
+          "label": "Dreadfire (Melta)",
+          "maxRange": 12,
+          "strength": "8",
+          "ap": "1+",
+          "rules": "Assault 1, Melta, (Monsterbane)"
+        }
+      ]
+    },
+    {
+      "id": "cinder-edge",
+      "name": "Cinder Edge",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "2+"
+        }
+      ]
+    },
+    {
+      "id": "gauntlet-of-the-forge",
+      "name": "Gauntlet of the Forge",
+      "profiles": [
+        {
+          "templateType": "Flame",
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Assault 1, Reroll 1s To Wound"
+        }
+      ]
+    },
+    {
+      "id": "spear-of-vulkan",
+      "name": "Spear of Vulkan",
+      "profiles": [
+        {
+          "strength": "+3",
+          "ap": "1+",
+          "rules": "Counterattack"
+        }
+      ]
+    },
+    {
+      "id": "kesares-mantle",
+      "name": "Kesare's Mantle",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save. This model may reroll 1s for Invulnerability Saves."
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "adrax-agatone",
+      "name": "Adrax Agatone",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 263,
+      "inlineRules": [
+        {
+          "id": "sheer-pragmatism",
+          "name": "Sheer Pragmatism",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1s for Armour Saves."
+        }
+      ],
+      "models": [
+        {
+          "id": "adrax",
+          "name": "Adrax",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "drakkis",
+            "malleus-noctum",
+            "arridian-drakehide-cloak"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "sheer-pragmatism"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "adrax-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 20,
+          "statModifiers": [
+            {
+              "modelId": "adrax",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn",
+            "bulky"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn, Bulky. Lose Objective Secured."
+        }
+      ]
+    },
+    {
+      "id": "brayarth-ashmantle",
+      "name": "Bray'arth Ashmantle",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 200,
+      "inlineRules": [
+        {
+          "id": "burning-wrath",
+          "name": "Burning Wrath",
+          "fullDesc": "All models in base contact suffer a S5 AP4+ Auto Hit. This ability may be used in each Melee phase and hits both friend and foe."
+        }
+      ],
+      "models": [
+        {
+          "id": "brayarth",
+          "name": "Bray'arth",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "FA": 14,
+            "SA": 13,
+            "RA": 11,
+            "W": 10,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "dreadnought-ccw-dreadfire",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "combat-walker",
+            "know-no-fear",
+            "shock-assault",
+            "steady",
+            "burning-wrath"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "brayarth-extra-armour",
+          "type": "toggle",
+          "label": "Extra Armour",
+          "pts": 5,
+          "grantsWargear": [
+            "extra-armour"
+          ]
+        },
+        {
+          "id": "brayarth-smoke-launchers",
+          "type": "toggle",
+          "label": "Smoke Launchers",
+          "pts": 10,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pellas-mirsan",
+      "name": "Pellas Mir'San",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 231,
+      "inlineRules": [
+        {
+          "id": "unflinching-resolve",
+          "name": "Unflinching Resolve",
+          "fullDesc": "6\" Aura, this model and target unit automatically pass Ld Tests."
+        }
+      ],
+      "models": [
+        {
+          "id": "pellas",
+          "name": "Pellas",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "combi-flamer",
+            "cinder-edge",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "glory-hunter",
+            "unflinching-resolve"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vulkan-hestan",
+      "name": "Vulkan He'Stan",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 308,
+      "inlineRules": [
+        {
+          "id": "the-forgefather",
+          "name": "The Forgefather",
+          "fullDesc": "6\" Aura, target unit cannot claim Objective Markers."
+        },
+        {
+          "id": "iron-resolve",
+          "name": "Iron Resolve",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        }
+      ],
+      "models": [
+        {
+          "id": "vulkan",
+          "name": "Vulkan",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "gauntlet-of-the-forge",
+            "bolt-pistol",
+            "spear-of-vulkan",
+            "frag-grenades",
+            "krak-grenades",
+            "kesares-mantle"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "stubborn",
+            "battle-drills",
+            "the-forgefather",
+            "iron-resolve"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "vulkan-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "vulkan",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "bulky",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Bulky, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    }
+  ]
+}

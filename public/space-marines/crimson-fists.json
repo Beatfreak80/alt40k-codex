@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "crimson_fists",
+  "commonWargear": [
+    {
+      "id": "dorns-arrow",
+      "name": "Dorn's Arrow",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "4+",
+          "rules": "Rapid Fire 4"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "pedro-kantor",
+      "name": "Pedro Kantor",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 404,
+      "inlineRules": [
+        {
+          "id": "oath-of-rhynn",
+          "name": "Oath of Rhynn",
+          "fullDesc": "6\" Aura, this model and target unit gain A+1."
+        },
+        {
+          "id": "veteran-of-rhynn",
+          "name": "Veteran of Rhynn",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        }
+      ],
+      "models": [
+        {
+          "id": "pedro",
+          "name": "Pedro",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "dorns-arrow",
+            "power-fist",
+            "frag-grenades",
+            "krak-grenades",
+            "orbital-strike",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "oath-of-rhynn",
+            "veteran-of-rhynn"
+          ]
+        }
+      ]
+    }
+  ]
+}

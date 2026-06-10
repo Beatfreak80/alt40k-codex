@@ -1,0 +1,1184 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "blood_angels",
+  "commonWargear": [
+    {
+      "id": "hammer-of-baal",
+      "name": "Hammer of Baal",
+      "profiles": [
+        {
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Slow, Monsterbane, Reroll failed To Wound rolls"
+        }
+      ]
+    },
+    {
+      "id": "blood-song",
+      "name": "Blood Song",
+      "profiles": [
+        {
+          "label": "Melta",
+          "maxRange": 12,
+          "strength": "8",
+          "ap": "1+",
+          "rules": "Assault 1, Melta, (Monsterbane), Simultaneous Fire"
+        },
+        {
+          "label": "Bolter",
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Assault 2, Simultaneous Fire"
+        }
+      ]
+    },
+    {
+      "id": "dead-mans-hand",
+      "name": "Dead Man's Hand",
+      "profiles": [
+        {
+          "strength": "X2",
+          "ap": "1+",
+          "rules": "Slow, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "vitarus",
+      "name": "Vitarus",
+      "profiles": [
+        {
+          "strength": "+3",
+          "ap": "2+",
+          "rules": "Psychic Bane"
+        }
+      ]
+    },
+    {
+      "id": "perdition-pistol",
+      "name": "Perdition Pistol",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "8",
+          "ap": "1+",
+          "rules": "Pistol 1, Melta, (Monsterbane)"
+        }
+      ]
+    },
+    {
+      "id": "axe-mortalis",
+      "name": "The Axe Mortalis",
+      "profiles": [
+        {
+          "strength": "+3",
+          "ap": "2+"
+        }
+      ]
+    },
+    {
+      "id": "death-mask-of-sanguinus",
+      "name": "The Death Mask of Sanguinus",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "12\" True Aura, all enemy units within range must take a Fear Test."
+        }
+      ]
+    },
+    {
+      "id": "the-blood-crozius",
+      "name": "The Blood Crozius",
+      "profiles": [
+        {
+          "label": "Melee",
+          "strength": "+2",
+          "ap": "3+",
+          "rules": "Concussion, Simultaneous Fire"
+        },
+        {
+          "label": "Flame",
+          "templateType": "Flame",
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Assault 1, One Use Only, Simultaneous Fire"
+        }
+      ]
+    },
+    {
+      "id": "the-executioners-axe",
+      "name": "The Executioner's Axe",
+      "profiles": [
+        {
+          "strength": "+3",
+          "ap": "2+",
+          "rules": "Ignores Invulnerability Saves"
+        }
+      ]
+    },
+    {
+      "id": "heavens-teeth",
+      "name": "Heaven's Teeth",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "4+",
+          "rules": "Rending"
+        }
+      ]
+    },
+    {
+      "id": "dual-blood-talons",
+      "name": "Dual Blood Talons",
+      "profiles": [
+        {
+          "strength": "X2",
+          "ap": "1+",
+          "rules": "Slow, Monsterbane, Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "angelus-bolt-gun",
+      "name": "Angelus Bolt Gun",
+      "profiles": [
+        {
+          "maxRange": 18,
+          "strength": "4",
+          "ap": "4+",
+          "rules": "Assault 2"
+        }
+      ]
+    },
+    {
+      "id": "power-spear",
+      "name": "Power Spear",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "3+",
+          "rules": "I+3"
+        }
+      ]
+    },
+    {
+      "id": "glaive-encarmine",
+      "name": "Glaive Encarmine",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "captain-karleen",
+      "name": "Captain Karleen",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 284,
+      "inlineRules": [
+        {
+          "id": "close-quarter-expert",
+          "name": "Close Quarter Expert",
+          "fullDesc": "6\" Aura, target unit gains Furious Charge."
+        },
+        {
+          "id": "strategic-genius",
+          "name": "Strategic Genius",
+          "fullDesc": "During Deployment, target unit gains Infiltrate."
+        }
+      ],
+      "models": [
+        {
+          "id": "karleen",
+          "name": "Karleen",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 5,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "hammer-of-baal",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "counterattack",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "battle-drills",
+            "close-quarter-expert",
+            "strategic-genius"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "captain-tycho",
+      "name": "Captain Tycho",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 241,
+      "inlineRules": [
+        {
+          "id": "hyper-aggression",
+          "name": "Hyper Aggression",
+          "fullDesc": "This model must declare Charges whenever possible, and may not Advance if it would disqualify declaring a Charge that is in range."
+        },
+        {
+          "id": "rampage-tycho",
+          "name": "Rampage",
+          "fullDesc": "If this unit is outnumbered gain A+d3."
+        }
+      ],
+      "models": [
+        {
+          "id": "tycho",
+          "name": "Tycho",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 5,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "blood-song",
+            "bolt-pistol",
+            "dead-mans-hand",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "counterattack",
+            "furious-charge",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "hyper-aggression",
+            "rampage-tycho"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chief-librarian-mephiston",
+      "name": "Chief Librarian Mephiston",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 330,
+      "inlineRules": [
+        {
+          "id": "chief-librarian-meph",
+          "name": "Chief Librarian",
+          "fullDesc": "This model may Deny the Witch twice per Psychic Phase."
+        },
+        {
+          "id": "lord-of-death",
+          "name": "Lord of Death",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        },
+        {
+          "id": "sanguine-sword-rule",
+          "name": "Sanguine Sword",
+          "fullDesc": "Cast 7+. Vitarus hits at S10, AP1+, and ignores Invulnerability Saves until your next Psychic Phase."
+        }
+      ],
+      "psychic": {
+        "masteryLevel": 3,
+        "spellPoolId": "librarius"
+      },
+      "models": [
+        {
+          "id": "mephiston",
+          "name": "Mephiston",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "T": 5,
+            "W": 6,
+            "I": 6,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "plasma-pistol",
+            "vitarus",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo",
+            "psychic-hood"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "bulky",
+            "counterattack",
+            "furious-charge",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "chief-librarian-meph",
+            "lord-of-death",
+            "sanguine-sword-rule"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "meph-sanguine-sword",
+          "type": "toggle",
+          "label": "Sanguine Sword",
+          "pts": 0,
+          "note": "Cast 7+. Vitarus hits at S10, AP1+, and ignores Invulnerability Saves until your next Psychic Phase."
+        },
+        {
+          "id": "meph-spells",
+          "type": "spellPick",
+          "spellPoolId": "librarius"
+        },
+        {
+          "id": "meph-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "mephiston",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "bulky",
+            "stubborn"
+          ],
+          "note": "A+1. Gain 4+ Feel No Pain, Bulky, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "commander-dante",
+      "name": "Commander Dante",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 270,
+      "inlineRules": [
+        {
+          "id": "wheres-horus",
+          "name": "Where's Horus?!",
+          "fullDesc": "6\" Aura, this model and target unit may reroll Failed Charges. In addition, if an enemy Unique Character named Horus is on the battlefield, all Blood Angels immediately succumb to the Black Rage."
+        }
+      ],
+      "models": [
+        {
+          "id": "dante",
+          "name": "Dante",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 7,
+            "I": 7,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "perdition-pistol",
+            "axe-mortalis",
+            "frag-grenades",
+            "krak-grenades",
+            "orbital-strike",
+            "iron-halo",
+            "death-mask-of-sanguinus"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "counterattack",
+            "hit-and-run",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "wheres-horus"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "dante-jump-pack",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
+          "pts": 20,
+          "upgradeGroup": "Dante"
+        },
+        {
+          "id": "dante-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "dante",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "bulky",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Bulky, Stubborn. Lose Objective Secured, Grenades.",
+          "upgradeGroup": "Dante"
+        }
+      ]
+    },
+    {
+      "id": "lemartes",
+      "name": "Lemartes",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 309,
+      "inlineRules": [
+        {
+          "id": "exhortation-of-rage-lem",
+          "name": "Exhortation of Rage",
+          "fullDesc": "6\" Aura, this model and target unit gain A+1 and reroll 1s To Wound in Melee."
+        },
+        {
+          "id": "guardian-of-the-lost",
+          "name": "Guardian of the Lost",
+          "fullDesc": "6\" Aura, this model and target unit suffering from The Black Rage gain A+1."
+        },
+        {
+          "id": "the-black-rage-lem",
+          "name": "The Black Rage",
+          "fullDesc": "This model begins the game Succumbed to the Black Rage."
+        }
+      ],
+      "models": [
+        {
+          "id": "lemartes-model",
+          "name": "Lemartes",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "T": 4,
+            "W": 6,
+            "I": 7,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "the-blood-crozius",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "bulky",
+            "counterattack",
+            "deepstrike",
+            "flyer",
+            "objective-secured",
+            "shock-assault",
+            "canticle-of-hate",
+            "zealot",
+            "exhortation-of-rage-lem",
+            "guardian-of-the-lost",
+            "the-black-rage-lem"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "lem-power-fist",
+          "type": "toggle",
+          "label": "Power Fist",
+          "pts": 3,
+          "grantsWargear": [
+            "power-fist"
+          ]
+        },
+        {
+          "id": "lem-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "lemartes-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Bulky, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "astorath-the-grim",
+      "name": "Astorath the Grim",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 289,
+      "inlineRules": [
+        {
+          "id": "liturgies-of-blood",
+          "name": "Liturgies of Blood",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Wound."
+        },
+        {
+          "id": "mass-of-doom",
+          "name": "Mass of Doom",
+          "fullDesc": "6\" Aura, this model and target unit gain S+1, A+1. Roll a d6, on a 1 remove one model from the unit from the game."
+        }
+      ],
+      "models": [
+        {
+          "id": "astorath",
+          "name": "Astorath",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 5,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "the-executioners-axe",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "bulky",
+            "counterattack",
+            "deepstrike",
+            "flyer",
+            "furious-charge",
+            "objective-secured",
+            "shock-assault",
+            "zealot",
+            "liturgies-of-blood",
+            "mass-of-doom"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "astorath-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "astorath",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "bulky",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Bulky, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "brother-corbulo",
+      "name": "Brother Corbulo",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 241,
+      "inlineRules": [
+        {
+          "id": "far-seeing-eye",
+          "name": "Far Seeing Eye",
+          "fullDesc": "6\" Aura, target unit does not Scatter when arriving from Deepstrike."
+        },
+        {
+          "id": "narthecium-corbulo",
+          "name": "Narthecium",
+          "fullDesc": "6\" Aura, this model and target unit gain 5+ Feel No Pain or +1 to their existing Feel No Pain no better than 4+."
+        },
+        {
+          "id": "the-red-grail",
+          "name": "The Red Grail",
+          "fullDesc": "6\" Aura, this model and target unit gain I+2."
+        }
+      ],
+      "models": [
+        {
+          "id": "corbulo",
+          "name": "Corbulo",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 5,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "heavens-teeth",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "night-vision",
+            "counterattack",
+            "furious-charge",
+            "objective-secured",
+            "shock-assault",
+            "far-seeing-eye",
+            "narthecium-corbulo",
+            "the-red-grail"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "corbulo-jump-pack",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
+          "pts": 20
+        }
+      ]
+    },
+    {
+      "id": "cassor-the-damned",
+      "name": "Cassor the Damned",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 241,
+      "inlineRules": [
+        {
+          "id": "none-can-stay-my-wrath",
+          "name": "None Can Stay my Wrath",
+          "fullDesc": "This model is immune to Weapon Disables and Crew Stun effects, but still takes the extra Damage."
+        }
+      ],
+      "models": [
+        {
+          "id": "cassor",
+          "name": "Cassor",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "FA": 13,
+            "SA": 12,
+            "RA": 10,
+            "W": 10,
+            "I": 5,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "dual-blood-talons",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "stormbolter",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "meltagun",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            "magna-grapple"
+          ],
+          "specialRules": [
+            "independent-character",
+            "combat-walker",
+            "bolter-discipline",
+            "know-no-fear",
+            "counterattack",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "rampage",
+            "none-can-stay-my-wrath"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "raphens-death-company",
+      "name": "Raphen's Death Company",
+      "slot": "Advisor",
+      "basePts": 160,
+      "inlineRules": [
+        {
+          "id": "the-black-rage-dc",
+          "name": "The Black Rage",
+          "fullDesc": "This model begins the game Succumbed to the Black Rage."
+        }
+      ],
+      "models": [
+        {
+          "id": "raphen",
+          "name": "Raphen",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 5,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "thunderhammer",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "know-no-fear",
+            "counterattack",
+            "deepstrike",
+            "fearless",
+            "flyer",
+            "furious-charge",
+            "objective-secured",
+            "shock-assault",
+            "the-black-rage-dc"
+          ]
+        },
+        {
+          "id": "dc-veteran",
+          "name": "Veteran",
+          "minCount": 0,
+          "maxCount": 4,
+          "ptsEach": 58,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 5,
+            "A": 2,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "chainsword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "know-no-fear",
+            "adjusted-tactics",
+            "tactical-squads",
+            "deepstrike",
+            "flyer",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "the-black-rage-dc"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "rdc-add-veterans",
+          "type": "squadSize",
+          "label": "Add Veterans",
+          "targetModelId": "dc-veteran",
+          "ptsEach": 58,
+          "max": 4
+        },
+        {
+          "id": "rdc-vet-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "dc-veteran"
+          ],
+          "label": "Any Veteran: swap Bolt Pistol for",
+          "replaces": "bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "hand-flamer",
+              "label": "Hand Flamer",
+              "pts": 3
+            },
+            {
+              "weaponId": "inferno-pistol",
+              "label": "Inferno Pistol",
+              "pts": 24
+            }
+          ]
+        },
+        {
+          "id": "rdc-vet-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "dc-veteran"
+          ],
+          "label": "Any Veteran: swap Chainsword for",
+          "replaces": "chainsword",
+          "choices": [
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sanguinary-guard",
+      "name": "Sanguinary Guard",
+      "slot": "Elite",
+      "basePts": 342,
+      "models": [
+        {
+          "id": "sg-sergeant",
+          "name": "Sergeant",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 5,
+            "A": 4,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "angelus-bolt-gun",
+            "power-sword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "tactical-squads",
+            "bodyguard",
+            "counterattack",
+            "deepstrike",
+            "flyer",
+            "objective-secured",
+            "shock-assault"
+          ]
+        },
+        {
+          "id": "sg-guard",
+          "name": "Guard",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 67,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 5,
+            "A": 3,
+            "Ld": 8,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "angelus-bolt-gun",
+            "power-sword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "know-no-fear",
+            "tactical-squads",
+            "bodyguard",
+            "deepstrike",
+            "flyer",
+            "objective-secured",
+            "shock-assault"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sg-add-guards",
+          "type": "squadSize",
+          "label": "Add Guards",
+          "targetModelId": "sg-guard",
+          "ptsEach": 67,
+          "max": 5
+        },
+        {
+          "id": "sg-sgt-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sg-sergeant"
+          ],
+          "label": "Sergeant: swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "sg-any-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sg-sergeant",
+            "sg-guard"
+          ],
+          "label": "Any model: swap Angelus Bolt Gun for",
+          "replaces": "angelus-bolt-gun",
+          "choices": [
+            {
+              "weaponId": "hand-flamer",
+              "label": "Hand Flamer",
+              "pts": 1
+            },
+            {
+              "weaponId": "plasma-pistol",
+              "label": "Plasma Pistol",
+              "pts": 5
+            },
+            {
+              "weaponId": "inferno-pistol",
+              "label": "Inferno Pistol",
+              "pts": 22
+            }
+          ]
+        },
+        {
+          "id": "sg-any-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sg-sergeant",
+            "sg-guard"
+          ],
+          "label": "Any model: swap Power Sword for",
+          "replaces": "power-sword",
+          "choices": [
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 1
+            },
+            {
+              "weaponId": "power-spear",
+              "label": "Power Spear",
+              "pts": 6
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-sanguinor",
+      "name": "The Sanguinor",
+      "slot": "Lord of War",
+      "isUnique": true,
+      "basePts": 364,
+      "inlineRules": [
+        {
+          "id": "aura-of-fervor",
+          "name": "Aura of Fervor",
+          "fullDesc": "12\" True Aura, this model and friendly units gain A+1."
+        },
+        {
+          "id": "divine-manifestation",
+          "name": "Divine Manifestation",
+          "fullDesc": "This model has a 3+ Invulnerability Save and a 5+ Feel No Pain."
+        },
+        {
+          "id": "avenging-angel",
+          "name": "Avenging Angel",
+          "fullDesc": "This model may choose the target of its Challenge. The target may not deny the Challenge. Sanguinor may reroll all failed To Hit and To Wound rolls when in a Challenge."
+        }
+      ],
+      "models": [
+        {
+          "id": "sanguinor",
+          "name": "Sanguinor",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 7,
+            "A": 6,
+            "Ld": 10,
+            "Sv": "-"
+          },
+          "baseWargear": [
+            "glaive-encarmine",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "counterattack",
+            "deepstrike",
+            "flyer",
+            "furious-charge",
+            "objective-secured",
+            "shock-assault",
+            "aura-of-fervor",
+            "divine-manifestation",
+            "avenging-angel"
+          ]
+        }
+      ]
+    }
+  ]
+}

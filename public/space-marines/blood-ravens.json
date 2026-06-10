@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "blood_ravens",
+  "commonWargear": [
+    {
+      "id": "god-splitter",
+      "name": "God Splitter",
+      "profiles": [
+        {
+          "label": "Ranged",
+          "maxRange": 1,
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Pistol 1, 3\" Blast, Armourbane, Psychic Bane, Monsterbane, No Scatter, Ignores Friendly models"
+        },
+        {
+          "label": "Melee",
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Slow, Armourbane, Psychic Bane, Monsterbane"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "gabriel-angelos",
+      "name": "Gabriel Angelos",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 375,
+      "inlineRules": [
+        {
+          "id": "t-minus-5-gabriel",
+          "name": "T Minus 5",
+          "fullDesc": "The weapon may not be fired Turn 1. If the weapon is marked on the field and the carrier is destroyed, the Orbital Strike still hits in your Command Phase."
+        }
+      ],
+      "models": [
+        {
+          "id": "gabriel",
+          "name": "Gabriel",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "god-splitter",
+            "frag-grenades",
+            "krak-grenades",
+            "orbital-strike",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "gabriel-terminator",
+          "type": "namedUpgrade",
+          "upgradeId": "terminator-armour",
+          "pts": 0,
+          "upgradeGroup": "Gabriel"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "minotaurs",
+  "commonWargear": [
+    {
+      "id": "the-black-spear",
+      "name": "The Black Spear",
+      "profiles": [
+        {
+          "label": "Thrown",
+          "maxRange": 12,
+          "strength": "9",
+          "ap": "2+",
+          "rules": "Assault 1, Monsterbane, One Use Only"
+        },
+        {
+          "label": "Melee",
+          "strength": "+1",
+          "ap": "2+",
+          "rules": "Counterattack"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "chief-chaplain-ivanus-enkomi",
+      "name": "Chief Chaplain Ivanus Enkomi",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 288,
+      "inlineRules": [
+        {
+          "id": "bane-of-hatred",
+          "name": "Bane of Hatred",
+          "fullDesc": "6\" Aura, this model and target unit gain A+1 on the Phase they are considered to have Charged."
+        },
+        {
+          "id": "exhortation-of-rage-min",
+          "name": "Exhortation of Rage",
+          "fullDesc": "6\" Aura, this model and target unit gain A+1 and reroll 1s To Wound in Melee."
+        }
+      ],
+      "models": [
+        {
+          "id": "ivanus",
+          "name": "Ivanus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "auxiliary-grenade-launcher",
+            "power-fist",
+            "crozium-arcanum",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "canticle-of-hate",
+            "zealot",
+            "bane-of-hatred",
+            "exhortation-of-rage-min"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "ivanus-jump-pack",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
+          "pts": 20
+        }
+      ]
+    },
+    {
+      "id": "lord-asterion-moloc",
+      "name": "Lord Asterion Moloc",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 371,
+      "inlineRules": [
+        {
+          "id": "dark-fury",
+          "name": "Dark Fury",
+          "fullDesc": "6\" Aura, this model and target unit gain Fearless."
+        }
+      ],
+      "models": [
+        {
+          "id": "asterion",
+          "name": "Asterion",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 7,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "the-black-spear",
+            "orbital-strike",
+            "stormshield",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "dark-fury"
+          ]
+        }
+      ]
+    }
+  ]
+}

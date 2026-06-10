@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "carcharodons",
+  "commonWargear": [
+    {
+      "id": "hunger-and-wake",
+      "name": "Hunger and Wake",
+      "profiles": [
+        {
+          "label": "Hunger",
+          "strength": "User",
+          "ap": "3+",
+          "rules": "Extra Attack 1, Reroll failed To Wound rolls"
+        },
+        {
+          "label": "Wake",
+          "strength": "X2",
+          "ap": "2+",
+          "rules": "Extra Attack 1, Slow, Monsterbane, +1 To Penetrate"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "tyberos-the-red-wake",
+      "name": "Tyberos the Red Wake",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 375,
+      "inlineRules": [
+        {
+          "id": "tyberos-battle-drills",
+          "name": "Battle Drills",
+          "fullDesc": "6\" Aura, this model and target unit may Reroll 1s To Hit."
+        }
+      ],
+      "models": [
+        {
+          "id": "tyberos",
+          "name": "Tyberos",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "T": 5,
+            "W": 7,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "hunger-and-wake",
+            "orbital-strike",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "shock-assault",
+            "very-bulky",
+            "steady",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "rampage"
+          ]
+        }
+      ]
+    }
+  ]
+}

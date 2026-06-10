@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "exorcists",
+  "commonWargear": [
+    {
+      "id": "the-hellslayer",
+      "name": "The Hellslayer",
+      "profiles": [
+        {
+          "strength": "10",
+          "ap": "1+",
+          "rules": "Extra Attack 1, Slow, Armourbane, Monsterbane, Psychic Bane"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "exorcists-captain",
+      "name": "Captain",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 269,
+      "inlineRules": [
+        {
+          "id": "implacable-discipline",
+          "name": "Implacable Discipline",
+          "fullDesc": "6\" Aura, this model and target unit may reroll failed Ld tests."
+        },
+        {
+          "id": "soul-seared",
+          "name": "Soul-Seared",
+          "fullDesc": "This model may Deny the Witch as if it were Psychic Mastery Level 4."
+        }
+      ],
+      "models": [
+        {
+          "id": "exorcists-captain-model",
+          "name": "Captain",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "the-hellslayer",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "implacable-discipline",
+            "soul-seared"
+          ]
+        }
+      ]
+    }
+  ]
+}

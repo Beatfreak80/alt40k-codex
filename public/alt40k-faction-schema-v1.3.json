@@ -154,6 +154,78 @@
               }
             }
           }
+        },
+        "listBuildingFilters": {
+          "type": "array",
+          "description": "Declarative unit-inclusion rules enforced by the list builder. Units that fail any filter are hidden from the unit picker and the options page. The rule text in rules[] describes the restriction in natural language; listBuildingFilters is what the app actually enforces.",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "description": "requireRule — unit is only available if EVERY model in the unit has this special rule id in its specialRules[].",
+                "required": ["type", "rule"],
+                "additionalProperties": false,
+                "properties": {
+                  "type": { "type": "string", "const": "requireRule" },
+                  "rule": { "type": "string", "description": "kebab-case special rule id, e.g. 'stubborn'" }
+                }
+              },
+              {
+                "type": "object",
+                "description": "excludeType — unit is hidden if ANY model has this statline type.",
+                "required": ["type", "modelType"],
+                "additionalProperties": false,
+                "properties": {
+                  "type": { "type": "string", "const": "excludeType" },
+                  "modelType": {
+                    "type": "string",
+                    "enum": ["infantry", "vehicle", "monstrous-infantry", "monster", "swarm", "artillery", "fortification"],
+                    "description": "Statline type value to exclude"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "description": "requireTypes — unit is only available if EVERY model has a statline type in the allowed list.",
+                "required": ["type", "modelTypes"],
+                "additionalProperties": false,
+                "properties": {
+                  "type": { "type": "string", "const": "requireTypes" },
+                  "modelTypes": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "enum": ["infantry", "vehicle", "monstrous-infantry", "monster", "swarm", "artillery", "fortification"]
+                    },
+                    "description": "Allowed statline types — units whose models are all within this set pass the filter"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "description": "requireTypesForRule — unit is excluded if ANY model has the specified special rule AND is not one of the allowed types. Models without the rule are unaffected. Use when a faction rule restricts a specific keyword (e.g. 'Ork keyword units must be Vehicle or Monster').",
+                "required": ["type", "rule", "allowedModelTypes"],
+                "additionalProperties": false,
+                "properties": {
+                  "type": { "type": "string", "const": "requireTypesForRule" },
+                  "rule": {
+                    "type": "string",
+                    "description": "The special rule (kebab-case) that triggers the type restriction"
+                  },
+                  "allowedModelTypes": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "enum": ["infantry", "vehicle", "monstrous-infantry", "monster", "swarm", "artillery", "fortification"]
+                    },
+                    "description": "Types that models with the specified rule are allowed to be"
+                  }
+                }
+              }
+            ]
+          }
         }
       }
     },
@@ -894,13 +966,17 @@
           "type": "number"
         },
         "ptsPerModel": {
-          "type": "number"
+          "type": ["number", "boolean"]
         },
         "ptsPerModelAppliesTo": {
           "type": "string"
         },
         "targetModelId": {
           "type": "string"
+        },
+        "replacesModelId": {
+          "type": "string",
+          "description": "squadSize only — taking one of this model reduces the available slots in the named model's squadSize pool by the same amount"
         },
         "min": {
           "type": "integer",

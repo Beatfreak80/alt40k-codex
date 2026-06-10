@@ -1,0 +1,148 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "sons_of_medusa",
+  "units": [
+    {
+      "id": "techmarine-vaylund-cal",
+      "name": "Techmarine Vaylund Cal",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 309,
+      "inlineRules": [
+        {
+          "id": "vaylund-master-of-the-forge",
+          "name": "Master of the Forge",
+          "fullDesc": "Repair D3 Wounds on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result. May use both versions of Repair on the same target."
+        },
+        {
+          "id": "opus-machina",
+          "name": "Opus Machina",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        },
+        {
+          "id": "purge-the-weak",
+          "name": "Purge the Weak",
+          "fullDesc": "6\" Aura, target unit gains Steady."
+        },
+        {
+          "id": "vaylund-repair",
+          "name": "Repair",
+          "fullDesc": "Repair 1 Wound on Target Vehicle. Roll a d6, on a 5+, restore a Weapon Disabled, Destroyed, Crew Stun, or Immobilize secondary result."
+        }
+      ],
+      "models": [
+        {
+          "id": "vaylund",
+          "name": "Vaylund Cal",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "missile-launcher",
+            "flamer",
+            "plasma-pistol",
+            "thunderhammer",
+            "servo-arm",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "fearless",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "awaken-the-machine",
+            "servo-arm-rule",
+            "vaylund-master-of-the-forge",
+            "opus-machina",
+            "purge-the-weak",
+            "vaylund-repair"
+          ]
+        },
+        {
+          "id": "vaylund-servitor",
+          "name": "Servitor",
+          "minCount": 0,
+          "maxCount": 9,
+          "ptsEach": 24,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 4,
+            "BS": 4,
+            "S": 3,
+            "T": 4,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 8,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "servo-arm"
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "know-no-fear",
+            "night-vision",
+            "steady",
+            "lobotomized",
+            "servo-arm-rule"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "vaylund-add-servitors",
+          "type": "squadSize",
+          "label": "Add Servitors",
+          "targetModelId": "vaylund-servitor",
+          "ptsEach": 24,
+          "max": 9
+        },
+        {
+          "id": "vaylund-servitor-heavy",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "vaylund-servitor"
+          ],
+          "label": "Any Servitor: swap Servo Arm for",
+          "replaces": "servo-arm",
+          "choices": [
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 8
+            },
+            {
+              "weaponId": "plasma-cannon",
+              "label": "Plasma Cannon",
+              "pts": 13
+            },
+            {
+              "weaponId": "multimelta",
+              "label": "Multimelta",
+              "pts": 26
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

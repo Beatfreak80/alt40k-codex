@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "flesh_tearers",
+  "commonWargear": [
+    {
+      "id": "blood-reaver",
+      "name": "Blood Reaver",
+      "profiles": [
+        {
+          "strength": "+3",
+          "ap": "4+",
+          "rules": "Rending"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "gabriel-seth",
+      "name": "Gabriel Seth",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 362,
+      "inlineRules": [
+        {
+          "id": "rampage-seth",
+          "name": "Rampage",
+          "fullDesc": "This model gains A+d3 if it is outnumbered in Melee."
+        },
+        {
+          "id": "whirlwind-of-gore",
+          "name": "Whirlwind of Gore",
+          "fullDesc": "Each roll of a 6 To Hit in Melee generates one Autohit."
+        }
+      ],
+      "models": [
+        {
+          "id": "gabriel-seth-model",
+          "name": "Gabriel",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 5,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "blood-reaver",
+            "frag-grenades",
+            "krak-grenades",
+            "orbital-strike",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "rampage-seth",
+            "whirlwind-of-gore"
+          ]
+        }
+      ]
+    }
+  ]
+}

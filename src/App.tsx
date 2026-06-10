@@ -1,4 +1,5 @@
 import { useState, useMemo, useRef, useEffect, useLayoutEffect, Fragment } from "react";
+import { createPortal } from "react-dom";
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
@@ -162,6 +163,9 @@ body { background: #f4f2ed; font-family: 'Rajdhani', sans-serif; }
 .rule-name { font-weight: 700; font-size: 9pt; color: #1a1a1a; }
 .rule-name-clickable { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; }
 .rule-name-clickable:hover { color: #7a5800; }
+.rule-popover { position:absolute; z-index:9; max-width:280px; background:#fff; border:1px solid #d4c070; border-radius:5px; box-shadow:0 4px 14px rgba(0,0,0,0.18); padding:10px 13px; pointer-events:auto; }
+.rule-popover-name { font-weight:700; font-size:9.5pt; color:#1a1a1a; margin-bottom:5px; }
+.rule-popover-desc { font-size:9pt; color:#444; line-height:1.5; }
 .rules-detail-li { font-size: 9pt; }
 @media (max-width: 768px) {
   .rule-name { font-size: 12pt; }
@@ -285,6 +289,8 @@ input:checked + .toggle-slider:before { transform: translateX(16px); }
 .lb-foc-slot-err { border-color:#c04040; color:#802020; background:#fff2f2; }
 .lb-foc-slot-err:hover { background:#ffe4e4; border-color:#c04040; }
 .lb-foc-slot-count { font-weight:500; font-size:8pt; letter-spacing:0; text-transform:none; opacity:0.75; }
+.cursor-toast { position:fixed; z-index:2000; background:rgba(40,40,40,.88); color:#fff; font-size:9pt; font-family:'Rajdhani',sans-serif; font-weight:600; padding:5px 11px; border-radius:4px; pointer-events:none; white-space:nowrap; animation:toast-fade 1.8s ease forwards; }
+@keyframes toast-fade { 0%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
 @media (max-width:768px) {
   .lb-modal { padding:0 16px 16px; }
   .lb-modal-sticky { padding:16px 0 0; }
@@ -428,6 +434,18 @@ function modelTypeCount(unit: any, modelId: string, options: any): number {
   if (!model) return 1;
   const sq = (unit.options||[]).find((o: any) => o.type === "squadSize" && o.targetModelId === modelId);
   return (model.minCount ?? 0) + (sq ? (options[sq.id] || 0) : 0);
+}
+
+// effective max additional for a squadSize option, accounting for replacesModelId cross-pool constraints
+function squadSizeEffectiveMax(unit: any, o: any, options: any): number {
+  if (o.replacesModelId) {
+    const replacedSqSz = (unit.options||[]).find((x: any) => x.type === "squadSize" && x.targetModelId === o.replacesModelId);
+    const replacedAdditional = options[replacedSqSz?.id] || 0;
+    return Math.min(o.max, (replacedSqSz?.max ?? 0) - replacedAdditional);
+  }
+  const replacers = (unit.options||[]).filter((x: any) => x.type === "squadSize" && x.replacesModelId === o.targetModelId);
+  const replacerCount = replacers.reduce((sum: number, x: any) => sum + (options[x.id] || 0), 0);
+  return o.max - replacerCount;
 }
 
 // how many models sharing applies+replaces have already consumed slots
@@ -696,6 +714,27 @@ function effectiveSlot(unitId: string, baseSlot: string, subfaction: any): strin
   return r ? (r.toSlot || r.newSlot || baseSlot) : baseSlot;
 }
 
+function filterUnitsBySubfaction(units: any[], subfaction: any): any[] {
+  const filters: any[] = subfaction?.listBuildingFilters;
+  if (!filters?.length) return units;
+  return units.filter(unit => {
+    const models: any[] = unit.models || [];
+    for (const f of filters) {
+      if (f.type === 'requireRule') {
+        if (!models.every(m => (m.specialRules || []).includes(f.rule))) return false;
+      } else if (f.type === 'excludeType') {
+        if (models.some(m => m.statline?.type === f.modelType)) return false;
+      } else if (f.type === 'requireTypes') {
+        if (!models.every(m => (f.modelTypes as string[]).includes(m.statline?.type))) return false;
+      } else if (f.type === 'requireTypesForRule') {
+        // Exclude unit if any model has the specified rule but is not one of the allowed types
+        if (models.some(m => (m.specialRules || []).includes(f.rule) && !(f.allowedModelTypes as string[]).includes(m.statline?.type))) return false;
+      }
+    }
+    return true;
+  });
+}
+
 const TRANSPORTABLE_RULES = new Set(["infantry", "bulky", "very-bulky"]);
 
 function buildFOC(entries: any[], faction: any, subfaction: any, allUnits: any[] = [], battleLimit: number = 0, namedUpgrades: any = {}) {
@@ -766,6 +805,27 @@ function entryHasSteed(entry: any, unit: any, namedUpgrades: any = {}): boolean 
 
 function isRealWeapon(w) {
   return w?.profiles?.some(p => p.strength !== "-");
+}
+
+function weaponCategory(w: any): number {
+  if (!w || !isRealWeapon(w)) return 3;
+  const profiles = w.profiles || [];
+  const hasGrenade = profiles.some((p: any) => {
+    const rules = Array.isArray(p.rules) ? p.rules : (p.rules ? [p.rules] : []);
+    return rules.some((r: string) => /^Grenade\s+\d/i.test(r));
+  });
+  if (hasGrenade) return 1;
+  const allMelee = profiles.every((p: any) => !p.maxRange && !p.templateType);
+  if (allMelee) return 2;
+  return 0;
+}
+
+function sortWeapons<T>(items: T[], getWeapon: (item: T) => any, getName: (item: T) => string): T[] {
+  return [...items].sort((a, b) => {
+    const ca = weaponCategory(getWeapon(a)), cb = weaponCategory(getWeapon(b));
+    if (ca !== cb) return ca - cb;
+    return getName(a).localeCompare(getName(b));
+  });
 }
 
 function StatTable({ models, statDeltas = null, invSaves = null }: any) {
@@ -873,7 +933,19 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, e
   const [namesOnly, setNamesOnly] = useState(() => {
     try { return localStorage.getItem("alt40k-rules-names-only") === "1"; } catch { return false; }
   });
-  const [ruleDialog, setRuleDialog] = useState<{ name: string; desc: string } | null>(null);
+  const [openRule, setOpenRule] = useState<{ id: string; name: string; desc: string; x: number; y: number } | null>(null);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!openRule) return;
+    function onOutside(e: PointerEvent) {
+      // Let clicks on rule names pass through — their own click handler manages open/close
+      if ((e.target as HTMLElement).closest('.rule-name-clickable')) return;
+      if (popoverRef.current && !popoverRef.current.contains(e.target as Node)) setOpenRule(null);
+    }
+    document.addEventListener('pointerdown', onOutside);
+    return () => document.removeEventListener('pointerdown', onOutside);
+  }, [openRule]);
+
   function toggleNamesOnly(e: React.MouseEvent) {
     e.stopPropagation();
     setNamesOnly(v => {
@@ -934,7 +1006,13 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, e
               <div key={id} className="col-block-tight">
                 <li className="rules-detail-li" style={{listStyle:"none", padding:"1px 0", lineHeight:1.4}}>
                   {namesOnly && desc
-                    ? <span className="rule-name rule-name-clickable" onClick={() => setRuleDialog({ name: ruleName, desc })}>{ruleName}</span>
+                    ? <span className="rule-name rule-name-clickable" onClick={e => {
+                        if (openRule?.id === id) { setOpenRule(null); return; }
+                        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                        const x = Math.min(rect.left + window.scrollX, document.documentElement.scrollWidth - 292);
+                        const y = rect.bottom + window.scrollY + 5;
+                        setOpenRule({ id, name: ruleName, desc, x, y });
+                      }}>{ruleName}</span>
                     : <span className="rule-name">{ruleName}</span>
                   }
                   {modelNote && <span style={{fontSize:"8pt",color:"#888",marginLeft:4}}>({modelNote})</span>}
@@ -948,20 +1026,12 @@ function DetailSpecialRules({ unit, models, armyRules, coreRules, inlineRules, e
           })}
         </div>
       )}
-      {ruleDialog && (
-        <div className="lb-modal-overlay" onPointerDown={e => { if (e.target === e.currentTarget) setRuleDialog(null); }}>
-          <div className="lb-modal" style={{maxWidth:400}}>
-            <div className="lb-modal-sticky">
-              <div className="lb-modal-sticky-inner">
-                <div className="lb-modal-head">
-                  <span>{ruleDialog.name}</span>
-                  <button className="lb-icon-btn" onClick={() => setRuleDialog(null)}>✕</button>
-                </div>
-              </div>
-            </div>
-            <p style={{fontSize:"10pt",lineHeight:1.5,color:"#333",margin:"12px 0 0"}}>{ruleDialog.desc}</p>
-          </div>
-        </div>
+      {openRule && createPortal(
+        <div ref={popoverRef} className="rule-popover" style={{position:'absolute', left: openRule.x, top: openRule.y}}>
+          <div className="rule-popover-name">{openRule.name}</div>
+          <div className="rule-popover-desc">{openRule.desc}</div>
+        </div>,
+        document.body
       )}
     </>
   );
@@ -995,7 +1065,10 @@ function DetailOptionsSection({ unit, weapons, weaponLists, namedUpgrades, spell
   function WepProfileTable({ refs, showArc }) {
     const resolved = refs.map(r => ({ ...resolveRef(r), weapon: wepById(resolveRef(r).weaponId, weapons) }));
     const seenR = new Set<string>(); const seenP = new Set<string>();
-    const rows = resolved.filter(r => { if (!r.weapon || seenR.has(r.weaponId) || (!isRealWeapon(r.weapon) && !r.weapon.profiles?.some((p: any) => p.rules))) return false; seenR.add(r.weaponId); return true; });
+    const rows = sortWeapons(
+      resolved.filter(r => { if (!r.weapon || seenR.has(r.weaponId) || (!isRealWeapon(r.weapon) && !r.weapon.profiles?.some((p: any) => p.rules))) return false; seenR.add(r.weaponId); return true; }),
+      r => r.weapon, r => r.weapon?.name || ''
+    );
     const wargearOnly = resolved.filter(r => { if (!r.weapon || seenP.has(r.weaponId) || isRealWeapon(r.weapon) || r.weapon.profiles?.some((p: any) => p.rules)) return false; seenP.add(r.weaponId); return true; });
     if (!rows.length && !wargearOnly.length) return null;
     return (
@@ -1476,7 +1549,7 @@ function PlatoonUnitBlock({ pu, weapons, weaponLists, namedUpgrades, armyRules, 
   );
 }
 
-function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, collapsedSections, toggleSection, onAddToList }: any) {
+function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreRules, spellPools, hidden, collapsedSections, toggleSection, onAddToList, subfactions }: any) {
   const [platoonOpen, setPlatoonOpen] = useState(false);
   const rulesCollapsed = collapsedSections?.has("specialRules") ?? false;
   if (hidden) return null;
@@ -1516,9 +1589,12 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
     <div className="unit-block">
       <div className="unit-header">
         <div>
-          {unit.isUnique && <span style={{fontSize:"8pt",fontWeight:700,color:"#7a5800",marginLeft:6}}>UNIQUE</span>}
-          <div className="unit-name">{unit.name}</div>
+          <div className="unit-name">{unit.name}{unit.isUnique && <span style={{fontSize:"8pt",fontWeight:700,color:"#7a5800",marginLeft:8,verticalAlign:"middle"}}>UNIQUE</span>}</div>
           <div className="unit-comp">Composition: {compStr(unit.models)}</div>
+          {unit.chapterRestriction && (() => {
+            const sfName = (subfactions||[]).find((s:any) => s.id === unit.chapterRestriction)?.name ?? unit.chapterRestriction;
+            return <div style={{fontSize:"8.5pt",color:"#888",fontStyle:"italic",marginTop:2}}>This unit may only be taken by {sfName}</div>;
+          })()}
         </div>
         <div className="unit-pts-block">
           <div>
@@ -1530,11 +1606,6 @@ function UnitBlock({ unit, weapons, weaponLists, namedUpgrades, armyRules, coreR
           )}
         </div>
       </div>
-      {unit.chapterRestriction && (
-        <div style={{fontSize:"8.5pt",color:"#888",fontStyle:"italic",marginBottom:4}}>
-          Requires chapter: {unit.chapterRestriction}
-        </div>
-      )}
       <StatTable models={unit.models}/>
       <DetailSpecialRules unit={unit} models={unit.models} armyRules={armyRules} coreRules={coreRules} inlineRules={unit.inlineRules}
           collapsed={rulesCollapsed} onToggle={() => toggleSection("specialRules")}/>
@@ -1585,7 +1656,10 @@ function FOCSlotPanel({ foc, onAddUnit }: { foc: any[]; onAddUnit: (slot: string
 // No group = all models; named group = the champion model(s) in that group.
 function resolveChampionModelIds(opt: any, unit: any): string[] {
   const group: string | null = opt.upgradeGroup ?? null;
-  if (!group) return (unit.models || []).map((m: any) => m.id);
+  if (!group) {
+    if (opt.applies?.length) return opt.applies;
+    return (unit.models || []).map((m: any) => m.id);
+  }
   for (const o of (unit.options || [])) {
     if (o.upgradeGroup === group && o.applies?.length) return o.applies;
   }
@@ -1988,12 +2062,16 @@ function ResolvedWargearSection({ entry, unit, weapons, weaponLists, namedUpgrad
   function renderWeaponTable(refs: string[], weaponCounts?: Map<string, number>, totalCount?: number) {
     // Wargear with rules profiles go in the table; purely decorative wargear stays as pills.
     const seenT = new Set<string>(); const seenPill = new Set<string>();
-    const tableRefs = refs.filter(wid => {
-      if (seenT.has(wid)) return false;
-      const w = (weapons||[]).find((x: any) => x.id === wid);
-      if (w && (isRealWeapon(w) || w.profiles?.some((p: any) => p.rules))) { seenT.add(wid); return true; }
-      return false;
-    });
+    const tableRefs = sortWeapons(
+      refs.filter(wid => {
+        if (seenT.has(wid)) return false;
+        const w = (weapons||[]).find((x: any) => x.id === wid);
+        if (w && (isRealWeapon(w) || w.profiles?.some((p: any) => p.rules))) { seenT.add(wid); return true; }
+        return false;
+      }),
+      wid => (weapons||[]).find((x: any) => x.id === wid),
+      wid => (weapons||[]).find((x: any) => x.id === wid)?.name || wid
+    );
     const pillRefs = refs.filter(wid => {
       if (seenPill.has(wid)) return false;
       const w = (weapons||[]).find((x: any) => x.id === wid);
@@ -2159,7 +2237,13 @@ function BattleUnitBlock({ entry, displayName, unit, weapons, weaponLists, named
     }
   }
 
-  const effectiveModels = (unit.models || []).map((m: any) => {
+  const effectiveModels = (unit.models || [])
+    .filter((m: any) => {
+      if ((m.minCount ?? 0) > 0) return true;
+      const sqOpt = (unit.options || []).find((o: any) => o.type === "squadSize" && o.targetModelId === m.id);
+      return sqOpt ? (entry?.options?.[sqOpt.id] || 0) > 0 : false;
+    })
+    .map((m: any) => {
     const grants = modelGrantedRules.get(m.id);
     const removes = modelRemovedRules.get(m.id);
     if (!grants && !removes) return m;
@@ -2267,7 +2351,9 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
         const totalMax = minCount + o.max;
         const modelNamePlural = o.label.replace(/^Additional\s+/i, '');
         const minAdditional = minSquadSizeAdditional(unit, o, options);
+        const effectiveMax = squadSizeEffectiveMax(unit, o, options);
         const isBlocked = additional <= minAdditional;
+        const atEffectiveMax = additional >= effectiveMax;
         return (
           <div key={o.id} className="lb-opt-section">
             <div className="lb-opt-section-head">Squad Size</div>
@@ -2292,7 +2378,10 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                   )}
                 </div>
                 <span className="lb-num-val">{totalCount}</span>
-                <button className="lb-num-btn" onClick={() => setOptions((p: any) => ({...p, [o.id]: Math.min(o.max, (p[o.id]||0)+1)}))}>+</button>
+                <button className="lb-num-btn" style={atEffectiveMax ? {opacity:0.4,cursor:'not-allowed'} : undefined}
+                  onClick={() => {
+                    if (!atEffectiveMax) setOptions((p: any) => ({...p, [o.id]: Math.min(squadSizeEffectiveMax(unit, o, p), (p[o.id]||0)+1)}));
+                  }}>+</button>
                 <span className="lb-opt-pts">+{o.ptsEach} pts each</span>
               </div>
             </div>
@@ -3002,7 +3091,7 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose
   }, [options, perModelOptions]);
 
   function handleDone() {
-    if (onConfirm) onConfirm(selectedListId, options, perModelOptions);
+    if (onConfirm) { if (onConfirm(selectedListId, options, perModelOptions) === false) return; }
     onClose();
   }
 
@@ -3012,12 +3101,16 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose
         <div className="lb-modal-sticky-inner">
           <div className="lb-modal-head">
             <span>{unit.name}<span className="lb-modal-pts">{cost} pts</span></span>
-            {lists && lists.length > 0 && (
-              <select className="atl-select" style={{margin:0,flex:"0 1 200px"}} value={selectedListId} onChange={e => setSelectedListId(e.target.value)}>
-                {lists.map((l: any) => <option key={l.listId} value={l.listId}>{l.name}</option>)}
-              </select>
+            {lists && (
+              lists.length > 0
+                ? <select className="atl-select" style={{margin:0,flex:"0 1 200px"}} value={selectedListId} onChange={e => setSelectedListId(e.target.value)}>
+                    {lists.map((l: any) => <option key={l.listId} value={l.listId}>{l.name}</option>)}
+                  </select>
+                : <select className="atl-select" style={{margin:0,flex:"0 1 200px"}} disabled>
+                    <option>No lists for this faction</option>
+                  </select>
             )}
-            <button className="lb-btn" onClick={handleDone}>{onConfirm ? "Add" : "Done"}</button>
+            <button className="lb-btn" onClick={handleDone}>{onConfirm ? (lists && lists.length === 0 ? "Add to new list" : "Add") : "Done"}</button>
           </div>
           {unit.platoon
             ? <div className="lb-modal-sub">{unit.platoonComposition}</div>
@@ -3063,7 +3156,12 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose
 }
 
 function UnitPickerModal({ factionData, onSelect, onCancel, initialSlot, activeSubfaction }: any) {
-  const units = factionData.units || [];
+  const units = filterUnitsBySubfaction(
+    (factionData.units || []).filter(
+      (u: any) => !u.chapterRestriction || u.chapterRestriction === activeSubfaction?.id
+    ),
+    activeSubfaction
+  );
   const filtered = initialSlot
     ? units.filter((u: any) => effectiveSlot(u.id, u.slot, activeSubfaction) === initialSlot)
     : units;
@@ -3072,6 +3170,13 @@ function UnitPickerModal({ factionData, onSelect, onCancel, initialSlot, activeS
     const slot = effectiveSlot(u.id, u.slot, activeSubfaction);
     if (!grouped[slot]) grouped[slot] = [];
     grouped[slot].push(u);
+  }
+  for (const slot in grouped) {
+    grouped[slot].sort((a: any, b: any) => {
+      const aSpec = a.chapterRestriction === activeSubfaction?.id;
+      const bSpec = b.chapterRestriction === activeSubfaction?.id;
+      return aSpec === bSpec ? 0 : aSpec ? -1 : 1;
+    });
   }
 
   return (
@@ -3129,7 +3234,7 @@ function CoreRulesOverlay({ coreRules, onClose }: any) {
 
 
 function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedUpgrades, spellPools, armyRules, coreRules, faction, selectedSubfaction, setSelectedSubfaction, collapsedSections, toggleSection, lists, setLists, activeListId, setActiveListId }: any) {
-  const subfactions = faction.subfactions || [];
+  const subfactions = [...(faction.subfactions || [])].sort((a: any, b: any) => a.name.localeCompare(b.name));
   const sfLabel = faction.subfactionLabel || "Chapter";
   const lastPtsKey = "alt40k-last-pts";
   const getLastPts = () => { try { return parseInt(localStorage.getItem(lastPtsKey)||"") || 2000; } catch { return 2000; } };
@@ -3740,7 +3845,7 @@ function ListBuilderTab({ factionData, currentFile, weapons, weaponLists, namedU
 
 function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, selectedSubfaction, setSelectedSubfaction }) {
   const subfactionLabel = faction.subfactionLabel || "Chapter";
-  const subfactions = faction.subfactions || [];
+  const subfactions = [...(faction.subfactions || [])].sort((a: any, b: any) => a.name.localeCompare(b.name));
 
   function toggleUnit(id) {
     setHiddenUnits(prev => {
@@ -3811,7 +3916,9 @@ function OptionsPage({ faction, unitsBySlot, hiddenUnits, setHiddenUnits, select
 
 export default function App() {
   const [factionList, setFactionList] = useState(null);
-  const [factionData, setFactionData] = useState(null);
+  const [baseFactionData, setBaseFactionData] = useState(null);
+  const [supplementMap, setSupplementMap] = useState<Record<string, string>>({});
+  const [supplementCache, setSupplementCache] = useState<Record<string, { units: any[], commonWargear: any[] }>>({});
   const [coreRulesData, setCoreRulesData] = useState(null);
   const [currentFile, setCurrentFile] = useState(null);
   const [error, setError] = useState(null);
@@ -3836,12 +3943,34 @@ export default function App() {
   const [activeListId, setActiveListId] = useState<string|null>(null);
   const [addToListUnit, setAddToListUnit] = useState<any>(null);
   function setLists(next: any[]) { setListsRaw(next); if (currentFile) saveLists(currentFile, next); }
+  const [cursorToast, setCursorToast] = useState<{msg:string, x:number, y:number, key:number}|null>(null);
+  const mousePos = useRef<{x:number, y:number}>({x:0, y:0});
+  useEffect(() => {
+    const track = (e: MouseEvent) => { mousePos.current = {x: e.clientX, y: e.clientY}; };
+    window.addEventListener('mousemove', track);
+    return () => window.removeEventListener('mousemove', track);
+  }, []);
+  function showCursorToast(msg: string) {
+    setCursorToast({msg, x: mousePos.current.x, y: mousePos.current.y, key: Date.now()});
+    setTimeout(() => setCursorToast(null), 1900);
+  }
 
   const [pendingScroll, setPendingScroll] = useState<string|null>(null);
   const [pendingScrollY, setPendingScrollY] = useState<number|null>(null);
   const navWrapRef = useRef(null);
   const activePageRef = useRef(activePage);
   const scrollSaveTimer = useRef<ReturnType<typeof setTimeout>|null>(null);
+
+  const factionData = useMemo(() => {
+    if (!baseFactionData) return null;
+    const supp = selectedSubfaction ? supplementCache[selectedSubfaction] : null;
+    if (!supp) return baseFactionData;
+    return {
+      ...baseFactionData,
+      units: [...(baseFactionData.units || []), ...supp.units],
+      commonWargear: [...(baseFactionData.commonWargear || []), ...supp.commonWargear],
+    };
+  }, [baseFactionData, selectedSubfaction, supplementCache]);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}factions.json`)
@@ -3855,32 +3984,58 @@ export default function App() {
   }, [currentFile]);
 
   function confirmAddToList(unit: any, listId: string, options: any, perModelOptions: any) {
-    const list = lists.find((l: any) => l.listId === listId);
-    if (!list || !factionData) return;
-    const subfaction = (factionData.faction?.subfactions || []).find((s: any) => s.id === list.subfactionId) || null;
+    if (!factionData) return;
+    let targetListId = listId;
+    let updatedLists = lists;
+    if (!listId || !lists.some((l: any) => l.listId === listId)) {
+      const pts = (() => { try { return parseInt(localStorage.getItem("alt40k-last-pts") || "") || 2000; } catch { return 2000; } })();
+      const newList = { listId: genId(), name: "New List", subfactionId: selectedSubfaction, pointsTarget: pts, entries: [] };
+      updatedLists = [...lists, newList];
+      targetListId = newList.listId;
+      setActiveListId(newList.listId);
+    }
+    const targetList = updatedLists.find((l: any) => l.listId === targetListId)!;
+    if (unit.isUnique && (targetList.entries || []).some((e: any) => e.unitId === unit.id)) {
+      showCursorToast(`${unit.name} is already in this list`);
+      return false;
+    }
+    const subfaction = (factionData.faction?.subfactions || []).find((s: any) => s.id === targetList.subfactionId) || null;
     const slot = effectiveSlot(unit.id, unit.slot, subfaction);
     const entryId = genId();
     const newEntry = unit.platoon
       ? { entryId, unitId: unit.id, slot, squads: [] }
       : { entryId, unitId: unit.id, slot, options, perModelOptions };
-    setLists(lists.map((l: any) => l.listId === listId ? { ...l, entries: [...l.entries, newEntry] } : l));
+    setLists(updatedLists.map((l: any) => l.listId === targetListId ? { ...l, entries: [...l.entries, newEntry] } : l));
   }
 
-  function loadFaction(file) {
+  function loadFaction(entry: any) {
+    const file: string = typeof entry === 'string' ? entry : entry.file;
+    const supplements: Record<string, string> = (typeof entry === 'object' && entry.subfactionSupplements) || {};
     setLoading(true);
     setError(null);
-    const fetches = [fetch(`${import.meta.env.BASE_URL}${file}`).then(r => r.json())];
-    if (!coreRulesData) {
-      fetches.push(fetch(`${import.meta.env.BASE_URL}core-rules.json`).then(r => r.json()));
-    }
-    Promise.all(fetches)
-      .then(([faction, core]) => {
-        const saved = readState(file);
-        setFactionData(faction);
+    const saved = readState(file);
+    const savedSf = saved?.selectedSubfaction ?? "";
+    const factionFetch = fetch(`${import.meta.env.BASE_URL}${file}`).then(r => r.json());
+    const coreFetch = !coreRulesData
+      ? fetch(`${import.meta.env.BASE_URL}core-rules.json`).then(r => r.json())
+      : Promise.resolve(null);
+    const suppFetch = (savedSf && supplements[savedSf])
+      ? fetch(`${import.meta.env.BASE_URL}${supplements[savedSf]}`).then(r => r.json()).catch(() => null)
+      : Promise.resolve(null);
+    Promise.all([factionFetch, coreFetch, suppFetch])
+      .then(([faction, core, suppData]) => {
+        const initCache: Record<string, { units: any[], commonWargear: any[] }> = {};
+        if (suppData && savedSf) {
+          const suppUnits = (suppData.units || []).map((u: any) => ({ ...u, chapterRestriction: savedSf }));
+          initCache[savedSf] = { units: suppUnits, commonWargear: suppData.commonWargear || [] };
+        }
+        setBaseFactionData(faction);
+        setSupplementMap(supplements);
+        setSupplementCache(initCache);
         if (core) setCoreRulesData(core.rules || core);
         setCurrentFile(file);
         setHiddenUnits(saved?.hiddenUnits       ?? new Set());
-        setSelectedSubfaction(saved?.selectedSubfaction ?? "");
+        setSelectedSubfaction(savedSf);
         setActivePage(saved?.activePage         ?? "list-builder");
         setPendingScrollY(saved?.scrollY        ?? 0);
       })
@@ -3893,19 +4048,45 @@ export default function App() {
     const ro = new ResizeObserver(entries => setNavHeight(entries[0].contentRect.height));
     ro.observe(navWrapRef.current);
     return () => ro.disconnect();
-  }, [factionData]);
+  }, [baseFactionData]);
 
   const unitsBySlot = useMemo(() => {
     if (!factionData) return {};
     const activeSf = (factionData.faction?.subfactions || []).find((s: any) => s.id === selectedSubfaction) || null;
     const g: Record<string, any[]> = {};
-    for (const u of factionData.units||[]) {
+    const visibleUnits = filterUnitsBySubfaction(factionData.units || [], activeSf);
+    for (const u of visibleUnits) {
+      if (u.chapterRestriction && u.chapterRestriction !== selectedSubfaction) continue;
       const slot = effectiveSlot(u.id, u.slot, activeSf);
       if (!g[slot]) g[slot] = [];
       g[slot].push(u);
     }
+    for (const slot in g) {
+      g[slot].sort((a: any, b: any) => {
+        const aSpec = a.chapterRestriction === selectedSubfaction;
+        const bSpec = b.chapterRestriction === selectedSubfaction;
+        return aSpec === bSpec ? 0 : aSpec ? -1 : 1;
+      });
+    }
     return g;
   }, [factionData, selectedSubfaction]);
+
+  // Lazy-load supplement for the selected subfaction
+  useEffect(() => {
+    if (!selectedSubfaction || !supplementMap[selectedSubfaction]) return;
+    if (supplementCache[selectedSubfaction]) return;
+    const sfId = selectedSubfaction;
+    fetch(`${import.meta.env.BASE_URL}${supplementMap[sfId]}`)
+      .then(r => r.json())
+      .then(data => {
+        const suppUnits = (data.units || []).map((u: any) => ({ ...u, chapterRestriction: sfId }));
+        setSupplementCache(prev => {
+          if (prev[sfId]) return prev;
+          return { ...prev, [sfId]: { units: suppUnits, commonWargear: data.commonWargear || [] } };
+        });
+      })
+      .catch(() => {});
+  }, [selectedSubfaction, supplementMap]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Keep ref in sync so the scroll listener can read current activePage
   useEffect(() => { activePageRef.current = activePage; }, [activePage]);
@@ -3982,7 +4163,7 @@ export default function App() {
           : (
             <div style={{display:"flex",flexWrap:"wrap",gap:14,justifyContent:"center",maxWidth:640}}>
               {factionList.map((f, i) => (
-                <button key={i} onClick={() => loadFaction(f.file)}
+                <button key={i} onClick={() => loadFaction(f)}
                   style={{fontFamily:"'Rajdhani',sans-serif",fontSize:"14pt",fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",
                     background:"#111",color:"#c9a84c",border:"1px solid #444",borderRadius:4,padding:"14px 28px",
                     cursor:"pointer",transition:"background 0.15s, border-color 0.15s",minWidth:180}}
@@ -4168,7 +4349,7 @@ document.body.innerHTML+=body;`;
           <button className="nav-btn" onClick={openPrintTab} style={{color:"#888",borderColor:"#333"}}>
             ⎙ Print
           </button>
-          <button className="nav-btn" onClick={()=>{setFactionData(null);setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
+          <button className="nav-btn" onClick={()=>{setBaseFactionData(null);setSupplementMap({});setSupplementCache({});setCurrentFile(null);setError(null);}} style={{color:"#888",borderColor:"#333"}}>← Factions</button>
         </nav>
       </div>
 
@@ -4206,6 +4387,7 @@ document.body.innerHTML+=body;`;
                     hidden={hiddenUnits.has(unit.id)}
                     collapsedSections={collapsedSections} toggleSection={toggleSection}
                     onAddToList={setAddToListUnit}
+                    subfactions={factionData?.faction?.subfactions || []}
                   />
                 </div>
               ))}
@@ -4236,11 +4418,18 @@ document.body.innerHTML+=body;`;
         </div>
       </div>
 
+      {cursorToast && (
+        <div key={cursorToast.key} className="cursor-toast"
+          style={{left: Math.min(cursorToast.x + 14, window.innerWidth - 220), top: cursorToast.y - 30}}>
+          {cursorToast.msg}
+        </div>
+      )}
+
       {addToListUnit && factionData && (
         <AddEditEntryModal
           unit={addToListUnit}
           factionData={factionData}
-          lists={lists}
+          lists={lists.filter((l: any) => l.subfactionId === selectedSubfaction)}
           activeListId={activeListId}
           onConfirm={(listId: string, options: any, perModelOptions: any) =>
             confirmAddToList(addToListUnit, listId, options, perModelOptions)

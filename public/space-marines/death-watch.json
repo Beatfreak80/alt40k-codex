@@ -1,0 +1,1269 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "death_watch",
+  "commonWargear": [
+    {
+      "id": "rending-rampage",
+      "name": "Rending Rampage",
+      "profiles": [
+        {
+          "maxRange": 18,
+          "strength": "5",
+          "ap": "3+",
+          "rules": "Assault 6, Rending",
+          "castValue": 7
+        }
+      ]
+    },
+    {
+      "id": "special-issue-combi-flamer",
+      "name": "Special Issue Combi Flamer",
+      "profiles": [
+        {
+          "label": "Flame",
+          "templateType": "Flame",
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Assault 1"
+        },
+        {
+          "label": "Bolter",
+          "maxRange": 30,
+          "strength": "4",
+          "ap": "3+",
+          "rules": "Rapid Fire 1, Bolter"
+        }
+      ]
+    },
+    {
+      "id": "stasis-bomb-dw",
+      "name": "Stasis Bomb",
+      "profiles": [
+        {
+          "maxRange": 6,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Grenade 1, Nonblast, One Use Only, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "2-linked-blackstar-rocket-launchers",
+      "name": "2 Linked Blackstar Rocket Launchers",
+      "profiles": [
+        {
+          "maxRange": 30,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Heavy 1 x2, 5\" Blast"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "jensus-natorian",
+      "name": "Jensus Natorian",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 226,
+      "inlineRules": [
+        {
+          "id": "rampage-jensus",
+          "name": "Rampage",
+          "fullDesc": "This model gains A+d3 if it is outnumbered in Melee."
+        }
+      ],
+      "psychic": {
+        "masteryLevel": 2,
+        "spellPoolId": "librarius"
+      },
+      "models": [
+        {
+          "id": "jensus",
+          "name": "Jensus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "special-issue-bolt-pistol",
+            "force-sword",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo",
+            "psychic-hood",
+            "rending-rampage"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "rampage-jensus"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "jensus-spells",
+          "type": "spellPick",
+          "spellPoolId": "librarius"
+        }
+      ]
+    },
+    {
+      "id": "primaris-watch-master",
+      "name": "Primaris Watch Master",
+      "slot": "HQ",
+      "basePts": 217,
+      "inlineRules": [
+        {
+          "id": "pwm-battle-drills",
+          "name": "Battle Drills",
+          "fullDesc": "6\" Aura, this model and target unit may Reroll 1s To Hit."
+        },
+        {
+          "id": "pwm-orbital-note",
+          "name": "The Hour is Nigh",
+          "fullDesc": "When the weapon is fired, place a marker on field at a valid target. In your next Command Phase, the barrage strikes! Scatter like normal, following the 15\" Blast radius rules."
+        }
+      ],
+      "models": [
+        {
+          "id": "primaris-watch-master-model",
+          "name": "Watch Master",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "transhuman-physiology",
+            "night-vision",
+            "shock-assault",
+            "stubborn",
+            "very-bulky",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "pwm-ranged",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-watch-master-model"
+          ],
+          "label": "Swap Stormbolter for",
+          "replaces": "stormbolter",
+          "choices": [
+            {
+              "weaponId": "boltstorm-gauntlet",
+              "label": "Boltstorm Gauntlet",
+              "pts": 0
+            },
+            {
+              "weaponId": "mastercrafted-auto-bolt-rifle",
+              "label": "Mastercrafted Auto Bolt Rifle",
+              "pts": 2
+            },
+            {
+              "weaponId": "combi-flamer",
+              "label": "Combi-Flamer",
+              "pts": 4
+            },
+            {
+              "weaponId": "combi-grav",
+              "label": "Combi-Grav",
+              "pts": 6
+            },
+            {
+              "weaponId": "combi-plasma",
+              "label": "Combi-Plasma",
+              "pts": 6
+            },
+            {
+              "weaponId": "stalker-bolt-rifle",
+              "label": "Stalker Bolt Rifle",
+              "pts": 11
+            },
+            {
+              "weaponId": "combi-melta",
+              "label": "Combi-Melta",
+              "pts": 21
+            },
+            {
+              "weaponId": "orbital-strike",
+              "label": "Orbital Strike",
+              "pts": 133
+            }
+          ]
+        },
+        {
+          "id": "pwm-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-watch-master-model"
+          ],
+          "label": "Swap Bolt Pistol for",
+          "replaces": "bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "hand-flamer",
+              "label": "Hand Flamer",
+              "pts": 3
+            },
+            {
+              "weaponId": "plasma-pistol",
+              "label": "Plasma Pistol",
+              "pts": 7
+            },
+            {
+              "weaponId": "grav-pistol",
+              "label": "Grav Pistol",
+              "pts": 8
+            },
+            {
+              "weaponId": "neo-volkite-pistol",
+              "label": "Neo-Volkite Pistol",
+              "pts": 8
+            },
+            {
+              "weaponId": "inferno-pistol",
+              "label": "Inferno Pistol",
+              "pts": 24
+            }
+          ]
+        },
+        {
+          "id": "pwm-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-watch-master-model"
+          ],
+          "label": "Swap Combat Knife for",
+          "replaces": "combat-knife",
+          "choices": [
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            },
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 5
+            },
+            {
+              "weaponId": "xenophase-blade",
+              "label": "Xenophase Blade",
+              "pts": 7
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 16
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 28
+            }
+          ]
+        },
+        {
+          "id": "pwm-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-watch-master-model"
+          ],
+          "label": "Swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "pwm-stormshield",
+          "type": "toggle",
+          "label": "Storm Shield",
+          "pts": 12,
+          "grantsWargear": [
+            "stormshield"
+          ]
+        },
+        {
+          "id": "pwm-camo-cloak",
+          "type": "toggle",
+          "label": "Camo Cloak",
+          "pts": 8,
+          "grantsRules": [
+            "infiltrate",
+            "stealth"
+          ]
+        },
+        {
+          "id": "pwm-chapter-master",
+          "type": "namedUpgrade",
+          "upgradeId": "chapter-master",
+          "pts": 140
+        }
+      ]
+    },
+    {
+      "id": "watch-captain-artemis",
+      "name": "Watch Captain Artemis",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 225,
+      "inlineRules": [
+        {
+          "id": "tribal-savage",
+          "name": "Tribal Savage",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        }
+      ],
+      "models": [
+        {
+          "id": "artemis",
+          "name": "Artemis",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "special-issue-combi-flamer",
+            "special-issue-bolt-pistol",
+            "power-sword",
+            "frag-grenades",
+            "krak-grenades",
+            "stasis-bomb-dw"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "tribal-savage"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "artemis-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "artemis",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology"
+          ],
+          "note": "A+1. Gain 4+ Feel No Pain. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "watch-master",
+      "name": "Watch Master",
+      "slot": "HQ",
+      "basePts": 190,
+      "inlineRules": [
+        {
+          "id": "wm-battle-drills",
+          "name": "Battle Drills",
+          "fullDesc": "6\" Aura, this model and target unit may Reroll 1s To Hit."
+        }
+      ],
+      "models": [
+        {
+          "id": "watch-master-model",
+          "name": "Watch Master",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "wm-ranged",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "watch-master-model"
+          ],
+          "label": "Swap Stormbolter for",
+          "replaces": "stormbolter",
+          "choices": [
+            {
+              "weaponId": "mastercrafted-boltgun",
+              "label": "Mastercrafted Boltgun",
+              "pts": 1
+            },
+            {
+              "weaponId": "combi-flamer",
+              "label": "Combi-Flamer",
+              "pts": 4
+            },
+            {
+              "weaponId": "combi-grav",
+              "label": "Combi-Grav",
+              "pts": 6
+            },
+            {
+              "weaponId": "combi-plasma",
+              "label": "Combi-Plasma",
+              "pts": 6
+            },
+            {
+              "weaponId": "combi-melta",
+              "label": "Combi-Melta",
+              "pts": 21
+            }
+          ]
+        },
+        {
+          "id": "wm-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "watch-master-model"
+          ],
+          "label": "Swap Bolt Pistol for",
+          "replaces": "bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "hand-flamer",
+              "label": "Hand Flamer",
+              "pts": 3
+            },
+            {
+              "weaponId": "plasma-pistol",
+              "label": "Plasma Pistol",
+              "pts": 7
+            },
+            {
+              "weaponId": "grav-pistol",
+              "label": "Grav Pistol",
+              "pts": 8
+            },
+            {
+              "weaponId": "inferno-pistol",
+              "label": "Inferno Pistol",
+              "pts": 24
+            }
+          ]
+        },
+        {
+          "id": "wm-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "watch-master-model"
+          ],
+          "label": "Swap Combat Knife for",
+          "replaces": "combat-knife",
+          "choices": [
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            },
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 6
+            },
+            {
+              "weaponId": "xenophase-blade",
+              "label": "Xenophase Blade",
+              "pts": 7
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 8
+            },
+            {
+              "weaponId": "relic-blade",
+              "label": "Relic Blade",
+              "pts": 14
+            },
+            {
+              "weaponId": "guardian-spear",
+              "label": "Guardian Spear",
+              "pts": 16
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 16
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 28
+            },
+            {
+              "weaponId": "nemesis-thunderhammer",
+              "label": "Nemesis Thunderhammer",
+              "pts": 57
+            }
+          ]
+        },
+        {
+          "id": "wm-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "watch-master-model"
+          ],
+          "label": "Swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "wm-stormshield",
+          "type": "toggle",
+          "label": "Storm Shield",
+          "pts": 12,
+          "grantsWargear": [
+            "stormshield"
+          ]
+        },
+        {
+          "id": "wm-terminator",
+          "type": "namedUpgrade",
+          "upgradeId": "terminator-armour",
+          "pts": 7,
+          "upgradeGroup": "WM-Mount"
+        },
+        {
+          "id": "wm-jump-pack",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
+          "pts": 20,
+          "upgradeGroup": "WM-Mount"
+        },
+        {
+          "id": "wm-bike",
+          "type": "namedUpgrade",
+          "upgradeId": "bike",
+          "pts": 34,
+          "upgradeGroup": "WM-Mount"
+        },
+        {
+          "id": "wm-chapter-master",
+          "type": "namedUpgrade",
+          "upgradeId": "chapter-master",
+          "pts": 140
+        }
+      ]
+    },
+    {
+      "id": "antor-delassio",
+      "name": "Antor Delassio",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 150,
+      "inlineRules": [
+        {
+          "id": "rampage-antor",
+          "name": "Rampage",
+          "fullDesc": "This model gains A+d3 if it is outnumbered in Melee."
+        }
+      ],
+      "models": [
+        {
+          "id": "antor",
+          "name": "Antor",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "hand-flamer",
+            "chainsword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "flyer",
+            "furious-charge",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "rampage-antor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "edryc-setorax",
+      "name": "Edryc Setorax",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 167,
+      "inlineRules": [
+        {
+          "id": "unnatural-stealth",
+          "name": "Unnatural Stealth",
+          "fullDesc": "6\" Aura, this model and target unit gain Shroud."
+        }
+      ],
+      "models": [
+        {
+          "id": "edryc",
+          "name": "Edryc",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "dual-lightning-claws",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "flyer",
+            "objective-secured",
+            "shock-assault",
+            "unnatural-stealth"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "garran-branatar",
+      "name": "Garran Branatar",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 149,
+      "inlineRules": [
+        {
+          "id": "flamecraft",
+          "name": "Flamecraft",
+          "fullDesc": "This model may reroll failed To Wound rolls with Flame and Melta weapons."
+        }
+      ],
+      "models": [
+        {
+          "id": "garran",
+          "name": "Garran",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 3,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-flamer",
+            "meltagun",
+            "power-fist",
+            "terminator-honours"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "flamecraft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jetek-suberei",
+      "name": "Jetek Suberei",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 156,
+      "inlineRules": [
+        {
+          "id": "born-in-the-saddle",
+          "name": "Born in the Saddle",
+          "fullDesc": "6\" Aura, this model and target unit do not take Dangerous Terrain Tests."
+        },
+        {
+          "id": "jink-jetek",
+          "name": "Jink",
+          "fullDesc": "This model has a 5+ Invulnerability Save."
+        }
+      ],
+      "models": [
+        {
+          "id": "jetek",
+          "name": "Jetek",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 3,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "special-issue-stormbolter",
+            "power-sword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "steed",
+            "know-no-fear",
+            "furious-charge",
+            "hit-and-run",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "very-bulky",
+            "born-in-the-saddle",
+            "jink-jetek"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "venerable-dreadnought-nihilus",
+      "name": "Venerable Dreadnought Nihilus",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 268,
+      "inlineRules": [
+        {
+          "id": "thrice-blessed-hull",
+          "name": "Thrice Blessed Hull",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        },
+        {
+          "id": "venerable-nihilus",
+          "name": "Venerable",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Wound."
+        }
+      ],
+      "models": [
+        {
+          "id": "nihilus",
+          "name": "Nihilus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "FA": 13,
+            "SA": 12,
+            "RA": 10,
+            "W": 10,
+            "I": 4,
+            "A": 5,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "dreadnought-ccw-stormbolter",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "heavy-plasma-cannon",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ],
+          "specialRules": [
+            "independent-character",
+            "combat-walker",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "thrice-blessed-hull",
+            "venerable-nihilus"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "nihilus-extra-armour",
+          "type": "toggle",
+          "label": "Extra Armour",
+          "pts": 5,
+          "grantsWargear": [
+            "extra-armour"
+          ]
+        },
+        {
+          "id": "nihilus-smoke-launchers",
+          "type": "toggle",
+          "label": "Smoke Launchers",
+          "pts": 10,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "death-watch-terminators",
+      "name": "Death Watch Terminators",
+      "slot": "Elite",
+      "basePts": 643,
+      "models": [
+        {
+          "id": "dwt-sergeant",
+          "name": "Sergeant",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 3,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "power-sword",
+            "terminator-honours"
+          ],
+          "specialRules": [
+            "character",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "tactical-squads",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "very-bulky"
+          ]
+        },
+        {
+          "id": "dwt-terminator",
+          "name": "Terminator",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 127,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 3,
+            "I": 4,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "stormbolter",
+            "power-sword",
+            "terminator-honours"
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "tactical-squads",
+            "deepstrike",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "very-bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "dwt-add-terminators",
+          "type": "squadSize",
+          "label": "Add Terminators",
+          "targetModelId": "dwt-terminator",
+          "ptsEach": 127,
+          "max": 5
+        },
+        {
+          "id": "dwt-any-ranged",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "dwt-sergeant",
+            "dwt-terminator"
+          ],
+          "label": "Any model: swap Stormbolter for",
+          "replaces": "stormbolter",
+          "choices": [
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 0
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 6
+            },
+            {
+              "weaponId": "plasma-cannon",
+              "label": "Plasma Cannon",
+              "pts": 11
+            },
+            {
+              "weaponId": "cyclone-missile-launcher-and-stormbolter",
+              "label": "Cyclone Missile Launcher and Stormbolter",
+              "pts": 25
+            },
+            {
+              "weaponId": "stormshield",
+              "label": "Storm Shield",
+              "pts": 24
+            },
+            {
+              "weaponId": "assault-cannon",
+              "label": "Assault Cannon",
+              "pts": 39
+            }
+          ]
+        },
+        {
+          "id": "dwt-any-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "dwt-sergeant",
+            "dwt-terminator"
+          ],
+          "label": "Any model: swap Power Sword for",
+          "replaces": "power-sword",
+          "choices": [
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 0
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "chain-fist",
+              "label": "Chain Fist",
+              "pts": 15
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corvus-blackstar",
+      "name": "Corvus Blackstar",
+      "slot": "Flyer",
+      "basePts": 271,
+      "inlineRules": [
+        {
+          "id": "bike-transport",
+          "name": "Bike Transport",
+          "fullDesc": "This model may embark Steed units as if they were Very Bulky."
+        }
+      ],
+      "transport": {
+        "capacity": 12
+      },
+      "models": [
+        {
+          "id": "corvus-model",
+          "name": "Corvus Blackstar",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "vehicle",
+            "M": 50,
+            "WS": 5,
+            "BS": 3,
+            "S": 6,
+            "FA": 12,
+            "SA": 12,
+            "RA": 11,
+            "W": 14,
+            "I": 1,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-lascannons",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-linked-blackstar-rocket-launchers",
+              "arcType": "Hull"
+            }
+          ],
+          "specialRules": [
+            "adjusted-tactics",
+            "know-no-fear",
+            "deepstrike",
+            "high-altitude",
+            "hover",
+            "night-vision",
+            "shock-assault",
+            "bike-transport"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "cb-main-swap",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "corvus-model"
+          ],
+          "label": "Swap 2 Linked Lascannons for",
+          "replaces": "2-linked-lascannons",
+          "choices": [
+            {
+              "weaponId": "2-linked-assault-cannons",
+              "label": "2 Linked Assault Cannons",
+              "pts": 12,
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cb-wing-swap",
+          "type": "weaponSwap",
+          "scope": "unit",
+          "applies": [
+            "corvus-model"
+          ],
+          "label": "Swap 2 Linked Blackstar Rocket Launchers for",
+          "replaces": "2-linked-blackstar-rocket-launchers",
+          "choices": [
+            {
+              "weaponId": "2-stormstrike-missile-launchers",
+              "label": "2 Linked Stormstrike Missile Launchers",
+              "pts": 26,
+              "arcType": "Hull"
+            }
+          ]
+        },
+        {
+          "id": "cb-hurricane",
+          "type": "toggle",
+          "label": "Hurricane Bolter",
+          "pts": 10,
+          "grantsWargear": [
+            "hurricane-bolter"
+          ]
+        },
+        {
+          "id": "cb-flare-launchers",
+          "type": "toggle",
+          "label": "Flare Launchers",
+          "pts": 9,
+          "grantsWargear": [
+            "flare-launchers"
+          ]
+        }
+      ]
+    }
+  ]
+}

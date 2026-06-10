@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "alt40k-supplement-schema-v1.0.json",
+  "title": "Alt40k Supplement v1.0",
+  "description": "Subfaction-specific supplement: unique units and wargear merged into the parent faction at load time. Unit and Weapon types are imported by $ref from the main faction schema — no duplication.",
+  "type": "object",
+  "required": ["schemaVersion", "subfaction", "units"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "supplement-1.0"
+    },
+    "subfaction": {
+      "type": "string",
+      "description": "Must match a subfaction.id in the parent faction JSON. Applied as chapterRestriction on all units at load time."
+    },
+    "commonWargear": {
+      "type": "array",
+      "description": "Weapons unique to this supplement. To use a weapon already defined in the parent faction, reference it by ID — do not redeclare it here.",
+      "items": { "$ref": "alt40k-faction-schema-v1.3.json#/definitions/Weapon" }
+    },
+    "units": {
+      "type": "array",
+      "description": "Units exclusive to this subfaction. chapterRestriction is applied automatically by the app at load time; do not set it in the source JSON.",
+      "items": { "$ref": "alt40k-faction-schema-v1.3.json#/definitions/Unit" }
+    }
+  }
+}

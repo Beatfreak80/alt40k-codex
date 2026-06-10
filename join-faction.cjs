@@ -84,7 +84,8 @@ for (const filePath of files) {
 const factionId = merged.faction && merged.faction.id;
 if (!factionId) die('No faction.id found — make sure 01-meta.json contains "faction": { "id": "..." }');
 
-const outPath = path.join(ROOT, 'public', `${factionId}_faction.json`);
+// Write into the source subdirectory (which is now the faction's permanent home)
+const outPath = path.join(srcDir, `${factionId}_faction.json`);
 
 // ── Report ────────────────────────────────────────────────────────────────────
 console.log('Merge summary:');
@@ -108,4 +109,4 @@ if (dryRun) {
 // ── Write ─────────────────────────────────────────────────────────────────────
 fs.writeFileSync(outPath, JSON.stringify(merged, null, 2), 'utf8');
 console.log('[WRITE] Done. Run postprocess next:');
-console.log(`  node postprocess.cjs public/${factionId}_faction.json`);
+console.log(`  node postprocess.cjs ${path.relative(ROOT, outPath)}`);

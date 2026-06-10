@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "raven_guard",
+  "commonWargear": [
+    {
+      "id": "the-ravens-talons",
+      "name": "The Raven's Talons",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "3+",
+          "rules": "Extra Attack 1, Reroll failed To Wound rolls"
+        }
+      ]
+    },
+    {
+      "id": "claws-of-severax",
+      "name": "Claws of Severax",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "3+",
+          "rules": "Extra Attack 2, Reroll failed To Wound rolls"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "captain-shrike",
+      "name": "Captain Shrike",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 240,
+      "inlineRules": [
+        {
+          "id": "master-of-shadows",
+          "name": "Master of Shadows",
+          "fullDesc": "6\" Aura, this model and target unit may Charge after Deepstriking."
+        }
+      ],
+      "models": [
+        {
+          "id": "shrike",
+          "name": "Shrike",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "the-ravens-talons",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "flyer",
+            "objective-secured",
+            "shock-assault",
+            "shroud",
+            "battle-drills",
+            "master-of-shadows"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "shrike-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 18,
+          "statModifiers": [
+            {
+              "modelId": "shrike",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn. Lose Objective Secured, Grenades.",
+          "upgradeGroup": "Shrike"
+        },
+        {
+          "id": "shrike-chapter-master",
+          "type": "namedUpgrade",
+          "upgradeId": "chapter-master",
+          "pts": 140,
+          "upgradeGroup": "Shrike"
+        }
+      ]
+    },
+    {
+      "id": "chapter-master-shaan",
+      "name": "Chapter Master Shaan",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 409,
+      "inlineRules": [
+        {
+          "id": "rising-strike-leader",
+          "name": "Rising Strike Leader",
+          "fullDesc": "6\" Aura, this model and target unit may reroll failed Charges."
+        }
+      ],
+      "models": [
+        {
+          "id": "shaan",
+          "name": "Shaan",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 12,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-bolt-pistol",
+            "claws-of-severax",
+            "orbital-strike",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "transhuman-physiology",
+            "bulky",
+            "deepstrike",
+            "flyer",
+            "shock-assault",
+            "shroud",
+            "stubborn",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "rising-strike-leader"
+          ]
+        }
+      ]
+    }
+  ]
+}

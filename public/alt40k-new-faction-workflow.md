@@ -4,19 +4,20 @@
 > Also read `alt40k-faction-json-guide.md` in this directory.
 > This document covers the *project workflow* — the things not in those two docs.
 >
-> **Reference faction:** Use `necrons_faction.json` as your structural reference when building new factions. Do **not** load `space-marines_faction.json` as a reference — it is the largest faction file and will exceed the standard context window.
+> **Reference faction:** Use `necrons/necrons_faction.json` as your structural reference when building new factions. Do **not** load `space-marines/space-marines_faction.json` as a reference — it is the largest faction file and will exceed the standard context window.
 
 ---
 
 ## Quick start
 
 1. Read the source codex document in full before writing anything
-2. Create a working subfolder: `public/<faction-name>/`
+2. Create the faction's permanent subdirectory: `public/<faction-name>/`
 3. Write each section as a **separate numbered file** inside that folder (see [Batch authoring](#batch-authoring) below)
 4. When all sections are done, run `node join-faction.cjs public/<faction-name>/` to assemble them
-5. Run `node postprocess.cjs public/<faction-id>_faction.json` — fixes nulls, normalises rules, validates all refs
+   — output is written to `public/<faction-name>/<faction-id>_faction.json`
+5. Run `node postprocess.cjs public/<faction-name>/<faction-id>_faction.json` — fixes nulls, normalises rules, validates all refs
 6. Fix any ERRORs reported. WARNINGs and unmapped rule strings may need new core rules or are fine as readable text
-7. Add one line to `public/factions.json` — the faction appears in the selector automatically
+7. Add an entry to `public/factions.json` (see [File naming and registration](#file-naming-and-registration)) — the faction appears in the selector automatically
 
 ---
 
@@ -93,14 +94,100 @@ node postprocess.cjs public/<faction-id>_faction.json
 
 ---
 
+## Authoring a supplement (subfaction-specific units)
+
+Some subfactions have unique named characters that don't appear in the main faction codex. These live in **supplement JSON files** alongside the faction in its subdirectory.
+
+### When to use a supplement
+
+A supplement is appropriate when:
+- Units are exclusive to one subfaction (Lysander / Imperial Fists, Ragnar / Space Wolves)
+- The `.md` source document for that subfaction exists separately from the main codex
+
+Subfactions that only have chapter rules (no extra units) need **no supplement file** — their rules already live in `faction.subfactions[].rules[]` inside the main faction JSON.
+
+### Supplement JSON format
+
+```json
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "imperial_fists",
+  "commonWargear": [
+    { "id": "fist-of-dorn", "name": "Fist of Dorn", "profiles": [...] }
+  ],
+  "units": [
+    {
+      "id": "lysander",
+      "name": "Lysander",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 305,
+      "models": [...],
+      "options": [...]
+    }
+  ]
+}
+```
+
+Rules:
+- `subfaction` must match a `subfaction.id` in the parent faction's JSON. The app auto-applies this as `chapterRestriction` on every unit at load time.
+- `commonWargear` lists only weapons **unique to this supplement**. To reference weapons already defined in the parent faction, use their IDs directly in unit `baseWargear` and option `choices` — they will be resolved at load time.
+- `units` follows exactly the same format as units in the main faction JSON. See the guide for full field documentation.
+- Omit `armyRules`, `namedUpgrades`, `weaponLists`, `spellPools` — these are inherited from the parent faction.
+
+### Validating a supplement
+
+```
+node postprocess.cjs public/space-marines/imperial-fist.json \
+  --supplement public/space-marines/space-marines_faction.json
+```
+
+The postprocessor merges parent weapon and rule IDs before validation so references to parent-faction weapons resolve correctly.
+
+### Registering a supplement
+
+Add it to `subfactionSupplements` in `public/factions.json` (see [File naming and registration](#file-naming-and-registration)). The app fetches it automatically when the faction loads.
+
+---
+
 ## File naming and registration
 
-- Faction file: `public/<kebab-name>_faction.json` (e.g. `eldar_faction.json`)
-- Register in `public/factions.json`:
-  ```json
-  { "name": "Eldar", "file": "eldar_faction.json" }
-  ```
-- No code changes needed.
+Each faction lives in its own permanent subdirectory:
+
+```
+public/
+  eldar/
+    eldar-codex.md
+    eldar_faction.json
+  space-marines/
+    space-marines-codex.md
+    space-marines_faction.json
+    imperial-fist.md        ← supplement source doc
+    imperial-fist.json      ← supplement data file
+    space-wolves.md
+    space-wolves.json
+```
+
+Register the faction in `public/factions.json`. For factions with no supplements:
+```json
+{ "name": "Eldar", "file": "eldar/eldar_faction.json" }
+```
+
+For factions with supplement files, add `subfactionSupplements` (optional — omit if no supplements exist):
+```json
+{
+  "name": "Space Marines",
+  "file": "space-marines/space-marines_faction.json",
+  "subfactionSupplements": {
+    "imperial_fists": "space-marines/imperial-fist.json",
+    "space_wolves":   "space-marines/space-wolves.json"
+  }
+}
+```
+
+Keys in `subfactionSupplements` must match a `subfaction.id` in the faction's JSON. Subfactions without supplement files need no entry here — they can have rules in the main faction JSON but no extra units.
+
+No code changes needed.
 
 ---
 
@@ -294,6 +381,13 @@ Storage and display:
 - Set `subfactionLabel` (e.g. `"Dynasty"`, `"Craft World"`, `"Chapter"`)
 - Write each subfaction's `rules[]` with `id`, `name`, `fullDesc` (verbatim from codex)
 - The same rule ID can appear in multiple subfactions (each is scoped to its subfaction)
+- For any subfaction whose rules **restrict which units may be taken** (e.g. "may only include
+  models with X rule", "may not field any Y models"), also add a `listBuildingFilters[]` entry
+  on that subfaction. Rule text in `rules[]` is display-only; `listBuildingFilters` is what
+  the app enforces. See the guide's *Subfaction list-building filters* section for the three
+  supported filter types (`requireRule`, `excludeType`, `requireTypes`, `requireTypesForRule`) and real examples.
+- For any subfaction that reclassifies units into different slots (e.g. "Scouts may be taken
+  as Troops"), add `slotReclassifications[]` to that subfaction.
 - Set `slotLimits` — three slots are always `[0, null]` (dynamic, same for every faction):
   `"Advisor"`, `"Ded. Transport"`, `"Fortification"`. The app computes their
   max at runtime (3 per Troop / 1 per transportable unit / 1 per 1000 pts).
@@ -339,6 +433,18 @@ For each unit:
 - Write identity fields (`id`, `name`, `slot`, `basePts`)
 - Write `inlineRules[]` for rules unique to this unit
 - Write each model in `models[]` with statline and baseWargear
+- **For every model where `maxCount > minCount`** — add a `squadSize` option to `options[]`. Without this the list builder shows no +/- controls and the squad size is frozen at `minCount`. Use:
+  ```json
+  {
+    "id": "<unit-id>-<model-id>-sq",
+    "type": "squadSize",
+    "label": "Additional <ModelName>",
+    "targetModelId": "<model-id>",
+    "ptsEach": <model.ptsEach>,
+    "max": <maxCount - minCount>
+  }
+  ```
+  Place `squadSize` options first in the `options[]` array, before weapon swaps and toggles.
 - Add `transport` block if applicable (omit otherwise)
 - Add `psychic` block if applicable (omit otherwise)
 - Write `options[]` — prefer `namedUpgrade` and `weaponListId` over duplicating inline
@@ -379,7 +485,13 @@ Codex documents (especially markdown conversions) contain frequent formatting ar
 
 After writing the JSON, always run:
 ```
-node postprocess.cjs public/<faction>_faction.json
+node postprocess.cjs public/<faction-name>/<faction-id>_faction.json
+```
+
+For supplement files, pass `--supplement` with the parent faction path so weapon and rule IDs from the parent are available for validation:
+```
+node postprocess.cjs public/space-marines/imperial-fist.json \
+  --supplement public/space-marines/space-marines_faction.json
 ```
 
 The postprocessor:
@@ -441,6 +553,7 @@ Per-model toggle cost: each model that selects an upgrade contributes that upgra
 
 The postprocessor covers most of these automatically, but keep them in mind while writing:
 
+- [ ] Every model where `maxCount > minCount` has a `squadSize` option with `targetModelId` = that model's id, `ptsEach` matching `model.ptsEach`, and `max` = `maxCount − minCount`
 - [ ] Every `weaponId` in `baseWargear`, `choices[]`, `weaponLists` exists in `commonWargear`
 - [ ] Every rule ID in `specialRules` exists in `core-rules.json`, `armyRules`, or the unit's `inlineRules`
 - [ ] Every `spellPoolId` exists in `spellPools` (or is the literal `"$mark"` for Chaos)
@@ -453,4 +566,7 @@ The postprocessor covers most of these automatically, but keep them in mind whil
 - [ ] `chapterRestriction` values match a subfaction `id`
 - [ ] Per-model toggle groups (`exclusiveGroup` + `applies`): `applies` is present on **every** option in the group and all reference the same model id
 - [ ] `mutuallyExcludes` arrays are symmetric — if A excludes B, B must also exclude A
-- [ ] Faction registered in `public/factions.json`
+- [ ] Faction registered in `public/factions.json` with correct subdirectory path (e.g. `"file": "eldar/eldar_faction.json"`)
+- [ ] If supplement files exist, `subfactionSupplements` keys match real subfaction IDs in the faction JSON
+- [ ] Subfactions with unit inclusion restrictions ("may only include X", "may not field Y") have `listBuildingFilters[]` entries — not just rule text
+- [ ] Subfactions with slot reclassifications ("may be taken as Troops") have `slotReclassifications[]` entries

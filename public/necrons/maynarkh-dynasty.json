@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "maynarkh",
+  "commonWargear": [
+    {
+      "id": "obsidax",
+      "name": "Obsidax",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "2+"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "kutlakh-the-world-killer",
+      "name": "Kutlakh the World Killer",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 212,
+      "inlineRules": [
+        {
+          "id": "kutlakh-ancient-duelist",
+          "name": "Ancient Duelist",
+          "fullDesc": "This model must accept all Challenges and must issue Challenges whenever possible that must be accepted. Kutlakh may reroll all To Hit and To Wound rolls when in a Challenge."
+        },
+        {
+          "id": "kutlakh-splinter-of-madness",
+          "name": "Splinter of Madness",
+          "fullDesc": "Any unit this model joins suffers Ld-2. No unit may use Kutlakh's Ld."
+        },
+        {
+          "id": "kutlakh-mwbd",
+          "name": "My Will Be Done",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1's To Hit."
+        },
+        {
+          "id": "kutlakh-rm",
+          "name": "Relentless March",
+          "fullDesc": "6\" Aura, this model and target unit gain M+2."
+        }
+      ],
+      "models": [
+        {
+          "id": "kutlakh",
+          "name": "Kutlakh",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 5,
+            "T": 5,
+            "W": 7,
+            "I": 2,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "obsidax",
+            "staff-of-light",
+            "phase-shifter"
+          ],
+          "specialRules": [
+            "independent-character",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "kutlakh-ancient-duelist",
+            "kutlakh-splinter-of-madness",
+            "kutlakh-mwbd",
+            "kutlakh-rm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toholk-the-blinded",
+      "name": "Toholk the Blinded",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 184,
+      "inlineRules": [
+        {
+          "id": "toholk-eternal-engines",
+          "name": "Eternal Engines",
+          "fullDesc": "Repair target Vehicle or Titanic Vehicle D3 Wounds."
+        },
+        {
+          "id": "toholk-predictive-strategist",
+          "name": "Predictive Strategist",
+          "fullDesc": "After both sides Deploy, but before the Infiltration step, remove D3 friendly units from the battlefield and redeploy them."
+        }
+      ],
+      "models": [
+        {
+          "id": "toholk",
+          "name": "Toholk",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 4,
+            "WS": 3,
+            "BS": 5,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 2,
+            "A": 1,
+            "Ld": 10,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "cutting-beam",
+            "aeon-staff",
+            "timesplinter-mantle",
+            "chronometron"
+          ],
+          "specialRules": [
+            "independent-character",
+            "living-metal",
+            "reanimation",
+            "fearless",
+            "soulless-machine",
+            "toholk-eternal-engines",
+            "toholk-predictive-strategist"
+          ]
+        }
+      ]
+    }
+  ]
+}

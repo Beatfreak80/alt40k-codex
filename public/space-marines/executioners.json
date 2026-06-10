@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "executioners",
+  "commonWargear": [
+    {
+      "id": "the-life-taker",
+      "name": "The Life Taker",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Auxiliary, Extra Attack 1"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "high-chaplain-thulsa-kane",
+      "name": "High Chaplain Thulsa Kane",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 286,
+      "inlineRules": [
+        {
+          "id": "aenigmata-ferrum",
+          "name": "Aenigmata Ferrum",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Wound."
+        },
+        {
+          "id": "honour-of-the-chapter",
+          "name": "Honour of the Chapter",
+          "fullDesc": "6\" Aura, this model and target unit gain Stubborn."
+        },
+        {
+          "id": "litany-of-intimidation-exc",
+          "name": "Litany of Intimidation",
+          "fullDesc": "6\" Aura, target unit takes Ld Tests on 3d6, discarding the lowest die."
+        },
+        {
+          "id": "grehdalins-bones",
+          "name": "Grehdalin's Bones",
+          "fullDesc": "Enemy models cannot reroll To Wound this model."
+        }
+      ],
+      "models": [
+        {
+          "id": "thulsa",
+          "name": "Thulsa",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "plasma-pistol",
+            "crozium-arcanum",
+            "the-life-taker",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "canticle-of-hate",
+            "zealot",
+            "aenigmata-ferrum",
+            "honour-of-the-chapter",
+            "litany-of-intimidation-exc",
+            "grehdalins-bones"
+          ]
+        }
+      ]
+    }
+  ]
+}

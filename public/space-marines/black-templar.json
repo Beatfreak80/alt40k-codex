@@ -1,0 +1,1256 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "black_templar",
+  "commonWargear": [
+    {
+      "id": "relics-of-helsreach",
+      "name": "Relics of Helsreach",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "6\" Aura, this unit and target unit gain 5+ Feel No Pain or +1 to their Feel No Pain. Feel No Pains cannot get better than 4+."
+        }
+      ]
+    },
+    {
+      "id": "sword-of-the-high-marshals",
+      "name": "Sword of the High Marshals",
+      "profiles": [
+        {
+          "strength": "+1",
+          "ap": "2+",
+          "rules": "Extra Attack 2"
+        }
+      ]
+    },
+    {
+      "id": "the-black-sword",
+      "name": "The Black Sword",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "armour-of-faith",
+      "name": "Armour of Faith",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Invulnerability Save"
+        }
+      ]
+    },
+    {
+      "id": "dual-lightning-claws-bt",
+      "name": "Dual Lightning Claws",
+      "profiles": [
+        {
+          "strength": "User",
+          "ap": "3+",
+          "rules": "Extra Attack 1, Reroll failed To Hit and To Wound rolls"
+        }
+      ],
+      "removesWargear": [
+        "chainsword"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "grimaldus",
+      "name": "Grimaldus",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 301,
+      "inlineRules": [
+        {
+          "id": "litany-of-faith-gri",
+          "name": "Litany of Faith",
+          "fullDesc": "6\" Aura, target unit gains 5+ Invulnerability Save."
+        },
+        {
+          "id": "unmatched-zeal",
+          "name": "Unmatched Zeal",
+          "fullDesc": "6\" Aura, this model and target unit reroll failed To Hit rolls in Melee on the turn they count as Charging."
+        },
+        {
+          "id": "you-swore-to-me",
+          "name": "You Swore to Me",
+          "fullDesc": "48\" Aura, target unit that is not Grimaldus does not count as Destroyed on a 4+ for the purpose of claiming Victory Points by the Opponent."
+        }
+      ],
+      "models": [
+        {
+          "id": "grimaldus-model",
+          "name": "Grimaldus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "plasma-pistol",
+            "crozium-arcanum",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "objective-secured",
+            "shock-assault",
+            "canticle-of-hate",
+            "litany-of-faith-gri",
+            "unmatched-zeal",
+            "you-swore-to-me"
+          ]
+        },
+        {
+          "id": "cenobyte-servitor",
+          "name": "Cenobyte Servitor",
+          "minCount": 0,
+          "maxCount": 4,
+          "ptsEach": 21,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 4,
+            "BS": 4,
+            "S": 4,
+            "T": 4,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 8,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "relics-of-helsreach"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "gri-servitors",
+          "type": "squadSize",
+          "label": "Add Cenobyte Servitors",
+          "targetModelId": "cenobyte-servitor",
+          "ptsEach": 21,
+          "max": 4
+        },
+        {
+          "id": "gri-jump-pack",
+          "type": "namedUpgrade",
+          "upgradeId": "jump-pack",
+          "pts": 20,
+          "upgradeGroup": "Grimaldus"
+        },
+        {
+          "id": "gri-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 26,
+          "statModifiers": [
+            {
+              "modelId": "grimaldus-model",
+              "stat": "W",
+              "op": "add",
+              "value": 1
+            },
+            {
+              "modelId": "grimaldus-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "bulky"
+          ],
+          "note": "W+1, A+1. Gain 5+ Feel No Pain, Bulky. Lose Objective Secured.",
+          "upgradeGroup": "Grimaldus"
+        }
+      ]
+    },
+    {
+      "id": "high-marshal-helbrecht",
+      "name": "High Marshal Helbrecht",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 531,
+      "inlineRules": [
+        {
+          "id": "crusade-of-wrath",
+          "name": "Crusade of Wrath",
+          "fullDesc": "6\" Aura, this model and target unit may reroll all failed Charge rolls."
+        },
+        {
+          "id": "master-of-the-fleet",
+          "name": "Master of the Fleet",
+          "fullDesc": "Helbrecht's Orbital Strikes are not One Use Only."
+        }
+      ],
+      "models": [
+        {
+          "id": "helbrecht",
+          "name": "Helbrecht",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 7,
+            "I": 5,
+            "A": 5,
+            "Ld": 11,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "combi-melta",
+            "sword-of-the-high-marshals",
+            "frag-grenades",
+            "krak-grenades",
+            "orbital-strike",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "deepstrike",
+            "furious-charge",
+            "night-vision",
+            "shock-assault",
+            "steady",
+            "very-bulky",
+            "battle-drills",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "crusade-of-wrath",
+            "master-of-the-fleet"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "hel-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 13,
+          "statModifiers": [
+            {
+              "modelId": "helbrecht",
+              "stat": "M",
+              "op": "add",
+              "value": 2
+            },
+            {
+              "modelId": "helbrecht",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology"
+          ],
+          "note": "M+2, A+1. Gain 5+ Feel No Pain. Lose Deepstrike, Steady."
+        }
+      ]
+    },
+    {
+      "id": "emperors-champion",
+      "name": "Emperor's Champion",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 200,
+      "models": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 6,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "the-black-sword",
+            "frag-grenades",
+            "krak-grenades",
+            "armour-of-faith"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "counterattack",
+            "objective-secured",
+            "shock-assault",
+            "chapter-champion-glory",
+            "glory-hunter"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "champ-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 16,
+          "statModifiers": [
+            {
+              "modelId": "champion",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "bulky",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Bulky, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "crusader-squad",
+      "name": "Crusader Squad",
+      "slot": "Troop",
+      "basePts": 199,
+      "models": [
+        {
+          "id": "crusader-sword-brother",
+          "name": "Sword Brother",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 2,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "boltgun",
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "know-no-fear",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "tactical-squads",
+            "night-vision",
+            "objective-secured",
+            "shock-assault"
+          ]
+        },
+        {
+          "id": "initiate",
+          "name": "Initiate",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 39,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 1,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "boltgun",
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "know-no-fear",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "tactical-squads",
+            "night-vision",
+            "objective-secured",
+            "shock-assault"
+          ]
+        },
+        {
+          "id": "neophyte",
+          "name": "Neophyte",
+          "minCount": 0,
+          "maxCount": 10,
+          "ptsEach": 33,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 1,
+            "Ld": 8,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "shotgun",
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "know-no-fear",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "tactical-squads",
+            "night-vision",
+            "objective-secured",
+            "shock-assault"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "cs-add-initiates",
+          "type": "squadSize",
+          "label": "Add Initiates",
+          "targetModelId": "initiate",
+          "ptsEach": 39,
+          "max": 5
+        },
+        {
+          "id": "cs-add-neophytes",
+          "type": "squadSize",
+          "label": "Add Neophytes",
+          "targetModelId": "neophyte",
+          "ptsEach": 33,
+          "max": 10
+        },
+        {
+          "id": "cs-sb-boltgun",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "crusader-sword-brother"
+          ],
+          "label": "Sword Brother: swap Boltgun for",
+          "replaces": "boltgun",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "stormbolter",
+              "label": "Stormbolter",
+              "pts": 2
+            },
+            {
+              "weaponId": "combi-flamer",
+              "label": "Combi-Flamer",
+              "pts": 6
+            },
+            {
+              "weaponId": "combi-grav",
+              "label": "Combi-Grav",
+              "pts": 8
+            },
+            {
+              "weaponId": "combi-plasma",
+              "label": "Combi-Plasma",
+              "pts": 8
+            },
+            {
+              "weaponId": "combi-melta",
+              "label": "Combi-Melta",
+              "pts": 23
+            },
+            {
+              "weaponId": "hand-flamer",
+              "label": "Hand Flamer",
+              "pts": 3
+            },
+            {
+              "weaponId": "plasma-pistol",
+              "label": "Plasma Pistol",
+              "pts": 7
+            },
+            {
+              "weaponId": "grav-pistol",
+              "label": "Grav Pistol",
+              "pts": 8
+            },
+            {
+              "weaponId": "inferno-pistol",
+              "label": "Inferno Pistol",
+              "pts": 24
+            },
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            },
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 4
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 18
+            },
+            {
+              "weaponId": "stormshield",
+              "label": "Storm Shield",
+              "pts": 10
+            }
+          ]
+        },
+        {
+          "id": "cs-sb-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "crusader-sword-brother"
+          ],
+          "label": "Sword Brother: swap Bolt Pistol for",
+          "replaces": "bolt-pistol",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "hand-flamer",
+              "label": "Hand Flamer",
+              "pts": 3
+            },
+            {
+              "weaponId": "plasma-pistol",
+              "label": "Plasma Pistol",
+              "pts": 7
+            },
+            {
+              "weaponId": "grav-pistol",
+              "label": "Grav Pistol",
+              "pts": 8
+            },
+            {
+              "weaponId": "inferno-pistol",
+              "label": "Inferno Pistol",
+              "pts": 24
+            },
+            {
+              "weaponId": "combat-knife",
+              "label": "Combat Knife",
+              "pts": 0
+            },
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            },
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 4
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 18
+            }
+          ]
+        },
+        {
+          "id": "cs-sb-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "crusader-sword-brother"
+          ],
+          "label": "Sword Brother: swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "cs-init-boltgun",
+          "type": "weaponSwap",
+          "scope": "limitedSlot",
+          "slots": 2,
+          "applies": [
+            "initiate"
+          ],
+          "label": "Up to 2 Initiates: swap Boltgun for",
+          "replaces": "boltgun",
+          "choices": [
+            {
+              "weaponId": "flamer",
+              "label": "Flamer",
+              "pts": 4
+            },
+            {
+              "weaponId": "grav-gun",
+              "label": "Grav Gun",
+              "pts": 6
+            },
+            {
+              "weaponId": "plasma-gun",
+              "label": "Plasma Gun",
+              "pts": 6
+            },
+            {
+              "weaponId": "meltagun",
+              "label": "Meltagun",
+              "pts": 21
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 7
+            },
+            {
+              "weaponId": "heavy-bolter",
+              "label": "Heavy Bolter",
+              "pts": 9
+            },
+            {
+              "weaponId": "plasma-cannon",
+              "label": "Plasma Cannon",
+              "pts": 14
+            },
+            {
+              "weaponId": "grav-cannon",
+              "label": "Grav Cannon",
+              "pts": 14
+            },
+            {
+              "weaponId": "missile-launcher",
+              "label": "Missile Launcher",
+              "pts": 19
+            },
+            {
+              "weaponId": "lascannon",
+              "label": "Lascannon",
+              "pts": 21
+            },
+            {
+              "weaponId": "multimelta",
+              "label": "Multimelta",
+              "pts": 27
+            },
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            },
+            {
+              "weaponId": "lightning-claw",
+              "label": "Lightning Claw",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 4
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 10
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 18
+            }
+          ]
+        },
+        {
+          "id": "cs-init-knife",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "initiate"
+          ],
+          "label": "Any Initiate: swap Combat Knife for Chainsword",
+          "replaces": "combat-knife",
+          "choices": [
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            }
+          ]
+        },
+        {
+          "id": "cs-neo-shotgun",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "neophyte"
+          ],
+          "label": "Any Neophyte: swap Shotgun for Boltgun",
+          "replaces": "shotgun",
+          "choices": [
+            {
+              "weaponId": "boltgun",
+              "label": "Boltgun",
+              "pts": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "primaris-crusader-squad",
+      "name": "Primaris Crusader Squad",
+      "slot": "Troop",
+      "basePts": 204,
+      "models": [
+        {
+          "id": "primaris-sword-brother",
+          "name": "Sword Brother",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 3,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-bolt-pistol",
+            "power-sword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "know-no-fear",
+            "bolter-discipline",
+            "transhuman-physiology",
+            "bulky",
+            "night-vision",
+            "shock-assault",
+            "stubborn"
+          ]
+        },
+        {
+          "id": "primaris-initiate",
+          "name": "Initiate",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 40,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 2,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "know-no-fear",
+            "bolter-discipline",
+            "transhuman-physiology",
+            "bulky",
+            "night-vision",
+            "shock-assault",
+            "stubborn"
+          ]
+        },
+        {
+          "id": "primaris-neophyte",
+          "name": "Neophyte",
+          "minCount": 0,
+          "maxCount": 10,
+          "ptsEach": 35,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 2,
+            "Ld": 8,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "chainsword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "know-no-fear",
+            "bolter-discipline",
+            "transhuman-physiology",
+            "bulky",
+            "night-vision",
+            "shock-assault",
+            "stubborn"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "pcs-add-initiates",
+          "type": "squadSize",
+          "label": "Add Initiates",
+          "targetModelId": "primaris-initiate",
+          "ptsEach": 40,
+          "max": 5
+        },
+        {
+          "id": "pcs-add-neophytes",
+          "type": "squadSize",
+          "label": "Add Neophytes",
+          "targetModelId": "primaris-neophyte",
+          "ptsEach": 35,
+          "max": 10
+        },
+        {
+          "id": "pcs-sb-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-sword-brother"
+          ],
+          "label": "Sword Brother: swap Heavy Bolt Pistol for",
+          "replaces": "heavy-bolt-pistol",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "pyre-pistol",
+              "label": "Pyre Pistol",
+              "pts": 5
+            },
+            {
+              "weaponId": "plasma-pistol",
+              "label": "Plasma Pistol",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "pcs-sb-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-sword-brother"
+          ],
+          "label": "Sword Brother: swap Power Sword for",
+          "replaces": "power-sword",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 1
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Power Fist",
+              "pts": 7
+            }
+          ]
+        },
+        {
+          "id": "pcs-sb-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-sword-brother"
+          ],
+          "label": "Sword Brother: swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "pcs-init-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-initiate"
+          ],
+          "label": "Any Initiate: swap Heavy Bolt Pistol for",
+          "replaces": "heavy-bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "auto-bolt-rifle",
+              "label": "Auto Bolt Rifle",
+              "pts": 1
+            },
+            {
+              "weaponId": "pyre-pistol",
+              "label": "Pyre Pistol",
+              "pts": 4
+            },
+            {
+              "weaponId": "heavy-flamer",
+              "label": "Heavy Flamer",
+              "pts": 6
+            }
+          ]
+        },
+        {
+          "id": "pcs-init-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-initiate"
+          ],
+          "label": "Any Initiate: swap Combat Knife for",
+          "replaces": "combat-knife",
+          "choices": [
+            {
+              "weaponId": "chainsword",
+              "label": "Chainsword",
+              "pts": 0
+            },
+            {
+              "weaponId": "power-fist",
+              "label": "Powerfist",
+              "pts": 10
+            }
+          ]
+        },
+        {
+          "id": "pcs-neo-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "primaris-neophyte"
+          ],
+          "label": "Any Neophyte: swap Bolt Pistol for",
+          "replaces": "bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "shotgun",
+              "label": "Shotgun",
+              "pts": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sword-brethren",
+      "name": "Sword Brethren",
+      "slot": "Elite",
+      "basePts": 272,
+      "models": [
+        {
+          "id": "sb-sergeant",
+          "name": "Sergeant",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-bolt-pistol",
+            "chainsword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "character",
+            "know-no-fear",
+            "transhuman-physiology",
+            "bulky",
+            "night-vision",
+            "shock-assault",
+            "stubborn"
+          ]
+        },
+        {
+          "id": "sb-marine",
+          "name": "Marine",
+          "minCount": 4,
+          "maxCount": 9,
+          "ptsEach": 53,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 2,
+            "I": 4,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-bolt-pistol",
+            "chainsword",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "know-no-fear",
+            "transhuman-physiology",
+            "bulky",
+            "night-vision",
+            "shock-assault",
+            "stubborn"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sbreth-add-marines",
+          "type": "squadSize",
+          "label": "Add Marines",
+          "targetModelId": "sb-marine",
+          "ptsEach": 53,
+          "max": 5
+        },
+        {
+          "id": "sbreth-sgt-grenades",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sb-sergeant"
+          ],
+          "label": "Sergeant: swap Krak Grenades for Meltabombs",
+          "replaces": "krak-grenades",
+          "upgradeGroup": "Sergeant",
+          "choices": [
+            {
+              "weaponId": "meltabombs",
+              "label": "Meltabombs",
+              "pts": 5
+            }
+          ]
+        },
+        {
+          "id": "sbreth-any-pistol",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sb-sergeant",
+            "sb-marine"
+          ],
+          "label": "Any model: swap Heavy Bolt Pistol for",
+          "replaces": "heavy-bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "plasma-pistol",
+              "label": "Plasma Pistol",
+              "pts": 5
+            },
+            {
+              "weaponId": "pyre-pistol",
+              "label": "Pyre Pistol",
+              "pts": 5
+            },
+            {
+              "weaponId": "combi-plasma",
+              "label": "Combi-Plasma",
+              "pts": 8
+            }
+          ]
+        },
+        {
+          "id": "sbreth-any-melee",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sb-sergeant",
+            "sb-marine"
+          ],
+          "label": "Any model: swap Chainsword for",
+          "replaces": "chainsword",
+          "choices": [
+            {
+              "weaponId": "power-sword",
+              "label": "Power Sword",
+              "pts": 3
+            },
+            {
+              "weaponId": "power-axe",
+              "label": "Power Axe",
+              "pts": 4
+            },
+            {
+              "weaponId": "power-maul",
+              "label": "Power Maul",
+              "pts": 5
+            },
+            {
+              "weaponId": "thunderhammer",
+              "label": "Thunderhammer",
+              "pts": 18
+            }
+          ]
+        },
+        {
+          "id": "sbreth-dual-claws",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "sb-sergeant",
+            "sb-marine"
+          ],
+          "label": "Any model: swap Heavy Bolt Pistol and Chainsword for Dual Lightning Claws",
+          "replaces": "heavy-bolt-pistol",
+          "choices": [
+            {
+              "weaponId": "dual-lightning-claws-bt",
+              "label": "Dual Lightning Claws",
+              "pts": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
