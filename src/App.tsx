@@ -2988,9 +2988,10 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
               const pool = resolvePool(o);
               const chosen = (options[o.id] || []) as string[];
               if (!pool.length) return null;
+              const pickLimit: number = o.maxPicks ?? effectiveML;
               const slotLabel = multiSlot
                 ? `Psychic Spell ${oi + 1} — Mastery ${effectiveML}`
-                : `Psychic Spells — Mastery ${effectiveML} (${singleChosen.length}/${effectiveML})`;
+                : `Psychic Spells — Mastery ${effectiveML} (${singleChosen.length}/${pickLimit})`;
               return (
                 <div key={o.id} className="lb-opt-section">
                   <div className="lb-opt-section-head">{slotLabel}</div>
@@ -2998,7 +2999,7 @@ function EntryOptionConfig({ unit, factionData, options, setOptions, perModelOpt
                     const isChosen = chosen.includes(s.id);
                     const atLimit = multiSlot
                       ? chosen.length >= 1 && !isChosen
-                      : singleChosen.length >= effectiveML && !isChosen;
+                      : singleChosen.length >= pickLimit && !isChosen;
                     return (
                       <label key={s.id} className="lb-opt-row"
                         style={{cursor: atLimit ? "not-allowed" : "pointer", display:"flex", opacity: atLimit ? 0.45 : 1}}>

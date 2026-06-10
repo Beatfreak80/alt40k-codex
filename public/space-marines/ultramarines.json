@@ -1279,6 +1279,11 @@
       "slot": "HQ",
       "isUnique": true,
       "basePts": 312,
+      "psychic": {
+        "masteryLevel": 3,
+        "spellPoolId": "librarius",
+        "denyBonusPerPhase": 1
+      },
       "models": [
         {
           "id": "tigurius-model",
@@ -1312,7 +1317,6 @@
             "know-no-fear",
             "deepstrike",
             "night-vision",
-            "psychic-mastery",
             "shock-assault",
             "steady",
             "very-bulky"
@@ -1321,58 +1325,10 @@
       ],
       "options": [
         {
-          "id": "tigurius-cause-misfortune",
-          "type": "toggle",
-          "label": "Cause Misfortune (Cast 7+)",
-          "pts": 10,
-          "grantsWargear": [
-            "cause-misfortune"
-          ]
-        },
-        {
-          "id": "tigurius-forewarning",
-          "type": "toggle",
-          "label": "Forewarning (Cast 6+)",
-          "pts": 10,
-          "grantsWargear": [
-            "forewarning"
-          ]
-        },
-        {
-          "id": "tigurius-bolster",
-          "type": "toggle",
-          "label": "Bolster (Cast 6+)",
-          "pts": 15,
-          "grantsWargear": [
-            "bolster"
-          ]
-        },
-        {
-          "id": "tigurius-enfeeble",
-          "type": "toggle",
-          "label": "Enfeeble (Cast 8+)",
-          "pts": 20,
-          "grantsWargear": [
-            "enfeeble"
-          ]
-        },
-        {
-          "id": "tigurius-endurance",
-          "type": "toggle",
-          "label": "Endurance (Cast 7+)",
-          "pts": 20,
-          "grantsWargear": [
-            "endurance"
-          ]
-        },
-        {
-          "id": "tigurius-melting-beam",
-          "type": "toggle",
-          "label": "Melting Beam (Cast 7+)",
-          "pts": 22,
-          "grantsWargear": [
-            "melting-beam"
-          ]
+          "id": "tigurius-spells",
+          "type": "spellPick",
+          "spellPoolId": "librarius",
+          "maxPicks": 2
         },
         {
           "id": "tigurius-rubicon",
