@@ -3164,7 +3164,7 @@ function AddEditEntryModal({ unit, existingEntry, factionData, onChange, onClose
 function UnitPickerModal({ factionData, onSelect, onCancel, initialSlot, activeSubfaction }: any) {
   const units = filterUnitsBySubfaction(
     (factionData.units || []).filter(
-      (u: any) => !u.chapterRestriction || u.chapterRestriction === activeSubfaction?.id
+      (u: any) => !u.hidden && (!u.chapterRestriction || u.chapterRestriction === activeSubfaction?.id)
     ),
     activeSubfaction
   );
@@ -4062,6 +4062,7 @@ export default function App() {
     const g: Record<string, any[]> = {};
     const visibleUnits = filterUnitsBySubfaction(factionData.units || [], activeSf);
     for (const u of visibleUnits) {
+      if (u.hidden) continue;
       if (u.chapterRestriction && u.chapterRestriction !== selectedSubfaction) continue;
       const slot = effectiveSlot(u.id, u.slot, activeSf);
       if (!g[slot]) g[slot] = [];

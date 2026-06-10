@@ -30,7 +30,8 @@
       "minotaurs":       "space-marines/minotaurs.json",
       "raven_guard":     "space-marines/raven-guard.json",
       "salamanders":     "space-marines/salamanders.json",
-      "sons_of_medusa":  "space-marines/sons-of-medusa.json"
+      "sons_of_medusa":  "space-marines/sons-of-medusa.json",
+      "ultramarines":    "space-marines/ultramarines.json"
     }
   },
   {

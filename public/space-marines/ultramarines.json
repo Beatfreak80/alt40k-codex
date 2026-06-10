@@ -1,0 +1,1513 @@
+{
+  "schemaVersion": "supplement-1.0",
+  "subfaction": "ultramarines",
+  "commonWargear": [
+    {
+      "id": "talassarian-tempest-blade",
+      "name": "Talassarian Tempest Blade",
+      "profiles": [
+        {
+          "label": "Standard",
+          "strength": "+1",
+          "ap": "3+",
+          "rules": "Extra Attack 1"
+        },
+        {
+          "label": "Execution",
+          "strength": "D",
+          "ap": "2+",
+          "rules": "Destroyer, Monsterbane, Auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "victus",
+      "name": "Victus",
+      "profiles": [
+        {
+          "maxRange": 24,
+          "strength": "5",
+          "ap": "4+",
+          "rules": "Rapid Fire 1, Bolter"
+        }
+      ]
+    },
+    {
+      "id": "sword-of-idaeus",
+      "name": "Sword of Idaeus",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "3+",
+          "rules": "Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "vortex-grenade",
+      "name": "Vortex Grenade",
+      "profiles": [
+        {
+          "maxRange": 8,
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Grenade 1, Nonblast, Destroyer, Monsterbane, One Use Only"
+        }
+      ]
+    },
+    {
+      "id": "infernus",
+      "name": "Infernus",
+      "profiles": [
+        {
+          "label": "Flame",
+          "templateType": "Flame",
+          "strength": "4",
+          "ap": "5+",
+          "rules": "Assault 1"
+        },
+        {
+          "label": "Bolter",
+          "maxRange": 24,
+          "strength": "3",
+          "ap": "3+",
+          "rules": "Rapid Fire 1, Poisoned (3+)"
+        }
+      ]
+    },
+    {
+      "id": "gauntlets-of-ultramar",
+      "name": "Gauntlets of Ultramar",
+      "profiles": [
+        {
+          "label": "Ranged",
+          "maxRange": 24,
+          "strength": "4",
+          "ap": "2+",
+          "rules": "Assault 6"
+        },
+        {
+          "label": "Melee",
+          "strength": "X2",
+          "ap": "2+",
+          "rules": "Slow, Monsterbane, Extra Attack 1"
+        }
+      ]
+    },
+    {
+      "id": "hand-of-dominion",
+      "name": "Hand of Dominion",
+      "profiles": [
+        {
+          "label": "Ranged",
+          "maxRange": 24,
+          "strength": "6",
+          "ap": "4+",
+          "rules": "Assault 6"
+        },
+        {
+          "label": "Melee",
+          "strength": "X2",
+          "ap": "2+",
+          "rules": "Slow, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "the-emperors-sword",
+      "name": "The Emperor's Sword",
+      "profiles": [
+        {
+          "strength": "D",
+          "ap": "1+",
+          "rules": "Slow, Destroyer, Monsterbane"
+        }
+      ]
+    },
+    {
+      "id": "armour-of-fate",
+      "name": "Armour of Fate",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "4+ Feel No Pain"
+        }
+      ]
+    },
+    {
+      "id": "hood-of-hellfire",
+      "name": "Hood of Hellfire",
+      "profiles": [
+        {
+          "strength": "-",
+          "ap": "-",
+          "rules": "This model gains +1 to Deny the Witch, may Deny the Witch twice per Psychic Phase, and may reroll any failed Cast roll."
+        }
+      ]
+    },
+    {
+      "id": "rod-of-tigurius",
+      "name": "Rod of Tigurius",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "2+",
+          "rules": "Psychic Bane, Concussion"
+        }
+      ]
+    },
+    {
+      "id": "revelation",
+      "name": "Revelation",
+      "profiles": [
+        {
+          "maxRange": 18,
+          "strength": "-",
+          "ap": "-",
+          "rules": "Target unit gains a 4+ Cover Save until the beginning of your next Psychic Phase"
+        }
+      ]
+    },
+    {
+      "id": "cause-misfortune",
+      "name": "Cause Misfortune",
+      "profiles": [
+        {
+          "castValue": 7,
+          "maxRange": 18,
+          "strength": "-",
+          "ap": "-",
+          "rules": "Target unit gains Rending on all Ranged and Melee Attacks until your next Psychic Phase"
+        }
+      ]
+    },
+    {
+      "id": "forewarning",
+      "name": "Forewarning",
+      "profiles": [
+        {
+          "castValue": 6,
+          "maxRange": 18,
+          "strength": "-",
+          "ap": "-",
+          "rules": "Target unit gains 4+ Cover Save until your next Psychic Phase"
+        }
+      ]
+    },
+    {
+      "id": "bolster",
+      "name": "Bolster",
+      "profiles": [
+        {
+          "castValue": 6,
+          "maxRange": 18,
+          "strength": "-",
+          "ap": "-",
+          "rules": "Target unit counts as having not Moved for the purposes of Shooting until your next Psychic Phase"
+        }
+      ]
+    },
+    {
+      "id": "enfeeble",
+      "name": "Enfeeble",
+      "profiles": [
+        {
+          "castValue": 8,
+          "maxRange": 18,
+          "strength": "-",
+          "ap": "-",
+          "rules": "Target unit suffers T-1 until your next Psychic Phase"
+        }
+      ]
+    },
+    {
+      "id": "endurance",
+      "name": "Endurance",
+      "profiles": [
+        {
+          "castValue": 7,
+          "maxRange": 18,
+          "strength": "-",
+          "ap": "-",
+          "rules": "Target unit gains T+1 until your next Psychic Phase"
+        }
+      ]
+    },
+    {
+      "id": "melting-beam",
+      "name": "Melting Beam",
+      "profiles": [
+        {
+          "castValue": 7,
+          "maxRange": 18,
+          "strength": "8",
+          "ap": "1+",
+          "rules": "Assault 1, Armourbane, Beam"
+        }
+      ]
+    },
+    {
+      "id": "quietus",
+      "name": "Quietus",
+      "profiles": [
+        {
+          "maxRange": 36,
+          "strength": "4",
+          "ap": "3+",
+          "rules": "Heavy 2, Sniper (2+)"
+        }
+      ]
+    },
+    {
+      "id": "force-staff",
+      "name": "Force Staff",
+      "profiles": [
+        {
+          "strength": "+2",
+          "ap": "4+",
+          "rules": "Concussion, Psychic Bane"
+        }
+      ]
+    },
+    {
+      "id": "laspistol",
+      "name": "Laspistol",
+      "profiles": [
+        {
+          "maxRange": 12,
+          "strength": "3",
+          "ap": "-",
+          "rules": "Pistol 1"
+        }
+      ]
+    },
+    {
+      "id": "formidable-astropath",
+      "name": "Formidable Astropath",
+      "profiles": [
+        {
+          "castValue": 8,
+          "maxRange": 24,
+          "strength": "-",
+          "ap": "-",
+          "rules": "Target Psychic Mastery Model suffers Psychic Mastery Level -1 until your next Psychic Phase"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "captain-sicarius",
+      "name": "Captain Sicarius",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 259,
+      "inlineRules": [
+        {
+          "id": "battle-forged-heroes",
+          "name": "Battle Forged Heroes",
+          "fullDesc": "6\" Aura, this model and target unit gain Counterattack."
+        },
+        {
+          "id": "indomitable-will-sic",
+          "name": "Indomitable Will",
+          "fullDesc": "This model has a 5+ Feel No Pain."
+        },
+        {
+          "id": "master-duelist",
+          "name": "Master Duelist",
+          "fullDesc": "This model may choose the target of its Challenge. The target may not deny the Challenge."
+        },
+        {
+          "id": "surprise-attack-sic",
+          "name": "Surprise Attack",
+          "fullDesc": "This model and its unit do not Scatter when arriving from Deepstrike."
+        }
+      ],
+      "models": [
+        {
+          "id": "sicarius",
+          "name": "Sicarius",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "plasma-pistol",
+            "talassarian-tempest-blade",
+            "frag-grenades",
+            "krak-grenades",
+            "vortex-grenade",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "deepstrike",
+            "furious-charge",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "battle-forged-heroes",
+            "indomitable-will-sic",
+            "master-duelist",
+            "surprise-attack-sic"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "sicarius-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 14,
+          "statModifiers": [
+            {
+              "modelId": "sicarius",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn",
+            "bulky"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn, Bulky. Lose Objective Secured."
+        }
+      ]
+    },
+    {
+      "id": "captain-uriel-ventris",
+      "name": "Captain Uriel Ventris",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 233,
+      "inlineRules": [
+        {
+          "id": "one-man-army",
+          "name": "One Man Army",
+          "fullDesc": "When Ventris is outnumbered in Melee, he gains A+d3 and successful Saves (Feel No Pains are no Saves) against his Attacks must be rerolled."
+        }
+      ],
+      "models": [
+        {
+          "id": "ventris",
+          "name": "Ventris",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "victus",
+            "bolt-pistol",
+            "sword-of-idaeus",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "battle-drills",
+            "one-man-army"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "ventris-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 17,
+          "statModifiers": [
+            {
+              "modelId": "ventris",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "bulky",
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Bulky, Transhuman Physiology, Stubborn. Lose Objective Secured, Grenades."
+        }
+      ]
+    },
+    {
+      "id": "chaplain-cassius",
+      "name": "Chaplain Cassius",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 285,
+      "inlineRules": [
+        {
+          "id": "exhortation-of-rage-cassius",
+          "name": "Exhortation of Rage",
+          "fullDesc": "6\" Aura, this model and target unit gain A+1 and reroll 1s To Wound in Melee."
+        },
+        {
+          "id": "fearsome-cassius",
+          "name": "Fearsome",
+          "fullDesc": "6\" Aura, target unit suffers Ld-1."
+        },
+        {
+          "id": "litany-of-intimidation",
+          "name": "Litany of Intimidation",
+          "fullDesc": "6\" Aura, target unit takes Ld Tests on 3d6, discarding the lowest die."
+        },
+        {
+          "id": "litany-of-faith",
+          "name": "Litany of Faith",
+          "fullDesc": "6\" Aura, target unit gains 5+ Invulnerability Save."
+        },
+        {
+          "id": "true-sight",
+          "name": "True Sight",
+          "fullDesc": "6\" Aura, this model and target unit gain BS-1 (Improves by 1)."
+        }
+      ],
+      "models": [
+        {
+          "id": "cassius",
+          "name": "Cassius",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "infernus",
+            "bolt-pistol",
+            "crozium-arcanum",
+            "frag-grenades",
+            "krak-grenades",
+            "rosarius"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "objective-secured",
+            "shock-assault",
+            "canticle-of-hate",
+            "exhortation-of-rage-cassius",
+            "fearsome-cassius",
+            "zealot"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "cassius-omen-of-potency",
+          "type": "toggle",
+          "label": "Omen of Potency",
+          "pts": 18,
+          "exclusiveGroup": "cassius-litany",
+          "statModifiers": [
+            {
+              "modelId": "cassius",
+              "stat": "A",
+              "op": "add",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "cassius-litany-of-intimidation",
+          "type": "toggle",
+          "label": "Litany of Intimidation",
+          "pts": 20,
+          "exclusiveGroup": "cassius-litany",
+          "grantsRules": [
+            "litany-of-intimidation"
+          ]
+        },
+        {
+          "id": "cassius-litany-of-faith",
+          "type": "toggle",
+          "label": "Litany of Faith",
+          "pts": 40,
+          "exclusiveGroup": "cassius-litany",
+          "grantsRules": [
+            "litany-of-faith"
+          ]
+        },
+        {
+          "id": "cassius-true-sight",
+          "type": "toggle",
+          "label": "True Sight",
+          "pts": 50,
+          "exclusiveGroup": "cassius-litany",
+          "grantsRules": [
+            "true-sight"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lieutenant-titus",
+      "name": "Lieutenant Titus",
+      "slot": "HQ",
+      "isUnique": true,
+      "hidden": true,
+      "basePts": 213,
+      "inlineRules": [
+        {
+          "id": "indomitable-will-titus",
+          "name": "Indomitable Will",
+          "fullDesc": "This model has a 5+ Feel No Pain. This improves to a 4+ with Transhuman Physiology."
+        },
+        {
+          "id": "incorruptible",
+          "name": "Incorruptible",
+          "fullDesc": "This model cannot be harmed or affected by Spells."
+        },
+        {
+          "id": "against-impossible-odds",
+          "name": "Against Impossible Odds",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1s for failed Saves."
+        },
+        {
+          "id": "mentor-of-titus",
+          "name": "Mentor of Titus",
+          "fullDesc": "6\" Aura, this model and Titus may reroll failed Feel No Pains."
+        },
+        {
+          "id": "fleet-interference",
+          "name": "Fleet Interference",
+          "fullDesc": "Aura, target enemy unit arriving from Deepstrike must reroll their Scatter Dice."
+        },
+        {
+          "id": "imperial-guard-liaison",
+          "name": "Imperial Guard Liaison",
+          "fullDesc": "You may purchase Imperial Guard Platoons as Troop Slots (See Imperial Guard Codex). They will use the PDF Regiment Rules only instead of Ultramarines."
+        },
+        {
+          "id": "master-astropath",
+          "name": "Master Astropath",
+          "fullDesc": "24\" Aura, target unit does not Scatter when arriving from Deepstrike."
+        },
+        {
+          "id": "plenipotentiary",
+          "name": "Plenipotentiary",
+          "fullDesc": "6\" Aura, this model and target unit gain Objective Secured."
+        }
+      ],
+      "models": [
+        {
+          "id": "titus",
+          "name": "Titus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 5,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "boltgun",
+            "bolt-pistol",
+            "chainsword",
+            "frag-grenades",
+            "krak-grenades",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "bolter-discipline",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "hand-to-hand-drills",
+            "incorruptible",
+            "indomitable-will-titus"
+          ]
+        },
+        {
+          "id": "gadriel",
+          "name": "Gadriel",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 203,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-rifle",
+            "combat-knife",
+            "company-standard"
+          ],
+          "specialRules": [
+            "character",
+            "bolter-discipline",
+            "know-no-fear",
+            "bulky",
+            "shock-assault",
+            "stubborn",
+            "transhuman-physiology",
+            "against-impossible-odds"
+          ]
+        },
+        {
+          "id": "metaurus",
+          "name": "Metaurus",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 233,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 4,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "heavy-bolt-pistol",
+            "power-sword",
+            "stormshield"
+          ],
+          "specialRules": [
+            "character",
+            "know-no-fear",
+            "bulky",
+            "shock-assault",
+            "stubborn",
+            "transhuman-physiology",
+            "mentor-of-titus"
+          ]
+        },
+        {
+          "id": "gaius-silva",
+          "name": "Gaius Silva",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 194,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 5
+          },
+          "baseWargear": [
+            "laspistol",
+            "power-sword",
+            "orbital-strike",
+            "refractor-field"
+          ],
+          "specialRules": [
+            "character",
+            "the-hour-is-nigh",
+            "t-minus-5",
+            "fleet-interference"
+          ]
+        },
+        {
+          "id": "minervas",
+          "name": "Minervas",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 46,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "laspistol",
+            "power-sword"
+          ],
+          "specialRules": [
+            "character",
+            "imperial-guard-liaison"
+          ]
+        },
+        {
+          "id": "kornelius",
+          "name": "Kornelius",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 87,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 9,
+            "Sv": "-"
+          },
+          "baseWargear": [
+            "force-staff",
+            "formidable-astropath"
+          ],
+          "specialRules": [
+            "character",
+            "psychic-mastery",
+            "master-astropath"
+          ]
+        },
+        {
+          "id": "vestha",
+          "name": "Vestha",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 56,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 4,
+            "I": 3,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 4
+          },
+          "baseWargear": [
+            "laspistol",
+            "combat-knife"
+          ],
+          "specialRules": [
+            "character",
+            "plenipotentiary"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "titus-bolt-rifle",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "titus"
+          ],
+          "label": "Titus: swap Boltgun for Bolt Rifle",
+          "replaces": "boltgun",
+          "choices": [
+            {
+              "weaponId": "bolt-rifle",
+              "label": "Bolt Rifle",
+              "pts": 2
+            }
+          ]
+        },
+        {
+          "id": "titus-rubicon",
+          "type": "toggle",
+          "label": "Titus: Rubicon Primaris",
+          "pts": 14,
+          "statModifiers": [
+            {
+              "modelId": "titus",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn",
+            "bulky"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn, Bulky. Lose Objective Secured."
+        },
+        {
+          "id": "titus-promotion-to-captain",
+          "type": "toggle",
+          "label": "Titus: Promotion to Captain",
+          "pts": 30,
+          "grantsRules": [
+            "battle-drills"
+          ]
+        },
+        {
+          "id": "kornelius-spell",
+          "type": "spellPick",
+          "spellPoolId": "librarius"
+        }
+      ]
+    },
+    {
+      "id": "marneus-calgar",
+      "name": "Marneus Calgar",
+      "slot": "HQ",
+      "isUnique": true,
+      "hidden": true,
+      "basePts": 385,
+      "inlineRules": [
+        {
+          "id": "god-of-war",
+          "name": "God of War",
+          "fullDesc": "This model rerolls all failed To Wound rolls."
+        },
+        {
+          "id": "master-tactician",
+          "name": "Master Tactician",
+          "fullDesc": "After the Deployment Phase, but before Turn 1, you may redeploy d3 units."
+        },
+        {
+          "id": "venerable-maximus",
+          "name": "Venerable",
+          "fullDesc": "This model is immune to Weapon Disabled and Crew Stun side effects, but still takes the additional damage."
+        }
+      ],
+      "models": [
+        {
+          "id": "calgar",
+          "name": "Marneus Calgar",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 6,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "gauntlets-of-ultramar",
+            "orbital-strike",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "fearless",
+            "night-vision",
+            "shock-assault",
+            "stubborn",
+            "battle-drills",
+            "god-of-war",
+            "master-tactician",
+            "the-hour-is-nigh",
+            "t-minus-5"
+          ]
+        },
+        {
+          "id": "maximus",
+          "name": "Maximus",
+          "minCount": 0,
+          "maxCount": 1,
+          "ptsEach": 325,
+          "statline": {
+            "type": "vehicle",
+            "M": 6,
+            "WS": 4,
+            "BS": 2,
+            "S": 8,
+            "FA": 14,
+            "SA": 14,
+            "RA": 14,
+            "W": 16,
+            "I": 1,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            {
+              "weaponId": "2-linked-heavy-bolters",
+              "arcType": "Hull",
+              "mountingTags": [
+                "Primary"
+              ]
+            },
+            {
+              "weaponId": "2-hurricane-bolters",
+              "arcType": "Sponson"
+            }
+          ],
+          "specialRules": [
+            "independent-character",
+            "tank",
+            "adjusted-tactics",
+            "bolter-discipline",
+            "know-no-fear",
+            "night-vision",
+            "shock-assault",
+            "transport",
+            "venerable-maximus"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "calgar-armour-antilochus",
+          "type": "toggle",
+          "label": "Armour of Antilochus",
+          "pts": 24,
+          "upgradeGroup": "Calgar Armour",
+          "statModifiers": [
+            {
+              "modelId": "calgar",
+              "stat": "M",
+              "op": "add",
+              "value": -2
+            },
+            {
+              "modelId": "calgar",
+              "stat": "W",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "deepstrike",
+            "steady",
+            "very-bulky",
+            "transhuman-physiology"
+          ],
+          "note": "Calgar: M-2, W+1. Gain Deepstrike, Steady, Very Bulky, 5+ Feel No Pain. Lose Objective Secured."
+        },
+        {
+          "id": "calgar-primaris-heracles",
+          "type": "toggle",
+          "label": "Primaris Armour of Heracles",
+          "pts": 22,
+          "upgradeGroup": "Calgar Armour",
+          "statModifiers": [
+            {
+              "modelId": "calgar",
+              "stat": "W",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "deepstrike",
+            "very-bulky",
+            "transhuman-physiology"
+          ],
+          "note": "Calgar: W+1. Gain Deepstrike, Very Bulky, 5+ Feel No Pain. Lose Objective Secured."
+        },
+        {
+          "id": "maximus-hull-swap",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "maximus"
+          ],
+          "label": "Maximus: swap 2 Linked Heavy Bolters for",
+          "replaces": "2-linked-heavy-bolters",
+          "choices": [
+            {
+              "weaponId": "2-linked-assault-cannons",
+              "label": "2 Linked Assault Cannons",
+              "pts": 32
+            }
+          ]
+        },
+        {
+          "id": "maximus-sponson-swap",
+          "type": "weaponSwap",
+          "scope": "perModelType",
+          "applies": [
+            "maximus"
+          ],
+          "label": "Maximus: swap 2 Hurricane Bolters for",
+          "replaces": "2-hurricane-bolters",
+          "choices": [
+            {
+              "weaponId": "2-flamestorm-cannons",
+              "label": "2 Flamestorm Cannons",
+              "pts": 18
+            },
+            {
+              "weaponId": "2-multimeltas-sponson",
+              "label": "2 Multimeltas",
+              "pts": 22
+            },
+            {
+              "weaponId": "2-sets-2-linked-lascannons",
+              "label": "2 Sets of 2 Linked Lascannons",
+              "pts": 50
+            },
+            {
+              "weaponId": "2-sets-4-linked-heavy-bolters",
+              "label": "2 Sets of 4 Heavy Bolters",
+              "pts": 52
+            }
+          ]
+        },
+        {
+          "id": "maximus-dozerblade",
+          "type": "toggle",
+          "label": "Maximus: Dozerblade",
+          "pts": 9,
+          "grantsWargear": [
+            "dozerblade"
+          ]
+        },
+        {
+          "id": "maximus-hunter-killer",
+          "type": "toggle",
+          "label": "Maximus: Hunter Killer Missile",
+          "pts": 5,
+          "grantsWargear": [
+            "hunter-killer-missile"
+          ]
+        },
+        {
+          "id": "maximus-stormbolter",
+          "type": "toggle",
+          "label": "Maximus: Stormbolter",
+          "pts": 7,
+          "grantsWargear": [
+            "stormbolter"
+          ]
+        },
+        {
+          "id": "maximus-multimelta",
+          "type": "toggle",
+          "label": "Maximus: Multimelta",
+          "pts": 24,
+          "grantsWargear": [
+            "multimelta"
+          ]
+        },
+        {
+          "id": "maximus-icarus-rocket-pods",
+          "type": "toggle",
+          "label": "Maximus: 2 Linked Icarus Rocket Pods",
+          "pts": 27,
+          "grantsWargear": [
+            "2-linked-icarus-rocket-pods"
+          ]
+        },
+        {
+          "id": "maximus-extra-armour",
+          "type": "toggle",
+          "label": "Maximus: Extra Armour",
+          "pts": 5,
+          "grantsWargear": [
+            "extra-armour"
+          ]
+        },
+        {
+          "id": "maximus-frag-launchers",
+          "type": "toggle",
+          "label": "Maximus: Frag Launchers",
+          "pts": 10,
+          "grantsWargear": [
+            "frag-launchers"
+          ]
+        },
+        {
+          "id": "maximus-smoke-launchers",
+          "type": "toggle",
+          "label": "Maximus: Smoke Launchers",
+          "pts": 10,
+          "grantsWargear": [
+            "smoke-launchers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roboute-guilliman",
+      "name": "Roboute Guilliman",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 765,
+      "inlineRules": [
+        {
+          "id": "adamantium-will",
+          "name": "Adamantium Will",
+          "fullDesc": "This model may deny the witch as if it were Psychic Mastery Level 1."
+        },
+        {
+          "id": "intimidating-presence",
+          "name": "Intimidating Presence",
+          "fullDesc": "12\" True Aura, all enemy units use their lowest Ld score instead of their highest."
+        },
+        {
+          "id": "inspiring-presence",
+          "name": "Inspiring Presence",
+          "fullDesc": "12\" True Aura, all friendly units use this model's Ld in place of their own."
+        },
+        {
+          "id": "lord-commander-of-the-imperium",
+          "name": "Lord Commander of the Imperium",
+          "fullDesc": "12\" True Aura, all friendly units may reroll failed Ld tests."
+        },
+        {
+          "id": "master-of-the-vanguard",
+          "name": "Master of the Vanguard",
+          "fullDesc": "12\" True Aura, all friendly units may reroll failed Charge rolls."
+        }
+      ],
+      "models": [
+        {
+          "id": "guilliman",
+          "name": "Roboute Guilliman",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monster",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 6,
+            "T": 6,
+            "W": 9,
+            "I": 6,
+            "A": 6,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "hand-of-dominion",
+            "the-emperors-sword",
+            "orbital-strike",
+            "armour-of-fate",
+            "iron-halo"
+          ],
+          "specialRules": [
+            "independent-character",
+            "fearless",
+            "shock-assault",
+            "stubborn",
+            "battle-drills",
+            "adamantium-will",
+            "intimidating-presence",
+            "inspiring-presence",
+            "lord-commander-of-the-imperium",
+            "master-of-the-vanguard",
+            "the-hour-is-nigh",
+            "t-minus-5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tigurius",
+      "name": "Tigurius",
+      "slot": "HQ",
+      "isUnique": true,
+      "basePts": 312,
+      "models": [
+        {
+          "id": "tigurius-model",
+          "name": "Tigurius",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "monstrous-infantry",
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 7,
+            "I": 4,
+            "A": 5,
+            "Ld": 10,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "rod-of-tigurius",
+            "iron-halo",
+            "hood-of-hellfire",
+            "revelation",
+            "psychic-hood"
+          ],
+          "specialRules": [
+            "independent-character",
+            "adjusted-tactics",
+            "know-no-fear",
+            "deepstrike",
+            "night-vision",
+            "psychic-mastery",
+            "shock-assault",
+            "steady",
+            "very-bulky"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "tigurius-cause-misfortune",
+          "type": "toggle",
+          "label": "Cause Misfortune (Cast 7+)",
+          "pts": 10,
+          "grantsWargear": [
+            "cause-misfortune"
+          ]
+        },
+        {
+          "id": "tigurius-forewarning",
+          "type": "toggle",
+          "label": "Forewarning (Cast 6+)",
+          "pts": 10,
+          "grantsWargear": [
+            "forewarning"
+          ]
+        },
+        {
+          "id": "tigurius-bolster",
+          "type": "toggle",
+          "label": "Bolster (Cast 6+)",
+          "pts": 15,
+          "grantsWargear": [
+            "bolster"
+          ]
+        },
+        {
+          "id": "tigurius-enfeeble",
+          "type": "toggle",
+          "label": "Enfeeble (Cast 8+)",
+          "pts": 20,
+          "grantsWargear": [
+            "enfeeble"
+          ]
+        },
+        {
+          "id": "tigurius-endurance",
+          "type": "toggle",
+          "label": "Endurance (Cast 7+)",
+          "pts": 20,
+          "grantsWargear": [
+            "endurance"
+          ]
+        },
+        {
+          "id": "tigurius-melting-beam",
+          "type": "toggle",
+          "label": "Melting Beam (Cast 7+)",
+          "pts": 22,
+          "grantsWargear": [
+            "melting-beam"
+          ]
+        },
+        {
+          "id": "tigurius-rubicon",
+          "type": "toggle",
+          "label": "Rubicon Primaris",
+          "pts": 25,
+          "statModifiers": [
+            {
+              "modelId": "tigurius-model",
+              "stat": "A",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "grantsRules": [
+            "transhuman-physiology",
+            "stubborn"
+          ],
+          "note": "A+1. Gain Transhuman Physiology, Stubborn."
+        }
+      ]
+    },
+    {
+      "id": "sergeant-chronus",
+      "name": "Sergeant Chronus",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 140,
+      "inlineRules": [
+        {
+          "id": "ejector-seat",
+          "name": "Ejector Seat",
+          "fullDesc": "If the Vehicle this model is Commanding is destroyed, Disembark this model instead of Force Disembarking it."
+        },
+        {
+          "id": "ultramarines-tank-commander",
+          "name": "Ultramarines Tank Commander",
+          "fullDesc": "This model may embark for 0 Transport space on any non-Titanic Tank, even if it is not a Transport. While Chronus is Commanding the Tank, it uses his WS, BS, and Ld."
+        }
+      ],
+      "models": [
+        {
+          "id": "chronus",
+          "name": "Chronus",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "bolt-pistol",
+            "combat-knife",
+            "servo-arm",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "objective-secured",
+            "shock-assault",
+            "repair",
+            "servo-arm-rule",
+            "ejector-seat",
+            "ultramarines-tank-commander"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sergeant-telion",
+      "name": "Sergeant Telion",
+      "slot": "Advisor",
+      "isUnique": true,
+      "basePts": 231,
+      "inlineRules": [
+        {
+          "id": "scout-sergeant",
+          "name": "Scout Sergeant",
+          "fullDesc": "6\" Aura, this model and target unit forces enemy units making Cover Saves to reroll Successful Cover Saves."
+        },
+        {
+          "id": "voice-of-experience",
+          "name": "Voice of Experience",
+          "fullDesc": "6\" Aura, this model and target unit may reroll 1s To Hit."
+        }
+      ],
+      "models": [
+        {
+          "id": "telion",
+          "name": "Telion",
+          "minCount": 1,
+          "maxCount": 1,
+          "statline": {
+            "type": "infantry",
+            "M": 6,
+            "WS": 2,
+            "BS": 2,
+            "S": 4,
+            "T": 4,
+            "W": 4,
+            "I": 4,
+            "A": 3,
+            "Ld": 9,
+            "Sv": 3
+          },
+          "baseWargear": [
+            "quietus",
+            "bolt-pistol",
+            "combat-knife",
+            "frag-grenades",
+            "krak-grenades"
+          ],
+          "specialRules": [
+            "independent-character",
+            "know-no-fear",
+            "infiltrate",
+            "objective-secured",
+            "shock-assault",
+            "stealth",
+            "scout-sergeant",
+            "voice-of-experience"
+          ]
+        }
+      ]
+    }
+  ]
+}
