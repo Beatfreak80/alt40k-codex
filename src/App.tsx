@@ -1381,6 +1381,12 @@ function UnitSearch({ allUnits, hiddenUnits, onSelect }) {
     const q = query.toLowerCase();
     return allUnits
       .filter(u => u.name.toLowerCase().includes(q))
+      .sort((a, b) => {
+        const aStarts = a.name.toLowerCase().startsWith(q);
+        const bStarts = b.name.toLowerCase().startsWith(q);
+        if (aStarts !== bStarts) return aStarts ? -1 : 1;
+        return 0;
+      })
       .slice(0, 12);
   }, [query, allUnits]);
 
